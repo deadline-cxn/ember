@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ember_game_client_old" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="ember_game_client" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-w" />
+					<Add option="-fexceptions" />
+					<Add option="-Werror" />
+					<Add option="-mwindows" />
+					<Add option="-Dmain=SDL_main" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+					<Add option="-D_EMBER_CLIENT_" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="SDLmain" />
+					<Add library="SDL" />
+					<Add library="ws2_32" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="cximage" />
+					<Add library="winmm" />
+					<Add library="mingw32" />
+					<Add library="msvcrt" />
+					<Add library="Jpeg" />
+					<Add library="dcr" />
+					<Add library="mng" />
+					<Add library="png" />
+					<Add library="Tiff" />
+					<Add library="fmod" />
+				</Linker>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="ember_game_client_d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+					<Add option="-D_EMBER_CLIENT_" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="..\..\SDK\SDL-1.2.14\lib\SDLmain.lib" />
+					<Add library="..\..\SDK\SDL-1.2.14\lib\SDL.lib" />
+					<Add library="ws2_32" />
+					<Add library="opengl32" />
+					<Add library="glu32" />
+					<Add library="..\..\SDK\fmodapi375win\api\lib\libfmod.a" />
+					<Add library="..\..\SDK\cximage600_full\cximage.lib" />
+					<Add library="..\..\SDK\cximage600_full\jasper.lib" />
+					<Add library="..\..\SDK\cximage600_full\Jpeg.lib" />
+					<Add library="..\..\SDK\cximage600_full\libdcr.lib" />
+					<Add library="..\..\SDK\cximage600_full\mng.lib" />
+					<Add library="..\..\SDK\cximage600_full\png.lib" />
+					<Add library="..\..\SDK\cximage600_full\Tiff.lib" />
+					<Add library="winmm" />
+					<Add library="mingw32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Linker>
+			<Add library="kernel32" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winspool" />
+			<Add library="comdlg32" />
+			<Add library="advapi32" />
+			<Add library="shell32" />
+			<Add library="ole32" />
+			<Add library="oleaut32" />
+			<Add library="uuid" />
+			<Add library="odbc32" />
+			<Add library="odbccp32" />
+			<Add library="SDLmain" />
+			<Add library="SDL" />
+			<Add library="ws2_32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="cximage" />
+			<Add library="Jpeg" />
+			<Add library="dcr" />
+			<Add library="mng" />
+			<Add library="png" />
+			<Add library="Tiff" />
+			<Add library="winmm" />
+			<Add library="mingw32" />
+			<Add library="msvcrt" />
+			<Add library="fmod" />
+		</Linker>
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_active.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_audio.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_cdrom.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_config.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_config_win32.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_cpuinfo.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_endian.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_error.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_events.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_joystick.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_keyboard.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_keysym.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_loadso.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_main.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_mouse.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_mutex.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_platform.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_quit.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_rwops.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_stdinc.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_thread.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_timer.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_version.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\SDL_video.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\begin_code.h" />
+		<Unit filename="..\..\SDK\SDL-1.2.13\include\close_code.h" />
+		<Unit filename="..\..\SDK\fmodapi375win\api\inc\fmod.h" />
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lauxlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lauxlib.h" />
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lbaselib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lcode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ldblib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ldebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ldo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ldump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lfunc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lgc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\linit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\liolib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\llex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lmathlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\loadlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lobject.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lopcodes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\loslib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lstate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lstring.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lstrlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ltable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ltablib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\ltm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lua.h" />
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lundump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lvm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\lua-5.1.4\src\lzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\adler32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\crc32.h" />
+		<Unit filename="..\..\SDK\zlib\deflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\deflate.h" />
+		<Unit filename="..\..\SDK\zlib\gzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\infback.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inffast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inffast.h" />
+		<Unit filename="..\..\SDK\zlib\inffixed.h" />
+		<Unit filename="..\..\SDK\zlib\inflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inflate.h" />
+		<Unit filename="..\..\SDK\zlib\inftrees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inftrees.h" />
+		<Unit filename="..\..\SDK\zlib\trees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\trees.h" />
+		<Unit filename="..\..\SDK\zlib\uncompr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\zconf.h" />
+		<Unit filename="..\..\SDK\zlib\zconf.in.h" />
+		<Unit filename="..\..\SDK\zlib\zlib.h" />
+		<Unit filename="..\..\SDK\zlib\zutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\zutil.h" />
+		<Unit filename="..\..\dlstorm\c_console.cpp" />
+		<Unit filename="..\..\dlstorm\c_console.h" />
+		<Unit filename="..\..\dlstorm\c_gaf.cpp" />
+		<Unit filename="..\..\dlstorm\c_gaf.h" />
+		<Unit filename="..\..\dlstorm\c_gfx.cpp" />
+		<Unit filename="..\..\dlstorm\c_gfx.h" />
+		<Unit filename="..\..\dlstorm\c_gl3dmodel.cpp" />
+		<Unit filename="..\..\dlstorm\c_gl3dmodel.h" />
+		<Unit filename="..\..\dlstorm\c_glfont.cpp" />
+		<Unit filename="..\..\dlstorm\c_glfont.h" />
+		<Unit filename="..\..\dlstorm\c_glmouse.cpp" />
+		<Unit filename="..\..\dlstorm\c_glmouse.h" />
+		<Unit filename="..\..\dlstorm\c_gltexture.cpp" />
+		<Unit filename="..\..\dlstorm\c_gltexture.h" />
+		<Unit filename="..\..\dlstorm\c_gui.cpp" />
+		<Unit filename="..\..\dlstorm\c_gui.h" />
+		<Unit filename="..\..\dlstorm\c_hash.cpp" />
+		<Unit filename="..\..\dlstorm\c_hash.h" />
+		<Unit filename="..\..\dlstorm\c_log.cpp" />
+		<Unit filename="..\..\dlstorm\c_log.h" />
+		<Unit filename="..\..\dlstorm\c_lua.cpp" />
+		<Unit filename="..\..\dlstorm\c_net.cpp" />
+		<Unit filename="..\..\dlstorm\c_netaddress.cpp" />
+		<Unit filename="..\..\dlstorm\c_snd.cpp" />
+		<Unit filename="..\..\dlstorm\c_snd.h" />
+		<Unit filename="..\..\dlstorm\c_socket.cpp" />
+		<Unit filename="..\..\dlstorm\c_socket.h" />
+		<Unit filename="..\..\dlstorm\c_var.h" />
+		<Unit filename="..\..\dlstorm\dlstorm.cpp" />
+		<Unit filename="..\..\dlstorm\dlstorm.h" />
+		<Unit filename="..\..\dlstorm\dlstorm_lib.h" />
+		<Unit filename="..\..\dlstorm\glerrors.cpp" />
+		<Unit filename="..\..\dlstorm\glerrors.h" />
+		<Unit filename="..\c_data.cpp" />
+		<Unit filename="..\c_data.h" />
+		<Unit filename="..\ember_game_client.cpp" />
+		<Unit filename="..\ember_game_client.h" />
+		<Unit filename="autoexec.cfg" />
+		<Unit filename="client.ini" />
+		<Unit filename="client.log" />
+		<Unit filename="config.cfg" />
+		<Unit filename="gumps\actionbar.ctrl" />
+		<Unit filename="gumps\choose_chars.gui" />
+		<Unit filename="gumps\connect.gui" />
+		<Unit filename="gumps\console.gui" />
+		<Unit filename="gumps\create_character.gui" />
+		<Unit filename="gumps\create_characters.gui" />
+		<Unit filename="gumps\editmenu.gui" />
+		<Unit filename="gumps\fav_man_add.gui" />
+		<Unit filename="gumps\fav_man_del.gui" />
+		<Unit filename="gumps\fav_man_mod.gui" />
+		<Unit filename="gumps\gameon.gui" />
+		<Unit filename="gumps\guictrledit.gui" />
+		<Unit filename="gumps\main.gui" />
+		<Unit filename="gumps\servers.gui" />
+		<Unit filename="gumps\test.gui" />
+		<Unit filename="gumps\testar.ctrl" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

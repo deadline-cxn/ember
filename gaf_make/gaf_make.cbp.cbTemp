@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="gaf_make" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\gaf_make" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="..\ember_game_client\EMBER_RESOURCES\gaf_make" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="-mwindows" />
+		</Compiler>
+		<Linker>
+			<Add library="ws2_32" />
+		</Linker>
+		<Unit filename="..\..\SDK\zlib\adler32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\deflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\gzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\infback.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inffast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\inftrees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\trees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\uncompr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\SDK\zlib\zutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\..\dlstorm\c_gaf.cpp" />
+		<Unit filename="..\..\dlstorm\c_log.cpp" />
+		<Unit filename="..\..\dlstorm\dlstorm.cpp" />
+		<Unit filename="gaf_make.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

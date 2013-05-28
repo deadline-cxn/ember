@@ -1,0 +1,16 @@
+[GUMP]
+name=gameon.gui
+caption=Game On
+action=setgamemode
+props=FM_GP_CLIENT_ONLY|FM_GP_FULLSCREEN|FM_GP_DO_NOT_DIE
+
+# Attach bottombar CTRL
+#[ATTACH]
+#name=actionbar.ctrl
+
+[CTRL]
+name=quit
+x=860
+y=25
+type=FM_GC_BUTTON
+value=X

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="ember workspace">
+		<Project filename="gaf_make/gaf_make.cbp" />
+		<Project filename="ember_game_client/ember_game_client.cbp" active="1" />
+		<Project filename="ember_game_server/ember_game_server.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

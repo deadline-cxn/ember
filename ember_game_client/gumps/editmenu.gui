@@ -1,0 +1,90 @@
+[GUMP]
+name=editmenu.gui
+gamemode=MAIN
+caption=Edit Menu
+action=setgamemode
+props=FM_GP_CLIENT_ONLY|FM_GP_MENU|FM_GP_DO_NOT_DIE|FM_GP_CLOSEX|FM_GP_MOVEABLE
+x=4
+y=4
+w=512
+h=110
+media=1
+
+[CTRL]
+name=main
+media=152
+media_hover=152
+media_click=153
+x=0
+y=18
+type=FM_GC_ACTION
+value=main
+console=setgamemode main;guiclear;guicall main.gui
+
+[CTRL]
+name=terraform
+media=34
+media_hover=34
+media_click=35
+x=32
+y=18
+type=FM_GC_ACTION
+value=terraform
+console=map.terraform
+
+[CTRL]
+name=gafrebuild
+media=150
+media_hover=150
+media_click=151
+x=64
+y=18
+type=FM_GC_ACTION
+value=gafrebuild
+console=gafrebuild
+
+[CTRL]
+name=guieditor
+media=44
+media_hover=44
+media_click=45
+x=96
+y=18
+type=FM_GC_ACTION
+value=what
+console=guicall guictrledit.gui
+
+[CTRL]
+name=console
+media=53
+media_hover=53
+media_click=76
+x=128
+y=18
+type=FM_GC_ACTION
+value=console
+console=guicall console.gui
+
+[CTRL]
+name=debug 1
+x=375
+y=18
+type=FM_GC_BUTTON
+value=  DEBUG ON
+console=set debug 1
+
+[CTRL]
+name=debug 0
+x=375
+y=44
+type=FM_GC_BUTTON
+value= DEBUG OFF
+console=set debug 0
+
+[CTRL]
+name=quit
+x=375
+y=70
+type=FM_GC_BUTTON
+value=  QUIT
+console=quit

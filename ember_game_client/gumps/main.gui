@@ -1,0 +1,100 @@
+[GUMP]
+name=main.gui
+caption=Main Menu
+action=setgamemode
+props=FM_GP_CLIENT_ONLY|FM_GP_USEBACKGROUND|FM_GP_FULLSCREEN|FM_GP_DO_NOT_DIE
+media=15
+
+#[ATTACH]
+#name=testar.ctrl
+
+[CTRL]
+name=stlogin
+x=300
+y=150
+type=FM_GC_STATIC_TEXT
+value=M A N T R A
+///^+^>FF8800
+/// username:
+
+[CTRL]
+name=stusername
+x=300
+y=200
+type=FM_GC_STATIC_TEXT
+value=Profile^6
+
+[CTRL]
+name=username
+x=390
+y=200
+w=70
+h=16
+type=FM_GC_TEXTBOX
+
+/// password:
+
+[CTRL]
+name=stpassword
+x=300
+y=220
+type=FM_GC_STATIC_TEXT
+value=Password^6
+
+[CTRL]
+name=password
+x=390
+y=220
+w=100
+h=16
+type=FM_GC_PASSWORD
+
+[CTRL]
+name=savepassword
+x=518
+y=220
+w=16
+h=16
+props=FM_GP_USEBACKGROUND
+media=7
+type=FM_GC_TICKBOX
+value=off
+
+[CTRL]
+name=stsavepassword
+x=540
+y=220
+props=FM_GP_BORDER|FM_GP_USEBACKGROUND
+border_color=0,0,0
+background_color=155,155,255
+type=FM_GC_STATIC_TEXT
+value=(save password)
+
+/// buttons
+
+[CTRL]
+name=login
+x=400
+y=275
+type=FM_GC_BUTTON
+value=    Login
+
+[CTRL]
+name=quit
+x=400
+y=310
+type=FM_GC_BUTTON
+value=     Quit     ^1
+console=quit
+
+[CTRL]
+name=edit
+x=400
+y=450
+type=FM_GC_BUTTON
+value=   EDIT MODE
+console=setgamemode edit
+
+///
+
+
