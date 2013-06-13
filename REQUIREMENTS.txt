@@ -1,0 +1,10 @@
+
+Ubuntu required development files:
+===================================================================
+
+libgl1-mesa-dev
+libglu1-mesa-dev
+libsdl1.2-dev
+
+You can install these by typing:
+sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev libsdl1.2-dev
