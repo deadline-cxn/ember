@@ -1,38 +1,38 @@
 /*
- ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
- º                                                               º
- º        .      °°°°°° °°   °° °°°°°  °°°°°° °°°°°              º
- º               °°     °°° °°± °°  °° °°     °° .°°        .    º
- º               ±±±±   ±°°°°±± ±±±±±  ±±±±   °°  ±° .           º
- º    .          ²±    .±± ± ±² ±±  ±± ²±    .±±²²±              º
- º              .²²     ²±   ²² ²² .²² ²²     ²²  ²²  .          º
- º               Û²ÛÛ²Û Û²  .²Û ²ÛÛ²²  Û²ÛÛ²Û Û²  Û²             º
- º                                                               º
- º                                                             . º
- º                    º             .        º             )     º
- º       .            ººº                  ººº                   º
- º                     ºººº              ºººº         .          º
- º                      ºººººº        ºººººº                 .   º
- º                      ººººººººº  ººººººººº                     º
- º              .       ºººººººººººººººººººº                     º
- º                      ººººº ºººººººº ºººººº         .          º
- º  .    .             ºººº    ºººººº    ºººº                    º
- º                     ººº   .  ºººº  .   ººº                    º
- º                     ººº   *;  ºº   *;  ººº   .             .  º
- º             *        ººº    ºººººº    ººº                     º
- º                      ººººººººº  ººººººººº                     º
- º                        ºººººº ºº ºººººº                       º
- º   .                    ºººººººººººººººº                       º
- º                        º ºººººººººººº º              .        º
- º        o          .     ºº ºººººººº ºº             .          º
- º                         ºº ºº ºº ºº ºº               .        º
- º             .            ºººº ºº ºººº                         º
- º   .                       ºººººººººº        .                 º
- º                             ºººººº                       .    º
- º                                                               º
- º           ABANDON ALL HOPE YE WHO LOOKS BELOW HERE!           º
- º                                                               º
- ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+ Ã‰ÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ»
+ Âº                                                               Âº
+ Âº        .      Â°Â°Â°Â°Â°Â° Â°Â°   Â°Â° Â°Â°Â°Â°Â°  Â°Â°Â°Â°Â°Â° Â°Â°Â°Â°Â°              Âº
+ Âº               Â°Â°     Â°Â°Â° Â°Â°Â± Â°Â°  Â°Â° Â°Â°     Â°Â° .Â°Â°        .    Âº
+ Âº               Â±Â±Â±Â±   Â±Â°Â°Â°Â°Â±Â± Â±Â±Â±Â±Â±  Â±Â±Â±Â±   Â°Â°  Â±Â° .           Âº
+ Âº    .          Â²Â±    .Â±Â± Â± Â±Â² Â±Â±  Â±Â± Â²Â±    .Â±Â±Â²Â²Â±              Âº
+ Âº              .Â²Â²     Â²Â±   Â²Â² Â²Â² .Â²Â² Â²Â²     Â²Â²  Â²Â²  .          Âº
+ Âº               Ã›Â²Ã›Ã›Â²Ã› Ã›Â²  .Â²Ã› Â²Ã›Ã›Â²Â²  Ã›Â²Ã›Ã›Â²Ã› Ã›Â²  Ã›Â²             Âº
+ Âº                                                               Âº
+ Âº                                                             . Âº
+ Âº                    Âº             .        Âº             )     Âº
+ Âº       .            ÂºÂºÂº                  ÂºÂºÂº                   Âº
+ Âº                     ÂºÂºÂºÂº              ÂºÂºÂºÂº         .          Âº
+ Âº                      ÂºÂºÂºÂºÂºÂº        ÂºÂºÂºÂºÂºÂº                 .   Âº
+ Âº                      ÂºÂºÂºÂºÂºÂºÂºÂºÂº  ÂºÂºÂºÂºÂºÂºÂºÂºÂº                     Âº
+ Âº              .       ÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂº                     Âº
+ Âº                      ÂºÂºÂºÂºÂº ÂºÂºÂºÂºÂºÂºÂºÂº ÂºÂºÂºÂºÂºÂº         .          Âº
+ Âº  .    .             ÂºÂºÂºÂº    ÂºÂºÂºÂºÂºÂº    ÂºÂºÂºÂº                    Âº
+ Âº                     ÂºÂºÂº   .  ÂºÂºÂºÂº  .   ÂºÂºÂº                    Âº
+ Âº                     ÂºÂºÂº   *;  ÂºÂº   *;  ÂºÂºÂº   .             .  Âº
+ Âº             *        ÂºÂºÂº    ÂºÂºÂºÂºÂºÂº    ÂºÂºÂº                     Âº
+ Âº                      ÂºÂºÂºÂºÂºÂºÂºÂºÂº  ÂºÂºÂºÂºÂºÂºÂºÂºÂº                     Âº
+ Âº                        ÂºÂºÂºÂºÂºÂº ÂºÂº ÂºÂºÂºÂºÂºÂº                       Âº
+ Âº   .                    ÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂº                       Âº
+ Âº                        Âº ÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂºÂº Âº              .        Âº
+ Âº        o          .     ÂºÂº ÂºÂºÂºÂºÂºÂºÂºÂº ÂºÂº             .          Âº
+ Âº                         ÂºÂº ÂºÂº ÂºÂº ÂºÂº ÂºÂº               .        Âº
+ Âº             .            ÂºÂºÂºÂº ÂºÂº ÂºÂºÂºÂº                         Âº
+ Âº   .                       ÂºÂºÂºÂºÂºÂºÂºÂºÂºÂº        .                 Âº
+ Âº                             ÂºÂºÂºÂºÂºÂº                       .    Âº
+ Âº                                                               Âº
+ Âº           ABANDON ALL HOPE YE WHO LOOKS BELOW HERE!           Âº
+ Âº                                                               Âº
+ ÃˆÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÃÂ¼
                          Ember Client Program                  */
 
 #define _EMBER_C
@@ -63,1573 +63,1537 @@ lua_State   *L;
  ** User members of classes                                     **
  *****************************************************************/
 
-void setgamemode(MODE m)
-{
-    pClientData->GAME_MODE=m;
+void setgamemode(MODE m) {
+	pClientData->GAME_MODE=m;
 }
 
-void C_EM_CONSOLE::_Execute(char *cmd)
-{
+void C_EM_CONSOLE::_Execute(char *cmd) {
 
-    int i;
+	int i;
 
-    C_FM_GUI_CTRL_DATA *pGD;
+	C_FM_GUI_CTRL_DATA *pGD;
 
-    pLog->_Add("CONSOLE[%s]",cmd);
+	pLog->_Add("CONSOLE[%s]",cmd);
 
-    vector <string> ncmd=explode(";",cmd);
+	vector <string> ncmd=explode(";",cmd);
 
 
-    if(ncmd.size()>1)
-    {
-        for(i=0;i<ncmd.size();i++)
-        {
-            pGUI->_ConsoleExecute((char *)ncmd[i].c_str());
-        }
-        return;
-    }
+	if(ncmd.size()>1) {
+		for(i=0; i<ncmd.size(); i++) {
+			pGUI->_ConsoleExecute((char *)ncmd[i].c_str());
+		}
+		return;
+	}
 
-    vector <string> narg=explode(" ",cmd);
-    if(narg.size()>0)
-    {
+	vector <string> narg=explode(" ",cmd);
+	if(narg.size()>0) {
 
-        /****************************************************/
+		/****************************************************/
 
-        if(dscc((char *)narg[0].c_str(),"quit"))
-        {
-            bShutDown=true;
-            return;
-        }
+		if(dscc((char *)narg[0].c_str(),"quit")) {
+			bShutDown=true;
+			return;
+		}
 
-        /****************************************************/
+		/****************************************************/
 
-        if(dscc((char *)narg[0].c_str(),"setgamemode"))
-        {
-            if(narg.size()>1)
-            {
-                if(dscc((char *)narg[1].c_str(),"edit"))
-                {
-                    pClientData->GAME_MODE=EDIT_WORLD_INIT;
-                }
+		if(dscc((char *)narg[0].c_str(),"setgamemode")) {
+			if(narg.size()>1) {
+				if(dscc((char *)narg[1].c_str(),"edit")) {
+					pClientData->GAME_MODE=EDIT_WORLD_INIT;
+				}
 
-                if(dscc((char *)narg[1].c_str(),"main"))
-                {
-                    pClientData->GAME_MODE=MAIN_MENU;
+				if(dscc((char *)narg[1].c_str(),"main")) {
+					pClientData->GAME_MODE=MAIN_MENU;
 
-                }
-            }
-        }
+				}
+			}
+		}
 
-        /****************************************************/
+		/****************************************************/
 
-        if(dscc((char *)narg[0].c_str(),"guigo"))
-        {
-            pGUI->parse(cmd);
+		if(dscc((char *)narg[0].c_str(),"guigo")) {
+			pGUI->parse(cmd);
 
-            pGD=pGUI->pFirstGUIData;
-            if(pGD)
-            {
-                if(dscc(pGD->name,"action"))
-                {
-                    if(dscc(pGD->value,"setgamemode"))
-                    {
-                        pGD=pGD->next;
-                        if(pGD)
-                        {
-                            _Execute(va("setgamemode %s",pGD->name));
-                            return;
-                        }
-                    }
-                }
-            }
-        }
+			pGD=pGUI->pFirstGUIData;
+			if(pGD) {
+				if(dscc(pGD->name,"action")) {
+					if(dscc(pGD->value,"setgamemode")) {
+						pGD=pGD->next;
+						if(pGD) {
+							_Execute(va("setgamemode %s",pGD->name));
+							return;
+						}
+					}
+				}
+			}
+		}
 
-        /****************************************************/
+		/****************************************************/
 
-        if(dscc((char *)narg[0].c_str(),"guicall"))
-        {
-            pGUI->call((char *)narg[1].c_str());
-        }
+		if(dscc((char *)narg[0].c_str(),"guicall")) {
+			pGUI->call((char *)narg[1].c_str());
+		}
 
-        /****************************************************/
-    }
+		/****************************************************/
+	}
 }
 
 /*****************************************************************/
 
-void CLog::_Add(char *fmt, ...)
-{
-    char ach[1024];
-    va_list va;
-    va_start( va, fmt );
-    vsprintf( ach, fmt, va );
-    va_end( va );
+void CLog::_Add(char *fmt, ...) {
+	char ach[1024];
+	va_list va;
+	va_start( va, fmt );
+	vsprintf( ach, fmt, va );
+	va_end( va );
 	if(ach[strlen(ach)-1]!='\n')
-    strcat(ach,"\n");
-    AddEntry(ach);
-    if(pGUI)
-        pGUI->ConsoleEntry(ach);
+		strcat(ach,"\n");
+	AddEntry(ach);
+	if(pGUI)
+		pGUI->ConsoleEntry(ach);
 }
 
 /*****************************************************************
  ** SDL main                                                    **
  *****************************************************************/
 
-int main(int argc, char *argv[])
-{
-    bShutDown=0;
-    if(doInit())
-        while(!bShutDown)
-            MainGameLoop();
-    ShutDown();
-    return 0;
+int main(int argc, char *argv[]) {
+	bShutDown=0;
+	if(doInit())
+		while(!bShutDown)
+			MainGameLoop();
+	ShutDown();
+	return 0;
 }
 
 /*****************************************************************
  **  Main Game Loop                                             **
  *****************************************************************/
 
-void MainGameLoop(void)
-{
+void MainGameLoop(void) {
 
-    int key=pGUI->ProcessKeyboard();
+	int key=pGUI->ProcessKeyboard();
 
 
-    if(key == SDLK_F12) bShutDown=true;
-    if(bShutDown) return;
+	if(key == SDLK_F12) bShutDown=true;
+	if(bShutDown) return;
 
-    if(key == SDLK_BACKQUOTE)
-    {
-        if(pGUI)
-        {
-            if(pGUI->pConsole)
-            {
-                if(pGUI->get_stump("console.gui"))
-                    pGUI->del_stump("console.gui");
-                else
-                    pGUI->pConsole->_Execute("guicall console.gui");
-            }
-        }
-    }
+	if(key == SDLK_BACKQUOTE) {
+		if(pGUI) {
+			if(pGUI->pConsole) {
+				if(pGUI->get_stump("console.gui"))
+					pGUI->del_stump("console.gui");
+				else
+					pGUI->pConsole->_Execute("guicall console.gui");
+			}
+		}
+	}
 
 
 
-    if(!pClientData) return;
+	if(!pClientData) return;
 
-/*
-    static float mcx;
-    static float mcy;
-    static bool  mclmbd;
-    static bool  mcrmbd;
+	/*
+	    static float mcx;
+	    static float mcy;
+	    static bool  mclmbd;
+	    static bool  mcrmbd;
 
-    bool what;
+	    bool what;
 
-    if(camera)
-    {
-        if(GetMouseWheelUp())
-        {
-            camera->tz++;
+	    if(camera)
+	    {
+	        if(GetMouseWheelUp())
+	        {
+	            camera->tz++;
 
-        }
+	        }
 
-        if(GetMouseWheelDown())
-        {
-            camera->tz--;
+	        if(GetMouseWheelDown())
+	        {
+	            camera->tz--;
 
-        }
+	        }
 
-        // camera->rx=-90;
-        // camera->z=9;
+	        // camera->rx=-90;
+	        // camera->z=9;
 
-        //mcx=0;
-        //mcy=0;
+	        //mcx=0;
+	        //mcy=0;
 
-        if(mcrmbd)
-        {
-            if(mcx==0) mcx=GetMouseX();
-            if(mcy==0) mcy=GetMouseY();
+	        if(mcrmbd)
+	        {
+	            if(mcx==0) mcx=GetMouseX();
+	            if(mcy==0) mcy=GetMouseY();
 
-            what=0;
+	            what=0;
 
 
-            if((mcy<GetMouseY()) && (what==0))
-            {
-                what=1;
-                camera->rx+=2;
+	            if((mcy<GetMouseY()) && (what==0))
+	            {
+	                what=1;
+	                camera->rx+=2;
 
-            }
+	            }
 
-            if((mcy>GetMouseY()) && (what==0))
-            {
-                what=1;
-                camera->rx-=2;
-            }
+	            if((mcy>GetMouseY()) && (what==0))
+	            {
+	                what=1;
+	                camera->rx-=2;
+	            }
 
-            if((mcx>GetMouseX()) && (what==0))
-            {
-                what=1;
-                camera->ry-=2;
-            }
+	            if((mcx>GetMouseX()) && (what==0))
+	            {
+	                what=1;
+	                camera->ry-=2;
+	            }
 
-            if((mcx<GetMouseX()) && (what==0))
-            {
-                what=1;
-                camera->ry+=2;
-            }
-            //if(what) SDL_WarpMouse(mcx,mcy);
-        }
-        else
-        {
-            mcx=0;
-            mcy=0;
-        }
+	            if((mcx<GetMouseX()) && (what==0))
+	            {
+	                what=1;
+	                camera->ry+=2;
+	            }
+	            //if(what) SDL_WarpMouse(mcx,mcy);
+	        }
+	        else
+	        {
+	            mcx=0;
+	            mcy=0;
+	        }
 
 
-        mcrmbd=GetMouseDown(SDL_BUTTON_RIGHT);
-        mclmbd=GetMouseDown(SDL_BUTTON_LEFT);
+	        mcrmbd=GetMouseDown(SDL_BUTTON_RIGHT);
+	        mclmbd=GetMouseDown(SDL_BUTTON_LEFT);
 
-        if(camera->rx>0)
-            camera->rx=0;
+	        if(camera->rx>0)
+	            camera->rx=0;
 
-        if(camera->rx<-60)
-            camera->rx=-60;
+	        if(camera->rx<-60)
+	            camera->rx=-60;
 
-        if((camera->tz) > (-1.0f))
-            camera->tz=-1.0f;
-        if((camera->tz) < (-40.0f))
-            camera->tz=-40.0f;
-    }
-    */
+	        if((camera->tz) > (-1.0f))
+	            camera->tz=-1.0f;
+	        if((camera->tz) < (-40.0f))
+	            camera->tz=-40.0f;
+	    }
+	    */
 
-    pGFX->BeginScene();
+	pGFX->BeginScene();
 
-    ////////////////////////////////////////////////////////
-    /*    // Set local scope vars
+	////////////////////////////////////////////////////////
+	/*    // Set local scope vars
 
-    bool    bLoader;
-    bool    bMoveInSync;
-    char    szTemp[1024];
-    char    szTemp1[1024];
-    int     i;
-    int     z;
+	bool    bLoader;
+	bool    bMoveInSync;
+	char    szTemp[1024];
+	char    szTemp1[1024];
+	int     i;
+	int     z;
 
-    CPacket *pFMMSRec;
+	CPacket *pFMMSRec;
 
-    bLoader=false;
-    bMoveInSync=true;
-    memset(szTemp,0,1024);
-    pFMMSRec=NULL;
-    */
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // Set mouse cursor
-
-    //    MOUSEMODE=MP_MENU; // Turn mouse into normal pointer for menus and such
-    // if(bTargeting) MOUSEMODE=MP_TARGET;	// Turn mouse cursor into targetting cursor (Crosshairs)
-
-    ////////////////////////////////////////////////////////////////////////////////
-
-    // DoNetwork();    // Get any network messages
-
-    pGFX->GetFade(0);     // Update faders
-
-    ////////////////////////////////////////////////////////////////////////////////
-    // Do stuff for current game mode
-
-    switch(pClientData->GAME_MODE)
-    {
-        /////////////////////////////
-        //
-        // °°°°°  °°°°°° °°°°°°°° °°°°°   °°°°     °° °°  °° °°°°°°°° °°°°°   °°°°
-        // °° .°° °°        °°  . °° .°° °°  °°    °° °°° °°    °°  . °° .°° °°  °°
-        // °°  ±° °±±±      °°    °°  ±° °±  ±±    °° °°°±±±    °°    °°  ±° °±  ±±
-        // ±±²²±  ±±        ±±    ±±²²±  ±±  ²±    ±± ±± ²²±    ±±    ±±²²±  ±±  ²±
-        // ²²  ²² ²²        ²²    ²²  ²² ²²  ²²    ²² ±² .²²    ²²    ²²  ²² ²²  ²²
-        // Û²  Û² ²ÛÛ²²Û    Û²    Û²  Û²  ÛÛÛÛ     Û² ²Û  Û²    Û²    Û²  Û²  ÛÛÛÛ
-        //
-        /////////////////////////////
-
-    case RETRO_INTRO_INIT:
-
-        pClientData->GAME_MODE=RETRO_INTRO_PLAY;
-        break;
-
-    case RETRO_INTRO_PLAY:
-
-        pClientData->GAME_MODE=MAIN_MENU;
-        break;
-
-        ///////////////////////////////////////////////////////////////////////////////////////
-        //
-        // °°   °°  °°°°. °° °°  °°     °°   °° °°°°°° °°  °° °°  °°
-        // °°° °°± °°  °° °° °°° °°     °°° °°± °°     °°° °° °°  °°
-        // ±°°°°±± °°°±±± °° °°°±±±     ±°°°°±± °±°°   °°°±±± °°  ±±
-        // ±± ± ±² ±±  ²± ±± ±± ²²±     ±± ± ±² ±±   . ±± ²²± ±±  ²²
-        // ²±   ²² ±²  ²² ±² ±² .²²     ²±   ²² ²²     ±² .²² ±² .²Û
-        // Û²  .²Û ²Û .Û² ²Û ²Û  Û²     Û²  .²Û Û²²²Û² ²Û  Û²  ÛÛÛÛ
-        //
-        ///////////////////////////////////////////////////////////////////////////////////////
-
-    case MAIN_MENU:
-
-        // if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) INPUTMODE=NORMAL;
-
-        pClientData->LAST_GAME_MODE=MAIN_MENU;
-
-        pGUI->clear();
-        pGUI->call("main.gui");
-
-        pGUI->setdata("username",pClientData->Name);
-        if(pClientData->bSavePassword)
-            pGUI->setdata("password",pClientData->Password);
-        pGUI->setdata("savepassword",va("%d",pClientData->bSavePassword));
-
-        pClientData->GAME_MODE=MAIN_MENU_2;
-
-    case MAIN_MENU_2:
-
-        pGUI->WriteText(15,pClientData->ScreenHeight-16,va("^+^1(^5%s^1)^5 %s",CPUSTRING,VERSION),0);
-        // DrawOSIcon(5,pClientData->ScreenHeight-16,CPUSTRING);
-
-        break; // End MAIN_MENU
-
-        /////////////////////////////
-        //
-        //  °°°°  °°°°°  °°°°°° °°°°°  °° °°°°°°°°  °°°°°
-        // °°  °° °° .°° °°     °°  °° °°    °°  . °° .
-        // °±     °°  ±° °±±±   °±  ±± °°    °°     °°°°
-        // ±±     ±±²²±  ±±     ±±  ²± ±±    ±±        ²±
-        // ²²  Û² ²²  ²² ²²     ²²  ²² ²²    ²²        ²²
-        //  ÛÛÛÛ  Û²  Û² ²ÛÛ²²Û ÛÛÛÛÛ  Û²    Û²    ÛÛÛÛ²
-        //
-        /////////////////////////////
-
-    case CREDITS:
-
-        pClientData->GAME_MODE=MAIN_MENU;
-        break;
-        /*
-
-        if(!dlcs_strcasecmp(va("%s%cmedia%cstandard%cgfx%ccredits.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP),pClientData->szGeneric))
-        {
-            LoadGeneric(va("%s%cmedia%cstandard%cgfx%ccredits.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP));
-            ProcessConsoleCommand("stopaudio",0);
-            ProcessConsoleCommand(va("play %s%cmedia%cstandard%csnd%ccredits.xm",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP),0);
-            // initialize the scroll here
-            fCredscroll=400;
-            INPUTMODE=NORMAL;
-            pClientData->LAST_GAME_MODE=MAIN_MENU;
-        }
-
-        if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
-        {
-            DrawGenericSurface();
-            DrawBit4ge(700,10,764,74,1);
-
-            WriteText(240,272+(int)fCredscroll,"^+^1Seth Parson.................Creator/Programming",5);
-            WriteText(240,292+(int)fCredscroll,"^+^1Stife.......................Programming",5);
-            WriteText(240,312+(int)fCredscroll,"^+^1Erik........................Website",5);
-            WriteText(240,332+(int)fCredscroll,"^+^1Melfis......................Graphics",5);
-            WriteText(240,352+(int)fCredscroll,"^+^1Dennis Paulsen..............Programming",5);
-            WriteText(240,372+(int)fCredscroll,"^+^1Jubie.......................Graphics",5);
-            WriteText(240,392+(int)fCredscroll,"^+^1Odin Jensen.................FMUE/DX Help",5);
-            WriteText(240,412+(int)fCredscroll,"^+^1Lasse S.....................DX Help",5);
-            WriteText(240,432+(int)fCredscroll,"^+^1Chris Bromley...............Test Server",5);
-            WriteText(240,452+(int)fCredscroll,"^+^1Sphinx......................Graphics",5);
-            WriteText(240,472+(int)fCredscroll,"^+^1Herbert Wolverson...........D3D 2D Iso tutorial",5);
-            WriteText(240,492+(int)fCredscroll,"^+^1Nick Taylor (Lympex)........Graphics",5);
-            WriteText(240,512+(int)fCredscroll,"^+^1Stephen D. Baynham(Slinky)..FragMENTAL Design",5);
-            WriteText(240,532+(int)fCredscroll,"^+^1icmtb.......................FragMENTAL Design",5);
-            WriteText(240,552+(int)fCredscroll,"^+^1Jonatan Borling (warhawk)...Music",5);
-            WriteText(240,572+(int)fCredscroll,"^+       ^2(www.modarchive.com/artists/warhawk)",5);
-            WriteText(240,592+(int)fCredscroll,"^+^1Stewart Leonard.............Programming",5);
-            WriteText(200,632+(int)fCredscroll,"^+^3Special thanks to everyone who keeps up with the project",5);
-            WriteText(240,652+(int)fCredscroll,"^+^eF^dr^ca^1gmere was created using the following",5);
-            WriteText(240,672+(int)fCredscroll,"^+                   ^1software development tools:",5);
-            WriteText(240,692+(int)fCredscroll,"^+^2OpenGL   ^1: ^2http^1://^2www^1.^2opengl^1.^2org^1/",5);
-            WriteText(240,712+(int)fCredscroll,"^+^4 S^7D^8L     ^1: ^2http^1://^2www^1.^2libsdl^1.^2org^1/",5);
-            WriteText(240,732+(int)fCredscroll,"^+^5  FMOD   ^1: ^2http^1://^2www^1.^2fmod^1.^2org^1/",5);
-            WriteText(240,752+(int)fCredscroll,"^+^6   LUA   ^1: ^2http^1://^2www^1.^2lua^1.^2org^1/",5);
-
-
-            if(dlcs_get_tickcount()-dwScrollTime>30)
-            {
-                dwScrollTime=dlcs_get_tickcount();
-                fCredscroll-=1;
-            }
-
-            if(fCredscroll<-800)
-                fCredscroll=400;
-
-
-            WriteText(20,580,va("^+^1(^5%s^1)^5%s",CPUSTRING,VERSION),0);
-            DrawOSIcon(10,580,CPUSTRING);
-        }
-
-        if(GetMouseRelease(SDL_BUTTON_LEFT))
-        {
-            sprintf(szTemp1,"play %s%cmedia%cstandard%csnd%cmain.xm",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP);
-            ProcessConsoleCommand(szTemp1,0);
-            pClientData->GAME_MODE=MAIN_MENU;
-        }
-
-        break;
-        */
-
-        /////////////////////////////
-        //
-        // °°      °°°°   °°°°  °°°° °°°  °°
-        // °°     °°  °° °°  °°  °°  °°°° °°
-        // °±     ±±  °° ±°      °±  °± °±±±
-        // ±±     ±±  ±± ²² ±±±  ±±  ±±. ±±±
-        // ²²     Û²  ²² ²²  ²²  ²²  Û²   ±²
-        // ÛÛÛÛÛ²  ²ÛÛÛ   ÛÛÛÛ  ÛÛ²Û Û²   ÛÛ
-        //
-        /////////////////////////////
-
-    case LOGIN_AUTO_LOGIN:
-
-        pLog->_Add("LOGIN_AUTO_LOGIN");
-        pGUI->clear();
-        pLog->_Add("execing [autologin.cfg]");
-
-        // ProcessConsoleCommand("exec autologin.cfg",0);
-
-        pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
-        break;
-
-    case LOGIN_SCREEN_ENTRY:
-
-        pLog->_Add("LOGIN_SCREEN_ENTRY");
-
-        //SDL_WM_SetCaption(va("EGC %s(%s) Net Revision(%s) %s",VERSION,CPUSTRING,NET_REVISION,COPYRIGHT),"icon");
-
-        if(pClientData)
-        {
-            pClientData->ServerListOffset=0;
+	bLoader=false;
+	bMoveInSync=true;
+	memset(szTemp,0,1024);
+	pFMMSRec=NULL;
+	*/
+
+	////////////////////////////////////////////////////////////////////////////////
+	// Set mouse cursor
+
+	//    MOUSEMODE=MP_MENU; // Turn mouse into normal pointer for menus and such
+	// if(bTargeting) MOUSEMODE=MP_TARGET;	// Turn mouse cursor into targetting cursor (Crosshairs)
+
+	////////////////////////////////////////////////////////////////////////////////
+
+	// DoNetwork();    // Get any network messages
+
+	pGFX->GetFade(0);     // Update faders
+
+	////////////////////////////////////////////////////////////////////////////////
+	// Do stuff for current game mode
+
+	switch(pClientData->GAME_MODE) {
+		/////////////////////////////
+		//
+		// Â°Â°Â°Â°Â°  Â°Â°Â°Â°Â°Â° Â°Â°Â°Â°Â°Â°Â°Â° Â°Â°Â°Â°Â°   Â°Â°Â°Â°     Â°Â° Â°Â°  Â°Â° Â°Â°Â°Â°Â°Â°Â°Â° Â°Â°Â°Â°Â°   Â°Â°Â°Â°
+		// Â°Â° .Â°Â° Â°Â°        Â°Â°  . Â°Â° .Â°Â° Â°Â°  Â°Â°    Â°Â° Â°Â°Â° Â°Â°    Â°Â°  . Â°Â° .Â°Â° Â°Â°  Â°Â°
+		// Â°Â°  Â±Â° Â°Â±Â±Â±      Â°Â°    Â°Â°  Â±Â° Â°Â±  Â±Â±    Â°Â° Â°Â°Â°Â±Â±Â±    Â°Â°    Â°Â°  Â±Â° Â°Â±  Â±Â±
+		// Â±Â±Â²Â²Â±  Â±Â±        Â±Â±    Â±Â±Â²Â²Â±  Â±Â±  Â²Â±    Â±Â± Â±Â± Â²Â²Â±    Â±Â±    Â±Â±Â²Â²Â±  Â±Â±  Â²Â±
+		// Â²Â²  Â²Â² Â²Â²        Â²Â²    Â²Â²  Â²Â² Â²Â²  Â²Â²    Â²Â² Â±Â² .Â²Â²    Â²Â²    Â²Â²  Â²Â² Â²Â²  Â²Â²
+		// Ã›Â²  Ã›Â² Â²Ã›Ã›Â²Â²Ã›    Ã›Â²    Ã›Â²  Ã›Â²  Ã›Ã›Ã›Ã›     Ã›Â² Â²Ã›  Ã›Â²    Ã›Â²    Ã›Â²  Ã›Â²  Ã›Ã›Ã›Ã›
+		//
+		/////////////////////////////
+
+	case RETRO_INTRO_INIT:
+
+		pClientData->GAME_MODE=RETRO_INTRO_PLAY;
+		break;
+
+	case RETRO_INTRO_PLAY:
+
+		pClientData->GAME_MODE=MAIN_MENU;
+		break;
+
+		///////////////////////////////////////////////////////////////////////////////////////
+		//
+		// Â°Â°   Â°Â°  Â°Â°Â°Â°. Â°Â° Â°Â°  Â°Â°     Â°Â°   Â°Â° Â°Â°Â°Â°Â°Â° Â°Â°  Â°Â° Â°Â°  Â°Â°
+		// Â°Â°Â° Â°Â°Â± Â°Â°  Â°Â° Â°Â° Â°Â°Â° Â°Â°     Â°Â°Â° Â°Â°Â± Â°Â°     Â°Â°Â° Â°Â° Â°Â°  Â°Â°
+		// Â±Â°Â°Â°Â°Â±Â± Â°Â°Â°Â±Â±Â± Â°Â° Â°Â°Â°Â±Â±Â±     Â±Â°Â°Â°Â°Â±Â± Â°Â±Â°Â°   Â°Â°Â°Â±Â±Â± Â°Â°  Â±Â±
+		// Â±Â± Â± Â±Â² Â±Â±  Â²Â± Â±Â± Â±Â± Â²Â²Â±     Â±Â± Â± Â±Â² Â±Â±   . Â±Â± Â²Â²Â± Â±Â±  Â²Â²
+		// Â²Â±   Â²Â² Â±Â²  Â²Â² Â±Â² Â±Â² .Â²Â²     Â²Â±   Â²Â² Â²Â²     Â±Â² .Â²Â² Â±Â² .Â²Ã›
+		// Ã›Â²  .Â²Ã› Â²Ã› .Ã›Â² Â²Ã› Â²Ã›  Ã›Â²     Ã›Â²  .Â²Ã› Ã›Â²Â²Â²Ã›Â² Â²Ã›  Ã›Â²  Ã›Ã›Ã›Ã›
+		//
+		///////////////////////////////////////////////////////////////////////////////////////
+
+	case MAIN_MENU:
+
+		// if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) INPUTMODE=NORMAL;
+
+		pClientData->LAST_GAME_MODE=MAIN_MENU;
+
+		pGUI->clear();
+		pGUI->call("main.gui");
+
+		pGUI->setdata("username",pClientData->Name);
+		if(pClientData->bSavePassword)
+			pGUI->setdata("password",pClientData->Password);
+		pGUI->setdata("savepassword",va("%d",pClientData->bSavePassword));
+
+		pClientData->GAME_MODE=MAIN_MENU_2;
+
+	case MAIN_MENU_2:
+
+		pGUI->WriteText(15,pClientData->ScreenHeight-16,va("^+^1(^5%s^1)^5 %s",CPUSTRING,VERSION),0);
+		// DrawOSIcon(5,pClientData->ScreenHeight-16,CPUSTRING);
+
+		break; // End MAIN_MENU
+
+		/////////////////////////////
+		//
+		//  Â°Â°Â°Â°  Â°Â°Â°Â°Â°  Â°Â°Â°Â°Â°Â° Â°Â°Â°Â°Â°  Â°Â° Â°Â°Â°Â°Â°Â°Â°Â°  Â°Â°Â°Â°Â°
+		// Â°Â°  Â°Â° Â°Â° .Â°Â° Â°Â°     Â°Â°  Â°Â° Â°Â°    Â°Â°  . Â°Â° .
+		// Â°Â±     Â°Â°  Â±Â° Â°Â±Â±Â±   Â°Â±  Â±Â± Â°Â°    Â°Â°     Â°Â°Â°Â°
+		// Â±Â±     Â±Â±Â²Â²Â±  Â±Â±     Â±Â±  Â²Â± Â±Â±    Â±Â±        Â²Â±
+		// Â²Â²  Ã›Â² Â²Â²  Â²Â² Â²Â²     Â²Â²  Â²Â² Â²Â²    Â²Â²        Â²Â²
+		//  Ã›Ã›Ã›Ã›  Ã›Â²  Ã›Â² Â²Ã›Ã›Â²Â²Ã› Ã›Ã›Ã›Ã›Ã›  Ã›Â²    Ã›Â²    Ã›Ã›Ã›Ã›Â²
+		//
+		/////////////////////////////
+
+	case CREDITS:
+
+		pClientData->GAME_MODE=MAIN_MENU;
+		break;
+		/*
+
+		if(!dlcs_strcasecmp(va("%s%cmedia%cstandard%cgfx%ccredits.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP),pClientData->szGeneric))
+		{
+		    LoadGeneric(va("%s%cmedia%cstandard%cgfx%ccredits.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP));
+		    ProcessConsoleCommand("stopaudio",0);
+		    ProcessConsoleCommand(va("play %s%cmedia%cstandard%csnd%ccredits.xm",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP),0);
+		    // initialize the scroll here
+		    fCredscroll=400;
+		    INPUTMODE=NORMAL;
+		    pClientData->LAST_GAME_MODE=MAIN_MENU;
+		}
+
+		if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
+		{
+		    DrawGenericSurface();
+		    DrawBit4ge(700,10,764,74,1);
+
+		    WriteText(240,272+(int)fCredscroll,"^+^1Seth Parson.................Creator/Programming",5);
+		    WriteText(240,292+(int)fCredscroll,"^+^1Stife.......................Programming",5);
+		    WriteText(240,312+(int)fCredscroll,"^+^1Erik........................Website",5);
+		    WriteText(240,332+(int)fCredscroll,"^+^1Melfis......................Graphics",5);
+		    WriteText(240,352+(int)fCredscroll,"^+^1Dennis Paulsen..............Programming",5);
+		    WriteText(240,372+(int)fCredscroll,"^+^1Jubie.......................Graphics",5);
+		    WriteText(240,392+(int)fCredscroll,"^+^1Odin Jensen.................FMUE/DX Help",5);
+		    WriteText(240,412+(int)fCredscroll,"^+^1Lasse S.....................DX Help",5);
+		    WriteText(240,432+(int)fCredscroll,"^+^1Chris Bromley...............Test Server",5);
+		    WriteText(240,452+(int)fCredscroll,"^+^1Sphinx......................Graphics",5);
+		    WriteText(240,472+(int)fCredscroll,"^+^1Herbert Wolverson...........D3D 2D Iso tutorial",5);
+		    WriteText(240,492+(int)fCredscroll,"^+^1Nick Taylor (Lympex)........Graphics",5);
+		    WriteText(240,512+(int)fCredscroll,"^+^1Stephen D. Baynham(Slinky)..FragMENTAL Design",5);
+		    WriteText(240,532+(int)fCredscroll,"^+^1icmtb.......................FragMENTAL Design",5);
+		    WriteText(240,552+(int)fCredscroll,"^+^1Jonatan Borling (warhawk)...Music",5);
+		    WriteText(240,572+(int)fCredscroll,"^+       ^2(www.modarchive.com/artists/warhawk)",5);
+		    WriteText(240,592+(int)fCredscroll,"^+^1Stewart Leonard.............Programming",5);
+		    WriteText(200,632+(int)fCredscroll,"^+^3Special thanks to everyone who keeps up with the project",5);
+		    WriteText(240,652+(int)fCredscroll,"^+^eF^dr^ca^1gmere was created using the following",5);
+		    WriteText(240,672+(int)fCredscroll,"^+                   ^1software development tools:",5);
+		    WriteText(240,692+(int)fCredscroll,"^+^2OpenGL   ^1: ^2http^1://^2www^1.^2opengl^1.^2org^1/",5);
+		    WriteText(240,712+(int)fCredscroll,"^+^4 S^7D^8L     ^1: ^2http^1://^2www^1.^2libsdl^1.^2org^1/",5);
+		    WriteText(240,732+(int)fCredscroll,"^+^5  FMOD   ^1: ^2http^1://^2www^1.^2fmod^1.^2org^1/",5);
+		    WriteText(240,752+(int)fCredscroll,"^+^6   LUA   ^1: ^2http^1://^2www^1.^2lua^1.^2org^1/",5);
+
+
+		    if(dlcs_get_tickcount()-dwScrollTime>30)
+		    {
+		        dwScrollTime=dlcs_get_tickcount();
+		        fCredscroll-=1;
+		    }
+
+		    if(fCredscroll<-800)
+		        fCredscroll=400;
+
+
+		    WriteText(20,580,va("^+^1(^5%s^1)^5%s",CPUSTRING,VERSION),0);
+		    DrawOSIcon(10,580,CPUSTRING);
+		}
+
+		if(GetMouseRelease(SDL_BUTTON_LEFT))
+		{
+		    sprintf(szTemp1,"play %s%cmedia%cstandard%csnd%cmain.xm",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP);
+		    ProcessConsoleCommand(szTemp1,0);
+		    pClientData->GAME_MODE=MAIN_MENU;
+		}
+
+		break;
+		*/
+
+		/////////////////////////////
+		//
+		// Â°Â°      Â°Â°Â°Â°   Â°Â°Â°Â°  Â°Â°Â°Â° Â°Â°Â°  Â°Â°
+		// Â°Â°     Â°Â°  Â°Â° Â°Â°  Â°Â°  Â°Â°  Â°Â°Â°Â° Â°Â°
+		// Â°Â±     Â±Â±  Â°Â° Â±Â°      Â°Â±  Â°Â± Â°Â±Â±Â±
+		// Â±Â±     Â±Â±  Â±Â± Â²Â² Â±Â±Â±  Â±Â±  Â±Â±. Â±Â±Â±
+		// Â²Â²     Ã›Â²  Â²Â² Â²Â²  Â²Â²  Â²Â²  Ã›Â²   Â±Â²
+		// Ã›Ã›Ã›Ã›Ã›Â²  Â²Ã›Ã›Ã›   Ã›Ã›Ã›Ã›  Ã›Ã›Â²Ã› Ã›Â²   Ã›Ã›
+		//
+		/////////////////////////////
+
+	case LOGIN_AUTO_LOGIN:
+
+		pLog->_Add("LOGIN_AUTO_LOGIN");
+		pGUI->clear();
+		pLog->_Add("execing [autologin.cfg]");
+
+		// ProcessConsoleCommand("exec autologin.cfg",0);
+
+		pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
+		break;
+
+	case LOGIN_SCREEN_ENTRY:
+
+		pLog->_Add("LOGIN_SCREEN_ENTRY");
+
+		//SDL_WM_SetCaption(va("EGC %s(%s) Net Revision(%s) %s",VERSION,CPUSTRING,NET_REVISION,COPYRIGHT),"icon");
+
+		if(pClientData) {
+			pClientData->ServerListOffset=0;
 //            pClientData->SelectedServer=MAX_SERVERS+1;
-            pClientData->Mode=PLAY;
-        }
+			pClientData->Mode=PLAY;
+		}
 //         DEL(pFMMS);
-        //LOGINMODE=LM_NONE;
-        pClientData->GAME_MODE=GATHER_SERVER_LIST;
-
-    case GATHER_SERVER_LIST:
-
-        pLog->_Add("GATHER_SERVER_LIST");
-
-        //switch(LOGINMODE)
-       // {
-       // case LM_NONE:
-       //     break;
-       // case LM_INTERNET:
-       //     DEL(pFMMS);
-       ////     pFMMS=new C_FMMS;
-       //     break;
-       // case LM_FAVORITES:
-       //     pClientData->LoadFavoriteServers();
-       //     break;
-       // case LM_LOCAL:
-       //     break;
-       // default:
-       //     break;
-       // }
-
-        pClientData->LoadProfiles();
-        pClientData->GAME_MODE=CHOOSE_SERVER;
-
-    case CHOOSE_SERVER:
-
-        //strcpy(szTemp1,"choose_server");
-        //if(strcmp(szTemp1,pClientData->szGeneric))
-        //{
-            //strcpy(pClientData->szGeneric,szTemp1);
-            //pLog->_Add("CHOOSE_SERVER");
-            // INPUTMODE=NORMAL;
-        //}
-
-        pGUI->clear();
-        pGUI->call("servers.gui");
-
-
-
-        /*
-
-        if(LOGINMODE==LM_FAVORITES)
-        {
-            if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
-            {
-                //WriteTextPct(.1875,.03,"^0Server",0);
-                //WriteTextPct(.375,.03, "^0Address",0);
-                ///WriteTextPct(.65,.03,  "^0Players",0);
-                // WriteTextPct(.775,.03 ,"^0Ping",0);
-
-
-                if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
-                {
-                    if(MouseIn(137,32,780,536))
-                    {
-                        i = pClientData->ServerListOffset+((GetMouseY()-32)/12);
-                        j = pClientData->ServerListOffset+((GetMouseY()-32)/12);
-
-                        pClientData->FavoriteServer=pClientData->FirstFavoriteServer;
-                        while(pClientData->FavoriteServer)
-                        {
-                            if(pClientData->FavoriteServer->key==i)
-                                break;
-                            pClientData->FavoriteServer=pClientData->FavoriteServer->pNext;
-                        }
-                        if(pClientData->FavoriteServer)
-                        {
-
-                            if(strlen(pClientData->FavoriteServer->name))
-                            {
-                                DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(1),100));
-                                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                                {
-                                    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
-                                    if(strlen(pClientData->FavoriteServer->name))
-                                    {
-                                        pClientData->SelectedServer=i;
-                                        strcpy(pClientData->ServerName,pClientData->FavoriteServer->name);
-                                        strcpy(pClientData->IPAddress,pClientData->FavoriteServer->ip_address);
-                                        strcpy(pClientData->Port,pClientData->FavoriteServer->port);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-
-                for(i=0+pClientData->ServerListOffset;i<pClientData->ServerListOffset+42;i++)
-                {
-                    if(i<MAX_SERVERS)
-                    {
-
-                        pClientData->FavoriteServer=pClientData->FirstFavoriteServer;
-                        while(pClientData->FavoriteServer)
-                        {
-                            if(pClientData->FavoriteServer->key==i)
-                                break;
-                            pClientData->FavoriteServer=pClientData->FavoriteServer->pNext;
-                        }
-
-                        if(!pClientData->FavoriteServer)
-                            continue;
-
-
-                        if(strlen(pClientData->FavoriteServer->name))
-                        {
-                            if(i==pClientData->SelectedServer)
-                            {
-
-                                if(i==j)
-                                   DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(3),100));
-                                else
-                                    DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),200,0),LONGRGB(0,GetFade(2),0));
-
-                            }
-
-                            //WriteText(140,(i-pClientData->ServerListOffset)*12+32,pClientData->FavoriteServer[i].user,0);
-                            WriteText(150,(i-pClientData->ServerListOffset)*12+32,va("^&%s",pClientData->FavoriteServer->name),0);
-                            WriteText(300,(i-pClientData->ServerListOffset)*12+32,va("^&%s:%s",pClientData->FavoriteServer->ip_address,pClientData->FavoriteServer->port),0);
-                            // WriteText(440,(i-pClientData->ServerListOffset)*12+32,pClientData->FavoriteServer[i].resource_id,0);
-                            // Draw OS
-                            DrawOSIcon(726,(i-pClientData->ServerListOffset)*12+32,pClientData->FavoriteServer->operating_system);
-
-                            if(pClientData->FavoriteServer->allow_new_users)
-                                strcpy(szTemp,"Q ");
-                            else
-                                strcpy(szTemp,"R ");
-
-                            if(pClientData->FavoriteServer->locked)
-                                strcat(szTemp,"L ");
-                            else
-                                strcat(szTemp,"M ");
-                            WriteText(685,(i-pClientData->ServerListOffset)*12+32,szTemp,2);
-
-                            if(pClientData->SelectedServer==i)
-                            {
-                                if(!pFMMS) pFMMS=new C_FMMS;
-
-                                pClientData->FavoriteServer->dwPing =
-                                    pFMMS->PingServer( pClientData->FavoriteServer );
-
-                                sprintf(szTemp,"^&^3%d",pClientData->FavoriteServer->dwPing);
-                                if(pClientData->FavoriteServer->dwPing>200)
-                                    sprintf(szTemp,"^&^5%d",pClientData->FavoriteServer->dwPing);
-                                if(pClientData->FavoriteServer->dwPing>500)
-                                    sprintf(szTemp,"^&^4%d",pClientData->FavoriteServer->dwPing);
-                                WriteText(620,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
-                            }
-
-                            sprintf(szTemp,"^&%d/%04d",atoi(pClientData->FavoriteServer->players),atoi(pClientData->FavoriteServer->maximum_players));
-                            WriteText(520,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
-                        }
-                    }
-                }
-                DrawButton(BC_NEXT,UP,720,550);
-
-                if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
-                {
-                    if((MouseIn(720,550,764,570)) && (GetMouseRelease(SDL_BUTTON_LEFT)) )
-                    {   DrawButton(BC_NEXT,DOWN,720,550);
-        			    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
-        			    sprintf(szTemp1,"%s%cmedia%cstandard%cgfx%cstart.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP);
-                        strcpy(pClientData->szGeneric,szTemp1);
-        			    LoadGeneric(szTemp1);
-        			    INPUTMODE=NORMAL;
-
-                        pClientData->FavoriteServer=pClientData->FirstFavoriteServer;
-                        while(pClientData->FavoriteServer)
-                        {
-                            if(pClientData->FavoriteServer->key==pClientData->SelectedServer)
-                                break;
-                            pClientData->FavoriteServer=pClientData->FavoriteServer->pNext;
-                        }
-
-                        if(pClientData->FavoriteServer)
-                            strcpy(pClientData->FavoriteServer->name,pClientData->ServerName);
-                        DEL(pFMMS);
-        			    pClientData->GAME_MODE=CONNECT;
-                        ClearGUIs();
-                        break;
-        		    }
-                }
-
-            }
-        }
-
-        if(LOGINMODE==LM_INTERNET)
-        {
-
-            if(pFMMS)
-            {
-                if(!pFMMS->bLoggedin)
-                {
-                    if( (!strlen(pClientData->MasterIPAddress)) || (!strlen(pClientData->MasterPort)) )
-                    {
-                        // pLog->_Add("Can't login to master server because configuration file is not working...");
-                        strcpy(pClientData->MasterIPAddress,"127.0.0.1");
-                    }
-                    pFMMS->Connect(pClientData->MasterIPAddress,pClientData->MasterPort);
-                }
-
-                if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
-                {
-        			//WriteTextPct(.1875,.03,"^0Server",0);
-        		//	WriteTextPct(.375,.03, "^0Address",0);
-        		//	WriteTextPct(.65,.03,  "^0Players",0);
-        		//	WriteTextPct(.775,.03 ,"^0Ping",0);
-
-                    if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
-                    {
-                        if(MouseIn(137,32,780,536))
-                        {
-                            i = pClientData->ServerListOffset+((GetMouseY()-32)/12);
-                            j = pClientData->ServerListOffset+((GetMouseY()-32)/12);
-                            if(strlen(pFMMS->pServerList[i].name))
-                            {
-                                DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(1),100));
-                                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                                {
-                                    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
-                                    if(strlen(pFMMS->pServerList[i].name))
-                                    {
-                                        pClientData->SelectedServer=i;
-                                        strcpy(pClientData->ServerName,pFMMS->pServerList[i].name);
-                                        strcpy(pClientData->IPAddress,pFMMS->pServerList[i].ip_address);
-                                        strcpy(pClientData->Port,pFMMS->pServerList[i].port);
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-
-                    for(i=0+pClientData->ServerListOffset;i<pClientData->ServerListOffset+42;i++)
-                    {
-                        if(i<MAX_SERVERS)
-                        {
-
-                            if(strlen(pFMMS->pServerList[i].name))
-                            {
-                                if(i==pClientData->SelectedServer)
-                                {
-
-                                    if(i==j)
-                                        DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(3),100));
-                                    else
-                                        DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),200,0),LONGRGB(0,GetFade(2),0));
-
-                                }
-
-                                //WriteText(140,(i-pClientData->ServerListOffset)*12+32,pFMMS->pServerList[i].user,LONGRGB(255,0,0));
-                                WriteText(150,(i-pClientData->ServerListOffset)*12+32,va("^&%s",pFMMS->pServerList[i].name),0);
-                                WriteText(300,(i-pClientData->ServerListOffset)*12+32,va("^&%s:%s",pFMMS->pServerList[i].ip_address,pFMMS->pServerList[i].port),0);
-                                // WriteText(440,(i-pClientData->ServerListOffset)*12+32,pFMMS->pServerList[i].resource_id,LONGRGB(255,0,0));
-                                // Draw OS
-                                DrawOSIcon(726,(i-pClientData->ServerListOffset)*12+32,pFMMS->pServerList[i].operating_system);
-
-                                if(pFMMS->pServerList[i].allow_new_users)
-                                    strcpy(szTemp,"Q ");
-                                else
-                                    strcpy(szTemp,"R ");
-
-                                if(pFMMS->pServerList[i].locked)
-                                    strcat(szTemp,"L ");
-                                else
-                                    strcat(szTemp,"M ");
-                                WriteText(685,(i-pClientData->ServerListOffset)*12+32,szTemp,2);
-
-                                pFMMS->pServerList[i].dwPing=pFMMS->PingServer(i);
-
-                                sprintf(szTemp,"^&^3%d",pFMMS->pServerList[i].dwPing);
-                                if(pFMMS->pServerList[i].dwPing>200)
-                                    sprintf(szTemp,"^&^5%d",pFMMS->pServerList[i].dwPing);
-                                if(pFMMS->pServerList[i].dwPing>500)
-                                    sprintf(szTemp,"^&^4%d",pFMMS->pServerList[i].dwPing);
-
-                                WriteText(620,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
-
-                                sprintf(szTemp,"^&%d/%04d",atoi(pFMMS->pServerList[i].players),atoi(pFMMS->pServerList[i].maximum_players));
-                                WriteText(520,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
-                            }
-                        }
-                    }
-                }
-
-                DrawButton(BC_NEXT,UP,720,550);
-
-                if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
-                {
-                    if((MouseIn(720,550,764,570)) && (GetMouseRelease(SDL_BUTTON_LEFT)) )
-                    {   DrawButton(BC_NEXT,DOWN,720,550);
-        			    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
-        			    sprintf(szTemp1,"%s%cmedia%cstandard%cgfx%cstart.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP);
-                        strcpy(pClientData->szGeneric,szTemp1);
-        			    LoadGeneric(szTemp1);
-        			    INPUTMODE=NORMAL;
-                        strcpy(pFMMS->pServerList[pClientData->SelectedServer].name,pClientData->ServerName);
-                        DEL(pFMMS);
-        			    pClientData->GAME_MODE=CONNECT;
-                        break;
-        		    }
-                }
-            }
-        }
-
-        // DRAW TABS ACROSS TOP TO DEFINE WHERE THE SERVER LIST IS BEING RETRIEVED
-
-        switch(LOGINMODE)
-        {
-            case LM_NONE:
-                WriteText(300,550,"^3Choose server search method",0);
-                break;
-            case LM_INTERNET:
-                WriteText(300,550,"^4Internet Search",0);
-                break;
-            case LM_FAVORITES:
-                WriteText(300,550,"^5Favorites",0);
-                break;
-            case LM_LOCAL:
-                WriteText(300,550,"^6Local (LAN)",0);
-                break;
-            default:
-                WriteText(300,550,"^1!ErRoR!",0);
-                break;
-        }
-
-
-
-        //////////////////////////////////////////////////////////////
-        // MASTER SERVER (INTERNET)
-        //           Button ~ add selected internet server to favorites
-
-        WriteText(22,22,"Internet",0);
-
-        if(LOGINMODE==LM_INTERNET)
-        {
-            WriteText(22,91, "^2Add Favorite",0);
-            if(MouseIn(20,90,120,110))
-            {
-                WriteText(22,91, "^>ffffffAdd Favorite",0);
-                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                {
-                    ClearGUIs();
-                    if(pFMMS)
-                    {
-                        if(pClientData->SelectedServer<MAX_SERVERS)
-                            pClientData->AddFavoriteServer(&pFMMS->pServerList[pClientData->SelectedServer]);
-                    }
-                }
-            }
-
-            WriteText(22,114,"^2More Info",0);
-            if(MouseIn(20,112,120,132))
-            {
-
-                WriteText(22,114,"^>ffffffMore Info",0);
-            }
-
-        }
-
-        //////////////////////////////////////////////////////////////
-        // FAVORITES
-        //           Button ~ enter ip address
-        //           Button ~ delete selected favorite
-
-        WriteText(22,45,"Favorites",0);
-
-        if(LOGINMODE==LM_FAVORITES)
-        {
-            WriteText(22,91, "^5Manual entry",0);
-            if(MouseIn(20,90,120,110))
-            {
-                WriteText(22,91, "^>ffffffManual entry",0);
-                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                {
-                    ClearGUIs();
-
-                    pGUI->call("fav_man_add.gui");
-
-                }
-            }
-            WriteText(22,114,"^5Discard",0);
-            if(MouseIn(20,112,120,132))
-            {
-                WriteText(22,114,"^>ffffffDiscard",0);
-                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                {
-                    ClearGUIs();
-
-                    if(pClientData->SelectedServer<MAX_SERVERS)
-                    {
-                        pGUI->call("fav_man_del.gui");
-
-                        gui->get_stump("fav_man_del.gui")->get_control("name")->set_value(pClientData->ServerName);
-                        gui->get_stump("fav_man_del.gui")->get_control("ip_address")->set_value(pClientData->IPAddress);
-                        gui->get_stump("fav_man_del.gui")->get_control("port")->set_value(pClientData->Port);
-                        gui->get_stump("fav_man_del.gui")->get_control("id")->set_value(va("%d",pClientData->SelectedServer));
-
-                    }
-                }
-            }
-            WriteText(22,137,"^5Edit",0);
-            if(MouseIn(20,136,120,156))
-            {
-                WriteText(22,137,"^>ffffffEdit",0);
-                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                {
-                    ClearGUIs();
-
-                    if(pClientData->SelectedServer<MAX_SERVERS)
-                    {
-                        gui->call(va("%s%cgumps%cfav_man_mod.gui",pClientData->GDDir,PATH_SEP,PATH_SEP));
-
-                        gui->get_stump("fav_man_mod.gui")->get_control("name")->set_value(pClientData->ServerName);
-                        gui->get_stump("fav_man_mod.gui")->get_control("ip_address")->set_value(pClientData->IPAddress);
-                        gui->get_stump("fav_man_mod.gui")->get_control("port")->set_value(pClientData->Port);
-                        gui->get_stump("fav_man_mod.gui")->get_control("id")->set_value(va("%d",pClientData->SelectedServer));
-
-                    }
-                }
-            }
-        }
-
-        //////////////////////////////////////////////////////////////
-        // LOCAL (LAN)
-        //           Button ~ autodiscover
-        //           Button ~ enter ip address
-        //           Button ~ add to favorites
-
-        WriteText(22,68,"Local (LAN)",0);
-
-        if(LOGINMODE==LM_LOCAL)
-        {
-            WriteText(22,91,"^6Auto-Detect",0);
-            if(MouseIn(20,90,120,110))
-            {
-                WriteText(22,91,"^>ffffffAuto-Detect",0);
-                if(GetMouseRelease(SDL_BUTTON_LEFT))
-                {
-                    ClearGUIs();
-                }
-            }
-        }
-
-        DrawGUIResource(BC_BLANK_BUTTON  ,760,  34, 770,  44);
-        DrawGUIResourceC(BC_ARROW_UP     ,761,  35, 769,  43,0,0,0); // up arrow
-        DrawGUIResource(BC_BLANK_BUTTON  ,760, 320, 770, 330);
-        DrawGUIResourceC(BC_ARROW_DOWN   ,761, 321, 769, 329,0,0,0); // down arrow
-        DrawGUIResource(BC_SCROLLBAR_UD  ,760,  45, 770, 319); // updown slide bar
-
-        DrawButton(BC_BACK,UP,40,550);
-
-        if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
-        {
-            // Back button
-            if( MouseIn(40,550,84,570))
-            {
-                if( GetMouseRelease(SDL_BUTTON_LEFT) )
-                {
-                    DrawButton(BC_BACK,DOWN,40,550);
-                    ProcessConsoleCommand("disconnect",0);
-        		    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
-                    DEL(pFMMS);
-                    ClearGUIs();
-
-                    pClientData->GAME_MODE=MAIN_MENU;
-                    break;
-                }
-        	}
-
-            // Internet
-            if( MouseIn(20,20,120,40) )
-            {
-                WriteText(22,22,"^>ffffffInternet",0);
-
-                if( GetMouseRelease(SDL_BUTTON_LEFT) )
-                {
-                    LOGINMODE=LM_INTERNET;
-                    pClientData->GAME_MODE=GATHER_SERVER_LIST;
-
-                    ClearGUIs();
-                    break;
-                }
-            }
-
-            // Favorites
-            if( MouseIn(20,43,120,63) )
-            {
-                WriteText(22,45,"^>ffffffFavorites",0);
-
-                if( GetMouseRelease(SDL_BUTTON_LEFT) )
-                {
-                    LOGINMODE=LM_FAVORITES;
-                    pClientData->GAME_MODE=GATHER_SERVER_LIST;
-
-                    ClearGUIs();
-                    break;
-                }
-            }
-
-            // Local (LAN)
-            if( MouseIn(20,65,120,85) )
-            {
-                WriteText(22,68,"^>ffffffLocal (LAN)",0);
-
-                if( GetMouseRelease(SDL_BUTTON_LEFT) )
-                {
-                    LOGINMODE=LM_LOCAL;
-                    pClientData->GAME_MODE=GATHER_SERVER_LIST;
-
-                    ClearGUIs();
-                    break;
-                }
-            }
-        }
-        */
-
-        break;
-
-        /////////////////////////////
-
-    case CONNECT:
-
-        pLog->_Add("CONNECT");
-
-        pGUI->clear();// ClearGUIs();
-
-
-        strcpy(pClientData->ServerID,"s001-frag-mere");
-        if( (!strlen(pClientData->Name)) ||
-                (!strlen(pClientData->Password)) )
-        {
-            pGUI->Prompt("Must enter user info           to proceed.","nop");
-            pClientData->GAME_MODE=GATHER_SERVER_LIST;
-            break;
-        }
-
-        strcpy(pClientData->IPAddress,"127.0.0.1");
-        strcpy(pClientData->Port,"40403");
-
-        // Run the connect command through the console...
-
-
-        // ProcessConsoleCommand(va("connect %s:%s %s %s",                                 pClientData->IPAddress,pClientData->Port,                                 pClientData->Name,pClientData->Password),1);
-
-        break; // End CONNECT
-
-    case CONSOLE_CONNECT:
-
-        pLog->_Add("CONSOLE_CONNECT");
-
-        pGUI->clear();
-        pGUI->call("connect.gui");
-
-        //NetworkSetup();
-        //NetworkConnect();
-        //pFMGS->dMsgTime=dlcs_get_tickcount();
-
-        // ProcessConsoleCommand("stopaudio",0);
-
-        pClientData->GAME_MODE=LOGIN_RECV;
-        break;
-
-        /////////////////////////////
-
-    case LOGIN_RECV: // Spin loop for logging in
-        pLog->_Add("LOGIN_RECV");
-
-        //MOUSEMODE=MP_SYSTEMBUSY;
-
-        pGUI->WriteText(270,270,"^&^7Connecting to the server...",0);
-
-        /*
-
-        if((dlcs_get_tickcount()-pFMGS->dMsgTime) > NET_WAITFORANSWER)
-        {
-            pGUI->Prompt("^&^6No response from server^1!","nop");
-            pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
-        }
-        */
-
-        break; // End LOGIN_RECV
-
-        //////////////////////////////
-
-    case GET_SERVER_INFORMATION_START:
-        pLog->_Add("GET_SERVER_INFORMATION_START");
-
-/*        SendData.Reset();
-        SendData.Write((char)NETMSG_SERVERINFORMATION);
-        SendData.Write((char)1);
-        SendNetMessage(0);
-        */
-        pClientData->GAME_MODE=GET_SERVER_INFORMATION_SPIN;
-
-
-    case GET_SERVER_INFORMATION_SPIN:
-        pLog->_Add("GET_SERVER_INFORMATION_SPIN");
-
-        //MOUSEMODE=MP_SYSTEMBUSY;
-        pGUI->WriteText(270,270,"^&^7Updating Server Information...",0);
-
-
-/*
-        if((dlcs_get_tickcount()-pFMGS->dMsgTime) > NET_WAITFORANSWER)
-        {
-            pGUI->Prompt("^&^6No response from server^1!","nop");
-            pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
-        }
-        */
-
-        break;
-
-        /////////////////////////////
-
-    case GET_CHARACTERS:
-        pLog->_Add("GET_CHARACTERS");
+		//LOGINMODE=LM_NONE;
+		pClientData->GAME_MODE=GATHER_SERVER_LIST;
+
+	case GATHER_SERVER_LIST:
+
+		pLog->_Add("GATHER_SERVER_LIST");
+
+		//switch(LOGINMODE)
+		// {
+		// case LM_NONE:
+		//     break;
+		// case LM_INTERNET:
+		//     DEL(pFMMS);
+		////     pFMMS=new C_FMMS;
+		//     break;
+		// case LM_FAVORITES:
+		//     pClientData->LoadFavoriteServers();
+		//     break;
+		// case LM_LOCAL:
+		//     break;
+		// default:
+		//     break;
+		// }
+
+		pClientData->LoadProfiles();
+		pClientData->GAME_MODE=CHOOSE_SERVER;
+
+	case CHOOSE_SERVER:
+
+		//strcpy(szTemp1,"choose_server");
+		//if(strcmp(szTemp1,pClientData->szGeneric))
+		//{
+		//strcpy(pClientData->szGeneric,szTemp1);
+		//pLog->_Add("CHOOSE_SERVER");
+		// INPUTMODE=NORMAL;
+		//}
+
+		pGUI->clear();
+		pGUI->call("servers.gui");
+
+
+
+		/*
+
+		if(LOGINMODE==LM_FAVORITES)
+		{
+		    if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
+		    {
+		        //WriteTextPct(.1875,.03,"^0Server",0);
+		        //WriteTextPct(.375,.03, "^0Address",0);
+		        ///WriteTextPct(.65,.03,  "^0Players",0);
+		        // WriteTextPct(.775,.03 ,"^0Ping",0);
+
+
+		        if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
+		        {
+		            if(MouseIn(137,32,780,536))
+		            {
+		                i = pClientData->ServerListOffset+((GetMouseY()-32)/12);
+		                j = pClientData->ServerListOffset+((GetMouseY()-32)/12);
+
+		                pClientData->FavoriteServer=pClientData->FirstFavoriteServer;
+		                while(pClientData->FavoriteServer)
+		                {
+		                    if(pClientData->FavoriteServer->key==i)
+		                        break;
+		                    pClientData->FavoriteServer=pClientData->FavoriteServer->pNext;
+		                }
+		                if(pClientData->FavoriteServer)
+		                {
+
+		                    if(strlen(pClientData->FavoriteServer->name))
+		                    {
+		                        DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(1),100));
+		                        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		                        {
+		                            ProcessConsoleCommand(pClientData->PlayMouseLB,0);
+		                            if(strlen(pClientData->FavoriteServer->name))
+		                            {
+		                                pClientData->SelectedServer=i;
+		                                strcpy(pClientData->ServerName,pClientData->FavoriteServer->name);
+		                                strcpy(pClientData->IPAddress,pClientData->FavoriteServer->ip_address);
+		                                strcpy(pClientData->Port,pClientData->FavoriteServer->port);
+		                            }
+		                        }
+		                    }
+		                }
+		            }
+		        }
+
+
+		        for(i=0+pClientData->ServerListOffset;i<pClientData->ServerListOffset+42;i++)
+		        {
+		            if(i<MAX_SERVERS)
+		            {
+
+		                pClientData->FavoriteServer=pClientData->FirstFavoriteServer;
+		                while(pClientData->FavoriteServer)
+		                {
+		                    if(pClientData->FavoriteServer->key==i)
+		                        break;
+		                    pClientData->FavoriteServer=pClientData->FavoriteServer->pNext;
+		                }
+
+		                if(!pClientData->FavoriteServer)
+		                    continue;
+
+
+		                if(strlen(pClientData->FavoriteServer->name))
+		                {
+		                    if(i==pClientData->SelectedServer)
+		                    {
+
+		                        if(i==j)
+		                           DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(3),100));
+		                        else
+		                            DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),200,0),LONGRGB(0,GetFade(2),0));
+
+		                    }
+
+		                    //WriteText(140,(i-pClientData->ServerListOffset)*12+32,pClientData->FavoriteServer[i].user,0);
+		                    WriteText(150,(i-pClientData->ServerListOffset)*12+32,va("^&%s",pClientData->FavoriteServer->name),0);
+		                    WriteText(300,(i-pClientData->ServerListOffset)*12+32,va("^&%s:%s",pClientData->FavoriteServer->ip_address,pClientData->FavoriteServer->port),0);
+		                    // WriteText(440,(i-pClientData->ServerListOffset)*12+32,pClientData->FavoriteServer[i].resource_id,0);
+		                    // Draw OS
+		                    DrawOSIcon(726,(i-pClientData->ServerListOffset)*12+32,pClientData->FavoriteServer->operating_system);
+
+		                    if(pClientData->FavoriteServer->allow_new_users)
+		                        strcpy(szTemp,"Q ");
+		                    else
+		                        strcpy(szTemp,"R ");
+
+		                    if(pClientData->FavoriteServer->locked)
+		                        strcat(szTemp,"L ");
+		                    else
+		                        strcat(szTemp,"M ");
+		                    WriteText(685,(i-pClientData->ServerListOffset)*12+32,szTemp,2);
+
+		                    if(pClientData->SelectedServer==i)
+		                    {
+		                        if(!pFMMS) pFMMS=new C_FMMS;
+
+		                        pClientData->FavoriteServer->dwPing =
+		                            pFMMS->PingServer( pClientData->FavoriteServer );
+
+		                        sprintf(szTemp,"^&^3%d",pClientData->FavoriteServer->dwPing);
+		                        if(pClientData->FavoriteServer->dwPing>200)
+		                            sprintf(szTemp,"^&^5%d",pClientData->FavoriteServer->dwPing);
+		                        if(pClientData->FavoriteServer->dwPing>500)
+		                            sprintf(szTemp,"^&^4%d",pClientData->FavoriteServer->dwPing);
+		                        WriteText(620,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
+		                    }
+
+		                    sprintf(szTemp,"^&%d/%04d",atoi(pClientData->FavoriteServer->players),atoi(pClientData->FavoriteServer->maximum_players));
+		                    WriteText(520,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
+		                }
+		            }
+		        }
+		        DrawButton(BC_NEXT,UP,720,550);
+
+		        if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
+		        {
+		            if((MouseIn(720,550,764,570)) && (GetMouseRelease(SDL_BUTTON_LEFT)) )
+		            {   DrawButton(BC_NEXT,DOWN,720,550);
+					    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
+					    sprintf(szTemp1,"%s%cmedia%cstandard%cgfx%cstart.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP);
+		                strcpy(pClientData->szGeneric,szTemp1);
+					    LoadGeneric(szTemp1);
+					    INPUTMODE=NORMAL;
+
+		                pClientData->FavoriteServer=pClientData->FirstFavoriteServer;
+		                while(pClientData->FavoriteServer)
+		                {
+		                    if(pClientData->FavoriteServer->key==pClientData->SelectedServer)
+		                        break;
+		                    pClientData->FavoriteServer=pClientData->FavoriteServer->pNext;
+		                }
+
+		                if(pClientData->FavoriteServer)
+		                    strcpy(pClientData->FavoriteServer->name,pClientData->ServerName);
+		                DEL(pFMMS);
+					    pClientData->GAME_MODE=CONNECT;
+		                ClearGUIs();
+		                break;
+				    }
+		        }
+
+		    }
+		}
+
+		if(LOGINMODE==LM_INTERNET)
+		{
+
+		    if(pFMMS)
+		    {
+		        if(!pFMMS->bLoggedin)
+		        {
+		            if( (!strlen(pClientData->MasterIPAddress)) || (!strlen(pClientData->MasterPort)) )
+		            {
+		                // pLog->_Add("Can't login to master server because configuration file is not working...");
+		                strcpy(pClientData->MasterIPAddress,"127.0.0.1");
+		            }
+		            pFMMS->Connect(pClientData->MasterIPAddress,pClientData->MasterPort);
+		        }
+
+		        if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
+		        {
+					//WriteTextPct(.1875,.03,"^0Server",0);
+				//	WriteTextPct(.375,.03, "^0Address",0);
+				//	WriteTextPct(.65,.03,  "^0Players",0);
+				//	WriteTextPct(.775,.03 ,"^0Ping",0);
+
+		            if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
+		            {
+		                if(MouseIn(137,32,780,536))
+		                {
+		                    i = pClientData->ServerListOffset+((GetMouseY()-32)/12);
+		                    j = pClientData->ServerListOffset+((GetMouseY()-32)/12);
+		                    if(strlen(pFMMS->pServerList[i].name))
+		                    {
+		                        DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(1),100));
+		                        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		                        {
+		                            ProcessConsoleCommand(pClientData->PlayMouseLB,0);
+		                            if(strlen(pFMMS->pServerList[i].name))
+		                            {
+		                                pClientData->SelectedServer=i;
+		                                strcpy(pClientData->ServerName,pFMMS->pServerList[i].name);
+		                                strcpy(pClientData->IPAddress,pFMMS->pServerList[i].ip_address);
+		                                strcpy(pClientData->Port,pFMMS->pServerList[i].port);
+		                            }
+		                        }
+		                    }
+		                }
+		            }
+
+
+		            for(i=0+pClientData->ServerListOffset;i<pClientData->ServerListOffset+42;i++)
+		            {
+		                if(i<MAX_SERVERS)
+		                {
+
+		                    if(strlen(pFMMS->pServerList[i].name))
+		                    {
+		                        if(i==pClientData->SelectedServer)
+		                        {
+
+		                            if(i==j)
+		                                DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),0,200),LONGRGB(110,GetFade(3),100));
+		                            else
+		                                DrawBar(153,(i-pClientData->ServerListOffset)*12+33,759,(i-pClientData->ServerListOffset)*12+33+13,LONGRGB(GetFade(1),200,0),LONGRGB(0,GetFade(2),0));
+
+		                        }
+
+		                        //WriteText(140,(i-pClientData->ServerListOffset)*12+32,pFMMS->pServerList[i].user,LONGRGB(255,0,0));
+		                        WriteText(150,(i-pClientData->ServerListOffset)*12+32,va("^&%s",pFMMS->pServerList[i].name),0);
+		                        WriteText(300,(i-pClientData->ServerListOffset)*12+32,va("^&%s:%s",pFMMS->pServerList[i].ip_address,pFMMS->pServerList[i].port),0);
+		                        // WriteText(440,(i-pClientData->ServerListOffset)*12+32,pFMMS->pServerList[i].resource_id,LONGRGB(255,0,0));
+		                        // Draw OS
+		                        DrawOSIcon(726,(i-pClientData->ServerListOffset)*12+32,pFMMS->pServerList[i].operating_system);
+
+		                        if(pFMMS->pServerList[i].allow_new_users)
+		                            strcpy(szTemp,"Q ");
+		                        else
+		                            strcpy(szTemp,"R ");
+
+		                        if(pFMMS->pServerList[i].locked)
+		                            strcat(szTemp,"L ");
+		                        else
+		                            strcat(szTemp,"M ");
+		                        WriteText(685,(i-pClientData->ServerListOffset)*12+32,szTemp,2);
+
+		                        pFMMS->pServerList[i].dwPing=pFMMS->PingServer(i);
+
+		                        sprintf(szTemp,"^&^3%d",pFMMS->pServerList[i].dwPing);
+		                        if(pFMMS->pServerList[i].dwPing>200)
+		                            sprintf(szTemp,"^&^5%d",pFMMS->pServerList[i].dwPing);
+		                        if(pFMMS->pServerList[i].dwPing>500)
+		                            sprintf(szTemp,"^&^4%d",pFMMS->pServerList[i].dwPing);
+
+		                        WriteText(620,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
+
+		                        sprintf(szTemp,"^&%d/%04d",atoi(pFMMS->pServerList[i].players),atoi(pFMMS->pServerList[i].maximum_players));
+		                        WriteText(520,(i-pClientData->ServerListOffset)*12+32,szTemp,0);
+		                    }
+		                }
+		            }
+		        }
+
+		        DrawButton(BC_NEXT,UP,720,550);
+
+		        if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
+		        {
+		            if((MouseIn(720,550,764,570)) && (GetMouseRelease(SDL_BUTTON_LEFT)) )
+		            {   DrawButton(BC_NEXT,DOWN,720,550);
+					    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
+					    sprintf(szTemp1,"%s%cmedia%cstandard%cgfx%cstart.bmp",pClientData->FMDir,PATH_SEP,PATH_SEP,PATH_SEP,PATH_SEP);
+		                strcpy(pClientData->szGeneric,szTemp1);
+					    LoadGeneric(szTemp1);
+					    INPUTMODE=NORMAL;
+		                strcpy(pFMMS->pServerList[pClientData->SelectedServer].name,pClientData->ServerName);
+		                DEL(pFMMS);
+					    pClientData->GAME_MODE=CONNECT;
+		                break;
+				    }
+		        }
+		    }
+		}
+
+		// DRAW TABS ACROSS TOP TO DEFINE WHERE THE SERVER LIST IS BEING RETRIEVED
+
+		switch(LOGINMODE)
+		{
+		    case LM_NONE:
+		        WriteText(300,550,"^3Choose server search method",0);
+		        break;
+		    case LM_INTERNET:
+		        WriteText(300,550,"^4Internet Search",0);
+		        break;
+		    case LM_FAVORITES:
+		        WriteText(300,550,"^5Favorites",0);
+		        break;
+		    case LM_LOCAL:
+		        WriteText(300,550,"^6Local (LAN)",0);
+		        break;
+		    default:
+		        WriteText(300,550,"^1!ErRoR!",0);
+		        break;
+		}
+
+
+
+		//////////////////////////////////////////////////////////////
+		// MASTER SERVER (INTERNET)
+		//           Button ~ add selected internet server to favorites
+
+		WriteText(22,22,"Internet",0);
+
+		if(LOGINMODE==LM_INTERNET)
+		{
+		    WriteText(22,91, "^2Add Favorite",0);
+		    if(MouseIn(20,90,120,110))
+		    {
+		        WriteText(22,91, "^>ffffffAdd Favorite",0);
+		        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		        {
+		            ClearGUIs();
+		            if(pFMMS)
+		            {
+		                if(pClientData->SelectedServer<MAX_SERVERS)
+		                    pClientData->AddFavoriteServer(&pFMMS->pServerList[pClientData->SelectedServer]);
+		            }
+		        }
+		    }
+
+		    WriteText(22,114,"^2More Info",0);
+		    if(MouseIn(20,112,120,132))
+		    {
+
+		        WriteText(22,114,"^>ffffffMore Info",0);
+		    }
+
+		}
+
+		//////////////////////////////////////////////////////////////
+		// FAVORITES
+		//           Button ~ enter ip address
+		//           Button ~ delete selected favorite
+
+		WriteText(22,45,"Favorites",0);
+
+		if(LOGINMODE==LM_FAVORITES)
+		{
+		    WriteText(22,91, "^5Manual entry",0);
+		    if(MouseIn(20,90,120,110))
+		    {
+		        WriteText(22,91, "^>ffffffManual entry",0);
+		        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		        {
+		            ClearGUIs();
+
+		            pGUI->call("fav_man_add.gui");
+
+		        }
+		    }
+		    WriteText(22,114,"^5Discard",0);
+		    if(MouseIn(20,112,120,132))
+		    {
+		        WriteText(22,114,"^>ffffffDiscard",0);
+		        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		        {
+		            ClearGUIs();
+
+		            if(pClientData->SelectedServer<MAX_SERVERS)
+		            {
+		                pGUI->call("fav_man_del.gui");
+
+		                gui->get_stump("fav_man_del.gui")->get_control("name")->set_value(pClientData->ServerName);
+		                gui->get_stump("fav_man_del.gui")->get_control("ip_address")->set_value(pClientData->IPAddress);
+		                gui->get_stump("fav_man_del.gui")->get_control("port")->set_value(pClientData->Port);
+		                gui->get_stump("fav_man_del.gui")->get_control("id")->set_value(va("%d",pClientData->SelectedServer));
+
+		            }
+		        }
+		    }
+		    WriteText(22,137,"^5Edit",0);
+		    if(MouseIn(20,136,120,156))
+		    {
+		        WriteText(22,137,"^>ffffffEdit",0);
+		        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		        {
+		            ClearGUIs();
+
+		            if(pClientData->SelectedServer<MAX_SERVERS)
+		            {
+		                gui->call(va("%s%cgumps%cfav_man_mod.gui",pClientData->GDDir,PATH_SEP,PATH_SEP));
+
+		                gui->get_stump("fav_man_mod.gui")->get_control("name")->set_value(pClientData->ServerName);
+		                gui->get_stump("fav_man_mod.gui")->get_control("ip_address")->set_value(pClientData->IPAddress);
+		                gui->get_stump("fav_man_mod.gui")->get_control("port")->set_value(pClientData->Port);
+		                gui->get_stump("fav_man_mod.gui")->get_control("id")->set_value(va("%d",pClientData->SelectedServer));
+
+		            }
+		        }
+		    }
+		}
+
+		//////////////////////////////////////////////////////////////
+		// LOCAL (LAN)
+		//           Button ~ autodiscover
+		//           Button ~ enter ip address
+		//           Button ~ add to favorites
+
+		WriteText(22,68,"Local (LAN)",0);
+
+		if(LOGINMODE==LM_LOCAL)
+		{
+		    WriteText(22,91,"^6Auto-Detect",0);
+		    if(MouseIn(20,90,120,110))
+		    {
+		        WriteText(22,91,"^>ffffffAuto-Detect",0);
+		        if(GetMouseRelease(SDL_BUTTON_LEFT))
+		        {
+		            ClearGUIs();
+		        }
+		    }
+		}
+
+		DrawGUIResource(BC_BLANK_BUTTON  ,760,  34, 770,  44);
+		DrawGUIResourceC(BC_ARROW_UP     ,761,  35, 769,  43,0,0,0); // up arrow
+		DrawGUIResource(BC_BLANK_BUTTON  ,760, 320, 770, 330);
+		DrawGUIResourceC(BC_ARROW_DOWN   ,761, 321, 769, 329,0,0,0); // down arrow
+		DrawGUIResource(BC_SCROLLBAR_UD  ,760,  45, 770, 319); // updown slide bar
+
+		DrawButton(BC_BACK,UP,40,550);
+
+		if((INPUTMODE!=CONSOLE1)&&((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)))
+		{
+		    // Back button
+		    if( MouseIn(40,550,84,570))
+		    {
+		        if( GetMouseRelease(SDL_BUTTON_LEFT) )
+		        {
+		            DrawButton(BC_BACK,DOWN,40,550);
+		            ProcessConsoleCommand("disconnect",0);
+				    ProcessConsoleCommand(pClientData->PlayMouseLB,0);
+		            DEL(pFMMS);
+		            ClearGUIs();
+
+		            pClientData->GAME_MODE=MAIN_MENU;
+		            break;
+		        }
+			}
+
+		    // Internet
+		    if( MouseIn(20,20,120,40) )
+		    {
+		        WriteText(22,22,"^>ffffffInternet",0);
+
+		        if( GetMouseRelease(SDL_BUTTON_LEFT) )
+		        {
+		            LOGINMODE=LM_INTERNET;
+		            pClientData->GAME_MODE=GATHER_SERVER_LIST;
+
+		            ClearGUIs();
+		            break;
+		        }
+		    }
+
+		    // Favorites
+		    if( MouseIn(20,43,120,63) )
+		    {
+		        WriteText(22,45,"^>ffffffFavorites",0);
+
+		        if( GetMouseRelease(SDL_BUTTON_LEFT) )
+		        {
+		            LOGINMODE=LM_FAVORITES;
+		            pClientData->GAME_MODE=GATHER_SERVER_LIST;
+
+		            ClearGUIs();
+		            break;
+		        }
+		    }
+
+		    // Local (LAN)
+		    if( MouseIn(20,65,120,85) )
+		    {
+		        WriteText(22,68,"^>ffffffLocal (LAN)",0);
+
+		        if( GetMouseRelease(SDL_BUTTON_LEFT) )
+		        {
+		            LOGINMODE=LM_LOCAL;
+		            pClientData->GAME_MODE=GATHER_SERVER_LIST;
+
+		            ClearGUIs();
+		            break;
+		        }
+		    }
+		}
+		*/
+
+		break;
+
+		/////////////////////////////
+
+	case CONNECT:
+
+		pLog->_Add("CONNECT");
+
+		pGUI->clear();// ClearGUIs();
+
+
+		strcpy(pClientData->ServerID,"s001-frag-mere");
+		if( (!strlen(pClientData->Name)) ||
+		        (!strlen(pClientData->Password)) ) {
+			pGUI->Prompt("Must enter user info           to proceed.","nop");
+			pClientData->GAME_MODE=GATHER_SERVER_LIST;
+			break;
+		}
+
+		strcpy(pClientData->IPAddress,"127.0.0.1");
+		strcpy(pClientData->Port,"40403");
+
+		// Run the connect command through the console...
+
+
+		// ProcessConsoleCommand(va("connect %s:%s %s %s",                                 pClientData->IPAddress,pClientData->Port,                                 pClientData->Name,pClientData->Password),1);
+
+		break; // End CONNECT
+
+	case CONSOLE_CONNECT:
+
+		pLog->_Add("CONSOLE_CONNECT");
+
+		pGUI->clear();
+		pGUI->call("connect.gui");
+
+		//NetworkSetup();
+		//NetworkConnect();
+		//pFMGS->dMsgTime=dlcs_get_tickcount();
+
+		// ProcessConsoleCommand("stopaudio",0);
+
+		pClientData->GAME_MODE=LOGIN_RECV;
+		break;
+
+		/////////////////////////////
+
+	case LOGIN_RECV: // Spin loop for logging in
+		pLog->_Add("LOGIN_RECV");
+
+		//MOUSEMODE=MP_SYSTEMBUSY;
+
+		pGUI->WriteText(270,270,"^&^7Connecting to the server...",0);
+
+		/*
+
+		if((dlcs_get_tickcount()-pFMGS->dMsgTime) > NET_WAITFORANSWER)
+		{
+		    pGUI->Prompt("^&^6No response from server^1!","nop");
+		    pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
+		}
+		*/
+
+		break; // End LOGIN_RECV
+
+		//////////////////////////////
+
+	case GET_SERVER_INFORMATION_START:
+		pLog->_Add("GET_SERVER_INFORMATION_START");
+
+		/*        SendData.Reset();
+		        SendData.Write((char)NETMSG_SERVERINFORMATION);
+		        SendData.Write((char)1);
+		        SendNetMessage(0);
+		        */
+		pClientData->GAME_MODE=GET_SERVER_INFORMATION_SPIN;
+
+
+	case GET_SERVER_INFORMATION_SPIN:
+		pLog->_Add("GET_SERVER_INFORMATION_SPIN");
+
+		//MOUSEMODE=MP_SYSTEMBUSY;
+		pGUI->WriteText(270,270,"^&^7Updating Server Information...",0);
+
+
+		/*
+		        if((dlcs_get_tickcount()-pFMGS->dMsgTime) > NET_WAITFORANSWER)
+		        {
+		            pGUI->Prompt("^&^6No response from server^1!","nop");
+		            pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
+		        }
+		        */
+
+		break;
+
+		/////////////////////////////
+
+	case GET_CHARACTERS:
+		pLog->_Add("GET_CHARACTERS");
 
 
 
 //        for(i=0; i<MAX_TOONS; i++)
-  //      {
-    //        memset(pClientData->ServerCharacter[i].t_name,0,32);
-      //  }
+		//      {
+		//        memset(pClientData->ServerCharacter[i].t_name,0,32);
+		//  }
 
 //        SendData.Reset();
-  //      SendData.Write((char)NETMSG_RETRIEVECHARS);
-    //    SendData.Write((char)1);
-      //  SendNetMessage(0);
-        pClientData->GAME_MODE=GET_CHARACTERS_SPIN;
-        break;
+		//      SendData.Write((char)NETMSG_RETRIEVECHARS);
+		//    SendData.Write((char)1);
+		//  SendNetMessage(0);
+		pClientData->GAME_MODE=GET_CHARACTERS_SPIN;
+		break;
 
-    case GET_CHARACTERS_SPIN:
+	case GET_CHARACTERS_SPIN:
 
 //        MOUSEMODE=MP_SYSTEMBUSY;
-        pGUI->WriteText(270,270,"^&^7Downloading character information...",0);
+		pGUI->WriteText(270,270,"^&^7Downloading character information...",0);
 
-        /*
-        if((dlcs_get_tickcount()-pFMGS->dMsgTime) > NET_WAITFORANSWER)
-        {
-            pGUI->Prompt("^&^6No response from server^1!","nop");
-            pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
-        }
-        */
-        break;
+		/*
+		if((dlcs_get_tickcount()-pFMGS->dMsgTime) > NET_WAITFORANSWER)
+		{
+		    pGUI->Prompt("^&^6No response from server^1!","nop");
+		    pClientData->GAME_MODE=LOGIN_SCREEN_ENTRY;
+		}
+		*/
+		break;
 
 
-    case CHOOSE_CHARACTER:
+	case CHOOSE_CHARACTER:
 
-        //strcpy(szTemp1,"character");
-        //if(strcmp(szTemp1,pClientData->szGeneric))
-         //   strcpy(pClientData->szGeneric,szTemp1);
+		//strcpy(szTemp1,"character");
+		//if(strcmp(szTemp1,pClientData->szGeneric))
+		//   strcpy(pClientData->szGeneric,szTemp1);
 
-       // pGUI->clear();
-       //pGUI->call("choose_chars.gui");
+		// pGUI->clear();
+		//pGUI->call("choose_chars.gui");
 
-      //  for(i=0; i<MAX_TOONS; i++)
-      //  {
+		//  for(i=0; i<MAX_TOONS; i++)
+		//  {
 //            pClientData->ServerCharacter[i].t_name[strlen(pClientData->ServerCharacter[i].t_name)-1]=0;
 
-         //   if(strlen(pClientData->ServerCharacter[i].t_name))
-         //   {
-               // if(!dlcs_strcasecmp(pClientData->ServerCharacter[i].t_name,"null"))
-               // {
+		//   if(strlen(pClientData->ServerCharacter[i].t_name))
+		//   {
+		// if(!dlcs_strcasecmp(pClientData->ServerCharacter[i].t_name,"null"))
+		// {
 
-                  //  pLog->_Add(pClientData->ServerCharacter[i].t_name);
+		//  pLog->_Add(pClientData->ServerCharacter[i].t_name);
 
 //                    gc=0;
 
-                 //   pLog->_Add(va("toon_%d",i+1));
+		//   pLog->_Add(va("toon_%d",i+1));
 
 //                    gc=pGUI->first_gui_stump->get_control(va("toon_%d",i+1));
 
-                 //   pLog->_Add("%d",gc);
+		//   pLog->_Add("%d",gc);
 
-                //    if(gc)
-                 //   {
-                 //       pLog->_Add("hi !!! %s",pClientData->ServerCharacter[i].t_name);
-                  //      gc->set_value(va("%s",pClientData->ServerCharacter[i].t_name));
-                  //  }
-          //      }
-       //     }
-     //   }
-
-
-        pClientData->GAME_MODE=CHOOSE_CHARACTER_SPIN;
-
-    case CHOOSE_CHARACTER_SPIN:
-
-        // pClientData->GAME_MODE=GATHER_GAME_DATA;
+		//    if(gc)
+		//   {
+		//       pLog->_Add("hi !!! %s",pClientData->ServerCharacter[i].t_name);
+		//      gc->set_value(va("%s",pClientData->ServerCharacter[i].t_name));
+		//  }
+		//      }
+		//     }
+		//   }
 
 
-        break;
+		pClientData->GAME_MODE=CHOOSE_CHARACTER_SPIN;
+
+	case CHOOSE_CHARACTER_SPIN:
+
+		// pClientData->GAME_MODE=GATHER_GAME_DATA;
 
 
-    case CREATE_CHARACTER:
-
-        //strcpy(szTemp1,"create_character");
-        //if(strcmp(szTemp1,pClientData->szGeneric))
-         //   strcpy(pClientData->szGeneric,szTemp1);
-
-        pGUI->clear();
-
-        pGUI->call("create_character.gui");
+		break;
 
 
-        pClientData->GAME_MODE=CREATE_CHARACTER_SPIN;
+	case CREATE_CHARACTER:
 
-        break;
+		//strcpy(szTemp1,"create_character");
+		//if(strcmp(szTemp1,pClientData->szGeneric))
+		//   strcpy(pClientData->szGeneric,szTemp1);
 
+		pGUI->clear();
 
-    case CREATE_CHARACTER_SPIN:
-
-
-        break;
-
-
-    case CREATE_CHARACTER_SEND:
-
-        break;
-
-    case CREATE_CHARACTER_SEND_SPIN:
-
-        break;
+		pGUI->call("create_character.gui");
 
 
+		pClientData->GAME_MODE=CREATE_CHARACTER_SPIN;
 
-        /////////////////////////////
+		break;
 
-    case GATHER_GAME_DATA: // Logged in, now get all data needed
 
-        pGUI->clear();//ClearGUIs();
+	case CREATE_CHARACTER_SPIN:
 
-        pLog->_Add("===============================================================");
-        if(!strlen(pClientData->ServerName)) strcpy(pClientData->ServerName,"Ember Server");
-        pLog->_Add("Server Name.....%s",pClientData->ServerName);
-        if(!strlen(pClientData->szServerVersion)) strcpy(pClientData->szServerVersion,"v??.??.???");
-        pLog->_Add("Server Version..%s",pClientData->szServerVersion); // Extracted at login time
-        if(!strlen(pClientData->ServerID)) strcpy(pClientData->ServerID,"S001-EMBE-R001");
-        pLog->_Add("Server ID.......%s",pClientData->ServerID);
-        if(!strlen(pClientData->ServerAuthor)) strcpy(pClientData->ServerAuthor,"Admin");
-        pLog->_Add("Administrator...%s",pClientData->ServerAuthor);
-        pLog->_Add("===============================================================");
 
-        SDL_WM_SetCaption(va("EGC %s(%s) [%s]",VERSION,CPUSTRING,pClientData->ServerName),"icon"); // nr(%s) ,NET_REVISION
+		break;
 
-        pClientData->GAME_MODE=GATHER_GAME_DATA_LOADER;
-        break;
 
-        /////////////////////////////
+	case CREATE_CHARACTER_SEND:
 
-    case GATHER_GAME_DATA_LOADER:
+		break;
+
+	case CREATE_CHARACTER_SEND_SPIN:
+
+		break;
+
+
+
+		/////////////////////////////
+
+	case GATHER_GAME_DATA: // Logged in, now get all data needed
+
+		pGUI->clear();//ClearGUIs();
+
+		pLog->_Add("===============================================================");
+		if(!strlen(pClientData->ServerName)) strcpy(pClientData->ServerName,"Ember Server");
+		pLog->_Add("Server Name.....%s",pClientData->ServerName);
+		if(!strlen(pClientData->szServerVersion)) strcpy(pClientData->szServerVersion,"v??.??.???");
+		pLog->_Add("Server Version..%s",pClientData->szServerVersion); // Extracted at login time
+		if(!strlen(pClientData->ServerID)) strcpy(pClientData->ServerID,"S001-EMBE-R001");
+		pLog->_Add("Server ID.......%s",pClientData->ServerID);
+		if(!strlen(pClientData->ServerAuthor)) strcpy(pClientData->ServerAuthor,"Admin");
+		pLog->_Add("Administrator...%s",pClientData->ServerAuthor);
+		pLog->_Add("===============================================================");
+
+		SDL_WM_SetCaption(va("EGC %s(%s) [%s]",VERSION,CPUSTRING,pClientData->ServerName),"icon"); // nr(%s) ,NET_REVISION
+
+		pClientData->GAME_MODE=GATHER_GAME_DATA_LOADER;
+		break;
+
+		/////////////////////////////
+
+	case GATHER_GAME_DATA_LOADER:
 
 //        MOUSEMODE=MP_SYSTEMBUSY;
-        //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
-        pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
-        pClientData->NEXT_GAME_MODE=LOGIN_PROGRAM_START;
+		//if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
+		pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
+		pClientData->NEXT_GAME_MODE=LOGIN_PROGRAM_START;
 
-        //pFMGS->dMsgTime=dlcs_get_tickcount();
+		//pFMGS->dMsgTime=dlcs_get_tickcount();
 
-        //GAME_MODE=WAIT_LOOP;
-        //SendData.Reset();
-        //SendData.Write((char)NETMSG_GET_LOGIN_PROGRAM);
-        //SendData.Write((char)1);
-        //SendNetMessage(0);
-        //break;
+		//GAME_MODE=WAIT_LOOP;
+		//SendData.Reset();
+		//SendData.Write((char)NETMSG_GET_LOGIN_PROGRAM);
+		//SendData.Write((char)1);
+		//SendNetMessage(0);
+		//break;
 
-    case LOGIN_PROGRAM_START:
+	case LOGIN_PROGRAM_START:
 
-        //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
-        pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
-        pClientData->NEXT_GAME_MODE=LOGIN_PROGRAM_END;
+		//if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
+		pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
+		pClientData->NEXT_GAME_MODE=LOGIN_PROGRAM_END;
 
-        // wait for login program from the server, it will be fetched in NET_UTIL
+		// wait for login program from the server, it will be fetched in NET_UTIL
 
-        pClientData->GAME_MODE=LOGIN_PROGRAM_END; // when user completed the program...
+		pClientData->GAME_MODE=LOGIN_PROGRAM_END; // when user completed the program...
 
-        break;
+		break;
 
-    case LOGIN_PROGRAM_END:
+	case LOGIN_PROGRAM_END:
 
-        pClientData->GAME_MODE=INITIALIZE_GAME;
-        pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
-        pClientData->NEXT_GAME_MODE=INITIALIZE_GAME;
+		pClientData->GAME_MODE=INITIALIZE_GAME;
+		pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
+		pClientData->NEXT_GAME_MODE=INITIALIZE_GAME;
 
-        break;
+		break;
 
-    case INITIALIZE_GAME:
+	case INITIALIZE_GAME:
 
-        pGUI->clear();
-        pGUI->call("gameon.gui");
+		pGUI->clear();
+		pGUI->call("gameon.gui");
 
-/*        camera->px=0;
-        camera->py=0;
-        camera->pz=0;
+		/*        camera->px=0;
+		        camera->py=0;
+		        camera->pz=0;
 
-        camera->vx=0;
-        camera->vy=0;
-        camera->vz=0;
+		        camera->vx=0;
+		        camera->vy=0;
+		        camera->vz=0;
 
-        camera->ux=0;
-        camera->uy=0;
-        camera->uz=0;
-        */
+		        camera->ux=0;
+		        camera->uy=0;
+		        camera->uz=0;
+		        */
 
-        // ProcessConsoleCommand("set consolebmp console.bmp",0);
+		// ProcessConsoleCommand("set consolebmp console.bmp",0);
 
-        pLog->_Add("Done initializing player setup...");
+		pLog->_Add("Done initializing player setup...");
 
-        pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
-        pClientData->NEXT_GAME_MODE=ITEM_INITIALIZE;
-        pClientData->GAME_MODE=ITEM_INITIALIZE;
+		pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
+		pClientData->NEXT_GAME_MODE=ITEM_INITIALIZE;
+		pClientData->GAME_MODE=ITEM_INITIALIZE;
 
-        break;
-        //
-        //
-        //
-        //
-        //
-        /////////////////////////////
+		break;
+		//
+		//
+		//
+		//
+		//
+		/////////////////////////////
 
-    case ITEM_INITIALIZE:
+	case ITEM_INITIALIZE:
 
 
 
-        pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
-        pClientData->NEXT_GAME_MODE=GAME_ON;
-        pClientData->GAME_MODE=GAME_LIMBO;
-        break;
-        //
-        //
-        //
-        //
-        //
-        /////////////////////////////
+		pClientData->LAST_GAME_MODE=LOGIN_SCREEN_ENTRY;
+		pClientData->NEXT_GAME_MODE=GAME_ON;
+		pClientData->GAME_MODE=GAME_LIMBO;
+		break;
+		//
+		//
+		//
+		//
+		//
+		/////////////////////////////
 
-    case GAME_ON:
+	case GAME_ON:
 
-        pGFX->RenderScene();
-        break; // End GAME_ON
+		pGFX->RenderScene();
+		break; // End GAME_ON
 
-    case GAME_LIMBO:
-        pClientData->NEXT_GAME_MODE=GAME_ON;
-        pClientData->GAME_MODE=GAME_ON;
-        break;
+	case GAME_LIMBO:
+		pClientData->NEXT_GAME_MODE=GAME_ON;
+		pClientData->GAME_MODE=GAME_ON;
+		break;
 
-        /////////////////////////////
+		/////////////////////////////
 
-    case QUIT:
+	case QUIT:
 
-    case DEBUG_LOOP:
+	case DEBUG_LOOP:
 
-        //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
-       // {
+		//if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
+		// {
 
-       // }
+		// }
 
-        break; // End DEBUG_LOOP
+		break; // End DEBUG_LOOP
 
-    case WAIT_LOOP:
+	case WAIT_LOOP:
 
-        //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
-        //{
+		//if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false))
+		//{
 
-        //}
-        /*
-        if(dlcs_get_tickcount()-pFMGS->dMsgTime>10000)
-        {
-            pGUI->Prompt("Timed out","nop");
-            pClientData->GAME_MODE=pClientData->LAST_GAME_MODE;
-        }
-        */
-        break; // End DEBUG_LOOP
+		//}
+		/*
+		if(dlcs_get_tickcount()-pFMGS->dMsgTime>10000)
+		{
+		    pGUI->Prompt("Timed out","nop");
+		    pClientData->GAME_MODE=pClientData->LAST_GAME_MODE;
+		}
+		*/
+		break; // End DEBUG_LOOP
 
-    case EDIT_WORLD_INIT:
+	case EDIT_WORLD_INIT:
 
-        pLog->_Add("Edit World Init Start");
+		pLog->_Add("Edit World Init Start");
 
-        pGUI->clear();
-        pGUI->call("editmenu.gui");
+		pGUI->clear();
+		pGUI->call("editmenu.gui");
 
-        pClientData->bDrawMap=false;
-        pClientData->Mode=BUILD;
+		pClientData->bDrawMap=false;
+		pClientData->Mode=BUILD;
 
-        pLog->_Add("Edit World Init End");
+		pLog->_Add("Edit World Init End");
 
-        pClientData->GAME_MODE=EDIT_WORLD;
+		pClientData->GAME_MODE=EDIT_WORLD;
 
-    case EDIT_WORLD:
+	case EDIT_WORLD:
 
-        // pLog->_Add("Game mode: EDIT_WORLD start");
+		// pLog->_Add("Game mode: EDIT_WORLD start");
 
-        pGFX->RenderScene();
+		pGFX->RenderScene();
 
-        // pLog->_Add("Game mode: EDIT_WORLD end");
+		// pLog->_Add("Game mode: EDIT_WORLD end");
 
-    break;
+		break;
 
-    default:
-        break; // End switch(GAME_MODE)
-    }
+	default:
+		break; // End switch(GAME_MODE)
+	}
 
-    /// END OF GAME MODE SPECIFICS
+	/// END OF GAME MODE SPECIFICS
 
-    /////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
 
-    pGUI->draw();
+	pGUI->draw();
 
-    /////////////////////////////////////////////
-    // Flip the back buffer to the primary buffer
+	/////////////////////////////////////////////
+	// Flip the back buffer to the primary buffer
 
-    pGFX->FlipSurfaces();
+	pGFX->FlipSurfaces();
 
 } // End MAINGAMELOOP
 
 /***********************************************************************************/
 
-GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath)
-{
-    switch(ElmInfo->Type)
-    {
-    case GAFELMTYPE_FILE:
+GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
+	switch(ElmInfo->Type) {
+	case GAFELMTYPE_FILE:
 
-        pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
+		pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
 
-        break;
+		break;
 
-    case GAFELMTYPE_DIR:
+	case GAFELMTYPE_DIR:
 
-        pLog->_Add("<DIR> %25s ",ElmInfo->Name);
+		pLog->_Add("<DIR> %25s ",ElmInfo->Name);
 
-        break;
+		break;
 
-    default:
-        break;
-    }
-    return 0;
+	default:
+		break;
+	}
+	return 0;
 }
 
 
 
-bool doInit(void)
-{
-    /////////////////////////////////////////////////////////////////////////////////
-    // Zeroize pointers
+bool doInit(void) {
+	/////////////////////////////////////////////////////////////////////////////////
+	// Zeroize pointers
 
-    pClientData     = NULL;
-    pGFX            = NULL;
-    pLog            = NULL;
-    pGAF			= NULL;
-    pGUI            = NULL;
+	pClientData     = NULL;
+	pGFX            = NULL;
+	pLog            = NULL;
+	pGAF			= NULL;
+	pGUI            = NULL;
 
-    //pFMGS           = NULL;
+	//pFMGS           = NULL;
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // Fill random seed with time for better randomizing
+	/////////////////////////////////////////////////////////////////////////////////
+	// Fill random seed with time for better randomizing
 
-    srand((int)dlcs_get_tickcount());
+	srand((int)dlcs_get_tickcount());
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // Create the Log
+	/////////////////////////////////////////////////////////////////////////////////
+	// Create the Log
 
-    pLog = new CLog("client.log");
-    if(!pLog) return FALSE;
-    pLog->On();
-    pLog->LineFeedsOff();
-    pLog->Restart();
-    pLog->AddLineSep();
+	pLog = new CLog("client.log");
+	if(!pLog) return FALSE;
+	pLog->On();
+	pLog->LineFeedsOff();
+	pLog->Restart();
+	pLog->AddLineSep();
 
-    pLog->_Add("Log created");
+	pLog->_Add("Log created");
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // Load in client.ini
+	/////////////////////////////////////////////////////////////////////////////////
+	// Load in client.ini
 
-    pLog->_Add("Setting up Client Data");
+	pLog->_Add("Setting up Client Data");
 
-    pClientData = new CC_Data;
-    if(!pClientData)
-        return FALSE;
-    pClientData->bLoad();
+	pClientData = new CC_Data;
+	if(!pClientData)
+		return FALSE;
+	pClientData->bLoad();
 
-    if(!pClientData->bLog) pLog->Off();
+	if(!pClientData->bLog) pLog->Off();
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // Create GAF File
+	/////////////////////////////////////////////////////////////////////////////////
+	// Create GAF File
 
-    pLog->_Add("Setting up GAF");
+	pLog->_Add("Setting up GAF");
 
-    pGAF = new CGAF();
-    if(!pGAF) return 0;
-    pGAF->Open("ember.gaf");
+	pGAF = new CGAF();
+	if(!pGAF) return 0;
+	pGAF->Open("ember.gaf");
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // SDL
+	/////////////////////////////////////////////////////////////////////////////////
+	// SDL
 
-    pLog->_Add("Starting SDL");
+	pLog->_Add("Starting SDL");
 
-    SDL_Init(SDL_INIT_EVENTTHREAD);
+	SDL_Init(SDL_INIT_EVENTTHREAD);
 
-    /////////////////////////////////////////////////////////////////////////////////
-    // sound
+	/////////////////////////////////////////////////////////////////////////////////
+	// sound
 
-    pLog->_Add("Setting up SND");
-
-
-    pSND=new C_Sound();
-
-    if(!pSND)
-    {
-        pLog->_Add("Sound can not be initialized, turning off sound and music");
-        pClientData->bMusic=false;
-        pClientData->bSound=false;
-    }
-    else
-    {
-        pSND->SetSoundVolume((pClientData->fSoundVolume*255));
-        pSND->SetMusicVolume((pClientData->fMusicVolume*255));
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////
-    // Initialize GFX
-
-    pLog->_Add("Setting up GFX");
-
-    pGFX = new C_GFX(   pClientData->ScreenWidth,
-                        pClientData->ScreenHeight,
-                        pClientData->ScreenColors,
-                        pClientData->bFullScreen,
-                        va("EGC %s(%s)  %s",VERSION,CPUSTRING,COPYRIGHT), // Net Revision(%s) NET_REVISION,
-                        pLog, pGAF );
-
-    if(!pGFX)
-    {
-        pLog->_Add("pGFX initialization failure, quitting");
-        return 0;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////
-    // GUI
-
-    pLog->_Add("Setting up GUI");
-
-    pGUI = new C_FM_GUI(pGFX,pGAF,pLog);
-
-    if(!pGUI)
-    {
-        pLog->_Add("pGUI initialization failure, quitting");
-        return 0;
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////
-
-    NET_Init();
-
-    pClientData->LAST_GAME_MODE=MAIN_MENU; // Start off with the main menu
-    pClientData->GAME_MODE=RETRO_INTRO_INIT; // what the
-
-    pLog->_Add("execing [autoexec.cfg]");
-
-    // ProcessConsoleCommand("exec autoexec.cfg",0);
-
-    pLog->_Add("execing [config.cfg]");
-
-    // ProcessConsoleCommand("exec config.cfg",0);
+	pLog->_Add("Setting up SND");
 
 
-    // SDL_PeepEvents(SDL_PEEKEVENT);
+	pSND=new C_Sound();
 
-    return TRUE;
+	if(!pSND) {
+		pLog->_Add("Sound can not be initialized, turning off sound and music");
+		pClientData->bMusic=false;
+		pClientData->bSound=false;
+	} else {
+		pSND->SetSoundVolume((pClientData->fSoundVolume*255));
+		pSND->SetMusicVolume((pClientData->fMusicVolume*255));
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// Initialize GFX
+
+	pLog->_Add("Setting up GFX");
+
+	pGFX = new C_GFX(   pClientData->ScreenWidth,
+	                    pClientData->ScreenHeight,
+	                    pClientData->ScreenColors,
+	                    pClientData->bFullScreen,
+	                    va("EGC %s(%s)  %s",VERSION,CPUSTRING,COPYRIGHT), // Net Revision(%s) NET_REVISION,
+	                    pLog, pGAF );
+
+	if(!pGFX) {
+		pLog->_Add("pGFX initialization failure, quitting");
+		return 0;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+	// GUI
+
+	pLog->_Add("Setting up GUI");
+
+	pGUI = new C_FM_GUI(pGFX,pGAF,pLog);
+
+	if(!pGUI) {
+		pLog->_Add("pGUI initialization failure, quitting");
+		return 0;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
+
+	NET_Init();
+
+	pClientData->LAST_GAME_MODE=MAIN_MENU; // Start off with the main menu
+	pClientData->GAME_MODE=RETRO_INTRO_INIT; // what the
+
+	pLog->_Add("execing [autoexec.cfg]");
+
+	// ProcessConsoleCommand("exec autoexec.cfg",0);
+
+	pLog->_Add("execing [config.cfg]");
+
+	// ProcessConsoleCommand("exec config.cfg",0);
+
+
+	// SDL_PeepEvents(SDL_PEEKEVENT);
+
+	return TRUE;
 }
 
 /***************************************************************
  **  Shut Down the Program                                    **
  ***************************************************************/
 
-void ShutDown(void)
-{
-    // ProcessConsoleCommand("disconnect",0);
-    // ProcessConsoleCommand("stopaudio",0);
+void ShutDown(void) {
+	// ProcessConsoleCommand("disconnect",0);
+	// ProcessConsoleCommand("stopaudio",0);
 
 
-    DEL(pSND);
-    DEL(pGUI);
+	DEL(pSND);
+	DEL(pGUI);
 
 //    DEL(pFMGS);
 //    DEL(pFMMS);
 
-    NET_Shutdown();
+	NET_Shutdown();
 
-    if(pClientData)
-    {
-        pClientData->bSave();
-        pLog->_Add("Client data saved...");
-        pClientData->CleanUp();
-        DEL(pClientData);
-        pLog->_Add("Client data destroyed...");
-    }
+	if(pClientData) {
+		pClientData->bSave();
+		pLog->_Add("Client data saved...");
+		pClientData->CleanUp();
+		DEL(pClientData);
+		pLog->_Add("Client data destroyed...");
+	}
 
-    DEL(pGFX);
+	DEL(pGFX);
 
-    pGAF->Close();
-    DEL(pGAF);
+	pGAF->Close();
+	DEL(pGAF);
 
 
-    ///////////////////////////////////////////////////
-    // Finish shutting down
+	///////////////////////////////////////////////////
+	// Finish shutting down
 
-    pLog->_Add("Ember engine shut down!");
+	pLog->_Add("Ember engine shut down!");
 
-    if(pLog)
-    {
-        pLog->AddLineSep();
-        DEL(pLog);
-    }
-    bShutDown=true;
+	if(pLog) {
+		pLog->AddLineSep();
+		DEL(pLog);
+	}
+	bShutDown=true;
 }
 
 
@@ -1686,7 +1650,7 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             case ';':
                 if(cQuoteCount&1)
                 {
-                    szInputCopy[i]='Æ';
+                    szInputCopy[i]='Ã†';
                     break;
                 }
                 else
@@ -1731,7 +1695,7 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             {
                 for(j=i;j<strlen(szInputCopy);j++) szInputCopy[j]=szInputCopy[j+1];
             }
-            if(szInputCopy[i]=='Æ') szInputCopy[i]=';';
+            if(szInputCopy[i]=='Ã†') szInputCopy[i]=';';
         }
         ProcessConsoleCommand(szInputCopy,0);
         return;
@@ -2856,9 +2820,9 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
         return;
     }
 
-    //****************************************************************
-//     *                      Network COMMANDS                        *
-  //   ****************************************************************
+// ****************************************************************
+// *                      Network COMMANDS                        *
+// ****************************************************************
 
     ///////////////////////////////////////////////////////////////////////
     // CC! (Console command)
@@ -3046,9 +3010,9 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
     }
 
 
-    /****************************************************************
-     *              End Of Network COMMANDS                         *
-     ****************************************************************
+//     ****************************************************************
+//     *              End Of Network COMMANDS                         *
+//     ****************************************************************
 
 
 
@@ -3251,6 +3215,9 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             ikey = SDLK_F14;
         if(dlcs_strcasecmp(szInput,"f15"))
             ikey = SDLK_F15;
+			 */
+			 
+			 
         /*
         if(dlcs_strcasecmp(szInput,"kana"))
             ikey = SDLK_KANA;
@@ -3264,19 +3231,24 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             ikey = SDLK_YEN;
         if(dlcs_strcasecmp(szInput,"abnt_c2"))
             ikey = SDLK_ABNT_C2; // Numpad . on Portugese (Brazilian) keyboards
-            *
+            */
+			/*
         if(dlcs_strcasecmp(szInput,"numpad_equals"))
             ikey = SDLK_KP_EQUALS;
+			 */
         /*
         if(dlcs_strcasecmp(szInput,"circumflex"))
             ikey = SDLK_CIRCUMFLEX;
-            *
+            */
+			
+			/*
         if(dlcs_strcasecmp(szInput,"at"))
             ikey = SDLK_AT;
         if(dlcs_strcasecmp(szInput,"colon"))
             ikey = SDLK_COLON;
         if(dlcs_strcasecmp(szInput,"_"))
             ikey = SDLK_UNDERSCORE;
+			 */
         /*
         if(dlcs_strcasecmp(szInput,"kanji"))
             ikey = SDLK_KANJI;
@@ -3288,11 +3260,15 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             ikey = SDLK_UNLABELED;
         if(dlcs_strcasecmp(szInput,"nexttrack"))
             ikey = SDLK_NEXTTRACK; // Next Track Key?
-            *
+            */
+			
+			/*
+			 
         if(dlcs_strcasecmp(szInput,"numpad_enter"))
             ikey = SDLK_KP_ENTER;
         if(dlcs_strcasecmp(szInput,"r_control"))
             ikey = SDLK_RCTRL;
+			 */
         /*
         if(dlcs_strcasecmp(szInput,"mute"))
             ikey = SDLK_MUTE; // Mute Key?
@@ -3310,13 +3286,18 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             ikey = SDLK_WEBHOME; // Web home Key?
         if(dlcs_strcasecmp(szInput,"numpad_comma"))
             ikey = SDLK_NUMPADCOMMA;
-            *
+            */
+			
+			/*
         if(dlcs_strcasecmp(szInput,"/"))
             ikey = SDLK_KP_DIVIDE;
+			 */
         /*
         if(dlcs_strcasecmp(szInput,"sysrq"))
             ikey = SDLK_SYSRQ;
-            *
+            */
+			
+			/*
         if(dlcs_strcasecmp(szInput,"r_alt"))
             ikey = SDLK_RALT;
         if(dlcs_strcasecmp(szInput,"pause"))
@@ -3345,13 +3326,17 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             ikey = SDLK_LSUPER;
         if(dlcs_strcasecmp(szInput,"r_windows"))
             ikey = SDLK_RSUPER;
+			 */
         /*
         if(dlcs_strcasecmp(szInput,"start"))
             ikey = SDLK_START;
-            *
+            */
+			
+		/*
 
         if(dlcs_strcasecmp(szInput,"power"))
             ikey = SDLK_POWER;
+			 */
         /*
         if(dlcs_strcasecmp(szInput,"sleep"))
             ikey = SDLK_SLEEP;
@@ -3375,7 +3360,9 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             ikey = SDLK_MAIL;
         if(dlcs_strcasecmp(szInput,"mediaselect"))
             ikey = SDLK_MEDIASELECT;
-            *
+            */
+			
+			/*
 
         if((ikey>0)&&(ikey<SDLK_LAST))
         {
@@ -3392,11 +3379,11 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
             }
             strcpy(pGUI->Key[ikey].Command,szInput);
             for(i=0;i<strlen(pGUI->Key[ikey].Command);i++)
-                if(pGUI->Key[ikey].Command[i]=='Æ')
+                if(pGUI->Key[ikey].Command[i]=='Ã†')
                     pGUI->Key[ikey].Command[i]=';';
             strcpy(szInputCopy,szCommand);
             for(i=0;i<strlen(szInputCopy);i++)
-                if(szInputCopy[i]=='Æ')
+                if(szInputCopy[i]=='Ã†')
                     szInputCopy[i]=';';
             if(bEcho)   //bEcho indicates a manual change to the binds. Save the binds if bEcho!
             {
@@ -4198,4 +4185,3 @@ extern "C" void ex_ProcessConsoleCommand(char *szCommandIn, bool bEcho)
 
 
 */
-

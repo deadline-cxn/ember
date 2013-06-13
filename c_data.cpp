@@ -6,116 +6,106 @@
 #include "SDL.h"
 
 /***************************************************************
-
-CFM_Character::CFM_Character()
-{
+CFM_Character::CFM_Character(){
     memset(t_name,0,32);
 }
-
+ */
 /***************************************************************
+CFM_Character::~CFM_Character(){
+}
+ */
+ 
+/***************************************************************/
 
-CFM_Character::~CFM_Character()
-{
+CFM_Profile::CFM_Profile() {
+	memset(name,0,32);
+	memset(passwd,0,32);
+	savepw=0;
+	pNext=NULL;
+}
+
+/***************************************************************/
+
+CFM_Profile::~CFM_Profile() {
 
 }
 
 /***************************************************************/
 
-CFM_Profile::CFM_Profile()
-{
-    memset(name,0,32);
-    memset(passwd,0,32);
-    savepw=0;
-    pNext=NULL;
-}
-
-/***************************************************************/
-
-CFM_Profile::~CFM_Profile()
-{
-
-}
-
-/***************************************************************/
-
-CC_Data::CC_Data()
-{
-    //Log("Creating Client Data...");
+CC_Data::CC_Data() {
+	//Log("Creating Client Data...");
 
 	x=0;
 	y=0;
 	z=0;
 
-    //	ServerInfo=new C_ServerInformation;
+	//	ServerInfo=new C_ServerInformation;
 
-    //pCharacter = new C_Toon(); //CFM_Character();
+	//pCharacter = new C_Toon(); //CFM_Character();
 	//ServerCharacter = NULL;
 	//ServerCharacter = new C_Toon[MAX_TOONS]; //CFM_Character[MAX_SERVER_CHARS];
 
-    //    ClearCharacters();
+	//    ClearCharacters();
 
 	//ChatBuffer = NULL;
 	//ChatBuffer = new CFM_String[MAX_CHAT_BUFFER+1];
-    //ClearChat();
+	//ClearChat();
 
-    //    FavoriteServer=NULL;
-    //    FirstFavoriteServer=NULL;
-    //    FavoriteServer=new ServerData;
-    //    FirstFavoriteServer=FavoriteServer;
-    ClearFavoriteServers();
+	//    FavoriteServer=NULL;
+	//    FirstFavoriteServer=NULL;
+	//    FavoriteServer=new ServerData;
+	//    FirstFavoriteServer=FavoriteServer;
+	ClearFavoriteServers();
 
-    Profile = NULL;
-    FirstProfile=NULL;
-    Profile = new CFM_Profile;
-    FirstProfile=Profile;
-    ClearProfiles();
+	Profile = NULL;
+	FirstProfile=NULL;
+	Profile = new CFM_Profile;
+	FirstProfile=Profile;
+	ClearProfiles();
 
 	memset(szAccessName,0,255);
-    strcpy(szServerVersion,"Unknown");
+	strcpy(szServerVersion,"Unknown");
 	SetToDefaults();
 	//Log("Client Data Created");
 }
 
 /***************************************************************/
 
-CC_Data::~CC_Data()
-{
-    CleanUp();
+CC_Data::~CC_Data() {
+	CleanUp();
 }
 
 /***************************************************************/
 
-void CC_Data::CleanUp(void)
-{
+void CC_Data::CleanUp(void) {
 
-    //DLog("Cleaning up data...");
-    //DEL(pCharacter);
-    //if(ServerCharacter)
-    //{
+	//DLog("Cleaning up data...");
+	//DEL(pCharacter);
+	//if(ServerCharacter)
+	//{
 	//	delete [] ServerCharacter;
-    //      ServerCharacter=NULL;
-    //      DLog("ServerCharacter deleted");
-    //}
-    //DEL(ServerInfo);
-    ClearFavoriteServers();
-    ClearProfiles();
+	//      ServerCharacter=NULL;
+	//      DLog("ServerCharacter deleted");
+	//}
+	//DEL(ServerInfo);
+	ClearFavoriteServers();
+	ClearProfiles();
 }
 
 /***************************************************************/
 
-void CC_Data::SetToDefaults(void)
-{
+void CC_Data::SetToDefaults(void) {
 	strcpy(Name,"Enter Your Name");
 	memset(Password,0,255);
 	bSavePassword=true;
 	strcpy(ServerMessage,"No server message.");
 	strcpy(ServerName,"Ember Server");
-    strcpy(ServerID,"standard"); // default
-    strcpy(szServerVersion,"1");
-    strcpy(IPAddress,NET_DEFAULT_EGS_IP);
+	strcpy(ServerID,"standard"); // default
+	strcpy(szServerVersion,"1");
+	strcpy(IPAddress,NET_DEFAULT_EGS_IP);
 	strcpy(Port,va("%d",NET_DEFAULT_EGS_PORT));
-    strcpy(MasterIPAddress,NET_DEFAULT_EMS_IP);
-    strcpy(MasterPort,va("%d",NET_DEFAULT_EMS_PORT));
+	strcpy(MasterIPAddress,NET_DEFAULT_EMS_IP);
+	strcpy(MasterPort,va("%d",NET_DEFAULT_EMS_PORT));
 	bLog=true;
 	bDownload=true;
 	//PlayerChatDelay=4000;
@@ -123,19 +113,19 @@ void CC_Data::SetToDefaults(void)
 	fSoundVolume=100;
 	fMusicVolume=100;
 
-    //sprintf(MouseLeftButtonSound,"snd%cmouselb.wav",PATH_SEP);
+	//sprintf(MouseLeftButtonSound,"snd%cmouselb.wav",PATH_SEP);
 
 
-    cDebug=0;
-    bShowPING=false;
-    bSound=true;
+	cDebug=0;
+	bShowPING=false;
+	bSound=true;
 	bMusic=true;
 	SelectedServer=0;
 	CharacterSlots=8;
-    SelectedCharacterSlot=0;
-    currentsample=0;
+	SelectedCharacterSlot=0;
+	currentsample=0;
 //    strcpy(LastDirectory,"");
-    Mode=0;
+	Mode=0;
 
 	strcpy(ServerAuthor,"");
 
@@ -147,28 +137,28 @@ void CC_Data::SetToDefaults(void)
 	Access=0;
 	strcpy(szAccessName,"");
 //	strcpy(PlayMouseLB,"");
-    dwKeyPressTimer=dlcs_get_tickcount();
+	dwKeyPressTimer=dlcs_get_tickcount();
 
-    bDrawMapObjects=true;
-    bDrawMap=true;
-    bBlockGlow=true;
-    bVertice=0;
-    ClearProfiles();
-    bFullScreen=false;
+	bDrawMapObjects=true;
+	bDrawMap=true;
+	bBlockGlow=true;
+	bVertice=0;
+	ClearProfiles();
+	bFullScreen=false;
 
-    ScreenWidth = 1024;// SCREEN_WIDTH;
-    ScreenHeight= 768; //SCREEN_HEIGHT;
-    ScreenColors= 16; //SCREEN_COLORS;
+	ScreenWidth = 1024;// SCREEN_WIDTH;
+	ScreenHeight= 768; //SCREEN_HEIGHT;
+	ScreenColors= 16; //SCREEN_COLORS;
 
-    screen_res_640x480x16=false;
-    screen_res_800x600x16=false;
-    screen_res_1024x768x16=false;
-    screen_res_1280x1024x16=false;
+	screen_res_640x480x16=false;
+	screen_res_800x600x16=false;
+	screen_res_1024x768x16=false;
+	screen_res_1280x1024x16=false;
 
-    screen_res_640x480x32=false;
-    screen_res_800x600x32=false;
-    screen_res_1024x768x32=false;
-    screen_res_1280x1024x32=false;
+	screen_res_640x480x32=false;
+	screen_res_800x600x32=false;
+	screen_res_1024x768x32=false;
+	screen_res_1280x1024x32=false;
 }
 
 /***************************************************************/
@@ -176,62 +166,56 @@ void CC_Data::SetToDefaults(void)
 //void CC_Data::ClearCharacters(void)
 //{
 //    int i;
- ///   for(i=0;i<MAX_TOONS;i++)
+///   for(i=0;i<MAX_TOONS;i++)
 //        memset(ServerCharacter[i].t_name,0,32);
 //}
 
 /***************************************************************/
 
-void CC_Data::ClearFavoriteServers(void)
-{
- //   ServerData *DelMe;
+void CC_Data::ClearFavoriteServers(void) {
+//   ServerData *DelMe;
 //    FavoriteServer=FirstFavoriteServer;
 //    while(FavoriteServer)
- //   {
-   //     DelMe=FavoriteServer;
-     //   FavoriteServer=FavoriteServer->pNext;
-       // DEL(DelMe);
-    //}
-    //FirstFavoriteServer=NULL;
+//   {
+	//     DelMe=FavoriteServer;
+	//   FavoriteServer=FavoriteServer->pNext;
+	// DEL(DelMe);
+	//}
+	//FirstFavoriteServer=NULL;
 }
 
 /***************************************************************/
 
-void CC_Data::ClearProfiles(void)
-{
-    CFM_Profile *DelMe;
-    Profile=FirstProfile;
-    while(Profile)
-    {
-        DelMe=Profile;
-        Profile=Profile->pNext;
-        DEL(DelMe);
-    }
-    FirstProfile=NULL;
+void CC_Data::ClearProfiles(void) {
+	CFM_Profile *DelMe;
+	Profile=FirstProfile;
+	while(Profile) {
+		DelMe=Profile;
+		Profile=Profile->pNext;
+		DEL(DelMe);
+	}
+	FirstProfile=NULL;
 }
 
 /***************************************************************/
 
-bool CC_Data::bLoad(void)
-{
+bool CC_Data::bLoad(void) {
 	SetToDefaults();
 
 	FILE *fp;
 	char In[256];
 	char *Entry;
-    float f;
+	float f;
 
 	fp=fopen("client.ini","r");
 	if(!fp)
 		return false;
-	while(1)
-	{
+	while(1) {
 		if(!fgets(In,255,fp)) break;
 
 		Entry = strtok(In,"=,[];");
 
-		if(dlcs_strcasecmp(Entry,"name"))
-		{
+		if(dlcs_strcasecmp(Entry,"name")) {
 			Entry=strtok(NULL,"\n");
 			if( Entry != NULL )
 				strcpy(Name,Entry);
@@ -240,8 +224,7 @@ bool CC_Data::bLoad(void)
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"password"))
-		{
+		if(dlcs_strcasecmp(Entry,"password")) {
 			Entry=strtok(NULL,"\n");
 			if(Entry)
 				strcpy(Password,Entry);
@@ -249,78 +232,69 @@ bool CC_Data::bLoad(void)
 
 		}
 
-		if(dlcs_strcasecmp(Entry,"save password"))
-		{
+		if(dlcs_strcasecmp(Entry,"save password")) {
 			Entry=strtok(NULL,"\n");
 
 			bSavePassword=false;
-			if(Entry)
-			{
-                if( (dlcs_strcasecmp(Entry,"on")) ||
-                    (dlcs_strcasecmp(Entry,"1")) ||
-                    (dlcs_strcasecmp(Entry,"true")) )
+			if(Entry) {
+				if( (dlcs_strcasecmp(Entry,"on")) ||
+				        (dlcs_strcasecmp(Entry,"1")) ||
+				        (dlcs_strcasecmp(Entry,"true")) )
 					bSavePassword=true;
 			}
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"last server"))
-		{
+		if(dlcs_strcasecmp(Entry,"last server")) {
 			Entry=strtok(NULL,"\n");
 			if(Entry)
 				strcpy(ServerName,Entry);
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"last server ip"))
-		{
+		if(dlcs_strcasecmp(Entry,"last server ip")) {
 			Entry=strtok(NULL,"\n");
 			if(Entry)
 				strcpy(IPAddress,Entry);
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"port"))
-		{
+		if(dlcs_strcasecmp(Entry,"port")) {
 			Entry=strtok(NULL,"\n");
 			if(Entry)
 				strcpy(Port,Entry);
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"log"))
-		{
+		if(dlcs_strcasecmp(Entry,"log")) {
 			Entry=strtok(NULL,"\n");
 			bLog=false;
 			if(Entry)
-                if( (dlcs_strcasecmp(Entry,"on")) ||
-                    (dlcs_strcasecmp(Entry,"1")) ||
-                    (dlcs_strcasecmp(Entry,"true")) )
+				if( (dlcs_strcasecmp(Entry,"on")) ||
+				        (dlcs_strcasecmp(Entry,"1")) ||
+				        (dlcs_strcasecmp(Entry,"true")) )
 					bLog=true;
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"download"))
-		{
+		if(dlcs_strcasecmp(Entry,"download")) {
 			Entry=strtok(NULL,"\n");
 			bDownload=false;
 			if(Entry)
-                if( (dlcs_strcasecmp(Entry,"on")) ||
-                    (dlcs_strcasecmp(Entry,"1")) ||
-                    (dlcs_strcasecmp(Entry,"true")) )
+				if( (dlcs_strcasecmp(Entry,"on")) ||
+				        (dlcs_strcasecmp(Entry,"1")) ||
+				        (dlcs_strcasecmp(Entry,"true")) )
 					bDownload=true;
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"sound volume"))
-		{
+		if(dlcs_strcasecmp(Entry,"sound volume")) {
 			Entry=strtok(NULL,"\n");
 			f=0;
-			if(Entry)
-			{
+			if(Entry) {
 				f=atof(Entry);
 				if( (f == 0) &&
-					(strcmp(Entry,"0")) )
+				        (strcmp(Entry,"0")) )
 					continue;
 				if(f>100)
 					f=100;
@@ -331,15 +305,13 @@ bool CC_Data::bLoad(void)
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"music volume"))
-		{
+		if(dlcs_strcasecmp(Entry,"music volume")) {
 			Entry=strtok(NULL,"\n");
 			f=0;
-			if(Entry)
-			{
+			if(Entry) {
 				f=atof(Entry);
 				if( (f == 0) &&
-					(strcmp(Entry,"0")) )
+				        (strcmp(Entry,"0")) )
 					continue;
 				if(f>100)
 					f=100;
@@ -350,96 +322,82 @@ bool CC_Data::bLoad(void)
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"sound"))
-		{
+		if(dlcs_strcasecmp(Entry,"sound")) {
 			Entry=strtok(NULL,"\n");
 			bSound=false;
 			if(Entry)
-                if( (dlcs_strcasecmp(Entry,"on")) ||
-                    (dlcs_strcasecmp(Entry,"1")) ||
-                    (dlcs_strcasecmp(Entry,"true")) )
+				if( (dlcs_strcasecmp(Entry,"on")) ||
+				        (dlcs_strcasecmp(Entry,"1")) ||
+				        (dlcs_strcasecmp(Entry,"true")) )
 					bSound=true;
 			continue;
 		}
 
-		if(dlcs_strcasecmp(Entry,"music"))
-		{
+		if(dlcs_strcasecmp(Entry,"music")) {
 			Entry=strtok(NULL,"\n");
 			bMusic=false;
 			if(Entry)
-                if( (dlcs_strcasecmp(Entry,"on")) ||
-                    (dlcs_strcasecmp(Entry,"1")) ||
-                    (dlcs_strcasecmp(Entry,"true")) )
+				if( (dlcs_strcasecmp(Entry,"on")) ||
+				        (dlcs_strcasecmp(Entry,"1")) ||
+				        (dlcs_strcasecmp(Entry,"true")) )
 					bMusic=true;
 			continue;
-        }
+		}
 
-        if(dlcs_strcasecmp(Entry,"master server"))
-        {
-            Entry=strtok(NULL,"\n");
-            if(Entry)
-            {
-                strcpy(MasterIPAddress,Entry);
-            }
-        }
+		if(dlcs_strcasecmp(Entry,"master server")) {
+			Entry=strtok(NULL,"\n");
+			if(Entry) {
+				strcpy(MasterIPAddress,Entry);
+			}
+		}
 
-        if(dlcs_strcasecmp(Entry,"master server port"))
-        {
-            Entry=strtok(NULL,"\n");
-            if(Entry)
-            {
-                strcpy(MasterPort,Entry);
-            }
-        }
+		if(dlcs_strcasecmp(Entry,"master server port")) {
+			Entry=strtok(NULL,"\n");
+			if(Entry) {
+				strcpy(MasterPort,Entry);
+			}
+		}
 
-        if(dlcs_strcasecmp(Entry,"full screen"))
-		{
+		if(dlcs_strcasecmp(Entry,"full screen")) {
 			Entry=strtok(NULL,"\n");
 			bFullScreen=false;
 			if(Entry)
-                if( (dlcs_strcasecmp(Entry,"on")) ||
-                    (dlcs_strcasecmp(Entry,"1")) ||
-                    (dlcs_strcasecmp(Entry,"true")) )
+				if( (dlcs_strcasecmp(Entry,"on")) ||
+				        (dlcs_strcasecmp(Entry,"1")) ||
+				        (dlcs_strcasecmp(Entry,"true")) )
 					bFullScreen=true;
 			continue;
-        }
+		}
 
-        if(dlcs_strcasecmp(Entry,"screen width"))
-        {
-            Entry=strtok(NULL,"\n");
-            if(Entry)
-            {
-                ScreenWidth=atoi(Entry);
-                continue;
-            }
-        }
+		if(dlcs_strcasecmp(Entry,"screen width")) {
+			Entry=strtok(NULL,"\n");
+			if(Entry) {
+				ScreenWidth=atoi(Entry);
+				continue;
+			}
+		}
 
-        if(dlcs_strcasecmp(Entry,"screen height"))
-        {
-            Entry=strtok(NULL,"\n");
-            if(Entry)
-            {
-                ScreenHeight=atoi(Entry);
-                continue;
-            }
-        }
+		if(dlcs_strcasecmp(Entry,"screen height")) {
+			Entry=strtok(NULL,"\n");
+			if(Entry) {
+				ScreenHeight=atoi(Entry);
+				continue;
+			}
+		}
 
-        if(dlcs_strcasecmp(Entry,"screen colors"))
-        {
-            Entry=strtok(NULL,"\n");
-            if(Entry)
-            {
-                ScreenColors=atoi(Entry);
-                continue;
-            }
-        }
+		if(dlcs_strcasecmp(Entry,"screen colors")) {
+			Entry=strtok(NULL,"\n");
+			if(Entry) {
+				ScreenColors=atoi(Entry);
+				continue;
+			}
+		}
 
 	}
 	fclose(fp);
 
 
-	if(bSavePassword==false)
-	{
+	if(bSavePassword==false) {
 		memset(Password,0,sizeof(Password));
 		bSave();
 	}
@@ -450,8 +408,7 @@ bool CC_Data::bLoad(void)
 
 /***************************************************************/
 
-bool CC_Data::bSave(void)
-{
+bool CC_Data::bSave(void) {
 
 	FILE *fout;
 
@@ -472,7 +429,7 @@ bool CC_Data::bSave(void)
 	fputs("***************************************************************\n",fout);
 	fputs("** Client initialization file                                **\n",fout);
 	fputs("***************************************************************\n",fout);
-    fputs("NOTE: If Ember has problems starting, try renaming this file.\n",fout);
+	fputs("NOTE: If Ember has problems starting, try renaming this file.\n",fout);
 
 	// set name name
 	sprintf(Temp,"Name=%s\n",Name);
@@ -548,11 +505,11 @@ bool CC_Data::bSave(void)
 	sprintf(Temp,"Music Volume=%f\n",fMusicVolume);
 	fputs(Temp,fout);
 
-    sprintf(Temp,"Master Server=%s\n",MasterIPAddress);
-    fputs(Temp,fout);
+	sprintf(Temp,"Master Server=%s\n",MasterIPAddress);
+	fputs(Temp,fout);
 
-    sprintf(Temp,"Master Server Port=%s\n",MasterPort);
-    fputs(Temp,fout);
+	sprintf(Temp,"Master Server Port=%s\n",MasterPort);
+	fputs(Temp,fout);
 
 	strcpy(Temp,"Full Screen=");
 	if(bFullScreen==true)
@@ -561,14 +518,14 @@ bool CC_Data::bSave(void)
 		strcat(Temp,"off\n");
 	fputs(Temp,fout);
 
-    sprintf(Temp,"Screen Width=%d\n",ScreenWidth);
-    fputs(Temp,fout);
+	sprintf(Temp,"Screen Width=%d\n",ScreenWidth);
+	fputs(Temp,fout);
 
-    sprintf(Temp,"Screen Height=%d\n",ScreenHeight);
-    fputs(Temp,fout);
+	sprintf(Temp,"Screen Height=%d\n",ScreenHeight);
+	fputs(Temp,fout);
 
-    sprintf(Temp,"Screen Colors=%d\n",ScreenColors);
-    fputs(Temp,fout);
+	sprintf(Temp,"Screen Colors=%d\n",ScreenColors);
+	fputs(Temp,fout);
 
 
 	fclose(fout);
@@ -675,10 +632,13 @@ bool CC_Data::LoadFavoriteServers(void)
     return false;
 
 }
+ */
 
-/**************************************************
- ** Save Favorite Servers                        **
- **************************************************
+
+/*
+// **************************************************
+// ** Save Favorite Servers                        **
+// **************************************************
 
 bool CC_Data::SaveFavoriteServers(void)
 {
@@ -710,11 +670,13 @@ bool CC_Data::SaveFavoriteServers(void)
     return false;
     return 0;
 }
+*/
 
-/**************************************************
- ** Discard Favorite Server                      **
- **************************************************
+// **************************************************
+// ** Discard Favorite Server                      **
+// **************************************************
 
+/*
 bool CC_Data::DiscardFavoriteServer(int i)
 {
     LoadFavoriteServers();
@@ -755,11 +717,13 @@ bool CC_Data::DiscardFavoriteServer(int i)
     return false;
 
 }
+ */
 
-/**************************************************
- ** Add Favorite Server To List                  **
- **************************************************
+// **************************************************
+// ** Add Favorite Server To List                  **
+// **************************************************
 
+/*
 bool CC_Data::AddFavoriteServer(ServerData *pData)
 {
     if(!pData) return false;
@@ -799,29 +763,29 @@ bool CC_Data::AddFavoriteServer(ServerData *pData)
     //Log("Failed to create favorites.txt");
     return false;
 }
+ */
 
 /**************************************************/
 
-bool CC_Data::LoadProfiles(void)
-{
-    char szTemp1[1024];
-    FILE *fp;
-    int j=0;
-    //char* Entry;
-    ClearProfiles();
-    sprintf(szTemp1,"servers%cprofiles.txt",PATH_SEP); // Create path to serverlist file
-    fp=fopen(szTemp1,"rt"); // Load in favorite server list
-    if(fp)
-    {
+bool CC_Data::LoadProfiles(void) {
+	char szTemp1[1024];
+	FILE *fp;
+	int j=0;
+	//char* Entry;
+	ClearProfiles();
+	sprintf(szTemp1,"servers%cprofiles.txt",PATH_SEP); // Create path to serverlist file
+	fp=fopen(szTemp1,"rt"); // Load in favorite server list
+	if(fp) {
 
-        fclose(fp);
-        return 1;
-    }
-    return 0;
+		fclose(fp);
+		return 1;
+	}
+	return 0;
 }
 
-/***************************************************************
+/***************************************************************/
 
+/*
 C_ServerInformation::C_ServerInformation(void)
 {
     // Race = NULL;
@@ -829,9 +793,11 @@ C_ServerInformation::C_ServerInformation(void)
     // Class = NULL;
     // Class = new CFM_String[MAX_CLASSES]; // max races
 }
+ */
 
-/***************************************************************
+/***************************************************************/
 
+/*
 C_ServerInformation::~C_ServerInformation(void)
 {
 
@@ -846,7 +812,6 @@ C_ServerInformation::~C_ServerInformation(void)
         Class=NULL;
     }
 }
+  */
 
 /***************************************************************/
-
-

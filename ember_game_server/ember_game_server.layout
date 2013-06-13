@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Win32 Release" />
-	<File name="..\..\SDK\Script_LuaWrapper\Script\Lua\lobject.h" open="0" top="0" tabpos="0">
+	<File name="../../SDK/Script_LuaWrapper/Script/Lua/lobject.h" open="0" top="0" tabpos="0">
 		<Cursor position="4309" topLine="172" />
 	</File>
-	<File name="..\..\SDK\Script_LuaWrapper\Script\Lua\lstate.h" open="0" top="0" tabpos="0">
+	<File name="../../SDK/Script_LuaWrapper/Script/Lua/lstate.h" open="0" top="0" tabpos="0">
 		<Cursor position="1855" topLine="45" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lapi.c" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lapi.c" open="0" top="0" tabpos="0">
 		<Cursor position="7182" topLine="325" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lauxlib.c" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lauxlib.c" open="0" top="0" tabpos="0">
 		<Cursor position="452" topLine="177" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lobject.h" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lobject.h" open="0" top="0" tabpos="0">
 		<Cursor position="866" topLine="37" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lstate.h" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lstate.h" open="0" top="0" tabpos="0">
 		<Cursor position="3901" topLine="113" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lstring.c" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lstring.c" open="0" top="0" tabpos="0">
 		<Cursor position="2905" topLine="0" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lua.h" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lua.h" open="0" top="0" tabpos="0">
 		<Cursor position="1051" topLine="39" />
 	</File>
-	<File name="..\..\SDK\lua-5.1.4\src\lualib.h" open="0" top="0" tabpos="0">
+	<File name="../../SDK/lua-5.1.4/src/lualib.h" open="0" top="0" tabpos="0">
 		<Cursor position="1016" topLine="0" />
 	</File>
-	<File name="..\ember_game_server.cpp" open="0" top="0" tabpos="1">
+	<File name="../ember_game_server.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="37818" topLine="1093" />
 	</File>
-	<File name="..\ember_game_server.h" open="0" top="0" tabpos="0">
+	<File name="../ember_game_server.h" open="0" top="0" tabpos="0">
 		<Cursor position="2426" topLine="22" />
 	</File>
-	<File name="..\s_server.cpp" open="0" top="0" tabpos="0">
+	<File name="../s_server.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="594" topLine="0" />
 	</File>
-	<File name="..\s_serverinfo.cpp" open="0" top="0" tabpos="0">
+	<File name="../s_serverinfo.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="2637" topLine="98" />
 	</File>
 </CodeBlocks_layout_file>
