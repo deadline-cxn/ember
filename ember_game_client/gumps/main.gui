@@ -13,7 +13,7 @@ name=stlogin
 x=300
 y=150
 type=FM_GC_STATIC_TEXT
-value=M A N T R A
+value=^6M ^8A ^5N ^4T ^3R ^1A
 ///^+^>FF8800
 /// username:
 
@@ -31,6 +31,7 @@ y=200
 w=70
 h=16
 type=FM_GC_TEXTBOX
+value=test
 
 /// password:
 
@@ -48,6 +49,7 @@ y=220
 w=100
 h=16
 type=FM_GC_PASSWORD
+value=123
 
 [CTRL]
 name=savepassword
@@ -73,11 +75,12 @@ value=(save password)
 /// buttons
 
 [CTRL]
-name=login
+name=LOGIN
 x=400
 y=275
 type=FM_GC_BUTTON
 value=    Login
+console=setgamemode LOGIN_FROM_GUI
 
 [CTRL]
 name=quit
@@ -93,8 +96,14 @@ x=400
 y=450
 type=FM_GC_BUTTON
 value=   EDIT MODE
-console=setgamemode edit
+console=setgamemode EDIT_WORLD_INIT
 
-///
+[CTRL]
+name=Terrain
+x=400
+y=590
+type=FM_GC_BUTTON
+value= Test Map
+console=setgamemode INITIALIZE_GAME
 
 

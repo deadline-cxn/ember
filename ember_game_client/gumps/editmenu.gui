@@ -11,17 +11,6 @@ h=110
 media=1
 
 [CTRL]
-name=main
-media=152
-media_hover=152
-media_click=153
-x=0
-y=18
-type=FM_GC_ACTION
-value=main
-console=setgamemode main;guiclear;guicall main.gui
-
-[CTRL]
 name=terraform
 media=34
 media_hover=34
@@ -33,15 +22,15 @@ value=terraform
 console=map.terraform
 
 [CTRL]
-name=gafrebuild
+name=OPENFILE
 media=150
 media_hover=150
 media_click=151
 x=64
 y=18
 type=FM_GC_ACTION
-value=gafrebuild
-console=gafrebuild
+value=openfile
+console=guicall file_selector.gui
 
 [CTRL]
 name=guieditor
@@ -66,6 +55,18 @@ value=console
 console=guicall console.gui
 
 [CTRL]
+name=main
+media=152
+media_hover=152
+media_click=153
+x=160
+y=18
+type=FM_GC_ACTION
+value=main
+console=setgamemode MAIN_MENU
+
+
+[CTRL]
 name=debug 1
 x=375
 y=18
@@ -88,3 +89,14 @@ y=70
 type=FM_GC_BUTTON
 value=  QUIT
 console=quit
+
+[CTRL]
+name=gcpoptest
+x=480
+y=520
+type=FM_GC_POPUP_MENU
+value=   FM_GC_POPUP_MENU TEST
+console=setgamemode edit
+
+///
+

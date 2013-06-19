@@ -11,6 +11,7 @@ x=80
 y=80
 type=FM_GC_BUTTON
 value=Main Menu
+console=setgamemode MAIN_MENU
 
 [CTRL]
 name=stusername
@@ -55,6 +56,16 @@ value=4Like it or not
 value=5Hi
 value=6Testing again
 value=7Testing again fcsdjio fsdhofsdhio hiosd
+value=8^+TEST DATA
+value=9Like it or not
+value=0Hi
+value=-Testing again
+value=11Testing again fcsdjio fsdhofsdhio hiosd
+value=8^+TEST DATA
+value=9Like it or not
+value=0Hi
+value=-Testing again
+value=11Testing again fcsdjio fsdhofsdhio hiosd
 value=8^+TEST DATA
 value=9Like it or not
 value=0Hi

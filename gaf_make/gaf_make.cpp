@@ -1,63 +1,105 @@
+// GAF TOOL
 
-
-#include "dlstorm.h"
-#include "c_gaf.h"
-
+#include "gaf_make.h"
 
 int main(int argc, char *argv[])
 {
-
-    printf("%s\n", dlcs_getcwd());
+    char file[1024]; memset(file,0,1024); strcpy(file,"gaf.gaf");
+    char res[1024];  memset(res,0,1024);
+    unsigned int i;
 
     CGAF *pGAF;
     pGAF=new CGAF();
 
-    printf("Rebuilding ember.gaf...\n");
-    remove("ember.gaf");
+    // remove(file);
+
+    if(argc<3)
+    {
+        print_help();
+        return 1;
+    }
+
+    strcpy(file,argv[1]);
+
+    switch(argv[2][1])
+    {
+
+        case 'a':
+            for(i=3;i<strlen(argv[2]);i++)
+            {
+                res[i-3]=argv[2][i];
+            }
+            printf("Adding file %s to %s...\n",res,file);
+            pGAF->Open(file);
+            pGAF->AddFile(res,res);
+            pGAF->Close();
+            break;
+
+        case 'z':
+            for(i=3;i<strlen(argv[2]);i++)
+            {
+                res[i-3]=argv[2][i];
+            }
+            printf("Adding directory %s to %s...\n",res,file);
+            pGAF->Open(file);
+            pGAF->AddDir(res);
+            pGAF->Close();
+            break;
+
+        case 'd':
+            for(i=3;i<strlen(argv[2]);i++)
+            {
+                res[i-3]=argv[2][i];
+            }
+            printf("Removing file %s from %s...\n",res,file);
+            pGAF->Open(file);
+            pGAF->RemoveFile(res);
+            pGAF->Close();
+            break;
+
+        case 'c':
+            for(i=3;i<strlen(argv[2]);i++)
+            {
+                res[i-3]=argv[2][i];
+            }
+            printf("Removing directory %s from %s...\n",res,file);
+            pGAF->Open(file);
+            pGAF->RemoveDir(res);
+            pGAF->Close();
+            break;
+
+        case 'x':
+            printf("EXTRACT\n");
+            break;
+
+        case 'r':
+            printf("REBUILD\n");
+            break;
+
+        default:
+            printf("??\n");
+            break;
+    }
 
 
-    pGAF->Open("ember.gaf");
-
-
-    printf("Adding base...\n");
-    pGAF->AddDir("base");
-
-    printf("Adding buttons...\n");
-    pGAF->AddDir("buttons");
-
-    printf("Adding fonts...\n");
-    pGAF->AddDir("fonts");
-
-    printf("Adding gumps...\n");
-    pGAF->AddDir("gumps");
-
-    //printf("Adding map_models...\n");	pGAF->AddDir("map_models");
-
-    //printf("Adding misc...\n");	pGAF->AddDir("misc");
-
-    //printf("Adding models...\n");	pGAF->AddDir("models");
-
-    printf("Adding mouse...\n");
-    pGAF->AddDir("mouse");
-
-    //printf("Adding objects...\n");	pGAF->AddDir("objects");
-
-    //printf("Adding map...\n");	pGAF->AddDir("map");
-
-    //printf("Adding scripts...\n");	pGAF->AddDir("scripts");
-
-    //printf("Adding snd...\n");
-    //pGAF->AddDir("snd");
-
-    //printf("Adding tiles...\n");
-    //pGAF->AddDir("tiles");
-
-
-    pGAF->Close();
 
     DEL(pGAF);
 
-    printf("Created ember.gaf");
-
     return 0;
+}
+
+
+void print_help(void)
+{
+    printf("\n");
+    printf("GAF Game Archive File (c)2013 Seth Parson sethcoder.com\n");
+    printf("=======================================================\n");
+    printf("USAGE:\n");
+    printf("gaf <gaf file> [-a:<filename>] [-z:<dir>] [-d:<file>] [-c:<dir>] [-x] [-r]\n");
+    printf("-a add a file to the GAF\n");
+    printf("-z add directory to the GAF\n");
+    printf("-d remove a file from the GAF\n");
+    printf("-c remove a directory from the GAF\n");
+    printf("-x extract GAF into the working directory\n");
+    printf("-r rebuild the gaf\n");
 }

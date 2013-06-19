@@ -3,36 +3,27 @@
  ***************************************************************/
 
 #include "ember_game_server.h"
-#include "c_net.h"
+#include "ember_version.h"
+#include "ember_game_server_enum.h"
+#include "c_serverinfo.h"
+#include "ember_game_server_socket.h"
+#include "ember_game_server_client_socket.h"
 #include "dlstorm.h"
+#include "c_net.h"
 #include "c_log.h"
-#include "s_client.h"
-#include "b_map.h"
-#include "s_server.h"
-
-#include "lualib.h"
-
-#include "fm_util.h"
 #include "c_gaf.h"
+#include "sqlite3.h"
+
+CServer     *pServer;
 
 CGAF		*File;
+CLog        *pLog;      // Log file
 
-CEmMap      *pMap;
-CEmMap      *pMapBuffer;
-CEmMap      *pFragMap;
-CEmMap      *pFirstFragMap;
-CEmMap      *pDeleteFragMap;
-
-CServer     *fmgs;
-
-CPacket     Send(8192);
-
-C_FM_CLIENT *client;
-C_FM_CLIENT *other_client;
+sqlite3     *pUserDB;
 
 char        szLastAddress[1024];
 char        motd[1024];
-time_t      fmgsTime;
+time_t      pServerTime;
 struct      tm *tTime;
 bool        bQuit;
 bool        bQuiet;
@@ -42,67 +33,18 @@ int				ConsoleHistoryPosition;
 typedef struct	ConHistory { char text[1024]; };
 ConHistory	   *ConsoleHistory;
 
-
-#ifdef __linux__
-#include "s_linux.h"
-#include "s_gnu.h"
-void ConsoleSetup(void) { _kbhit(); }
-void ConsoleShutDown(void) { close_keyboard(); }
-#endif
-
-#ifdef _WIN32
-
-BOOL WINAPI HandleCTRL_C(DWORD dwCtrlType)
+void CLog::_Add(char *fmt, ...)
 {
-    switch(dwCtrlType)
-    {
-
-        case CTRL_BREAK_EVENT:
-            bQuit=true;
-            Log("Break event killed server!");
-            return true;
-
-        case CTRL_SHUTDOWN_EVENT:
-            bQuit=true;
-            Log("Shutdown event killed server!");
-            return true;
-
-        case CTRL_LOGOFF_EVENT:
-            bQuit=true;
-            Log("Logoff event killed server!");
-            return true;
-
-        case CTRL_CLOSE_EVENT:
-            bQuit=true;
-            Log("Mouse [X] killed server!");
-            return true;
-
-        case CTRL_C_EVENT:
-            bQuit=true;
-            Log("CTRL-C killed server!");
-            return true;
-
-        default:
-            break;
-    }
-    return false;
-}
-
-
-void ConsoleSetup(void)
-{
-    // Change window title for windows version, and setup ctrl handler
-    SetConsoleCtrlHandler(HandleCTRL_C,TRUE);
-    SetConsoleTitle(va("Ember Game Server %s(%s) Net Revision(%s) %s",VERSION,CPUSTRING,NET_REVISION,COPYRIGHT));
-}
-void ConsoleShutDown(void) { }
-
-#endif
-
-char *SysVar(char *v)
-{
-    return("nullz");
-	//return db->parse(db->select(va("system var %s",v)),"value");
+    char ach[1024];
+    va_list va;
+    va_start( va, fmt );
+    vsprintf( ach, fmt, va );
+    va_end( va );
+	if(ach[strlen(ach)-1]!='\n')
+    strcat(ach,"\n");
+    AddEntry(ach);
+    if(!bQuiet)
+        printf(ach);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -117,36 +59,9 @@ void ShowHelp(void)
 //////////////////////////////////////////////////////////////////////////////////////
 int main(int argc, char *argv[])
 {
-
 	std::vector <std::string> vstr;
-
-    bQuiet=false;
     char chr;
-    if(argc>1)
-    {
-        chr=1;
-
-        while(chr<argc)
-        {
-            if( (!strcmp(argv[chr],"--help")) ||
-                (!strcmp(argv[chr],"-h")) ||
-                (!strcmp(argv[chr],"/?")) )
-            {
-                ShowHelp();
-                exit(0);
-            }
-
-            if( (!strcmp(argv[chr],"-q")) ||
-                (!strcmp(argv[chr],"--quiet")) ||
-				(!strcmp(argv[chr],"/q")))
-            {
-                bQuiet=true;
-            }
-            chr++;
-        }
-    }
-
-	int threadId=1;
+    int threadId=1;
     int i,dx;
     FILE *fp;
     char szTemp[8192];
@@ -161,27 +76,43 @@ int main(int argc, char *argv[])
     memset(szConsoleInput,0,1024);
     memset(motd,0,1024);
     sprintf(motd,"motd.txt");
-    ConsoleSetup();             // system specific console setup
+
+    bQuiet=false;
+    bQuit=false;
+
     randomize();                // set the random seed
 
-    bQuit=false;
+    if(argc>1)
+    {
+        chr=1;
+
+        while(chr<argc)
+        {
+            if( (!strcmp(argv[chr],"--help")) || (!strcmp(argv[chr],"-h")) || (!strcmp(argv[chr],"/?")) )
+            {
+                ShowHelp();
+                exit(0);
+            }
+
+            if( (!strcmp(argv[chr],"-q")) || (!strcmp(argv[chr],"--quiet")) ||	(!strcmp(argv[chr],"/q")))
+            {
+                bQuiet=true;
+            }
+            chr++;
+        }
+    }
+
+    ConsoleSetup();             // system specific console setup
 
     StartUp();
 
+    if(!pServer) bQuit=true;
+
     while(!bQuit) // game loop
     {
-        if(fmgs)
-			fmgs->Accept();
+        CheckRestart();
 
-        // ReportToMaster();
-
-        RemoveDeadPlayers();
-
-		CheckRestart();
-
-        DoClient();
-
-        DoWorld();
+        pServer->Cycle();
 
         Sleep(2); // sleep 2 msecs so it don't hog cpu time
 
@@ -201,7 +132,7 @@ int main(int argc, char *argv[])
 						strcpy(szTemp4,szConsoleInput);
                         memset(szConsoleInput,0,1024);
 
-                        Log(">%s",szTemp5);
+                        pLog->_Add(">%s",szTemp5);
 
 						if(szTemp5[0]==0) break;
 						// if(szTemp5[0]!='/') { ExecString(szTemp5); break; }
@@ -216,36 +147,36 @@ int main(int argc, char *argv[])
 								if( (dlcs_strcasecmp(szToken,"/help")) ||
 									(dlcs_strcasecmp(szToken,"?")) )
 								{
-									Log("[List of available commands]====================================");
-									Log("/help............................Show this help");
-									Log("/db_tables.......................List tables in database");
-									Log("/db_add_table <table name>.......Add new table to database");
-									Log("/dbs.............................Saves database");
+									pLog->_Add("[List of available commands]====================================");
+									pLog->_Add("/help............................Show this help");
+									pLog->_Add("/db_tables.......................List tables in database");
+									pLog->_Add("/db_add_table <table name>.......Add new table to database");
+									pLog->_Add("/dbs.............................Saves database");
 
-								//	Log("command(s).......................Execute GM script on command line");
-								//	Log("/gmf.............................Execute GM script file");
-								//	Log("/who.............................List online players");
-								//	Log("/msg <user> <message>............Send message to specific player");
-								//	Log("/access <user> <access level #>..Change player's access level");
-								//	Log("/kick <user> [message]...........Kick player with optional message");
-							//		Log("/ban <user>......................Ban player (will ban user)");
-							//		Log("/banip <user>....................Ban player (will ban user's ip address)");
-							//		Log("/unban <user>....................Unban player (will unban user)");
-							//		Log("/unbanip <ipaddress>.............Unban player (will unban user's ip address)");
-							//		Log("/bandomain <domain>..............Ban entire domain");
-							//		Log("/unbandomain <domain>............Unban entire domain");
-							//		Log("/ipbanlist.......................List all banned ip's");
-							//		Log("/domainbanlist...................List all banned domains");
-							//		Log("/userbanlist.....................List all banned users");
-							//		Log("/nuy.............................Allow new user accounts");
-							//		Log("/nun.............................Do not allow new user accounts");
-							//		Log("/ann <message>...................Announce a message to the entire server");
-							//		Log("/motd [new motd].................View, or change the message of the day");
-							//		Log("/users...........................List user accounts");
-							//		Log("/deleteuser <username>...........Remove a user account");
-									Log("/kill [minutes]..................Kill the server [minutes until kill] (CTRL-C immediate)");
-							//		Log("/restart [minutes]...............Restart the server [minutes until restart]");
-									Log("======================================================[End List]");
+								//	pLog->_Add("command(s).......................Execute GM script on command line");
+								//	pLog->_Add("/gmf.............................Execute GM script file");
+								//	pLog->_Add("/who.............................List online players");
+								//	pLog->_Add("/msg <user> <message>............Send message to specific player");
+								//	pLog->_Add("/access <user> <access level #>..Change player's access level");
+								//	pLog->_Add("/kick <user> [message]...........Kick player with optional message");
+							//		pLog->_Add("/ban <user>......................Ban player (will ban user)");
+							//		pLog->_Add("/banip <user>....................Ban player (will ban user's ip address)");
+							//		pLog->_Add("/unban <user>....................Unban player (will unban user)");
+							//		pLog->_Add("/unbanip <ipaddress>.............Unban player (will unban user's ip address)");
+							//		pLog->_Add("/bandomain <domain>..............Ban entire domain");
+							//		pLog->_Add("/unbandomain <domain>............Unban entire domain");
+							//		pLog->_Add("/ipbanlist.......................List all banned ip's");
+							//		pLog->_Add("/domainbanlist...................List all banned domains");
+							//		pLog->_Add("/userbanlist.....................List all banned users");
+							//		pLog->_Add("/nuy.............................Allow new user accounts");
+							//		pLog->_Add("/nun.............................Do not allow new user accounts");
+							//		pLog->_Add("/ann <message>...................Announce a message to the entire server");
+							//		pLog->_Add("/motd [new motd].................View, or change the message of the day");
+							//		pLog->_Add("/users...........................List user accounts");
+							//		pLog->_Add("/deleteuser <username>...........Remove a user account");
+									pLog->_Add("/kill [minutes]..................Kill the server [minutes until kill] (CTRL-C immediate)");
+							//		pLog->_Add("/restart [minutes]...............Restart the server [minutes until restart]");
+									pLog->_Add("======================================================[End List]");
 									break;
 								}
 
@@ -253,8 +184,8 @@ int main(int argc, char *argv[])
 
 								if( (dlcs_strcasecmp(szToken,"/time")) )
 								{
-									Log(dlcs_get_time());
-									Log("timestamp: %s",dlcs_timestamp());
+									pLog->_Add(dlcs_get_time());
+									pLog->_Add("timestamp: %s",dlcs_timestamp());
 								}
 
 								//////////////////////////////////////////
@@ -305,12 +236,12 @@ int main(int argc, char *argv[])
 								if(dlcs_strcasecmp(szToken,"/db_tables"))
 								{
 
-									Log("db tables:");
+									pLog->_Add("db tables:");
 
 									// t=db->FirstTable();
 									//while(t)
 									//{
-									//	Log("%s",t->name);
+									//	pLog->_Add("%s",t->name);
 									//	t=db->NextTable();
 									//}
 								}
@@ -323,26 +254,26 @@ int main(int argc, char *argv[])
 
 									vstr=explode(" ",szTemp4);
 
-									Log(" vstr size = %d",vstr.size() );
+									pLog->_Add(" vstr size = %d",vstr.size() );
 
 									if(vstr.size()<2)
 									{
-										Log("Usage examples:");
-										Log("/dbup t usrs users ");
-										Log("    (table USRS renamed to USERS)");
+										pLog->_Add("Usage examples:");
+										pLog->_Add("/dbup t usrs users ");
+										pLog->_Add("    (table USRS renamed to USERS)");
 
-										Log("/dbup c users aged age");
-										Log("    (column AGED renamed to AGE in table USERS)");
+										pLog->_Add("/dbup c users aged age");
+										pLog->_Add("    (column AGED renamed to AGE in table USERS)");
 
-										Log("/dbup v users age 19 name seth");
-										Log("    (AGE updated to 19 in table USERS where NAME=seth)");
+										pLog->_Add("/dbup v users age 19 name seth");
+										pLog->_Add("    (AGE updated to 19 in table USERS where NAME=seth)");
 									}
 									else
 									{
 
 										for(int i=0;i<vstr.size();i++)
 										{
-											Log("[%d][%s]",i,vstr[i].c_str());
+											pLog->_Add("[%d][%s]",i,vstr[i].c_str());
 										}
 
 										if( (vstr[1]=="table") ||
@@ -350,7 +281,7 @@ int main(int argc, char *argv[])
 										{
 											if(vstr.size()>3)
 											{
-												Log("old table name[%s] -> new table name[%s]",
+												pLog->_Add("old table name[%s] -> new table name[%s]",
 												vstr[2].c_str(),	// old table name
 												vstr[3].c_str()		// new table name
 												);
@@ -371,7 +302,7 @@ int main(int argc, char *argv[])
 										{
 											if(vstr.size()>6)
 											{
-												Log("table[%s] column[%s] value[%s]",
+												pLog->_Add("table[%s] column[%s] value[%s]",
 												vstr[2].c_str(), // table
 												vstr[3].c_str(), // op column
 												vstr[4].c_str(), // op value
@@ -407,7 +338,7 @@ int main(int argc, char *argv[])
 								if(dlcs_strcasecmp(szToken,"/deleteuser"))
 								{
 									szToken = strtok(NULL," \n\r");
-									if(szToken) RemoveAccount(szToken);
+									if(szToken) pServer->RemoveAccount(szToken);
 									break;
 								}
 
@@ -418,8 +349,8 @@ int main(int argc, char *argv[])
 									szToken=strtok(NULL,"\n\r");
 									if(szToken)
 									{
-										AdminAnnounce(szToken,0,255,0);
-										Log(szToken);
+										pServer->AdminAnnounce(szToken,0,255,0);
+										pLog->_Add(szToken);
 									}
 									break;
 								}
@@ -435,11 +366,11 @@ int main(int argc, char *argv[])
 										szToken=strtok(NULL,"\n\r");
 										if(szToken)
 										{
-											Kick(szTemp,szToken);
+											pServer->Kick(szTemp,szToken);
 										}
 										else
 										{
-											Kick(szTemp,"Kicked by admin");
+											pServer->Kick(szTemp,"Kicked by admin");
 										}
 									}
 									break;
@@ -457,13 +388,13 @@ int main(int argc, char *argv[])
 
 								if(dlcs_strcasecmp(szToken,"/users"))
 								{
-									Log("[USERS]");
+									pLog->_Add("[USERS]");
 									/*
 									row=db->select("users id 0");
 									row=row->next_key;
 									while(row)
 									{
-										Log("%s %s",
+										pLog->_Add("%s %s",
 
 												db->parse(row,"name"),
 												db->parse(row,"last_login")
@@ -486,9 +417,9 @@ int main(int argc, char *argv[])
 //								if(dlcs_strcasecmp(szToken,"/gmf"))
 //								{ szToken=strtok(NULL," \n\r"); if(szToken) ExecScript(szToken,1); break; }
 								//if(dlcs_strcasecmp(szToken,"/nuy"))
-//								{ ExecString("sys.new_users=\"yes\";"); Log("Now accepting new user accounts."); break; }
+//								{ ExecString("sys.new_users=\"yes\";"); pLog->_Add("Now accepting new user accounts."); break; }
 								//if(dlcs_strcasecmp(szToken,"/nun"))
-//								{ ExecString("sys.new_users=\"no\";");  Log("Not accepting new user accounts."); break; }
+//								{ ExecString("sys.new_users=\"no\";");  pLog->_Add("Not accepting new user accounts."); break; }
 								//if(dlcs_strcasecmp(szToken,"/who")) { ExecString("sys.who();"); break; }
 
 
@@ -510,13 +441,13 @@ int main(int argc, char *argv[])
 										fp=fopen(motd,"rt");
 										if(!fp)
 										{
-											Log("motd.txt can not be open for reading!");
+											pLog->_Add("motd.txt can not be open for reading!");
 											break;
 										}
 									}
 									while(fgets(szTemp4,255,fp))
 									{
-										Log(szTemp4);
+										pLog->_Add(szTemp4);
 									}
 									fclose(fp);
 
@@ -525,13 +456,13 @@ int main(int argc, char *argv[])
 										fp=fopen(motd,"wt");
 										if(!fp)
 										{
-											Log("motd.txt can't be written, check permissions");
+											pLog->_Add("motd.txt can't be written, check permissions");
 											break;
 										}
 										fputs(szToken,fp);
 										fputs("\n\r",fp);
 										fclose(fp);
-										Log("Message of the day changed to: %s",szToken);
+										pLog->_Add("Message of the day changed to: %s",szToken);
 									}
 									break;
 								}
@@ -565,7 +496,7 @@ int main(int argc, char *argv[])
 										szToken = strtok(NULL,"\n\r");
 										if(!szToken)
 										{
-											Log("/access usage: /access username,access level");
+											pLog->_Add("/access usage: /access username,access level");
 											break;
 										}
 										strcpy(szTemp3,szToken);
@@ -640,123 +571,15 @@ int main(int argc, char *argv[])
     ShutDown();
     return 1;
 }
-//////////////////////////////////////////////////////////////////////////////////////
-void MovePlayer(C_FM_CLIENT *client,int x,int y,int z,int teleport)
-{
-	if(!fmgs) return;
-	if(!client) return;
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void Say(C_FM_CLIENT *client,char *msg,u_char r,u_char g,u_char b,char *font)
-{
 
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void Msg(char *name,char *msg)
-{
-	other_client=fmgs->pFirstPlayer;
-	while(other_client)
-	{
-		if(dlcs_strcasecmp(other_client->name,name))
-		{
-			Announce(other_client,msg,255,255,255);
-			return;
-		}
-		other_client=other_client->pNext;
-	}
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void Announce(C_FM_CLIENT *client,char *msg,u_char r,u_char g,u_char b)
-{
-	if(!fmgs) return;
-	if(client)
-	{
-		Send.Reset();
-		Send.Write((char)NETMSG_SYSTEMMSG);
-		Send.Write((char *)msg);
-		Send.Write((char)0);
-		client->pSocket->SendUnreliableMessage(&Send);
-	}
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void GlobalAnnounce(C_FM_CLIENT *client,char *msg,u_char r,u_char g, u_char b)
-{
-    if(!fmgs)   return;
-    if(!client) return;
-	other_client=fmgs->pFirstPlayer;
-	while(other_client)
-	{
-		Announce(other_client,msg,255,255,255);
-		other_client=other_client->pNext;
-	}
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void AdminAnnounce(char *msg,u_char r,u_char g, u_char b)
-{
-	if(!fmgs) return;
-	Send.Reset();
-	Send.Write((char)NETMSG_SYSTEMMSG);
-	Send.Write((char *)msg);
-	Send.Write((char)0);
-	other_client=fmgs->pFirstPlayer;
-	while(other_client)
-	{
-		other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
-		other_client=other_client->pNext;
-	}
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void AdminToPlayer(C_FM_CLIENT *client,char *msg,u_char r,u_char g, u_char b)
-{
-	if(!fmgs)   return;
-	if(!client) return;
-	Send.Reset();
-	Send.Write((char)NETMSG_SYSTEMMSG);
-	Send.Write((char *)msg);
-	Send.Write((char)0);
-	client->pSocket->SendUnreliableMessage((CPacket *)&Send);
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void DoClient(void)
-{
-    static C_FM_CLIENT *client=0;
-    if(bQuit) return;
-    if(!fmgs) return;
-    if(!client) client=fmgs->pFirstPlayer;
-    if(client)
-    {
-        client->do_net();
-        client=client->pNext;
+static int callback(void *NotUsed, int argc, char **argv, char **azColName){
+    int i;
+    for(i=0; i<argc; i++){
+      pLog->_Add("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
     }
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void RemoveDeadPlayers(void)
-{
-	if(!fmgs) return;
-	C_FM_CLIENT *other_client=0;
-	other_client=fmgs->pFirstDelete;
-	if(other_client)
-	{
-		fmgs->pFirstDelete=other_client->pNext;
-		DEL(other_client);
-	}
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void RemoveAllDeadPlayers(void)
-{
-	if(!fmgs) return;
-	while(fmgs->pFirstDelete) RemoveDeadPlayers();
-}
-//////////////////////////////////////////////////////////////////////////////////////
-void DoWorld(void)
-{
-	static long dwWorldSaveTimer=dlcs_get_tickcount();
-    if(bQuit) return;
 
-	SaveWorld();
-
-
-}
+    return 0;
+  }
 //////////////////////////////////////////////////////////////////////////////////////
 // START UP
 //////////////////////////////////////////////////////////////////////////////////////
@@ -783,142 +606,80 @@ void StartUp(void)
     int j=0;
     int k=0;
 
-    Log("            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»");
-    Log("            º.  °°°°°° °°   °° °°°°°. °°°°°° °°°°°    º");
-    Log("            º   °°     °°° °°° °°  °° °° .   °° .°°   º");
-    Log("            º   ±±±±   ±±°°°±± °°°±±  ±°°°±  °°  ±°.  º");
-    Log("            º   ²±    .±± ± ±± ±±  ²± ±±     ±±²²±    º");
-    Log("            º  .²²     ²².  ²² ±²  ²² ²²     ²²  ²² . º");
-    Log("            º   ²ÛÛ²²Û ÛÛ   ²Û ²ÛÛ²Û  Û²²Û²² Û²  Û²   º");
-    Log("            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼");
-    Log("EGS Version (%s) Patch (%s) Net Revision (%s) %s",VERSION,EGS_REVISION,NET_REVISION,COPYRIGHT);
-    Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
-    Log("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
-    Log("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
-    Log("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
-    Log("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
-    Log("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
-    Log("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
-    Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°");
+    pLog->_Add("            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»");
+    pLog->_Add("            º.  °°°°°° °°   °° °°°°°. °°°°°° °°°°°    º");
+    pLog->_Add("            º   °°     °°° °°° °°  °° °° .   °° .°°   º");
+    pLog->_Add("            º   ±±±±   ±±°°°±± °°°±±  ±°°°±  °°  ±°.  º");
+    pLog->_Add("            º   ²±    .±± ± ±± ±±  ²± ±±     ±±²²±    º");
+    pLog->_Add("            º  .²²     ²².  ²² ±²  ²² ²²     ²²  ²² . º");
+    pLog->_Add("            º   ²ÛÛ²²Û ÛÛ   ²Û ²ÛÛ²Û  Û²²Û²² Û²  Û²   º");
+    pLog->_Add("            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼");
+    pLog->_Add("EGS Version (%s) Patch (%s) Net Revision (%s) %s",VERSION,EGS_REVISION,NET_REVISION,COPYRIGHT);
+    pLog->_Add("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
+    pLog->_Add("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
+    pLog->_Add("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
+    pLog->_Add("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
+    pLog->_Add("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
+    pLog->_Add("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
+    pLog->_Add("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
+    pLog->_Add("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°");
 
-    Log(dlcs_get_os_version());
+    pLog->_Add(dlcs_get_os_version());
     dlcs_suspend_power_management();
 
     SetupConsoleHistory();
 
-	//db=new CDLDB;
-
-    //db->Load("database.txt");
-
-	// examples:
-	/*
-	row=db->select("system id 1");
-	CDBVar *t; t=row;
-	while(t)
-	{
-		Log("%s=%s",t->name,t->value);
-		t=t->next_var;
-	}
-
-
-	row=db->select("users name seth");
-
-	Log("seth is %s %s ( age = %s )",row->name,row->value,db->parse(row,"age"));
-	Log("%s",db->parse(row,"email"));
-
-
-
-	db->row_update(db->select("users name seth"),"age","19");
-
-	Log("%s is %s %s ( age = %s )",
-		db->parse(row,"name"),
-		row->name,
-		row->value,
-		db->parse(row,"age")
-		);
-		*/
-
 
     ////////////////////////////////////////////////////////////////////////////
-    // Map!
+    // Open User Database
 
-    pMap = new CEmMap;
-    if(pMap==NULL)
+    i = sqlite3_open("data/users/users.db",&pUserDB);
+    if(i)
     {
-        Log("Low memory can't create pMap!");
-        bQuit=1;
-        ShutDown();
+        pLog->_Add("Can't open user database");
+        sqlite3_close(pUserDB);
     }
-    pMap->Initialize(GMP_MAPSIZE,GMP_MAPSIZE,0,5);
-    pMapBuffer = NULL;
-    pMapBuffer = new CEmMap;
-    if(pMapBuffer==NULL)
+    else
     {
-        Log("Low memory can't create pMapBuffer!");
-        bQuit=1;
-        ShutDown();
+        pLog->_Add("Opened user database");
     }
-    if(!pMapBuffer->Initialize(GMP_MAPSIZE*3,GMP_MAPSIZE*3,0,5))
+
+    char *zErrMsg=0;
+
+    i= sqlite3_exec(pUserDB, "select * from users", callback, 0, &zErrMsg);
+
+    if(i!=SQLITE_OK)
     {
-        Log("Low memory can't initialize BigMap data!");
-        bQuit=1;
-        ShutDown();
-    }
-    pFragMap = new CEmMap;
-    if(pFragMap==NULL)
-    {
-        Log("Low memory can't create pFragMap!");
-        bQuit=1;
-        ShutDown();
-    }
-    pFirstFragMap=pFragMap;
-    for(i=0;i<10;i++)
-    {
-        if(!pFragMap)
-        {
-            Log("Low memory can't create pFragMap sectors!");
-            bQuit=1;
-            ShutDown();
-        }
-        if(!pFragMap->Initialize(GMP_MAPSIZE,GMP_MAPSIZE,0,5))
-        {
-            Log("Low memory can't create pFragMap sectors!");
-            bQuit=1;
-            ShutDown();
-        }
-        pFragMap->iKey=i;
-        pFragMap->pNext=new CEmMap;
-        pFragMap=pFragMap->pNext;
-    }
+        pLog->_Add("SQL error: %s\n", zErrMsg); sqlite3_free(zErrMsg);
+        sqlite3_exec(pUserDB, "CREATE TABLE users (userame varchar(32), password varchar(32), access smallint)", callback, 0, &zErrMsg);
+        pLog->_Add("SQL error: %s\n", zErrMsg); sqlite3_free(zErrMsg);
+        sqlite3_exec(pUserDB, va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")), callback, 0, &zErrMsg);
+        pLog->_Add("SQL error: %s\n", zErrMsg); sqlite3_free(zErrMsg);
+
+        // sqlite3_exec(pUserDB, "INSERT INTO users (userame, password, access) VALUES ('seth','123',255)", callback, 0, &zErrMsg);
+      }
 
     ////////////////////////////////////////////////////////////////////////////
     // Setup server
 
     NET_Init();
 
-    if(!fmgs)
+    if(!pServer)
     {
-        fmgs=new CServer();
-        if(fmgs==NULL)
+        pServer=new CServer(40404,pLog);
+        if(pServer==NULL)
         {
-            Log("Low memory can't create server...");
+            pLog->_Add("Low memory can't create server...");
             bQuit=1;
             ShutDown();
         }
-
-        client=fmgs->pFirstPlayer;
-        Log("Listening on port [%s]", SysVar("port") );
     }
-
-//    pFMMS_Connection = new C_FMMS;
-
-	LoadWorld();
 
     ////////////////////////////////////////////////////////////////////////////
     // Setup console scroll back buffer
 
-    Log("(Type '/help' for help on commands)");
-    Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°");
+    pLog->_Add("(Type '/help' for help on commands)");
+    pLog->_Add("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°");
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -930,83 +691,26 @@ void ShutDown(void)
     ConsoleShutDown();
     RemoveConsoleHistory();
 
-    GetSerialNumber(1);
+    DEL(pServer);
 
-    char szTemp[1024];
-    memset(szTemp,0,1024);
-
-    int i=0;
-    C_FM_CLIENT *client=NULL;
-    C_FM_CLIENT *pDelPlayer=NULL;
-
-    ///////////////////////////////////////////
-
-    if(fmgs)
-    {
-        client=fmgs->pFirstPlayer;
-        if(client) Log("Kicking online players");
-        while(client)
-        {
-			pDelPlayer=client;
-            Log("       ....%s", pDelPlayer->name );
-            Send.Reset();
-            Send.Write((char)NETMSG_CLIENTSHUTDOWN);
-            Send.Write((int) pDelPlayer->sid);
-            Send.Write((char *)"Server shutdown by admin");//reason
-            pDelPlayer->pSocket->SendUnreliableMessage(&Send);
-            fmgs->Disconnect(pDelPlayer,1);
-			client=client->pNext;
-			DEL(pDelPlayer);
-        }
-    }
-
-    ///////////////////////////////////////////
-
-    RemoveAllDeadPlayers();
-
-    ///////////////////////////////////////////
-
-    SaveWorld();
-
-    ///////////////////////////////////////////
-
-    DEL(pMap);
-    DEL(pMapBuffer);
-
-    pFragMap=pFirstFragMap;
-    while(pFragMap)
-    {
-        pDeleteFragMap=pFragMap;
-        pFragMap=pFragMap->pNext;
-        DEL(pDeleteFragMap);
-    }
-
-    DEL(fmgs);
+    sqlite3_close(pUserDB);
+    pLog->_Add("Closed user database");
 
     NET_Shutdown();
 
-	if(dlcs_strcasecmp(SysVar("save_db_on_exit"),"yes") )
-	{
-		Log("Saving database");
-		// db->Save("database.txt");
-	}
-
-
-	// DEL(db);
-
     ///////////////////////////////////////////
 
-    Log("°±²ÛÛÛÛÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÛÛÛÛ²±°");
-    Log("        ÜÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÜ ");
-    Log("        Û        ÜÛÛÛÜ                      ÜÛÛÛÜ        Û ");
-    Log("        Û        ÛúÛÜÛ    ßÛÜß ß Û   Û      ÛÜÛúÛ        Û ");
-    Log("        Û        ßÛÛÛß     Û Û Û Û   Û      ßÛÛÛß        Û ");
-    Log("        Û         ÝÝÞ      ß Û ß ßßß ßßß     ÝÞÞ         Û ");
-    Log("        Û         þÜþ     Server Killed!     þÜþ         Û ");
-    Log("        ßÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛß ");
-    Log("°±²ÛÛÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛÛÛ²±°");
-    Log("    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°");
-    Log("         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß");
+    pLog->_Add("°±²ÛÛÛÛÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÛÛÛÛ²±°");
+    pLog->_Add("        ÜÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÜ ");
+    pLog->_Add("        Û        ÜÛÛÛÜ                      ÜÛÛÛÜ        Û ");
+    pLog->_Add("        Û        ÛúÛÜÛ    ßÛÜß ß Û   Û      ÛÜÛúÛ        Û ");
+    pLog->_Add("        Û        ßÛÛÛß     Û Û Û Û   Û      ßÛÛÛß        Û ");
+    pLog->_Add("        Û         ÝÝÞ      ß Û ß ßßß ßßß     ÝÞÞ         Û ");
+    pLog->_Add("        Û         þÜþ     Server Killed!     þÜþ         Û ");
+    pLog->_Add("        ßÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛß ");
+    pLog->_Add("°±²ÛÛÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛÛÛ²±°");
+    pLog->_Add("    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°");
+    pLog->_Add("         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß");
 
     DEL(pLog);
 
@@ -1015,242 +719,1479 @@ void ShutDown(void)
 //////////////////////////////////////////////////////////////////////////////////////
 void CheckRestart(void)
 {
-    C_FM_CLIENT *other_client;
-    C_FM_CLIENT *clientStump;
-
     if(bRestart)
     {
-        Log("[Initiating server restart]=====================================");
-        other_client=fmgs->pFirstPlayer;
-        while(other_client)
-        {
-            Send.Reset();
-            Send.Write((char)NETMSG_CLIENTSHUTDOWN);
-            Send.Write((int) other_client->sid);
-            Send.Write((char *)"Manual server reset, try reconnecting.");//reason
-            other_client->pSocket->SendUnreliableMessage(&Send);
-            clientStump=other_client;
-            other_client=other_client->pNext;
-            fmgs->Disconnect(clientStump,1);
-        }
+        pLog->_Add("[Initiating server restart]=====================================");
+
+        // pServer->KickAll("Server reset, try reconnecting.");
+
         ShutDown();
         StartUp();
-        Log("==============================================[Server restarted]");
+        pLog->_Add("==============================================[Server restarted]");
         bRestart=0;
     }
 }
+
 //////////////////////////////////////////////////////////////////////////////////////
-void ReportToMaster(void)
+
+char *GetConsoleHistory(int x)
 {
-	/*
-    static bool starter=false; static long dwReportTimer=GetTickCount();
-    // if(!dlcs_strcasecmp(gmvar("sys.master_report"),"yes")) return;
-	// if(!pFMMS_Connection) return;
-    if((GetTickCount()-dwReportTimer)<15000) { if(!starter) starter=true; else return; }
-    dwReportTimer=GetTickCount(); //Log("Reported to master");
-    pFMMS_Connection->Connect("127.0.0.1","40404");
-	*/
+    if(ConsoleHistory) return strdup(ConsoleHistory[x].text);
+    return strdup(va("con history error![%d]",x));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-extern "C" void SaveWorld(void)
+void SetupConsoleHistory(void)
 {
-
-	static long dwSaveTimer=dlcs_get_tickcount();
-	if(	(dlcs_get_tickcount()-dwSaveTimer) > 50000 ) //((long)(atoi( SysVar("world_save_timer") ) *1000)) )
-	{
-		dwSaveTimer=dlcs_get_tickcount();
-		Log("World saved...");
-	}
-
+    ConsoleHistory=0;
+    ConsoleHistory=new ConHistory[MAX_CONSOLE_INPUT_BUFFER+1];
+    for(int i=0;i<MAX_CONSOLE_INPUT_BUFFER;i++)
+        memset(ConsoleHistory[i].text,0,1024);
+    ConsoleHistoryPosition=0;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-extern "C" void LoadWorld(void)
+void AddToConsoleHistory(char *s)
 {
-	Log("World loaded...");
+    for(int i=MAX_CONSOLE_INPUT_BUFFER;i>0;i--)
+        strcpy(ConsoleHistory[i].text,ConsoleHistory[i-1].text);
+    strcpy(ConsoleHistory[0].text,s);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-extern "C" C_FM_CLIENT *GetClient(char *user_name)
+void RemoveConsoleHistory(void)
 {
-    if(!fmgs) return 0;
-    C_FM_CLIENT *find=fmgs->pFirstPlayer;
-    while(find)
+    delete [] ConsoleHistory;
+    ConsoleHistory=0;
+}
+
+
+void C_GSC::do_net(void)
+{
+    if(!pSocket) return;
+
+    CPacket     Send(8192);
+	CPacket     *Recv=NULL;
+
+    char szTemp[1024];     memset(szTemp,0,1024);
+    char szTemp2[1024];    memset(szTemp2,0,1024);
+    char szTemp3[1024];    memset(szTemp3,0,1024);
+    char szTemp4[2048];    memset(szTemp4,0,2048);
+
+    int iMsg,i,j,k,x,y,z,ax,ay,az,bx,by,bz,cx,cy,cz,dx,dy,dz,ex,ey,ez,fx,fy,fz;
+    iMsg=i=j=k=x=y=z=ax=ay=az=bx=by=bz=cx=cy=cz=dx=dy=dz=ex=ey=ez=fx=fy=fz=0;
+    double gx,gy,gz; gx=gy=gz=0; unsigned char vx,vy,vz; vx=vy=vz=0;
+
+    char cMsgType;
+
+    //C_GSC *client=0;
+
+
+    iMsg=pSocket->iGetMessage();
+
+    if(iMsg>0)
     {
-        if(dlcs_strcasecmp(find->name,user_name)) return find;
-        find=find->pNext;
-    }
-    return 0;
-}
+        pLog->_Add("Incoming message from (%s)(%s)",username,NET_pAddrToString((struct sockaddr*)&pSocket->FromAddr));
+        Recv=pSocket->pGetMessage();
 
-//////////////////////////////////////////////////////////////////////////////////////
-void Kick(char *name,char *reason)
-{
-    C_FM_CLIENT *client=fmgs->pFirstPlayer;
-    while(client)
-    {
-        if(dlcs_strcasecmp(client->name,name))
+        if(!Recv) return;
+
+        cMsgType=Recv->cRead();
+
+        pLog->_Add("Got a message %d from %s",cMsgType,        NET_pAddrToString((struct sockaddr*)&pSocket->FromAddr)        );
+
+        //pLog->_Add("iGetMessage=%d",i);
+        Recv=pSocket->pGetMessage();
+
+        if(FromAddr.sin_addr.s_addr!=pSocket->FromAddr.sin_addr.s_addr)
         {
-            if(strlen(client->toon->t_name))
-                Log("%s(%s) kicked",name,client->toon->t_name);
-            else
-                Log("%s kicked",name);
-
-            Send.Reset();
-            Send.Write((char)NETMSG_CLIENTSHUTDOWN);
-            Send.Write((int)1);
-            Send.Write((char *)reason); // reason
-            client->pSocket->SendUnreliableMessage(&Send);
-
-            fmgs->Disconnect(client,1); //Logout(client,1);
-
-			/* client=fmgs->pFirstPlayer;
-            Send.Reset();
-            Send.Write((char)NETMSG_VIS_REMOVE);
-            Send.Write((int)i);
-            while(client)
-            {
-                client->pSocket->SendUnreliableMessage((CPacket *)&Send);
-                client=client->pNext;
-            }*/
-
-
+            pLog->_Add("Recv a net message from unknown");
             return;
         }
-        client=client->pNext;
-    }
-    Log("%s is not online!",name);
-    return;
-}
-//////////////////////////////////////////////////////////////////////////////////////
-char *GetConsoleHistory(int x) { if(ConsoleHistory) return strdup(ConsoleHistory[x].text); return strdup(va("con history error![%d]",x)); }
-//////////////////////////////////////////////////////////////////////////////////////
-void SetupConsoleHistory(void) { ConsoleHistory=0; ConsoleHistory=new ConHistory[MAX_CONSOLE_INPUT_BUFFER+1]; for(int i=0;i<MAX_CONSOLE_INPUT_BUFFER;i++) memset(ConsoleHistory[i].text,0,1024); ConsoleHistoryPosition=0; }
-//////////////////////////////////////////////////////////////////////////////////////
-void AddToConsoleHistory(char *s) { for(int i=MAX_CONSOLE_INPUT_BUFFER;i>0;i--) strcpy(ConsoleHistory[i].text,ConsoleHistory[i-1].text); strcpy(ConsoleHistory[0].text,s); }
-//////////////////////////////////////////////////////////////////////////////////////
-void RemoveConsoleHistory(void) { delete [] ConsoleHistory; ConsoleHistory=0; }
 
+        memcpy(&pSocket->ToAddr,&FromAddr,sizeof(sockaddr));
+        //pLog->_Add("Recv a net message from client=%s",NET_pAddrToString((struct sockaddr*)&FromAddr));
 
-
-
-
-
-
-
-
-#ifdef _EMBER_SERVER_
-/////////////////////////////////////////////////////////
-void RemoveAccount(char *szName)
-{
-    char szTemp[1024];
-    FILE *fp1;
-    FILE *fp2;
-    char In[1024];
-    char *Tok;
-    char Save[1024];
-    int i;
-
-    sprintf(szTemp,"users%c%s",PATH_SEP,szName);
-    strcpy(Save,szTemp);
-    sprintf(Save,"%s%c%s.fcd",szTemp,PATH_SEP,szName);
-    remove(Save);
-
-    for(i=0;i<9;i++)
-    {
-        sprintf(Save,"%s%c%s.cs%d",szTemp,PATH_SEP,szName,i);
-        remove(Save);
-        sprintf(Save,"%s%c%s.it%d.can",szTemp,PATH_SEP,szName,i);
-        remove(Save);
-    }
-    rmdir(szTemp);
-
-    sprintf(szTemp,"users%cpassword.dat",PATH_SEP);
-    fp1=fopen(szTemp,"rt");
-    sprintf(szTemp,"users%cpassword.tmp",PATH_SEP);
-    fp2=fopen(szTemp,"wt");
-    if(fp1)
-    {
-        while(fgets(In,255,fp1))
+        cMsgType=Recv->cRead();
+        switch(cMsgType)
         {
-            strcpy(Save,In);
-            Tok=strtok(In,"(,)");
-            if(!strcmp(Tok,"Data"))
-            {
-                Tok=strtok(NULL,"(,)");
-                if(!strcmp(Tok,szName))
+
+             /*********************************************************************************
+             ** NETMSG_LOGIN_REQUEST                                                        **
+             *********************************************************************************/
+
+            case NETMSG_LOGIN_REQUEST:
+
+                ax=BAD_LOGIN;
+
+                strcpy(szTemp,"null");
+
+                strcpy( username , Recv->pRead());
+                strcpy( password , Recv->pRead());
+
+                pLog->_Add("Login request from %s:%d (username[%s])",
+                    inet_ntoa(pSocket->ToAddr.sin_addr),
+                    ntohs(pSocket->ToAddr.sin_port),
+                    username
+                );
+
+                // pLog->_Add("login... [%s][%s]",username,szPass);
+
+                if((username==NULL) || (password==NULL))
                 {
-                    continue;
+                    strcpy(szTemp,"Bad network message");
+                    bDelete=true;
+                    break;
+                }
+
+
+//	    		if(atoi(gmvar("sys.players"))>=atoi(gmvar("sys.maxplayers"))) ax=TOO_MANY_PLAYERS;
+                if(dlcs_strcasecmp(username,"SYSTEM")) ax=ALREADY_LOGGED_IN;
+
+/*				other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    if(dlcs_strcasecmp(other_client->name,username)) ax=ALREADY_LOGGED_IN;
+                    other_client=other_client->pNext;
+                }
+
+*/
+
+
+                if(     (dscc(username,"seth")) &&
+                        (dscc(password,md5_digest("123"))) )
+                        ax=GOOD_LOGIN;
+
+/*
+                if(ax==BAD_LOGIN)
+                {
+                    result=emquery(va("select * from rpg_users where name='%s'",username));
+                    if(result)
+                    {
+                        row = mysql_fetch_row(result);
+                        if(row)
+                        {
+                            if(dlcs_strcasecmp(row[1],szPass))
+                            {
+                                ax=GOOD_LOGIN; //Log("Password good");
+                            }
+                            else
+                            {
+                                ax=BAD_LOGIN; //Log("Password bad");
+                            }
+                        }
+                        else ax=NEW_ACCOUNT;
+                        mysql_free_result(result);
+                    }
+                    else ax=NEW_ACCOUNT;
+                }
+*/
+
+                switch(ax)
+                {
+                    case BAD_LOGIN:         strcpy(szTemp,"Incorrect password...");            break;
+                    case ALREADY_LOGGED_IN: strcpy(szTemp,"This user is already logged in from another machine...");       break;
+                    case ACCOUNT_EXPIRED:   strcpy(szTemp,"Your account has expired. Contact system administrator.");      break;
+                    case TOO_MANY_PLAYERS:  strcpy(szTemp,"Server is full. Too many       players already logged in...");  break;
+                    case GOOD_LOGIN:
+                        if(!strlen(username))
+                        {
+                            ax=BAD_LOGIN;
+                            strcpy(szTemp,"Bad network try again.");
+                            break;
+                        }
+                        break;
+                    case NEW_ACCOUNT:
+
+/*
+                        if(dlcs_strcasecmp("yes",gmvar("sys.new_users")))
+                        {
+                            iLoginType=BAD_LOGIN;
+                            strcpy(szTemp,va("Sign up for a new account on the webpage %s",gmvar("sys.website")));
+                            break;
+                        }
+
+                        else
+                        {
+                        */
+                            ax=BAD_LOGIN;
+                            strcpy(szTemp,"Sorry, we're not accepting new accounts at this time. Try again later.");
+                            break;
+
+                            /*
+                        }
+                        break;
+
+*/
+                    default:
+                        break;
+                }
+
+                if(ax==GOOD_LOGIN)
+                {
+                    VortexInsert();
+//						ExecString(va("player[%d].name=\"%s\";",client->sid,client->name));
+//						result=emquery(va("select * from rpg_users where name='%s'",client->name));
+//						if(result) { row=mysql_fetch_row(result); Log("User [%s] logged in (last login %s)",row[0],row[10]); mysql_free_result(result); }
+//						emquery(va("UPDATE `rpg_users` SET `last_login` = NOW( ) WHERE `name`='%s'",client->name));
+//						emquery(va("UPDATE `rpg_users` SET `this_ip` = '%s' WHERE `name`='%s'",gmvar(va("player[%d].ip_address",client->sid)),gmvar(va("player[%d].name",client->sid))));
+
+                    //client->ecsSetState(NET_CONNECTED);
+
+                    strcpy(szTemp,"Welcome to the server.");
+                    //sid=client->sid;
+                    // access=client->access;
+                }
+
+                // client->LoginReply(ax,szTemp);
+
+                pLog->_Add("LoginReply(%s)",szTemp);
+
+                Send.Reset();
+                Send.Write((char) NETMSG_LOGIN_REQUEST_REPLY);
+                Send.Write((char)   ax);
+                Send.Write((char *) szTemp);
+                Send.Write((char *) VERSION);
+                Send.Write((int)    sid);
+                Send.Write((char *) "sys.media");
+                Send.Write((char *) "sys.name");
+                Send.Write((char *) "sys.owner");
+                Send.Write((int)    255);
+                Send.Write((char *) "access what");
+                Send.Write((char)   10); // character slots
+                pSocket->SendUnreliableMessage(&Send);
+                if(ax!=GOOD_LOGIN) bDelete=true;
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_LOGOUT                                                               **
+             *********************************************************************************/
+
+            case NETMSG_LOGOUT:
+
+                bDelete=true;
+                pLog->_Add("%s logged out",username);
+                    //Logout(client,1);
+                break;
+
+
+            /*********************************************************************************
+             ** NETMSG_GUI                                                                  **
+             *********************************************************************************/
+
+            case NETMSG_GUI:
+                strcpy(szTemp3,Recv->pRead());
+                //l_interpret(va("world.client[%d]:clearformdata();",client->windex));
+                ax=Recv->cRead(); // number of data to get
+                for(j=0;j<ax;j++)
+                {
+                    strcpy(szTemp ,Recv->pRead());
+                    strcpy(szTemp2,Recv->pRead());
+                    //l_interpret(va("world.client[%d]:addformdata(\"%s\",\"%s\");",client->windex,szTemp,szTemp2));
+                }
+
+                //client->lua_script(szTemp3);
+                //}
+                //*/
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_GET_LOGIN_PROGRAM                                                    **
+             *********************************************************************************/
+
+            case NETMSG_GET_LOGIN_PROGRAM:
+                /* Log("Hi");
+                Send.Reset();
+                Send.Write((char)NETMSG_GUI);
+                Send.Write((char)0);
+                Send.Write((char)0);
+                client->pSocket->SendUnreliableMessage((CPacket *)&Send); */
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_SERVER_INFO                                                          **
+             *********************************************************************************/
+
+            case NETMSG_SERVER_INFO:
+                switch(Recv->cRead())
+                {
+                    case SI_GENERIC:
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+
+            /*********************************************************************************
+             ** NETMSG_RETRIEVECHARS                                                        **
+             *********************************************************************************
+
+            case NETMSG_RETRIEVECHARS:
+
+                // client->inactivity_event->reset_timer();
+                client->avatar->wipe();
+                for(i=0;i<atoi(l_sys("character_slots"));i++)
+                {
+                    client->avatar->load(i);
+                    if(strlen(client->avatar->name))
+                    {
+                        Send.Reset();
+                        Send.Write((char)NETMSG_RETRIEVECHARS);
+                        Send.Write((char)i);
+                        Send.Write((char *)client->avatar->name);
+                        client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                        client->avatar->wipe();
+                    }
+                }
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_RETRIEVECHARINFO                                                     **
+             *********************************************************************************
+            case NETMSG_RETRIEVECHARINFO:
+
+                // client->inactivity_event->reset_timer();
+                cx=Recv->cRead();
+                if(client->in_limbo==false)
+                {
+                    client->avatar->load(cx);
+                    client->in_limbo=true;
+                    Send.Reset();
+                    Send.Write((char)NETMSG_RETRIEVECHARINFO);
+                    Send.Write((char *)client->avatar->name);
+                    Send.Write((int)client->sid);
+                    Send.Write((char)client->avatar->direction);
+                    Send.Write((int)15015);
+                    Send.Write((int)15015);
+                    Send.Write((int)15015);
+                    client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    MovePlayer(client,client->avatar->x,client->avatar->y,client->avatar->z,1);
+                }
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_LOCALCHAT                                                            **
+             *********************************************************************************
+
+            case NETMSG_LOCALCHAT:  // Local Chat
+
+                // client->inactivity_event->reset_timer();
+                strcpy(szTemp,Recv->pRead());
+                if((atoi(l_sys("log_local_chat"))?0:1))
+                    Log("%s(%s)L\"%s\"",client->avatar->name,client->avatar->name,szTemp);
+                Send.Reset();
+                Send.Write((char)NETMSG_LOCALCHAT);
+                Send.Write((int)client->sid);
+                Send.Write((char *)szTemp);
+                client->avatar->chat_r=Recv->cRead();
+                Send.Write((char) client->avatar->chat_r);   // Red element
+                client->avatar->chat_g=Recv->cRead();
+                Send.Write((char) client->avatar->chat_g);   // Green element
+                client->avatar->chat_b=Recv->cRead();
+                Send.Write((char) client->avatar->chat_b);   // Blue element
+                client->avatar->set_chat_font(Recv->pRead());
+                Send.Write((char *) client->avatar->chat_font); // Font name
+
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    if( ( other_client->avatar->x >= client->avatar->x-GMP_MAPSIZE ) &&
+                        ( other_client->avatar->x <= client->avatar->x+GMP_MAPSIZE ) &&
+                        ( other_client->avatar->y >= client->avatar->y-GMP_MAPSIZE ) &&
+                        ( other_client->avatar->y <= client->avatar->y+GMP_MAPSIZE ) &&
+                        ( other_client->avatar->z == client->avatar->z    ) )
+                        {
+                            other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                        }
+                    other_client=other_client->pNext;
+                }
+
+                break;
+
+
+            /*********************************************************************************
+             ** NETMSG_SYSTEMMSG                                                            **
+             *********************************************************************************/
+
+            case NETMSG_SYSTEMMSG:  // Global Chat / System Message
+
+                // client->inactivity_event->reset_timer();
+                strcpy(szTemp,Recv->pRead());
+                //GlobalAnnounce(client,va("%s:%s",l_client_prop(windex,"name"),szTemp),ax,ay,az);
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_GENERIC_MSG                                                          **
+             *********************************************************************************/
+
+            case NETMSG_GENERIC_MSG:
+                // client->inactivity_event->reset_timer();
+                strcpy(szTemp,Recv->pRead());
+                memset(szTemp2,0,1024);
+                j=0;
+                for(i=0;i<strlen(szTemp);i++)
+                {
+                    if(szTemp[i]=='\'')
+                    {
+                        szTemp2[j]='\\';
+                        j++;
+                        szTemp2[j]='\'';
+                        j++;
+                    }
+                    else
+                    {
+                        szTemp2[j]=szTemp[i];
+                        j++;
+                    }
+                }
+                for(i=0;i<strlen(szTemp2);i++) szTemp2[i]=szTemp2[i+1]; // should have a / in front, remove it
+                //l_interpret(va("world.client[%d]:con_parse(\"%s\")",windex,szTemp2));
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_MOVEPLAYER                                                           **
+             *********************************************************************************/
+
+            case NETMSG_MOVEPLAYER:
+
+                // given a starting location A
+                // and   an ending  location B
+                // the server will generate a path ((x,y) waypoints)
+                // and return it to the client
+                // if there is no path to the destination,
+                // the function will return 0
+                // location A and location B must be visible on the client's screen
+
+
+
+
+                /*
+                // Request for movement
+                // Store current client location here.
+
+                // client->inactivity_event->reset_timer();
+
+                ax = client->avatar->x;
+                ay = client->avatar->y;
+                az = client->avatar->z;
+
+                // Read requested move from data packet.
+
+                dx = Recv->cRead();
+
+                switch(dx)
+                {
+                    case FM_NORTH:
+                        client->avatar->y=client->avatar->y-1;
+                        client->avatar->direction=FM_NORTH;
+                        break;
+
+                    case FM_SOUTH:
+                        client->avatar->y=client->avatar->y+1;
+                        client->avatar->direction=FM_SOUTH;
+                        break;
+
+                    case FM_EAST:
+                        client->avatar->x=client->avatar->x+1;
+                        client->avatar->direction=FM_EAST;
+                        break;
+
+                    case FM_WEST:
+                        client->avatar->x=client->avatar->x-1;
+                        client->avatar->direction=FM_WEST;
+                        break;
+
+                    case FM_NORTHWEST:
+                        client->avatar->y=client->avatar->y-1;
+                        client->avatar->x=client->avatar->x-1;
+                        client->avatar->direction=FM_NORTHWEST;
+                        break;
+
+                    case FM_SOUTHWEST:
+                        client->avatar->x=client->avatar->x-1;
+                        client->avatar->y=client->avatar->y+1;
+                        client->avatar->direction=FM_SOUTHWEST;
+                        break;
+
+                    case FM_NORTHEAST:
+                        client->avatar->x=client->avatar->x+1;
+                        client->avatar->y=client->avatar->y-1;
+                        client->avatar->direction=FM_NORTHEAST;
+                        break;
+
+                    case FM_SOUTHEAST:
+                        client->avatar->x=client->avatar->x+1;
+                        client->avatar->y=client->avatar->y+1;
+                        client->avatar->direction=FM_SOUTHEAST;
+                        break;
+
+                    default:
+                        Log("%s(%s) Move Error! %d",client->avatar->name,client->avatar->name,dx);
+                        break;
+                }
+
+                // Get map sector for checking stuff
+
+                dy = pMap->LoadSector3D("map",  MapCoord(client->avatar->x),
+                                                MapCoord(client->avatar->y),
+                                                MapCoord(client->avatar->z));
+
+                dx=0; // teleport disable for now
+
+                // Check if tile is blocked
+                if( (client->game_state==PLAY) &&
+                    (pMap->bIsBlocked(CamCoord(client->avatar->x),CamCoord(client->avatar->y))) )
+                {
+                        // restore previous client location
+                        client->avatar->x=ax;
+                        client->avatar->y=ay;
+                        client->avatar->z=az;
+                        break;
+                }
+                else
+                {
+                    MovePlayer(client,client->avatar->x,client->avatar->y,client->avatar->z,dx);
+                }
+
+                /*
+                dx = 0; // no teleports allowed in this server!
+                if(root->pSystem->iGetProperty("teleports"))
+                {
+                    dx = pMap->bIsTeleport( client->avatar->x,
+                                            client->avatar->y); // Check if on a teleport location here
+
+                    if(dx) // reference teleport list to get the destination teleport location
+                    {
+                        pTeleport=pFirstTeleport;
+                        while(pTeleport)
+                        {
+                            if( (pTeleport->iSourceX) == (client->pObjectRef->iGetProperty("x")) &&
+                                (pTeleport->iSourceY) == (client->pObjectRef->iGetProperty("y")) &&
+                                (pTeleport->iSourceZ) == (client->pObjectRef->iGetProperty("z")) )
+                                break;
+
+                            pTeleport=pTeleport->pNext;
+                        }
+
+                        if(pTeleport)
+                        {
+                            client->pObjectRef->SetProperty("x",pTeleport->iDestinationX);
+                            client->pObjectRef->SetProperty("y",pTeleport->iDestinationY);
+                            client->pObjectRef->SetProperty("z",pTeleport->iDestinationZ);
+                        }
+                    }
+                }*/
+
+
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_MODIFY_CHARACTER                                                     **
+             *********************************************************************************/
+
+            case NETMSG_MODIFY_CHARACTER:
+                // client->inactivity_event->reset_timer();
+                /*
+
+                if(!DoesHaveAccess(client->cGetAccess(),"modify_character"))
+                {
+                    // Player doesn't have access to change character information
+                    // Send back a refuse request message
+                    Announce(client,"Can't modify your character. You don't have the access.",255,0,0);
+                    Log("%s(%s) tried to modify character!",client->avatar->name,client->avatar->name);
+                    break;
+                }
+
+                Send.Reset();
+                Send.Write((char)NETMSG_MODIFY_CHARACTER);
+                Send.Write((int)Recv->iRead());
+
+                switch(Recv->cRead())
+                {
+                    case MC_RACE:
+                        client->SetRace(Recv->cRead());
+                        Send.Write((char)MC_RACE);
+                        Send.Write((int)client->GetRace());
+                        break;
+
+                    case MC_GENDER:
+                        client->SetGender(Recv->cRead());
+                        Send.Write((char)MC_GENDER);
+                        Send.Write((char)client->GetGender());
+                        break;
+
+                    case MC_CLASS:
+                        client->SetClass(Recv->cRead());
+                        Send.Write((char)MC_CLASS);
+                        Send.Write((int)client->GetClass());
+                        break;
+
+                    default:
+                        break;
+                }
+
+                client->avatar->save("users");
+
+                // Send only to on screen players
+                // do really all players need this information?
+                // This packet will be sent when your characters appearance
+                // changes somehow, if there are players on screen, go ahead
+                // and describe the appearance so the client can render it
+
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    if( ( other_client->GetMapX() >= ( client->GetMapX()-1) ) &&
+                        ( other_client->GetMapX() <= ( client->GetMapX()+1) ) &&
+                        ( other_client->GetMapY() >= ( client->GetMapY()-1) ) &&
+                        ( other_client->GetMapY() <= ( client->GetMapY()+1) ) &&
+                        ( other_client->GetMapZ() ==   client->GetMapZ()    ) )
+                    {
+                        other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    }
+                    other_client=other_client->pNext;
+                }
+                */
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_CLIENTSHUTDOWN                                                       **
+             *********************************************************************************/
+
+            case NETMSG_CLIENTSHUTDOWN:
+            /*
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    if(other_client != client)
+                    {
+                        Send.Reset();
+                        Send.Write((char)NETMSG_VIS_REMOVE);
+                        //Send.Write((int)atoi(l_client_prop(windex,"sid")));
+                        other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    }
+                    other_client=other_client->pNext;
+                }
+                other_client=client->pNext;
+                fmgs->Disconnect(client,1);
+                client=other_client;
+                return;*/
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_CREATE_CHARACTER                                                     **
+             *********************************************************************************
+
+            case NETMSG_CREATE_CHARACTER:
+
+                // client->inactivity_event->reset_timer();
+                client->avatar->hail(Recv->cRead());
+                strcpy(client->avatar->name,Recv->pRead());
+
+                // call hook to do stuff with client here...
+
+                client->avatar->x=15015;
+                client->avatar->y=15015;
+                client->avatar->z=15015;
+
+                client->avatar->save(client->avatar->slot); // Save the character slot
+                Send.Reset();
+                Send.Write((char)NETMSG_CREATE_CHARACTER);
+                Send.Write((char)client->avatar->slot);
+                client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_DELETE_CHARACTER                                                     **
+             *********************************************************************************
+
+            case NETMSG_DELETE_CHARACTER:
+
+                // client->inactivity_event->reset_timer();
+                cx = Recv->cRead();
+                if(1)//!DoesHaveAccess(client->cGetAccess(),"fast_char_delete"))
+                {
+                    client->avatar->load(cx);
+                    //tTime=localtime(&client->CL_Data->tCreationTime);
+                    //ax=tTime->tm_year;
+                    //ay=tTime->tm_yday;
+                    //time(&fmgsTime);
+                    //tTime=localtime(&fmgsTime);
+                    //bx=tTime->tm_year;
+                    //by=tTime->tm_yday;
+                    //if(bx==ax)
+                    //{/
+                    //    if( (by-ay) < l_sys("minimum_char_age)
+                    //    {
+                    //        sprintf(szTemp,"Character must age at least %s real days!",l_sys("minimum_char_age"));
+                    //        Announce(client,szTemp,50,175,255);
+                    //        break;
+                    //    }
+                    // }
+                }
+                client->avatar->wipe();
+                client->avatar->save(cx);
+                Send.Reset();
+                Send.Write((char)NETMSG_DELETE_CHARACTER);
+                Send.Write((char)1);
+                client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_MODIFY_MAP                                                           **
+             *********************************************************************************
+
+            case NETMSG_MODIFY_MAP:
+
+                // client->inactivity_event->reset_timer();
+
+                if(pMap==NULL) break;
+
+                cx=Recv->cRead();      // Type of modification
+                cy=Recv->cRead();      // boolean
+
+                ax=client->avatar->x;//Recv->iRead(); // x
+                ay=client->avatar->y;//Recv->iRead(); // y
+                az=client->avatar->z;//Recv->iRead(); // z
+
+                pMap->LoadSector3D("map",MapCoord(ax),MapCoord(ay),MapCoord(az));
+
+                Send.Reset();
+                Send.Write((char)NETMSG_MODIFY_MAP);
+
+                if(1) //!DoesHaveAccess(client->cGetAccess(),"map_build"))
+                {
+                    AdminToPlayer(client,"You don't have access to build the map.",255,0,0);
+                    break;
+                }
+
+                switch(cx)
+                {
+                    case GMP_PROPERTY_LIQUID:
+
+                        pMap->SetLiquid(CamCoord(ax),CamCoord(ay),(cy?true:false));  // keep microsoft happy
+                        Send.Write((char)GMP_PROPERTY_LIQUID);
+                        Send.Write((char)cy);
+
+                        break;
+
+                    case GMP_PROPERTY_BLOCKED:
+
+                        pMap->SetBlocked(CamCoord(ax),CamCoord(ay),(cy?true:false));  // keep microsoft happy
+                        Send.Write((char)GMP_PROPERTY_BLOCKED);
+                        Send.Write((char)cy);
+
+                        break;
+
+                    case GMP_PROPERTY_INDOORS:
+
+                        break;
+
+                    case GMP_PROPERTY_TELEPORT:
+                        /*
+
+                        Send.Write((char)GMP_PROPERTY_TELEPORT);
+                        Send.Write((char)cy);
+
+                        pTeleport=pFirstTeleport;
+                        while(pTeleport)
+                        {
+                            if( (pTeleport->iSourceX  == ax) &&
+                                (pTeleport->iSourceY  == ay) &&
+                                (pTeleport->iSourceZ  == az) )
+                                break;
+                            pTeleport=pTeleport->pNext;
+                        }
+
+                        if(pTeleport)
+                        {
+                            if(cy)
+                            {
+                                strcpy(pTeleport->szName,Recv->pRead());
+                                strcpy(pTeleport->szDestName,Recv->pRead());
+                                pTeleport->iDestinationX=Recv->iRead();
+                                pTeleport->iDestinationY=Recv->iRead();
+                                pTeleport->iDestinationZ=Recv->iRead();
+                                sprintf(szTemp,"teleports%c%d.cfg",PATH_SEP,pTeleport->iSourceX,pTeleport->iSourceY,pTeleport->iSourceZ);
+                                pTeleport->bSave(szTemp);
+                            }
+                            else
+                            {
+                                sprintf(szTemp,"teleports%c%d-%d-%d.ini",PATH_SEP,pTeleport->iSourceX,pTeleport->iSourceY,pTeleport->iSourceZ);
+                                pTeleport->bClear();
+                                remove(szTemp);
+                            }
+
+                            pMap->SetTeleport(ax,ay,(cy?true:false));
+                            break;
+                        }
+
+                        if(!cy)
+                        {
+                            pMap->SetTeleport(ax,ay,(cy?true:false));
+                            break;
+                        }
+
+                        i=0;
+
+                        pTeleport=pFirstTeleport;
+                        while(pTeleport)
+                        {
+                            if(pTeleport->iKey==NOT_A_TELEPORT)
+                                break;
+                            i++;
+                            pTeleport=pTeleport->pNext;
+                        }
+
+                        if(i>MAX_TELEPORTS)
+                            break;
+
+                        if(pTeleport)
+                        {
+                            pTeleport->iKey=i;
+
+                            strcpy(pTeleport->szName,Recv->pRead());
+
+                            pTeleport->iSourceX=ax;
+                            pTeleport->iSourceY=ay;
+                            pTeleport->iSourceZ=az;
+
+                            strcpy(pTeleport->szDestName,Recv->pRead());
+
+                            pTeleport->iDestinationX=Recv->iRead();
+                            pTeleport->iDestinationY=Recv->iRead();
+                            pTeleport->iDestinationZ=Recv->iRead();
+
+                            sprintf(szTemp,"teleports%c%d-%d-%d.ini",PATH_SEP,pTeleport->iSourceX,pTeleport->iSourceY,pTeleport->iSourceZ);
+                            pTeleport->bSave(szTemp);
+
+                            pMap->SetTeleport(ax,ay,(cy?true:false));
+                            pMap->SaveSector3D("map",bx,by,bz);
+
+                            if(pTeleport->pNext)
+                                break;
+
+                            pTeleport->pNext = new CTeleport;
+                        }
+                        ////*
+                        break;
+
+                    default:
+                        return;
+                        break;
+                }
+
+                Send.Write((int)ax);
+                Send.Write((int)ay);
+                Send.Write((int)az);
+
+                // Send to all players
+
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    other_client=other_client->pNext;
+                }
+                pMap->SaveSector3D("map",MapCoord(ax),MapCoord(ay),MapCoord(bz));
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_SET_TILE                                                             **
+             *********************************************************************************/
+
+            case NETMSG_SET_TILE:
+                // client->inactivity_event->reset_timer();
+
+                if(1)//!DoesHaveAccess(client->cGetAccess(),"map_build"))
+                {
+//                        AdminToPlayer(client,"You don't have access to build the map.",255,0,0);
+                    // Log("%s(%s) tried to set map tile.",client->avatar->name,client->avatar->name);
+                    break;
+                }
+
+                ax = Recv->iRead(); // x
+                ay = Recv->iRead(); // y
+                az = Recv->iRead(); // z
+                i  = Recv->cRead(); // bank
+                j  = Recv->cRead(); // tile
+
+                // Log("%s(%s) set tile:%d %d %d %d %d %d [%d][%d]",client->avatar->name,client->avatar->name,ax,ay,az,bx,by,bz,i,j);
+
+//                    pMap->LoadSector3D("map",MapCoord(ax),MapCoord(ay),MapCoord(az));
+//                    pMap->SetTile(CamCoord(ax),CamCoord(ay),i,j);
+//                    pMap->SaveSector3D("map",MapCoord(ax),MapCoord(ay),MapCoord(az));
+
+
+/*
+                Send.Reset();
+                Send.Write((char)NETMSG_SET_TILE);
+                Send.Write((int)ax);
+                Send.Write((int)ay);
+                Send.Write((int)az);
+                Send.Write((char)i);
+                Send.Write((char)j);
+
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    other_client=other_client->pNext;
+                }
+*/
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_SET_OBJECT                                                           **
+             *********************************************************************************/
+
+            case NETMSG_SET_OBJECT:
+                // client->inactivity_event->reset_timer();
+
+                if(1) //!DoesHaveAccess(client->cGetAccess(),"map_build"))
+                {
+//                        AdminToPlayer(client,"You don't have access to build the map.",255,0,0);
+                    break;
+                }
+
+                ax = Recv->iRead();  // x
+                ay = Recv->iRead();  // y
+                az = Recv->iRead();  // z
+                i  = Recv->cRead(); // bank
+                j  = Recv->cRead(); // object
+                k  = Recv->cRead(); // layer
+
+//                    pMap->LoadSector3D("map",MapCoord(ax),MapCoord(ay),MapCoord(az));
+//                    pMap->SetObj(ax,ay,i,j,k);
+//                    pMap->SaveSector3D("map",MapCoord(ax),MapCoord(ay),MapCoord(az));
+
+/*
+                Send.Reset();
+                Send.Write((char)NETMSG_SET_OBJECT);
+                Send.Write((int)ax);
+                Send.Write((int)ay);
+                Send.Write((int)az);
+                Send.Write((char)i);
+                Send.Write((char)j);
+                Send.Write((char)k);
+
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    other_client=other_client->pNext;
+                }
+*/
+                break;
+
+
+            /*********************************************************************************
+             ** NETMSG_SET_VERTEX                                                           **
+             *********************************************************************************/
+
+            case NETMSG_SET_VERTEX:
+
+                // client->inactivity_event->reset_timer();
+
+                if(1) //!DoesHaveAccess(client->cGetAccess(),"map_build"))
+                {
+//                        AdminToPlayer(client,"You don't have access to build the map.",255,0,0);
+                    break;
+                }
+/*
+                if(!pMapBuffer)
+                {
+                    // Log("Attempt to set vertex on map that doesn't exist.");
+                    break;
+                }
+
+                ax = Recv->iRead();  // x
+                ay = Recv->iRead();  // y
+                az = Recv->iRead();  // z
+
+                cx = Recv->cRead(); // what type of change
+                cy = Recv->cRead(); // which vertex
+                vx = Recv->cRead(); // red element
+                vy = Recv->cRead(); // green element
+                vz = Recv->cRead(); // blue element
+
+                LoadMap(ax,ay,az);
+
+                switch(cx)
+                {
+                    case 0: // height
+                        pMapBuffer->SetVertexHeight(CamCoord(ax),CamCoord(ay),cy,vx);
+                        break;
+
+                    case 1: // color/lighting
+                        pMapBuffer->SetVertexColor(CamCoord(ax),CamCoord(ay),cy,vx,vy,vz);
+                        break;
+
+                    case 2: // width
+                        pMapBuffer->SetVertexWidth(CamCoord(ax),CamCoord(ay),cy,vx);
+                        break;
+
+                    case 3: // relight the entire map sector with this color
+                        pMapBuffer->ClearVertexColors(vx,vy,vz);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                SaveMap(ax,ay,az);
+
+                Send.Reset();
+                Send.Write((char)NETMSG_SET_VERTEX);
+                Send.Write((int)ax);
+                Send.Write((int)ay);
+                Send.Write((int)az);
+                Send.Write((char)cx); // what type of change
+                Send.Write((char)cy); // which vertex
+                Send.Write((char)vx);
+                Send.Write((char)vy);
+                Send.Write((char)vz);
+
+                other_client=fmgs->pFirstPlayer;
+                while(other_client)
+                {
+                    other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    other_client=other_client->pNext;
+                }
+*/
+                break;
+
+
+            /*********************************************************************************
+             ** NETMSG_HEARTBEAT                                                            **
+             *********************************************************************************/
+
+            case NETMSG_HEARTBEAT:
+                /*
+                // client->inactivity_event->reset_timer();
+                client->bCheckHeartBeat=0; // OK, clear the heart beat check
+
+                // Reset packet & send status while i'm at it
+                Send.Reset();
+                Send.Write((char)NETMSG_CHAR_STATUS);
+                Send.Write((char *)client->avatar->name);
+                Send.Write((int)client->sid);
+                Send.Write((char)client->avatar->direction);
+                Send.Write((int)client->avatar->x);
+                Send.Write((int)client->avatar->y);
+                Send.Write((int)client->avatar->z);
+
+                client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                */
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_FVM                                                                 **
+             *********************************************************************************/
+
+            case NETMSG_FVM:
+
+                ax=Recv->cRead();
+
+                switch(ax)
+                {
+                    case FVM_GETTARGET:
+//                                strcpy(client->CurrentTarget,Recv->pRead());
+//                                strcpy(client->Script,Recv->pRead());
+                        break;
+
+                    case FVM_MOUSEINFO:
+//                                client->MouseInfo.x=1; // Recv->iRead();
+//                                client->MouseInfo.y=1; // Recv->iRead();
+//                                client->MouseInfo.buttonstate=0; // Recv->cRead();
+//                                client->SetScript("onclick.fvm");
+                        //pFVM->ExecuteScript(client);
+                        break;
+
+                    case FVM_GUIBUTTONPRESSED:
+                        break;
+
+                    default:
+                        break;
+                }
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_PING                                                                 **
+             *********************************************************************************/
+
+            case NETMSG_PING:
+                gx=Recv->dwRead();
+
+                Send.Reset();
+                Send.Write((char)NETMSG_PING);
+                Send.Write((long)gx);
+
+                //client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+
+
+
+            /*********************************************************************************
+             ** NETMSG_FILE_XFER                                                            **
+             *********************************************************************************/
+
+            case NETMSG_FILE_XFER:
+
+                char *pFileBuf;
+                FILE *pFile;
+                bool bFileFail;
+
+                switch(Recv->cRead())
+                {
+                            // NET_FILE_RES_MEDIA
+                            // NET_FILE_RES_SCRIPT
+                    /*
+
+                    case NET_FILE_NOP:
+                        break;
+
+                    case NET_FILE_START:
+                        // filename
+                        // filesize
+                        // start file, put a temporary sequencer in temp folder for the file
+                        // ie; hey.bmp will create temp/hey.bmp.sequence
+                        strcpy(szTemp1,Recv->pRead());
+                        cx=Recv->iRead();
+                        sprintf(szTemp2,"%s%ctemp%c%s.sequence",pClientData->FMDir,_PS,_PS,szTemp1);
+                        sprintf(szTemp3,"%s%ctemp%c%s",pClientData->FMDir,_PS,_PS,szTemp1);
+                        bFileFail=false;
+                        pFile=fopen(szTemp3,"wb");
+                        if(pFile)
+                        {
+                            fclose(pFile);
+                            pFile=fopen(szTemp2,"wt");
+                            if(pFile)
+                            {
+                                bx=1;
+                                fputs(va("%d\n%d\n",bx,cx),pFile);
+                                fclose(pFile);
+                                SendData.Reset();
+                                SendData.Write((char)NETMSG_FILE_XFER);
+                                SendData.Write((char *)szTemp1);
+                                SendData.Write((char)NET_FILE_START_OK);
+                                SendNetMessage(0);
+                            }
+                            else bFileFail=true;
+                        }
+                        else bFileFail=true;
+                        if(bFileFail)
+                        {
+                            SendData.Reset();
+                            SendData.Write((char)NETMSG_FILE_XFER);
+                            SendData.Write((char *)szTemp1);
+                            SendData.Write((char)NET_FILE_ERROR);
+                            SendNetMessage(0);
+                        }
+
+                        break;
+                        */
+
+                    /*
+                    case NET_FILE_DATA:
+
+                        // sequence number
+                        // filename
+                        // data block (1024)
+
+                        ax=Recv->iRead(); // sequence number
+                        strcpy(szTemp1,Recv->pRead()); // filename
+                        pFileBuf=Recv->pRead(NET_FILE_XFER_BLOCK_SIZE);
+                        sprintf(szTemp2,"%s%ctemp%c%s.sequence",pClientData->FMDir,_PS,_PS,szTemp1);
+                        sprintf(szTemp3,"%s%ctemp%c%s",pClientData->FMDir,_PS,_PS,szTemp1);
+                        bFileFail=false;
+                        pFile=fopen(szTemp2,"rb");
+                        if(pFile)
+                        {
+                            fgets(szTemp4,256,pFile); bx=atoi(szTemp4);
+                            fgets(szTemp4,256,pFile); cx=atoi(szTemp4);
+                            fclose(pFile);
+                        }
+                        else bFileFail=true;
+                        if(ax==bx)
+                        {
+                            pFile=fopen(szTemp3,"a");
+                            if(pFile)
+                            {
+                                fwrite(pFileBuf,NET_FILE_XFER_BLOCK_SIZE,1,pFile);
+                                fclose(pFile);
+                                pFile=fopen(szTemp2,"wt");
+                                if(pFile)
+                                {
+                                    bx++;
+                                    fputs(va("%d\n%d\n",bx,cx),pFile);
+                                    fclose(pFile);
+                                }
+
+                                SendData.Reset();
+                                SendData.Write((char)NETMSG_FILE_XFER);
+                                SendData.Write((char)NET_FILE_DATA_OK);
+                                SendData.Write((char *)szTemp1);
+                                SendData.Write((int)bx);
+                            }
+                            else
+                            {
+                                bFileFail=true;
+                            }
+
+                        }
+                        if(bFileFail)
+                        {
+                            SendData.Reset();
+                            SendData.Write((char)NETMSG_FILE_XFER);
+                            SendData.Write((char)NET_FILE_DATA_RESEND);
+                            SendData.Write((char *)szTemp1);
+                            SendData.Write((int)bx);
+                        }
+                        break;
+
+                    case NET_FILE_ACK:
+                        break;
+
+                    case NET_FILE_ABORT:
+                        break;
+
+                    case NET_FILE_EOF:
+
+                        // sequence number
+                        // filename
+                        // size of data block
+                        // data block
+
+                        ax=Recv->iRead(); // sequence number
+                        strcpy(szTemp1,Recv->pRead()); // filename
+                        dx=Recv->iRead();
+                        pFileBuf=Recv->pRead(dx);
+                        sprintf(szTemp2,"%s%ctemp%c%s.sequence",pClientData->FMDir,_PS,_PS,szTemp1);
+                        sprintf(szTemp3,"%s%ctemp%c%s",pClientData->FMDir,_PS,_PS,szTemp1);
+                        bFileFail=false;
+                        pFile=fopen(szTemp3,"a");
+                        if(pFile)
+                        {
+                            fwrite(pFileBuf,dx,1,pFile);
+                            fclose(pFile);
+                            remove(szTemp2);
+                        }
+                        else
+                        {
+                            SendData.Reset();
+                            SendData.Write((char)NETMSG_FILE_XFER);
+                            SendData.Write((char)NET_FILE_EOF_RESEND);
+                            SendData.Write((char *)szTemp1);
+                        }
+                        break;
+
+                    case NET_FILE_RESUME:
+                        break;
+                        */
+
+//						case NET_FILE_START_OK:
+//							break;
+
+                    default:
+                        break;
+
+                    }
+
+
+                break;
+
+            /*********************************************************************************
+             ** NETMSG_NOP                                                                  **
+             *********************************************************************************/
+
+            case NETMSG_NOP:
+                if (strcmp(Recv->pRead(),"1234567890")==0)
+                {
+                    Send.Reset();
+                    Send.Write((char)NETMSG_NOP);
+                    Send.Write("0987654321");
+                    //if(client->pSocket->bCanSendMessage())
+                        //client->pSocket->SendUnreliableMessage(&Send);
+                }
+                break;
+
+
+            default:
+                break;
+        }
+    }
+
+    // Check for inactivity
+
+    //if(client->inactivity_event->expired())
+    //{
+        //Log("duh...");
+        // client->inactivity_event->reset_timer();
+        //if(client->in_limbo==false)
+        //{
+            // client->inactivity_event->reset_timer();
+            /*
+            //Send.Reset();
+            //Send.Write((char)NETMSG_HEARTBEAT);
+            //Send.Write((int)1);
+            //client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+            //client->dwHeartBeatTimer=GetTickCount(); // Time function only works in windows
+            //client->bCheckHeartBeat=1;
+
+
+            if(1)//!DoesHaveAccess(client->cGetAccess(),"timeout_override"))
+            {
+                if(strlen(client->avatar->name) && strlen(client->avatar->name))
+                {
+                    // Log("%s(%s) being kicked due to inactivity.",client->avatar->name,client->avatar->name);
+                    // client->inactivity_event->reset_timer(); //to prevent server from doing this twice (or more)
+
+                    other_client=fmgs->pFirstPlayer;
+                    while(other_client)
+                    {
+                        // change to only send to onscreen players later...
+                        if(other_client != client)
+                        {
+                            Send.Reset();
+                            Send.Write((char)NETMSG_VIS_REMOVE);
+                            Send.Write((int)client->sid);
+                            other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                        }
+                        other_client=other_client->pNext;
+                    }
+                    // send shutdown to client
+                    Send.Reset();
+                    Send.Write((char)NETMSG_CLIENTSHUTDOWN);
+                    Send.Write((int)client->sid);
+                    Send.Write((char *)"Inactivity"); // reason
+                    client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                    // Player disconnect here
+                    other_client=fmgs->pFirstPlayer;
+                    while(other_client)
+                    {
+                        // change to only send to onscreen players later...
+                        if(other_client != client)
+                        {
+                            Send.Reset();
+                            Send.Write((char)NETMSG_VIS_REMOVE);
+                            Send.Write((int)client->sid);
+                            other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+                        }
+                        other_client=other_client->pNext;
+                    }
+                    Logout(client);
                 }
             }
-            fputs(Save,fp2);
+            */
+      //  }
+    //}
+    // Check for heartbeats and remove if not found
+
+//            if((GetTickCount()-client->dwHeartBeatTimer>10000) && // 10 seconds should be enough
+//                (client->bCheckHeartBeat) )
+//            {
+//                if(client->bInGame)
+//                {
+            // add in ability to check more than once, say three or four times before it logs out.
+//                    // The client is no longer connected
+            //other_client=fmgs->pFirstPlayer;
+            //while(other_client)
+            //{
+                // change to only send to onscreen players later...
+              //  if(other_client != client)
+                //{
+                  //  Send.Reset();
+                    //Send.Write((char)NETMSG_VIS_REMOVE);
+                    //Send.Write((int)client->sid);
+                    //other_client->pSocket->SendUnreliableMessage((CPacket *)&Send);
+//                        }
+//                      other_client=other_client->pNext;
+//                }
+//              Logout(client);
+//        }
+  //  }
+
+    // Other System checks here, (Serverside player heartbeat)
+
+    //if(client->in_limbo==false)
+    //{
+        /*
+        if(GetTickCount()-client->dwSystemCheck>5000)
+        {
+            client->dwSystemCheck=GetTickCount();
         }
-        fclose(fp1);
-        fclose(fp2);
-    }
-    sprintf(szTemp,"users%cpassword.dat",PATH_SEP);
-    remove(szTemp);
-    sprintf(In,"users%cpassword.tmp",PATH_SEP);
-    rename(In,szTemp);
+        */
+    //}
+
 
 }
-/******************************************************************
- ** Increment the global serial number counter and return it     **
- ******************************************************************/
-u_long GetSerialNumber(bool bSave)
+
+
+
+#ifdef __linux__
+#include "s_linux.h"
+#include "s_gnu.h"
+void ConsoleSetup(void) { _kbhit(); }
+void ConsoleShutDown(void) { close_keyboard(); }
+#endif
+
+#ifdef _WIN32
+
+BOOL WINAPI HandleCTRL_C(DWORD dwCtrlType)
 {
-    static u_long iSerialNumber=0;
-    char szSerialNumber[256];
-    FILE *fp;
-
-    if(iSerialNumber==0)  // only to save the serial number the for the first time
+    switch(dwCtrlType)
     {
-        fp=fopen("serial.dat","rt");
-        if(!fp)
-        {
-            // not found, create a new item.id file and put a 1
-            fp=fopen("serial.dat","wt");
-            if(!fp)
-            {
-                Log("Can't create serial.dat! #1");
-                return 0;
-            }
-            iSerialNumber=1;
-            Log("Serial number set to %d",iSerialNumber);
-            sprintf(szSerialNumber,"%d",iSerialNumber);
-            fputs(szSerialNumber,fp);
-            fputs("=================================================\n",fp);
-            fputs("Serial number tracking file. DO NOT erase or modify.\n",fp);
 
-            fclose(fp);
-            return iSerialNumber;
-        }
-        fgets(szSerialNumber, 100, fp);
-        fclose(fp);
-        iSerialNumber=atoi(szSerialNumber);
+        case CTRL_BREAK_EVENT:
+            bQuit=true;
+            pLog->_Add("Break event killed server!");
+            return true;
+
+        case CTRL_SHUTDOWN_EVENT:
+            bQuit=true;
+            pLog->_Add("Shutdown event killed server!");
+            return true;
+
+        case CTRL_LOGOFF_EVENT:
+            bQuit=true;
+            pLog->_Add("Logoff event killed server!");
+            return true;
+
+        case CTRL_CLOSE_EVENT:
+            bQuit=true;
+            pLog->_Add("Mouse [X] killed server!");
+            return true;
+
+        case CTRL_C_EVENT:
+            bQuit=true;
+            pLog->_Add("CTRL-C killed server!");
+            return true;
+
+        default:
+            break;
     }
-
-    if(bSave) // this is called at the end of the program to save the state of iserialnumber
-    {
-        fp=fopen("serial.dat","wt");
-        if(!fp)
-        {
-            Log("Can't create serial.dat! #2");
-            return 0;
-        }
-        sprintf(szSerialNumber,"%d\n",iSerialNumber);
-        fputs(szSerialNumber,fp);
-        fputs("=================================================\n",fp);
-        fputs("Serial number tracking file. DO NOT erase or modify.\n",fp);
-        fclose(fp);
-    }
-
-    iSerialNumber++;
-    // Log("Serial number incremented to %d",iSerialNumber);
-    return iSerialNumber;
+    return false;
 }
+
+
+void ConsoleSetup(void)
+{
+    // Change window title for windows version, and setup ctrl handler
+    SetConsoleCtrlHandler(HandleCTRL_C,TRUE);
+    SetConsoleTitle(va("Ember Game Server %s(%s) Net Revision(%s) %s",VERSION,CPUSTRING,NET_REVISION,COPYRIGHT));
+}
+void ConsoleShutDown(void)
+{
+}
+
 #endif

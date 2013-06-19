@@ -417,21 +417,21 @@
 1118626670 source:x:\develop\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1316549818 source:x:\develop\projects\dlstorm\c_gaf.cpp
+1318999434 source:x:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1270405064 x:\develop\projects\dlstorm\c_gaf.h
+1318999418 x:\develop\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
 
-1316887702 x:\develop\projects\dlstorm\dlstorm.h
+1318999204 x:\develop\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	<iostream>
 	<vector>
 	<string>
 
-1270268376 x:\develop\projects\dlstorm\dlstorm_lib.h
+1318643342 x:\develop\projects\dlstorm\dlstorm_lib.h
 	<dirent.h>
 	<ctype.h>
 	<sys/types.h>
@@ -461,7 +461,7 @@
 	<memory.h>
 	<sys/stat.h>
 
-1203015520 x:\develop\projects\dlstorm\c_log.h
+1317506350 x:\develop\projects\dlstorm\c_log.h
 	<stdlib.h>
 
 1270132846 source:x:\develop\projects\dlstorm\c_log.cpp
@@ -474,10 +474,163 @@
 	<time.h>
 	<unistd.h>
 
-1316887752 source:x:\develop\projects\dlstorm\dlstorm.cpp
+1334571942 source:x:\develop\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
-1316548738 source:x:\develop\projects\ember\gaf_make\gaf_make.cpp
+1334759480 source:x:\develop\projects\ember\gaf_make\gaf_make.cpp
+	"gaf_make.h"
+
+1334746166 x:\develop\projects\ember\gaf_make\gaf_make.h
 	"dlstorm.h"
 	"c_gaf.h"
+
+1334571942 source:c:\projects\dlstorm\dlstorm.cpp
+	"dlstorm.h"
+
+1318999204 c:\projects\dlstorm\dlstorm.h
+	"dlstorm_lib.h"
+	<iostream>
+	<vector>
+	<string>
+
+1335453578 c:\projects\dlstorm\dlstorm_lib.h
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<time.h>
+	<malloc.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+
+1335453208 source:c:\projects\dlstorm\c_gaf.cpp
+	"c_gaf.h"
+
+1318999418 c:\projects\dlstorm\c_gaf.h
+	"dlstorm.h"
+	"zlib.h"
+	"c_log.h"
+
+1335452736 c:\projects\dlstorm\c_log.h
+	<direct.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"dlstorm.h"
+
+1371234765 source:c:\projects\sdk\zlib\adler32.c
+	"zlib.h"
+
+1371234766 c:\projects\sdk\zlib\zlib.h
+	"zconf.h"
+
+1371234766 c:\projects\sdk\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1371234766 source:c:\projects\sdk\zlib\compress.c
+	"zlib.h"
+
+1371234766 source:c:\projects\sdk\zlib\crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1371234766 c:\projects\sdk\zlib\zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1371234766 c:\projects\sdk\zlib\crc32.h
+
+1371234766 source:c:\projects\sdk\zlib\deflate.c
+	"deflate.h"
+
+1371234766 c:\projects\sdk\zlib\deflate.h
+	"zutil.h"
+
+1371234766 source:c:\projects\sdk\zlib\gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1371234766 source:c:\projects\sdk\zlib\infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1371234766 c:\projects\sdk\zlib\inftrees.h
+
+1371234766 c:\projects\sdk\zlib\inflate.h
+
+1371234766 c:\projects\sdk\zlib\inffast.h
+
+1371234766 c:\projects\sdk\zlib\inffixed.h
+
+1371234766 source:c:\projects\sdk\zlib\inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1371234766 source:c:\projects\sdk\zlib\inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1371234766 source:c:\projects\sdk\zlib\inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1371234766 source:c:\projects\sdk\zlib\trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1371234766 c:\projects\sdk\zlib\trees.h
+
+1371234766 source:c:\projects\sdk\zlib\uncompr.c
+	"zlib.h"
+
+1371234766 source:c:\projects\sdk\zlib\zutil.c
+	"zutil.h"
 

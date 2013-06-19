@@ -747,21 +747,21 @@
 1118626670 source:x:\develop\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1316549818 source:x:\develop\projects\dlstorm\c_gaf.cpp
+1318999434 source:x:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1270405064 x:\develop\projects\dlstorm\c_gaf.h
+1318999418 x:\develop\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
 
-1316887702 x:\develop\projects\dlstorm\dlstorm.h
+1318999204 x:\develop\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	<iostream>
 	<vector>
 	<string>
 
-1270268376 x:\develop\projects\dlstorm\dlstorm_lib.h
+1318643342 x:\develop\projects\dlstorm\dlstorm_lib.h
 	<dirent.h>
 	<ctype.h>
 	<sys/types.h>
@@ -791,7 +791,7 @@
 	<memory.h>
 	<sys/stat.h>
 
-1203015520 x:\develop\projects\dlstorm\c_log.h
+1317506350 x:\develop\projects\dlstorm\c_log.h
 	<stdlib.h>
 
 1270132846 source:x:\develop\projects\dlstorm\c_log.cpp
@@ -804,10 +804,11 @@
 	<time.h>
 	<unistd.h>
 
-1270226342 source:x:\develop\projects\dlstorm\c_net.cpp
+1335200686 source:x:\develop\projects\dlstorm\c_net.cpp
 	"c_net.h"
 
-1316545292 x:\develop\projects\dlstorm\c_net.h
+1335196194 x:\develop\projects\dlstorm\c_net.h
+	"dlstorm.h"
 	<winsock2.h>
 	<stdio.h>
 	<sys/types.h>
@@ -827,7 +828,7 @@
 	"dlstorm.h"
 	"c_gaf.h"
 
-1316887752 source:x:\develop\projects\dlstorm\dlstorm.cpp
+1334571942 source:x:\develop\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1316832364 source:x:\develop\projects\ember\b_map.cpp
@@ -928,7 +929,7 @@
 	"dlstorm.h"
 	"b_gltexture.h"
 
-1253863684 x:\develop\projects\ember\ember_game_server.h
+1335304790 x:\develop\projects\ember\ember_game_server.h
 
 1269977522 source:x:\develop\projects\ember\s_serverinfo.cpp
 	"s_serverinfo.h"
@@ -938,35 +939,29 @@
 
 1269966776 x:\develop\projects\ember\s_serverinfo.h
 
-1316738424 source:x:\develop\projects\ember\ember_game_server.cpp
+1335369478 source:x:\develop\projects\ember\ember_game_server.cpp
 	"ember_game_server.h"
-	"c_net.h"
+	"ember_version.h"
+	"ember_game_server_enum.h"
+	"c_serverinfo.h"
+	"ember_game_server_socket.h"
+	"ember_game_server_client_socket.h"
 	"dlstorm.h"
+	"c_net.h"
 	"c_log.h"
-	"s_client.h"
-	"b_map.h"
-	"s_server.h"
-	"lualib.h"
-	"fm_util.h"
 	"c_gaf.h"
+	"sqlite3.h"
 	"s_linux.h"
 	"s_gnu.h"
 
-1253906966 x:\develop\projects\ember\s_client.h
-	"global.h"
-	"s_server.h"
-	"s_socket.h"
-	"b_toon.h"
-
-1270268688 x:\develop\projects\ember\s_server.h
-	"global.h"
-	"s_serverinfo.h"
-	"dlstorm.h"
+1334797818 x:\develop\projects\ember\s_client.h
+	"ember_network_common.h"
 	"c_net.h"
-	"b_netaddress.h"
+
+1334797628 x:\develop\projects\ember\s_server.h
+	"ember_network_common.h"
+	"ember_game_server.h"
 	"s_client.h"
-	"b_toon.h"
-	"b_map.h"
 
 1253903986 x:\develop\projects\ember\s_socket.h
 	"global.h"
@@ -979,15 +974,9 @@
 	"dlstorm_lib.h"
 	"fm_util.h"
 
-1316629520 source:x:\develop\projects\ember\s_server.cpp
+1334797734 source:x:\develop\projects\ember\s_server.cpp
+	"ember_version.h"
 	"s_server.h"
-	"fm_util.h"
-	"global.h"
-	"s_client.h"
-	"b_npc.h"
-	"ember_game_server.h"
-	"b_netaddress.h"
-	"b_gui.h"
 
 1155071040 x:\develop\projects\ember\b_npc.h
 	"b_toon.h"
@@ -1488,4 +1477,112 @@
 	<GL/gl.h>
 	<GL/glu.h>
 	"c_gaf.h"
+
+1317433782 source:x:\develop\projects\dlstorm\c_socket.cpp
+	"c_socket.h"
+
+1334704374 x:\develop\projects\dlstorm\c_socket.h
+	"dlstorm.h"
+	"c_netaddress.h"
+	"c_net.h"
+
+1253899940 x:\develop\projects\dlstorm\c_netaddress.h
+	"dlstorm.h"
+
+1334703610 x:\develop\projects\ember\ember_version.h
+
+1334704050 x:\develop\projects\ember\ember_game_server_enum.h
+
+1335083692 x:\develop\projects\ember\ember_network_common.h
+
+1334705812 source:x:\develop\projects\ember\s_client.cpp
+	"ember_network_common.h"
+	"ember_game_server_enum.h"
+	"ember_version.h"
+	"c_serverinfo.h"
+	"c_gui.h"
+	"s_client.h"
+
+1334705196 x:\develop\projects\ember\c_serverinfo.h
+
+1317441498 source:x:\develop\projects\dlstorm\c_netaddress.cpp
+	"c_net.h"
+	"c_netaddress.h"
+	"dlstorm.h"
+	"dlstorm.h"
+	"s_gnu.h"
+
+1154757506 x:\develop\projects\dlstorm\s_gnu.h
+	"global.h"
+
+1335227320 source:x:\develop\projects\ember\ember_game_server_client_socket.cpp
+	"ember_game_server_client_socket.h"
+	"ember_network_common.h"
+	"ember_game_server_enum.h"
+	"ember_version.h"
+	"c_serverinfo.h"
+	"c_gui.h"
+
+1335226598 x:\develop\projects\ember\ember_game_server_client_socket.h
+	"ember_network_common.h"
+	"c_log.h"
+	"c_net.h"
+
+1335226762 x:\develop\projects\ember\ember_game_server_socket.h
+	"c_net.h"
+	"c_log.h"
+	"ember_version.h"
+	"ember_network_common.h"
+	"ember_game_server_enum.h"
+	"ember_game_server_client_socket.h"
+
+1335369346 source:x:\develop\projects\ember\ember_game_server_socket.cpp
+	"ember_game_server_socket.h"
+
+1332253218 source:x:\develop\projects\dlstorm\sqlite3.c
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<tcl.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<windows.h>
+	<os2safe.h>
+	<os2.h>
+	<uconv.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/file.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<utime.h>
+	<dlfcn.h>
+	<sys/cygwin.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
 

@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="..\ember_game_client\gaf_make" prefix_auto="1" extension_auto="1" />
+				<Option output="..\..\toolbox\bin\gaf" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj\Release\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -73,9 +73,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\..\dlstorm\c_gaf.cpp" />
-		<Unit filename="..\..\dlstorm\c_log.cpp" />
 		<Unit filename="..\..\dlstorm\dlstorm.cpp" />
+		<Unit filename="..\ember_game_client\gaf_make_ember.bat" />
 		<Unit filename="gaf_make.cpp" />
+		<Unit filename="gaf_make.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
