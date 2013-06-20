@@ -11,7 +11,10 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../../dlstorm/dlstorm.h" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="748" topLine="19" />
+	</File>
+	<File name="../../dlstorm/dlstorm_lib.h" open="0" top="0" tabpos="0">
+		<Cursor position="5758" topLine="204" />
 	</File>
 	<File name="../ember_game_server.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />

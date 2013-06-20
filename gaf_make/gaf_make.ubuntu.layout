@@ -2,10 +2,10 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="../../dlstorm/c_gaf.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="224" topLine="0" />
 	</File>
 	<File name="../../dlstorm/dlstorm.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="4366" topLine="138" />
 	</File>
 	<File name="../ember_game_client/gaf_make_ember.bat" open="0" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />

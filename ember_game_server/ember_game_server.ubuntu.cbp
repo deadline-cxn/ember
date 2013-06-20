@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ember_game_server" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="egs" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-D_MBCS" />
+					<Add option="-D_EMBER_SERVER_" />
+				</Compiler>
+				<Linker>
+					<Add library="mingw32" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="ws2_32" />
+				</Linker>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="C:/xampp/htdocs/Projects/ember/ember_game_server/Debug/ember_game_server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-D_MBCS" />
+					<Add option="-D_EMBER_SERVER_" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-mwindows" />
+		</Compiler>
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lapi.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lcode.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/ldebug.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/ldo.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lfunc.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lgc.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/llex.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/llimits.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lmem.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lobject.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lopcodes.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lparser.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lstate.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lstring.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/ltable.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/ltm.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lundump.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lvm.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lzio.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/Script.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/lauxlib.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/luadebug.h" />
+		<Unit filename="../../SDK/Script_LuaWrapper/Script/lualib.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lapi.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lauxlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lauxlib.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lbaselib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lcode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lcode.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/ldblib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ldebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ldebug.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/ldo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ldo.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/ldump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lfunc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lfunc.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lgc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lgc.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/linit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/liolib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/llex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/llex.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/llimits.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lmathlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lmem.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/loadlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lobject.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lobject.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lopcodes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lopcodes.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/loslib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lparser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lparser.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lstate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lstate.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lstring.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lstring.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lstrlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ltable.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ltable.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/ltablib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ltm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/ltm.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lua.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/luaconf.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lualib.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lundump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lundump.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lvm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lvm.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/lzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lua-5.1.4/src/lzio.h" />
+		<Unit filename="../../SDK/lua-5.1.4/src/print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/adler32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/crc32.h" />
+		<Unit filename="../../SDK/zlib/deflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/deflate.h" />
+		<Unit filename="../../SDK/zlib/gzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/infback.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/inffast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/inffast.h" />
+		<Unit filename="../../SDK/zlib/inffixed.h" />
+		<Unit filename="../../SDK/zlib/inflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/inflate.h" />
+		<Unit filename="../../SDK/zlib/inftrees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/inftrees.h" />
+		<Unit filename="../../SDK/zlib/trees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/trees.h" />
+		<Unit filename="../../SDK/zlib/uncompr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/zconf.h" />
+		<Unit filename="../../SDK/zlib/zlib.h" />
+		<Unit filename="../../SDK/zlib/zutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/zlib/zutil.h" />
+		<Unit filename="../../dlstorm/c_gaf.cpp" />
+		<Unit filename="../../dlstorm/c_log.cpp" />
+		<Unit filename="../../dlstorm/c_log.h" />
+		<Unit filename="../../dlstorm/c_net.cpp" />
+		<Unit filename="../../dlstorm/c_net.h" />
+		<Unit filename="../../dlstorm/dlstorm.cpp" />
+		<Unit filename="../../dlstorm/dlstorm.h" />
+		<Unit filename="../../dlstorm/dlstorm_lib.h" />
+		<Unit filename="../../dlstorm/sqlite3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../GOALS.txt" />
+		<Unit filename="../ember_game_server.cpp" />
+		<Unit filename="../ember_game_server.h" />
+		<Unit filename="database.txt" />
+		<Unit filename="serial.dat" />
+		<Unit filename="server.log" />
+		<Unit filename="../ember_game_server_client_socket.cpp" />
+		<Unit filename="../ember_game_server_client_socket.h" />
+		<Unit filename="../ember_game_server_socket.cpp" />
+		<Unit filename="../ember_game_server_socket.h" />
+		<Unit filename="../ember_network_common.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
