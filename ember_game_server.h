@@ -6,17 +6,12 @@
 #define _EMBER_CONSOLE_SERVER
 
 //class CServer;
-
 //class CDLDB;
 //class CDBVar;
-
 //extern CDLDB		*db;
 //extern CDBVar		*row;
-
-// extern char         szLastAddress[1024];
+//extern char         szLastAddress[1024];
 //extern bool         bQuit;
-
-
 //#ifdef _EMBER_SERVER_
 //extern bool bQuiet;
 //#endif

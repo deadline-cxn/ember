@@ -15,7 +15,6 @@
 					<Add option="-O2" />
 					<Add option="-W" />
 					<Add option="-fexceptions" />
-					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_CONSOLE" />
 					<Add option="-D_MBCS" />
@@ -26,7 +25,6 @@
 					<Add library="kernel32" />
 					<Add library="user32" />
 					<Add library="gdi32" />
-					<Add library="winspool" />
 					<Add library="comdlg32" />
 					<Add library="advapi32" />
 					<Add library="shell32" />
@@ -35,7 +33,6 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
-					<Add library="ws2_32" />
 				</Linker>
 			</Target>
 			<Target title="Win32 Debug">
@@ -44,10 +41,9 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-g" />
 					<Add option="-W" />
 					<Add option="-fexceptions" />
-					<Add option="-g" />
-					<Add option="-DWIN32" />
 					<Add option="-D_DEBUG" />
 					<Add option="-D_CONSOLE" />
 					<Add option="-D_MBCS" />
@@ -68,10 +64,20 @@
 					<Add library="odbccp32" />
 				</Linker>
 			</Target>
+			<Target title="Linux Release">
+				<Option output="ember_game_server" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_CONSOLE" />
+					<Add option="-D_MBCS" />
+					<Add option="-D_EMBER_SERVER_" />
+				</Compiler>
+			</Target>
 		</Build>
-		<Compiler>
-			<Add option="-mwindows" />
-		</Compiler>
 		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lapi.h" />
 		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/lcode.h" />
 		<Unit filename="../../SDK/Script_LuaWrapper/Script/Lua/ldebug.h" />
@@ -254,7 +260,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/zutil.h" />
-		<Unit filename="../../dlstorm/c_gaf.cpp" />
 		<Unit filename="../../dlstorm/c_log.cpp" />
 		<Unit filename="../../dlstorm/c_log.h" />
 		<Unit filename="../../dlstorm/c_net.cpp" />

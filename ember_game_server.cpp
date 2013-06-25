@@ -11,12 +11,18 @@
 #include "dlstorm.h"
 #include "c_net.h"
 #include "c_log.h"
+
+#ifdef _WIN32
 #include "c_gaf.h"
+#endif
+
 #include "sqlite3.h"
 
 CServer     *pServer;
 
+#ifdef _WIN32
 CGAF		*File;
+#endif
 CLog        *pLog;      // Log file
 
 sqlite3     *pUserDB;
@@ -595,12 +601,14 @@ void StartUp(void)
     pLog->On();
     pLog->Restart();
 
+#ifdef _WIN32
 	File=new CGAF;
 	File->Open("ember_data.dlc");
 	File->CreateDir("data");
 	File->AddDir("data","data",1);
 	File->Close();
 	DEL(File);
+#endif
 
     int i=0;
     int j=0;
