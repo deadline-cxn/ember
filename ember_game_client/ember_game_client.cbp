@@ -17,6 +17,8 @@
 					<Add option="-fexceptions" />
 					<Add option="-Werror" />
 					<Add option="-mwindows" />
+					<Add option="-fpermissive" />
+					<Add option="-Wwrite-strings" />
 					<Add option="-Dmain=SDL_main" />
 					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
@@ -64,6 +66,8 @@
 					<Add option="-g" />
 					<Add option="-W" />
 					<Add option="-fexceptions" />
+					<Add option="-fpermissive" />
+					<Add option="-Wwrite-strings" />
 					<Add option="-DWIN32" />
 					<Add option="-D_DEBUG" />
 					<Add option="-D_WINDOWS" />
@@ -270,7 +274,6 @@
 		<Unit filename="../../dlstorm/c_data.cpp" />
 		<Unit filename="../../dlstorm/c_data.h" />
 		<Unit filename="../../dlstorm/c_gaf.cpp" />
-		<Unit filename="../../dlstorm/c_gaf.h" />
 		<Unit filename="../../dlstorm/c_gfx.cpp" />
 		<Unit filename="../../dlstorm/c_gfx.h" />
 		<Unit filename="../../dlstorm/c_gl3dmodel.cpp" />

@@ -4686,18 +4686,18 @@
 	<GL/glu.h>
 	"c_gaf.h"
 
-1318999418 c:\projects\dlstorm\c_gaf.h
+1372184342 c:\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
 
-1318999204 c:\projects\dlstorm\dlstorm.h
+1372174344 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	<iostream>
 	<vector>
 	<string>
 
-1335453578 c:\projects\dlstorm\dlstorm_lib.h
+1372182805 c:\projects\dlstorm\dlstorm_lib.h
 	<dirent.h>
 	<ctype.h>
 	<sys/types.h>
@@ -4744,7 +4744,7 @@
 1334571444 c:\projects\dlstorm\c_data.h
 	"dlstorm.h"
 
-1335453208 source:c:\projects\dlstorm\c_gaf.cpp
+1372184259 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
 1335452376 source:c:\projects\dlstorm\c_gfx.cpp
@@ -4814,17 +4814,17 @@
 1371668574 source:c:\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1371665463 c:\projects\dlstorm\c_gui.h
+1372170973 c:\projects\dlstorm\c_gui.h
+	"dlstorm.h"
 	<map>
 	<algorithm>
+	"ximage.h"
 	"c_gfx.h"
 	"c_gaf.h"
 	"c_glfont.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
 	"c_console.h"
-	"dlstorm.h"
-	"ximage.h"
 
 1317744316 source:c:\projects\dlstorm\c_hash.cpp
 	"C_Hash.h"
@@ -4834,7 +4834,7 @@
 
 1317743478 c:\projects\dlstorm\c_hash.h
 
-1335452726 source:c:\projects\dlstorm\c_log.cpp
+1372176506 source:c:\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
 1335452418 source:c:\projects\dlstorm\c_lua.cpp
@@ -4845,7 +4845,7 @@
 	"lualib.h"
 	"lauxlib.h"
 
-1335370748 source:c:\projects\dlstorm\c_net.cpp
+1372170973 source:c:\projects\dlstorm\c_net.cpp
 	"c_net.h"
 
 1335370354 c:\projects\dlstorm\c_net.h
@@ -4876,7 +4876,7 @@
 	"dlstorm.h"
 	<map>
 
-1334571942 source:c:\projects\dlstorm\dlstorm.cpp
+1372170973 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1317440738 source:c:\projects\dlstorm\glerrors.cpp
@@ -5407,7 +5407,7 @@
 1371665750 source:c:\projects\ember\ember_game_client.cpp
 	"ember_game_client.h"
 
-1371665358 c:\projects\ember\ember_game_client.h
+1372186653 c:\projects\ember\ember_game_client.h
 	"c_gfx.h"
 	"c_data.h"
 	"c_snd.h"
@@ -5424,4 +5424,10 @@
 1335083692 c:\projects\ember\ember_network_common.h
 
 1334704050 c:\projects\ember\ember_game_server_enum.h
+
+1372186651 c:\projects\ember\c_data.h
+	"c_net.h"
+	"c_gui.h"
+	"c_gaf.h"
+	"dlstorm.h"
 

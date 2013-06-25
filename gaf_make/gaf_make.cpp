@@ -1,6 +1,7 @@
 // GAF TOOL
 
 #include "gaf_make.h"
+#define VERSION "1.2.3.4"
 
 int main(int argc, char *argv[])
 {
@@ -8,51 +9,46 @@ int main(int argc, char *argv[])
     char res[1024];  memset(res,0,1024);
     unsigned int i;
 
-    CGAF *pGAF;
-    pGAF=new CGAF();
+
 
     // remove(file);
 
-    if(argc<3)
-    {
+    if(argc<3) {
         print_help();
         return 1;
     }
 
     strcpy(file,argv[1]);
 
-    switch(argv[2][1])
-    {
+    CGAF *pGAF;
+    pGAF=new CGAF(file,GAFCOMP_BEST);
+
+    switch(argv[2][1]) {
 
         case 'a':
-            for(i=3;i<strlen(argv[2]);i++)
-            {
+            for(i=3;i<strlen(argv[2]);i++) {
                 res[i-3]=argv[2][i];
             }
             printf("Adding file %s to %s...\n",res,file);
-            pGAF->Open(file);
             pGAF->AddFile(res,res);
             pGAF->Close();
             break;
 
         case 'z':
-            for(i=3;i<strlen(argv[2]);i++)
-            {
+            for(i=3;i<strlen(argv[2]);i++) {
                 res[i-3]=argv[2][i];
             }
             printf("Adding directory %s to %s...\n",res,file);
-            pGAF->Open(file);
-            pGAF->AddDir(res);
+            pGAF->AddDir(res,res,1);
             pGAF->Close();
             break;
 
         case 'd':
-            for(i=3;i<strlen(argv[2]);i++)
-            {
+            for(i=3;i<strlen(argv[2]);i++) {
                 res[i-3]=argv[2][i];
             }
             printf("Removing file %s from %s...\n",res,file);
-            pGAF->Open(file);
+
             pGAF->RemoveFile(res);
             pGAF->Close();
             break;
@@ -63,7 +59,7 @@ int main(int argc, char *argv[])
                 res[i-3]=argv[2][i];
             }
             printf("Removing directory %s from %s...\n",res,file);
-            pGAF->Open(file);
+
             pGAF->RemoveDir(res);
             pGAF->Close();
             break;
@@ -92,7 +88,7 @@ int main(int argc, char *argv[])
 void print_help(void)
 {
     printf("\n");
-    printf("GAF Game Archive File (c)2013 Seth Parson sethcoder.com\n");
+    printf("GAF Game Archive File %s (c)2013 Seth Parson sethcoder.com\n",VERSION);
     printf("=======================================================\n");
     printf("USAGE:\n");
     printf("gaf <gaf file> [-a:<filename>] [-z:<dir>] [-d:<file>] [-c:<dir>] [-x] [-r]\n");

@@ -1,88 +1,139 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Win32 Debug" />
-	<File name="../../dlstorm/c_console.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="0" topLine="0" />
+	<ActiveTarget name="Win32 Release" />
+	<File name="..\..\dlstorm\dlstorm_lib.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_console.h" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="gumps\gameon.gui" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_gaf.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="gumps\guictrledit.gui" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_gaf.h" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_gaf.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_gfx.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="gumps\main.gui" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_gfx.h" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="..\ember_game_client.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4240" topLine="82" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_glmouse.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_gfx.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_glmouse.h" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="..\ember_game_client.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="487" topLine="16" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_gui.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_gfx.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_gui.h" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_glmouse.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_log.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_glmouse.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_log.h" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_gui.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_snd.h" open="0" top="0" tabpos="7">
-		<Cursor position="0" topLine="0" />
+	<File name="client.ini" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="411" topLine="15" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_var.cpp" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_gui.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/c_var.h" open="0" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="client.log" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="314" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/dlstorm.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="config.cfg" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/dlstorm.h" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_log.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../../dlstorm/dlstorm_lib.h" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_log.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../ember_game_client.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="gumps\console.gui" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="../ember_game_client.h" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_snd.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="client.ini" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="gumps\editmenu.gui" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="client.log" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_var.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="config.cfg" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_var.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="gumps/console.gui" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_console.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="gumps/editmenu.gui" open="0" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\dlstorm.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="gumps/gameon.gui" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\c_console.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="gumps/guictrledit.gui" open="0" top="0" tabpos="9">
-		<Cursor position="0" topLine="0" />
-	</File>
-	<File name="gumps/main.gui" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="..\..\dlstorm\dlstorm.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
