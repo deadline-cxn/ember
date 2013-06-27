@@ -4678,7 +4678,7 @@
 	"c_gaf.h"
 	<map>
 
-1318999270 c:\projects\dlstorm\c_gltexture.h
+1372344781 c:\projects\dlstorm\c_gltexture.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -4686,11 +4686,9 @@
 	<GL/glu.h>
 	"c_gaf.h"
 
-1372251418 c:\projects\dlstorm\c_gaf.h
+1372344429 c:\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
-	"zlib.h"
-	"c_log.h"
-	<dirent.h>
+	<zLib.h>
 
 1372190505 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
@@ -4745,7 +4743,7 @@
 1334571444 c:\projects\dlstorm\c_data.h
 	"dlstorm.h"
 
-1372184259 source:c:\projects\dlstorm\c_gaf.cpp
+1372342333 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
 1335452376 source:c:\projects\dlstorm\c_gfx.cpp
@@ -4799,7 +4797,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1318999476 source:c:\projects\dlstorm\c_gltexture.cpp
+1372344850 source:c:\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"

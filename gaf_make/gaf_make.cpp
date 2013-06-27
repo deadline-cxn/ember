@@ -21,7 +21,9 @@ int main(int argc, char *argv[])
     strcpy(file,argv[1]);
 
     CGAF *pGAF;
-    pGAF=new CGAF(file,GAFCOMP_BEST);
+    // pGAF=new CGAF(file,GAFCOMP_BEST);
+    pGAF=new CGAF;
+    pGAF->Open(file);
 
 
     switch(argv[2][1]) {

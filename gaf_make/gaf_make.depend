@@ -523,14 +523,12 @@
 	<memory.h>
 	<sys/stat.h>
 
-1372251783 source:c:\projects\dlstorm\c_gaf.cpp
+1372341624 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1372251418 c:\projects\dlstorm\c_gaf.h
+1372341541 c:\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
-	"zlib.h"
-	"c_log.h"
-	<dirent.h>
+	<zLib.h>
 
 1335452736 c:\projects\dlstorm\c_log.h
 	<direct.h>
@@ -635,7 +633,7 @@
 1371234766 source:c:\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1372251469 source:c:\projects\ember\gaf_make\gaf_make.cpp
+1372341654 source:c:\projects\ember\gaf_make\gaf_make.cpp
 	"gaf_make.h"
 
 1334746166 c:\projects\ember\gaf_make\gaf_make.h
