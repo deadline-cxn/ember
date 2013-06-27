@@ -4686,12 +4686,13 @@
 	<GL/glu.h>
 	"c_gaf.h"
 
-1372184342 c:\projects\dlstorm\c_gaf.h
+1372251418 c:\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
+	<dirent.h>
 
-1372174344 c:\projects\dlstorm\dlstorm.h
+1372190505 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	<iostream>
 	<vector>
@@ -4834,7 +4835,7 @@
 
 1317743478 c:\projects\dlstorm\c_hash.h
 
-1372176506 source:c:\projects\dlstorm\c_log.cpp
+1372189020 source:c:\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
 1335452418 source:c:\projects\dlstorm\c_lua.cpp
@@ -4876,7 +4877,7 @@
 	"dlstorm.h"
 	<map>
 
-1372170973 source:c:\projects\dlstorm\dlstorm.cpp
+1372190571 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1317440738 source:c:\projects\dlstorm\glerrors.cpp

@@ -1,4 +1,1740 @@
-(Tue Jun 25 15:51:51 2013):GAF [ember.gaf] constructed
-(Tue Jun 25 15:51:51 2013):Opening file
-(Tue Jun 25 15:51:51 2013):Adding Directory:base
-(Tue Jun 25 15:51:51 2013):GAF deconstructed
+(Wed Jun 26 09:03:26 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:03:26 2013):Opening file
+(Wed Jun 26 09:03:26 2013):Creating file
+(Wed Jun 26 09:03:26 2013):Opening file
+(Wed Jun 26 09:03:26 2013):Adding Directory:base
+(Wed Jun 26 09:03:26 2013):Filename: b0000.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0000.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0000mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0000mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0001.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0001.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0001mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0001mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0002.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0002.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0002mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0002mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0003.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0003.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0003mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0003mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0004.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0004.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0004mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0004mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0005.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0005.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0005mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0005mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0006.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0006.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0006mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0006mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0007.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0007.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0007mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0007mask.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0008.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0008.bmp
+(Wed Jun 26 09:03:26 2013):Filename: b0008mask.bmp
+(Wed Jun 26 09:03:26 2013):zzz Adding File:base/b0008mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0009.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0009.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0009mask.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0009mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0010.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0010.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0010mask.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0010mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0011.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0011.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0011mask.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0011mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0012.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0012.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0012mask.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0012mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0013.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0013.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0013mask.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0013mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0014.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0014.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0014mask.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0014mask.bmp
+(Wed Jun 26 09:03:27 2013):Filename: b0015.bmp
+(Wed Jun 26 09:03:27 2013):zzz Adding File:base/b0015.bmp
+(Wed Jun 26 09:03:31 2013):Filename: b0015mask.bmp
+(Wed Jun 26 09:03:31 2013):zzz Adding File:base/b0015mask.bmp
+(Wed Jun 26 09:03:31 2013):Filename: b0017.bmp
+(Wed Jun 26 09:03:31 2013):zzz Adding File:base/b0017.bmp
+(Wed Jun 26 09:03:31 2013):Filename: b0017mask.bmp
+(Wed Jun 26 09:03:31 2013):zzz Adding File:base/b0017mask.bmp
+(Wed Jun 26 09:03:31 2013):Filename: b0018.bmp
+(Wed Jun 26 09:03:31 2013):zzz Adding File:base/b0018.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0018mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0018mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0019.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0019.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0019mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0019mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0020.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0020.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0020mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0020mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0021.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0021.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0021mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0021mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0022.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0022.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0022mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0022mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0023.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0023.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0023mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0023mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0024.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0024.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0024mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0024mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0025.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0025.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0025mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0025mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0026.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0026.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0026mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0026mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0028.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0028.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0028mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0028mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0029.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0029.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0029mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0029mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0030.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0030.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0030mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0030mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0031.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0031.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0031mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0031mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0032.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0032.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0032mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0032mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0033.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0033.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0033mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0033mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0034.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0034.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0034mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0034mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0035.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0035.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0035mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0035mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0036.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0036.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0036mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0036mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0037.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0037.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0037mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0037mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0038.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0038.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0038mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0038mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0039.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0039.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0039mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0039mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0040.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0040.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0040mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0040mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0041.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0041.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0041mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0041mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0042.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0042.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0042mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0042mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0043.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0043.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0043mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0043mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0044.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0044.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0044mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0044mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0045.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0045.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0045mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0045mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0046.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0046.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0046mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0046mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0047.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0047.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0047mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0047mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0048.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0048.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0048mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0048mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0049.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0049.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0049mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0049mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0050.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0050.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0050mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0050mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0051.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0051.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0051mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0051mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0052.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0052.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0052mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0052mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0053.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0053.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0053mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0053mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0054.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0054.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0054mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0054mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0055.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0055.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0055mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0055mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0056.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0056.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0056mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0056mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0057.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0057.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0057mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0057mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0058.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0058.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0058mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0058mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0059.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0059.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0059mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0059mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0060.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0060.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0060mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0060mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0061.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0061.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0061mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0061mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0062.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0062.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0062mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0062mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0063.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0063.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0063mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0063mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0064.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0064.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0064mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0064mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0065.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0065.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0065mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0065mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0066.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0066.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0066mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0066mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0067.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0067.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0067mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0067mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0068.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0068.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0068mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0068mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0069.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0069.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0069mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0069mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0070.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0070.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0070mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0070mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0071.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0071.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0071mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0071mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0072.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0072.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0072mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0072mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0073.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0073.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0073mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0073mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0074.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0074.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0074mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0074mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0075.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0075.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0075mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0075mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0076.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0076.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0076mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0076mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0101.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0101.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0101mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0101mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0102.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0102.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0102mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0102mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0104.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0104.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0104mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0104mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0105.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0105.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0105mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0105mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0106.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0106.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0106mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0106mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0107.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0107.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0107mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0107mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0108.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0108.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0108mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0108mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0109.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0109.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0109mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0109mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0110.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0110.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0110mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0110mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0111.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0111.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0111mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0111mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0112.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0112.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0112mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0112mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0113.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0113.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0113mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0113mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0114.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0114.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0114mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0114mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0115.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0115.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0115mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0115mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0150.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0150.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0151.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0151.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0152.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0152.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b0153.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b0153.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b073.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b073.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b073mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b073mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2203.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2203.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2203mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2203mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2204.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2204.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2204mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2204mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2205.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2205.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2205mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2205mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2206.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2206.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2206mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2206mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2207.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2207.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2207mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2207mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2208.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2208.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b2208mask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b2208mask.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b3990.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b3990.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b3999.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b3999.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4000.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4000.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4001.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4001.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4002.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4002.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4003.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4003.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4004.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4004.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4005.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4005.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4006.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4006.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4007.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4007.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4008.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4008.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4009.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4009.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4010.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4010.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4011.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4011.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4012.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4012.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4013.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4013.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4014.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4014.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4015.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4015.bmp
+(Wed Jun 26 09:03:32 2013):Filename: b4096.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/b4096.bmp
+(Wed Jun 26 09:03:32 2013):Filename: console.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/console.bmp
+(Wed Jun 26 09:03:32 2013):Filename: consolemask.bmp
+(Wed Jun 26 09:03:32 2013):zzz Adding File:base/consolemask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: default.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:base/default.bmp
+(Wed Jun 26 09:03:36 2013):GAF deconstructed
+(Wed Jun 26 09:03:36 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:03:36 2013):Opening file
+(Wed Jun 26 09:03:36 2013):Adding Directory:buttons
+(Wed Jun 26 09:03:36 2013):Filename: 000.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/000.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 000mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/000mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 001.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/001.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 001mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/001mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 002.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/002.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 002mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/002mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 003.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/003.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 003mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/003mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 004.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/004.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 004mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/004mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 005.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/005.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 005mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/005mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 006.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/006.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 006mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/006mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 007.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/007.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 007mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/007mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 008.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/008.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 008mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/008mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 009.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/009.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 009mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/009mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 010.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/010.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 010mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/010mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 011.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/011.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 011mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/011mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 012.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/012.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 012mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/012mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 013.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/013.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 013mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/013mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 014.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/014.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 014mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/014mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 015.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/015.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 015mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/015mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 016.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/016.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 016mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/016mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 018.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/018.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 018mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/018mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 030.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/030.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 030mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/030mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 031.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/031.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 031mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/031mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 032.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/032.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 032mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/032mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 051.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/051.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 051mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/051mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 052.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/052.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 052mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/052mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 053.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/053.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 053mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/053mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 076.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/076.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 076mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/076mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 077.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/077.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 077mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/077mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 078.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/078.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 078mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/078mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 079.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/079.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 079mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/079mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 080.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/080.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 080mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/080mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 1_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/1_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 2_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/2_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 3_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/3_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 4_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/4_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 5_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/5_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 6_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/6_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_left_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_left_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_left_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_mid_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_mid_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_mid_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_right_bot.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_right_mid.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: 7_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/7_right_top.gif.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_000.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_000.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_000mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_000mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_001.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_001.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_001mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_001mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_002.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_002.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_002mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_002mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_003.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_003.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_003mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_003mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_004.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_004.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_004mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_004mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_005.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_005.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_005mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_005mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_006.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_006.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_006mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_006mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_007.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_007.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_007mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_007mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_008.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_008.bmp
+(Wed Jun 26 09:03:36 2013):Filename: b9_008mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/b9_008mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: buttons.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/buttons.bmp
+(Wed Jun 26 09:03:36 2013):Filename: buttonsmask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/buttonsmask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: Copy of 015.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/Copy of 015.bmp
+(Wed Jun 26 09:03:36 2013):Filename: Copy of 015mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/Copy of 015mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: minimize.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/minimize.bmp
+(Wed Jun 26 09:03:36 2013):Filename: test.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/test.bmp
+(Wed Jun 26 09:03:36 2013):Filename: testmask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:buttons/testmask.bmp
+(Wed Jun 26 09:03:36 2013):GAF deconstructed
+(Wed Jun 26 09:03:36 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:03:36 2013):Opening file
+(Wed Jun 26 09:03:36 2013):Adding Directory:fonts
+(Wed Jun 26 09:03:36 2013):Filename: fnt00.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt00.bmp
+(Wed Jun 26 09:03:36 2013):Filename: fnt00mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt00mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: fnt01 - Copy.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt01 - Copy.bmp
+(Wed Jun 26 09:03:36 2013):Filename: fnt01.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt01.bmp
+(Wed Jun 26 09:03:36 2013):Filename: fnt01mask - Copy.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt01mask - Copy.bmp
+(Wed Jun 26 09:03:36 2013):Filename: fnt01mask.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt01mask.bmp
+(Wed Jun 26 09:03:36 2013):Filename: fnt02.bmp
+(Wed Jun 26 09:03:36 2013):zzz Adding File:fonts/fnt02.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt02mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt02mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt03.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt03.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt03mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt03mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt04.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt04.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt04mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt04mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt05.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt05.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt05mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt05mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt06.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt06.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt06mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt06mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt07.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt07.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt07mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt07mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt08.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt08.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt08mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt08mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt10.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt10.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt10mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt10mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt11.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt11.bmp
+(Wed Jun 26 09:03:37 2013):Filename: fnt11mask.bmp
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/fnt11mask.bmp
+(Wed Jun 26 09:03:37 2013):Filename: makeBMPmask.exe
+(Wed Jun 26 09:03:37 2013):zzz Adding File:fonts/makeBMPmask.exe
+(Wed Jun 26 09:03:38 2013):GAF deconstructed
+(Wed Jun 26 09:03:38 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:03:38 2013):Opening file
+(Wed Jun 26 09:03:38 2013):Adding Directory:gumps
+(Wed Jun 26 09:03:38 2013):Filename: actionbar.ctrl
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/actionbar.ctrl
+(Wed Jun 26 09:03:38 2013):Filename: choose_chars.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/choose_chars.gui
+(Wed Jun 26 09:03:38 2013):Filename: connect.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/connect.gui
+(Wed Jun 26 09:03:38 2013):Filename: console.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/console.gui
+(Wed Jun 26 09:03:38 2013):Filename: create_character.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/create_character.gui
+(Wed Jun 26 09:03:38 2013):Filename: create_characters.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/create_characters.gui
+(Wed Jun 26 09:03:38 2013):Filename: editmenu.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/editmenu.gui
+(Wed Jun 26 09:03:38 2013):Filename: fav_man_add.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/fav_man_add.gui
+(Wed Jun 26 09:03:38 2013):Filename: fav_man_del.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/fav_man_del.gui
+(Wed Jun 26 09:03:38 2013):Filename: fav_man_mod.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/fav_man_mod.gui
+(Wed Jun 26 09:03:38 2013):Filename: file_selector.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/file_selector.gui
+(Wed Jun 26 09:03:38 2013):Filename: gameon.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/gameon.gui
+(Wed Jun 26 09:03:38 2013):Filename: guictrledit.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/guictrledit.gui
+(Wed Jun 26 09:03:38 2013):Filename: main.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/main.gui
+(Wed Jun 26 09:03:38 2013):Filename: new_main.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/new_main.gui
+(Wed Jun 26 09:03:38 2013):Filename: servers.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/servers.gui
+(Wed Jun 26 09:03:38 2013):Filename: test.gui
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/test.gui
+(Wed Jun 26 09:03:38 2013):Filename: testar.ctrl
+(Wed Jun 26 09:03:38 2013):zzz Adding File:gumps/testar.ctrl
+(Wed Jun 26 09:03:38 2013):GAF deconstructed
+(Wed Jun 26 09:03:38 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:03:38 2013):Opening file
+(Wed Jun 26 09:03:38 2013):Adding Directory:mouse
+(Wed Jun 26 09:03:38 2013):Filename: 0.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/0.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 0mask.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/0mask.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 1.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/1.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 10.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/10.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 10mask.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/10mask.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 1mask.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/1mask.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 2.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/2.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 3.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/3.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 4.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/4.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 4mask.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/4mask.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 5.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/5.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 6.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/6.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 7.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/7.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 8.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/8.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 9.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/9.bmp
+(Wed Jun 26 09:03:38 2013):Filename: 9.ini
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/9.ini
+(Wed Jun 26 09:03:38 2013):Filename: 9mask.bmp
+(Wed Jun 26 09:03:38 2013):zzz Adding File:mouse/9mask.bmp
+(Wed Jun 26 09:03:38 2013):GAF deconstructed
+(Wed Jun 26 09:04:40 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:04:40 2013):Opening file
+(Wed Jun 26 09:04:40 2013):Creating file
+(Wed Jun 26 09:04:40 2013):Opening file
+(Wed Jun 26 09:04:40 2013):Adding Directory:base
+(Wed Jun 26 09:04:40 2013):Filename: b0000.bmp
+(Wed Jun 26 09:04:40 2013):zzz Adding File:base/b0000.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0000mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0000mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0001.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0001.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0001mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0001mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0002.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0002.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0002mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0002mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0003.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0003.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0003mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0003mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0004.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0004.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0004mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0004mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0005.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0005.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0005mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0005mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0006.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0006.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0006mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0006mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0007.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0007.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0007mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0007mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0008.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0008.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0008mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0008mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0009.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0009.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0009mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0009mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0010.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0010.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0010mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0010mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0011.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0011.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0011mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0011mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0012.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0012.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0012mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0012mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0013.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0013.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0013mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0013mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0014.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0014.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0014mask.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0014mask.bmp
+(Wed Jun 26 09:04:41 2013):Filename: b0015.bmp
+(Wed Jun 26 09:04:41 2013):zzz Adding File:base/b0015.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0015mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0015mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0017.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0017.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0017mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0017mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0018.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0018.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0018mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0018mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0019.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0019.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0019mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0019mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0020.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0020.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0020mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0020mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0021.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0021.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0021mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0021mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0022.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0022.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0022mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0022mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0023.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0023.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0023mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0023mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0024.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0024.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0024mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0024mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0025.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0025.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0025mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0025mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0026.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0026.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0026mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0026mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0028.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0028.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0028mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0028mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0029.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0029.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0029mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0029mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0030.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0030.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0030mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0030mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0031.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0031.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0031mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0031mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0032.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0032.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0032mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0032mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0033.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0033.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0033mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0033mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0034.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0034.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0034mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0034mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0035.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0035.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0035mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0035mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0036.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0036.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0036mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0036mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0037.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0037.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0037mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0037mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0038.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0038.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0038mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0038mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0039.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0039.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0039mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0039mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0040.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0040.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0040mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0040mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0041.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0041.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0041mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0041mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0042.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0042.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0042mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0042mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0043.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0043.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0043mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0043mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0044.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0044.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0044mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0044mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0045.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0045.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0045mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0045mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0046.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0046.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0046mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0046mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0047.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0047.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0047mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0047mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0048.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0048.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0048mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0048mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0049.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0049.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0049mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0049mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0050.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0050.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0050mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0050mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0051.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0051.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0051mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0051mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0052.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0052.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0052mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0052mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0053.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0053.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0053mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0053mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0054.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0054.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0054mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0054mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0055.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0055.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0055mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0055mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0056.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0056.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0056mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0056mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0057.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0057.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0057mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0057mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0058.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0058.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0058mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0058mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0059.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0059.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0059mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0059mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0060.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0060.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0060mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0060mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0061.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0061.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0061mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0061mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0062.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0062.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0062mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0062mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0063.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0063.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0063mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0063mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0064.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0064.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0064mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0064mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0065.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0065.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0065mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0065mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0066.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0066.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0066mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0066mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0067.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0067.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0067mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0067mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0068.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0068.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0068mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0068mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0069.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0069.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0069mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0069mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0070.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0070.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0070mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0070mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0071.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0071.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0071mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0071mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0072.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0072.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0072mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0072mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0073.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0073.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0073mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0073mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0074.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0074.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0074mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0074mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0075.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0075.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0075mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0075mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0076.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0076.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0076mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0076mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0101.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0101.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0101mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0101mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0102.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0102.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0102mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0102mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0104.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0104.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0104mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0104mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0105.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0105.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0105mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0105mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0106.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0106.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0106mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0106mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0107.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0107.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0107mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0107mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0108.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0108.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0108mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0108mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0109.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0109.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0109mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0109mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0110.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0110.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0110mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0110mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0111.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0111.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0111mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0111mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0112.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0112.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0112mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0112mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0113.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0113.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0113mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0113mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0114.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0114.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0114mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0114mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0115.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0115.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0115mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0115mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0150.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0150.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0151.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0151.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0152.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0152.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b0153.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b0153.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b073.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b073.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b073mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b073mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2203.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2203.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2203mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2203mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2204.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2204.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2204mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2204mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2205.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2205.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2205mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2205mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2206.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2206.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2206mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2206mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2207.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2207.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2207mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2207mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2208.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2208.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b2208mask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b2208mask.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b3990.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b3990.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b3999.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b3999.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4000.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4000.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4001.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4001.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4002.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4002.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4003.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4003.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4004.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4004.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4005.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4005.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4006.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4006.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4007.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4007.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4008.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4008.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4009.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4009.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4010.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4010.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4011.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4011.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4012.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4012.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4013.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4013.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4014.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4014.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4015.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4015.bmp
+(Wed Jun 26 09:04:46 2013):Filename: b4096.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/b4096.bmp
+(Wed Jun 26 09:04:46 2013):Filename: console.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/console.bmp
+(Wed Jun 26 09:04:46 2013):Filename: consolemask.bmp
+(Wed Jun 26 09:04:46 2013):zzz Adding File:base/consolemask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: default.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:base/default.bmp
+(Wed Jun 26 09:04:50 2013):GAF deconstructed
+(Wed Jun 26 09:04:50 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:04:50 2013):Opening file
+(Wed Jun 26 09:04:50 2013):Adding Directory:buttons
+(Wed Jun 26 09:04:50 2013):Filename: 000.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/000.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 000mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/000mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 001.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/001.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 001mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/001mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 002.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/002.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 002mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/002mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 003.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/003.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 003mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/003mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 004.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/004.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 004mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/004mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 005.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/005.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 005mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/005mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 006.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/006.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 006mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/006mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 007.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/007.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 007mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/007mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 008.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/008.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 008mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/008mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 009.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/009.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 009mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/009mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 010.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/010.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 010mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/010mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 011.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/011.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 011mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/011mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 012.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/012.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 012mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/012mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 013.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/013.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 013mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/013mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 014.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/014.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 014mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/014mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 015.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/015.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 015mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/015mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 016.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/016.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 016mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/016mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 018.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/018.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 018mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/018mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 030.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/030.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 030mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/030mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 031.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/031.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 031mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/031mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 032.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/032.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 032mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/032mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 051.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/051.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 051mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/051mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 052.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/052.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 052mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/052mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 053.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/053.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 053mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/053mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 076.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/076.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 076mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/076mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 077.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/077.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 077mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/077mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 078.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/078.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 078mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/078mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 079.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/079.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 079mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/079mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 080.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/080.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 080mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/080mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 1_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/1_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 2_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/2_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 3_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/3_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 4_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/4_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 5_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/5_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 6_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/6_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_left_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_left_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_left_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_mid_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_mid_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_mid_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_right_bot.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_right_mid.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: 7_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/7_right_top.gif.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_000.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_000.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_000mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_000mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_001.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_001.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_001mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_001mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_002.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_002.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_002mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_002mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_003.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_003.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_003mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_003mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_004.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_004.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_004mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_004mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_005.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_005.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_005mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_005mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_006.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_006.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_006mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_006mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_007.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_007.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_007mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_007mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_008.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_008.bmp
+(Wed Jun 26 09:04:50 2013):Filename: b9_008mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/b9_008mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: buttons.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/buttons.bmp
+(Wed Jun 26 09:04:50 2013):Filename: buttonsmask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/buttonsmask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: Copy of 015.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/Copy of 015.bmp
+(Wed Jun 26 09:04:50 2013):Filename: Copy of 015mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/Copy of 015mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: minimize.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/minimize.bmp
+(Wed Jun 26 09:04:50 2013):Filename: test.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/test.bmp
+(Wed Jun 26 09:04:50 2013):Filename: testmask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:buttons/testmask.bmp
+(Wed Jun 26 09:04:50 2013):GAF deconstructed
+(Wed Jun 26 09:04:50 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:04:50 2013):Opening file
+(Wed Jun 26 09:04:50 2013):Adding Directory:fonts
+(Wed Jun 26 09:04:50 2013):Filename: fnt00.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt00.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt00mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt00mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt01 - Copy.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt01 - Copy.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt01.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt01.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt01mask - Copy.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt01mask - Copy.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt01mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt01mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt02.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt02.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt02mask.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt02mask.bmp
+(Wed Jun 26 09:04:50 2013):Filename: fnt03.bmp
+(Wed Jun 26 09:04:50 2013):zzz Adding File:fonts/fnt03.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt03mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt03mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt04.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt04.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt04mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt04mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt05.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt05.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt05mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt05mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt06.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt06.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt06mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt06mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt07.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt07.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt07mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt07mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt08.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt08.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt08mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt08mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt10.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt10.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt10mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt10mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt11.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt11.bmp
+(Wed Jun 26 09:04:51 2013):Filename: fnt11mask.bmp
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/fnt11mask.bmp
+(Wed Jun 26 09:04:51 2013):Filename: makeBMPmask.exe
+(Wed Jun 26 09:04:51 2013):zzz Adding File:fonts/makeBMPmask.exe
+(Wed Jun 26 09:04:52 2013):GAF deconstructed
+(Wed Jun 26 09:04:52 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:04:52 2013):Opening file
+(Wed Jun 26 09:04:52 2013):Adding Directory:gumps
+(Wed Jun 26 09:04:52 2013):Filename: actionbar.ctrl
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/actionbar.ctrl
+(Wed Jun 26 09:04:52 2013):Filename: choose_chars.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/choose_chars.gui
+(Wed Jun 26 09:04:52 2013):Filename: connect.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/connect.gui
+(Wed Jun 26 09:04:52 2013):Filename: console.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/console.gui
+(Wed Jun 26 09:04:52 2013):Filename: create_character.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/create_character.gui
+(Wed Jun 26 09:04:52 2013):Filename: create_characters.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/create_characters.gui
+(Wed Jun 26 09:04:52 2013):Filename: editmenu.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/editmenu.gui
+(Wed Jun 26 09:04:52 2013):Filename: fav_man_add.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/fav_man_add.gui
+(Wed Jun 26 09:04:52 2013):Filename: fav_man_del.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/fav_man_del.gui
+(Wed Jun 26 09:04:52 2013):Filename: fav_man_mod.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/fav_man_mod.gui
+(Wed Jun 26 09:04:52 2013):Filename: file_selector.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/file_selector.gui
+(Wed Jun 26 09:04:52 2013):Filename: gameon.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/gameon.gui
+(Wed Jun 26 09:04:52 2013):Filename: guictrledit.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/guictrledit.gui
+(Wed Jun 26 09:04:52 2013):Filename: main.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/main.gui
+(Wed Jun 26 09:04:52 2013):Filename: new_main.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/new_main.gui
+(Wed Jun 26 09:04:52 2013):Filename: servers.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/servers.gui
+(Wed Jun 26 09:04:52 2013):Filename: test.gui
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/test.gui
+(Wed Jun 26 09:04:52 2013):Filename: testar.ctrl
+(Wed Jun 26 09:04:52 2013):zzz Adding File:gumps/testar.ctrl
+(Wed Jun 26 09:04:52 2013):GAF deconstructed
+(Wed Jun 26 09:04:52 2013):GAF [ember.gaf] constructed
+(Wed Jun 26 09:04:52 2013):Opening file
+(Wed Jun 26 09:04:52 2013):Adding Directory:mouse
+(Wed Jun 26 09:04:52 2013):Filename: 0.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/0.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 0mask.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/0mask.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 1.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/1.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 10.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/10.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 10mask.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/10mask.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 1mask.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/1mask.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 2.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/2.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 3.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/3.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 4.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/4.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 4mask.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/4mask.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 5.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/5.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 6.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/6.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 7.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/7.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 8.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/8.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 9.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/9.bmp
+(Wed Jun 26 09:04:52 2013):Filename: 9.ini
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/9.ini
+(Wed Jun 26 09:04:52 2013):Filename: 9mask.bmp
+(Wed Jun 26 09:04:52 2013):zzz Adding File:mouse/9mask.bmp
+(Wed Jun 26 09:04:52 2013):GAF deconstructed

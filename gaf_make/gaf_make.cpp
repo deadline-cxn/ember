@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
                 res[i-3]=argv[2][i];
             }
             printf("Adding directory %s to %s...\n",res,file);
-            pGAF->AddDir(res,res,1);
+            pGAF->AddDir("",res,1);
             pGAF->Close();
             break;
 
