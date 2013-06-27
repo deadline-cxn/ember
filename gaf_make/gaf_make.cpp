@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     CGAF *pGAF;
     pGAF=new CGAF(file,GAFCOMP_BEST);
 
+
     switch(argv[2][1]) {
 
         case 'a':

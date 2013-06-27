@@ -645,3 +645,163 @@
 1372189020 source:c:\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
+1372306136 source:h:\develop\projects\dlstorm\c_gaf.cpp
+	"c_gaf.h"
+
+1372307557 h:\develop\projects\dlstorm\c_gaf.h
+	"dlstorm.h"
+	"zlib.h"
+	"c_log.h"
+
+1372306136 h:\develop\projects\dlstorm\dlstorm.h
+	"dlstorm_lib.h"
+	<iostream>
+	<vector>
+	<string>
+
+1372306136 h:\develop\projects\dlstorm\dlstorm_lib.h
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<time.h>
+	<malloc.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+
+1372306136 h:\develop\projects\dlstorm\c_log.h
+	<direct.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"dlstorm.h"
+
+1372306136 source:h:\develop\projects\dlstorm\c_log.cpp
+	"c_log.h"
+
+1372306136 source:h:\develop\projects\dlstorm\dlstorm.cpp
+	"dlstorm.h"
+
+1371681513 source:h:\develop\projects\sdk\zlib\adler32.c
+	"zlib.h"
+
+1371681513 h:\develop\projects\sdk\zlib\zlib.h
+	"zconf.h"
+
+1371681513 h:\develop\projects\sdk\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1371681513 source:h:\develop\projects\sdk\zlib\compress.c
+	"zlib.h"
+
+1371681513 source:h:\develop\projects\sdk\zlib\crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1371681513 h:\develop\projects\sdk\zlib\zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1371681513 h:\develop\projects\sdk\zlib\crc32.h
+
+1371681513 source:h:\develop\projects\sdk\zlib\deflate.c
+	"deflate.h"
+
+1371681513 h:\develop\projects\sdk\zlib\deflate.h
+	"zutil.h"
+
+1371681513 source:h:\develop\projects\sdk\zlib\gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1371681513 source:h:\develop\projects\sdk\zlib\infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1371681513 h:\develop\projects\sdk\zlib\inftrees.h
+
+1371681513 h:\develop\projects\sdk\zlib\inflate.h
+
+1371681513 h:\develop\projects\sdk\zlib\inffast.h
+
+1371681513 h:\develop\projects\sdk\zlib\inffixed.h
+
+1371681513 source:h:\develop\projects\sdk\zlib\inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1371681513 source:h:\develop\projects\sdk\zlib\inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1371681513 source:h:\develop\projects\sdk\zlib\inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1371681513 source:h:\develop\projects\sdk\zlib\trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1371681513 h:\develop\projects\sdk\zlib\trees.h
+
+1371681513 source:h:\develop\projects\sdk\zlib\uncompr.c
+	"zlib.h"
+
+1371681513 source:h:\develop\projects\sdk\zlib\zutil.c
+	"zutil.h"
+
+1372306179 source:h:\develop\projects\ember\gaf_make\gaf_make.cpp
+	"gaf_make.h"
+
+1371681271 h:\develop\projects\ember\gaf_make\gaf_make.h
+	"dlstorm.h"
+	"c_gaf.h"
+
