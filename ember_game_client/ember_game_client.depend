@@ -4678,7 +4678,7 @@
 	"c_gaf.h"
 	<map>
 
-1372344781 c:\projects\dlstorm\c_gltexture.h
+1372356881 c:\projects\dlstorm\c_gltexture.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -4797,7 +4797,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1372344850 source:c:\projects\dlstorm\c_gltexture.cpp
+1372356760 source:c:\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
