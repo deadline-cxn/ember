@@ -1,0 +1,17 @@
+[GUMP]
+name=gameactionbar.gui
+caption=GUI STUMP EDIT
+props=FM_GP_ALWAYS_ON_BOTTOM|FM_GP_DO_NOT_DIE|FM_GP_MOVEABLE
+x=0
+y=0
+w=640
+h=64
+media=68
+relativeto=GUI_BOTTOM_CENTER
+
+[CTRL]
+name=farthead
+x=100
+y=100
+w=300
+type=FM_GC_TEXTBOX

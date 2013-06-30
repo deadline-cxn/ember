@@ -1,0 +1,61 @@
+clear
+cd ..
+echo " "
+echo "Build Linux EMBER GAME SERVER LEGS"
+echo "======================================================================"
+echo "Removing object files..."
+rm *.o
+echo " "
+echo "Compiling..."
+
+echo ":b_cfmms.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c b_cfmms.cpp
+
+echo ":dlstorm.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c ../dlstorm/dlstorm.cpp
+
+echo ":dlcs_log.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c ../dlstorm/dlcs_log.cpp
+
+echo ":b_map.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c b_map.cpp
+
+echo ":b_netaddress.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c b_netaddress.cpp
+
+echo ":c_socket.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c c_socket.cpp
+
+echo ":fm_util.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c fm_util.cpp
+
+echo ":ember_game_server.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c ember_game_server.cpp
+
+echo ":s_client.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c s_client.cpp
+
+echo ":s_gnu.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c s_gnu.cpp
+
+echo ":s_server.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c s_server.cpp
+
+echo ":s_socket.cpp"
+g++ -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c s_socket.cpp
+
+echo ":s_linux.cpp"
+gcc -D_EMBER_SERVER_ -I../dlstorm -I/usr/local/mysql-4.0.18/include/mysql -c s_linux.cpp
+
+
+echo " "
+echo "Done compiling..."
+echo " "
+echo "Linking LEGC..."
+g++ /usr/local/mysql-4.0.18/lib/mysql/libmysqlclient.so *.o -o legc
+
+
+
+
+
+

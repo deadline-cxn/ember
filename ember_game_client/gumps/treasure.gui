@@ -1,0 +1,11 @@
+[GUMP]
+name=treasure.gui
+caption=TREASURE
+action=
+props=FM_GP_CLOSEX|FM_GP_MENU|FM_GP_MOVEABLE|FM_GP_SIZEABLE|FM_GP_USEBACKGROUND
+x=995
+y=661
+w=228
+h=246
+media=1
+

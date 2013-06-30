@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Win32 Release" />
+	<File name="..\..\SDK\lua-5.1.4\src\lgc.c" open="0" top="0" tabpos="0">
+		<Cursor position="343" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_console.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="5943" topLine="215" />
+	</File>
+	<File name="..\..\dlstorm\c_console.h" open="0" top="0" tabpos="8">
+		<Cursor position="784" topLine="6" />
+	</File>
+	<File name="..\..\dlstorm\c_data.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="3326" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_data.h" open="0" top="0" tabpos="0">
+		<Cursor position="2786" topLine="77" />
+	</File>
+	<File name="..\..\dlstorm\c_gaf.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="3105" topLine="116" />
+	</File>
+	<File name="..\..\dlstorm\c_gaf.h" open="0" top="0" tabpos="4">
+		<Cursor position="3241" topLine="89" />
+	</File>
+	<File name="..\..\dlstorm\c_gfx.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="40187" topLine="1256" />
+	</File>
+	<File name="..\..\dlstorm\c_gfx.h" open="0" top="0" tabpos="3">
+		<Cursor position="3876" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_gl3dmodel.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="6470" topLine="183" />
+	</File>
+	<File name="..\..\dlstorm\c_gl3dmodel.h" open="0" top="0" tabpos="6">
+		<Cursor position="5701" topLine="248" />
+	</File>
+	<File name="..\..\dlstorm\c_glfont.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="470" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_glfont.h" open="0" top="0" tabpos="0">
+		<Cursor position="2237" topLine="6" />
+	</File>
+	<File name="..\..\dlstorm\c_glmouse.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="6629" topLine="218" />
+	</File>
+	<File name="..\..\dlstorm\c_glmouse.h" open="0" top="0" tabpos="3">
+		<Cursor position="1415" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_gltexture.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="16564" topLine="529" />
+	</File>
+	<File name="..\..\dlstorm\c_gltexture.h" open="0" top="0" tabpos="4">
+		<Cursor position="1223" topLine="3" />
+	</File>
+	<File name="..\..\dlstorm\c_gui.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="61470" topLine="1613" />
+	</File>
+	<File name="..\..\dlstorm\c_gui.h" open="0" top="0" tabpos="3">
+		<Cursor position="2478" topLine="84" />
+	</File>
+	<File name="..\..\dlstorm\c_hash.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="542" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_hash.h" open="0" top="0" tabpos="0">
+		<Cursor position="173" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_log.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="1120" topLine="29" />
+	</File>
+	<File name="..\..\dlstorm\c_log.h" open="0" top="0" tabpos="3">
+		<Cursor position="1070" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_map_new.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="3749" topLine="84" />
+	</File>
+	<File name="..\..\dlstorm\c_map_new.h" open="0" top="0" tabpos="5">
+		<Cursor position="929" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_net.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="1582" topLine="23" />
+	</File>
+	<File name="..\..\dlstorm\c_snd.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="311" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\c_snd.h" open="0" top="0" tabpos="7">
+		<Cursor position="813" topLine="14" />
+	</File>
+	<File name="..\..\dlstorm\c_var.h" open="0" top="0" tabpos="5">
+		<Cursor position="864" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\dlstorm.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="565" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\dlstorm.h" open="0" top="0" tabpos="2">
+		<Cursor position="1625" topLine="104" />
+	</File>
+	<File name="..\..\dlstorm\dlstorm_lib.h" open="0" top="0" tabpos="3">
+		<Cursor position="6274" topLine="0" />
+	</File>
+	<File name="..\..\dlstorm\glerrors.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="65" topLine="0" />
+	</File>
+	<File name="..\c_entity.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="767" topLine="0" />
+	</File>
+	<File name="..\c_entity.h" open="0" top="0" tabpos="3">
+		<Cursor position="415" topLine="0" />
+	</File>
+	<File name="autoexec.cfg" open="0" top="0" tabpos="0">
+		<Cursor position="19" topLine="0" />
+	</File>
+	<File name="client.ini" open="0" top="0" tabpos="4">
+		<Cursor position="360" topLine="0" />
+	</File>
+	<File name="client.log" open="0" top="0" tabpos="5">
+		<Cursor position="5230" topLine="5" />
+	</File>
+	<File name="config.cfg" open="0" top="0" tabpos="3">
+		<Cursor position="370" topLine="0" />
+	</File>
+	<File name="gumps\choose_chars.gui" open="0" top="0" tabpos="0">
+		<Cursor position="84" topLine="0" />
+	</File>
+	<File name="gumps\connect.gui" open="0" top="0" tabpos="0">
+		<Cursor position="154" topLine="0" />
+	</File>
+	<File name="gumps\console.gui" open="0" top="0" tabpos="4">
+		<Cursor position="274" topLine="0" />
+	</File>
+	<File name="gumps\create_character.gui" open="0" top="0" tabpos="0">
+		<Cursor position="178" topLine="0" />
+	</File>
+	<File name="gumps\create_characters.gui" open="0" top="0" tabpos="0">
+		<Cursor position="30" topLine="0" />
+	</File>
+	<File name="gumps\editmenu.gui" open="0" top="0" tabpos="5">
+		<Cursor position="87" topLine="0" />
+	</File>
+	<File name="gumps\fav_man_add.gui" open="0" top="0" tabpos="0">
+		<Cursor position="70" topLine="0" />
+	</File>
+	<File name="gumps\fav_man_del.gui" open="0" top="0" tabpos="0">
+		<Cursor position="8" topLine="6" />
+	</File>
+	<File name="gumps\fav_man_mod.gui" open="0" top="0" tabpos="0">
+		<Cursor position="8" topLine="0" />
+	</File>
+	<File name="gumps\file_selector.gui" open="0" top="0" tabpos="6">
+		<Cursor position="72" topLine="0" />
+	</File>
+	<File name="gumps\gameactionbar.gui" open="0" top="0" tabpos="7">
+		<Cursor position="218" topLine="0" />
+	</File>
+	<File name="gumps\gameon.gui" open="0" top="0" tabpos="4">
+		<Cursor position="673" topLine="0" />
+	</File>
+	<File name="gumps\guictrledit.gui" open="0" top="0" tabpos="5">
+		<Cursor position="320" topLine="0" />
+	</File>
+	<File name="gumps\guistumpedit.gui" open="0" top="0" tabpos="2">
+		<Cursor position="622" topLine="567" />
+	</File>
+	<File name="gumps\main.gui" open="0" top="0" tabpos="6">
+		<Cursor position="563" topLine="37" />
+	</File>
+	<File name="gumps\prompt.gui" open="0" top="0" tabpos="0">
+		<Cursor position="417" topLine="0" />
+	</File>
+	<File name="gumps\scroll.gui" open="0" top="0" tabpos="0">
+		<Cursor position="546" topLine="0" />
+	</File>
+	<File name="gumps\servers.gui" open="0" top="0" tabpos="0">
+		<Cursor position="74" topLine="0" />
+	</File>
+	<File name="gumps\test.gui" open="0" top="0" tabpos="7">
+		<Cursor position="6350" topLine="458" />
+	</File>
+	<File name="..\ember_network_common.h" open="0" top="0" tabpos="0">
+		<Cursor position="493" topLine="0" />
+	</File>
+	<File name="..\manclient.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="49645" topLine="1267" />
+	</File>
+	<File name="..\manclient.h" open="0" top="0" tabpos="2">
+		<Cursor position="3605" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

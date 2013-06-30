@@ -1,0 +1,92 @@
+clear
+echo " "
+echo "Build FreeBSD FMGSD for debugging"
+echo "======================================================================"
+echo "Removing object files..."
+rm *.o
+echo " "
+echo "Compiling..."
+
+echo ":b_attribute.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_attribute.cpp
+
+echo ":b_class.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_class.cpp
+
+echo ":b_client.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_client.cpp
+
+echo ":b_item.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_item.cpp
+
+echo ":b_log.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_log.cpp
+
+echo ":b_map.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_map.cpp
+
+echo ":b_player.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_player.cpp
+
+echo ":b_race.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_race.cpp
+
+echo ":b_skill.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_skill.cpp
+
+echo ":b_teleport.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g b_teleport.cpp
+
+echo ":fm_util.cpp"
+gcc -D_FMSERVER_ -DFM_FREEBSD -c -g fm_util.cpp
+
+echo ":fmcs.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g fmcs.cpp
+
+echo ":net_lib.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g net_lib.cpp
+
+echo ":net_sys.cpp"
+gcc -D_FMSERVER_ -DFM_FREEBSD -c -g net_sys.c
+
+echo ":net_util.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g net_util.cpp
+
+echo ":packet.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g packet.cpp
+
+echo ":s_data.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_data.cpp
+
+echo ":s_fvm.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_fvm.cpp
+
+echo ":s_linux.cpp"
+gcc -D_FMSERVER_ -DFM_FREEBSD -c -g s_linux.cpp
+
+echo ":s_map.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_map.cpp
+
+echo ":s_master.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_master.cpp
+
+echo ":s_player.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_player.cpp
+
+echo ":s_server.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_server.cpp
+
+echo ":s_vars.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g s_vars.cpp
+
+echo ":servernet.cpp"
+g++ -D_FMSERVER_ -DFM_FREEBSD -c -g servernet.cpp
+
+echo " "
+echo "Done compiling..."
+echo " "
+echo "Linking FMGS (Debug)..."
+g++ *.o -o- g fmgs_debug
+
+
+

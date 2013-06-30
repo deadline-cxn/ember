@@ -1,0 +1,11 @@
+[GUMP]
+name=spellbook.gui
+caption=Spellbook
+action=
+props=FM_GP_BORDER|FM_GP_CLIENT_ONLY|FM_GP_CLOSEX|FM_GP_MENU|FM_GP_MINIMIZE|FM_GP_MOVEABLE|FM_GP_SIZEABLE|FM_GP_USEBACKGROUND
+x=668
+y=622
+w=583
+h=527
+media=75
+

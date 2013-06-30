@@ -1,0 +1,23 @@
+[GUMP]
+name=penguin.gui
+caption=PENGUIN GUI
+action=
+props=FM_GP_CLOSEX|FM_GP_MENU|FM_GP_MOVEABLE|FM_GP_SIZEABLE
+x=677
+y=500
+w=640
+h=640
+media=
+
+[CTRL]
+name=ctrlname
+media=ctrlname
+type=
+value=ctrlname
+
+[CTRL]
+name=ctrlname2
+media=ctrlname2
+type=
+value=ctrlname2
+

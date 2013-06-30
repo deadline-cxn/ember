@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="..\..\SDK\zlib\trees.c" open="0" top="0" tabpos="0">
+		<Cursor position="6933" topLine="159" />
+	</File>
+	<File name="..\..\dlstorm\c_gaf.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="13317" topLine="588" />
+	</File>
+	<File name="..\..\dlstorm\dlstorm.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="5483" topLine="165" />
+	</File>
+	<File name="..\ember_game_client\gaf_make_ember.bat" open="0" top="0" tabpos="2">
+		<Cursor position="136" topLine="0" />
+	</File>
+	<File name="gaf_make.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="2285" topLine="79" />
+	</File>
+	<File name="gaf_make.h" open="0" top="0" tabpos="3">
+		<Cursor position="44" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

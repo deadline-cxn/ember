@@ -1,0 +1,18 @@
+[GUMP]
+name=prompt.gui
+caption=GUI CONTROL EDITOR
+props=FM_GP_ALWAYS_ON_BOTTOM|FM_GP_DO_NOT_DIE|FM_GP_MOVEABLE|FM_GP_SIZEABLE|FM_GP_USEBACKGROUND
+x=0
+y=0
+w=418
+h=306
+relativeto=GUI_BOTTOM_RIGHT
+media=9
+
+[CTRL]
+name=message
+type=FM_GC_STATIC_TEXT
+x=0
+y=0
+relativeto=GUI_MIDDLE_CENTER
+value=MESSAGE TEXT

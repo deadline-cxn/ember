@@ -1,0 +1,23 @@
+[GUMP]
+name=file_selector.gui
+caption=Select File
+action=what
+props=FM_GP_CLOSEX|FM_GP_MENU|FM_GP_MOVEABLE
+x=0
+y=0
+w=420
+h=300
+relativeto=GUI_MIDDLE_CENTER
+default_focus_control=Local Directory
+
+[CTRL]
+name=Local Directory
+x=0
+y=18
+w=400
+h=280
+relativeto=GUI_TOP_LEFT
+type=FM_GC_LOCAL_DIR
+value=local
+listdepth=17
+

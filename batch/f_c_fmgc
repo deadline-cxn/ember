@@ -1,0 +1,26 @@
+clear
+echo " "
+echo "Build FreeBSD FMGS"
+echo "======================================================================"
+echo "Removing object files..."
+rm *.o
+echo " "
+echo "Compiling..."
+
+echo ":fragmere.cpp"
+g++ -I/usr/include/SDL -D_FMCLIENT_ -DFM_FREEBSD -c fragmere.cpp
+
+
+
+
+
+
+echo " "
+echo "Done compiling..."
+echo " "
+echo "Linking [fmgs.lnx]"
+g++ *.o -o fmgs.lnx
+
+
+
+

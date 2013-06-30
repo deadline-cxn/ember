@@ -1,0 +1,6 @@
+[GUMP]
+name=connect.gui
+caption=Connect GUI
+action=setgamemode
+props=FM_GP_USEBACKGROUND|FM_GP_FULLSCREEN|FM_GP_DO_NOT_DIE
+media=11

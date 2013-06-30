@@ -1,0 +1,109 @@
+cd ../
+
+clear
+echo " "
+echo "Build Linux FMGC"
+echo "======================================================================"
+echo "Removing object files..."
+rm *.o
+echo " "
+echo "Compiling..."
+
+echo ":b_base.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_base.cpp
+
+echo ":b_cam.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_cam.cpp
+
+echo ":b_cfmgs.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_cfmgs.cpp
+
+echo ":b_cfmms.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_cfmms.cpp
+
+echo ":b_gl3dmodel.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_gl3dmodel.cpp
+
+echo ":b_glfont.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_glfont.cpp
+
+echo ":b_glmouse.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_glmouse.cpp
+
+echo ":b_gltexture.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_gltexture.cpp
+
+echo ":b_glerrors.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_glerrors.cpp
+
+echo ":b_gui.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_gui.cpp
+
+echo ":b_log.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_log.cpp
+
+echo ":b_map.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_map.cpp
+
+echo ":b_netaddress.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_netaddress.cpp
+
+echo ":b_packet.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_packet.cpp
+
+echo ":b_pak.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_pak.cpp
+
+echo ":b_vis.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c b_vis.cpp
+
+echo ":c_console.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_console.cpp
+
+echo ":c_data.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_data.cpp
+
+echo ":c_gfxutil.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_gfxutil.cpp
+
+echo ":c_inpututil.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_inpututil.cpp
+
+echo ":c_map.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_map.cpp
+
+echo ":c_maputil.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_maputil.cpp
+
+echo ":c_netutil.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_netutil.cpp
+
+echo ":c_sndutil.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_sndutil.cpp
+
+echo ":c_socket.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_socket.cpp
+
+echo ":c_util.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c c_util.cpp
+
+echo ":fm_util.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c fm_util.cpp
+
+echo ":fragmere.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c fragmere.cpp
+
+echo ":net_sys.cpp"
+gcc -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c net_sys.cpp
+
+echo ":s_gnu.cpp"
+g++ -I/usr/include/SDL -I/usr/include -I/usr/include/fmod/api/inc -D_FMCLIENT_ -c s_gnu.cpp
+
+echo " "
+echo "Done compiling..."
+echo " "
+echo "Linking fmgc"
+
+g++ /usr/include/fmod/api/libfmod-3.71.so /usr/lib/libpthread.so /usr/X11R6/lib/libGLU.so /usr/lib/libSDL.so /usr/lib/libGL.so *.o -o fmgc/fmgc
+cp fmgc/fmgc /home/seth/fmgc/fmgc
+

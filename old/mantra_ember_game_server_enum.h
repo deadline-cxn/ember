@@ -1,0 +1,6 @@
+// MANTRA
+
+#ifndef _MANTRA_GAME_SERVER_ENUM_H
+#define _MANTRA_GAME_SERVER_ENUM_H
+
+#endif

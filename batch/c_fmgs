@@ -1,0 +1,67 @@
+clear
+cd ..
+echo " "
+echo "Build Linux FMGS"
+echo "======================================================================"
+echo "Removing object files..."
+rm *.o
+echo " "
+echo "Compiling..."
+
+echo ":b_cfmms.cpp"
+g++ -D_FMSERVER_ -c b_cfmms.cpp
+
+echo ":b_log.cpp"
+g++ -D_FMSERVER_ -c b_log.cpp
+
+echo ":b_map.cpp"
+g++ -D_FMSERVER_ -c b_map.cpp
+
+echo ":b_netaddress.cpp"
+g++ -D_FMSERVER_ -c b_netaddress.cpp
+
+echo ":b_packet.cpp"
+g++ -D_FMSERVER_ -c b_packet.cpp
+
+echo ":c_socket.cpp"
+g++ -D_FMSERVER_ -c c_socket.cpp
+
+echo ":fm_util.cpp"
+g++ -D_FMSERVER_ -c fm_util.cpp
+
+echo ":fmgs.cpp"
+g++ -D_FMSERVER_ -c fmgs.cpp
+
+echo ":net_sys.cpp"
+g++ -D_FMSERVER_ -c net_sys.cpp
+
+echo ":s_access.cpp"
+g++ -D_FMSERVER_ -c s_access.cpp
+
+echo ":s_client.cpp"
+g++ -D_FMSERVER_ -c s_client.cpp
+
+echo ":s_gnu.cpp"
+g++ -D_FMSERVER_ -c s_gnu.cpp
+
+echo ":s_lua.cpp"
+g++ -D_FMSERVER_ -c s_lua.cpp
+
+echo ":s_server.cpp"
+g++ -D_FMSERVER_ -c s_server.cpp
+
+echo ":s_socket.cpp"
+g++ -D_FMSERVER_ -c s_socket.cpp
+
+echo ":s_linux.cpp"
+gcc -D_FMSERVER_ -c s_linux.cpp
+
+echo " "
+echo "Done compiling..."
+echo " "
+echo "Linking FMGS..."
+g++ lua_lib_linux/*.o *.o -o fmgs/fmgs
+cp fmgs/fmgs /home/fragmere/server/fmgs
+
+
+

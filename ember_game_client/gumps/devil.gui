@@ -1,0 +1,11 @@
+[GUMP]
+name=devil.gui
+caption=
+action=
+props=FM_GP_MOVEABLE|FM_GP_SIZEABLE|FM_GP_USEBACKGROUND
+x=714
+y=757
+w=32
+h=32
+media=3
+
