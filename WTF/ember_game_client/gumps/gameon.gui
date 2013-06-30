@@ -1,0 +1,46 @@
+[GUMP]
+name=gameon.gui
+gamemode=MAIN
+caption=Game On
+action=setgamemode
+props=FM_GP_CLIENT_ONLY|FM_GP_MENU|FM_GP_DO_NOT_DIE|FM_GP_CLOSEX
+x=4
+y=4
+w=width
+h=32
+media=1
+
+# Attach bottombar CTRL
+#[ATTACH]
+#name=actionbar.ctrl
+
+[CTRL]
+name=quit
+x=860
+y=25
+type=FM_GC_BUTTON
+value=^6X
+console=QUIT
+
+
+[CTRL]
+name=console
+media=53
+media_hover=53
+media_click=76
+x=128
+y=18
+type=FM_GC_ACTION
+value=console
+console=guicall console.gui
+
+[CTRL]
+name=main
+media=152
+media_hover=152
+media_click=153
+x=160
+y=18
+type=FM_GC_ACTION
+value=main
+console=setgamemode MAIN_MENU

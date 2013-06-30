@@ -1,0 +1,64 @@
+[CTRL]
+name=TEST
+type=FM_GC_BUTTON
+x=10
+y=10
+value=THIS IS A TEST BUTTON
+
+
+[CTRL]
+name=Shit List
+x=700
+y=10
+w=150
+h=300
+props=FM_GC_TOGGLE_STATE|FM_GP_MINIMIZE|FM_GP_CLOSEX
+x2=510
+y2=510
+w2=15
+h2=15
+type=FM_GC_LISTBOX
+value=Hi
+value=This is a test
+value=Hi
+value=Yfr fomfomo
+value=fill
+value=WTF! LOL
+value=Test again
+value=More Shit
+value=Even more shit
+value=Still more shit
+value=Hi I am some shit
+value=FUUUCK
+value=What in the heeeaaall
+value=Yes
+
+[CTRL]
+name=will'sbutton
+type=FM_GC_ACTION
+x=275
+y=100
+media=71
+media_hover=73
+media_click=74
+value=parkit
+
+[CTRL]
+name=main2
+type=FM_GC_ACTION
+x=530
+y=42
+media=22
+media_hover=23
+media_click=24
+value=testbutton2
+
+[CTRL]
+name=testbutton1
+type=FM_GC_ACTION
+x=500
+y=350
+media=32
+media_hover=32
+media_click=33
+value=testbutton1

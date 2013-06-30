@@ -1,0 +1,7 @@
+[CTRL]
+name=actionbar
+type=FM_GC_ACTION_BAR
+x=10
+y=10
+value=Action Bar
+
