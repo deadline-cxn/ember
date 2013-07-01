@@ -23,7 +23,6 @@ public:
     long    duration;
     CTimer  *timer;
 
-
     CMEffect *next;
     CMEffect *prev;
 };

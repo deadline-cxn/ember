@@ -1,1 +1,0 @@
-for %%z in (*.gif) do gif2bmp "%%z"

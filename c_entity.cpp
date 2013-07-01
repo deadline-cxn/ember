@@ -1,20 +1,18 @@
 
 #include "c_entity.h"
 
-C_Entity::C_Entity()
-{
+C_Entity::C_Entity() {
     Initialize();
 }
-C_Entity::C_Entity(CLog *pInLog, CGAF *pInGAF, C_GFX *pInGFX)
-{
+
+C_Entity::C_Entity(CLog *pInLog, CGAF *pInGAF, C_GFX *pInGFX) {
     Initialize();
     pLog=pInLog;
     pGAF=pInGAF;
     pGFX=pInGFX;
 }
 
-C_Entity::C_Entity(CLog *pInLog, CGAF *pInGAF, C_GFX *pInGFX, CGLModel *pInModel)
-{
+C_Entity::C_Entity(CLog *pInLog, CGAF *pInGAF, C_GFX *pInGFX, CGLModel *pInModel) {
     Initialize();
     pLog=pInLog;
     pGAF=pInGAF;
@@ -23,8 +21,7 @@ C_Entity::C_Entity(CLog *pInLog, CGAF *pInGAF, C_GFX *pInGFX, CGLModel *pInModel
 }
 
 
-void C_Entity::Initialize(void)
-{
+void C_Entity::Initialize(void) {
     memset(szName,0,1024);
     type=ENTITY_STATIC;    /*       ENTITY_STATIC,
                                     ENTITY_PLAYER,
@@ -38,12 +35,10 @@ void C_Entity::Initialize(void)
     pModel=0;
 }
 
-C_Entity::~C_Entity()
-{
+C_Entity::~C_Entity() {
 }
 
-void C_Entity::Draw(void)
-{
+void C_Entity::Draw(void) {
 }
 
 /*  CVector3 Pos;       // position of the entity

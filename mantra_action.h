@@ -3,15 +3,13 @@
 
 #include "mantra_common.h"
 
-class CMAction{
+class CMAction {
 public:
     CMAction();
     ~CMAction();
     int     id;
     char    name[MANTRA_TEXT_LEN];
-
     int     type;
-
 };
 
 

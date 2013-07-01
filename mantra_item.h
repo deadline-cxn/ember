@@ -15,8 +15,7 @@
 #define MI_PROP_CONSUMED  4
 #define MI_PROP_STACKABLE 8
 
-class CMItem_DB // the base data from which the item will be created
-{
+class CMItem_DB { // the base data from which the item will be created
 public:
     CMItem_DB();
     ~CMItem_DB();
@@ -40,12 +39,9 @@ public:
     std::map     <int, int> bonus_value;
     int     chakra_stats;// how many chakras can be applied
     int     max_stack;
-
-
 };
 
-class CMItem : public CMItem_DB
-{
+class CMItem : public CMItem_DB {
 public:
     CMItem();
     ~CMItem();
@@ -59,7 +55,6 @@ public:
     char    made_by[MANTRA_TEXT_LEN];
     int     hack; // which hack is applied to the item
     std::map <int, int> chakra;  // which chakra is applied
-
 };
 
 #endif

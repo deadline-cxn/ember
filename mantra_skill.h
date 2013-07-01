@@ -3,16 +3,12 @@
 
 #include "mantra_common.h"
 
-class CMSkill{
+class CMSkill {
 public:
     CMSkill();
     ~CMSkill();
-
     int  id;
-
     char name[MANTRA_TEXT_LEN];
-
-
 };
 
 #endif

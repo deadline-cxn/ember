@@ -7,8 +7,7 @@
 #include "mantra_effect.h"
 #include "mantra_skill.h"
 
-class CMCharacter
-{
+class CMCharacter {
 public:
     CMCharacter();
     ~CMCharacter();

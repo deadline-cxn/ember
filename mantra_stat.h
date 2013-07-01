@@ -4,7 +4,7 @@
 #include "dlstorm.h"
 #include "mantra_common.h"
 
-class CMStat{
+class CMStat {
 public:
     CMStat();
     ~CMStat();
@@ -19,7 +19,6 @@ public:
 
     CMStat *next;
     CMStat *prev;
-
 };
 
 #endif

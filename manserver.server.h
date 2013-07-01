@@ -16,8 +16,7 @@
 
 /////////////////////////////////////////
 
-typedef struct RetainedData{
-
+typedef struct RetainedData {
     char    s_name[MANTRA_TEXT_LEN];
     char    s_admin_email[MANTRA_TEXT_LEN];
     int     i_port;
@@ -26,7 +25,6 @@ typedef struct RetainedData{
     bool    b_require_website;
     char    s_website_link[MANTRA_TEXT_LEN];
     char    s_motd[MANTRA_TEXT_LEN];
-
 };
 
 class C_GSC;

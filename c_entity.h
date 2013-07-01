@@ -6,16 +6,14 @@
 #include "c_gfx.h"
 #include "c_gl3dmodel.h"
 
-enum tEntityType
-{
+enum tEntityType {
     ENTITY_STATIC,
     ENTITY_PLAYER,
     ENTITY_NPC,
     ENTITY_INTERACT,
 };
 
-class C_Entity
-{
+class C_Entity {
 public:
     C_Entity();
     C_Entity(CLog *pInLog, CGAF *pInGAF, C_GFX *pInGFX);

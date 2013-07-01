@@ -5496,3 +5496,788 @@
 
 1339005520 c:\users\seth.parson\desktop\seth.parson\develop\projects\ember\ember_game_server_enum.h
 
+1372700170 source:c:\projects\dlstorm\c_console.cpp
+	"c_console.h"
+
+1372679006 c:\projects\dlstorm\c_console.h
+	"c_gltexture.h"
+	"c_log.h"
+	"c_gaf.h"
+	<map>
+
+1372679006 c:\projects\dlstorm\c_gltexture.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"c_gaf.h"
+	"c_log.h"
+
+1372702511 c:\projects\dlstorm\c_gaf.h
+	"dlstorm.h"
+	"zlib.h"
+	"c_log.h"
+
+1372679006 c:\projects\dlstorm\dlstorm.h
+	"dlstorm_lib.h"
+	"c_log.h"
+
+1372679006 c:\projects\dlstorm\dlstorm_lib.h
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<time.h>
+	<malloc.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+	<iostream>
+	<vector>
+	<string>
+	<map>
+	<algorithm>
+
+1372679006 c:\projects\dlstorm\c_log.h
+	<direct.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"dlstorm.h"
+
+1372700230 source:c:\projects\dlstorm\c_data.cpp
+	"c_data.h"
+	"SDL.h"
+
+1372684496 c:\projects\dlstorm\c_data.h
+	"dlstorm.h"
+
+1372704819 source:c:\projects\dlstorm\c_gaf.cpp
+	"c_gaf.h"
+
+1372701549 source:c:\projects\dlstorm\c_gfx.cpp
+	"c_gfx.h"
+
+1372684548 c:\projects\dlstorm\c_gfx.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	"c_gaf.h"
+	"c_log.h"
+	"SDL.h"
+	"c_gltexture.h"
+	"c_gl3dmodel.h"
+	<math.h>
+	"c_map_new.h"
+
+1372679006 c:\projects\dlstorm\c_gl3dmodel.h
+	<string>
+	<vector>
+	"c_gltexture.h"
+	"c_log.h"
+	<vector>
+	<string>
+	<map>
+
+1371234719 c:\projects\dlstorm\c_map_new.h
+	"dlstorm.h"
+	"c_gaf.h"
+	"c_log.h"
+	"c_gltexture.h"
+	"ximage.h"
+
+1372700264 source:c:\projects\dlstorm\c_gl3dmodel.cpp
+	"c_gl3dmodel.h"
+
+1372700268 source:c:\projects\dlstorm\c_glfont.cpp
+	"c_glfont.h"
+	"c_gltexture.h"
+	"SDL.h"
+
+1318999824 c:\projects\dlstorm\c_glfont.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"c_gaf.h"
+	"c_log.h"
+
+1372700274 source:c:\projects\dlstorm\c_glmouse.cpp
+	"dlstorm.h"
+	"c_glmouse.h"
+	"c_gltexture.h"
+	"SDL.h"
+	"ximage.h"
+
+1372679006 c:\projects\dlstorm\c_glmouse.h
+	"c_gaf.h"
+	"c_log.h"
+	"c_gltexture.h"
+
+1372705608 source:c:\projects\dlstorm\c_gltexture.cpp
+	"c_gltexture.h"
+	"glerrors.h"
+	"SDL.h"
+	"ximage.h"
+
+1155175856 c:\projects\dlstorm\glerrors.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1372703389 source:c:\projects\dlstorm\c_gui.cpp
+	"c_gui.h"
+
+1372679006 c:\projects\dlstorm\c_gui.h
+	"c_gui_chat_enum.h"
+	<map>
+	<algorithm>
+	"c_gfx.h"
+	"c_gaf.h"
+	"c_glfont.h"
+	"c_glmouse.h"
+	"c_gltexture.h"
+	"c_console.h"
+	"dlstorm.h"
+	"ximage.h"
+
+1372684463 c:\projects\dlstorm\c_gui_chat_enum.h
+	"dlstorm.h"
+
+1372700299 source:c:\projects\dlstorm\c_hash.cpp
+	"C_Hash.h"
+	<iostream>
+	<string>
+	<map>
+
+1317743478 c:\projects\dlstorm\c_hash.h
+
+1372700309 source:c:\projects\dlstorm\c_log.cpp
+	"c_log.h"
+
+1372700329 source:c:\projects\dlstorm\c_map_new.cpp
+	"c_map_new.h"
+
+1372700355 source:c:\projects\dlstorm\c_net.cpp
+	"c_net.h"
+
+1372684436 c:\projects\dlstorm\c_net.h
+	"dlstorm.h"
+	<winsock2.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<sys/time.h>
+	<sys/wait.h>
+	<fcntl.h>
+	<errno.h>
+
+1372700362 source:c:\projects\dlstorm\c_snd.cpp
+	"c_snd.h"
+
+1372700093 c:\projects\dlstorm\c_snd.h
+	"dlstorm.h"
+	"fmod.h"
+
+1372700382 source:c:\projects\dlstorm\c_timer.cpp
+	"c_timer.h"
+
+1270131542 c:\projects\dlstorm\c_timer.h
+	"dlstorm.h"
+
+1372700392 source:c:\projects\dlstorm\dlstorm.cpp
+	"dlstorm.h"
+
+1372700410 source:c:\projects\dlstorm\glerrors.cpp
+	"glerrors.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lapi.c
+	<assert.h>
+	<math.h>
+	<stdarg.h>
+	<string.h>
+	"lua.h"
+	"lapi.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lundump.h"
+	"lvm.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\luaconf.h
+	<limits.h>
+	<stddef.h>
+	<unistd.h>
+	<io.h>
+	<stdio.h>
+	<stdio.h>
+	<readline/readline.h>
+	<readline/history.h>
+	<assert.h>
+	<math.h>
+	<unistd.h>
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lapi.h
+	"lobject.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lobject.h
+	<stdarg.h>
+	"llimits.h"
+	"lua.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\llimits.h
+	<limits.h>
+	<stddef.h>
+	"lua.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\ldebug.h
+	"lstate.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lstate.h
+	"lua.h"
+	"lobject.h"
+	"ltm.h"
+	"lzio.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\ltm.h
+	"lobject.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lzio.h
+	"lua.h"
+	"lmem.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lmem.h
+	<stddef.h>
+	"llimits.h"
+	"lua.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\ldo.h
+	"lobject.h"
+	"lstate.h"
+	"lzio.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lfunc.h
+	"lobject.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lgc.h
+	"lobject.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lstring.h
+	"lgc.h"
+	"lobject.h"
+	"lstate.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\ltable.h
+	"lobject.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lundump.h
+	"lobject.h"
+	"lzio.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lvm.h
+	"ldo.h"
+	"lobject.h"
+	"ltm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lauxlib.c
+	<ctype.h>
+	<errno.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lbaselib.c
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lualib.h
+	"lua.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lcode.c
+	<stdlib.h>
+	"lua.h"
+	"lcode.h"
+	"ldebug.h"
+	"ldo.h"
+	"lgc.h"
+	"llex.h"
+	"lmem.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+	"ltable.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lcode.h
+	"llex.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\llex.h
+	"lobject.h"
+	"lzio.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lopcodes.h
+	"llimits.h"
+
+1371234762 c:\projects\sdk\lua-5.1.4\src\lparser.h
+	"llimits.h"
+	"lobject.h"
+	"lzio.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ldblib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ldebug.c
+	<stdarg.h>
+	<stddef.h>
+	<string.h>
+	"lua.h"
+	"lapi.h"
+	"lcode.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lvm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ldo.c
+	<setjmp.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lundump.h"
+	"lvm.h"
+	"lzio.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ldump.c
+	<stddef.h>
+	"lua.h"
+	"lobject.h"
+	"lstate.h"
+	"lundump.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lfunc.c
+	<stddef.h>
+	"lua.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lgc.c
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\linit.c
+	"lua.h"
+	"lualib.h"
+	"lauxlib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\liolib.c
+	<errno.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\llex.c
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	"lua.h"
+	"ldo.h"
+	"llex.h"
+	"lobject.h"
+	"lparser.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"lzio.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lmathlib.c
+	<stdlib.h>
+	<math.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lmem.c
+	<stddef.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\loadlib.c
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+	<dlfcn.h>
+	<windows.h>
+	<mach-o/dyld.h>
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lobject.c
+	<ctype.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"ldo.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"lvm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lopcodes.c
+	"lopcodes.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\loslib.c
+	<errno.h>
+	<locale.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lparser.c
+	<string.h>
+	"lua.h"
+	"lcode.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"llex.h"
+	"lmem.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lstate.c
+	<stddef.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"llex.h"
+	"lmem.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lstring.c
+	<string.h>
+	"lua.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lstrlib.c
+	<ctype.h>
+	<stddef.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ltable.c
+	<math.h>
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"ltable.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ltablib.c
+	<stddef.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\ltm.c
+	<string.h>
+	"lua.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lundump.c
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstring.h"
+	"lundump.h"
+	"lzio.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lvm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lvm.h"
+
+1371234762 source:c:\projects\sdk\lua-5.1.4\src\lzio.c
+	<string.h>
+	"lua.h"
+	"llimits.h"
+	"lmem.h"
+	"lstate.h"
+	"lzio.h"
+
+1371234765 source:c:\projects\sdk\zlib\adler32.c
+	"zlib.h"
+
+1371234766 c:\projects\sdk\zlib\zlib.h
+	"zconf.h"
+
+1371234766 c:\projects\sdk\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1371234766 source:c:\projects\sdk\zlib\compress.c
+	"zlib.h"
+
+1371234766 source:c:\projects\sdk\zlib\crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1371234766 c:\projects\sdk\zlib\zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1371234766 c:\projects\sdk\zlib\crc32.h
+
+1371234766 source:c:\projects\sdk\zlib\deflate.c
+	"deflate.h"
+
+1371234766 c:\projects\sdk\zlib\deflate.h
+	"zutil.h"
+
+1371234766 source:c:\projects\sdk\zlib\gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1371234766 source:c:\projects\sdk\zlib\infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1371234766 c:\projects\sdk\zlib\inftrees.h
+
+1371234766 c:\projects\sdk\zlib\inflate.h
+
+1371234766 c:\projects\sdk\zlib\inffast.h
+
+1371234766 c:\projects\sdk\zlib\inffixed.h
+
+1371234766 source:c:\projects\sdk\zlib\inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1371234766 source:c:\projects\sdk\zlib\inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1371234766 source:c:\projects\sdk\zlib\inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1371234766 source:c:\projects\sdk\zlib\trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1371234766 c:\projects\sdk\zlib\trees.h
+
+1371234766 source:c:\projects\sdk\zlib\uncompr.c
+	"zlib.h"
+
+1371234766 source:c:\projects\sdk\zlib\zutil.c
+	"zutil.h"
+
+1372700473 source:c:\projects\ember\c_entity.cpp
+	"c_entity.h"
+
+1372684011 c:\projects\ember\c_entity.h
+	"c_log.h"
+	"c_gaf.h"
+	"c_gfx.h"
+	"c_gl3dmodel.h"
+
+1372700507 source:c:\projects\ember\manclient.cpp
+	"manclient.h"
+
+1372686021 c:\projects\ember\manclient.h
+	"c_data.h"
+	"c_timer.h"
+	"c_snd.h"
+	"c_gfx.h"
+	"c_gui.h"
+	"c_gui_chat_enum.h"
+	"c_log.h"
+	"c_net.h"
+	"network_messages.h"
+	"mantra_version.h"
+	"mantra_common.h"
+	"manmaster.h"
+	"c_entity.h"
+
+1372684337 c:\projects\ember\mantra_version.h
+
+1372679065 c:\projects\ember\mantra_common.h
+
+1372685808 c:\projects\ember\manmaster.h
+	"c_serverinfo.h"
+
+1372683979 c:\projects\ember\c_serverinfo.h
+

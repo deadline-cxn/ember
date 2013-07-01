@@ -19,8 +19,7 @@
 class CServer;
 class CMPCharacter;
 
-class C_GSC : public CCSocket, public C_UserData
-{
+class C_GSC : public CCSocket, public C_UserData {
 public:
     C_GSC(CLog *pInLog,CServer *pInServer);
     ~C_GSC();

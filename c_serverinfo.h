@@ -5,18 +5,7 @@
 #ifndef _EMBER_SERVERINFO_H
 #define _EMBER_SERVERINFO_H
 
-//#include "b_race.h"
-//#include "b_class.h"
-//#include "b_faction.h"
-
-typedef enum{
-    SI_GENERIC=0,
-    SI_GET_SERVER_LIST,
-    SI_PUT_SERVER,
-} tServerInfoUpdates;
-
-class CServerInfo
-{
+class CServerInfo {
 public:
 	CServerInfo();
 	~CServerInfo();

@@ -6,25 +6,14 @@
 #include "mantra_character.h"
 #include "c_log.h"
 
-class CM_NPC : public CMCharacter
-{
+class CM_NPC : public CMCharacter {
 public:
     CM_NPC();
     ~CM_NPC();
 
     virtual void load(void);
-
-
-
-
-
     int loot_table;
-
-
     void npc_char_init(void);
-
-
 };
-
 
 #endif

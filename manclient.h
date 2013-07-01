@@ -2,28 +2,30 @@
 
  ***************************************************************/
 
-#ifndef _EMBER_GAME_CLIENT
-#define _EMBER_GAME_CLIENT
+#ifndef _MANTRA_GAME_CLIENT
+#define _MANTRA_GAME_CLIENT
 
-#include "ember_version.h"
-#include "ember_network_common.h"
-#include "ember_game_server_enum.h"
 #include "c_data.h"
-#include "c_entity.h"
 #include "c_timer.h"
-
 #include "c_snd.h"
 #include "c_gfx.h"
 #include "c_gui.h"
+#include "c_gui_chat_enum.h"
 #include "c_log.h"
 #include "c_net.h"
+#include "network_messages.h"
+
+#include "mantra_version.h"
+#include "mantra_common.h"
+#include "manmaster.h"
+
+#include "c_entity.h"
 
 //#include "lua.h"
 
 // Game operating modes
 
-enum MODE
-{
+enum MODE {
     DUMMY_DUMMY_MODE=0,
     MAIN_MENU,
     MAIN_MENU_2,
@@ -130,11 +132,8 @@ extern "C"
 }
 #endif
 
-
-class C_FMGS : public CCSocket
-{
+class C_FMGS : public CCSocket {
 public:
-
     C_FMGS();
     ~C_FMGS();
 
@@ -162,11 +161,7 @@ public:
 
     void        Chat(char *msg,char *name, int channel);
 
-
     CTimer      *spin_timer;
-
 };
-
-
 
 #endif // _EMBER_GAME_CLIENT

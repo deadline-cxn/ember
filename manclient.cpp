@@ -500,7 +500,9 @@ bool DoGameMode(void){
         pGUI->getdata((char *)&temp1,"username");
         pGUI->getdata((char *)&temp2,"password");
 
-        pLog->_Add("%s %s",temp1,md5_digest(temp2));
+        md5_digest(temp1,temp2);
+
+        pLog->_Add("%s",temp1);
 
         strcpy(pClientData->Name,       temp1);
         strcpy(pClientData->Password,   temp2);
@@ -532,7 +534,9 @@ bool DoGameMode(void){
         pFMGS=new C_FMGS();
         if(!pFMGS){ SetGameMode(MAIN_MENU); pGUI->prompt("Can't establish network object","nop"); break; }
 
-        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,md5_digest(pClientData->Password));
+        md5_digest(temp1,pClientData->Password);
+
+        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
 
         SetGameMode(LOGIN_RECV);
 
@@ -546,8 +550,8 @@ bool DoGameMode(void){
         pGUI->call("connect.gui");
 
         DEL(pFMGS); pFMGS=new C_FMGS();
-
-        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,md5_digest(pClientData->Password));
+        md5_digest(temp1,pClientData->Password);
+        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
 
         SetGameMode(LOGIN_RECV);
 
@@ -844,7 +848,9 @@ bool doInit(void){
     pLog->AddLineSep();
     pLog->_Add((char *)va("MANTRA %s %s %s",VERSION,CPUSTRING,COPYRIGHT));
     pLog->_Add("Log created");
-    pLog->_Add(getos());
+    char temp1[1024]; memset(temp1,0,1024);
+    getos(temp1);
+    pLog->_Add(temp1);
 
     /////////////////////////////////////////////////////////////////////////////////
     // Load in client.ini
@@ -868,19 +874,16 @@ bool doInit(void){
 
     pLog->_Add("Setting up SND");
     pSND=new C_Sound();
-    if(!pSND)
-    {
+    if(!pSND) {
         pLog->_Add("Sound can not be initialized, turning off sound and music");
         pClientData->bMusic=false;
         pClientData->bSound=false;
     }
-    else
-    {
+    else {
         pSND->InitializeSound();
         pSND->SetSoundVolume((pClientData->fSoundVolume*255));
         pSND->SetMusicVolume((pClientData->fMusicVolume*255));
     }
-
 
     pSND->SetSoundVolume(255);
     pSND->SetMusicVolume(255);
@@ -900,6 +903,7 @@ bool doInit(void){
                         pClientData->bFullScreen,
                         temp,
                         pLog, pGAF );
+
     if(!pGFX) { pLog->_Add("GFX initialization failure, quitting"); return 0; }
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -1177,7 +1181,7 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 dwPing=dlcs_get_tickcount()-RecvData->dwRead();
                 break;}
 
-			case NETMSG_GET_SERVER_INFO: fold_block {
+			case NETMSG_SERVERINFORMATION_GET: fold_block {
                 ax=RecvData->cRead();
                 //Log("%d) Races",ax);
 				for(i=0;i<ax;i++)
@@ -1300,7 +1304,7 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 SetGameMode(LOGIN_SCREEN_ENTRY);
                 break; }
 
-            case NETMSG_MESSAGE: fold_block {  // Global Chat / System Message
+            case NETMSG_CHAT: fold_block {  // Global Chat / System Message
 
                 strcpy(temp1,RecvData->pRead());    // message
                 strcpy(temp2,RecvData->pRead());    // username
@@ -1308,18 +1312,18 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 strcpy(temp3,RecvData->pRead());    // session_id
 
                 switch(ax){ // channel
-                    case CHAT_CHANNEL_CUSTOM:
-                    case CHAT_CHANNEL_CONSOLE:
-                    case CHAT_CHANNEL_LOCAL:
-                    case CHAT_CHANNEL_TRADE:
-                    case CHAT_CHANNEL_GENERAL:
-                    case CHAT_CHANNEL_WHISPER:
-                    case CHAT_CHANNEL_PARTY:
-                    case CHAT_CHANNEL_RAID:
-                    case CHAT_CHANNEL_SAY:
-                    case CHAT_CHANNEL_YELL:
-                    case CHAT_CHANNEL_CLAN:
-                    case CHAT_CHANNEL_SYSTEM:
+                    case CHANNEL_CUSTOM:
+                    case CHANNEL_CONSOLE:
+                    case CHANNEL_LOCAL:
+                    case CHANNEL_TRADE:
+                    case CHANNEL_GENERAL:
+                    case CHANNEL_WHISPER:
+                    case CHANNEL_PARTY:
+                    case CHANNEL_RAID:
+                    case CHANNEL_SAY:
+                    case CHANNEL_YELL:
+                    case CHANNEL_CLAN:
+                    case CHANNEL_SYSTEM:
                         pLog->_Add("NETMSG_MESSAGE channel[%d] [%s][%s] ",ax,temp2,temp1);
                         pGUI->addChat(ax,temp2,temp1);
 
@@ -1827,7 +1831,7 @@ void C_FMGS::Chat(char *msg,char *name,int channel){
     CPacket SendData(NET_DATAGRAMSIZE);
 
     SendData.Reset();
-    SendData.Write((char)NETMSG_MESSAGE);
+    SendData.Write((char)NETMSG_CHAT);
     SendData.Write((char *)msg);
     SendData.Write((char *)name);
     SendData.Write((int)channel);

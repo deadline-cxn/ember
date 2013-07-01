@@ -7,11 +7,8 @@ class CMClass{
 public:
     CMClass();
     ~CMClass();
-
     int     id;
     char    name[MANTRA_TEXT_LEN];
-
-
 };
 
 #endif

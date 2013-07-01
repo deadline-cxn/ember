@@ -1,81 +1,27 @@
 *****************************************************************
-(Mon Jun 11 02:17:53 2012):MANTRA v12.04.17a Windows-x86 (C) 2012 Seth Parson
-(Mon Jun 11 02:17:53 2012):Log created
-(Mon Jun 11 02:17:53 2012):Windows 7 version 6.1 Service Pack 1 (Build 7601)
-(Mon Jun 11 02:17:53 2012):Setting up Client Data
-(Mon Jun 11 02:17:53 2012):Setting up GAF
-(Mon Jun 11 02:17:53 2012):Setting up SND
-(Mon Jun 11 02:17:53 2012):Setting up GFX
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem...
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... B
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... C
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... D
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... E
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... F
-(Mon Jun 11 02:17:53 2012):Software surfaces...
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... G
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... H
-(Mon Jun 11 02:17:53 2012):Video memory:[0]
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... I
-(Mon Jun 11 02:17:53 2012):Init SDL/OpenGL GFX Subsystem... J
-(Mon Jun 11 02:17:53 2012):SDL_VideoModeOK
-(Mon Jun 11 02:17:53 2012):OpenGL initialized
-(Mon Jun 11 02:17:53 2012):Camera initialized
-(Mon Jun 11 02:17:55 2012):Base Textures initialized
-(Mon Jun 11 02:17:55 2012):Map mesh initialized
-(Mon Jun 11 02:17:55 2012):GFX Initialized
-(Mon Jun 11 02:17:55 2012):Setting up GUI
-(Mon Jun 11 02:17:55 2012):Setting up NETWORK
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 0] located @ (32.990509,21.053499,267.769409)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 1] located @ (426.801361,28.132877,236.793121)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 2] located @ (266.258728,27.629627,384.609528)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 3] located @ (199.682602,28.370922,107.318336)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 4] located @ (242.027039,25.470444,5.798517)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 5] located @ (177.983948,25.124973,381.374542)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 6] located @ (243.415634,24.871365,338.496033)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 7] located @ (454.847870,21.814631,413.556335)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 8] located @ (447.767578,20.097660,101.046783)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 9] located @ (19.440290,27.300638,111.621445)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 10] located @ (14.679403,22.963652,155.995361)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 11] located @ (348.765533,20.966825,86.428421)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 12] located @ (400.372314,28.161871,83.880127)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 13] located @ (66.743980,20.317392,439.939575)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 14] located @ (209.677414,29.123814,255.226288)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 15] located @ (374.950409,26.350597,277.733704)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 16] located @ (203.894165,24.861599,208.502457)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 17] located @ (205.618454,27.142246,255.119476)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 18] located @ (410.611298,28.492386,104.068115)
-(Mon Jun 11 02:17:55 2012):Created new entity [Entity 19] located @ (162.678909,23.229774,494.460876)
-(Mon Jun 11 02:17:55 2012):******************** FINISHED STARTUP ***************************
-(Mon Jun 11 02:17:55 2012):MAIN_MENU
-(Mon Jun 11 02:17:56 2012):setgamemode LOGIN_FROM_GUI
-(Mon Jun 11 02:17:56 2012):con_setgamemode()
-(Mon Jun 11 02:17:56 2012):seth 202cb962ac59075b964b07152d234b70
-(Mon Jun 11 02:17:56 2012): ********************* CONNECT START ********************* 
-(Mon Jun 11 02:17:56 2012):C_FMGS::emgConnect(127.0.0.1,40401,seth,202cb962ac59075b964b07152d234b70);
-(Mon Jun 11 02:17:56 2012):C_FMGS::Connect() zOpenSocket passed
-(Mon Jun 11 02:17:56 2012):127.0.0.1:40401
-(Mon Jun 11 02:17:56 2012):Got a CTL_ACCEPT here
-(Mon Jun 11 02:17:56 2012):SOCKET PORT SET TO (i=62050)62050
-(Mon Jun 11 02:17:56 2012):LOGIN_RECV
-(Mon Jun 11 02:17:56 2012):LOGIN_RECV
-(Mon Jun 11 02:17:56 2012):LOGIN_RECV
-(Mon Jun 11 02:17:56 2012):GOT NETMESSAGE [2] [4]
-(Mon Jun 11 02:17:56 2012):Got a login request reply
-(Mon Jun 11 02:17:56 2012): >>> It's a good login!
-(Mon Jun 11 02:17:56 2012):Welcome to the server.
-(Mon Jun 11 02:17:56 2012):sys.name running v12.04.17a ID[sys.media] Admin[sys.owner] Character Slots[10]
-(Mon Jun 11 02:17:56 2012):session_id[480a0efd668e568595d42ac78340fe2a133939547609424] and you have access[0(access what)]
-(Mon Jun 11 02:17:56 2012):===============================================================
-(Mon Jun 11 02:17:56 2012):Server Name.....sys.name
-(Mon Jun 11 02:17:56 2012):Server Version..v12.04.17a
-(Mon Jun 11 02:17:56 2012):Server ID.......sys.media
-(Mon Jun 11 02:17:56 2012):Administrator...sys.owner
-(Mon Jun 11 02:17:56 2012):===============================================================
-(Mon Jun 11 02:17:56 2012):Done initializing player setup...
-(Mon Jun 11 02:18:03 2012):******************** START SHUTDOWN ***************************
-(Mon Jun 11 02:18:04 2012):Disconnecting (1140) 127.0.0.1:62050
-(Mon Jun 11 02:18:04 2012):Client data saved...
-(Mon Jun 11 02:18:04 2012):SDL/OpenGL GFX subsystem shutdown...
-(Mon Jun 11 02:18:04 2012):Mantra engine shut down!
-*****************************************************************
+(Mon Jul 01 15:07:24 2013):MANTRA v13.07.01a Windows-x86 (C) 2012 Seth Parson
+(Mon Jul 01 15:07:24 2013):Log created
+(Mon Jul 01 15:07:24 2013):Windows 7 version 6.1 Service Pack 1 (Build 7601)
+(Mon Jul 01 15:07:24 2013):Setting up Client Data
+(Mon Jul 01 15:07:24 2013):Setting up GAF
+(Mon Jul 01 15:07:24 2013):Setting up SND
+(Mon Jul 01 15:07:24 2013):Setting up GFX
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem...
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... B
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... C
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... D
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... E
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... F
+(Mon Jul 01 15:07:24 2013):Software surfaces...
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... G
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... H
+(Mon Jul 01 15:07:24 2013):Video memory:[0]
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... I
+(Mon Jul 01 15:07:24 2013):Init SDL/OpenGL GFX Subsystem... J
+(Mon Jul 01 15:07:24 2013):SDL_VideoModeOK
+(Mon Jul 01 15:07:24 2013):OpenGL initialized
+(Mon Jul 01 15:07:24 2013):Camera initialized
+(Mon Jul 01 15:07:24 2013):Filename   = base/b0000.bmp
+(Mon Jul 01 15:07:24 2013):Maskfile   = base/b0000mask.bmp
+(Mon Jul 01 15:07:24 2013):nfbuf1.fb  = 99418144
+(Mon Jul 01 15:07:24 2013):nfbuf1.Size= 3145782
