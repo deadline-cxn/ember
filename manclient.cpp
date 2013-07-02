@@ -72,11 +72,14 @@ int  con_getint(const string &s){
                                             }
                                             return 0;
                                         }
-void con_functest(const string &s)      { pLog->_Add("functest(%s)",(char *)s.c_str()); }
-void con_setgamemode(const string &s)   { pLog->_Add("setgamemode %s",(char *)s.c_str());
+void con_functest(const string &s)      {
+    pLog->_Add("functest(%s)",(char *)s.c_str());
+}
 
-SetGameMode((MODE) con_getint(s.c_str()));
-pLog->_Add("con_setgamemode()");
+void con_setgamemode(const string &s)   {
+    pLog->_Add("setgamemode %s",(char *)s.c_str());
+    SetGameMode((MODE) con_getint(s.c_str()));
+    pLog->_Add("con_setgamemode()");
 
 }
 void con_guirender(const string &s) {
@@ -332,7 +335,6 @@ void MainGameLoop(void){ // **  Main Game Loop
     if(!pGUI) return;
     if(!pClientData) return;
 
-
     pLog->_DebugAdd("MainGameLoop 1");
 
     if( pGUI->doInput() == SDLK_F12 ) { bShutDown=true; return; }
@@ -383,47 +385,33 @@ bool DoGameMode(void){
     char temp1[1024]; memset(temp1,0,1024);
     char temp2[1024]; memset(temp2,0,1024);
 
-    switch(pClientData->GAME_MODE)
-    {
+    switch(pClientData->GAME_MODE) {
 
     case RETRO_INTRO_INIT:
-
         SetGameMode(RETRO_INTRO_PLAY);
-
         break;
 
     case RETRO_INTRO_PLAY:
-
         SetGameMode(MAIN_MENU);
-
         break;
 
     case MAIN_MENU:
-
-        pLog->_Add("MAIN_MENU");
-
+        pLog->_Add("MAIN_MENU WHAT");
         DEL(pFMGS);
-
         pGUI->clear();
-
         pGUI->call("main.gui");
-
         pGUI->setdata("main.gui","username",pClientData->Name);
         if(pClientData->bSavePassword){
             pGUI->setdata("main.gui","password",pClientData->Password);
             pGUI->setdata("main.gui","savepassword", (char *)"on");
         }
-
         SetGameMode(MAIN_MENU_2);
 
     case MAIN_MENU_2:
-
         break; // End MAIN_MENU
 
     case CREDITS:
-
         SetGameMode(MAIN_MENU);
-
         break;
 
     case LOGIN_AUTO_LOGIN:
@@ -794,27 +782,20 @@ bool DoGameMode(void){
     return false;
 }
 GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath){
-    switch(ElmInfo->Type)
-    {
+    switch(ElmInfo->Type){
         case GAFELMTYPE_FILE:
-
             pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
-
             break;
-
         case GAFELMTYPE_DIR:
-
             pLog->_Add("<DIR> %25s ",ElmInfo->Name);
-
             break;
-
         default:
             break;
     }
     return 0;
 }
-bool doInit(void){
 
+bool doInit(void){
     /////////////////////////////////////////////////////////////////////////////////
     // Zeroize pointers
 
@@ -1017,6 +998,7 @@ bool doInit(void){
 
     return TRUE;
 }
+
 void ShutDown(void){ // **  Shut Down the Program
     pLog->_Add("******************** START SHUTDOWN ***************************");
     pNTT=pFirstNTT;
