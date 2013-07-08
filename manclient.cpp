@@ -837,10 +837,13 @@ bool doInit(void){
     // Load in client.ini
 
     pLog->_Add("Setting up Client Data");
-    pClientData = new CC_Data;
+    pClientData = new CC_Data();// pLog);
     if(!pClientData) return FALSE;
-    pClientData->bLoad();
-    if(!pClientData->bLog) pLog->Off();
+
+    // if(!pClientData->bLoad()) pLog->_Add("Can't load client.ini" );
+
+    if(!pClientData->bLog)
+        pLog->Off();
 
     /////////////////////////////////////////////////////////////////////////////////
     // Create GAF File
@@ -876,7 +879,13 @@ bool doInit(void){
 
     pLog->_Add("Setting up GFX");
     char temp[1024]; memset(temp,0,1024);
+
     strcpy(temp,va("EGC %s(%s)  %s",VERSION,CPUSTRING,COPYRIGHT));// Net Revision(%s) NET_REVISION,
+
+    pLog->_Add(" ScreenWidth : %d ",pClientData->ScreenWidth);
+    pLog->_Add(" ScreenHeight: %d ",pClientData->ScreenHeight);
+    pLog->_Add(" ScreenColors: %d ",pClientData->ScreenColors);
+    pLog->_Add(" bFullScreen : %d ",pClientData->bFullScreen);
 
     pGFX = new C_GFX(   pClientData->ScreenWidth,
                         pClientData->ScreenHeight,

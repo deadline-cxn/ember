@@ -1,5 +1,5 @@
 // GAF TOOL
-
+#define GAFMAKEVERSION "2013.07.08"
 #include "gaf_make.h"
 
 CGAF *pGAF;
@@ -34,8 +34,7 @@ int main(int argc, char *argv[])
 
     // remove(file);
 
-    if(argc<3)
-    {
+    if(argc<3) {
         print_help();
         return 1;
     }
@@ -125,8 +124,10 @@ int main(int argc, char *argv[])
 void print_help(void)
 {
     printf("\n");
-    printf("GAF Game Archive File (c)2012 Seth Parson sethcoder.com\n");
+
+    printf("GAF Game Archive File (c)2013 Seth Parson sethcoder.com\n");
     printf("=======================================================\n");
+    printf("VERSION: %s\n",GAFMAKEVERSION);
     printf("USAGE:\n");
     printf("gaf <gaf file> [-a:<filename>] [-z:<dir>] [-d:<file>] [-c:<dir>] [-x] [-r]\n");
     printf("-a add a file to the GAF\n");

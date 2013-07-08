@@ -491,15 +491,16 @@
 	"dlstorm.h"
 	"c_gaf.h"
 
-1372679006 source:c:\projects\dlstorm\c_gaf.cpp
+1373289398 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1372679006 c:\projects\dlstorm\c_gaf.h
+1373289541 c:\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
+	<dirent.h>
 
-1372679006 c:\projects\dlstorm\dlstorm.h
+1373287572 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
@@ -548,7 +549,7 @@
 	<unistd.h>
 	"dlstorm.h"
 
-1372700392 source:c:\projects\dlstorm\dlstorm.cpp
+1373287616 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1371234765 source:c:\projects\sdk\zlib\adler32.c
@@ -644,10 +645,13 @@
 1371234766 source:c:\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1372679065 source:c:\projects\ember\gaf_make\gaf_make.cpp
+1373287999 source:c:\projects\ember\gaf_make\gaf_make.cpp
 	"gaf_make.h"
 
 1334746166 c:\projects\ember\gaf_make\gaf_make.h
 	"dlstorm.h"
 	"c_gaf.h"
+
+1372700309 source:c:\projects\dlstorm\c_log.cpp
+	"c_log.h"
 

@@ -5496,7 +5496,7 @@
 
 1339005520 c:\users\seth.parson\desktop\seth.parson\develop\projects\ember\ember_game_server_enum.h
 
-1372700170 source:c:\projects\dlstorm\c_console.cpp
+1373293653 source:c:\projects\dlstorm\c_console.cpp
 	"c_console.h"
 
 1372679006 c:\projects\dlstorm\c_console.h
@@ -5514,12 +5514,13 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1372702511 c:\projects\dlstorm\c_gaf.h
+1373289541 c:\projects\dlstorm\c_gaf.h
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
+	<dirent.h>
 
-1372679006 c:\projects\dlstorm\dlstorm.h
+1373294057 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
@@ -5568,17 +5569,18 @@
 	<unistd.h>
 	"dlstorm.h"
 
-1372700230 source:c:\projects\dlstorm\c_data.cpp
+1373293180 source:c:\projects\dlstorm\c_data.cpp
 	"c_data.h"
 	"SDL.h"
 
-1372684496 c:\projects\dlstorm\c_data.h
+1373291962 c:\projects\dlstorm\c_data.h
 	"dlstorm.h"
+	"c_log.h"
 
-1372778038 source:c:\projects\dlstorm\c_gaf.cpp
+1373289398 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1372777783 source:c:\projects\dlstorm\c_gfx.cpp
+1373292487 source:c:\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
 1372684548 c:\projects\dlstorm\c_gfx.h
@@ -5641,7 +5643,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1372777659 source:c:\projects\dlstorm\c_gltexture.cpp
+1373290216 source:c:\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -5654,7 +5656,7 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1372779274 source:c:\projects\dlstorm\c_gui.cpp
+1373286891 source:c:\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
 1372679006 c:\projects\dlstorm\c_gui.h
@@ -5717,7 +5719,7 @@
 1270131542 c:\projects\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1372700392 source:c:\projects\dlstorm\dlstorm.cpp
+1373294149 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1372700410 source:c:\projects\dlstorm\glerrors.cpp
@@ -6254,7 +6256,7 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1372778511 source:c:\projects\ember\manclient.cpp
+1373292522 source:c:\projects\ember\manclient.cpp
 	"manclient.h"
 
 1372686021 c:\projects\ember\manclient.h
