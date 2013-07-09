@@ -1,0 +1,94 @@
+# depslib dependency file v1.0
+1373348153 source:/home/parson/projects/SDK/zlib/adler32.c
+	"zlib.h"
+
+1373348153 /home/parson/projects/SDK/zlib/zlib.h
+	"zconf.h"
+
+1373348153 /home/parson/projects/SDK/zlib/zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1373348153 source:/home/parson/projects/SDK/zlib/compress.c
+	"zlib.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1373348153 /home/parson/projects/SDK/zlib/zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1373348153 /home/parson/projects/SDK/zlib/crc32.h
+
+1373348153 source:/home/parson/projects/SDK/zlib/deflate.c
+	"deflate.h"
+
+1373348153 /home/parson/projects/SDK/zlib/deflate.h
+	"zutil.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1373348153 source:/home/parson/projects/SDK/zlib/infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1373348153 /home/parson/projects/SDK/zlib/inftrees.h
+
+1373348153 /home/parson/projects/SDK/zlib/inflate.h
+
+1373348153 /home/parson/projects/SDK/zlib/inffast.h
+
+1373348153 /home/parson/projects/SDK/zlib/inffixed.h
+
+1373348153 source:/home/parson/projects/SDK/zlib/inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1373348153 source:/home/parson/projects/SDK/zlib/inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1373348153 /home/parson/projects/SDK/zlib/trees.h
+
+1373348153 source:/home/parson/projects/SDK/zlib/uncompr.c
+	"zlib.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/zutil.c
+	"zutil.h"
+

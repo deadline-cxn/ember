@@ -2539,3 +2539,265 @@
 1339781868 source:x:\develop\projects\ember\mantra_userdata.cpp
 	"mantra_userdata.h"
 
+1373347885 source:/home/parson/projects/dlstorm/c_gaf.cpp
+	"c_gaf.h"
+
+1373347885 /home/parson/projects/dlstorm/c_gaf.h
+	"dlstorm.h"
+	"zlib.h"
+	"c_log.h"
+	<dirent.h>
+
+1373347885 /home/parson/projects/dlstorm/dlstorm.h
+	"dlstorm_lib.h"
+	"c_log.h"
+
+1373347885 /home/parson/projects/dlstorm/dlstorm_lib.h
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<time.h>
+	<malloc.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+	<iostream>
+	<vector>
+	<string>
+	<map>
+	<algorithm>
+
+1373347885 /home/parson/projects/dlstorm/c_log.h
+	<direct.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"dlstorm.h"
+
+1373347885 source:/home/parson/projects/dlstorm/c_gui_chat_enum.cpp
+	"c_gui_chat_enum.h"
+
+1373347885 /home/parson/projects/dlstorm/c_gui_chat_enum.h
+	"dlstorm.h"
+
+1373347885 source:/home/parson/projects/dlstorm/c_log.cpp
+	"c_log.h"
+
+1373347885 source:/home/parson/projects/dlstorm/c_net.cpp
+	"c_net.h"
+
+1373347885 /home/parson/projects/dlstorm/c_net.h
+	"dlstorm.h"
+	<winsock2.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<sys/time.h>
+	<sys/wait.h>
+	<fcntl.h>
+	<errno.h>
+
+1373347885 source:/home/parson/projects/dlstorm/c_sqlitedb.cpp
+	"c_sqlitedb.h"
+
+1373347885 /home/parson/projects/dlstorm/c_sqlitedb.h
+	"dlstorm.h"
+	"sqlite3.h"
+
+1373347885 /home/parson/projects/dlstorm/sqlite3.h
+	<stdarg.h>
+
+1373347885 source:/home/parson/projects/dlstorm/c_timer.cpp
+	"c_timer.h"
+
+1373347885 /home/parson/projects/dlstorm/c_timer.h
+	"dlstorm.h"
+
+1373347885 source:/home/parson/projects/dlstorm/dlstorm.cpp
+	"dlstorm.h"
+
+1373347885 source:/home/parson/projects/dlstorm/sqlite3.c
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<tcl.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<windows.h>
+	<os2safe.h>
+	<os2.h>
+	<uconv.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/file.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<utime.h>
+	<dlfcn.h>
+	<sys/cygwin.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+
+1373348027 source:/home/parson/projects/ember/manserver.client.cpp
+	"manserver.client.h"
+
+1373348027 /home/parson/projects/ember/manserver.client.h
+	"dlstorm.h"
+	"c_log.h"
+	"c_net.h"
+	"c_timer.h"
+	"mantra_userdata.h"
+	"manserver.server.h"
+	"mantra_common.h"
+	"mantra_version.h"
+	"c_serverinfo.h"
+	"c_gui_chat_enum.h"
+	"mantra_player_character.h"
+
+1373348027 /home/parson/projects/ember/mantra_userdata.h
+	"dlstorm.h"
+	<algorithm>
+	"mantra_common.h"
+
+1373348027 /home/parson/projects/ember/mantra_common.h
+
+1373348027 /home/parson/projects/ember/manserver.server.h
+	"dlstorm.h"
+	"c_net.h"
+	"c_log.h"
+	"c_sqlitedb.h"
+	"mantra_version.h"
+	"mantra_common.h"
+	"manserver.client.h"
+	"c_gui_chat_enum.h"
+
+1373348027 /home/parson/projects/ember/mantra_version.h
+
+1373348025 /home/parson/projects/ember/c_serverinfo.h
+
+1373348027 /home/parson/projects/ember/mantra_player_character.h
+	"mantra_character.h"
+	"manserver.client.h"
+	"c_sqlitedb.h"
+
+1373348027 /home/parson/projects/ember/mantra_character.h
+	"mantra_common.h"
+	"mantra_class.h"
+	"mantra_stat.h"
+	"mantra_effect.h"
+	"mantra_skill.h"
+
+1373348027 /home/parson/projects/ember/mantra_class.h
+	"mantra_common.h"
+
+1373348027 /home/parson/projects/ember/mantra_stat.h
+	"dlstorm.h"
+	"mantra_common.h"
+
+1373348027 /home/parson/projects/ember/mantra_effect.h
+	"c_timer.h"
+	"mantra_common.h"
+	"mantra_stat.h"
+
+1373348027 /home/parson/projects/ember/mantra_skill.h
+	"mantra_common.h"
+
+1373348027 source:/home/parson/projects/ember/manserver.cpp
+	"manserver.h"
+	"mantra_player_character.h"
+	"s_linux.h"
+	"s_gnu.h"
+
+1373348027 /home/parson/projects/ember/manserver.h
+	"dlstorm.h"
+	"manserver.server.h"
+
+1373348027 source:/home/parson/projects/ember/manserver.server.cpp
+	"manserver.server.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_action.cpp
+	"mantra_action.h"
+
+1373348027 /home/parson/projects/ember/mantra_action.h
+	"mantra_common.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_character.cpp
+	"mantra_character.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_class.cpp
+	"mantra_class.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_effect.cpp
+	"mantra_effect.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_item.cpp
+	"mantra_item.h"
+
+1373348027 /home/parson/projects/ember/mantra_item.h
+	"dlstorm.h"
+	"mantra_common.h"
+	<map>
+
+1373348027 source:/home/parson/projects/ember/mantra_player_character.cpp
+	"mantra_player_character.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_skill.cpp
+	"mantra_skill.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_stat.cpp
+	"mantra_stat.h"
+
+1373348027 source:/home/parson/projects/ember/mantra_userdata.cpp
+	"mantra_userdata.h"
+
