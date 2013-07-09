@@ -44,16 +44,11 @@
 					<Add library="ws2_32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add library="cximage" />
 					<Add library="winmm" />
 					<Add library="mingw32" />
 					<Add library="msvcrt" />
-					<Add library="Jpeg" />
-					<Add library="dcr" />
-					<Add library="mng" />
-					<Add library="png" />
-					<Add library="Tiff" />
 					<Add library="fmod" />
+					<Add library="cximage" />
 				</Linker>
 			</Target>
 			<Target title="Win32 Debug">
@@ -93,15 +88,8 @@
 					<Add library="opengl32" />
 					<Add library="glu32" />
 					<Add library="..\..\SDK\fmodapi375win\api\lib\libfmod.a" />
-					<Add library="..\..\SDK\cximage600_full\cximage.lib" />
-					<Add library="..\..\SDK\cximage600_full\jasper.lib" />
-					<Add library="..\..\SDK\cximage600_full\Jpeg.lib" />
-					<Add library="..\..\SDK\cximage600_full\libdcr.lib" />
-					<Add library="..\..\SDK\cximage600_full\mng.lib" />
-					<Add library="..\..\SDK\cximage600_full\png.lib" />
-					<Add library="..\..\SDK\cximage600_full\Tiff.lib" />
 					<Add library="winmm" />
-					<Add library="mingw32" />
+					<Add library="cximage" />
 				</Linker>
 			</Target>
 		</Build>
@@ -123,45 +111,59 @@
 			<Add library="ws2_32" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
-			<Add library="cximage" />
-			<Add library="Jpeg" />
-			<Add library="dcr" />
 			<Add library="mng" />
-			<Add library="png" />
 			<Add library="Tiff" />
 			<Add library="winmm" />
 			<Add library="mingw32" />
 			<Add library="msvcrt" />
 			<Add library="fmod" />
 		</Linker>
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_active.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_audio.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_cdrom.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_config.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_config_win32.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_cpuinfo.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_endian.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_error.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_events.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_joystick.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_keyboard.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_keysym.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_loadso.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_main.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_mouse.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_mutex.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_platform.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_quit.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_rwops.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_stdinc.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_thread.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_timer.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_version.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/SDL_video.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/begin_code.h" />
-		<Unit filename="../../SDK/SDL-1.2.13/include/close_code.h" />
 		<Unit filename="../../SDK/fmodapi375win/api/inc/fmod.h" />
+		<Unit filename="../../SDK/lpng162/png.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngpread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngrio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngrtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngrutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngwio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngwrite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngwtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/lpng162/pngwutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../../SDK/lua-5.1.4/src/lapi.c">
 			<Option compilerVar="CC" />
 		</Unit>

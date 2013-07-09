@@ -5505,7 +5505,8 @@
 	"c_gaf.h"
 	<map>
 
-1372777460 c:\projects\dlstorm\c_gltexture.h
+1373381103 c:\projects\dlstorm\c_gltexture.h
+	"png.h"
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -5569,7 +5570,7 @@
 	<unistd.h>
 	"dlstorm.h"
 
-1373293180 source:c:\projects\dlstorm\c_data.cpp
+1373375269 source:c:\projects\dlstorm\c_data.cpp
 	"c_data.h"
 	"SDL.h"
 
@@ -5580,7 +5581,7 @@
 1373289398 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1373292487 source:c:\projects\dlstorm\c_gfx.cpp
+1373381610 source:c:\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
 1372684548 c:\projects\dlstorm\c_gfx.h
@@ -5607,17 +5608,16 @@
 	<string>
 	<map>
 
-1371234719 c:\projects\dlstorm\c_map_new.h
+1373375269 c:\projects\dlstorm\c_map_new.h
 	"dlstorm.h"
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
-	"ximage.h"
 
 1372777550 source:c:\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1372777572 source:c:\projects\dlstorm\c_glfont.cpp
+1373382239 source:c:\projects\dlstorm\c_glfont.cpp
 	"c_glfont.h"
 	"c_gltexture.h"
 	"SDL.h"
@@ -5631,7 +5631,7 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1372777579 source:c:\projects\dlstorm\c_glmouse.cpp
+1373380389 source:c:\projects\dlstorm\c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
@@ -5643,7 +5643,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1373290216 source:c:\projects\dlstorm\c_gltexture.cpp
+1373381355 source:c:\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -7068,4 +7068,92 @@
 	"c_serverinfo.h"
 
 1372784521 h:\develop\projects\ember\c_serverinfo.h
+
+1366892684 source:c:\projects\sdk\lpng162\png.c
+	"pngpriv.h"
+
+1366892684 c:\projects\sdk\lpng162\pngpriv.h
+	<stdlib.h>
+	<string.h>
+	<config.h>
+	"pnglibconf.h"
+	"pngprefix.h"
+	"pngusr.h"
+	"png.h"
+	<float.h>
+	<fp.h>
+	<math.h>
+	<m68881.h>
+	<mem.h>
+	<alloc.h>
+	<windows.h>
+	"pngstruct.h"
+	"pnginfo.h"
+	"pngdebug.h"
+
+1366892685 c:\projects\sdk\lpng162\pnglibconf.h
+
+1366892684 c:\projects\sdk\lpng162\png.h
+	"pnglibconf.h"
+	"pngconf.h"
+
+1366892684 c:\projects\sdk\lpng162\pngconf.h
+	<limits.h>
+	<stddef.h>
+	<stdio.h>
+	<setjmp.h>
+	<time.h>
+
+1366892684 c:\projects\sdk\lpng162\pngstruct.h
+	"zlib.h"
+
+1366892684 c:\projects\sdk\lpng162\pnginfo.h
+
+1366892684 c:\projects\sdk\lpng162\pngdebug.h
+	<crtdbg.h>
+	<stdio.h>
+
+1366892684 source:c:\projects\sdk\lpng162\pngmem.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngerror.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngread.c
+	"pngpriv.h"
+	<errno.h>
+
+1366892684 source:c:\projects\sdk\lpng162\pngrio.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngrtran.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngrutil.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngset.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngwrite.c
+	"pngpriv.h"
+	<errno.h>
+
+1366892684 source:c:\projects\sdk\lpng162\pngget.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngpread.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngtrans.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngwutil.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngwio.c
+	"pngpriv.h"
+
+1366892684 source:c:\projects\sdk\lpng162\pngwtran.c
+	"pngpriv.h"
 
