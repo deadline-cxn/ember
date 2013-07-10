@@ -6,8 +6,8 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
-			<Target title="Debug">
-				<Option output="bin/Debug/gaf_make" prefix_auto="1" extension_auto="1" />
+			<Target title="Windows Debug">
+				<Option output="../../toolbox/bin/gafd" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -15,7 +15,7 @@
 					<Add option="-g" />
 				</Compiler>
 			</Target>
-			<Target title="Release">
+			<Target title="Windows Release">
 				<Option output="../../toolbox/bin/gaf" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
@@ -29,57 +29,127 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
+			<Target title="Linux Debug">
+				<Option output="../../toolbox/bin/gafd" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="Linux Release">
+				<Option output="../../toolbox/bin/gaf" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-fpermissive" />
+				</Compiler>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add option="-mwindows" />
 		</Compiler>
-		<Linker>
-			<Add library="ws2_32" />
-		</Linker>
 		<Unit filename="../../SDK/zlib/adler32.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/compress.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/crc32.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/deflate.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/gzio.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/infback.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/inffast.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/inflate.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/inftrees.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/trees.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/uncompr.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
 		<Unit filename="../../SDK/zlib/zutil.c">
 			<Option compilerVar="CC" />
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
 		</Unit>
-		<Unit filename="../../dlstorm/c_gaf.cpp" />
-		<Unit filename="../../dlstorm/c_log.cpp" />
-		<Unit filename="../../dlstorm/dlstorm.cpp" />
-		<Unit filename="../ember_game_client/gaf_make_ember.bat" />
-		<Unit filename="gaf_make.cpp" />
-		<Unit filename="gaf_make.h" />
+		<Unit filename="../../dlstorm/c_gaf.cpp">
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
+		</Unit>
+		<Unit filename="../../dlstorm/c_log.cpp">
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
+		</Unit>
+		<Unit filename="../../dlstorm/dlstorm.cpp">
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
+		</Unit>
+		<Unit filename="../ember_game_client/gaf_make_ember.bat">
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
+		</Unit>
+		<Unit filename="gaf_make.cpp">
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
+		</Unit>
+		<Unit filename="gaf_make.h">
+			<Option target="Windows Debug" />
+			<Option target="Windows Release" />
+			<Option target="Linux Release" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

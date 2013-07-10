@@ -1,5 +1,6 @@
 // GAF TOOL
-#define GAFMAKEVERSION "2013.07.08"
+
+#define GAFMAKEVERSION "4.0.1"
 #include "gaf_make.h"
 
 CGAF *pGAF;
@@ -9,11 +10,11 @@ GAF_SCANCALLBACK dir_callback(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath)
     switch(ElmInfo->Type)
     {
         case GAFELMTYPE_FILE:
-            printf("FILE: %25s %d\n",ElmInfo->Name,ElmInfo->FileSize);
+            printf("%20d %-25s \n",ElmInfo->FileSize,ElmInfo->Name);
             break;
 
         case GAFELMTYPE_DIR:
-            printf("<DIR> %25s \n",ElmInfo->Name);
+            printf("====== DIR: %-25s \n",ElmInfo->Name);
             // pGAF->ScanTree(ElmInfo->Name, (GAF_SCANCALLBACK) dir_callback);
             break;
 
@@ -125,9 +126,10 @@ void print_help(void)
 {
     printf("\n");
 
-    printf("GAF Game Archive File (c)2013 Seth Parson sethcoder.com\n");
+    printf("GAF Game Archive File by Seth Parson sethcoder.com\n");
     printf("=======================================================\n");
-    printf("VERSION: %s\n",GAFMAKEVERSION);
+    printf("VERSION: %s compiled %s @ %s \n",GAFMAKEVERSION,__DATE__,__TIME__);
+    printf("=======================================================\n");
     printf("USAGE:\n");
     printf("gaf <gaf file> [-a:<filename>] [-z:<dir>] [-d:<file>] [-c:<dir>] [-x] [-r]\n");
     printf("-a add a file to the GAF\n");

@@ -655,20 +655,20 @@
 1372700309 source:c:\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
-1373347885 source:/home/parson/projects/dlstorm/c_gaf.cpp
+1373452118 source:/home/parson/projects/dlstorm/c_gaf.cpp
 	"c_gaf.h"
 
-1373347885 /home/parson/projects/dlstorm/c_gaf.h
+1373452029 /home/parson/projects/dlstorm/c_gaf.h
+	<dirent.h>
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
-	<dirent.h>
 
 1373347885 /home/parson/projects/dlstorm/dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
-1373347885 /home/parson/projects/dlstorm/dlstorm_lib.h
+1373399611 /home/parson/projects/dlstorm/dlstorm_lib.h
 	<dirent.h>
 	<ctype.h>
 	<sys/types.h>
@@ -716,13 +716,13 @@
 1373347885 source:/home/parson/projects/dlstorm/c_log.cpp
 	"c_log.h"
 
-1373347885 source:/home/parson/projects/dlstorm/dlstorm.cpp
+1373399663 source:/home/parson/projects/dlstorm/dlstorm.cpp
 	"dlstorm.h"
 
-1373348027 source:/home/parson/projects/ember/gaf_make/gaf_make.cpp
+1373451843 source:/home/parson/projects/ember/gaf_make/gaf_make.cpp
 	"gaf_make.h"
 
-1373348027 /home/parson/projects/ember/gaf_make/gaf_make.h
+1373398762 /home/parson/projects/ember/gaf_make/gaf_make.h
 	"dlstorm.h"
 	"c_gaf.h"
 
@@ -889,4 +889,97 @@
 1334749766 h:\develop\projects\ember\gaf_make\gaf_make.h
 	"dlstorm.h"
 	"c_gaf.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/adler32.c
+	"zlib.h"
+
+1373348153 /home/parson/projects/SDK/zlib/zlib.h
+	"zconf.h"
+
+1373348153 /home/parson/projects/SDK/zlib/zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1373348153 source:/home/parson/projects/SDK/zlib/compress.c
+	"zlib.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1373348153 /home/parson/projects/SDK/zlib/zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1373348153 /home/parson/projects/SDK/zlib/crc32.h
+
+1373348153 source:/home/parson/projects/SDK/zlib/deflate.c
+	"deflate.h"
+
+1373348153 /home/parson/projects/SDK/zlib/deflate.h
+	"zutil.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1373348153 source:/home/parson/projects/SDK/zlib/infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1373348153 /home/parson/projects/SDK/zlib/inftrees.h
+
+1373348153 /home/parson/projects/SDK/zlib/inflate.h
+
+1373348153 /home/parson/projects/SDK/zlib/inffast.h
+
+1373348153 /home/parson/projects/SDK/zlib/inffixed.h
+
+1373348153 source:/home/parson/projects/SDK/zlib/inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1373348153 source:/home/parson/projects/SDK/zlib/inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1373348153 /home/parson/projects/SDK/zlib/trees.h
+
+1373348153 source:/home/parson/projects/SDK/zlib/uncompr.c
+	"zlib.h"
+
+1373348153 source:/home/parson/projects/SDK/zlib/zutil.c
+	"zutil.h"
 
