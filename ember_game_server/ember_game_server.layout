@@ -28,10 +28,10 @@
 	<File name="../../dlstorm/c_sqlitedb.h" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/dlstorm.h" open="0" top="0" tabpos="1">
+	<File name="../../dlstorm/dlstorm.h" open="1" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/dlstorm_lib.h" open="0" top="0" tabpos="1">
+	<File name="../../dlstorm/dlstorm_lib.h" open="1" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../manserver.client.cpp" open="0" top="0" tabpos="6">

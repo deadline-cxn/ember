@@ -1,0 +1,685 @@
+# depslib dependency file v1.0
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lapi.c
+	<assert.h>
+	<math.h>
+	<stdarg.h>
+	<string.h>
+	"lua.h"
+	"lapi.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lundump.h"
+	"lvm.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/luaconf.h
+	<limits.h>
+	<stddef.h>
+	<unistd.h>
+	<io.h>
+	<stdio.h>
+	<stdio.h>
+	<readline/readline.h>
+	<readline/history.h>
+	<assert.h>
+	<math.h>
+	<unistd.h>
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lapi.h
+	"lobject.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lobject.h
+	<stdarg.h>
+	"llimits.h"
+	"lua.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/llimits.h
+	<limits.h>
+	<stddef.h>
+	"lua.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/ldebug.h
+	"lstate.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lstate.h
+	"lua.h"
+	"lobject.h"
+	"ltm.h"
+	"lzio.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/ltm.h
+	"lobject.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lzio.h
+	"lua.h"
+	"lmem.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lmem.h
+	<stddef.h>
+	"llimits.h"
+	"lua.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/ldo.h
+	"lobject.h"
+	"lstate.h"
+	"lzio.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lfunc.h
+	"lobject.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lgc.h
+	"lobject.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lstring.h
+	"lgc.h"
+	"lobject.h"
+	"lstate.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/ltable.h
+	"lobject.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lundump.h
+	"lobject.h"
+	"lzio.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lvm.h
+	"ldo.h"
+	"lobject.h"
+	"ltm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lauxlib.c
+	<ctype.h>
+	<errno.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lbaselib.c
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lualib.h
+	"lua.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lcode.c
+	<stdlib.h>
+	"lua.h"
+	"lcode.h"
+	"ldebug.h"
+	"ldo.h"
+	"lgc.h"
+	"llex.h"
+	"lmem.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+	"ltable.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lcode.h
+	"llex.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/llex.h
+	"lobject.h"
+	"lzio.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lopcodes.h
+	"llimits.h"
+
+1371736132 /home/parson/projects/SDK/lua-5.1.4/src/lparser.h
+	"llimits.h"
+	"lobject.h"
+	"lzio.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ldblib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ldebug.c
+	<stdarg.h>
+	<stddef.h>
+	<string.h>
+	"lua.h"
+	"lapi.h"
+	"lcode.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lvm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ldo.c
+	<setjmp.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lundump.h"
+	"lvm.h"
+	"lzio.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ldump.c
+	<stddef.h>
+	"lua.h"
+	"lobject.h"
+	"lstate.h"
+	"lundump.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lfunc.c
+	<stddef.h>
+	"lua.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lgc.c
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/linit.c
+	"lua.h"
+	"lualib.h"
+	"lauxlib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/liolib.c
+	<errno.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/llex.c
+	<ctype.h>
+	<locale.h>
+	<string.h>
+	"lua.h"
+	"ldo.h"
+	"llex.h"
+	"lobject.h"
+	"lparser.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"lzio.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lmathlib.c
+	<stdlib.h>
+	<math.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lmem.c
+	<stddef.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/loadlib.c
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+	<dlfcn.h>
+	<windows.h>
+	<mach-o/dyld.h>
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lobject.c
+	<ctype.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"ldo.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"lvm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lopcodes.c
+	"lopcodes.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/loslib.c
+	<errno.h>
+	<locale.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lparser.c
+	<string.h>
+	"lua.h"
+	"lcode.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"llex.h"
+	"lmem.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lparser.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lstate.c
+	<stddef.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"llex.h"
+	"lmem.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lstring.c
+	<string.h>
+	"lua.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lstrlib.c
+	<ctype.h>
+	<stddef.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ltable.c
+	<math.h>
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lgc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstate.h"
+	"ltable.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ltablib.c
+	<stddef.h>
+	"lua.h"
+	"lauxlib.h"
+	"lualib.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/ltm.c
+	<string.h>
+	"lua.h"
+	"lobject.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lundump.c
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lmem.h"
+	"lobject.h"
+	"lstring.h"
+	"lundump.h"
+	"lzio.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lvm.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lua.h"
+	"ldebug.h"
+	"ldo.h"
+	"lfunc.h"
+	"lgc.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lstate.h"
+	"lstring.h"
+	"ltable.h"
+	"ltm.h"
+	"lvm.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/lzio.c
+	<string.h>
+	"lua.h"
+	"llimits.h"
+	"lmem.h"
+	"lstate.h"
+	"lzio.h"
+
+1371736132 source:/home/parson/projects/SDK/lua-5.1.4/src/print.c
+	<ctype.h>
+	<stdio.h>
+	"ldebug.h"
+	"lobject.h"
+	"lopcodes.h"
+	"lundump.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/adler32.c
+	"zlib.h"
+
+1371736132 /home/parson/projects/SDK/zlib/zlib.h
+	"zconf.h"
+
+1371736132 /home/parson/projects/SDK/zlib/zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1371736132 source:/home/parson/projects/SDK/zlib/compress.c
+	"zlib.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1371736132 /home/parson/projects/SDK/zlib/zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1371736132 /home/parson/projects/SDK/zlib/crc32.h
+
+1371736132 source:/home/parson/projects/SDK/zlib/deflate.c
+	"deflate.h"
+
+1371736132 /home/parson/projects/SDK/zlib/deflate.h
+	"zutil.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1371736132 source:/home/parson/projects/SDK/zlib/infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1371736132 /home/parson/projects/SDK/zlib/inftrees.h
+
+1371736132 /home/parson/projects/SDK/zlib/inflate.h
+
+1371736132 /home/parson/projects/SDK/zlib/inffast.h
+
+1371736132 /home/parson/projects/SDK/zlib/inffixed.h
+
+1371736132 source:/home/parson/projects/SDK/zlib/inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1371736132 source:/home/parson/projects/SDK/zlib/inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1371736132 /home/parson/projects/SDK/zlib/trees.h
+
+1371736132 source:/home/parson/projects/SDK/zlib/uncompr.c
+	"zlib.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/zutil.c
+	"zutil.h"
+
+1371736059 source:/home/parson/projects/dlstorm/c_log.cpp
+	"c_log.h"
+
+1371736059 /home/parson/projects/dlstorm/c_log.h
+	<direct.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"dlstorm.h"
+
+1371737973 /home/parson/projects/dlstorm/dlstorm.h
+	"dlstorm_lib.h"
+	<iostream>
+	<vector>
+	<string>
+
+1372074551 /home/parson/projects/dlstorm/dlstorm_lib.h
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<time.h>
+	<malloc.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+
+1372075523 source:/home/parson/projects/dlstorm/c_net.cpp
+	"c_net.h"
+
+1371736059 /home/parson/projects/dlstorm/c_net.h
+	"dlstorm.h"
+	<winsock2.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<sys/time.h>
+	<sys/wait.h>
+	<fcntl.h>
+	<errno.h>
+
+1372075574 source:/home/parson/projects/dlstorm/dlstorm.cpp
+	"dlstorm.h"
+
+1371736059 source:/home/parson/projects/dlstorm/sqlite3.c
+	"config.h"
+	<stdint.h>
+	<inttypes.h>
+	<tcl.h>
+	<stdarg.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<windows.h>
+	<os2safe.h>
+	<os2.h>
+	<uconv.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/ioctl.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/file.h>
+	<sys/param.h>
+	<sys/mount.h>
+	<utime.h>
+	<dlfcn.h>
+	<sys/cygwin.h>
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+
+1372075919 source:/home/parson/projects/ember/ember_game_server.cpp
+	"ember_game_server.h"
+	"ember_version.h"
+	"ember_game_server_enum.h"
+	"c_serverinfo.h"
+	"ember_game_server_socket.h"
+	"ember_game_server_client_socket.h"
+	"dlstorm.h"
+	"c_net.h"
+	"c_log.h"
+	"c_gaf.h"
+	"sqlite3.h"
+	"s_linux.h"
+	"s_gnu.h"
+
+1372075875 /home/parson/projects/ember/ember_game_server.h
+
+1371736116 /home/parson/projects/ember/ember_version.h
+
+1371736116 /home/parson/projects/ember/ember_game_server_enum.h
+
+1371736116 /home/parson/projects/ember/c_serverinfo.h
+
+1371736116 /home/parson/projects/ember/ember_game_server_socket.h
+	"c_net.h"
+	"c_log.h"
+	"ember_version.h"
+	"ember_network_common.h"
+	"ember_game_server_enum.h"
+	"ember_game_server_client_socket.h"
+
+1371736116 /home/parson/projects/ember/ember_network_common.h
+
+1371736116 /home/parson/projects/ember/ember_game_server_client_socket.h
+	"ember_network_common.h"
+	"c_log.h"
+	"c_net.h"
+

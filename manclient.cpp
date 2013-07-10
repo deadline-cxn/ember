@@ -46,8 +46,20 @@ CLog        *pLog;      // Log file
 C_FMGS      *pFMGS;     // Game Server connection
 C_Entity    *pNTT;      // Entity
 C_Entity    *pFirstNTT; // Entity
+
+#ifdef _WINDOWS_
 C_Sound     *pSND;      // FMOD Sounds
 #endif
+
+#endif
+
+int main(int argc, char *argv[]){ // ** SDL main
+    bShutDown=false;
+    if(doInit()) while(!bShutDown) MainGameLoop();
+    ShutDown();
+    return 0;
+}
+
 
 ////////////////////////////////////////////////////// Console STUFF
 
@@ -329,7 +341,7 @@ void con_chat(const string &s){
 };
 
 ////////////////////////////////////////////////////// Game Mode STUFF
-void MainGameLoop(void){ // **  Main Game Loop
+void MainGameLoop(void) { // **  Main Game Loop
 
     if(bShutDown) return;
     if(!pGUI) return;
@@ -856,6 +868,7 @@ bool doInit(void){
     /////////////////////////////////////////////////////////////////////////////////
     // sound
 
+#ifdef _WINDOWS_
     pLog->_Add("Setting up SND");
     pSND=new C_Sound();
     if(!pSND) {
@@ -873,6 +886,7 @@ bool doInit(void){
     pSND->SetMusicVolume(255);
 
     //  pSND->PlaySample("sound\\a.mp3");
+#endif
 
     /////////////////////////////////////////////////////////////////////////////////
     // Initialize GFX
@@ -1017,7 +1031,11 @@ void ShutDown(void){ // **  Shut Down the Program
         DEL(pFirstNTT);
     }
 
+#ifdef _WINDOWS_
     DEL(pSND);
+#endif
+
+
     DEL(pGUI);
     DEL(pFMGS);
 
@@ -1500,12 +1518,8 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
         }
     }
 }
-int   main(int argc, char *argv[]){ // ** SDL main
-    bShutDown=false;
-    if(doInit()) while(!bShutDown) MainGameLoop();
-    ShutDown();
-    return 0;
-}
+
+
 C_FMGS::C_FMGS(void){
     pPingSocket=NULL;
     bLoggedin=false;

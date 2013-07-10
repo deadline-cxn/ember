@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Win32 Debug" />
+	<ActiveTarget name="Linux Release" />
 	<File name="../../dlstorm/c_console.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />
 	</File>
@@ -13,8 +13,8 @@
 	<File name="../../dlstorm/c_gaf.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/c_gaf.h" open="1" top="1" tabpos="0">
-		<Cursor position="1542" topLine="49" />
+	<File name="../../dlstorm/c_gaf.h" open="1" top="0" tabpos="1">
+		<Cursor position="153" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_gfx.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />
@@ -23,31 +23,34 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_gl3dmodel.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="16" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_gl3dmodel.h" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="153" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_glfont.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/c_glmouse.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="../../dlstorm/c_glmouse.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="2556" topLine="87" />
 	</File>
 	<File name="../../dlstorm/c_glmouse.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/c_gltexture.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="../../dlstorm/c_gltexture.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="65" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_gltexture.h" open="0" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/c_gui.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="../../dlstorm/c_gui.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="115301" topLine="3324" />
 	</File>
-	<File name="../../dlstorm/c_gui.h" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+	<File name="../../dlstorm/c_gui.h" open="1" top="0" tabpos="4">
+		<Cursor position="358" topLine="3" />
+	</File>
+	<File name="../../dlstorm/c_hash.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="13" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_log.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />
@@ -55,11 +58,11 @@
 	<File name="../../dlstorm/c_log.h" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/c_map_new.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="0" topLine="0" />
+	<File name="../../dlstorm/c_map_new.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="3068" topLine="70" />
 	</File>
-	<File name="../../dlstorm/c_map_new.h" open="0" top="0" tabpos="5">
-		<Cursor position="0" topLine="0" />
+	<File name="../../dlstorm/c_map_new.h" open="1" top="0" tabpos="8">
+		<Cursor position="102" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_snd.h" open="0" top="0" tabpos="7">
 		<Cursor position="0" topLine="0" />
@@ -68,13 +71,19 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../../dlstorm/dlstorm.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="145" topLine="0" />
 	</File>
 	<File name="../../dlstorm/dlstorm.h" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="241" topLine="18" />
 	</File>
 	<File name="../../dlstorm/dlstorm_lib.h" open="0" top="0" tabpos="3">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="4531" topLine="159" />
+	</File>
+	<File name="../../dlstorm/glerrors.cpp" open="1" top="1" tabpos="9">
+		<Cursor position="327" topLine="0" />
+	</File>
+	<File name="../../dlstorm/glerrors.h" open="0" top="0" tabpos="0">
+		<Cursor position="224" topLine="0" />
 	</File>
 	<File name="../c_entity.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="0" topLine="0" />

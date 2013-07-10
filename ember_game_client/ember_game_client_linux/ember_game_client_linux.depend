@@ -1,0 +1,626 @@
+# depslib dependency file v1.0
+1373447154 source:/home/parson/projects/dlstorm/c_console.cpp
+	"c_console.h"
+
+1373447154 /home/parson/projects/dlstorm/c_console.h
+	"c_gltexture.h"
+	"c_log.h"
+	"c_gaf.h"
+	<map>
+
+1373447154 /home/parson/projects/dlstorm/c_gltexture.h
+	"png.h"
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"c_gaf.h"
+	"c_log.h"
+
+1373448674 /home/parson/projects/dlstorm/c_gaf.h
+	<dirent.h>
+	"dlstorm.h"
+	"zlib.h"
+	"c_log.h"
+
+1373447154 /home/parson/projects/dlstorm/dlstorm.h
+	"dlstorm_lib.h"
+	"c_log.h"
+
+1373449525 /home/parson/projects/dlstorm/dlstorm_lib.h
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<time.h>
+	<malloc.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+	<iostream>
+	<vector>
+	<string>
+	<map>
+	<algorithm>
+
+1373447154 /home/parson/projects/dlstorm/c_log.h
+	<direct.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<unistd.h>
+	"dlstorm.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_data.cpp
+	"c_data.h"
+	"SDL.h"
+
+1373447154 /home/parson/projects/dlstorm/c_data.h
+	"dlstorm.h"
+	"c_log.h"
+
+1327665706 /usr/include/SDL/SDL.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1327665706 /usr/include/SDL/SDL_platform.h
+
+1327665706 /usr/include/SDL/begin_code.h
+
+1327665706 /usr/include/SDL/close_code.h
+
+1327665706 /usr/include/SDL/SDL_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_keysym.h
+
+1327665706 /usr/include/SDL/SDL_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1327665706 /usr/include/SDL/SDL_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1327665706 /usr/include/SDL/SDL_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_gaf.cpp
+	"c_gaf.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_gfx.cpp
+	"c_gfx.h"
+
+1373447154 /home/parson/projects/dlstorm/c_gfx.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	"c_gaf.h"
+	"c_log.h"
+	"SDL.h"
+	"c_gltexture.h"
+	"c_gl3dmodel.h"
+	<math.h>
+	"c_map_new.h"
+
+1373448038 /home/parson/projects/dlstorm/c_gl3dmodel.h
+	<string>
+	<vector>
+	"s_gnu.h"
+	"c_gltexture.h"
+	"c_log.h"
+	<vector>
+	<string>
+	<map>
+
+1373447154 /home/parson/projects/dlstorm/s_gnu.h
+	"dlstorm.h"
+
+1373449836 /home/parson/projects/dlstorm/c_map_new.h
+	"dlstorm.h"
+	"c_gaf.h"
+	"c_log.h"
+	"c_gltexture.h"
+	"s_gnu.h"
+
+1373448022 source:/home/parson/projects/dlstorm/c_gl3dmodel.cpp
+	"c_gl3dmodel.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_glfont.cpp
+	"c_glfont.h"
+	"c_gltexture.h"
+	"SDL.h"
+
+1371736059 /home/parson/projects/dlstorm/c_glfont.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"c_gaf.h"
+	"c_log.h"
+
+1373449192 source:/home/parson/projects/dlstorm/c_glmouse.cpp
+	"dlstorm.h"
+	"c_glmouse.h"
+	"c_gltexture.h"
+	"SDL.h"
+
+1373447154 /home/parson/projects/dlstorm/c_glmouse.h
+	"c_gaf.h"
+	"c_log.h"
+	"c_gltexture.h"
+
+1373449199 source:/home/parson/projects/dlstorm/c_gltexture.cpp
+	"c_gltexture.h"
+	"glerrors.h"
+	"SDL.h"
+
+1373449932 /home/parson/projects/dlstorm/glerrors.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<stdio.h>
+	<string.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1373449787 source:/home/parson/projects/dlstorm/c_gui.cpp
+	"c_gui.h"
+
+1373449206 /home/parson/projects/dlstorm/c_gui.h
+	"c_gui_chat_enum.h"
+	<map>
+	<algorithm>
+	"c_gfx.h"
+	"c_gaf.h"
+	"c_glfont.h"
+	"c_glmouse.h"
+	"c_gltexture.h"
+	"c_console.h"
+	"dlstorm.h"
+
+1373447154 /home/parson/projects/dlstorm/c_gui_chat_enum.h
+	"dlstorm.h"
+
+1373449813 source:/home/parson/projects/dlstorm/c_hash.cpp
+	"c_hash.h"
+	<iostream>
+	<string>
+	<map>
+
+1371736059 /home/parson/projects/dlstorm/c_hash.h
+
+1373455171 source:/home/parson/projects/dlstorm/c_log.cpp
+	"c_log.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_map_new.cpp
+	"c_map_new.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_net.cpp
+	"c_net.h"
+
+1373447154 /home/parson/projects/dlstorm/c_net.h
+	"dlstorm.h"
+	<winsock2.h>
+	<stdio.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<sys/un.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<sys/time.h>
+	<sys/wait.h>
+	<fcntl.h>
+	<errno.h>
+
+1373456255 source:/home/parson/projects/dlstorm/c_snd.cpp
+	"c_snd.h"
+
+1373456237 /home/parson/projects/dlstorm/c_snd.h
+	"dlstorm.h"
+	"fmod.h"
+
+1373447154 source:/home/parson/projects/dlstorm/c_timer.cpp
+	"c_timer.h"
+
+1371736059 /home/parson/projects/dlstorm/c_timer.h
+	"dlstorm.h"
+
+1373447154 source:/home/parson/projects/dlstorm/dlstorm.cpp
+	"dlstorm.h"
+
+1373451966 source:/home/parson/projects/dlstorm/glerrors.cpp
+	"glerrors.h"
+
+1371736059 source:/home/parson/projects/dlstorm/s_gnu.cpp
+	"s_gnu.h"
+
+1373447222 source:/home/parson/projects/ember/c_entity.cpp
+	"c_entity.h"
+
+1373447222 /home/parson/projects/ember/c_entity.h
+	"c_log.h"
+	"c_gaf.h"
+	"c_gfx.h"
+	"c_gl3dmodel.h"
+
+1373456651 source:/home/parson/projects/ember/manclient.cpp
+	"manclient.h"
+
+1373447222 /home/parson/projects/ember/manclient.h
+	"c_data.h"
+	"c_timer.h"
+	"c_snd.h"
+	"c_gfx.h"
+	"c_gui.h"
+	"c_gui_chat_enum.h"
+	"c_log.h"
+	"c_net.h"
+	"network_messages.h"
+	"mantra_version.h"
+	"mantra_common.h"
+	"manmaster.h"
+	"c_entity.h"
+
+1373447222 /home/parson/projects/ember/mantra_version.h
+
+1373447222 /home/parson/projects/ember/mantra_common.h
+
+1373447222 /home/parson/projects/ember/manmaster.h
+	"c_serverinfo.h"
+
+1373447222 /home/parson/projects/ember/c_serverinfo.h
+
+1373447299 source:/home/parson/projects/SDK/lpng162/png.c
+	"pngpriv.h"
+
+1373447300 /home/parson/projects/SDK/lpng162/pngpriv.h
+	<stdlib.h>
+	<string.h>
+	<config.h>
+	"pnglibconf.h"
+	"pngprefix.h"
+	"pngusr.h"
+	"png.h"
+	<float.h>
+	<fp.h>
+	<math.h>
+	<m68881.h>
+	<mem.h>
+	<alloc.h>
+	<windows.h>
+	"pngstruct.h"
+	"pnginfo.h"
+	"pngdebug.h"
+
+1373447714 /home/parson/projects/SDK/lpng162/pnglibconf.h
+
+1373447299 /home/parson/projects/SDK/lpng162/png.h
+	"pnglibconf.h"
+	"pngconf.h"
+
+1373447300 /home/parson/projects/SDK/lpng162/pngconf.h
+	<limits.h>
+	<stddef.h>
+	<stdio.h>
+	<setjmp.h>
+	<time.h>
+
+1373447300 /home/parson/projects/SDK/lpng162/pngstruct.h
+	"zlib.h"
+
+1373447300 /home/parson/projects/SDK/lpng162/pnginfo.h
+
+1373447300 /home/parson/projects/SDK/lpng162/pngdebug.h
+	<crtdbg.h>
+	<stdio.h>
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngerror.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngget.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngmem.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngpread.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngrio.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngrtran.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngrutil.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngset.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngtrans.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngwio.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngwrite.c
+	"pngpriv.h"
+	<errno.h>
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngwtran.c
+	"pngpriv.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngwutil.c
+	"pngpriv.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/adler32.c
+	"zlib.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/compress.c
+	"zlib.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1371736132 /home/parson/projects/SDK/zlib/zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1371736132 /home/parson/projects/SDK/zlib/crc32.h
+
+1371736132 source:/home/parson/projects/SDK/zlib/deflate.c
+	"deflate.h"
+
+1371736132 /home/parson/projects/SDK/zlib/deflate.h
+	"zutil.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1371736132 source:/home/parson/projects/SDK/zlib/infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1371736132 /home/parson/projects/SDK/zlib/inftrees.h
+
+1371736132 /home/parson/projects/SDK/zlib/inflate.h
+
+1371736132 /home/parson/projects/SDK/zlib/inffast.h
+
+1371736132 /home/parson/projects/SDK/zlib/inffixed.h
+
+1371736132 source:/home/parson/projects/SDK/zlib/inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1371736132 source:/home/parson/projects/SDK/zlib/inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1371736132 /home/parson/projects/SDK/zlib/trees.h
+
+1371736132 source:/home/parson/projects/SDK/zlib/uncompr.c
+	"zlib.h"
+
+1371736132 source:/home/parson/projects/SDK/zlib/zutil.c
+	"zutil.h"
+
+1373447300 source:/home/parson/projects/SDK/lpng162/pngread.c
+	"pngpriv.h"
+	<errno.h>
+
