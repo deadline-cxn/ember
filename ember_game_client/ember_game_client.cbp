@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-w" />
+					<Add option="`sdl-config --cflags`" />
 					<Add option="-fpermissive" />
 					<Add option="-fexceptions" />
 					<Add option="-Werror" />
@@ -27,6 +28,7 @@
 					<Add option="-D_MANTRA_CLIENT_" />
 				</Compiler>
 				<Linker>
+					<Add library="SDLmain" />
 					<Add library="kernel32" />
 					<Add library="user32" />
 					<Add library="gdi32" />
@@ -39,7 +41,6 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
-					<Add library="SDLmain" />
 					<Add library="SDL" />
 					<Add library="ws2_32" />
 					<Add library="opengl32" />
@@ -48,7 +49,6 @@
 					<Add library="mingw32" />
 					<Add library="msvcrt" />
 					<Add library="fmod" />
-					<Add library="cximage" />
 				</Linker>
 			</Target>
 			<Target title="Win32 Debug">
@@ -70,6 +70,8 @@
 					<Add option="-D_MANTRA_CLIENT_" />
 				</Compiler>
 				<Linker>
+					<Add library="SDL" />
+					<Add library="SDLmain" />
 					<Add library="kernel32" />
 					<Add library="user32" />
 					<Add library="gdi32" />
@@ -82,14 +84,11 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
-					<Add library="SDLmain" />
-					<Add library="SDL" />
 					<Add library="ws2_32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add library="../../SDK/fmodapi375win/api/lib/libfmod.a" />
+					<Add library="..\..\SDK\fmodapi375win\api\lib\libfmod.a" />
 					<Add library="winmm" />
-					<Add library="cximage" />
 				</Linker>
 			</Target>
 			<Target title="Linux Release">
@@ -149,7 +148,7 @@
 					<Add library="ws2_32" />
 					<Add library="opengl32" />
 					<Add library="glu32" />
-					<Add library="../../SDK/fmodapi375win/api/lib/libfmod.a" />
+					<Add library="..\..\SDK\fmodapi375win\api\lib\libfmod.a" />
 					<Add library="winmm" />
 					<Add library="cximage" />
 				</Linker>
@@ -362,6 +361,7 @@
 		<Unit filename="../../dlstorm/c_map_new.cpp" />
 		<Unit filename="../../dlstorm/c_map_new.h" />
 		<Unit filename="../../dlstorm/c_net.cpp" />
+		<Unit filename="../../dlstorm/c_net.h" />
 		<Unit filename="../../dlstorm/c_snd.cpp" />
 		<Unit filename="../../dlstorm/c_snd.h" />
 		<Unit filename="../../dlstorm/c_timer.cpp" />
@@ -378,6 +378,8 @@
 		</Unit>
 		<Unit filename="../c_entity.cpp" />
 		<Unit filename="../c_entity.h" />
+		<Unit filename="../manclient.cpp" />
+		<Unit filename="../manclient.h" />
 		<Unit filename="autoexec.cfg" />
 		<Unit filename="client.ini" />
 		<Unit filename="client.log" />
@@ -402,8 +404,6 @@
 		<Unit filename="gumps/servers.gui" />
 		<Unit filename="gumps/test.gui" />
 		<Unit filename="gumps/testar.ctrl" />
-		<Unit filename="../manclient.cpp" />
-		<Unit filename="../manclient.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
