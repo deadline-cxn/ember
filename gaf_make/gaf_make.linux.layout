@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
+	<ActiveTarget name="Release" />
+	<File name="../../dlstorm/c_gaf.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="5537" topLine="196" />
+	</File>
+	<File name="../../dlstorm/dlstorm.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="4242" topLine="132" />
+	</File>
+	<File name="gaf_make.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="734" topLine="0" />
+	</File>
+	<File name="gaf_make.h" open="0" top="0" tabpos="0">
+		<Cursor position="65" topLine="0" />
+	</File>
 </CodeBlocks_layout_file>
