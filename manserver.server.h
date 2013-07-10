@@ -11,6 +11,7 @@
 #include "mantra_common.h"
 #include "manserver.client.h"
 #include "c_gui_chat_enum.h"
+#include "s_gnu.h"
 
 #define MAX_CONSOLE_INPUT_BUFFER    10		// Number of console commands to scroll back to execute again
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Win32 Release" />
+	<File name="../../dlstorm/c_gaf.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="14335" topLine="575" />
+	</File>
+	<File name="../../dlstorm/c_net.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="29266" topLine="1030" />
+	</File>
+	<File name="../../dlstorm/c_net.h" open="0" top="0" tabpos="0">
+		<Cursor position="343" topLine="306" />
+	</File>
+	<File name="../manserver.client.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="11016" topLine="315" />
+	</File>
+	<File name="../manserver.client.h" open="0" top="0" tabpos="0">
+		<Cursor position="116" topLine="0" />
+	</File>
+	<File name="../manserver.server.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="8711" topLine="229" />
+	</File>
+	<File name="../manserver.server.h" open="0" top="0" tabpos="0">
+		<Cursor position="350" topLine="0" />
+	</File>
+	<File name="../mantra_common.h" open="0" top="0" tabpos="0">
+		<Cursor position="2573" topLine="149" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,4 +1,4 @@
-Mantra Server v12.04.17a(Windows-x86(D)) Net(2) Build(1) (C) 2012 Seth Parson
+Mantra Server v13.07.01a(Linux-other) Net(4) Build(1) (C) 2012 Seth Parson
 SQLite version 3.7.12.1 [data.sqlite]
 server.ini loaded
 name  = [mantra]
@@ -16,8 +16,10 @@ SYSTEM->1
 GENERAL->5
 TRADE->4
 Saving chat setup SYSTEM,GENERAL,TRADE
-Listening on port [40404]
-CTRL-C killed server!
+Listening on port [0]
+>quit
+>/quit
+>/kill
 server.ini saved
 Closed user database
 Server killed

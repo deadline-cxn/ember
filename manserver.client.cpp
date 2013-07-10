@@ -325,7 +325,7 @@ void C_GSC::do_net(void){
             case NM_GET_SERVER_INFO: fold_block {
 
                 switch(Recv->cRead()){
-                    case SI_GENERIC:
+                    case NETMSG_SERVERINFORMATION:
                         break;
                     default:
                         break;

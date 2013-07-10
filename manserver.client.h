@@ -4,6 +4,7 @@
 #define _MANTRA_S_CLIENT_H
 
 #include "dlstorm.h"
+#include "network_messages.h"
 #include "c_log.h"
 #include "c_net.h"
 #include "c_timer.h"
