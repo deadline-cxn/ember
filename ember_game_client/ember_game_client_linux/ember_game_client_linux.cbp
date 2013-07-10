@@ -7,12 +7,14 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/ember_game_client_linux" prefix_auto="1" extension_auto="1" />
+				<Option output="../mantra_debug_linux" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-D_DEBUG_MANTRA_LOG" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -29,14 +31,149 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="`sdl-config --cflags`" />
 			<Add option="-Wall" />
+			<Add option="`sdl-config --cflags`" />
+			<Add option="-fpermissive" />
+			<Add option="-Wswitch" />
 		</Compiler>
 		<Linker>
 			<Add option="`sdl-config --libs`" />
+			<Add library="GL" />
+			<Add library="GLU" />
 		</Linker>
-		<Unit filename="cb.bmp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="../../../SDK/lpng162/png.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/png.h" />
+		<Unit filename="../../../SDK/lpng162/pngerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngpread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngrio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngrtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngrutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngwio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngwrite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngwtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/lpng162/pngwutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/adler32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/crc32.h" />
+		<Unit filename="../../../SDK/zlib/deflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/deflate.h" />
+		<Unit filename="../../../SDK/zlib/gzio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/infback.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/inffast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/inffast.h" />
+		<Unit filename="../../../SDK/zlib/inflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/inflate.h" />
+		<Unit filename="../../../SDK/zlib/inftrees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/inftrees.h" />
+		<Unit filename="../../../SDK/zlib/trees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/trees.h" />
+		<Unit filename="../../../SDK/zlib/uncompr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/zconf.h" />
+		<Unit filename="../../../SDK/zlib/zutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../SDK/zlib/zutil.h" />
+		<Unit filename="../../../dlstorm/c_console.cpp" />
+		<Unit filename="../../../dlstorm/c_console.h" />
+		<Unit filename="../../../dlstorm/c_data.cpp" />
+		<Unit filename="../../../dlstorm/c_data.h" />
+		<Unit filename="../../../dlstorm/c_gaf.cpp" />
+		<Unit filename="../../../dlstorm/c_gaf.h" />
+		<Unit filename="../../../dlstorm/c_gfx.cpp" />
+		<Unit filename="../../../dlstorm/c_gfx.h" />
+		<Unit filename="../../../dlstorm/c_gl3dmodel.cpp" />
+		<Unit filename="../../../dlstorm/c_gl3dmodel.h" />
+		<Unit filename="../../../dlstorm/c_glfont.cpp" />
+		<Unit filename="../../../dlstorm/c_glfont.h" />
+		<Unit filename="../../../dlstorm/c_glmouse.cpp" />
+		<Unit filename="../../../dlstorm/c_glmouse.h" />
+		<Unit filename="../../../dlstorm/c_gltexture.cpp" />
+		<Unit filename="../../../dlstorm/c_gltexture.h" />
+		<Unit filename="../../../dlstorm/c_gui.cpp" />
+		<Unit filename="../../../dlstorm/c_gui.h" />
+		<Unit filename="../../../dlstorm/c_gui_chat_enum.h" />
+		<Unit filename="../../../dlstorm/c_hash.cpp" />
+		<Unit filename="../../../dlstorm/c_hash.h" />
+		<Unit filename="../../../dlstorm/c_log.cpp" />
+		<Unit filename="../../../dlstorm/c_log.h" />
+		<Unit filename="../../../dlstorm/c_map_new.cpp" />
+		<Unit filename="../../../dlstorm/c_map_new.h" />
+		<Unit filename="../../../dlstorm/c_net.cpp" />
+		<Unit filename="../../../dlstorm/c_net.h" />
+		<Unit filename="../../../dlstorm/c_snd.cpp" />
+		<Unit filename="../../../dlstorm/c_snd.h" />
+		<Unit filename="../../../dlstorm/c_timer.cpp" />
+		<Unit filename="../../../dlstorm/c_timer.h" />
+		<Unit filename="../../../dlstorm/dlstorm.cpp" />
+		<Unit filename="../../../dlstorm/dlstorm.h" />
+		<Unit filename="../../../dlstorm/dlstorm_lib.h" />
+		<Unit filename="../../../dlstorm/glerrors.cpp" />
+		<Unit filename="../../../dlstorm/glerrors.h" />
+		<Unit filename="../../../dlstorm/network_messages.h" />
+		<Unit filename="../../../dlstorm/s_gnu.cpp" />
+		<Unit filename="../../../dlstorm/s_gnu.h" />
+		<Unit filename="../../c_entity.cpp" />
+		<Unit filename="../../c_entity.h" />
+		<Unit filename="../../manclient.cpp" />
+		<Unit filename="../../manclient.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

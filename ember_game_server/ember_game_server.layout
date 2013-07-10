@@ -13,7 +13,7 @@
 	<File name="../../dlstorm/c_log.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/c_log.h" open="0" top="0" tabpos="5">
+	<File name="../../dlstorm/c_log.h" open="1" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../../dlstorm/c_net.cpp" open="0" top="0" tabpos="3">
@@ -31,7 +31,7 @@
 	<File name="../../dlstorm/dlstorm.h" open="1" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="../../dlstorm/dlstorm_lib.h" open="1" top="0" tabpos="1">
+	<File name="../../dlstorm/dlstorm_lib.h" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../manserver.client.cpp" open="0" top="0" tabpos="6">

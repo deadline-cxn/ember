@@ -3,6 +3,7 @@
 	<Workspace title="Mantra">
 		<Project filename="gaf_make/gaf_make.cbp" />
 		<Project filename="ember_game_server/ember_game_server.cbp" />
-		<Project filename="ember_game_client/ember_game_client.cbp" active="1" />
+		<Project filename="ember_game_client/ember_game_client.cbp" />
+		<Project filename="ember_game_client/ember_game_client_linux/ember_game_client_linux.cbp" active="1" />
 	</Workspace>
 </CodeBlocks_workspace_file>

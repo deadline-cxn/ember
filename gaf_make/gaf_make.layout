@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Linux Release" />
+	<File name="../../SDK/zlib/infback.c" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
 	<File name="../../dlstorm/c_gaf.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="38" topLine="0" />
 	</File>
-	<File name="../../dlstorm/dlstorm.cpp" open="1" top="0" tabpos="1">
+	<File name="../../dlstorm/c_log.cpp" open="1" top="0" tabpos="0">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="../../dlstorm/dlstorm.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="../ember_game_client/gaf_make_ember.bat" open="0" top="0" tabpos="2">

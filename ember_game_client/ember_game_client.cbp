@@ -110,10 +110,9 @@
 					<Add option="-D_MANTRA_CLIENT_" />
 				</Compiler>
 				<Linker>
+					<Add option="`sdl-config --libs`" />
 					<Add library="GL" />
 					<Add library="GLU" />
-					<Add library="SDLmain" />
-					<Add library="SDL" />
 				</Linker>
 			</Target>
 			<Target title="Linux Debug">
