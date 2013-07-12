@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="../../dlstorm/c_gui.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="58303" topLine="1590" />
-	</File>
-	<File name="../c_entity.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="792" topLine="0" />
-	</File>
-	<File name="../c_entity.h" open="0" top="0" tabpos="0">
-		<Cursor position="258" topLine="19" />
-	</File>
 </CodeBlocks_layout_file>

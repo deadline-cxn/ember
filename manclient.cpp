@@ -1098,8 +1098,7 @@ void DoEntities(void) { // Update Entities
     glMatrixMode(GL_MODELVIEW);
 
     pNTT=pFirstNTT;
-    while(pNTT)
-    {
+    while(pNTT) {
         //pLog->_Add("Drawing entity [%s] located @ (%f,%f,%f)",pNTT->szName,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
 
         glLoadIdentity ();
@@ -1110,8 +1109,6 @@ void DoEntities(void) { // Update Entities
         glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);// BaseTexture[103].texture->bmap);
         glColor3f(1.0f,1.0f,1.0f);
         drawcube();
-
-
         pNTT=pNTT->pNext;
     }
 
