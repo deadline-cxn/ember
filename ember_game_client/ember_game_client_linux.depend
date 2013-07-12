@@ -8,7 +8,7 @@
 	"c_gaf.h"
 	<map>
 
-1373447154 /home/parson/projects/dlstorm/c_gltexture.h
+1373619056 /home/parson/projects/dlstorm/c_gltexture.h
 	"png.h"
 	<winsock2.h>
 	<mmsystem.h>
@@ -18,7 +18,7 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1373448674 /home/parson/projects/dlstorm/c_gaf.h
+1373619056 /home/parson/projects/dlstorm/c_gaf.h
 	<dirent.h>
 	"dlstorm.h"
 	"zlib.h"
@@ -261,13 +261,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1373447154 source:/home/parson/projects/dlstorm/c_gaf.cpp
+1373619056 source:/home/parson/projects/dlstorm/c_gaf.cpp
 	"c_gaf.h"
 
-1373447154 source:/home/parson/projects/dlstorm/c_gfx.cpp
+1373619056 source:/home/parson/projects/dlstorm/c_gfx.cpp
 	"c_gfx.h"
 
-1373447154 /home/parson/projects/dlstorm/c_gfx.h
+1373619056 /home/parson/projects/dlstorm/c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -319,18 +319,18 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1373449192 source:/home/parson/projects/dlstorm/c_glmouse.cpp
+1373619056 source:/home/parson/projects/dlstorm/c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1373447154 /home/parson/projects/dlstorm/c_glmouse.h
+1373619056 /home/parson/projects/dlstorm/c_glmouse.h
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
 
-1373449199 source:/home/parson/projects/dlstorm/c_gltexture.cpp
+1373619056 source:/home/parson/projects/dlstorm/c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -344,10 +344,10 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1373449787 source:/home/parson/projects/dlstorm/c_gui.cpp
+1373619056 source:/home/parson/projects/dlstorm/c_gui.cpp
 	"c_gui.h"
 
-1373449206 /home/parson/projects/dlstorm/c_gui.h
+1373620517 /home/parson/projects/dlstorm/c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
@@ -373,13 +373,13 @@
 1373455171 source:/home/parson/projects/dlstorm/c_log.cpp
 	"c_log.h"
 
-1373447154 source:/home/parson/projects/dlstorm/c_map_new.cpp
+1373619056 source:/home/parson/projects/dlstorm/c_map_new.cpp
 	"c_map_new.h"
 
-1373447154 source:/home/parson/projects/dlstorm/c_net.cpp
+1373535973 source:/home/parson/projects/dlstorm/c_net.cpp
 	"c_net.h"
 
-1373447154 /home/parson/projects/dlstorm/c_net.h
+1373535973 /home/parson/projects/dlstorm/c_net.h
 	"dlstorm.h"
 	<winsock2.h>
 	<stdio.h>
@@ -425,7 +425,7 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1373456651 source:/home/parson/projects/ember/manclient.cpp
+1373619067 source:/home/parson/projects/ember/manclient.cpp
 	"manclient.h"
 
 1373447222 /home/parson/projects/ember/manclient.h
@@ -623,4 +623,13 @@
 1373447300 source:/home/parson/projects/SDK/lpng162/pngread.c
 	"pngpriv.h"
 	<errno.h>
+
+1373535991 /home/parson/projects/SDK/zlib/zlib.h
+	"zconf.h"
+
+1371736132 /home/parson/projects/SDK/zlib/zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
 
