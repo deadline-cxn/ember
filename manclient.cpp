@@ -1107,7 +1107,7 @@ void DoEntities(void) { // Update Entities
 
         glTranslatef(pNTT->Pos.x, pNTT->Pos.y, pNTT->Pos.z);
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, pGFX->BaseTexture[103].texture->bmap);
+        glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);// BaseTexture[103].texture->bmap);
         glColor3f(1.0f,1.0f,1.0f);
         drawcube();
 

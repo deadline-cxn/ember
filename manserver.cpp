@@ -44,44 +44,35 @@ void ConsoleShutDown(void) { close_keyboard(); }
 
 #ifdef _WIN32
 BOOL WINAPI HandleCTRL_C(DWORD dwCtrlType){
-    switch(dwCtrlType)
-    {
-
+    switch(dwCtrlType) {
         case CTRL_BREAK_EVENT:
             pServer->bQuit=true;
             pServer->Log("Break event killed server!");
             return true;
-
         case CTRL_SHUTDOWN_EVENT:
             pServer->bQuit=true;
             pServer->Log("Shutdown event killed server!");
             return true;
-
         case CTRL_LOGOFF_EVENT:
             pServer->bQuit=true;
             pServer->Log("Logoff event killed server!");
             return true;
-
         case CTRL_CLOSE_EVENT:
             pServer->bQuit=true;
             pServer->Log("Mouse [X] killed server!");
             return true;
-
         case CTRL_C_EVENT:
             pServer->bQuit=true;
             pServer->Log("CTRL-C killed server!");
             return true;
-
         default:
             break;
     }
     return false;
 }
-void ConsoleSetup(void){
-    // Change window title for windows version, and setup ctrl handler
+void ConsoleSetup(void){ // Change window title for windows version, and setup ctrl handler
     SetConsoleCtrlHandler(HandleCTRL_C,TRUE);
     SetConsoleTitle(va("Mantra Server %s(%s) Net(%d) Build(%d) %s",VERSION,CPUSTRING,NET_REVISION,MANTRA_S_BUILD,COPYRIGHT));
 }
-void ConsoleShutDown(void){
-}
+void ConsoleShutDown(void){ }
 #endif

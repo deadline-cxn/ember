@@ -382,7 +382,6 @@
 		<Unit filename="../manclient.h" />
 		<Unit filename="autoexec.cfg" />
 		<Unit filename="client.ini" />
-		<Unit filename="client.log" />
 		<Unit filename="config.cfg" />
 		<Unit filename="gumps/choose_chars.gui" />
 		<Unit filename="gumps/connect.gui" />
