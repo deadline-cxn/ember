@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-w" />
 					<Add option="-g" />
 					<Add option="-fpermissive" />
 				</Compiler>
@@ -23,6 +24,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-w" />
 					<Add option="-fpermissive" />
 				</Compiler>
 				<Linker>
@@ -32,6 +34,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-Wswitch" />
 			<Add directory="C:/projects/SDK/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>
@@ -150,6 +153,8 @@
 		<Unit filename="../../dlstorm/c_console.h" />
 		<Unit filename="../../dlstorm/c_data.cpp" />
 		<Unit filename="../../dlstorm/c_data.h" />
+		<Unit filename="../../dlstorm/c_entity.cpp" />
+		<Unit filename="../../dlstorm/c_entity.h" />
 		<Unit filename="../../dlstorm/c_gaf.cpp" />
 		<Unit filename="../../dlstorm/c_gaf.h" />
 		<Unit filename="../../dlstorm/c_gfx.cpp" />
@@ -181,8 +186,6 @@
 		<Unit filename="../../dlstorm/dlstorm_lib.h" />
 		<Unit filename="../../dlstorm/glerrors.cpp" />
 		<Unit filename="../../dlstorm/glerrors.h" />
-		<Unit filename="../c_entity.cpp" />
-		<Unit filename="../c_entity.h" />
 		<Unit filename="../manclient.cpp" />
 		<Unit filename="../manclient.h" />
 		<Unit filename="client.log" />

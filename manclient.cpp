@@ -379,9 +379,9 @@ void MainGameLoop(void) { // **  Main Game Loop
 
     pLog->_DebugAdd("MainGameLoop 8");
 
-    //pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),0); //pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),0);
-    //pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),0);
-    //pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),0);
+    pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),0); //pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),0);
+    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),0);
+    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),0);
 
     pGFX->EndScene();
 
@@ -928,7 +928,6 @@ bool doInit(void){
     NET_Init();
 
     SetGameMode(RETRO_INTRO_INIT); // what the
-    //SetGameMode(EDIT_WORLD_INIT); // what the
 
     pGUI->pCons->_Execute("exec autoexec.cfg");
     pGUI->pCons->_Execute("exec config.cfg");
@@ -1035,7 +1034,6 @@ void ShutDown(void){ // **  Shut Down the Program
     DEL(pSND);
 #endif
 
-
     DEL(pGUI);
     DEL(pFMGS);
 
@@ -1053,7 +1051,11 @@ void ShutDown(void){ // **  Shut Down the Program
     pLog->AddLineSep();
     DEL(pLog);
 }
+
+
+
 ////////////////////////////////////////////////////// Entity STUFF
+
 void InitializeEntities(void){
     pNTT=pFirstNTT;
     while(pNTT){
@@ -1069,51 +1071,34 @@ void InitializeEntities(void){
     for(i=0;i<numntt;i++){
         strcpy(pNTT->name,va("Entity %d",i));
 
-        pNTT->Pos.x = ((float)rand()/(float)RAND_MAX)*500;
+        pNTT->Pos.x = ( (float)rand()/(float)RAND_MAX)*50;
         pNTT->Pos.y = (((float)rand()/(float)RAND_MAX)*10)+20;
-        pNTT->Pos.z = ((float)rand()/(float)RAND_MAX)*500;
-        pNTT->type=ENTITY_STATIC;
+        pNTT->Pos.z = ( (float)rand()/(float)RAND_MAX)*50;
+        pNTT->type  = ENTITY_STATIC;
 
         pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->name,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
 
         pNTT->pNext=new C_Entity(pLog,pGAF,pGFX,0);
         pNTT=pNTT->pNext;
-
-            /*  char    szName[1024];
-                int     type; // what type of entity is this
-                    ENTITY_STATIC,
-                    ENTITY_PLAYER,
-                    ENTITY_NPC,
-                    ENTITY_INTERACT,
-                C_Entity *pNext;
-                C_Entity *pPrev;
-                CVector3 Pos;       // position of the entity
-                CVector3 Dir;       // direction vector (which way the entity is facing)
-                CVector3 Scale;     // vector for the scale matrix
-                CGLModel *pModel;   // pointer to model data to use */
     }
+
     pFirstNTT->Pos.x = 0.0f;
     pFirstNTT->Pos.y = 0.0f;
     pFirstNTT->Pos.z = 0.0f;
 }
 void DoEntities(void) { // Update Entities
-
     glMatrixMode(GL_MODELVIEW);
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);
-
     pNTT=pFirstNTT;
     while(pNTT) {
-        //pLog->_Add("Drawing entity [%s] located @ (%f,%f,%f)",pNTT->szName,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
-
         glLoadIdentity ();
+        glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);
         if(pGFX->pCamera) pGFX->pCamera->Go();
         pNTT->Draw();
-
         pNTT=pNTT->pNext;
     }
-
 }
+
 ////////////////////////////////////////////////////// NETWORK STUFF
 long C_FMGS::Ping(void){ // ** Ping the server
     CPacket SendData(NET_DATAGRAMSIZE);
@@ -1516,8 +1501,6 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
         }
     }
 }
-
-
 C_FMGS::C_FMGS(void){
     pPingSocket=NULL;
     bLoggedin=false;
