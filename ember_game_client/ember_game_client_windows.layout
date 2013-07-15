@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
+	<File name="..\c_entity.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="316" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_glfont.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18261" topLine="465" />
+		</Cursor>
+	</File>
 	<File name="..\..\dlstorm\c_map_new.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="16" topLine="0" />
@@ -11,11 +21,6 @@
 			<Cursor1 position="16100" topLine="392" />
 		</Cursor>
 	</File>
-	<File name="..\c_entity.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="316" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="..\manclient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="29703" topLine="744" />
@@ -24,14 +29,9 @@
 			<Collapse line="0" />
 		</Folding>
 	</File>
-	<File name="..\..\dlstorm\c_glfont.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5188" topLine="119" />
-		</Cursor>
-	</File>
 	<File name="..\..\dlstorm\c_glmouse.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4916" topLine="96" />
+			<Cursor1 position="3095" topLine="102" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -1067,14 +1067,14 @@ void InitializeEntities(void){
     int i,numntt;
     numntt=20;
     for(i=0;i<numntt;i++){
-        strcpy(pNTT->szName,va("Entity %d",i));
+        strcpy(pNTT->name,va("Entity %d",i));
 
         pNTT->Pos.x = ((float)rand()/(float)RAND_MAX)*500;
         pNTT->Pos.y = (((float)rand()/(float)RAND_MAX)*10)+20;
         pNTT->Pos.z = ((float)rand()/(float)RAND_MAX)*500;
         pNTT->type=ENTITY_STATIC;
 
-        pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->szName,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
+        pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->name,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
 
         pNTT->pNext=new C_Entity(pLog,pGAF,pGFX,0);
         pNTT=pNTT->pNext;
@@ -1092,10 +1092,15 @@ void InitializeEntities(void){
                 CVector3 Scale;     // vector for the scale matrix
                 CGLModel *pModel;   // pointer to model data to use */
     }
+    pFirstNTT->Pos.x = 0.0f;
+    pFirstNTT->Pos.y = 0.0f;
+    pFirstNTT->Pos.z = 0.0f;
 }
 void DoEntities(void) { // Update Entities
 
     glMatrixMode(GL_MODELVIEW);
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);
 
     pNTT=pFirstNTT;
     while(pNTT) {
@@ -1103,12 +1108,8 @@ void DoEntities(void) { // Update Entities
 
         glLoadIdentity ();
         if(pGFX->pCamera) pGFX->pCamera->Go();
+        pNTT->Draw();
 
-        glTranslatef(pNTT->Pos.x, pNTT->Pos.y, pNTT->Pos.z);
-        glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);// BaseTexture[103].texture->bmap);
-        glColor3f(1.0f,1.0f,1.0f);
-        drawcube();
         pNTT=pNTT->pNext;
     }
 

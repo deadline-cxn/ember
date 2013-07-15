@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1373588617 source:h:\develop\projects\ember\manclient.cpp
+1373701608 source:h:\develop\projects\ember\manclient.cpp
 	"manclient.h"
 
 1373583119 h:\develop\projects\ember\manclient.h
@@ -106,7 +106,7 @@
 	<unistd.h>
 	"dlstorm.h"
 
-1373582965 source:h:\develop\projects\dlstorm\c_data.cpp
+1373700796 source:h:\develop\projects\dlstorm\c_data.cpp
 	"c_data.h"
 	"SDL.h"
 
@@ -117,7 +117,7 @@
 1373586677 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1373603159 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1373758148 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
 1373586261 h:\develop\projects\dlstorm\c_gfx.h
@@ -148,7 +148,7 @@
 1373582965 h:\develop\projects\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1373582965 h:\develop\projects\dlstorm\c_map_new.h
+1373755686 h:\develop\projects\dlstorm\c_map_new.h
 	"dlstorm.h"
 	"c_gaf.h"
 	"c_log.h"
@@ -158,7 +158,7 @@
 1373582965 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1373582965 source:h:\develop\projects\dlstorm\c_glfont.cpp
+1373695541 source:h:\develop\projects\dlstorm\c_glfont.cpp
 	"c_glfont.h"
 	"c_gltexture.h"
 	"SDL.h"
@@ -172,7 +172,7 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1373606935 source:h:\develop\projects\dlstorm\c_glmouse.cpp
+1373758351 source:h:\develop\projects\dlstorm\c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
@@ -183,7 +183,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1373606904 source:h:\develop\projects\dlstorm\c_gltexture.cpp
+1373701505 source:h:\develop\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -226,7 +226,7 @@
 1373582965 source:h:\develop\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
-1373603294 source:h:\develop\projects\dlstorm\c_map_new.cpp
+1373755806 source:h:\develop\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1373582965 source:h:\develop\projects\dlstorm\c_net.cpp
@@ -260,7 +260,7 @@
 1373582965 h:\develop\projects\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1373582965 source:h:\develop\projects\dlstorm\dlstorm.cpp
+1373702394 source:h:\develop\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1373582965 source:h:\develop\projects\dlstorm\glerrors.cpp
@@ -1113,4 +1113,20 @@
 
 1373634363 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
+
+1373698555 source:h:\develop\projects\dlstorm\c_entity.cpp
+	"c_entity.h"
+
+1373698334 h:\develop\projects\dlstorm\c_entity.h
+	"c_waypoint.h"
+	"c_log.h"
+	"c_gaf.h"
+	"c_gfx.h"
+	"c_gl3dmodel.h"
+
+1373697862 h:\develop\projects\dlstorm\c_waypoint.h
+	"c_gl3dmodel.h"
+
+1373696683 source:h:\develop\projects\dlstorm\c_waypoint.cpp
+	"c_waypoint.h"
 

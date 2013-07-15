@@ -1,72 +1,82 @@
-(Fri Jul 12 11:09:21 2013):Name
+(Sat Jul 13 18:52:53 2013):Name
 
-(Fri Jul 12 11:09:21 2013):Enter Your Name
+(Sat Jul 13 18:52:53 2013):Enter Your Name
 
-(Fri Jul 12 11:09:21 2013):Password
+(Sat Jul 13 18:52:53 2013): Name [Enter Your Name]
 
-(Fri Jul 12 11:09:21 2013):
+(Sat Jul 13 18:52:53 2013):Password
 
-(Fri Jul 12 11:09:21 2013):Save Password
+(Sat Jul 13 18:52:53 2013):
 
-(Fri Jul 12 11:09:21 2013):on
+(Sat Jul 13 18:52:53 2013):Save Password
 
-(Fri Jul 12 11:09:21 2013):Last Server
+(Sat Jul 13 18:52:53 2013):on
 
-(Fri Jul 12 11:09:21 2013):Ember Server
+(Sat Jul 13 18:52:53 2013):Last Server
 
-(Fri Jul 12 11:09:21 2013):Last Server IP
+(Sat Jul 13 18:52:53 2013):Ember Server
 
-(Fri Jul 12 11:09:21 2013):
+(Sat Jul 13 18:52:53 2013):Last Server IP
 
-(Fri Jul 12 11:09:21 2013):Port
+(Sat Jul 13 18:52:53 2013):
 
-(Fri Jul 12 11:09:21 2013):
+(Sat Jul 13 18:52:53 2013):Port
 
-(Fri Jul 12 11:09:21 2013):Log
+(Sat Jul 13 18:52:53 2013):
 
-(Fri Jul 12 11:09:21 2013):on
+(Sat Jul 13 18:52:53 2013):Log
 
-(Fri Jul 12 11:09:21 2013):Download
+(Sat Jul 13 18:52:53 2013):on
 
-(Fri Jul 12 11:09:21 2013):on
+(Sat Jul 13 18:52:53 2013):Download
 
-(Fri Jul 12 11:09:21 2013):Sound
+(Sat Jul 13 18:52:53 2013):on
 
-(Fri Jul 12 11:09:21 2013):on
+(Sat Jul 13 18:52:53 2013):Sound
 
-(Fri Jul 12 11:09:21 2013):Sound Volume
+(Sat Jul 13 18:52:53 2013):on
 
-(Fri Jul 12 11:09:21 2013):100.000000
+(Sat Jul 13 18:52:53 2013):Sound Volume
 
-(Fri Jul 12 11:09:21 2013):Music
+(Sat Jul 13 18:52:53 2013):100.000000
 
-(Fri Jul 12 11:09:21 2013):on
+(Sat Jul 13 18:52:53 2013):Music
 
-(Fri Jul 12 11:09:21 2013):Music Volume
+(Sat Jul 13 18:52:53 2013):on
 
-(Fri Jul 12 11:09:21 2013):100.000000
+(Sat Jul 13 18:52:53 2013):Music Volume
 
-(Fri Jul 12 11:09:21 2013):Master Server
+(Sat Jul 13 18:52:53 2013):100.000000
 
-(Fri Jul 12 11:09:21 2013):
+(Sat Jul 13 18:52:53 2013):Master Server
 
-(Fri Jul 12 11:09:21 2013):Master Server Port
+(Sat Jul 13 18:52:53 2013):
 
-(Fri Jul 12 11:09:21 2013):
+(Sat Jul 13 18:52:53 2013):Master Server Port
 
-(Fri Jul 12 11:09:21 2013):Full Screen
+(Sat Jul 13 18:52:53 2013):
 
-(Fri Jul 12 11:09:21 2013):off
+(Sat Jul 13 18:52:53 2013):FullScreen
 
-(Fri Jul 12 11:09:21 2013):Screen Width
+(Sat Jul 13 18:52:53 2013):on
 
-(Fri Jul 12 11:09:21 2013):1366
+(Sat Jul 13 18:52:53 2013): bFullScreen [1]
 
-(Fri Jul 12 11:09:21 2013):Screen Height
+(Sat Jul 13 18:52:53 2013):Screen Width
 
-(Fri Jul 12 11:09:21 2013):768
+(Sat Jul 13 18:52:53 2013):1920
 
-(Fri Jul 12 11:09:21 2013):Screen Colors
+(Sat Jul 13 18:52:53 2013): ScreenWidth [1920]
 
-(Fri Jul 12 11:09:21 2013):24
+(Sat Jul 13 18:52:53 2013):Screen Height
+
+(Sat Jul 13 18:52:53 2013):1080
+
+(Sat Jul 13 18:52:53 2013): ScreenHeight [1080]
+
+(Sat Jul 13 18:52:53 2013):Screen Colors
+
+(Sat Jul 13 18:52:53 2013):24
+
+(Sat Jul 13 18:52:53 2013): ScreenColors [24]
 
