@@ -1,315 +1,89 @@
 *****************************************************************
-(Sat Jul 13 18:52:53 2013):MANTRA v13.07.01a Windows-x86(D) (C) 2012 Seth Parson
-(Sat Jul 13 18:52:53 2013):Log created
-(Sat Jul 13 18:52:53 2013):Windows 8 version 6.2  (Build 9200)
-(Sat Jul 13 18:52:53 2013):Setting up Client Data
-(Sat Jul 13 18:52:53 2013):Setting up GAF
-(Sat Jul 13 18:52:53 2013):Setting up GFX
-(Sat Jul 13 18:52:53 2013): ScreenWidth : 1920 
-(Sat Jul 13 18:52:53 2013): ScreenHeight: 1080 
-(Sat Jul 13 18:52:53 2013): ScreenColors: 24 
-(Sat Jul 13 18:52:53 2013): bFullScreen : 1 
-(Sat Jul 13 18:52:53 2013):Init SDL/OpenGL GFX Subsystem...
-(Sat Jul 13 18:52:53 2013):Software surfaces...
-(Sat Jul 13 18:52:53 2013):SDL initialized (Video memory:[0])
-(Sat Jul 13 18:52:53 2013):OpenGL initialized
-(Sat Jul 13 18:52:53 2013):Camera initialized
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0000.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0000.png SUCCESS (OPENGL[1]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0001.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0001.png SUCCESS (OPENGL[2]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0002.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0002.png SUCCESS (OPENGL[3]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0003.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0003.png SUCCESS (OPENGL[4]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0004.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0004.png SUCCESS (OPENGL[5]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0006.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0006.png SUCCESS (OPENGL[6]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0007.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0007.png SUCCESS (OPENGL[7]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0008.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0008.png SUCCESS (OPENGL[8]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0009.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0009.png SUCCESS (OPENGL[9]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0010.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0010.png SUCCESS (OPENGL[10]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0011.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0011.png SUCCESS (OPENGL[11]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0012.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0012.png SUCCESS (OPENGL[12]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0013.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0013.png SUCCESS (OPENGL[13]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0014.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0014.png SUCCESS (OPENGL[14]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0016.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0016.png SUCCESS (OPENGL[15]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0017.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0017.png SUCCESS (OPENGL[16]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0018.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0018.png SUCCESS (OPENGL[17]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0019.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0019.png SUCCESS (OPENGL[18]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0020.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0020.png SUCCESS (OPENGL[19]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0021.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0021.png SUCCESS (OPENGL[20]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0022.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0022.png SUCCESS (OPENGL[21]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0023.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0023.png SUCCESS (OPENGL[22]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0024.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0024.png SUCCESS (OPENGL[23]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0025.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0025.png SUCCESS (OPENGL[24]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0026.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0026.png SUCCESS (OPENGL[25]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0028.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0028.png SUCCESS (OPENGL[26]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0029.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0029.png SUCCESS (OPENGL[27]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0030.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0030.png SUCCESS (OPENGL[28]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0031.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0031.png SUCCESS (OPENGL[29]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0032.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0032.png SUCCESS (OPENGL[30]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0033.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0033.png SUCCESS (OPENGL[31]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0034.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0034.png SUCCESS (OPENGL[32]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0035.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0035.png SUCCESS (OPENGL[33]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0036.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0036.png SUCCESS (OPENGL[34]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0037.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0037.png SUCCESS (OPENGL[35]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0038.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0038.png SUCCESS (OPENGL[36]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0039.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0039.png SUCCESS (OPENGL[37]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0040.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0040.png SUCCESS (OPENGL[38]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0041.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0041.png SUCCESS (OPENGL[39]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0042.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0042.png SUCCESS (OPENGL[40]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0043.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0043.png SUCCESS (OPENGL[41]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0044.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0044.png SUCCESS (OPENGL[42]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0045.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0045.png SUCCESS (OPENGL[43]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0046.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0046.png SUCCESS (OPENGL[44]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0047.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0047.png SUCCESS (OPENGL[45]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0048.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0048.png SUCCESS (OPENGL[46]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0049.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0049.png SUCCESS (OPENGL[47]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0050.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0050.png SUCCESS (OPENGL[48]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0051.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0051.png SUCCESS (OPENGL[49]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0052.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0052.png SUCCESS (OPENGL[50]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0053.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0053.png SUCCESS (OPENGL[51]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0054.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0054.png SUCCESS (OPENGL[52]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0055.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0055.png SUCCESS (OPENGL[53]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0056.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0056.png SUCCESS (OPENGL[54]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0057.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0057.png SUCCESS (OPENGL[55]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0058.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0058.png SUCCESS (OPENGL[56]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0059.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0059.png SUCCESS (OPENGL[57]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0060.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0060.png SUCCESS (OPENGL[58]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0061.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0061.png SUCCESS (OPENGL[59]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0062.png
-(Sat Jul 13 18:52:53 2013):LOAD base/b0062.png SUCCESS (OPENGL[60]) 
-(Sat Jul 13 18:52:53 2013):Found base texture: base/b0063.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0063.png SUCCESS (OPENGL[61]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0064.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0064.png SUCCESS (OPENGL[62]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0065.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0065.png SUCCESS (OPENGL[63]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0066.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0066.png SUCCESS (OPENGL[64]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0067.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0067.png SUCCESS (OPENGL[65]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0068.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0068.png SUCCESS (OPENGL[66]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0069.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0069.png SUCCESS (OPENGL[67]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0070.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0070.png SUCCESS (OPENGL[68]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0071.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0071.png SUCCESS (OPENGL[69]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0072.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0072.png SUCCESS (OPENGL[70]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0073.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0073.png SUCCESS (OPENGL[71]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0074.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0074.png SUCCESS (OPENGL[72]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0075.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0075.png SUCCESS (OPENGL[73]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0076.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0076.png SUCCESS (OPENGL[74]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0077.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0077.png SUCCESS (OPENGL[75]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0078.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0078.png SUCCESS (OPENGL[76]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0079.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0079.png SUCCESS (OPENGL[77]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0080.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0080.png SUCCESS (OPENGL[78]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0081.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0081.png SUCCESS (OPENGL[79]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0082.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0082.png SUCCESS (OPENGL[80]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0083.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0083.png SUCCESS (OPENGL[81]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0084.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0084.png SUCCESS (OPENGL[82]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0085.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0085.png SUCCESS (OPENGL[83]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0086.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0086.png SUCCESS (OPENGL[84]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0087.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0087.png SUCCESS (OPENGL[85]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0088.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0088.png SUCCESS (OPENGL[86]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0089.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0089.png SUCCESS (OPENGL[87]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0090.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0090.png SUCCESS (OPENGL[88]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0091.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0091.png SUCCESS (OPENGL[89]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0092.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0092.png SUCCESS (OPENGL[90]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0093.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0093.png SUCCESS (OPENGL[91]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0094.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0094.png SUCCESS (OPENGL[92]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0095.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0095.png SUCCESS (OPENGL[93]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0096.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0096.png SUCCESS (OPENGL[94]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0097.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0097.png SUCCESS (OPENGL[95]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0098.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0098.png SUCCESS (OPENGL[96]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0099.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0099.png SUCCESS (OPENGL[97]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0100.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0100.png SUCCESS (OPENGL[98]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0102.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0102.png SUCCESS (OPENGL[99]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0103.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0103.png SUCCESS (OPENGL[100]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0104.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0104.png SUCCESS (OPENGL[101]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0106.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0106.png SUCCESS (OPENGL[102]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0107.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0107.png SUCCESS (OPENGL[103]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0108.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0108.png SUCCESS (OPENGL[104]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0109.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0109.png SUCCESS (OPENGL[105]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0110.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0110.png SUCCESS (OPENGL[106]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0111.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0111.png SUCCESS (OPENGL[107]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0112.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0112.png SUCCESS (OPENGL[108]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0113.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0113.png SUCCESS (OPENGL[109]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0114.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0114.png SUCCESS (OPENGL[110]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0115.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0115.png SUCCESS (OPENGL[111]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0116.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0116.png SUCCESS (OPENGL[112]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0117.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0117.png SUCCESS (OPENGL[113]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0118.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0118.png SUCCESS (OPENGL[114]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0119.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0119.png SUCCESS (OPENGL[115]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0120.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0120.png SUCCESS (OPENGL[116]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0121.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0121.png SUCCESS (OPENGL[117]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0122.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0122.png SUCCESS (OPENGL[118]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0123.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0123.png SUCCESS (OPENGL[119]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0125.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0125.png SUCCESS (OPENGL[120]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0152.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0152.png SUCCESS (OPENGL[121]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/b0153.png
-(Sat Jul 13 18:52:54 2013):LOAD base/b0153.png SUCCESS (OPENGL[122]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/default.png
-(Sat Jul 13 18:52:54 2013):LOAD base/default.png SUCCESS (OPENGL[123]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/grass.png
-(Sat Jul 13 18:52:54 2013):LOAD base/grass.png SUCCESS (OPENGL[124]) 
-(Sat Jul 13 18:52:54 2013):Found base texture: base/sun.png
-(Sat Jul 13 18:52:54 2013):LOAD base/sun.png SUCCESS (OPENGL[125]) 
-(Sat Jul 13 18:52:54 2013):Base Textures initialized
-(Sat Jul 13 18:52:54 2013):Default Texture initialized
-(Sat Jul 13 18:52:54 2013):Map mesh initialized
-(Sat Jul 13 18:52:54 2013):pManMap initialized
-(Sat Jul 13 18:52:54 2013):GFX Initialized
-(Sat Jul 13 18:52:54 2013):Setting up GUI
-(Sat Jul 13 18:52:54 2013):filename:mouse/default.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):MOUSE TEXTURE: mouse/default.png
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt01.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt02.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt03.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt04.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt05.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt06.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt07.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt08.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt10.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):filename:fonts/fnt11.png bit_depth = 8
-(Sat Jul 13 18:52:54 2013):Setting up NETWORK
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 0] located @ (434.369934,29.515366,151.951660)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 1] located @ (459.212006,21.375164,279.763184)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 2] located @ (377.132477,21.916868,51.515244)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 3] located @ (166.112244,23.523666,438.596771)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 4] located @ (460.707428,23.093967,476.989044)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 5] located @ (491.332733,23.450117,203.161713)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 6] located @ (398.159729,23.474533,351.054413)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 7] located @ (299.844360,25.649281,283.913696)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 8] located @ (372.753082,25.064547,141.209137)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 9] located @ (227.729111,29.018219,380.748932)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 10] located @ (400.311279,26.857510,476.058228)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 11] located @ (50.035095,21.777702,395.687744)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 12] located @ (337.855164,25.519577,360.850861)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 13] located @ (79.073456,24.879299,326.441223)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 14] located @ (489.989929,21.789301,301.690735)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 15] located @ (39.933468,24.588762,110.965302)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 16] located @ (377.849670,26.169317,176.076538)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 17] located @ (284.951324,20.053102,428.266235)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 18] located @ (30.228584,29.861141,333.246857)
-(Sat Jul 13 18:52:54 2013):Created new entity [Entity 19] located @ (272.057251,27.834406,31.800287)
-(Sat Jul 13 18:52:54 2013):******************** FINISHED STARTUP ***************************
-(Sat Jul 13 18:52:54 2013):MAIN_MENU WHAT
-(Sat Jul 13 18:53:05 2013):setgamemode INITIALIZE_GAME
-(Sat Jul 13 18:53:05 2013):con_setgamemode()
-(Sat Jul 13 18:53:05 2013):Done initializing player setup...
-(Sat Jul 13 18:53:10 2013):******************** START SHUTDOWN ***************************
-(Sat Jul 13 18:53:10 2013):Client data saved...
-(Sat Jul 13 18:53:11 2013):SDL/OpenGL GFX subsystem shutdown...
-(Sat Jul 13 18:53:11 2013):Mantra engine shut down!
-*****************************************************************
+(Mon Jul 15 04:05:28 2013):MANTRA v13.07.01a Linux-other (C) 2012 Seth Parson
+(Mon Jul 15 04:05:28 2013):Log created
+(Mon Jul 15 04:05:28 2013):Linux-other
+(Mon Jul 15 04:05:28 2013):Setting up Client Data
+(Mon Jul 15 04:05:28 2013):Setting up GAF
+(Mon Jul 15 04:05:28 2013):Setting up GFX
+(Mon Jul 15 04:05:28 2013): ScreenWidth : 1920 
+(Mon Jul 15 04:05:28 2013): ScreenHeight: 1080 
+(Mon Jul 15 04:05:28 2013): ScreenColors: 24 
+(Mon Jul 15 04:05:28 2013): bFullScreen : 1 
+(Mon Jul 15 04:05:28 2013):Init SDL/OpenGL GFX Subsystem...
+(Mon Jul 15 04:05:28 2013):Failed getting Video Info : No available video device
+(Mon Jul 15 04:05:28 2013):Setting up GUI
+(Mon Jul 15 04:05:28 2013):C_GUI:C_GUI(C_GFX *pInGFX, CGAF *pInGAF, CLog *pinLog)
+(Mon Jul 15 04:05:28 2013):C_GUI::init()
+(Mon Jul 15 04:05:28 2013):C_GUI::init() -> GC_TYPE setup
+(Mon Jul 15 04:05:28 2013):C_GUI::init() -> GC_PROP setup
+(Mon Jul 15 04:05:28 2013):C_GUI::init() -> GC_RELATIVE setup
+(Mon Jul 15 04:05:28 2013):C_GUI: Console created
+(Mon Jul 15 04:05:28 2013):>> C_MouseCursor::C_MouseCursor(CGAF *pInGAF, CLog *pInLog) OK
+(Mon Jul 15 04:05:28 2013):filename:mouse/default.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):MOUSE TEXTURE: mouse/default.png
+(Mon Jul 15 04:05:28 2013):Begin Fonts init...
+(Mon Jul 15 04:05:28 2013):Fonts initialized...
+(Mon Jul 15 04:05:28 2013):Begin Fonts load...
+(Mon Jul 15 04:05:28 2013):Begin Fonts destroy...
+(Mon Jul 15 04:05:28 2013):Fonts destroyed...
+(Mon Jul 15 04:05:28 2013):Begin Fonts init...
+(Mon Jul 15 04:05:28 2013):Fonts initialized...
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt01.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt02.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt03.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt04.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt05.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt06.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt07.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt08.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt10.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):Fonts load failure...
+(Mon Jul 15 04:05:28 2013):Setting up NETWORK
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 0 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 1 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 2 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 3 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 4 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 5 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 5 1 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 6 > exec autoexec.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 0 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 1 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 2 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 3 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 4 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 5 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 5 1 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):C_CONS::_Execute 6 > exec config.cfg...
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 0] located @ (402.656158,21.389713,49.431656)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 1] located @ (115.213554,21.942055,263.528503)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 2] located @ (5.675339,22.043751,238.636795)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 3] located @ (214.110718,29.045092,322.537292)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 4] located @ (384.521118,23.560486,469.736450)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 5] located @ (73.002037,26.603664,214.646011)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 6] located @ (460.977875,21.052290,54.629932)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 7] located @ (239.298965,24.528889,482.267517)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 8] located @ (229.771469,21.639624,120.822914)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 9] located @ (452.213318,25.508343,471.611755)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 10] located @ (154.963760,23.561466,41.097393)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 11] located @ (204.395416,25.865738,138.200150)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 12] located @ (467.923920,25.979244,240.387741)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 13] located @ (206.560715,20.261459,192.642334)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 14] located @ (29.098009,27.951881,370.666626)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 15] located @ (498.834473,29.411922,200.849854)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 16] located @ (213.480453,28.631479,253.464340)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 17] located @ (268.110382,23.417459,479.908752)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 18] located @ (250.377930,28.012888,61.889915)
+(Mon Jul 15 04:05:28 2013):Created new entity [Entity 19] located @ (371.200836,27.057156,337.307068)
+(Mon Jul 15 04:05:28 2013):******************** FINISHED STARTUP ***************************
+(Mon Jul 15 04:05:28 2013):MainGameLoop 1
+(Mon Jul 15 04:05:28 2013):MainGameLoop 2
+(Mon Jul 15 04:05:28 2013):MainGameLoop 3
+(Mon Jul 15 04:05:28 2013):MainGameLoop 4
+(Mon Jul 15 04:05:28 2013):MainGameLoop 5
+(Mon Jul 15 04:05:28 2013):MainGameLoop 6
+(Mon Jul 15 04:05:28 2013):filename:mouse/default.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):MOUSE TEXTURE: mouse/default.png
+(Mon Jul 15 04:05:28 2013):MainGameLoop 7
+(Mon Jul 15 04:05:28 2013):filename:fonts/fnt05.png bit_depth = 8
+(Mon Jul 15 04:05:28 2013):MainGameLoop 8
