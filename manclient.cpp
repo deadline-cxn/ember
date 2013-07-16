@@ -351,41 +351,23 @@ void MainGameLoop(void) { // **  Main Game Loop
 
     if( pGUI->doInput() == SDLK_F12 ) { bShutDown=true; return; }
 
-    pLog->_DebugAdd("MainGameLoop 2");
-
     if(pFMGS)
         pFMGS->DoNetwork();    // Get any network messages
 
-    pLog->_DebugAdd("MainGameLoop 3");
-
     pGFX->BeginScene();
-
-    pLog->_DebugAdd("MainGameLoop 4");
 
     DoGameMode();
 
-    pLog->_DebugAdd("MainGameLoop 5");
-
-    //pGFX->DrawSun();
-    //DoEntities();   // Update Entity information
-
-    pLog->_DebugAdd("MainGameLoop 6");
-
     pGUI->draw();
-
-    pLog->_DebugAdd("MainGameLoop 7");
-
     pGUI->drawFPS(0,0);
 
-    pLog->_DebugAdd("MainGameLoop 8");
 
-    pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),0); //pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),0);
-    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),0);
-    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),0);
+    pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),5,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),3,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),4,1);
 
     pGFX->EndScene();
 
-    pLog->_DebugAdd("MainGameLoop 9");
 
 }
 void SetGameMode(int x){
@@ -443,11 +425,9 @@ bool DoGameMode(void){
 
         //SDL_WM_SetCaption(va("EGC %s(%s) Net Revision(%s) %s",VERSION,CPUSTRING,NET_REVISION,COPYRIGHT),"icon");
 
-        if(pClientData)
-        {
+        if(pClientData) {
             pClientData->ServerListOffset=0;
             //pClientData->SelectedServer=MAX_SERVERS+1;
-
         }
 
         //DEL(pFMMS);
@@ -517,8 +497,7 @@ bool DoGameMode(void){
 
         strcpy(pClientData->ServerID,"s001-frag-mere");
         if(     (!strlen(pClientData->Name)) ||
-                (!strlen(pClientData->Password)) )
-        {
+                (!strlen(pClientData->Password)) ) {
             pGUI->prompt("Must enter user info to proceed.","nop");
             SetGameMode(GATHER_SERVER_LIST);
             break;
@@ -565,7 +544,7 @@ bool DoGameMode(void){
 
         //pGUI->MOUSEMODE=MP_SYSTEMBUSY;
 
-        pGUI->gPrint(270,270,"^&^7Connecting to the server...",0);
+        pGUI->gPrint(270,270,"^&^7Connecting to the server...",1);
 
         if(pFMGS->spin_timer->Up()){
             pGUI->prompt("^&^6No response from server^1!","nop");
@@ -593,7 +572,7 @@ bool DoGameMode(void){
 
         //MOUSEMODE=MP_SYSTEMBUSY;
 
-        pGUI->gPrint(270,270,"^&^7Updating Server Information...",0);
+        pGUI->gPrint(270,270,"^&^7Updating Server Information...",1);
 
         if(pFMGS->spin_timer->Up()){
             //pGUI->Prompt("^&^6No response from server^1!","nop");
@@ -621,7 +600,7 @@ bool DoGameMode(void){
 
     case GET_CHARACTERS_SPIN:
 
-        pGUI->gPrint(270,270,"^&^7Downloading character information...",0);
+        pGUI->gPrint(270,270,"^&^7Downloading character information...",1);
 
         if(pFMGS->spin_timer->Up()){
             //    pGUI->Prompt("^&^6No response from server^1!","nop");
@@ -632,8 +611,6 @@ bool DoGameMode(void){
 
 
     case CHOOSE_CHARACTER:
-
-
         SetGameMode(CHOOSE_CHARACTER_SPIN);
 
     case CHOOSE_CHARACTER_SPIN: break;
@@ -719,16 +696,13 @@ bool DoGameMode(void){
         pGUI->clear();
         pGUI->call("gameon.gui");
 
-
 /*      pGFX->pCamera->xpos=-48;
         pGFX->pCamera->ypos=-21;
         pGFX->pCamera->zpos=-157;
         pGFX->pCamera->xrot=902;
         pGFX->pCamera->yrot=1783; */
 
-
         pLog->_Add("Done initializing player setup...");
-
         SetGameMode(ITEM_INITIALIZE);
 
         break;
@@ -739,6 +713,8 @@ bool DoGameMode(void){
 
     case GAME_ON:
         pGFX->RenderScene();
+        pGFX->DrawSun();
+        DoEntities();
         break;
 
     case GAME_LIMBO:
@@ -765,7 +741,6 @@ bool DoGameMode(void){
         pGUI->call("guictrledit.gui");
 
         pClientData->bDrawMap=false;
-
 
         pLog->_Add("Edit World Init End");
 
@@ -1065,35 +1040,30 @@ void InitializeEntities(void){
     }
     pFirstNTT=new C_Entity(pLog,pGAF,pGFX,0);
     pNTT=pFirstNTT;
-
     int i,numntt;
     numntt=20;
     for(i=0;i<numntt;i++){
         strcpy(pNTT->name,va("Entity %d",i));
-
-        pNTT->Pos.x = ( (float)rand()/(float)RAND_MAX)*50;
-        pNTT->Pos.y = (((float)rand()/(float)RAND_MAX)*10)+20;
-        pNTT->Pos.z = ( (float)rand()/(float)RAND_MAX)*50;
+        pNTT->Pos.x = ( (float)rand()/(float)RAND_MAX)*5;
+        pNTT->Pos.y = (((float)rand()/(float)RAND_MAX)*5)+20;
+        pNTT->Pos.z = ( (float)rand()/(float)RAND_MAX)*5;
         pNTT->type  = ENTITY_STATIC;
-
         pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->name,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
-
         pNTT->pNext=new C_Entity(pLog,pGAF,pGFX,0);
+        pNTT->pTexture=0;
+        if(pGFX->pDefaultTexture) pNTT->pTexture=pGFX->pDefaultTexture;
         pNTT=pNTT->pNext;
     }
-
     pFirstNTT->Pos.x = 0.0f;
     pFirstNTT->Pos.y = 0.0f;
     pFirstNTT->Pos.z = 0.0f;
 }
+
 void DoEntities(void) { // Update Entities
-    glMatrixMode(GL_MODELVIEW);
-    glEnable(GL_TEXTURE_2D);
     pNTT=pFirstNTT;
     while(pNTT) {
-        glLoadIdentity ();
-        glBindTexture(GL_TEXTURE_2D, pGFX->pDefaultTexture->bmap);
-        if(pGFX->pCamera) pGFX->pCamera->Go();
+        glLoadIdentity();
+        pGFX->pCamera->Go();
         pNTT->Draw();
         pNTT=pNTT->pNext;
     }

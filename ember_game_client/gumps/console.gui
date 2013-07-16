@@ -7,7 +7,7 @@ y=0
 w=1919
 h=320
 relativeto=
-media=0
+media=base/b0000.png
 
 [CTRL]
 name=cons

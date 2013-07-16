@@ -8,13 +8,13 @@ x=0
 y=0
 w=1919
 h=17
-media=1
+media=base/b0001.png
 
 [CTRL]
 name=terraform
-media=34
-media_hover=34
-media_click=35
+media=base/b0034.png
+media_hover=base/b0034.png
+media_click=base/b0035.png
 hover_text=terraform
 x=-2
 y=19
@@ -26,9 +26,9 @@ console=map.terraform
 
 [CTRL]
 name=guistumpeditor
-media=44
-media_hover=44
-media_click=45
+media=base/b0044.png
+media_hover=base/b0044.png
+media_click=base/b0045.png
 hover_text=guistumpeditor
 x=31
 y=19
@@ -40,9 +40,9 @@ console=guicall guistumpedit.gui;guicall guictrledit.gui
 
 [CTRL]
 name=console
-media=53
-media_hover=53
-media_click=76
+media=base/b0053.png
+media_hover=base/b0053.png
+media_click=base/b0076.png
 hover_text=console
 x=62
 y=18
@@ -54,9 +54,9 @@ console=guicall console.gui
 
 [CTRL]
 name=main
-media=152
-media_hover=152
-media_click=153
+media=base/b0152.png
+media_hover=base/b0152.png
+media_click=base/b0153.png
 hover_text=main
 x=1239
 y=20

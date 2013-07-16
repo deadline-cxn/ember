@@ -188,6 +188,7 @@
 		<Unit filename="../../dlstorm/glerrors.h" />
 		<Unit filename="../manclient.cpp" />
 		<Unit filename="../manclient.h" />
+		<Unit filename="client.ini" />
 		<Unit filename="client.log" />
 		<Extensions>
 			<code_completion />

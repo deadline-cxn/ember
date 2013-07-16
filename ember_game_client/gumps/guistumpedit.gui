@@ -12,9 +12,9 @@ media=
 
 [CTRL]
 name=loadstump
-media=80
-media_hover=80
-media_click=78
+media=base/b0080.png
+media_hover=base/b0080.png
+media_click=base/b0078.png
 hover_text=loadstump
 x=2
 y=18
@@ -27,9 +27,9 @@ console=guiedit $name
 
 [CTRL]
 name=savestump
-media=79
-media_hover=79
-media_click=78
+media=base/b0079.png
+media_hover=base/b0079.png
+media_click=base/b0078.png
 hover_text=savestump
 x=34
 y=18
@@ -44,9 +44,9 @@ console=guistore
 name=OPENFILE
 datafill=name
 datafilltarget=guistumpedit.gui
-media=86
-media_hover=86
-media_click=87
+media=base/b0086.png
+media_hover=base/b0086.png
+media_click=base/b0087.png
 hover_text=OPENFILE
 x=66
 y=18
@@ -59,9 +59,9 @@ action=gumps
 
 [CTRL]
 name=RENDER
-media=85
-media_hover=85
-media_click=85
+media=base/b0085.png
+media_hover=base/b0085.png
+media_click=base/b0085.png
 hover_text=RENDER
 x=578
 y=188
@@ -189,7 +189,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_SIZEABLE
-media=7
+media=base/b0007.png
 hover_text=FM_GP_SIZEABLE
 x=210
 y=19
@@ -212,7 +212,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_CLOSEX
-media=7
+media=base/b0007.png
 hover_text=FM_GP_CLOSEX
 x=210
 y=35
@@ -235,7 +235,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_MOVEABLE
-media=7
+media=base/b0007.png
 hover_text=FM_GP_MOVEABLE
 x=210
 y=51
@@ -258,7 +258,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_MENU
-media=7
+media=base/b0007.png
 hover_text=FM_GP_MENU
 x=210
 y=195
@@ -281,7 +281,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_USEBACKGROUND
-media=7
+media=base/b0007.png
 hover_text=FM_GP_USEBACKGROUND
 x=527
 y=112
@@ -304,7 +304,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_BORDER
-media=7
+media=base/b0007.png
 hover_text=FM_GP_BORDER
 x=432
 y=161
@@ -327,7 +327,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_MINIMIZE
-media=7
+media=base/b0007.png
 hover_text=FM_GP_MINIMIZE
 x=210
 y=131
@@ -350,7 +350,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_CLIENT_ONLY
-media=7
+media=base/b0007.png
 hover_text=FM_GP_CLIENT_ONLY
 x=210
 y=83
@@ -373,7 +373,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_ALWAYS_ON_BOTTOM
-media=7
+media=base/b0007.png
 hover_text=FM_GP_ALWAYS_ON_BOTTOM
 x=210
 y=99
@@ -397,7 +397,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_ALWAYS_ON_TOP
-media=7
+media=base/b0007.png
 hover_text=FM_GP_ALWAYS_ON_TOP
 x=210
 y=115
@@ -421,7 +421,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_NO_RETURN
-media=7
+media=base/b0007.png
 hover_text=FM_GP_NO_RETURN
 x=210
 y=179
@@ -444,7 +444,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_DO_NOT_DIE
-media=7
+media=base/b0007.png
 hover_text=FM_GP_DO_NOT_DIE
 x=210
 y=66
@@ -467,7 +467,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_FULLSCREEN
-media=7
+media=base/b0007.png
 hover_text=FM_GP_FULLSCREEN
 x=210
 y=147
@@ -490,7 +490,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_TOGGLE_STATE
-media=7
+media=base/b0007.png
 hover_text=FM_GP_TOGGLE_STATE
 x=210
 y=162
@@ -623,7 +623,7 @@ type=FM_GC_TEXTBOX
 
 [CTRL]
 name=default_focus_control_st
-media=8
+media=base/b0008.png
 media_hover=4
 media_click=29
 x=3

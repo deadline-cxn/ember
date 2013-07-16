@@ -8,13 +8,13 @@ y=349
 w=324
 h=449
 relativeto=GUI_TOP_LEFT
-media=9
+media=base/b0009.png
 
 [CTRL]
 name=RENDER
-media=85
-media_hover=85
-media_click=85
+media=base/b0085.png
+media_hover=base/b0085.png
+media_click=base/b0085.png
 hover_text=Render Control
 x=275
 y=345
@@ -196,7 +196,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_USEBACKGROUND
-media=7
+media=base/b0007.png
 hover_text=FM_GP_USEBACKGROUND
 x=128
 y=331
@@ -219,7 +219,7 @@ fontbank=1
 
 [CTRL]
 name=FM_GP_BORDER
-media=7
+media=base/b0007.png
 hover_text=FM_GP_BORDER
 x=59
 y=136
@@ -332,7 +332,7 @@ type=FM_GC_TEXTBOX
 
 [CTRL]
 name=stmedia_hover
-media=2
+media=base/b0002.png
 x=95
 y=346
 w=104
@@ -351,7 +351,7 @@ type=FM_GC_TEXTBOX
 
 [CTRL]
 name=stmedia_click
-media=2
+media=base/b0002.png
 x=93
 y=366
 w=104
@@ -584,9 +584,9 @@ type=FM_GC_TEXTBOX
 
 [CTRL]
 name=remove
-media=50
-media_hover=50
-media_click=51
+media=base/b0050.png
+media_hover=base/b0050.png
+media_click=base/b0051.png
 x=276
 y=392
 w=308
@@ -599,7 +599,7 @@ console=guiremovecontrol $parentstumpname $name
 
 [CTRL]
 name=remove_si
-media=6
+media=base/b0006.png
 x=280
 y=395
 w=22

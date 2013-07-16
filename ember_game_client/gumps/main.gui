@@ -8,7 +8,7 @@ y=0
 w=1920
 h=1200
 relativeto=
-media=75
+media=base/b0075.png
 
 [CTRL]
 name=stlogin
