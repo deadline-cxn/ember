@@ -128,10 +128,22 @@ value= Test Map
 console=setgamemode INITIALIZE_GAME
 
 [CTRL]
+name=modeleditor
+hover_text=Model Editor
+x=0
+y=80
+w=128
+h=32
+relativeto=GUI_MIDDLE_CENTER
+type=FM_GC_BUTTON
+value= Model Editor
+console=setgamemode EDIT_MODELS_INIT
+
+[CTRL]
 name=quit
 hover_text=quit
 x=0
-y=80
+y=120
 w=160
 h=32
 relativeto=GUI_MIDDLE_CENTER

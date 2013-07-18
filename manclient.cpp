@@ -362,9 +362,9 @@ void MainGameLoop(void) { // **  Main Game Loop
     pGUI->drawFPS(0,0);
 
 
-    pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),5,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
     pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),4,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),3,1);
 
     pGFX->EndScene();
 
@@ -712,9 +712,14 @@ bool DoGameMode(void){
         break;
 
     case GAME_ON:
+
+        // GL_SELECT
         pGFX->RenderScene();
         pGFX->DrawSun();
         DoEntities();
+        // GL_RENDER
+
+
         break;
 
     case GAME_LIMBO:
@@ -754,10 +759,19 @@ bool DoGameMode(void){
         pGFX->pCamera->yrot=1783;  */
 
     case EDIT_WORLD:
-
         // pGFX->RenderScene();
+        break;
 
-    break;
+    case EDIT_MODELS_INIT:
+        pGUI->clear();
+        // do stuff
+        SetGameMode(EDIT_MODELS);
+        break;
+
+    case EDIT_MODELS:
+        pGUI->gPrint(15,32,"GAME MODE: EDIT_MODELS",3,1);
+
+        break;
 
     default:
         break; // End switch(GAME_MODE)
@@ -985,6 +999,8 @@ bool doInit(void){
 	pGUI->pCons->intmap["GAME_EDITOR"]       = GAME_EDITOR;
 	pGUI->pCons->intmap["EDIT_WORLD_INIT"]   = EDIT_WORLD_INIT;
 	pGUI->pCons->intmap["EDIT_WORLD"]        = EDIT_WORLD;
+	pGUI->pCons->intmap["EDIT_MODELS_INIT"]   = EDIT_MODELS_INIT;
+	pGUI->pCons->intmap["EDIT_MODELS"]        = EDIT_MODELS;
     pGUI->pCons->intmap["QUIT"]              = QUIT;
     pGUI->pCons->intmap["WAIT_LOOP"]         = WAIT_LOOP;
     pGUI->pCons->intmap["DEBUG_LOOP"]        = DEBUG_LOOP;
