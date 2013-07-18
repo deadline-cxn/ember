@@ -749,7 +749,7 @@
 1373466484 source:c:\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1373466484 c:\projects\dlstorm\c_gl3dmodel.h
+1374155882 c:\projects\dlstorm\c_gl3dmodel.h
 	<string>
 	<vector>
 	"s_gnu.h"
@@ -762,7 +762,7 @@
 1373466484 c:\projects\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1373893320 source:c:\projects\dlstorm\c_glfont.cpp
+1374154992 source:c:\projects\dlstorm\c_glfont.cpp
 	"c_glfont.h"
 	"c_gltexture.h"
 	"SDL.h"
@@ -1023,10 +1023,10 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1373982240 source:c:\projects\ember\manclient.cpp
+1374153639 source:c:\projects\ember\manclient.cpp
 	"manclient.h"
 
-1372686021 c:\projects\ember\manclient.h
+1374153639 c:\projects\ember\manclient.h
 	"c_data.h"
 	"c_timer.h"
 	"c_snd.h"
@@ -1053,10 +1053,10 @@
 1373634363 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1373983639 source:c:\projects\dlstorm\c_gfx.cpp
+1374155905 source:c:\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1373981810 c:\projects\dlstorm\c_gfx.h
+1374155390 c:\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>

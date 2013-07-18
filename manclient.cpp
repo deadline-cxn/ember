@@ -53,7 +53,7 @@ C_Sound     *pSND;      // FMOD Sounds
 
 #endif
 
-int main(int argc, char *argv[]){ // ** SDL main
+int main(int argc, char *argv[]) { // ** SDL main
     bShutDown=false;
     if(doInit()) while(!bShutDown) MainGameLoop();
     ShutDown();
@@ -63,27 +63,25 @@ int main(int argc, char *argv[]){ // ** SDL main
 
 ////////////////////////////////////////////////////// Console STUFF
 
-void con_getint_str(char *pString, int n){
-                                            char temp[1024]; memset(temp,0,1024);
-                                            map <string, int>::iterator ii;
-                                            for( ii=pGUI->pCons->intmap.begin(); ii!=pGUI->pCons->intmap.end(); ++ii)
-                                            {
-                                                if( ( (*ii).second ) == (n) )
-                                                {
-                                                    strcat(temp,va("%s ",(const char *)(*ii).first.c_str()));
-                                                }
-                                            }
-                                            while(temp[strlen(temp)-1]==' ') temp[strlen(temp)-1]=0;
-                                            strcpy(pString,temp);
-                                            return;
-                                        }
-int  con_getint(const string &s){
-                                            if( pGUI->pCons->intmap.find(s.c_str()) != pGUI->pCons->intmap.end() )
-                                            {
-                                                return (pGUI->pCons->intmap.find(s.c_str())->second);
-                                            }
-                                            return 0;
-                                        }
+void con_getint_str(char *pString, int n) {
+    char temp[1024];
+    memset(temp,0,1024);
+    map <string, int>::iterator ii;
+    for( ii=pGUI->pCons->intmap.begin(); ii!=pGUI->pCons->intmap.end(); ++ii) {
+        if( ( (*ii).second ) == (n) ) {
+            strcat(temp,va("%s ",(const char *)(*ii).first.c_str()));
+        }
+    }
+    while(temp[strlen(temp)-1]==' ') temp[strlen(temp)-1]=0;
+    strcpy(pString,temp);
+    return;
+}
+int  con_getint(const string &s) {
+    if( pGUI->pCons->intmap.find(s.c_str()) != pGUI->pCons->intmap.end() ) {
+        return (pGUI->pCons->intmap.find(s.c_str())->second);
+    }
+    return 0;
+}
 void con_functest(const string &s)      {
     pLog->_Add("functest(%s)",(char *)s.c_str());
 }
@@ -95,123 +93,147 @@ void con_setgamemode(const string &s)   {
 
 }
 void con_guirender(const string &s) {
-                                            char name[1024];  memset(name,0,1024);
-                                            char media[1024]; memset(media,0,1024);
-                                            char temp[1024];  memset(temp,0,1024);
-                                            int x,y,w,h,props;
-                                            pGUI->getdata(name,"name");
-                                            pGUI->getdata(media,"media");
-                                            pGUI->getdata(temp,"x"); x=atoi(temp);
-                                            pGUI->getdata(temp,"y"); y=atoi(temp);
-                                            pGUI->getdata(temp,"w"); w=atoi(temp);
-                                            pGUI->getdata(temp,"h"); h=atoi(temp);
-                                            props=0;
-                                            map <string, int>::iterator ii;
-                                            for( ii=pGUI->GC_PROP.begin(); ii!=pGUI->GC_PROP.end(); ++ii)
-                                                if(dscc(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
-                                                    props|=(*ii).second;
+    char name[1024];
+    memset(name,0,1024);
+    char media[1024];
+    memset(media,0,1024);
+    char temp[1024];
+    memset(temp,0,1024);
+    int x,y,w,h,props;
+    pGUI->getdata(name,"name");
+    pGUI->getdata(media,"media");
+    pGUI->getdata(temp,"x");
+    x=atoi(temp);
+    pGUI->getdata(temp,"y");
+    y=atoi(temp);
+    pGUI->getdata(temp,"w");
+    w=atoi(temp);
+    pGUI->getdata(temp,"h");
+    h=atoi(temp);
+    props=0;
+    map <string, int>::iterator ii;
+    for( ii=pGUI->GC_PROP.begin(); ii!=pGUI->GC_PROP.end(); ++ii)
+        if(dscc(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
+            props|=(*ii).second;
 
-                                            pGUI->add_stump(name,x,y,w,h,props,media);
+    pGUI->add_stump(name,x,y,w,h,props,media);
 
-                                            pGUI->getdata(temp,"caption");
-                                            if(pGUI->get_stump(name))
-                                            {
-                                                strcpy(pGUI->get_stump(name)->caption,temp);
-                                                pGUI->get_stump(name)->bEditing=true;
+    pGUI->getdata(temp,"caption");
+    if(pGUI->get_stump(name)) {
+        strcpy(pGUI->get_stump(name)->caption,temp);
+        pGUI->get_stump(name)->bEditing=true;
 
-                                                for(ii=pGUI->GC_RELATIVE.begin(); ii!=pGUI->GC_RELATIVE.end(); ++ii)
-                                                    if(dscc(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
-                                                        pGUI->get_stump(name)->iRelativeTo=(*ii).second;
-                                            }
-                                        }
+        for(ii=pGUI->GC_RELATIVE.begin(); ii!=pGUI->GC_RELATIVE.end(); ++ii)
+            if(dscc(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
+                pGUI->get_stump(name)->iRelativeTo=(*ii).second;
+    }
+}
 void con_guictrlrender(const string &s) {
-                                            vector <string> vs;
-                                            vector <string> ncmd=explode(" ",s.c_str());
+    vector <string> vs;
+    vector <string> ncmd=explode(" ",s.c_str());
 
-                                            char name[1024]; memset(name,0,1024);   strcpy(name,pGUI->getdata("name"));
-                                            char media[1024];memset(media,0,1024);  strcpy(media,pGUI->getdata("media"));
-                                            char value[1024];memset(value,0,1024);  strcpy(value,pGUI->getdata("value"));
-                                            char pstump[1024];memset(pstump,0,1024); strcpy(pstump,pGUI->getdata("parentstumpname"));
+    char name[1024];
+    memset(name,0,1024);
+    strcpy(name,pGUI->getdata("name"));
+    char media[1024];
+    memset(media,0,1024);
+    strcpy(media,pGUI->getdata("media"));
+    char value[1024];
+    memset(value,0,1024);
+    strcpy(value,pGUI->getdata("value"));
+    char pstump[1024];
+    memset(pstump,0,1024);
+    strcpy(pstump,pGUI->getdata("parentstumpname"));
 
-                                            int props=0;
-                                            C_GCTRL *tctrl;
-                                            tctrl=0;
+    int props=0;
+    C_GCTRL *tctrl;
+    tctrl=0;
 
-                                            if(pGUI->get_stump(pstump))
-                                            {
-                                                pLog->_Add("ADD CONTROL TO STUMP: %s",pGUI->get_stump(pstump)->name);
+    if(pGUI->get_stump(pstump)) {
+        pLog->_Add("ADD CONTROL TO STUMP: %s",pGUI->get_stump(pstump)->name);
 
-                                                props=0;
-                                                map <string, int>::iterator ii;
-                                                for( ii=pGUI->GC_PROP.begin(); ii!=pGUI->GC_PROP.end(); ++ii)
-                                                    if(dscc(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
-                                                        props|=(*ii).second;
+        props=0;
+        map <string, int>::iterator ii;
+        for( ii=pGUI->GC_PROP.begin(); ii!=pGUI->GC_PROP.end(); ++ii)
+            if(dscc(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
+                props|=(*ii).second;
 
-                                                pLog->_Add(" %d %s",
-                                                           pGUI->GC_TYPE[pGUI->getdata("type")],
-                                                           pGUI->getdata("type"));
+        pLog->_Add(" %d %s",
+                   pGUI->GC_TYPE[pGUI->getdata("type")],
+                   pGUI->getdata("type"));
 
-                                                pGUI->get_stump(pstump)->add_control(    name,
-                                                          pGUI->GC_TYPE[pGUI->getdata("type")],
-                                                                atoi(   pGUI->getdata("x") ),
-                                                                atoi(   pGUI->getdata("y") ),
-                                                                atoi(   pGUI->getdata("w") ),
-                                                                atoi(   pGUI->getdata("h") ),
-                                                                        props,
-                                                                        media,
-                                                                        value);
+        pGUI->get_stump(pstump)->add_control(    name,
+                pGUI->GC_TYPE[pGUI->getdata("type")],
+                atoi(   pGUI->getdata("x") ),
+                atoi(   pGUI->getdata("y") ),
+                atoi(   pGUI->getdata("w") ),
+                atoi(   pGUI->getdata("h") ),
+                props,
+                media,
+                value);
 
-                                                tctrl=pGUI->get_stump(pstump)->get_control(name);
-                                                if(tctrl)
-                                                {
+        tctrl=pGUI->get_stump(pstump)->get_control(name);
+        if(tctrl) {
 
-                                                    pLog->_Add("FOUND CTRL %s IN STUMP %s",tctrl->name,pGUI->get_stump(pstump)->name);
-                                                    tctrl->bEditing=true;
+            pLog->_Add("FOUND CTRL %s IN STUMP %s",tctrl->name,pGUI->get_stump(pstump)->name);
+            tctrl->bEditing=true;
 
-                                                    strcpy(tctrl->media_hover,pGUI->getdata("media_hover"));
-                                                    strcpy(tctrl->media_click,pGUI->getdata("media_click"));
-                                                    strcpy(tctrl->console,pGUI->getdata("console"));
-                                                    strcpy(tctrl->hover_text,pGUI->getdata("hover_text"));
-                                                    strcpy(tctrl->group,pGUI->getdata("group"));
-                                                    strcpy(tctrl->action,pGUI->getdata("action"));
+            strcpy(tctrl->media_hover,pGUI->getdata("media_hover"));
+            strcpy(tctrl->media_click,pGUI->getdata("media_click"));
+            strcpy(tctrl->console,pGUI->getdata("console"));
+            strcpy(tctrl->hover_text,pGUI->getdata("hover_text"));
+            strcpy(tctrl->group,pGUI->getdata("group"));
+            strcpy(tctrl->action,pGUI->getdata("action"));
 
-                                                    //strcpy(tctrl->relativeto,pGUI->getdata("relativeto"));
-                                                    for(ii=pGUI->GC_RELATIVE.begin(); ii!=pGUI->GC_RELATIVE.end(); ++ii)
-                                                        if(dscc(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
-                                                            tctrl->iRelativeTo=(*ii).second;
-
-
-                                                    vs=explode(",", pGUI->getdata("border_color"));
-                                                    if(vs.size()>1) tctrl->border_color=RGB(atoi(vs[0].c_str()),atoi(vs[1].c_str()),atoi(vs[2].c_str()) );
-
-                                                    vs=explode(",", pGUI->getdata("background_color"));
-                                                    if(vs.size()>1) tctrl->background_color=RGB(atoi(vs[0].c_str()),atoi(vs[1].c_str()),atoi(vs[2].c_str()) );
-
-                                                    tctrl->font=atoi(pGUI->getdata("font"));
-                                                    tctrl->fontbank=atoi(pGUI->getdata("fontbank"));
+            //strcpy(tctrl->relativeto,pGUI->getdata("relativeto"));
+            for(ii=pGUI->GC_RELATIVE.begin(); ii!=pGUI->GC_RELATIVE.end(); ++ii)
+                if(dscc(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
+                    tctrl->iRelativeTo=(*ii).second;
 
 
-                                                }
-                                            }
-                                         }
-void con_guiedit(const string &s)       { pGUI->edit_stump((char *) s.c_str()); }
+            vs=explode(",", pGUI->getdata("border_color"));
+            if(vs.size()>1) tctrl->border_color=RGB(atoi(vs[0].c_str()),atoi(vs[1].c_str()),atoi(vs[2].c_str()) );
 
-void con_guiremovecontrol(const string &s){
+            vs=explode(",", pGUI->getdata("background_color"));
+            if(vs.size()>1) tctrl->background_color=RGB(atoi(vs[0].c_str()),atoi(vs[1].c_str()),atoi(vs[2].c_str()) );
+
+            tctrl->font=atoi(pGUI->getdata("font"));
+            tctrl->fontbank=atoi(pGUI->getdata("fontbank"));
+
+
+        }
+    }
+}
+void con_guiedit(const string &s)       {
+    pGUI->edit_stump((char *) s.c_str());
+}
+
+void con_guiremovecontrol(const string &s) {
     //vector <string> vs;
     vector <string> ncmd=explode(" ",s.c_str());
 
-    if(ncmd.size()>1)
-    {
+    if(ncmd.size()>1) {
         pLog->_Add("guiremovecontrol [%s] [%s]",(char *)ncmd[0].c_str(),(char *)ncmd[1].c_str());
         pGUI->remove_control((char *)ncmd[0].c_str(),(char *)ncmd[1].c_str());
     }
 
-    }
-void con_guiclose(const string &s)      { if(pGUI->get_stump((char *)s.c_str())) pGUI->get_stump((char *)s.c_str())->bDeleteMe=true; }
-void con_guistore(const string &s)      { pGUI->store((char *)s.c_str()); }
-void con_guicall(const string &s)       { pGUI->call((char *)s.c_str()); }
-void con_guicallfile(const string &s)   { pGUI->call_file((char *)s.c_str()); }
-void con_guicloseprompt(const string &s){ pGUI->bClosePrompt=true; pLog->_Add("Close Prompt");}
+}
+void con_guiclose(const string &s)      {
+    if(pGUI->get_stump((char *)s.c_str())) pGUI->get_stump((char *)s.c_str())->bDeleteMe=true;
+}
+void con_guistore(const string &s)      {
+    pGUI->store((char *)s.c_str());
+}
+void con_guicall(const string &s)       {
+    pGUI->call((char *)s.c_str());
+}
+void con_guicallfile(const string &s)   {
+    pGUI->call_file((char *)s.c_str());
+}
+void con_guicloseprompt(const string &s) {
+    pGUI->bClosePrompt=true;
+    pLog->_Add("Close Prompt");
+}
 void con_guicallback(const string &s)    {
     if(!pFMGS) return;
     CPacket SendData(NET_DATAGRAMSIZE);
@@ -224,79 +246,77 @@ void con_guicallback(const string &s)    {
     pFMGS->SendUnreliableMessage(&SendData);
 }
 
-void con_echo(const string &s)          { pLog->_Add((char *)s.c_str()); }
+void con_echo(const string &s)          {
+    pLog->_Add((char *)s.c_str());
+}
 void con_exec(const string &s)          {  // pLog->_Add("Exec [%s]:",s.c_str());
-                                            char temp[1024];memset(temp,0,1024);
-                                            FILE *fp;
-                                            fp=fopen(s.c_str(),"r");
-                                            if(!fp)
-                                            {
-                                                pLog->_Add("Usage : Can't find file: %s",s.c_str());
-                                                return;
-                                            }
-                                            while(1)
-                                            {
-                                                if(!fgets(temp,_MAX_PATH,fp)) break;
-                                                pGUI->pCons->_Execute(temp);
-                                            }
-                                            fclose(fp);
-                                         }
+    char temp[1024];
+    memset(temp,0,1024);
+    FILE *fp;
+    fp=fopen(s.c_str(),"r");
+    if(!fp) {
+        pLog->_Add("Usage : Can't find file: %s",s.c_str());
+        return;
+    }
+    while(1) {
+        if(!fgets(temp,_MAX_PATH,fp)) break;
+        pGUI->pCons->_Execute(temp);
+    }
+    fclose(fp);
+}
 void con_bind(const string &s)          {
-                                            int key;
-                                            vector <string> vs;
-                                            vector <string> v2;
-                                            char ss[1024]; memset(ss,0,1024);
-                                            char ls[1024]; memset(ls,0,1024);
-                                            strcpy(ls,s.c_str());
-                                            bool bQuotes;
-                                            bQuotes=0;
-                                            for(key=0;key<strlen(ls);key++)
-                                            {
-                                                ls[key]=tolower(ls[key]);
-                                                if(ls[key]=='\"') bQuotes=1;
-                                            }
+    int key;
+    vector <string> vs;
+    vector <string> v2;
+    char ss[1024];
+    memset(ss,0,1024);
+    char ls[1024];
+    memset(ls,0,1024);
+    strcpy(ls,s.c_str());
+    bool bQuotes;
+    bQuotes=0;
+    for(key=0; key<strlen(ls); key++) {
+        ls[key]=tolower(ls[key]);
+        if(ls[key]=='\"') bQuotes=1;
+    }
 
-                                            if(bQuotes)
-                                            {
+    if(bQuotes) {
 
-                                                vs=explode("\"",ls);
-                                                strcpy(ls,vs[1].c_str());
-                                                v2=explode(" ",vs[0].c_str());
-                                                strcpy(ss,v2[0].c_str());
-                                            }
-                                            else
-                                            {
-                                                vs=explode(" ",ls);
-                                                strcpy(ls,"");
-                                                for(key=1;key<vs.size();key++)
-                                                {
-                                                    strcat(ls,va("%s ",vs[key].c_str()));
-                                                }
-                                                strcpy(ss,vs[0].c_str());
-                                            }
-                                            while(ss[strlen(ss)-1]==' ') ss[strlen(ss)-1]=0;
-                                            while(ls[strlen(ls)-1]==' ') ls[strlen(ls)-1]=0;
-                                            key=con_getint((char *)ss);
-                                            pGUI->KeyMap[(SDLKey)key]=(char *)ls;
-                                        }
-void con_cvar(const string &s){
+        vs=explode("\"",ls);
+        strcpy(ls,vs[1].c_str());
+        v2=explode(" ",vs[0].c_str());
+        strcpy(ss,v2[0].c_str());
+    } else {
+        vs=explode(" ",ls);
+        strcpy(ls,"");
+        for(key=1; key<vs.size(); key++) {
+            strcat(ls,va("%s ",vs[key].c_str()));
+        }
+        strcpy(ss,vs[0].c_str());
+    }
+    while(ss[strlen(ss)-1]==' ') ss[strlen(ss)-1]=0;
+    while(ls[strlen(ls)-1]==' ') ls[strlen(ls)-1]=0;
+    key=con_getint((char *)ss);
+    pGUI->KeyMap[(SDLKey)key]=(char *)ls;
+}
+void con_cvar(const string &s) {
     vector <string> vs;
     int i,ivartype;
-    char temp[1024]; memset(temp,0,1024);
-    char name[1024]; memset(name,0,1024);
+    char temp[1024];
+    memset(temp,0,1024);
+    char name[1024];
+    memset(name,0,1024);
 
-    if(!strlen(s.c_str()))
-    {
+    if(!strlen(s.c_str())) {
         pLog->_Add("CVAR LIST:");
         pLog->_Add("-----------------------------------------------");
 
-        for(pGUI->pCons->svm_i=pGUI->pCons->varmap.begin(); pGUI->pCons->svm_i!=pGUI->pCons->varmap.end(); ++pGUI->pCons->svm_i)
-        {
+        for(pGUI->pCons->svm_i=pGUI->pCons->varmap.begin(); pGUI->pCons->svm_i!=pGUI->pCons->varmap.end(); ++pGUI->pCons->svm_i) {
             pGUI->pCons->get_cvar( (char *)(*pGUI->pCons->svm_i).first.c_str(),temp);
 
-             pLog->_Add("[%s]=[%s]",
-                (*pGUI->pCons->svm_i).first.c_str(),
-                temp);
+            pLog->_Add("[%s]=[%s]",
+                       (*pGUI->pCons->svm_i).first.c_str(),
+                       temp);
 
 
         }
@@ -304,27 +324,27 @@ void con_cvar(const string &s){
     }
 
     ivartype=pGUI->pCons->get_cvartype(s.c_str());
-    if(ivartype==CVAR_NULL) { pLog->_Add("That isn't a CVAR"); return; }
+    if(ivartype==CVAR_NULL) {
+        pLog->_Add("That isn't a CVAR");
+        return;
+    }
     vs=explode("=",s.c_str());
-    if(vs.size()>1)
-    {
+    if(vs.size()>1) {
         strcpy(name,vs[0].c_str());
         pGUI->pCons->set_cvar(name,(char *)vs[1].c_str());
-    }
-    else strcpy(name,s.c_str());
+    } else strcpy(name,s.c_str());
 
-    if(pGUI->pCons->varmap.find(name)!=pGUI->pCons->varmap.end())
-    {
+    if(pGUI->pCons->varmap.find(name)!=pGUI->pCons->varmap.end()) {
         pGUI->pCons->get_cvar(name,temp);
         pLog->_Add("CVAR: [%s]=[%s]",name,temp);
-    }
-    else
-    {
+    } else {
         pLog->_Add("That isn't a CVAR");
     }
 }
-void con_quit(const string &s) { bShutDown=true; }
-void con_chat(const string &s){
+void con_quit(const string &s) {
+    bShutDown=true;
+}
+void con_chat(const string &s) {
 
     vector <string> ncmd=explode("|",s.c_str());
 
@@ -332,9 +352,9 @@ void con_chat(const string &s){
 
     if(ncmd.size()<2) return;
 
-        if(pFMGS)
-            pFMGS->Chat((char *)ncmd[0].c_str(),(char *)ncmd[1].c_str(),
-                0);
+    if(pFMGS)
+        pFMGS->Chat((char *)ncmd[0].c_str(),(char *)ncmd[1].c_str(),
+                    0);
 
     // char *msg,char *name,int channel){
 
@@ -349,7 +369,10 @@ void MainGameLoop(void) { // **  Main Game Loop
 
     pLog->_DebugAdd("MainGameLoop 1");
 
-    if( pGUI->doInput() == SDLK_F12 ) { bShutDown=true; return; }
+    if( pGUI->doInput() == SDLK_F12 ) {
+        bShutDown=true;
+        return;
+    }
 
     if(pFMGS)
         pFMGS->DoNetwork();    // Get any network messages
@@ -370,14 +393,16 @@ void MainGameLoop(void) { // **  Main Game Loop
 
 
 }
-void SetGameMode(int x){
+void SetGameMode(int x) {
     if(pFMGS) pFMGS->spin_timer->Reset();
     if(pClientData) pClientData->GAME_MODE=x;
 }
-bool DoGameMode(void){
+bool DoGameMode(void) {
 
-    char temp1[1024]; memset(temp1,0,1024);
-    char temp2[1024]; memset(temp2,0,1024);
+    char temp1[1024];
+    memset(temp1,0,1024);
+    char temp2[1024];
+    memset(temp2,0,1024);
 
     switch(pClientData->GAME_MODE) {
 
@@ -395,7 +420,7 @@ bool DoGameMode(void){
         pGUI->clear();
         pGUI->call("main.gui");
         pGUI->setdata("main.gui","username",pClientData->Name);
-        if(pClientData->bSavePassword){
+        if(pClientData->bSavePassword) {
             pGUI->setdata("main.gui","password",pClientData->Password);
             pGUI->setdata("main.gui","savepassword", (char *)"on");
         }
@@ -442,21 +467,21 @@ bool DoGameMode(void){
         pLog->_Add("GATHER_SERVER_LIST");
 
         //switch(LOGINMODE)
-       //
-       // case LM_NONE:
-       //     break;
-       // case LM_INTERNET:
-       //     DEL(pFMMS);
-       ////     pFMMS=new C_FMMS;
-       //     break;
-       // case LM_FAVORITES:
-       //     pClientData->LoadFavoriteServers();
-       //     break;
-       // case LM_LOCAL:
-       //     break;
-       // default:
-       //     break;
-       //
+        //
+        // case LM_NONE:
+        //     break;
+        // case LM_INTERNET:
+        //     DEL(pFMMS);
+        ////     pFMMS=new C_FMMS;
+        //     break;
+        // case LM_FAVORITES:
+        //     pClientData->LoadFavoriteServers();
+        //     break;
+        // case LM_LOCAL:
+        //     break;
+        // default:
+        //     break;
+        //
 
         pClientData->LoadProfiles();
 
@@ -511,7 +536,11 @@ bool DoGameMode(void){
 
         DEL(pFMGS);
         pFMGS=new C_FMGS();
-        if(!pFMGS){ SetGameMode(MAIN_MENU); pGUI->prompt("Can't establish network object","nop"); break; }
+        if(!pFMGS) {
+            SetGameMode(MAIN_MENU);
+            pGUI->prompt("Can't establish network object","nop");
+            break;
+        }
 
         md5_digest(temp1,pClientData->Password);
 
@@ -528,7 +557,8 @@ bool DoGameMode(void){
         pGUI->clear();
         pGUI->call("connect.gui");
 
-        DEL(pFMGS); pFMGS=new C_FMGS();
+        DEL(pFMGS);
+        pFMGS=new C_FMGS();
         md5_digest(temp1,pClientData->Password);
         pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
 
@@ -546,7 +576,7 @@ bool DoGameMode(void){
 
         pGUI->gPrint(270,270,"^&^7Connecting to the server...",1);
 
-        if(pFMGS->spin_timer->Up()){
+        if(pFMGS->spin_timer->Up()) {
             pGUI->prompt("^&^6No response from server^1!","nop");
             SetGameMode(MAIN_MENU);
         }
@@ -574,7 +604,7 @@ bool DoGameMode(void){
 
         pGUI->gPrint(270,270,"^&^7Updating Server Information...",1);
 
-        if(pFMGS->spin_timer->Up()){
+        if(pFMGS->spin_timer->Up()) {
             //pGUI->Prompt("^&^6No response from server^1!","nop");
             //SetGameMode(LOGIN_SCREEN_ENTRY);
         }
@@ -602,7 +632,7 @@ bool DoGameMode(void){
 
         pGUI->gPrint(270,270,"^&^7Downloading character information...",1);
 
-        if(pFMGS->spin_timer->Up()){
+        if(pFMGS->spin_timer->Up()) {
             //    pGUI->Prompt("^&^6No response from server^1!","nop");
             //    SetGameMode(LOGIN_SCREEN_ENTRY);
         }
@@ -613,13 +643,14 @@ bool DoGameMode(void){
     case CHOOSE_CHARACTER:
         SetGameMode(CHOOSE_CHARACTER_SPIN);
 
-    case CHOOSE_CHARACTER_SPIN: break;
+    case CHOOSE_CHARACTER_SPIN:
+        break;
 
     case CREATE_CHARACTER:
 
         //strcpy(szTemp1,"create_character");
         //if(strcmp(szTemp1,pClientData->szGeneric))
-         //   strcpy(pClientData->szGeneric,szTemp1);
+        //   strcpy(pClientData->szGeneric,szTemp1);
 
         pGUI->clear();
         pGUI->call("create_character.gui");
@@ -628,14 +659,16 @@ bool DoGameMode(void){
 
         break;
 
-    case CREATE_CHARACTER_SPIN: break;
+    case CREATE_CHARACTER_SPIN:
+        break;
 
 
     case CREATE_CHARACTER_SEND:
 
         break;
 
-    case CREATE_CHARACTER_SEND_SPIN: break;
+    case CREATE_CHARACTER_SEND_SPIN:
+        break;
 
         /////////////////////////////
 
@@ -696,11 +729,11 @@ bool DoGameMode(void){
         pGUI->clear();
         pGUI->call("gameon.gui");
 
-/*      pGFX->pCamera->xpos=-48;
-        pGFX->pCamera->ypos=-21;
-        pGFX->pCamera->zpos=-157;
-        pGFX->pCamera->xrot=902;
-        pGFX->pCamera->yrot=1783; */
+        /*      pGFX->pCamera->xpos=-48;
+                pGFX->pCamera->ypos=-21;
+                pGFX->pCamera->zpos=-157;
+                pGFX->pCamera->xrot=902;
+                pGFX->pCamera->yrot=1783; */
 
         pLog->_Add("Done initializing player setup...");
         SetGameMode(ITEM_INITIALIZE);
@@ -753,10 +786,10 @@ bool DoGameMode(void){
 
         pGFX->pCamera->ypos=33;
 
-/*      pGFX->pCamera->xpos=-48;
-        pGFX->pCamera->zpos=-157;
-        pGFX->pCamera->xrot=902;
-        pGFX->pCamera->yrot=1783;  */
+        /*      pGFX->pCamera->xpos=-48;
+                pGFX->pCamera->zpos=-157;
+                pGFX->pCamera->xrot=902;
+                pGFX->pCamera->yrot=1783;  */
 
     case EDIT_WORLD:
         // pGFX->RenderScene();
@@ -782,21 +815,21 @@ bool DoGameMode(void){
 
     return false;
 }
-GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath){
-    switch(ElmInfo->Type){
-        case GAFELMTYPE_FILE:
-            pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
-            break;
-        case GAFELMTYPE_DIR:
-            pLog->_Add("<DIR> %25s ",ElmInfo->Name);
-            break;
-        default:
-            break;
+GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
+    switch(ElmInfo->Type) {
+    case GAFELMTYPE_FILE:
+        pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
+        break;
+    case GAFELMTYPE_DIR:
+        pLog->_Add("<DIR> %25s ",ElmInfo->Name);
+        break;
+    default:
+        break;
     }
     return 0;
 }
 
-bool doInit(void){
+bool doInit(void) {
     /////////////////////////////////////////////////////////////////////////////////
     // Zeroize pointers
 
@@ -830,7 +863,8 @@ bool doInit(void){
     pLog->AddLineSep();
     pLog->_Add((char *)va("MANTRA %s %s %s",VERSION,CPUSTRING,COPYRIGHT));
     pLog->_Add("Log created");
-    char temp1[1024]; memset(temp1,0,1024);
+    char temp1[1024];
+    memset(temp1,0,1024);
     getos(temp1);
     pLog->_Add(temp1);
 
@@ -864,8 +898,7 @@ bool doInit(void){
         pLog->_Add("Sound can not be initialized, turning off sound and music");
         pClientData->bMusic=false;
         pClientData->bSound=false;
-    }
-    else {
+    } else {
         pSND->InitializeSound();
         pSND->SetSoundVolume((pClientData->fSoundVolume*255));
         pSND->SetMusicVolume((pClientData->fMusicVolume*255));
@@ -881,7 +914,8 @@ bool doInit(void){
     // Initialize GFX
 
     pLog->_Add("Setting up GFX");
-    char temp[1024]; memset(temp,0,1024);
+    char temp[1024];
+    memset(temp,0,1024);
 
     strcpy(temp,va("EGC %s(%s)  %s",VERSION,CPUSTRING,COPYRIGHT));// Net Revision(%s) NET_REVISION,
 
@@ -897,14 +931,20 @@ bool doInit(void){
                         temp,
                         pLog, pGAF );
 
-    if(!pGFX) { pLog->_Add("GFX initialization failure, quitting"); return 0; }
+    if(!pGFX) {
+        pLog->_Add("GFX initialization failure, quitting");
+        return 0;
+    }
 
     /////////////////////////////////////////////////////////////////////////////////
     // GUI
 
     pLog->_Add("Setting up GUI");
     pGUI = new C_GUI(pGFX,pGAF,pLog);
-    if(!pGUI) { pLog->_Add("GUI initialization failure, quitting"); return 0; }
+    if(!pGUI) {
+        pLog->_Add("GUI initialization failure, quitting");
+        return 0;
+    }
 
 #ifdef _DEBUG_MANTRA_GUI
     pGUI->bDebug=true;
@@ -965,17 +1005,17 @@ bool doInit(void){
     pGUI->pCons->intmap["PROFILE_SELECT"]    = PROFILE_SELECT;
     pGUI->pCons->intmap["CONNECT_TO_SERVER"] = CONNECT_TO_SERVER;
     pGUI->pCons->intmap["CONNECT_CHECK"]     = CONNECT_CHECK;
-	pGUI->pCons->intmap["GET_SERVER_INFORMATION_START"] = GET_SERVER_INFORMATION_START;
-	pGUI->pCons->intmap["GET_SERVER_INFORMATION_SPIN"]  = GET_SERVER_INFORMATION_SPIN;
+    pGUI->pCons->intmap["GET_SERVER_INFORMATION_START"] = GET_SERVER_INFORMATION_START;
+    pGUI->pCons->intmap["GET_SERVER_INFORMATION_SPIN"]  = GET_SERVER_INFORMATION_SPIN;
     pGUI->pCons->intmap["GET_CHARACTERS"]     = GET_CHARACTERS;
-	pGUI->pCons->intmap["GET_CHARACTERS_SPIN"]= GET_CHARACTERS_SPIN;
+    pGUI->pCons->intmap["GET_CHARACTERS_SPIN"]= GET_CHARACTERS_SPIN;
     pGUI->pCons->intmap["GET_CHARACTERS_SEND"]= GET_CHARACTERS_SEND;
     pGUI->pCons->intmap["GET_CHARACTERS_RECV"]= GET_CHARACTERS_RECV;
-	pGUI->pCons->intmap["CHOOSE_CHARACTER_STAGE"]=CHOOSE_CHARACTER_STAGE;
-	pGUI->pCons->intmap["CHOOSE_CHARACTER"]  = CHOOSE_CHARACTER;
+    pGUI->pCons->intmap["CHOOSE_CHARACTER_STAGE"]=CHOOSE_CHARACTER_STAGE;
+    pGUI->pCons->intmap["CHOOSE_CHARACTER"]  = CHOOSE_CHARACTER;
     pGUI->pCons->intmap["CHOOSE_CHARACTER_SPIN"]= CHOOSE_CHARACTER_SPIN;
-	pGUI->pCons->intmap["CREATE_CHARACTER"]  = CREATE_CHARACTER;
-	pGUI->pCons->intmap["CREATE_CHARACTER_SPIN"]= CREATE_CHARACTER_SPIN;
+    pGUI->pCons->intmap["CREATE_CHARACTER"]  = CREATE_CHARACTER;
+    pGUI->pCons->intmap["CREATE_CHARACTER_SPIN"]= CREATE_CHARACTER_SPIN;
     pGUI->pCons->intmap["CREATE_CHARACTER_SEND"]= CREATE_CHARACTER_SEND;
     pGUI->pCons->intmap["CREATE_CHARACTER_SEND_SPIN"]= CREATE_CHARACTER_SEND_SPIN;
     pGUI->pCons->intmap["LOGIN_SEND"]        = LOGIN_SEND;
@@ -984,7 +1024,7 @@ bool doInit(void){
     pGUI->pCons->intmap["LOGIN_FAILED"]      = LOGIN_FAILED;
     pGUI->pCons->intmap["GATHER_GAME_DATA"]  = GATHER_GAME_DATA;
     pGUI->pCons->intmap["SI_GENERIC_SEND"]   = SI_GENERIC_SEND;
-	pGUI->pCons->intmap["SI_GENERIC_RECV"]   = SI_GENERIC_RECV;
+    pGUI->pCons->intmap["SI_GENERIC_RECV"]   = SI_GENERIC_RECV;
     pGUI->pCons->intmap["LOGIN_PROGRAM_START"]= LOGIN_PROGRAM_START;
     pGUI->pCons->intmap["LOGIN_PROGRAM_END"] = LOGIN_PROGRAM_END;
     pGUI->pCons->intmap["GATHER_GAME_DATA_LOADER"]= GATHER_GAME_DATA_LOADER;
@@ -996,11 +1036,11 @@ bool doInit(void){
     pGUI->pCons->intmap["ITEM_INITIALIZE"]   = ITEM_INITIALIZE;
     pGUI->pCons->intmap["GAME_ON"]           = GAME_ON;
     pGUI->pCons->intmap["GAME_LIMBO"]        = GAME_LIMBO;
-	pGUI->pCons->intmap["GAME_EDITOR"]       = GAME_EDITOR;
-	pGUI->pCons->intmap["EDIT_WORLD_INIT"]   = EDIT_WORLD_INIT;
-	pGUI->pCons->intmap["EDIT_WORLD"]        = EDIT_WORLD;
-	pGUI->pCons->intmap["EDIT_MODELS_INIT"]   = EDIT_MODELS_INIT;
-	pGUI->pCons->intmap["EDIT_MODELS"]        = EDIT_MODELS;
+    pGUI->pCons->intmap["GAME_EDITOR"]       = GAME_EDITOR;
+    pGUI->pCons->intmap["EDIT_WORLD_INIT"]   = EDIT_WORLD_INIT;
+    pGUI->pCons->intmap["EDIT_WORLD"]        = EDIT_WORLD;
+    pGUI->pCons->intmap["EDIT_MODELS_INIT"]   = EDIT_MODELS_INIT;
+    pGUI->pCons->intmap["EDIT_MODELS"]        = EDIT_MODELS;
     pGUI->pCons->intmap["QUIT"]              = QUIT;
     pGUI->pCons->intmap["WAIT_LOOP"]         = WAIT_LOOP;
     pGUI->pCons->intmap["DEBUG_LOOP"]        = DEBUG_LOOP;
@@ -1012,10 +1052,10 @@ bool doInit(void){
     return TRUE;
 }
 
-void ShutDown(void){ // **  Shut Down the Program
+void ShutDown(void) { // **  Shut Down the Program
     pLog->_Add("******************** START SHUTDOWN ***************************");
     pNTT=pFirstNTT;
-    while(pNTT){
+    while(pNTT) {
         pFirstNTT=pNTT;
         pNTT=pNTT->pNext;
         DEL(pFirstNTT);
@@ -1030,7 +1070,7 @@ void ShutDown(void){ // **  Shut Down the Program
 
     NET_Shutdown();
 
-    if(pClientData){
+    if(pClientData) {
         pClientData->bSave();
         pLog->_Add("Client data saved...");
         pClientData->CleanUp();
@@ -1047,10 +1087,10 @@ void ShutDown(void){ // **  Shut Down the Program
 
 ////////////////////////////////////////////////////// Entity STUFF
 
-void InitializeEntities(void){
+void InitializeEntities(void) {
 
     pNTT=pFirstNTT;
-    while(pNTT){
+    while(pNTT) {
         pFirstNTT=pNTT;
         pNTT=pNTT->pNext;
         DEL(pFirstNTT);
@@ -1059,7 +1099,7 @@ void InitializeEntities(void){
     pNTT=pFirstNTT;
     int i,numntt;
     numntt=20;
-    for(i=0;i<numntt;i++){
+    for(i=0; i<numntt; i++) {
         strcpy(pNTT->name,va("Entity %d",i));
 
         pNTT->Pos.x = ( (float)rand()/(float)RAND_MAX)*150;
@@ -1105,13 +1145,12 @@ void DoEntities(void) { // Update Entities
 }
 
 ////////////////////////////////////////////////////// NETWORK STUFF
-long C_FMGS::Ping(void){ // ** Ping the server
+long C_FMGS::Ping(void) { // ** Ping the server
     CPacket SendData(NET_DATAGRAMSIZE);
     static long dwPingTimer=dlcs_get_tickcount();
 
     if(emgeGetState()==NET_NOTCONNECT)   return 9998;
-    if(dlcs_get_tickcount()-dwPingTimer>5000)
-    {
+    if(dlcs_get_tickcount()-dwPingTimer>5000) {
         dwPingTimer=dlcs_get_tickcount();
         SendData.Reset();
         SendData.Write((char)NETMSG_PING);
@@ -1123,14 +1162,22 @@ long C_FMGS::Ping(void){ // ** Ping the server
 void C_FMGS::DoNetwork(void) { // ** Network Loop
 
 #ifndef _FOLD_THIS_
-    char temp1[1024];   memset(temp1,0,1024);
-    char temp2[1024];   memset(temp2,0,1024);
-    char temp3[1024];   memset(temp3,0,1024);
-    char temp4[1024];   memset(temp4,0,1024);
-    char szTemp1[1024]; memset(szTemp1,0,1024);
-    char szTemp2[1024]; memset(szTemp2,0,1024);
-    char szTemp3[1024]; memset(szTemp3,0,1024);
-    char szTemp4[1024]; memset(szTemp4,0,1024);
+    char temp1[1024];
+    memset(temp1,0,1024);
+    char temp2[1024];
+    memset(temp2,0,1024);
+    char temp3[1024];
+    memset(temp3,0,1024);
+    char temp4[1024];
+    memset(temp4,0,1024);
+    char szTemp1[1024];
+    memset(szTemp1,0,1024);
+    char szTemp2[1024];
+    memset(szTemp2,0,1024);
+    char szTemp3[1024];
+    memset(szTemp3,0,1024);
+    char szTemp4[1024];
+    memset(szTemp4,0,1024);
 
     CPacket SendData(NET_DATAGRAMSIZE);
     CPacket *RecvData;
@@ -1149,21 +1196,21 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
     if( iState  == NET_NOTCONNECT ) return; // If you aren't connected, then return. No sense in trying to read packets if they aren't there.
 
     if( (iState != NET_LOGGINPROC) &&
-        (iState != NET_SYSBUSY) &&
-        (iState != NET_CONNECTED) ) return;
+            (iState != NET_SYSBUSY) &&
+            (iState != NET_CONNECTED) ) return;
 
     //if( (iState == NET_LOGGINPROC) || (iState == NET_SYSBUSY) ) return;
 
     NetMessage = iGetMessage(); // Update the Network once per frame here
 
-    if(NetMessage == -1){
+    if(NetMessage == -1) {
         pGUI->prompt("Lost connection to server.","disconnect");
         emgSetState(NET_NOTCONNECT);
         SetGameMode(MAIN_MENU);
         return;
     }
 #endif
-    if(NetMessage){
+    if(NetMessage) {
 #ifndef _FOLD_THIS_
 
         RecvData = pGetMessage();
@@ -1172,74 +1219,78 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
         pLog->_Add("GOT NETMESSAGE [%d] [%d]",NetMessage,cLastNetMessage);
 #endif
-        switch(cLastNetMessage){
+        switch(cLastNetMessage) {
 
-            case NETMSG_PING: fold_block {
+        case NETMSG_PING:
+            fold_block {
                 dwPing=dlcs_get_tickcount()-RecvData->dwRead();
-                break;}
+                break;
+            }
 
-			case NETMSG_SERVERINFORMATION_GET: fold_block {
+        case NETMSG_SERVERINFORMATION_GET:
+            fold_block {
                 ax=RecvData->cRead();
                 //Log("%d) Races",ax);
-				for(i=0;i<ax;i++)
-				{
-					ay=RecvData->cRead();
-					//strcpy(pClientData->ServerInfo->Race[ay].Text,RecvData->pRead());
-					//Log("  %d) %s",ay,pClientData->ServerInfo->Race[ay].Text);
-				}
-				ax=RecvData->cRead();
-                    //Log("%d) Classes",ax);
-				for(i=0;i<ax;i++)
-				{
-					ay=RecvData->cRead();
+                for(i=0; i<ax; i++) {
+                    ay=RecvData->cRead();
+                    //strcpy(pClientData->ServerInfo->Race[ay].Text,RecvData->pRead());
+                    //Log("  %d) %s",ay,pClientData->ServerInfo->Race[ay].Text);
+                }
+                ax=RecvData->cRead();
+                //Log("%d) Classes",ax);
+                for(i=0; i<ax; i++) {
+                    ay=RecvData->cRead();
                     //strcpy(pClientData->ServerInfo->Class[ay].Text,RecvData->pRead());
                     //Log("  %d) %s",ay,pClientData->ServerInfo->Class[ay].Text);
 
-				}
-				// SetGameMode(GET_CHARACTERS);
-				break;}
+                }
+                // SetGameMode(GET_CHARACTERS);
+                break;
+            }
 
-			case NETMSG_RETRIEVECHARS: fold_block {
+        case NETMSG_RETRIEVECHARS:
+            fold_block {
 
-				//Log("NETMSG_RETRIEVECHARS!");
+                //Log("NETMSG_RETRIEVECHARS!");
 
-				//pClientData->ClearCharacters();
-/*
-				ax=RecvData->cRead();
-				for(i=0;i<ax;i++)
-				{
-					strcpy(temp1,RecvData->pRead());// name
-					strcpy(temp2,RecvData->pRead());// level
-					strcpy(temp3,RecvData->pRead());// race
-					strcpy(temp4,RecvData->pRead());// class
-					strcpy(szTemp1,RecvData->pRead());// gender
+                //pClientData->ClearCharacters();
+                /*
+                				ax=RecvData->cRead();
+                				for(i=0;i<ax;i++)
+                				{
+                					strcpy(temp1,RecvData->pRead());// name
+                					strcpy(temp2,RecvData->pRead());// level
+                					strcpy(temp3,RecvData->pRead());// race
+                					strcpy(temp4,RecvData->pRead());// class
+                					strcpy(szTemp1,RecvData->pRead());// gender
 
-					strcpy(pClientData->ServerCharacter[i].t_name,temp1);
-					pClientData->ServerCharacter[i].t_level = atoi(temp2);
-					pClientData->ServerCharacter[i].t_race  = atoi(temp3);
-					pClientData->ServerCharacter[i].t_class = atoi(temp4);
-					pClientData->ServerCharacter[i].t_gender= atoi(szTemp1);
+                					strcpy(pClientData->ServerCharacter[i].t_name,temp1);
+                					pClientData->ServerCharacter[i].t_level = atoi(temp2);
+                					pClientData->ServerCharacter[i].t_race  = atoi(temp3);
+                					pClientData->ServerCharacter[i].t_class = atoi(temp4);
+                					pClientData->ServerCharacter[i].t_gender= atoi(szTemp1);
 
-				}
-*/
-				SetGameMode(CHOOSE_CHARACTER);
+                				}
+                */
+                SetGameMode(CHOOSE_CHARACTER);
 
 
-				break;}
+                break;
+            }
 
-            case NETMSG_LOGIN_REQUEST_REPLY: fold_block {
+        case NETMSG_LOGIN_REQUEST_REPLY:
+            fold_block {
 
-				pLog->_Add("Got a login request reply");
+                pLog->_Add("Got a login request reply");
 
                 if(pClientData->GAME_MODE != LOGIN_RECV) break;
 
                 ax = RecvData->cRead();
 
-                if((ax == GOOD_LOGIN) || (ax == NEW_ACCOUNT))
-                {
-					pLog->_Add(" >>> It's a good login!");
+                if((ax == GOOD_LOGIN) || (ax == NEW_ACCOUNT)) {
+                    pLog->_Add(" >>> It's a good login!");
 
-  					strcpy(pClientData->ServerMessage,   RecvData->pRead());
+                    strcpy(pClientData->ServerMessage,   RecvData->pRead());
                     strcpy(pClientData->szServerVersion, RecvData->pRead()); // Extract Server's Version
 
                     strcpy(pClientData->session_id,      RecvData->pRead());
@@ -1272,24 +1323,27 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                     SetGameMode(GATHER_GAME_DATA); // GET_SERVER_INFORMATION_START;
                     emgSetState(NET_CONNECTED);
-                }
-                else
+                } else
                 {
-					pLog->_Add(" >>> It's a bad login!");
+                    pLog->_Add(" >>> It's a bad login!");
                     SetGameMode(CHOOSE_SERVER_INIT);
                     if(ax!=MASTER_LOGIN)
                         pGUI->prompt(RecvData->pRead(),"nop");
                 }
-                break; }
+                break;
+            }
 
-            case NETMSG_HEARTBEAT: fold_block { // just return the heartbeat... no other thing needs to be done...
+        case NETMSG_HEARTBEAT:
+            fold_block { // just return the heartbeat... no other thing needs to be done...
                 SendData.Reset();
                 SendData.Write((char)NETMSG_HEARTBEAT);
                 SendData.Write((int)1);
                 SendUnreliableMessage(&SendData);
-                break;}
+                break;
+            }
 
-            case NETMSG_CLIENT_SHUTDOWN: fold_block {
+        case NETMSG_CLIENT_SHUTDOWN:
+            fold_block {
 
                 strcpy(temp2,RecvData->pRead()); // client session_id
                 strcpy(temp1,RecvData->pRead());
@@ -1299,214 +1353,210 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                 pLog->_Add("Server has shut down this client. Reason: %s",temp1);
                 SetGameMode(LOGIN_SCREEN_ENTRY);
-                break; }
+                break;
+            }
 
-            case NETMSG_CHAT: fold_block {  // Global Chat / System Message
+        case NETMSG_CHAT:
+            fold_block {  // Global Chat / System Message
 
                 strcpy(temp1,RecvData->pRead());    // message
                 strcpy(temp2,RecvData->pRead());    // username
                 ax=RecvData->iRead();               // channel
                 strcpy(temp3,RecvData->pRead());    // session_id
 
-                switch(ax){ // channel
-                    case CHANNEL_CUSTOM:
-                    case CHANNEL_CONSOLE:
-                    case CHANNEL_LOCAL:
-                    case CHANNEL_TRADE:
-                    case CHANNEL_GENERAL:
-                    case CHANNEL_WHISPER:
-                    case CHANNEL_PARTY:
-                    case CHANNEL_RAID:
-                    case CHANNEL_SAY:
-                    case CHANNEL_YELL:
-                    case CHANNEL_CLAN:
-                    case CHANNEL_SYSTEM:
-                        pLog->_Add("NETMSG_MESSAGE channel[%d] [%s][%s] ",ax,temp2,temp1);
-                        pGUI->addChat(ax,temp2,temp1);
+                switch(ax) { // channel
+                case CHANNEL_CUSTOM:
+                case CHANNEL_CONSOLE:
+                case CHANNEL_LOCAL:
+                case CHANNEL_TRADE:
+                case CHANNEL_GENERAL:
+                case CHANNEL_WHISPER:
+                case CHANNEL_PARTY:
+                case CHANNEL_RAID:
+                case CHANNEL_SAY:
+                case CHANNEL_YELL:
+                case CHANNEL_CLAN:
+                case CHANNEL_SYSTEM:
+                    pLog->_Add("NETMSG_MESSAGE channel[%d] [%s][%s] ",ax,temp2,temp1);
+                    pGUI->addChat(ax,temp2,temp1);
 
-                    default:
-                        break;
+                default:
+                    break;
                 }
-                break; }
+                break;
+            }
 
-            case NETMSG_MODIFY_CHARACTER: fold_block {
+        case NETMSG_MODIFY_CHARACTER:
+            fold_block {
 
-                break;}
+                break;
+            }
 
-            case NETMSG_MOVEPLAYER: fold_block {
+        case NETMSG_MOVEPLAYER:
+            fold_block {
 
-                break;}
+                break;
+            }
 
-            case NETMSG_FILE_XFER: fold_block {
+        case NETMSG_FILE_XFER:
+            fold_block {
 
-				char *pFileBuf;
-				//char pFileBuf[NET_FILE_XFER_BLOCK_SIZE+1];
-				//memset(pFileBuf,0,1024);
-				FILE *pFile;
-				bool bFileFail;
+                char *pFileBuf;
+                //char pFileBuf[NET_FILE_XFER_BLOCK_SIZE+1];
+                //memset(pFileBuf,0,1024);
+                FILE *pFile;
+                bool bFileFail;
 
-				switch(RecvData->cRead())
-				{
+                switch(RecvData->cRead()) {
 
-					case NET_FILE_START:
+                case NET_FILE_START:
 
-						// filename
-						// filesize
-						// start file
+                    // filename
+                    // filesize
+                    // start file
 
-						strcpy(szTemp1,RecvData->pRead());
-						cx=RecvData->iRead();
+                    strcpy(szTemp1,RecvData->pRead());
+                    cx=RecvData->iRead();
 
-						bFileFail=false;
-						pFile=fopen(szTemp3,"wb");
-						if(pFile)
-						{
-							fclose(pFile);
-							pFile=fopen(szTemp2,"wt");
-							if(pFile)
-							{
-								bx=1;
-								fputs(va("%d\n%d\n",bx,cx),pFile);
-								fclose(pFile);
-								SendData.Reset();
-								SendData.Write((char)NETMSG_FILE_XFER);
-								SendData.Write((char *)szTemp1);
-								SendData.Write((char)NET_FILE_START_OK);
-								SendUnreliableMessage(&SendData);
-							}
-							else bFileFail=true;
-						}
-						else bFileFail=true;
-						if(bFileFail)
-						{
-							SendData.Reset();
-							SendData.Write((char)NETMSG_FILE_XFER);
-							SendData.Write((char *)szTemp1);
-							SendData.Write((char)NET_FILE_ERROR);
-							SendUnreliableMessage(&SendData);
-						}
+                    bFileFail=false;
+                    pFile=fopen(szTemp3,"wb");
+                    if(pFile) {
+                        fclose(pFile);
+                        pFile=fopen(szTemp2,"wt");
+                        if(pFile) {
+                            bx=1;
+                            fputs(va("%d\n%d\n",bx,cx),pFile);
+                            fclose(pFile);
+                            SendData.Reset();
+                            SendData.Write((char)NETMSG_FILE_XFER);
+                            SendData.Write((char *)szTemp1);
+                            SendData.Write((char)NET_FILE_START_OK);
+                            SendUnreliableMessage(&SendData);
+                        } else bFileFail=true;
+                    } else bFileFail=true;
+                    if(bFileFail) {
+                        SendData.Reset();
+                        SendData.Write((char)NETMSG_FILE_XFER);
+                        SendData.Write((char *)szTemp1);
+                        SendData.Write((char)NET_FILE_ERROR);
+                        SendUnreliableMessage(&SendData);
+                    }
 
-						break;
+                    break;
 
-					case NET_FILE_DATA:
+                case NET_FILE_DATA:
 
-						// sequence number
-						// filename
-						// data block (1024)
+                    // sequence number
+                    // filename
+                    // data block (1024)
 
-						ax=RecvData->iRead(); // sequence number
-						strcpy(szTemp1,RecvData->pRead()); // filename
-						pFileBuf=RecvData->pRead(NET_FILE_XFER_BLOCK_SIZE);
+                    ax=RecvData->iRead(); // sequence number
+                    strcpy(szTemp1,RecvData->pRead()); // filename
+                    pFileBuf=RecvData->pRead(NET_FILE_XFER_BLOCK_SIZE);
 
-						bFileFail=false;
-						pFile=fopen(szTemp2,"rb");
-						if(pFile)
-						{
-							fgets(szTemp4,256,pFile); bx=atoi(szTemp4);
-							fgets(szTemp4,256,pFile); cx=atoi(szTemp4);
-							fclose(pFile);
-						}
-						else bFileFail=true;
-						if(ax==bx)
-						{
-							pFile=fopen(szTemp3,"a");
-							if(pFile)
-							{
-								fwrite(pFileBuf,NET_FILE_XFER_BLOCK_SIZE,1,pFile);
-								fclose(pFile);
-								pFile=fopen(szTemp2,"wt");
-								if(pFile)
-								{
-									bx++;
-									fputs(va("%d\n%d\n",bx,cx),pFile);
-									fclose(pFile);
-								}
+                    bFileFail=false;
+                    pFile=fopen(szTemp2,"rb");
+                    if(pFile) {
+                        fgets(szTemp4,256,pFile);
+                        bx=atoi(szTemp4);
+                        fgets(szTemp4,256,pFile);
+                        cx=atoi(szTemp4);
+                        fclose(pFile);
+                    } else bFileFail=true;
+                    if(ax==bx) {
+                        pFile=fopen(szTemp3,"a");
+                        if(pFile) {
+                            fwrite(pFileBuf,NET_FILE_XFER_BLOCK_SIZE,1,pFile);
+                            fclose(pFile);
+                            pFile=fopen(szTemp2,"wt");
+                            if(pFile) {
+                                bx++;
+                                fputs(va("%d\n%d\n",bx,cx),pFile);
+                                fclose(pFile);
+                            }
 
-								SendData.Reset();
-								SendData.Write((char)NETMSG_FILE_XFER);
-								SendData.Write((char)NET_FILE_DATA_OK);
-								SendData.Write((char *)szTemp1);
-								SendData.Write((int)bx);
-							}
-							else
-							{
-								bFileFail=true;
-							}
+                            SendData.Reset();
+                            SendData.Write((char)NETMSG_FILE_XFER);
+                            SendData.Write((char)NET_FILE_DATA_OK);
+                            SendData.Write((char *)szTemp1);
+                            SendData.Write((int)bx);
+                        } else {
+                            bFileFail=true;
+                        }
 
-						}
-						if(bFileFail)
-						{
-							SendData.Reset();
-							SendData.Write((char)NETMSG_FILE_XFER);
-							SendData.Write((char)NET_FILE_DATA_RESEND);
-							SendData.Write((char *)szTemp1);
-							SendData.Write((int)bx);
-						}
-						break;
+                    }
+                    if(bFileFail) {
+                        SendData.Reset();
+                        SendData.Write((char)NETMSG_FILE_XFER);
+                        SendData.Write((char)NET_FILE_DATA_RESEND);
+                        SendData.Write((char *)szTemp1);
+                        SendData.Write((int)bx);
+                    }
+                    break;
 
-					case NET_FILE_EOF:
+                case NET_FILE_EOF:
 
-						// sequence number
-						// filename
-						// size of data block
-						// data block
+                    // sequence number
+                    // filename
+                    // size of data block
+                    // data block
 
-						ax=RecvData->iRead(); // sequence number
-						strcpy(szTemp1,RecvData->pRead()); // filename
-						dx=RecvData->iRead();
-						pFileBuf=RecvData->pRead(dx);
+                    ax=RecvData->iRead(); // sequence number
+                    strcpy(szTemp1,RecvData->pRead()); // filename
+                    dx=RecvData->iRead();
+                    pFileBuf=RecvData->pRead(dx);
 
-						bFileFail=false;
-						pFile=fopen(szTemp3,"a");
-						if(pFile)
-						{
-							fwrite(pFileBuf,dx,1,pFile);
-							fclose(pFile);
-							remove(szTemp2);
-						}
-						else
-						{
-							SendData.Reset();
-							SendData.Write((char)NETMSG_FILE_XFER);
-							SendData.Write((char)NET_FILE_EOF_RESEND);
-							SendData.Write((char *)szTemp1);
-						}
-						break;
+                    bFileFail=false;
+                    pFile=fopen(szTemp3,"a");
+                    if(pFile) {
+                        fwrite(pFileBuf,dx,1,pFile);
+                        fclose(pFile);
+                        remove(szTemp2);
+                    } else {
+                        SendData.Reset();
+                        SendData.Write((char)NETMSG_FILE_XFER);
+                        SendData.Write((char)NET_FILE_EOF_RESEND);
+                        SendData.Write((char *)szTemp1);
+                    }
+                    break;
 
-					case NET_FILE_RESUME:
-						break;
+                case NET_FILE_RESUME:
+                    break;
 
-					case NET_FILE_ACK:
-						break;
+                case NET_FILE_ACK:
+                    break;
 
-					case NET_FILE_ABORT:
-						break;
+                case NET_FILE_ABORT:
+                    break;
 
                     // NET_FILE_RES_MEDIA
-					// NET_FILE_RES_SCRIPT
+                    // NET_FILE_RES_SCRIPT
 
-					case NET_FILE_NOP:
-						break;
+                case NET_FILE_NOP:
+                    break;
 
-                    default:
-                        break;
+                default:
+                    break;
 
 
 
                 }
-                break;}
+                break;
+            }
 
-            default: fold_block {
+        default:
+            fold_block {
 
                 //Do nothing... (should never execute this code, but who knows...)
                 //DLog("Recieved a NETMSG (%d) but could not recognize it.",cLastNetMessage);
                 //ChatBufferAdd(255,0,0,"SYSTEM","Recieved a NETMSG (%d) but could not recognize it.",cLastNetMessage);
 
-                break;}
+                break;
+            }
         }
     }
 }
-C_FMGS::C_FMGS(void){
+C_FMGS::C_FMGS(void) {
     pPingSocket=NULL;
     bLoggedin=false;
     bSystemBusy=false;
@@ -1514,12 +1564,12 @@ C_FMGS::C_FMGS(void){
     spin_timer=new CTimer(5000);
     initSocket();
 }
-C_FMGS::~C_FMGS(){
+C_FMGS::~C_FMGS() {
     DEL(spin_timer);
     emgDisconnect();
     DEL(pPingSocket);
 }
-int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd){
+int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
     int errnum;
 
     pLog->_Add(" ********************* CONNECT START ********************* ");
@@ -1528,7 +1578,9 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd){
     ToAddr.sin_addr.s_addr  = inet_addr(pHost);
     ToAddr.sin_port         = htons(atoi(pPort));
 
-    bConnected=false;  long fTryTime; int iTry,ret=0,iLength,iFlags,iT;
+    bConnected=false;
+    long fTryTime;
+    int iTry,ret=0,iLength,iFlags,iT;
 
     struct sockaddr_in RetAddr;
 
@@ -1545,14 +1597,16 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd){
 
     iSocket=zOpenSocket(0);
 
-    if(iSocket == SOCKET_ERROR)
-    {
+    if(iSocket == SOCKET_ERROR) {
         pLog->_Add(" ********************* NO SOCKET ********************* ");
     }
 
     pLog->_Add("C_FMGS::Connect() zOpenSocket passed");
 
-    if(iSocket == -1)    {        pLog->_Add("C_FMGS::Connect() Can't open network socket!");        return 0;        }
+    if(iSocket == -1)    {
+        pLog->_Add("C_FMGS::Connect() Can't open network socket!");
+        return 0;
+    }
 
     bConnected = false;
 
@@ -1571,31 +1625,39 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd){
     Send.Write(atoi(NET_REVISION));
     FinishCtlPacket(&Send);
 
-    for(iTry = 0; iTry < (int)dConnectRetry ;iTry++)
-    {
+    for(iTry = 0; iTry < (int)dConnectRetry ; iTry++) {
         if( nSend(  iSocket, Send.pGetPacketBuffer(),
-                     Send.iGetCurSize(),
-                    (struct sockaddr*) &ToAddr)==-1 )
-        {
+                    Send.iGetCurSize(),
+                    (struct sockaddr*) &ToAddr)==-1 ) {
             pLog->_Add("C_FMGS::Connect() nSend Failed [%s]", NET_pGetLastError());
             return 0;
         }
 
         fTryTime = dlcs_get_tickcount();
 
-        do
-        {
+        do {
             ret = nRecv(Recv.pGetPacketBuffer(),Recv.iGetMaxSize(),(struct sockaddr*)&RetAddr);
-            if (ret == -1)            {                pLog->_Add("C_FMGS::Connect() -> connection read failed");                return 0;            }
-            if (ret > 0)
-            {
+            if (ret == -1)            {
+                pLog->_Add("C_FMGS::Connect() -> connection read failed");
+                return 0;
+            }
+            if (ret > 0) {
                 Recv.SetCurSize(ret);
                 iLength = ntohl(Recv.iRead());
                 iFlags  = iLength & (~NET_FLAG_LENGTH_MASK);
                 iLength &= NET_FLAG_LENGTH_MASK;
-                if (!(iFlags & NET_FLAG_CTL))               { ret=0; continue; }
-                if (iLength != ret)                         { ret=0; continue; }
-                if (iLength < (int)(sizeof(int)*2+sizeof(char)*2)) { ret=0; continue; }
+                if (!(iFlags & NET_FLAG_CTL))               {
+                    ret=0;
+                    continue;
+                }
+                if (iLength != ret)                         {
+                    ret=0;
+                    continue;
+                }
+                if (iLength < (int)(sizeof(int)*2+sizeof(char)*2)) {
+                    ret=0;
+                    continue;
+                }
                 break;
             }
         } while((ret == 0) && ((dlcs_get_tickcount() - fTryTime) < dConnectTimeOut));
@@ -1611,11 +1673,11 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd){
     if(ctltype == CTL_REJECT) return 0;
     if(ctltype != CTL_ACCEPT) return 0;
 
-	pLog->_Add("Got a CTL_ACCEPT here");
+    pLog->_Add("Got a CTL_ACCEPT here");
 
-	bConnected=true;
+    bConnected=true;
 
-	memcpy(&ToAddr,&RetAddr,sizeof(sockaddr));
+    memcpy(&ToAddr,&RetAddr,sizeof(sockaddr));
 
     iT = Recv.iRead();
 
@@ -1641,7 +1703,7 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd){
 
     return 1;
 }
-void C_FMGS::emgDisconnect(){
+void C_FMGS::emgDisconnect() {
     pLog->_Add("Disconnecting (%d) %s:%d",iSocket, pGetRemoteIPAddress(), iGetRemotePort());
 
     CPacket SendData(NET_DATAGRAMSIZE);
@@ -1652,40 +1714,40 @@ void C_FMGS::emgDisconnect(){
     // pLog->_Add("C_FMGS::Disconnect() (%d) [%s]", retval  , NET_pGetLastError());
 }
 void C_FMGS::emgSendNetMessage(char cMethod) {
-/*
-    if(emgeGetState()==NET_NOTCONNECT) return;
-    switch(cMethod)
-    {
-        case 1: // Unreliable
-            //pSocket->
-            SendUnreliableMessage((CPacket *)&SendData);
-            dMsgTime=dlcs_get_tickcount();
-            break;
+    /*
+        if(emgeGetState()==NET_NOTCONNECT) return;
+        switch(cMethod)
+        {
+            case 1: // Unreliable
+                //pSocket->
+                SendUnreliableMessage((CPacket *)&SendData);
+                dMsgTime=dlcs_get_tickcount();
+                break;
 
-        case 0: // Reliable
-            while(! //pSocket->
-                bCanSendMessage()) DoNetwork();
+            case 0: // Reliable
+                while(! //pSocket->
+                    bCanSendMessage()) DoNetwork();
 
-            // pSocket->
-            SendReliableMessage((CPacket *)&SendData);
-            dMsgTime=dlcs_get_tickcount();
-            break;
+                // pSocket->
+                SendReliableMessage((CPacket *)&SendData);
+                dMsgTime=dlcs_get_tickcount();
+                break;
 
-//            case 2: // Buffered
-//                while(!pSocket->bCanSendMessage()) DoNetwork();
-//                pSocket->SendBufferedMessage((CPacket *)&SendData);
-//                dMsgTime=dlcs_get_tickcount();
-//                break;
+    //            case 2: // Buffered
+    //                while(!pSocket->bCanSendMessage()) DoNetwork();
+    //                pSocket->SendBufferedMessage((CPacket *)&SendData);
+    //                dMsgTime=dlcs_get_tickcount();
+    //                break;
 
-        default:
-            //pSocket->
-            SendUnreliableMessage((CPacket *)&SendData);
-            dMsgTime=dlcs_get_tickcount();
-            break;
-    }
-    */
+            default:
+                //pSocket->
+                SendUnreliableMessage((CPacket *)&SendData);
+                dMsgTime=dlcs_get_tickcount();
+                break;
+        }
+        */
 }
-int  C_FMGS::emgiGetMessage(){
+int  C_FMGS::emgiGetMessage() {
     int i;
     if (emgeGetState() == NET_NOTCONNECT)
         return 0;
@@ -1697,14 +1759,13 @@ eConState C_FMGS::emgeGetState() {
     if(!this)       return NET_NOTCONNECT;
     if(!bLoggedin)  return NET_LOGGINPROC;
     if(bSystemBusy) return NET_SYSBUSY;
-                    return NET_CONNECTED;
+    return NET_CONNECTED;
 }
-void C_FMGS::emgSetState(eConState eNewState){
+void C_FMGS::emgSetState(eConState eNewState) {
     if(eNewState == NET_CONNECTED)
         bLoggedin=true;
 
-    if(eNewState == NET_NOTCONNECT)
-    {
+    if(eNewState == NET_NOTCONNECT) {
         bLoggedin=false;
     }
     if(eNewState == NET_SYSBUSY)
@@ -1722,18 +1783,25 @@ long C_FMGS::emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &d
     //CInetAddress
     struct sockaddr RetAddr;
 
-    if(!pPingSocket) { pPingSocket=new CCSocket(); bPinging=false; }
-    if(!pPingSocket) { bPinging=false; return dwPing; }
-    if(!bPinging)
-    {
-        if(dlcs_get_tickcount()-dwFuncTimer<5000) { bPinging=false; return dwPing; }
+    if(!pPingSocket) {
+        pPingSocket=new CCSocket();
+        bPinging=false;
+    }
+    if(!pPingSocket) {
+        bPinging=false;
+        return dwPing;
+    }
+    if(!bPinging) {
+        if(dlcs_get_tickcount()-dwFuncTimer<5000) {
+            bPinging=false;
+            return dwPing;
+        }
         dwFuncTimer=dlcs_get_tickcount();
         pPingSocket->bCanSend=true;
 
         pPingSocket->OpenSocket(pHost,atoi(pPort));
 
-        if(pPingSocket->iSocket >= 0)
-        {
+        if(pPingSocket->iSocket >= 0) {
             //pPingSocket->NET_SetSocketPort(&pPingSocket->stAddr,atoi(pPort));
             pPingSocket->bConnected=false;
             pPingSocket->bCanSend=false;
@@ -1748,13 +1816,10 @@ long C_FMGS::emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &d
             bPinging=true;
             dwWaitTimer=dlcs_get_tickcount();
         }
-    }
-    else
-    {
+    } else {
         ret = pPingSocket->nRecv(Recv.pGetPacketBuffer(),Recv.iGetMaxSize(),&RetAddr);
         if(ret==-1) ret=0;
-        if(ret>0)
-        {
+        if(ret>0) {
             Recv.SetCurSize(ret);
             iLength = ntohl(Recv.iRead());
             iFlags  = iLength & (~NET_FLAG_LENGTH_MASK);
@@ -1763,20 +1828,15 @@ long C_FMGS::emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &d
             if(iLength != ret)           ret=0;
             if(iLength < (int) (sizeof(int)*2+sizeof(char)*2)) ret=0;
         }
-        if(ret==0)
-        {
-            if(dlcs_get_tickcount()-dwWaitTimer>5000)
-            {
+        if(ret==0) {
+            if(dlcs_get_tickcount()-dwWaitTimer>5000) {
                 dwPing=9994;
                 bPinging=false;
             }
-        }
-        else
-        {
+        } else {
             Recv.iRead();
             char ctltype = Recv.cRead();
-            if(ctltype == CTL_PING)
-            {
+            if(ctltype == CTL_PING) {
                 dwPing=(dlcs_get_tickcount()-Recv.dwRead());
                 bPinging=false;
             }
@@ -1786,38 +1846,38 @@ long C_FMGS::emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &d
 }
 void C_FMGS::GetFile(char *filename) { // ** Get a file from server
     CPacket SendData(NET_DATAGRAMSIZE);
-	SendData.Reset();
-	SendData.Write((char)NETMSG_FILE_XFER);
-	SendData.Write((char)NET_FILE_START);
-	SendData.Write((char *)filename);
-	SendUnreliableMessage(&SendData);
+    SendData.Reset();
+    SendData.Write((char)NETMSG_FILE_XFER);
+    SendData.Write((char)NET_FILE_START);
+    SendData.Write((char *)filename);
+    SendUnreliableMessage(&SendData);
 }
-void CLog::_Add(const char *fmt, ...){
+void CLog::_Add(const char *fmt, ...) {
     char ach[1024];
     va_list va;
     va_start( va, fmt );
     vsprintf( ach, fmt, va );
     va_end( va );
-	if(ach[strlen(ach)-1]!='\n')
-    strcat(ach,"\n");
+    if(ach[strlen(ach)-1]!='\n')
+        strcat(ach,"\n");
     AddEntry(ach);
     if(pGUI)
         pGUI->consEntry(ach);
 }
-void CLog::_DebugAdd(const char *fmt, ...){
+void CLog::_DebugAdd(const char *fmt, ...) {
     if(!bDebug) return;
     char ach[1024];
     va_list va;
     va_start( va, fmt );
     vsprintf( ach, fmt, va );
     va_end( va );
-	if(ach[strlen(ach)-1]!='\n')
-    strcat(ach,"\n");
+    if(ach[strlen(ach)-1]!='\n')
+        strcat(ach,"\n");
     AddEntry(ach);
     if(pGUI)
         pGUI->consEntry(ach);
 }
-void C_FMGS::Chat(char *msg,char *name,int channel){
+void C_FMGS::Chat(char *msg,char *name,int channel) {
 
     CPacket SendData(NET_DATAGRAMSIZE);
 

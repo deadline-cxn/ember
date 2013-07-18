@@ -1,6 +1,8 @@
 /***************************************************************
+    EMBER GAME CLIENT
+    Author: Seth Parson
 
- ***************************************************************/
+****************************************************************/
 
 #ifndef _MANTRA_GAME_CLIENT
 #define _MANTRA_GAME_CLIENT
@@ -45,21 +47,21 @@ enum MODE {
     CONNECT_TO_SERVER,
     CONNECT_CHECK,
 
-	GET_SERVER_INFORMATION_START,
-	GET_SERVER_INFORMATION_SPIN,
+    GET_SERVER_INFORMATION_START,
+    GET_SERVER_INFORMATION_SPIN,
 
     GET_CHARACTERS,
-	GET_CHARACTERS_SPIN,
+    GET_CHARACTERS_SPIN,
     GET_CHARACTERS_SEND,
     GET_CHARACTERS_RECV,
 
-	CHOOSE_CHARACTER_STAGE,
+    CHOOSE_CHARACTER_STAGE,
 
-	CHOOSE_CHARACTER,
+    CHOOSE_CHARACTER,
     CHOOSE_CHARACTER_SPIN,
 
-	CREATE_CHARACTER,
-	CREATE_CHARACTER_SPIN,
+    CREATE_CHARACTER,
+    CREATE_CHARACTER_SPIN,
 
     CREATE_CHARACTER_SEND,
     CREATE_CHARACTER_SEND_SPIN,
@@ -70,22 +72,22 @@ enum MODE {
     LOGIN_FAILED,
     GATHER_GAME_DATA,
 
-	/*
-	SI_RACES_SEND,
-	SI_RACES_RECV,
-	SI_ATTRIBUTES_SEND,
-	SI_ATTRIBUTES_RECV,
+    /*
+    SI_RACES_SEND,
+    SI_RACES_RECV,
+    SI_ATTRIBUTES_SEND,
+    SI_ATTRIBUTES_RECV,
     SI_CLASSES_SEND,
     SI_CLASSES_RECV,
     SI_SKILLS_SEND,
     SI_SKILLS_RECV,
-	*/
+    */
 
-	//SI_GETCHARS_SEND,
-	//SI_GETCHARS_RECV,
+    //SI_GETCHARS_SEND,
+    //SI_GETCHARS_RECV,
 
     SI_GENERIC_SEND,
-	SI_GENERIC_RECV,
+    SI_GENERIC_RECV,
 
     LOGIN_PROGRAM_START,
     LOGIN_PROGRAM_END,
@@ -100,13 +102,13 @@ enum MODE {
     GAME_ON,
     GAME_LIMBO,
 
-	GAME_EDITOR,
+    GAME_EDITOR,
 
-	EDIT_WORLD_INIT,
-	EDIT_WORLD,
+    EDIT_WORLD_INIT,
+    EDIT_WORLD,
 
-	EDIT_MODELS_INIT,
-	EDIT_MODELS,
+    EDIT_MODELS_INIT,
+    EDIT_MODELS,
 
     QUIT,
     WAIT_LOOP,
@@ -121,14 +123,14 @@ extern "C"
 {
 #endif
 
-    bool    DoGameMode();
-	void    MainGameLoop(void);
-	bool    doInit(void);
-	void    ShutDown(void);
-	void    DoSDLEvents(void);
-    void    InitializeEntities(void);
-    void    DoEntities(void);
-    void    SetGameMode(int);
+bool    DoGameMode();
+void    MainGameLoop(void);
+bool    doInit(void);
+void    ShutDown(void);
+void    DoSDLEvents(void);
+void    InitializeEntities(void);
+void    DoEntities(void);
+void    SetGameMode(int);
 
 
 #ifdef __cplusplus
