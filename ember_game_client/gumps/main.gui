@@ -17,9 +17,12 @@ x=0
 y=-180
 w=104
 h=15
+font=4
+fontbase=0
+fontscale=2
 relativeto=GUI_MIDDLE_CENTER
 type=FM_GC_STATIC_TEXT
-value=^6M ^8A ^5N ^4T ^3R ^1A
+value=^&^6M ^8A ^5N ^4T ^3R ^1A
 
 [CTRL]
 name=stusername
