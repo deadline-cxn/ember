@@ -175,6 +175,8 @@
 		<Unit filename="../../dlstorm/c_log.h" />
 		<Unit filename="../../dlstorm/c_map_new.cpp" />
 		<Unit filename="../../dlstorm/c_map_new.h" />
+		<Unit filename="../../dlstorm/c_mapmodel.cpp" />
+		<Unit filename="../../dlstorm/c_mapmodel.h" />
 		<Unit filename="../../dlstorm/c_net.cpp" />
 		<Unit filename="../../dlstorm/c_net.h" />
 		<Unit filename="../../dlstorm/c_snd.cpp" />
