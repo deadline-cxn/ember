@@ -1,32 +1,6 @@
-/*
- ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
- บ                                                             . บ
- บ                    บ             .        บ             )     บ
- บ       .            บบบ                  บบบ                   บ
- บ                     บบบบ              บบบบ         .          บ
- บ                      บบบบบบ        บบบบบบ                 .   บ
- บ                      บบบบบบบบบ  บบบบบบบบบ                     บ
- บ              .       บบบบบบบบบบบบบบบบบบบบ                     บ
- บ                      บบบบบ บบบบบบบบ บบบบบบ         .          บ
- บ  .    .             บบบบ    บบบบบบ    บบบบ                    บ
- บ                     บบบ   .  บบบบ  .   บบบ                    บ
- บ                     บบบ   *;  บบ   *;  บบบ   .             .  บ
- บ             *        บบบ    บบบบบบ    บบบ                     บ
- บ                      บบบบบบบบบ  บบบบบบบบบ                     บ
- บ                        บบบบบบ บบ บบบบบบ                       บ
- บ   .                    บบบบบบบบบบบบบบบบ                       บ
- บ                        บ บบบบบบบบบบบบ บ              .        บ
- บ        o          .     บบ บบบบบบบบ บบ             .          บ
- บ                         บบ บบ บบ บบ บบ               .        บ
- บ             .            บบบบ บบ บบบบ                         บ
- บ   .                       บบบบบบบบบบ        .                 บ
- บ                             บบบบบบ                       .    บ
- บ                                                               บ
- บ           ABANDON ALL HOPE YE WHO LOOKS BELOW HERE!           บ
- บ                                                               บ
- ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ*/
-
-#ifndef _FOLD_THIS_
+/*******************************************************************************
+    MANTRA GAME CLIENT / EMBER GAME ENGINE / by Seth Parson
+ *******************************************************************************/
 
 #ifdef  _DEBUG
 #define _DEBUG_MANTRA_LOG 1
@@ -38,28 +12,19 @@
 #include "manclient.h"
 
 bool        bShutDown;
-CC_Data     *pClientData;
-C_GFX       *pGFX;      // SDL / OpenGL
-C_GUI       *pGUI;      // OpenGL GUI
-CGAF        *pGAF;      // Game Archive File (GAF)
-CLog        *pLog;      // Log file
-C_FMGS      *pFMGS;     // Game Server connection
-C_Entity    *pNTT;      // Entity
-C_Entity    *pFirstNTT; // Entity
-
+CC_Data*    pClientData;
+C_GFX*      pGFX;      // SDL / OpenGL
+C_GUI*      pGUI;      // OpenGL GUI
+CGAF*       pGAF;      // Game Archive File (GAF)
+CLog*       pLog;      // Log file
+C_FMGS*     pFMGS;     // Game Server connection
+C_Entity*   pFirstNTT; // Entity
 #ifdef _WINDOWS_
-C_Sound     *pSND;      // FMOD Sounds
+C_Sound*    pSND;      // FMOD Sounds
 #endif
 
-#endif
 
-int main(int argc, char *argv[]) { // ** SDL main
-    bShutDown=false;
-    if(doInit()) while(!bShutDown) MainGameLoop();
-    ShutDown();
-    return 0;
-}
-
+int main(int argc, char *argv[]) { bShutDown=false; if(doInit()) while(!bShutDown) MainGameLoop(); ShutDown(); return 0; }
 
 ////////////////////////////////////////////////////// Console STUFF
 
@@ -85,7 +50,6 @@ int  con_getint(const string &s) {
 void con_functest(const string &s)      {
     pLog->_Add("functest(%s)",(char *)s.c_str());
 }
-
 void con_setgamemode(const string &s)   {
     pLog->_Add("setgamemode %s",(char *)s.c_str());
     SetGameMode((MODE) con_getint(s.c_str()));
@@ -207,7 +171,6 @@ void con_guictrlrender(const string &s) {
 void con_guiedit(const string &s)       {
     pGUI->edit_stump((char *) s.c_str());
 }
-
 void con_guiremovecontrol(const string &s) {
     //vector <string> vs;
     vector <string> ncmd=explode(" ",s.c_str());
@@ -245,7 +208,6 @@ void con_guicallback(const string &s)    {
 
     pFMGS->SendUnreliableMessage(&SendData);
 }
-
 void con_echo(const string &s)          {
     pLog->_Add((char *)s.c_str());
 }
@@ -362,50 +324,31 @@ void con_chat(const string &s) {
 
 ////////////////////////////////////////////////////// Game Mode STUFF
 void MainGameLoop(void) { // **  Main Game Loop
-
     if(bShutDown) return;
     if(!pGUI) return;
     if(!pClientData) return;
-
-    pLog->_DebugAdd("MainGameLoop 1");
-
-    if( pGUI->doInput() == SDLK_F12 ) {
-        bShutDown=true;
-        return;
-    }
-
-    if(pFMGS)
-        pFMGS->DoNetwork();    // Get any network messages
-
+    if(pGUI->doInput() == SDLK_F12) { bShutDown=true; return; }
+    if(pFMGS) pFMGS->DoNetwork();
     pGFX->BeginScene();
-
     DoGameMode();
-
     pGUI->draw();
     pGUI->drawFPS(0,0);
-
-
     pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
     pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),3,1);
     pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),3,1);
-
     pGFX->EndScene();
-
-
 }
 void SetGameMode(int x) {
     if(pFMGS) pFMGS->spin_timer->Reset();
     if(pClientData) pClientData->GAME_MODE=x;
 }
 bool DoGameMode(void) {
-
     char temp1[1024];
     memset(temp1,0,1024);
     char temp2[1024];
     memset(temp2,0,1024);
 
     switch(pClientData->GAME_MODE) {
-
     case RETRO_INTRO_INIT:
         SetGameMode(RETRO_INTRO_PLAY);
         break;
@@ -427,45 +370,32 @@ bool DoGameMode(void) {
         SetGameMode(MAIN_MENU_2);
 
     case MAIN_MENU_2:
-        break; // End MAIN_MENU
+        break;
 
     case CREDITS:
         SetGameMode(MAIN_MENU);
         break;
 
     case LOGIN_AUTO_LOGIN:
-
         pLog->_Add("LOGIN_AUTO_LOGIN");
         pGUI->clear();
         pGUI->pCons->_Execute("exec autologin.cfg");
-
         SetGameMode(LOGIN_SCREEN_ENTRY);
-
         break;
 
-
     case LOGIN_SCREEN_ENTRY:
-
         pLog->_Add("LOGIN_SCREEN_ENTRY");
-
-        //SDL_WM_SetCaption(va("EGC %s(%s) Net Revision(%s) %s",VERSION,CPUSTRING,NET_REVISION,COPYRIGHT),"icon");
-
         if(pClientData) {
             pClientData->ServerListOffset=0;
             //pClientData->SelectedServer=MAX_SERVERS+1;
         }
-
         //DEL(pFMMS);
         //LOGINMODE=LM_NONE;
-
         SetGameMode(GATHER_SERVER_LIST);
 
     case GATHER_SERVER_LIST:
-
         DEL(pFMGS);
-
         pLog->_Add("GATHER_SERVER_LIST");
-
         //switch(LOGINMODE)
         //
         // case LM_NONE:
@@ -488,11 +418,9 @@ bool DoGameMode(void) {
         SetGameMode(CHOOSE_SERVER);
 
     case CHOOSE_SERVER_INIT:
-
         DEL(pFMGS);
         pGUI->clear();
         pGUI->call("servers.gui");
-
         SetGameMode(CHOOSE_SERVER);
 
     case CHOOSE_SERVER:
@@ -501,25 +429,17 @@ bool DoGameMode(void) {
         /////////////////////////////
 
     case LOGIN_FROM_GUI:
-
         pGUI->getdata((char *)&temp1,"username");
         pGUI->getdata((char *)&temp2,"password");
-
         md5_digest(temp1,temp2);
-
         pLog->_Add("%s",temp1);
-
         strcpy(pClientData->Name,       temp1);
         strcpy(pClientData->Password,   temp2);
-
         SetGameMode(CONNECT);
         break;
 
     case CONNECT:
-
-        // pLog->_Add("CONNECT");
         pGUI->clear();
-
         strcpy(pClientData->ServerID,"s001-frag-mere");
         if(     (!strlen(pClientData->Name)) ||
                 (!strlen(pClientData->Password)) ) {
@@ -527,13 +447,10 @@ bool DoGameMode(void) {
             SetGameMode(GATHER_SERVER_LIST);
             break;
         }
-
         // strcpy(pClientData->IPAddress,"127.0.0.1");
         // strcpy(pClientData->Port, "40227");
-
         // Run the connect command through the console...
         // ProcessConsoleCommand(va("connect %s:%s %s %s", pClientData->IPAddress,pClientData->Port, pClientData->Name,pClientData->Password),1);
-
         DEL(pFMGS);
         pFMGS=new C_FMGS();
         if(!pFMGS) {
@@ -541,141 +458,95 @@ bool DoGameMode(void) {
             pGUI->prompt("Can't establish network object","nop");
             break;
         }
-
         md5_digest(temp1,pClientData->Password);
-
         pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
-
         SetGameMode(LOGIN_RECV);
-
         break; // End CONNECT
 
     case CONSOLE_CONNECT:
-
         pLog->_Add("CONSOLE_CONNECT");
-
         pGUI->clear();
         pGUI->call("connect.gui");
-
         DEL(pFMGS);
         pFMGS=new C_FMGS();
         md5_digest(temp1,pClientData->Password);
         pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
-
         SetGameMode(LOGIN_RECV);
-
         break;
-
         /////////////////////////////
 
     case LOGIN_RECV: // Spin loop for logging in
-
         pLog->_Add("LOGIN_RECV");
-
         //pGUI->MOUSEMODE=MP_SYSTEMBUSY;
-
         pGUI->gPrint(270,270,"^&^7Connecting to the server...",1);
-
         if(pFMGS->spin_timer->Up()) {
             pGUI->prompt("^&^6No response from server^1!","nop");
             SetGameMode(MAIN_MENU);
         }
-
         break; // End LOGIN_RECV
-
         //////////////////////////////
 
     case GET_SERVER_INFORMATION_START:
-
         pLog->_Add("GET_SERVER_INFORMATION_START");
-
         //SendData.Reset();
         //SendData.Write((char)NETMSG_SERVERINFORMATION);
         //SendData.Write((char)1);
         //SendNetMessage(0);
-
         SetGameMode(GET_SERVER_INFORMATION_SPIN);
-
     case GET_SERVER_INFORMATION_SPIN:
-
         pLog->_Add("GET_SERVER_INFORMATION_SPIN");
-
         //MOUSEMODE=MP_SYSTEMBUSY;
-
         pGUI->gPrint(270,270,"^&^7Updating Server Information...",1);
-
         if(pFMGS->spin_timer->Up()) {
             //pGUI->Prompt("^&^6No response from server^1!","nop");
             //SetGameMode(LOGIN_SCREEN_ENTRY);
         }
-
-
         break;
-
         /////////////////////////////
 
     case GET_CHARACTERS:
-
         pLog->_Add("GET_CHARACTERS");
-
-
         //SendData.Reset();
         //SendData.Write((char)NETMSG_RETRIEVECHARS);
         //SendData.Write((char)1);
         //SendNetMessage(0);
-
         SetGameMode(GET_CHARACTERS_SPIN);
-
         break;
 
     case GET_CHARACTERS_SPIN:
-
         pGUI->gPrint(270,270,"^&^7Downloading character information...",1);
-
         if(pFMGS->spin_timer->Up()) {
             //    pGUI->Prompt("^&^6No response from server^1!","nop");
             //    SetGameMode(LOGIN_SCREEN_ENTRY);
         }
-
         break;
-
 
     case CHOOSE_CHARACTER:
         SetGameMode(CHOOSE_CHARACTER_SPIN);
-
     case CHOOSE_CHARACTER_SPIN:
         break;
 
     case CREATE_CHARACTER:
-
         //strcpy(szTemp1,"create_character");
         //if(strcmp(szTemp1,pClientData->szGeneric))
         //   strcpy(pClientData->szGeneric,szTemp1);
-
         pGUI->clear();
         pGUI->call("create_character.gui");
-
         SetGameMode(CREATE_CHARACTER_SPIN);
-
         break;
 
     case CREATE_CHARACTER_SPIN:
         break;
 
-
     case CREATE_CHARACTER_SEND:
-
         break;
 
     case CREATE_CHARACTER_SEND_SPIN:
         break;
-
         /////////////////////////////
 
     case GATHER_GAME_DATA: // Logged in, now get all data needed
-
         pGUI->clear();
-
         pLog->_Add("===============================================================");
         if(!strlen(pClientData->ServerName)) strcpy(pClientData->ServerName,"Mantra Server");
         pLog->_Add("Server Name.....%s",pClientData->ServerName);
@@ -686,58 +557,37 @@ bool DoGameMode(void) {
         if(!strlen(pClientData->ServerAuthor)) strcpy(pClientData->ServerAuthor,"Admin");
         pLog->_Add("Administrator...%s",pClientData->ServerAuthor);
         pLog->_Add("===============================================================");
-
         pGFX->SetWindowTitle("EGC %s(%s) [%s]",VERSION,CPUSTRING,pClientData->ServerName); // nr(%s) ,NET_REVISION
-
         SetGameMode(GATHER_GAME_DATA_LOADER);
         break;
-
         /////////////////////////////
 
     case GATHER_GAME_DATA_LOADER:
-
         //MOUSEMODE=MP_SYSTEMBUSY;
         //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
-
         //pFMGS->dMsgTime=dlcs_get_tickcount();
-
         //GAME_MODE=WAIT_LOOP;
         //SendData.Reset();
         //SendData.Write((char)NETMSG_GET_LOGIN_PROGRAM);
         //SendData.Write((char)1);
         //SendNetMessage(0);
-        //break;
+        break;
 
     case LOGIN_PROGRAM_START:
-
         //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
-
         // wait for login program from the server, it will be fetched in NET_UTIL
-
         SetGameMode(LOGIN_PROGRAM_END); // when user completed the program...
-
         break;
 
     case LOGIN_PROGRAM_END:
-
         SetGameMode(INITIALIZE_GAME);
-
         break;
 
     case INITIALIZE_GAME:
-
         pGUI->clear();
         pGUI->call("gameon.gui");
-
-        /*      pGFX->pCamera->xpos=-48;
-                pGFX->pCamera->ypos=-21;
-                pGFX->pCamera->zpos=-157;
-                pGFX->pCamera->xrot=902;
-                pGFX->pCamera->yrot=1783; */
-
         pLog->_Add("Done initializing player setup...");
         SetGameMode(ITEM_INITIALIZE);
-
         break;
 
     case ITEM_INITIALIZE:
@@ -745,14 +595,11 @@ bool DoGameMode(void) {
         break;
 
     case GAME_ON:
-
         // GL_SELECT
         pGFX->RenderScene();
         pGFX->DrawSun();
         DoEntities();
         // GL_RENDER
-
-
         break;
 
     case GAME_LIMBO:
@@ -760,37 +607,28 @@ bool DoGameMode(void) {
         break;
 
     case QUIT:
+        break;
 
     case DEBUG_LOOP:
-
         break;
 
     case WAIT_LOOP:
-
         break;
 
     case EDIT_WORLD_INIT:
-
         pLog->_Add("Edit World Init Start");
-
         pGUI->clear();
         pGUI->call("editmenu.gui");
         pGUI->call("guistumpedit.gui");
         pGUI->call("guictrledit.gui");
-
         pClientData->bDrawMap=false;
-
         pLog->_Add("Edit World Init End");
-
         SetGameMode(EDIT_WORLD);
-
         pGFX->pCamera->ypos=33;
-
         /*      pGFX->pCamera->xpos=-48;
                 pGFX->pCamera->zpos=-157;
                 pGFX->pCamera->xrot=902;
                 pGFX->pCamera->yrot=1783;  */
-
     case EDIT_WORLD:
         // pGFX->RenderScene();
         break;
@@ -803,30 +641,13 @@ bool DoGameMode(void) {
 
     case EDIT_MODELS:
         pGUI->gPrint(15,32,"GAME MODE: EDIT_MODELS",3,1);
-
         break;
 
     default:
-        break; // End switch(GAME_MODE)
+        break;
     }
-
-    /// END OF GAME MODE SPECIFICS
     /////////////////////////////////////////////////////////////////////////////////
-
     return false;
-}
-GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
-    switch(ElmInfo->Type) {
-    case GAFELMTYPE_FILE:
-        pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
-        break;
-    case GAFELMTYPE_DIR:
-        pLog->_Add("<DIR> %25s ",ElmInfo->Name);
-        break;
-    default:
-        break;
-    }
-    return 0;
 }
 
 bool doInit(void) {
@@ -839,7 +660,7 @@ bool doInit(void) {
     pGAF			= NULL;
     pGUI            = NULL;
     pFMGS           = NULL;
-    pNTT            = NULL;
+    //pNTT            = NULL;
     pFirstNTT       = NULL;
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -1054,6 +875,7 @@ bool doInit(void) {
 
 void ShutDown(void) { // **  Shut Down the Program
     pLog->_Add("******************** START SHUTDOWN ***************************");
+    C_Entity* pNTT;
     pNTT=pFirstNTT;
     while(pNTT) {
         pFirstNTT=pNTT;
@@ -1089,6 +911,7 @@ void ShutDown(void) { // **  Shut Down the Program
 
 void InitializeEntities(void) {
 
+    C_Entity* pNTT;
     pNTT=pFirstNTT;
     while(pNTT) {
         pFirstNTT=pNTT;
@@ -1135,6 +958,7 @@ void InitializeEntities(void) {
 }
 
 void DoEntities(void) { // Update Entities
+    C_Entity* pNTT;
     pNTT=pFirstNTT;
     while(pNTT) {
         glLoadIdentity();
@@ -1161,7 +985,7 @@ long C_FMGS::Ping(void) { // ** Ping the server
 }
 void C_FMGS::DoNetwork(void) { // ** Network Loop
 
-#ifndef _FOLD_THIS_
+
     char temp1[1024];
     memset(temp1,0,1024);
     char temp2[1024];
@@ -1209,16 +1033,16 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
         SetGameMode(MAIN_MENU);
         return;
     }
-#endif
+
     if(NetMessage) {
-#ifndef _FOLD_THIS_
+
 
         RecvData = pGetMessage();
 
         cLastNetMessage = RecvData->cRead();
 
         pLog->_Add("GOT NETMESSAGE [%d] [%d]",NetMessage,cLastNetMessage);
-#endif
+
         switch(cLastNetMessage) {
 
         case NETMSG_PING:
@@ -1893,3 +1717,16 @@ void C_FMGS::Chat(char *msg,char *name,int channel) {
 }
 
 
+GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
+    switch(ElmInfo->Type) {
+    case GAFELMTYPE_FILE:
+        pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
+        break;
+    case GAFELMTYPE_DIR:
+        pLog->_Add("<DIR> %25s ",ElmInfo->Name);
+        break;
+    default:
+        break;
+    }
+    return 0;
+}
