@@ -944,7 +944,7 @@ void InitializeEntities(void) {
         pNTT->type  = ENTITY_STATIC;
 
 
-        pNTT->pTexture=pGFX->GetTexture("base/tile00001.png");
+        pNTT->pTexture=pGFX->GetTexture("base/sb1.front.png");//GetTexture("base/tile00001.png");
 
 //        pNTT->pTexture=pGFX->GetRandomTexture();//
         if(!pNTT->pTexture)

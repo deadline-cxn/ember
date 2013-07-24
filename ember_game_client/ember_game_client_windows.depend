@@ -452,16 +452,16 @@
 1373583267 source:h:\develop\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1373293653 source:c:\projects\dlstorm\c_console.cpp
+1374156229 source:c:\projects\dlstorm\c_console.cpp
 	"c_console.h"
 
-1372679006 c:\projects\dlstorm\c_console.h
+1374156776 c:\projects\dlstorm\c_console.h
 	"c_gltexture.h"
 	"c_log.h"
 	"c_gaf.h"
 	<map>
 
-1373634363 c:\projects\dlstorm\c_gltexture.h
+1374156876 c:\projects\dlstorm\c_gltexture.h
 	"png.h"
 	<winsock2.h>
 	<mmsystem.h>
@@ -471,17 +471,17 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1373634363 c:\projects\dlstorm\c_gaf.h
+1374156814 c:\projects\dlstorm\c_gaf.h
 	<dirent.h>
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
 
-1373983200 c:\projects\dlstorm\dlstorm.h
+1374157148 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
-1373466484 c:\projects\dlstorm\dlstorm_lib.h
+1374157183 c:\projects\dlstorm\dlstorm_lib.h
 	<dirent.h>
 	<ctype.h>
 	<sys/types.h>
@@ -516,7 +516,7 @@
 	<map>
 	<algorithm>
 
-1372679006 c:\projects\dlstorm\c_log.h
+1374157050 c:\projects\dlstorm\c_log.h
 	<direct.h>
 	<stdio.h>
 	<stdarg.h>
@@ -526,11 +526,11 @@
 	<unistd.h>
 	"dlstorm.h"
 
-1373889413 source:c:\projects\dlstorm\c_data.cpp
+1374156174 source:c:\projects\dlstorm\c_data.cpp
 	"c_data.h"
 	"SDL.h"
 
-1373291962 c:\projects\dlstorm\c_data.h
+1374156788 c:\projects\dlstorm\c_data.h
 	"dlstorm.h"
 	"c_log.h"
 
@@ -747,10 +747,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1373466484 source:c:\projects\dlstorm\c_gl3dmodel.cpp
+1374666658 source:c:\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1374155882 c:\projects\dlstorm\c_gl3dmodel.h
+1374666658 c:\projects\dlstorm\c_gl3dmodel.h
 	<string>
 	<vector>
 	"s_gnu.h"
@@ -763,12 +763,12 @@
 1373466484 c:\projects\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1374154992 source:c:\projects\dlstorm\c_glfont.cpp
+1374156451 source:c:\projects\dlstorm\c_glfont.cpp
 	"c_glfont.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1373892605 c:\projects\dlstorm\c_glfont.h
+1374156853 c:\projects\dlstorm\c_glfont.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -777,21 +777,21 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1373466484 source:c:\projects\dlstorm\c_hash.cpp
+1374156555 source:c:\projects\dlstorm\c_hash.cpp
 	"c_hash.h"
 	<iostream>
 	<string>
 	<map>
 
-1317743478 c:\projects\dlstorm\c_hash.h
+1374156907 c:\projects\dlstorm\c_hash.h
 
-1372700309 source:c:\projects\dlstorm\c_log.cpp
+1374156611 source:c:\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
-1373467428 source:c:\projects\dlstorm\c_net.cpp
+1374156651 source:c:\projects\dlstorm\c_net.cpp
 	"c_net.h"
 
-1373467310 c:\projects\dlstorm\c_net.h
+1374157091 c:\projects\dlstorm\c_net.h
 	"dlstorm.h"
 	<winsock2.h>
 	<stdio.h>
@@ -806,26 +806,26 @@
 	<fcntl.h>
 	<errno.h>
 
-1373466484 source:c:\projects\dlstorm\c_snd.cpp
+1374156676 source:c:\projects\dlstorm\c_snd.cpp
 	"c_snd.h"
 
-1373466484 c:\projects\dlstorm\c_snd.h
+1374157114 c:\projects\dlstorm\c_snd.h
 	"dlstorm.h"
 	"fmod.h"
 
-1372700382 source:c:\projects\dlstorm\c_timer.cpp
+1374156699 source:c:\projects\dlstorm\c_timer.cpp
 	"c_timer.h"
 
-1270131542 c:\projects\dlstorm\c_timer.h
+1374157133 c:\projects\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1373983417 source:c:\projects\dlstorm\dlstorm.cpp
+1374666658 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
-1373466484 source:c:\projects\dlstorm\glerrors.cpp
+1374156736 source:c:\projects\dlstorm\glerrors.cpp
 	"glerrors.h"
 
-1373466484 c:\projects\dlstorm\glerrors.h
+1374157190 c:\projects\dlstorm\glerrors.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1024,10 +1024,10 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1374153639 source:c:\projects\ember\manclient.cpp
+1374673818 source:c:\projects\ember\manclient.cpp
 	"manclient.h"
 
-1374153639 c:\projects\ember\manclient.h
+1374157219 c:\projects\ember\manclient.h
 	"c_data.h"
 	"c_timer.h"
 	"c_snd.h"
@@ -1051,13 +1051,13 @@
 
 1372683979 c:\projects\ember\c_serverinfo.h
 
-1373634363 source:c:\projects\dlstorm\c_gaf.cpp
+1374156386 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1374155905 source:c:\projects\dlstorm\c_gfx.cpp
+1374673585 source:c:\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1374155390 c:\projects\dlstorm\c_gfx.h
+1374671648 c:\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1071,35 +1071,36 @@
 	"c_gltexture.h"
 	"c_gl3dmodel.h"
 	"c_entity.h"
+	"c_mapmodel.h"
 	"c_map_new.h"
 
-1373980848 c:\projects\dlstorm\c_map_new.h
+1374668756 c:\projects\dlstorm\c_map_new.h
 	"dlstorm.h"
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1373889413 source:c:\projects\dlstorm\c_glmouse.cpp
+1374666658 source:c:\projects\dlstorm\c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1373634363 c:\projects\dlstorm\c_glmouse.h
+1374156864 c:\projects\dlstorm\c_glmouse.h
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
 
-1373889413 source:c:\projects\dlstorm\c_gltexture.cpp
+1374156485 source:c:\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
 
-1373980848 source:c:\projects\dlstorm\c_gui.cpp
+1374666658 source:c:\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1373891423 c:\projects\dlstorm\c_gui.h
+1374666658 c:\projects\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
@@ -1114,7 +1115,7 @@
 1372684463 c:\projects\dlstorm\c_gui_chat_enum.h
 	"dlstorm.h"
 
-1373980848 source:c:\projects\dlstorm\c_map_new.cpp
+1374671301 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1374575865 source:h:\develop\projects\dlstorm\c_entity.cpp
@@ -1133,10 +1134,10 @@
 1373696683 source:h:\develop\projects\dlstorm\c_waypoint.cpp
 	"c_waypoint.h"
 
-1373981476 source:c:\projects\dlstorm\c_entity.cpp
+1374666658 source:c:\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1373981490 c:\projects\dlstorm\c_entity.h
+1374156802 c:\projects\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
@@ -1619,4 +1620,12 @@
 	"dlstorm.h"
 	"c_gl3dmodel.h"
 	"c_gltexture.h"
+
+1374668158 c:\projects\dlstorm\c_mapmodel.h
+	"dlstorm.h"
+	"c_gl3dmodel.h"
+	"c_gltexture.h"
+
+1374668174 source:c:\projects\dlstorm\c_mapmodel.cpp
+	"c_mapmodel.h"
 
