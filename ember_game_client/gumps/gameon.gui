@@ -8,7 +8,7 @@ x=4
 y=4
 w=width
 h=32
-media=1
+media=base/b0000.png
 
 # Attach bottombar CTRL
 #[ATTACH]
@@ -25,9 +25,9 @@ console=QUIT
 
 [CTRL]
 name=console
-media=53
-media_hover=53
-media_click=76
+media=base/b0053.png
+media_hover=base/b0053.png
+media_click=base/b0076.png
 x=128
 y=18
 type=FM_GC_ACTION
@@ -36,9 +36,9 @@ console=guicall console.gui
 
 [CTRL]
 name=main
-media=152
-media_hover=152
-media_click=153
+media=base/b0152.png
+media_hover=base/b0152.png
+media_click=base/b0153.png
 x=160
 y=18
 type=FM_GC_ACTION
