@@ -747,18 +747,16 @@
 	"begin_code.h"
 	"close_code.h"
 
-1374666658 source:c:\projects\dlstorm\c_gl3dmodel.cpp
+1374764518 source:c:\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1374666658 c:\projects\dlstorm\c_gl3dmodel.h
+1374764629 c:\projects\dlstorm\c_gl3dmodel.h
 	<string>
 	<vector>
-	"s_gnu.h"
+	"c_gfx.h"
 	"c_gltexture.h"
 	"c_log.h"
-	<vector>
-	<string>
-	<map>
+	"s_gnu.h"
 
 1373466484 c:\projects\dlstorm\s_gnu.h
 	"dlstorm.h"
@@ -1054,10 +1052,10 @@
 1374156386 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1374673585 source:c:\projects\dlstorm\c_gfx.cpp
+1374766379 source:c:\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1374671648 c:\projects\dlstorm\c_gfx.h
+1374765220 c:\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1074,8 +1072,9 @@
 	"c_mapmodel.h"
 	"c_map_new.h"
 
-1374668756 c:\projects\dlstorm\c_map_new.h
+1374764882 c:\projects\dlstorm\c_map_new.h
 	"dlstorm.h"
+	"c_gfx.h"
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
@@ -1092,15 +1091,15 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1374156485 source:c:\projects\dlstorm\c_gltexture.cpp
+1374761088 source:c:\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
 
-1374666658 source:c:\projects\dlstorm\c_gui.cpp
+1374763302 source:c:\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1374666658 c:\projects\dlstorm\c_gui.h
+1374763100 c:\projects\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
@@ -1115,7 +1114,7 @@
 1372684463 c:\projects\dlstorm\c_gui_chat_enum.h
 	"dlstorm.h"
 
-1374671301 source:c:\projects\dlstorm\c_map_new.cpp
+1374764842 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1374575865 source:h:\develop\projects\dlstorm\c_entity.cpp
@@ -1134,10 +1133,10 @@
 1373696683 source:h:\develop\projects\dlstorm\c_waypoint.cpp
 	"c_waypoint.h"
 
-1374666658 source:c:\projects\dlstorm\c_entity.cpp
+1374766573 source:c:\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1374156802 c:\projects\dlstorm\c_entity.h
+1374766504 c:\projects\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
@@ -1621,11 +1620,12 @@
 	"c_gl3dmodel.h"
 	"c_gltexture.h"
 
-1374668158 c:\projects\dlstorm\c_mapmodel.h
+1374766316 c:\projects\dlstorm\c_mapmodel.h
 	"dlstorm.h"
+	"c_gfx.h"
 	"c_gl3dmodel.h"
 	"c_gltexture.h"
 
-1374668174 source:c:\projects\dlstorm\c_mapmodel.cpp
+1374765612 source:c:\projects\dlstorm\c_mapmodel.cpp
 	"c_mapmodel.h"
 
