@@ -334,8 +334,8 @@ void MainGameLoop(void) { // **  Main Game Loop
     pGUI->draw();
     pGUI->drawFPS(0,0);
     pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->xpos,pGFX->pCamera->ypos,pGFX->pCamera->zpos),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[0.0] ANGLE[%f]",pGFX->pCamera->xrot,pGFX->pCamera->yrot,pGFX->pCamera->angle),3,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
     pGFX->EndScene();
 }
 void SetGameMode(int x) {
@@ -623,7 +623,7 @@ bool DoGameMode(void) {
         pClientData->bDrawMap=false;
         pLog->_Add("Edit World Init End");
         SetGameMode(EDIT_WORLD);
-        pGFX->pCamera->ypos=33;
+        pGFX->pCamera->loc.y=33;
         /*      pGFX->pCamera->xpos=-48;
                 pGFX->pCamera->zpos=-157;
                 pGFX->pCamera->xrot=902;
@@ -904,8 +904,6 @@ void ShutDown(void) { // **  Shut Down the Program
     DEL(pLog);
 }
 
-
-
 ////////////////////////////////////////////////////// Entity STUFF
 
 void InitializeEntities(void) {
@@ -948,11 +946,8 @@ void InitializeEntities(void) {
         pNTT->color.g = (((float)rand()/(float)RAND_MAX)*5)+1;
         pNTT->color.b = (((float)rand()/(float)RAND_MAX)*5)+1;
         pNTT->type  = ENTITY_STATIC;
-        pNTT->pTexture=pGFX->GetRandomTexture();//GetTexture("base/sb1.front.png");//GetTexture("base/tile00001.png");
+        pNTT->pTexture=pGFX->GetRandomTexture();
         if(!pNTT->pTexture) pNTT->pTexture=pGFX->pDefaultTexture;
-        // pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->name,pNTT->loc.x,pNTT->loc.y,pNTT->loc.z);
-        // pNTT->pNext=
-        // pNTT=pNTT->pNext;
     }
     DEL(pNTT);
 }
