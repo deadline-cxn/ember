@@ -358,7 +358,6 @@ bool DoGameMode(void) {
         break;
 
     case MAIN_MENU:
-        pLog->_Add("MAIN_MENU WHAT");
         DEL(pFMGS);
         pGUI->clear();
         pGUI->call("main.gui");
@@ -910,7 +909,6 @@ void ShutDown(void) { // **  Shut Down the Program
 ////////////////////////////////////////////////////// Entity STUFF
 
 void InitializeEntities(void) {
-
     C_Entity* pNTT;
     pNTT=pFirstNTT;
     while(pNTT) {
@@ -918,43 +916,45 @@ void InitializeEntities(void) {
         pNTT=pNTT->pNext;
         DEL(pFirstNTT);
     }
-    pFirstNTT=new C_Entity(pLog,pGAF,pGFX,0);
-    pNTT=pFirstNTT;
     int i,numntt;
-    numntt=20;
+    numntt=200;
     for(i=0; i<numntt; i++) {
+        pNTT=pFirstNTT;
+        if(!pNTT) {
+            pFirstNTT=new C_Entity(pLog,pGAF,pGFX,0);
+            pNTT=pFirstNTT;
+        }
+        else {
+            while(pNTT->pNext) {
+                pNTT=pNTT->pNext;
+            }
+            pNTT->pNext=new C_Entity(pLog,pGAF,pGFX,0);
+            pNTT=pNTT->pNext;
+        }
         strcpy(pNTT->name,va("Entity %d",i));
-
-        pNTT->Pos.x = ( (float)rand()/(float)RAND_MAX)*150;
-        pNTT->Pos.y = (((float)rand()/(float)RAND_MAX)*150)+20;
-        pNTT->Pos.z = ( (float)rand()/(float)RAND_MAX)*150;
-
-        pNTT->Rot.x = ( (float)rand()/(float)RAND_MAX)*360;
-        pNTT->Rot.y = ( (float)rand()/(float)RAND_MAX)*360;
-        pNTT->Rot.z = ( (float)rand()/(float)RAND_MAX)*360;
-
-        pNTT->Scale.x = (((float)rand()/(float)RAND_MAX)*2)+1;
-        pNTT->Scale.y = (((float)rand()/(float)RAND_MAX)*2)+1;
-        pNTT->Scale.z = (((float)rand()/(float)RAND_MAX)*2)+1;
-
-        pNTT->Color.r = (((float)rand()/(float)RAND_MAX)*5)+1;
-        pNTT->Color.g = (((float)rand()/(float)RAND_MAX)*5)+1;
-        pNTT->Color.b = (((float)rand()/(float)RAND_MAX)*5)+1;
-
+        pNTT->loc.x = ( (float)rand()/(float)RAND_MAX)*550;
+        pNTT->loc.y = (((float)rand()/(float)RAND_MAX)*550)+20;
+        pNTT->loc.z = ( (float)rand()/(float)RAND_MAX)*550;
+        pNTT->rot.x = ( (float)rand()/(float)RAND_MAX)*360;
+        pNTT->rot.y = ( (float)rand()/(float)RAND_MAX)*360;
+        pNTT->rot.z = ( (float)rand()/(float)RAND_MAX)*360;
+        pNTT->autorot.x = ( (float)rand()/(float)RAND_MAX)*1.5f;
+        pNTT->autorot.y = ( (float)rand()/(float)RAND_MAX)*1.5f;
+        pNTT->autorot.z = ( (float)rand()/(float)RAND_MAX)*1.5f;
+        pNTT->scale.x = (((float)rand()/(float)RAND_MAX)*5.0f)+1;
+        pNTT->scale.y = (((float)rand()/(float)RAND_MAX)*5.0f)+1;
+        pNTT->scale.z = (((float)rand()/(float)RAND_MAX)*5.0f)+1;
+        pNTT->color.r = (((float)rand()/(float)RAND_MAX)*5)+1;
+        pNTT->color.g = (((float)rand()/(float)RAND_MAX)*5)+1;
+        pNTT->color.b = (((float)rand()/(float)RAND_MAX)*5)+1;
         pNTT->type  = ENTITY_STATIC;
-
-
-        pNTT->pTexture=pGFX->GetTexture("base/sb1.front.png");//GetTexture("base/tile00001.png");
-
-//        pNTT->pTexture=pGFX->GetRandomTexture();//
-        if(!pNTT->pTexture)
-            pNTT->pTexture=pGFX->pDefaultTexture;
-
-        pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->name,pNTT->Pos.x,pNTT->Pos.y,pNTT->Pos.z);
-
-        pNTT->pNext=new C_Entity(pLog,pGAF,pGFX,0);
-        pNTT=pNTT->pNext;
+        pNTT->pTexture=pGFX->GetRandomTexture();//GetTexture("base/sb1.front.png");//GetTexture("base/tile00001.png");
+        if(!pNTT->pTexture) pNTT->pTexture=pGFX->pDefaultTexture;
+        // pLog->_Add("Created new entity [%s] located @ (%f,%f,%f)",pNTT->name,pNTT->loc.x,pNTT->loc.y,pNTT->loc.z);
+        // pNTT->pNext=
+        // pNTT=pNTT->pNext;
     }
+    DEL(pNTT);
 }
 
 void DoEntities(void) { // Update Entities
