@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1374799003 source:h:\develop\projects\ember\manclient.cpp
+1374855155 source:h:\develop\projects\ember\manclient.cpp
 	"manclient.h"
 
 1374198739 h:\develop\projects\ember\manclient.h
@@ -61,7 +61,7 @@
 	"dlstorm_lib.h"
 	"c_log.h"
 
-1374198726 h:\develop\projects\dlstorm\dlstorm_lib.h
+1374858014 h:\develop\projects\dlstorm\dlstorm_lib.h
 	<dirent.h>
 	<ctype.h>
 	<sys/types.h>
@@ -117,10 +117,10 @@
 1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1374799954 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1374855131 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1374800136 h:\develop\projects\dlstorm\c_gfx.h
+1374855131 h:\develop\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -134,18 +134,16 @@
 	"c_gltexture.h"
 	"c_gl3dmodel.h"
 	"c_entity.h"
-	"c_mapmodel.h"
 	"c_map_new.h"
 
-1374772249 h:\develop\projects\dlstorm\c_gl3dmodel.h
-	<string>
-	<vector>
+1374926102 h:\develop\projects\dlstorm\c_gl3dmodel.h
 	"c_gfx.h"
 	"c_gltexture.h"
 	"c_log.h"
 	"s_gnu.h"
+	<limits.h>
 
-1374046580 h:\develop\projects\dlstorm\s_gnu.h
+1374858043 h:\develop\projects\dlstorm\s_gnu.h
 	"dlstorm.h"
 
 1374772249 h:\develop\projects\dlstorm\c_map_new.h
@@ -156,7 +154,7 @@
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1374793496 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
+1374858095 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
 1374198726 source:h:\develop\projects\dlstorm\c_glfont.cpp
@@ -1116,10 +1114,10 @@
 1374764842 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
-1374794612 source:h:\develop\projects\dlstorm\c_entity.cpp
+1374855131 source:h:\develop\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1374794515 h:\develop\projects\dlstorm\c_entity.h
+1374855131 h:\develop\projects\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
