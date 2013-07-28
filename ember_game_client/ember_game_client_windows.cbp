@@ -49,6 +49,7 @@
 			<Add library="GLAux" />
 			<Add library="OpenGL32" />
 			<Add library="ws2_32" />
+			<Add library="assimp" />
 			<Add directory="C:/projects/SDK/SDL-1.2.15/lib" />
 		</Linker>
 		<Unit filename="../../SDK/lpng162/png.c">
