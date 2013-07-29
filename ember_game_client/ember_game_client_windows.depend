@@ -1145,10 +1145,10 @@
 1373889413 c:\projects\dlstorm\c_waypoint.h
 	"c_gl3dmodel.h"
 
-1374813252 source:c:\dev\ember\manclient.cpp
+1375107995 source:c:\dev\ember\manclient.cpp
 	"manclient.h"
 
-1374161689 c:\dev\ember\manclient.h
+1375107995 c:\dev\ember\manclient.h
 	"c_data.h"
 	"c_timer.h"
 	"c_snd.h"
@@ -1279,7 +1279,7 @@
 1375017809 c:\dev\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1374813537 c:\dev\dlstorm\c_gfx.h
+1375107938 c:\dev\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1306,10 +1306,10 @@
 1374161707 source:c:\dev\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375021878 source:c:\dev\dlstorm\c_gfx.cpp
+1375107938 source:c:\dev\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375021354 source:c:\dev\dlstorm\c_gl3dmodel.cpp
+1375107938 source:c:\dev\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
 1374161707 source:c:\dev\dlstorm\c_glfont.cpp
@@ -1337,7 +1337,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1374798095 source:c:\dev\dlstorm\c_gltexture.cpp
+1375107938 source:c:\dev\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -1380,7 +1380,7 @@
 1374161707 source:c:\dev\dlstorm\c_log.cpp
 	"c_log.h"
 
-1374767393 source:c:\dev\dlstorm\c_map_new.cpp
+1375107938 source:c:\dev\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1374161707 source:c:\dev\dlstorm\c_net.cpp
