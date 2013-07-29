@@ -18,7 +18,9 @@ C_GUI*      pGUI;      // OpenGL GUI
 CGAF*       pGAF;      // Game Archive File (GAF)
 CLog*       pLog;      // Log file
 C_FMGS*     pFMGS;     // Game Server connection
-C_Entity*   pFirstNTT; // Entity
+
+// C_Entity*   pFirstNTT; // Entity
+
 #ifdef _WINDOWS_
 C_Sound*    pSND;      // FMOD Sounds
 #endif
@@ -597,7 +599,6 @@ bool DoGameMode(void) {
         // GL_SELECT
         pGFX->RenderScene();
         pGFX->DrawSun();
-        DoEntities();
         // GL_RENDER
         break;
 
@@ -659,8 +660,8 @@ bool doInit(void) {
     pGAF			= NULL;
     pGUI            = NULL;
     pFMGS           = NULL;
-    //pNTT            = NULL;
-    pFirstNTT       = NULL;
+    // pNTT            = NULL;
+    // pFirstNTT       = NULL;
 
     /////////////////////////////////////////////////////////////////////////////////
     // Fill random seed with time for better randomizing
@@ -749,7 +750,8 @@ bool doInit(void) {
                         pClientData->ScreenColors,
                         pClientData->bFullScreen,
                         temp,
-                        pLog, pGAF );
+                        pLog,
+                        pGAF );
 
     if(!pGFX) {
         pLog->_Add("GFX initialization failure, quitting");
@@ -865,8 +867,6 @@ bool doInit(void) {
     pGUI->pCons->intmap["WAIT_LOOP"]         = WAIT_LOOP;
     pGUI->pCons->intmap["DEBUG_LOOP"]        = DEBUG_LOOP;
 
-    InitializeEntities();
-
     pLog->_Add("******************** FINISHED STARTUP ***************************");
 
     return TRUE;
@@ -874,22 +874,23 @@ bool doInit(void) {
 
 void ShutDown(void) { // **  Shut Down the Program
     pLog->_Add("******************** START SHUTDOWN ***************************");
-    C_Entity* pNTT;
-    pNTT=pFirstNTT;
-    while(pNTT) {
-        pFirstNTT=pNTT;
-        pNTT=pNTT->pNext;
-        DEL(pFirstNTT);
-    }
 
 #ifdef _WINDOWS_
+
     DEL(pSND);
+    pLog->_Add("Sound shut down");
 #endif
 
     DEL(pGUI);
+    pLog->_Add("GUI shut down");
     DEL(pFMGS);
-
     NET_Shutdown();
+    pLog->_Add("FMGS shut down");
+
+    DEL(pGFX);
+    pLog->_Add("GFX shut down");
+    DEL(pGAF);
+    pLog->_Add("GAF shut down");
 
     if(pClientData) {
         pClientData->bSave();
@@ -897,72 +898,11 @@ void ShutDown(void) { // **  Shut Down the Program
         pClientData->CleanUp();
         DEL(pClientData);
     }
-    DEL(pGFX);
-    DEL(pGAF);
+    pLog->_Add("Client data shut down");
     pLog->_Add("Mantra engine shut down!");
     pLog->AddLineSep();
     DEL(pLog);
 }
-
-////////////////////////////////////////////////////// Entity STUFF
-
-void InitializeEntities(void) {
-    C_Entity* pNTT;
-    pNTT=pFirstNTT;
-    while(pNTT) {
-        pFirstNTT=pNTT;
-        pNTT=pNTT->pNext;
-        DEL(pFirstNTT);
-    }
-    int i,numntt;
-    numntt=200;
-    for(i=0; i<numntt; i++) {
-        pNTT=pFirstNTT;
-        if(!pNTT) {
-            pFirstNTT=new C_Entity(pLog,pGAF,pGFX,0);
-            pNTT=pFirstNTT;
-        }
-        else {
-            while(pNTT->pNext) {
-                pNTT=pNTT->pNext;
-            }
-            pNTT->pNext=new C_Entity(pLog,pGAF,pGFX,0);
-            pNTT=pNTT->pNext;
-        }
-        strcpy(pNTT->name,va("Entity %d",i));
-        pNTT->loc.x = ( (float)rand()/(float)RAND_MAX)*550;
-        pNTT->loc.y = (((float)rand()/(float)RAND_MAX)*550)+20;
-        pNTT->loc.z = ( (float)rand()/(float)RAND_MAX)*550;
-        pNTT->rot.x = ( (float)rand()/(float)RAND_MAX)*360;
-        pNTT->rot.y = ( (float)rand()/(float)RAND_MAX)*360;
-        pNTT->rot.z = ( (float)rand()/(float)RAND_MAX)*360;
-        pNTT->autorot.x = ( (float)rand()/(float)RAND_MAX)*1.5f;
-        pNTT->autorot.y = ( (float)rand()/(float)RAND_MAX)*1.5f;
-        pNTT->autorot.z = ( (float)rand()/(float)RAND_MAX)*1.5f;
-        pNTT->scale.x = (((float)rand()/(float)RAND_MAX)*5.0f)+1;
-        pNTT->scale.y = (((float)rand()/(float)RAND_MAX)*5.0f)+1;
-        pNTT->scale.z = (((float)rand()/(float)RAND_MAX)*5.0f)+1;
-        pNTT->color.r = (((float)rand()/(float)RAND_MAX)*5)+1;
-        pNTT->color.g = (((float)rand()/(float)RAND_MAX)*5)+1;
-        pNTT->color.b = (((float)rand()/(float)RAND_MAX)*5)+1;
-        pNTT->type  = ENTITY_STATIC;
-        pNTT->pTexture=pGFX->GetRandomTexture();
-        if(!pNTT->pTexture) pNTT->pTexture=pGFX->pDefaultTexture;
-    }
-    DEL(pNTT);
-}
-
-void DoEntities(void) { // Update Entities
-    C_Entity* pNTT;
-    pNTT=pFirstNTT;
-    while(pNTT) {
-        glLoadIdentity();
-        pGFX->pCamera->Go();
-        pNTT->Draw();
-        pNTT=pNTT->pNext;
-    }
-}
-
 ////////////////////////////////////////////////////// NETWORK STUFF
 long C_FMGS::Ping(void) { // ** Ping the server
     CPacket SendData(NET_DATAGRAMSIZE);

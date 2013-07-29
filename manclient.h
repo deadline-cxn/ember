@@ -128,8 +128,6 @@ void    MainGameLoop(void);
 bool    doInit(void);
 void    ShutDown(void);
 void    DoSDLEvents(void);
-void    InitializeEntities(void);
-void    DoEntities(void);
 void    SetGameMode(int);
 
 
