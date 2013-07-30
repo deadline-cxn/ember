@@ -30,6 +30,10 @@ int main(int argc, char *argv[]) { bShutDown=false; if(doInit()) while(!bShutDow
 
 ////////////////////////////////////////////////////// Console STUFF
 
+void con_terraform(const string &s) {
+    pLog->_Add("TERRAFORM!");
+    pGFX->pMap->Terraform();
+}
 void con_getint_str(char *pString, int n) {
     char temp[1024];
     memset(temp,0,1024);
@@ -213,7 +217,10 @@ void con_guicallback(const string &s)    {
 void con_echo(const string &s)          {
     pLog->_Add((char *)s.c_str());
 }
-void con_exec(const string &s)          {  // pLog->_Add("Exec [%s]:",s.c_str());
+void con_exec(const string &s)          {
+
+    pLog->_Add("exec [%s]:",s.c_str());
+
     char temp[1024];
     memset(temp,0,1024);
     FILE *fp;
@@ -262,6 +269,9 @@ void con_bind(const string &s)          {
     while(ls[strlen(ls)-1]==' ') ls[strlen(ls)-1]=0;
     key=con_getint((char *)ss);
     pGUI->KeyMap[(SDLKey)key]=(char *)ls;
+
+    pLog->_Add("bind [%s] [%s]:",(char *)ss,(char *)ls);
+
 }
 void con_cvar(const string &s) {
     vector <string> vs;
@@ -778,11 +788,6 @@ bool doInit(void) {
 
     NET_Init();
 
-    SetGameMode(RETRO_INTRO_INIT); // what the
-
-    pGUI->pCons->_Execute("exec autoexec.cfg");
-    pGUI->pCons->_Execute("exec config.cfg");
-
     bShutDown=0;
     pGUI->pCons->RegVar("b_shutdown",(void *)&bShutDown);
     pGUI->pCons->set_cvar("s_teststring","THIS IS A TEST OF THE GLOBAL VARS SYSTEM");
@@ -807,6 +812,8 @@ bool doInit(void) {
     pGUI->pCons->RegFunc("bind",(void *)con_bind);
     pGUI->pCons->RegFunc("cvar",(void *)con_cvar);
     pGUI->pCons->RegFunc("quit",(void *)con_quit);
+    pGUI->pCons->RegFunc("terraform", (void *)con_terraform);
+    pGUI->pCons->RegFunc("tf", (void *)con_terraform);
 
     pGUI->pCons->RegFunc("chat",(void *)con_chat);
 
@@ -867,16 +874,20 @@ bool doInit(void) {
     pGUI->pCons->intmap["WAIT_LOOP"]         = WAIT_LOOP;
     pGUI->pCons->intmap["DEBUG_LOOP"]        = DEBUG_LOOP;
 
+
+    pGUI->pCons->_Execute("exec autoexec.cfg");
+    pGUI->pCons->_Execute("exec config.cfg");
+
+    SetGameMode(RETRO_INTRO_INIT);
     pLog->_Add("******************** FINISHED STARTUP ***************************");
 
     return TRUE;
 }
 
-void ShutDown(void) { // **  Shut Down the Program
+void ShutDown(void) {
     pLog->_Add("******************** START SHUTDOWN ***************************");
 
 #ifdef _WINDOWS_
-
     DEL(pSND);
     pLog->_Add("Sound shut down");
 #endif
