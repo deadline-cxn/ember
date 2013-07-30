@@ -451,7 +451,7 @@
 1375040966 source:h:\develop\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1374156229 source:c:\projects\dlstorm\c_console.cpp
+1375193583 source:c:\projects\dlstorm\c_console.cpp
 	"c_console.h"
 
 1374156776 c:\projects\dlstorm\c_console.h
@@ -1022,7 +1022,7 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1375098469 source:c:\projects\ember\manclient.cpp
+1375193627 source:c:\projects\ember\manclient.cpp
 	"manclient.h"
 
 1375098469 c:\projects\ember\manclient.h
@@ -1052,10 +1052,10 @@
 1374156386 source:c:\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375101794 source:c:\projects\dlstorm\c_gfx.cpp
+1375195853 source:c:\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375099210 c:\projects\dlstorm\c_gfx.h
+1375193583 c:\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1071,7 +1071,7 @@
 	"c_entity.h"
 	"c_map_new.h"
 
-1374764882 c:\projects\dlstorm\c_map_new.h
+1375193583 c:\projects\dlstorm\c_map_new.h
 	"dlstorm.h"
 	"c_gfx.h"
 	"c_gaf.h"
@@ -1095,10 +1095,10 @@
 	"glerrors.h"
 	"SDL.h"
 
-1375098492 source:c:\projects\dlstorm\c_gui.cpp
+1375193583 source:c:\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1375098492 c:\projects\dlstorm\c_gui.h
+1375193583 c:\projects\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
@@ -1113,7 +1113,7 @@
 1372684463 c:\projects\dlstorm\c_gui_chat_enum.h
 	"dlstorm.h"
 
-1375101528 source:c:\projects\dlstorm\c_map_new.cpp
+1375193583 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1375164923 source:h:\develop\projects\dlstorm\c_entity.cpp
@@ -1132,10 +1132,10 @@
 1373696683 source:h:\develop\projects\dlstorm\c_waypoint.cpp
 	"c_waypoint.h"
 
-1375098492 source:c:\projects\dlstorm\c_entity.cpp
+1375196147 source:c:\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1375098492 c:\projects\dlstorm\c_entity.h
+1375194979 c:\projects\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
