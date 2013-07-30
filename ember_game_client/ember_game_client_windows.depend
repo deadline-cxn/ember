@@ -117,7 +117,7 @@
 1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375164687 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1375208220 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
 1375164370 h:\develop\projects\dlstorm\c_gfx.h
@@ -156,7 +156,7 @@
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1375114910 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
+1375206542 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
 1374198726 source:h:\develop\projects\dlstorm\c_glfont.cpp
@@ -1116,10 +1116,10 @@
 1375193583 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
-1375164923 source:h:\develop\projects\dlstorm\c_entity.cpp
+1375207816 source:h:\develop\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1375164853 h:\develop\projects\dlstorm\c_entity.h
+1375207069 h:\develop\projects\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
