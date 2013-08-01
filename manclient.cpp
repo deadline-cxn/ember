@@ -607,8 +607,8 @@ bool DoGameMode(void) {
 
     case GAME_ON:
         // GL_SELECT
+
         pGFX->RenderScene();
-        pGFX->DrawSun();
         // GL_RENDER
         break;
 
@@ -878,7 +878,7 @@ bool doInit(void) {
     pGUI->pCons->_Execute("exec autoexec.cfg");
     pGUI->pCons->_Execute("exec config.cfg");
 
-    SetGameMode(RETRO_INTRO_INIT);
+    SetGameMode(INITIALIZE_GAME);//RETRO_INTRO_INIT);
     pLog->_Add("******************** FINISHED STARTUP ***************************");
 
     return TRUE;
