@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) { bShutDown=false; if(doInit()) while(!bShutDow
 
 void con_terraform(const string &s) {
     pLog->_Add("TERRAFORM!");
-    pGFX->pMap->Terraform();
+
 }
 void con_getint_str(char *pString, int n) {
     char temp[1024];
@@ -339,15 +339,15 @@ void MainGameLoop(void) { // **  Main Game Loop
     if(bShutDown) return;
     if(!pGUI) return;
     if(!pClientData) return;
-    if(pGUI->doInput() == SDLK_F12) { bShutDown=true; return; }
+    pGUI->doInput();
     if(pFMGS) pFMGS->DoNetwork();
     pGFX->BeginScene();
     DoGameMode();
     pGUI->draw();
     pGUI->drawFPS(0,0);
     pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
+//    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
+//    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
     pGFX->EndScene();
 }
 void SetGameMode(int x) {
@@ -602,43 +602,18 @@ bool DoGameMode(void) {
         break;
 
     case ITEM_INITIALIZE:
-        SetGameMode(GAME_LIMBO);
+        SetGameMode(GAME_ON);
         break;
 
     case GAME_ON:
-        // GL_SELECT
-
-        GLint hits;
-        pGFX->glname=0;
-        pGFX->_glRendermode=GL_SELECT;
-        glRenderMode(pGFX->_glRendermode);
-        pGFX->RenderScene(pGUI->pMouse->X(),pGUI->pMouse->Y());
         pGFX->_glRendermode=GL_RENDER;
-        hits = glRenderMode(pGFX->_glRendermode);
         pGFX->RenderScene(pGUI->pMouse->X(),pGUI->pMouse->Y());
 
-
-        if(hits) {
-            pLog->_Add("%d hits",hits);
-
-            int choose =pGFX->selectbuffer[3];
-            int depth = pGFX->selectbuffer[1];
-
-            for(int loop=1; loop< hits; loop++) {
-
-                if(pGFX->selectbuffer[loop*4+1]< GLuint(depth)) {
-                    choose=pGFX->selectbuffer[loop*4+3];
-                    depth=pGFX->selectbuffer[loop*4+1];
-                }
-
-                pGFX->SelectEntity(choose);
-            }
+        if(pGUI->ikey==SDLK_F12) bShutDown=1;
 
 
 
-        }
 
-        // GL_RENDER
         break;
 
     case GAME_LIMBO:
@@ -663,7 +638,7 @@ bool DoGameMode(void) {
         pClientData->bDrawMap=false;
         pLog->_Add("Edit World Init End");
         SetGameMode(EDIT_WORLD);
-        pGFX->pCamera->loc.y=33;
+//        pGFX->pCamera->loc.y=33;
         /*      pGFX->pCamera->xpos=-48;
                 pGFX->pCamera->zpos=-157;
                 pGFX->pCamera->xrot=902;
@@ -699,8 +674,6 @@ bool doInit(void) {
     pGAF			= NULL;
     pGUI            = NULL;
     pFMGS           = NULL;
-    // pNTT            = NULL;
-    // pFirstNTT       = NULL;
 
     /////////////////////////////////////////////////////////////////////////////////
     // Fill random seed with time for better randomizing

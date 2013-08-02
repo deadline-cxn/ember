@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1375360236 source:h:\develop\projects\ember\manclient.cpp
+1375462662 source:h:\develop\projects\ember\manclient.cpp
 	"manclient.h"
 
 1375097516 h:\develop\projects\ember\manclient.h
@@ -117,10 +117,10 @@
 1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375365560 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1375464459 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375164370 h:\develop\projects\dlstorm\c_gfx.h
+1375465059 h:\develop\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -134,7 +134,6 @@
 	"c_gltexture.h"
 	"c_gl3dmodel.h"
 	"c_entity.h"
-	"c_map_new.h"
 
 1375040885 h:\develop\projects\dlstorm\c_gl3dmodel.h
 	"c_gfx.h"
@@ -173,18 +172,18 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1374579330 source:h:\develop\projects\dlstorm\c_glmouse.cpp
+1375464339 source:h:\develop\projects\dlstorm\c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1374198726 h:\develop\projects\dlstorm\c_glmouse.h
+1375464327 h:\develop\projects\dlstorm\c_glmouse.h
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
 
-1375114910 source:h:\develop\projects\dlstorm\c_gltexture.cpp
+1375456088 source:h:\develop\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -198,13 +197,14 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1375164380 source:h:\develop\projects\dlstorm\c_gui.cpp
+1375464920 source:h:\develop\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1375164357 h:\develop\projects\dlstorm\c_gui.h
+1375460130 h:\develop\projects\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
+	"sdl.h"
 	"c_gfx.h"
 	"c_gaf.h"
 	"c_glfont.h"
@@ -227,7 +227,7 @@
 1374198726 source:h:\develop\projects\dlstorm\c_log.cpp
 	"c_log.h"
 
-1375363926 source:h:\develop\projects\dlstorm\c_map_new.cpp
+1375456997 source:h:\develop\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1374198726 source:h:\develop\projects\dlstorm\c_net.cpp
@@ -1116,10 +1116,10 @@
 1375193583 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
-1375365544 source:h:\develop\projects\dlstorm\c_entity.cpp
+1375462711 source:h:\develop\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1375352075 h:\develop\projects\dlstorm\c_entity.h
+1375455441 h:\develop\projects\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
