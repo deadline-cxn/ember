@@ -1145,7 +1145,7 @@
 1373889413 c:\projects\dlstorm\c_waypoint.h
 	"c_gl3dmodel.h"
 
-1375107995 source:c:\dev\ember\manclient.cpp
+1375374582 source:c:\dev\ember\manclient.cpp
 	"manclient.h"
 
 1375107995 c:\dev\ember\manclient.h
@@ -1172,7 +1172,7 @@
 
 1374065614 c:\dev\ember\c_serverinfo.h
 
-1374161707 source:c:\dev\dlstorm\c_console.cpp
+1375163084 source:c:\dev\dlstorm\c_console.cpp
 	"c_console.h"
 
 1374161707 c:\dev\dlstorm\c_console.h
@@ -1254,10 +1254,10 @@
 	"dlstorm.h"
 	"c_log.h"
 
-1374812010 source:c:\dev\dlstorm\c_entity.cpp
+1375374758 source:c:\dev\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1374812330 c:\dev\dlstorm\c_entity.h
+1375374029 c:\dev\dlstorm\c_entity.h
 	"c_waypoint.h"
 	"c_log.h"
 	"c_gaf.h"
@@ -1279,7 +1279,7 @@
 1375017809 c:\dev\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1375107938 c:\dev\dlstorm\c_gfx.h
+1375374608 c:\dev\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1295,7 +1295,7 @@
 	"c_entity.h"
 	"c_map_new.h"
 
-1374767393 c:\dev\dlstorm\c_map_new.h
+1375163084 c:\dev\dlstorm\c_map_new.h
 	"dlstorm.h"
 	"c_gfx.h"
 	"c_gaf.h"
@@ -1306,10 +1306,10 @@
 1374161707 source:c:\dev\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375107938 source:c:\dev\dlstorm\c_gfx.cpp
+1375374685 source:c:\dev\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375107938 source:c:\dev\dlstorm\c_gl3dmodel.cpp
+1375211631 source:c:\dev\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
 1374161707 source:c:\dev\dlstorm\c_glfont.cpp
@@ -1351,10 +1351,10 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1374798095 source:c:\dev\dlstorm\c_gui.cpp
+1375163084 source:c:\dev\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1374798095 c:\dev\dlstorm\c_gui.h
+1375163084 c:\dev\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
@@ -1380,7 +1380,7 @@
 1374161707 source:c:\dev\dlstorm\c_log.cpp
 	"c_log.h"
 
-1375107938 source:c:\dev\dlstorm\c_map_new.cpp
+1375371809 source:c:\dev\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
 1374161707 source:c:\dev\dlstorm\c_net.cpp
@@ -1420,10 +1420,10 @@
 1374161707 source:c:\dev\dlstorm\glerrors.cpp
 	"glerrors.h"
 
-1374066731 source:c:\dev\sdk\lpng162\png.c
+1375241300 source:c:\dev\sdk\lpng162\png.c
 	"pngpriv.h"
 
-1374066731 c:\dev\sdk\lpng162\pngpriv.h
+1375241300 c:\dev\sdk\lpng162\pngpriv.h
 	<stdlib.h>
 	<string.h>
 	<config.h>
@@ -1442,94 +1442,94 @@
 	"pnginfo.h"
 	"pngdebug.h"
 
-1374066731 c:\dev\sdk\lpng162\pnglibconf.h
+1375241300 c:\dev\sdk\lpng162\pnglibconf.h
 
-1374066731 c:\dev\sdk\lpng162\png.h
+1375241300 c:\dev\sdk\lpng162\png.h
 	"pnglibconf.h"
 	"pngconf.h"
 
-1374066731 c:\dev\sdk\lpng162\pngconf.h
+1375241300 c:\dev\sdk\lpng162\pngconf.h
 	<limits.h>
 	<stddef.h>
 	<stdio.h>
 	<setjmp.h>
 	<time.h>
 
-1374066731 c:\dev\sdk\lpng162\pngstruct.h
+1375241300 c:\dev\sdk\lpng162\pngstruct.h
 	"zlib.h"
 
-1374066731 c:\dev\sdk\lpng162\pnginfo.h
+1375241300 c:\dev\sdk\lpng162\pnginfo.h
 
-1374066731 c:\dev\sdk\lpng162\pngdebug.h
+1375241300 c:\dev\sdk\lpng162\pngdebug.h
 	<crtdbg.h>
 	<stdio.h>
 
-1374066731 source:c:\dev\sdk\lpng162\pngerror.c
+1375241300 source:c:\dev\sdk\lpng162\pngerror.c
 	"pngpriv.h"
 
-1374066731 source:c:\dev\sdk\lpng162\pngget.c
+1375241300 source:c:\dev\sdk\lpng162\pngget.c
 	"pngpriv.h"
 
-1374066731 source:c:\dev\sdk\lpng162\pngmem.c
+1375241300 source:c:\dev\sdk\lpng162\pngmem.c
 	"pngpriv.h"
 
-1374066731 source:c:\dev\sdk\lpng162\pngpread.c
+1375241300 source:c:\dev\sdk\lpng162\pngpread.c
 	"pngpriv.h"
 
-1374066731 source:c:\dev\sdk\lpng162\pngread.c
-	"pngpriv.h"
-	<errno.h>
-
-1374066731 source:c:\dev\sdk\lpng162\pngrio.c
-	"pngpriv.h"
-
-1374066731 source:c:\dev\sdk\lpng162\pngrtran.c
-	"pngpriv.h"
-
-1374066731 source:c:\dev\sdk\lpng162\pngrutil.c
-	"pngpriv.h"
-
-1374066731 source:c:\dev\sdk\lpng162\pngset.c
-	"pngpriv.h"
-
-1374066731 source:c:\dev\sdk\lpng162\pngtrans.c
-	"pngpriv.h"
-
-1374066731 source:c:\dev\sdk\lpng162\pngwio.c
-	"pngpriv.h"
-
-1374066731 source:c:\dev\sdk\lpng162\pngwrite.c
+1375241300 source:c:\dev\sdk\lpng162\pngread.c
 	"pngpriv.h"
 	<errno.h>
 
-1374066731 source:c:\dev\sdk\lpng162\pngwtran.c
+1375241300 source:c:\dev\sdk\lpng162\pngrio.c
 	"pngpriv.h"
 
-1374066731 source:c:\dev\sdk\lpng162\pngwutil.c
+1375241300 source:c:\dev\sdk\lpng162\pngrtran.c
 	"pngpriv.h"
 
-1374066746 source:c:\dev\sdk\zlib\adler32.c
+1375241300 source:c:\dev\sdk\lpng162\pngrutil.c
+	"pngpriv.h"
+
+1375241300 source:c:\dev\sdk\lpng162\pngset.c
+	"pngpriv.h"
+
+1375241300 source:c:\dev\sdk\lpng162\pngtrans.c
+	"pngpriv.h"
+
+1375241300 source:c:\dev\sdk\lpng162\pngwio.c
+	"pngpriv.h"
+
+1375241300 source:c:\dev\sdk\lpng162\pngwrite.c
+	"pngpriv.h"
+	<errno.h>
+
+1375241301 source:c:\dev\sdk\lpng162\pngwtran.c
+	"pngpriv.h"
+
+1375241301 source:c:\dev\sdk\lpng162\pngwutil.c
+	"pngpriv.h"
+
+1375241303 source:c:\dev\sdk\zlib\adler32.c
 	"zlib.h"
 
-1374066747 c:\dev\sdk\zlib\zlib.h
+1375241303 c:\dev\sdk\zlib\zlib.h
 	"zconf.h"
 
-1374066747 c:\dev\sdk\zlib\zconf.h
+1375241303 c:\dev\sdk\zlib\zconf.h
 	<windows.h>
 	<sys/types.h>
 	<unistd.h>
 	<unixio.h>
 
-1374066746 source:c:\dev\sdk\zlib\compress.c
+1375241303 source:c:\dev\sdk\zlib\compress.c
 	"zlib.h"
 
-1374066746 source:c:\dev\sdk\zlib\crc32.c
+1375241303 source:c:\dev\sdk\zlib\crc32.c
 	<stdio.h>
 	"zutil.h"
 	<limits.h>
 	"crc32.h"
 
-1374066747 c:\dev\sdk\zlib\zutil.h
+1375241303 c:\dev\sdk\zlib\zutil.h
 	"zlib.h"
 	<stddef.h>
 	<string.h>
@@ -1541,41 +1541,41 @@
 	<unix.h>
 	<stdio.h>
 
-1374066746 c:\dev\sdk\zlib\crc32.h
+1375241303 c:\dev\sdk\zlib\crc32.h
 
-1374066746 source:c:\dev\sdk\zlib\deflate.c
+1375241303 source:c:\dev\sdk\zlib\deflate.c
 	"deflate.h"
 
-1374066746 c:\dev\sdk\zlib\deflate.h
+1375241303 c:\dev\sdk\zlib\deflate.h
 	"zutil.h"
 
-1374066746 source:c:\dev\sdk\zlib\gzio.c
+1375241303 source:c:\dev\sdk\zlib\gzio.c
 	<stdio.h>
 	"zutil.h"
 	<stdarg.h>
 
-1374066746 source:c:\dev\sdk\zlib\infback.c
+1375241303 source:c:\dev\sdk\zlib\infback.c
 	"zutil.h"
 	"inftrees.h"
 	"inflate.h"
 	"inffast.h"
 	"inffixed.h"
 
-1374066746 c:\dev\sdk\zlib\inftrees.h
+1375241303 c:\dev\sdk\zlib\inftrees.h
 
-1374066746 c:\dev\sdk\zlib\inflate.h
+1375241303 c:\dev\sdk\zlib\inflate.h
 
-1374066746 c:\dev\sdk\zlib\inffast.h
+1375241303 c:\dev\sdk\zlib\inffast.h
 
-1374066746 c:\dev\sdk\zlib\inffixed.h
+1375241303 c:\dev\sdk\zlib\inffixed.h
 
-1374066746 source:c:\dev\sdk\zlib\inffast.c
+1375241303 source:c:\dev\sdk\zlib\inffast.c
 	"zutil.h"
 	"inftrees.h"
 	"inflate.h"
 	"inffast.h"
 
-1374066746 source:c:\dev\sdk\zlib\inflate.c
+1375241303 source:c:\dev\sdk\zlib\inflate.c
 	"zutil.h"
 	"inftrees.h"
 	"inflate.h"
@@ -1583,22 +1583,22 @@
 	"inffixed.h"
 	<stdio.h>
 
-1374066746 source:c:\dev\sdk\zlib\inftrees.c
+1375241303 source:c:\dev\sdk\zlib\inftrees.c
 	"zutil.h"
 	"inftrees.h"
 
-1374066747 source:c:\dev\sdk\zlib\trees.c
+1375241303 source:c:\dev\sdk\zlib\trees.c
 	"deflate.h"
 	<ctype.h>
 	"trees.h"
 	<stdio.h>
 
-1374066747 c:\dev\sdk\zlib\trees.h
+1375241303 c:\dev\sdk\zlib\trees.h
 
-1374066747 source:c:\dev\sdk\zlib\uncompr.c
+1375241303 source:c:\dev\sdk\zlib\uncompr.c
 	"zlib.h"
 
-1374066747 source:c:\dev\sdk\zlib\zutil.c
+1375241303 source:c:\dev\sdk\zlib\zutil.c
 	"zutil.h"
 
 1374225411 source:h:\develop\projects\dlstorm\c_map.cpp

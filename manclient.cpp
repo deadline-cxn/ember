@@ -608,7 +608,36 @@ bool DoGameMode(void) {
     case GAME_ON:
         // GL_SELECT
 
-        pGFX->RenderScene();
+        GLint hits;
+        pGFX->glname=0;
+        pGFX->_glRendermode=GL_SELECT;
+        glRenderMode(pGFX->_glRendermode);
+        pGFX->RenderScene(pGUI->pMouse->X(),pGUI->pMouse->Y());
+        pGFX->_glRendermode=GL_RENDER;
+        hits = glRenderMode(pGFX->_glRendermode);
+        pGFX->RenderScene(pGUI->pMouse->X(),pGUI->pMouse->Y());
+
+
+        if(hits) {
+            pLog->_Add("%d hits",hits);
+
+            int choose =pGFX->selectbuffer[3];
+            int depth = pGFX->selectbuffer[1];
+
+            for(int loop=1; loop< hits; loop++) {
+
+                if(pGFX->selectbuffer[loop*4+1]< GLuint(depth)) {
+                    choose=pGFX->selectbuffer[loop*4+3];
+                    depth=pGFX->selectbuffer[loop*4+1];
+                }
+
+                pGFX->SelectEntity(choose);
+            }
+
+
+
+        }
+
         // GL_RENDER
         break;
 
