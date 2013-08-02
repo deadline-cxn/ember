@@ -1145,7 +1145,7 @@
 1373889413 c:\projects\dlstorm\c_waypoint.h
 	"c_gl3dmodel.h"
 
-1375374582 source:c:\dev\ember\manclient.cpp
+1375463439 source:c:\dev\ember\manclient.cpp
 	"manclient.h"
 
 1375107995 c:\dev\ember\manclient.h
@@ -1254,7 +1254,7 @@
 	"dlstorm.h"
 	"c_log.h"
 
-1375374758 source:c:\dev\dlstorm\c_entity.cpp
+1375463376 source:c:\dev\dlstorm\c_entity.cpp
 	"c_entity.h"
 
 1375374029 c:\dev\dlstorm\c_entity.h
@@ -1279,7 +1279,7 @@
 1375017809 c:\dev\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1375374608 c:\dev\dlstorm\c_gfx.h
+1375466341 c:\dev\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1293,7 +1293,6 @@
 	"c_gltexture.h"
 	"c_gl3dmodel.h"
 	"c_entity.h"
-	"c_map_new.h"
 
 1375163084 c:\dev\dlstorm\c_map_new.h
 	"dlstorm.h"
@@ -1306,7 +1305,7 @@
 1374161707 source:c:\dev\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375374685 source:c:\dev\dlstorm\c_gfx.cpp
+1375466254 source:c:\dev\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
 1375211631 source:c:\dev\dlstorm\c_gl3dmodel.cpp
@@ -1326,18 +1325,18 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1374663464 source:c:\dev\dlstorm\c_glmouse.cpp
+1375463376 source:c:\dev\dlstorm\c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1374161707 c:\dev\dlstorm\c_glmouse.h
+1375463376 c:\dev\dlstorm\c_glmouse.h
 	"c_gaf.h"
 	"c_log.h"
 	"c_gltexture.h"
 
-1375107938 source:c:\dev\dlstorm\c_gltexture.cpp
+1375463376 source:c:\dev\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -1351,13 +1350,14 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1375163084 source:c:\dev\dlstorm\c_gui.cpp
+1375463377 source:c:\dev\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1375163084 c:\dev\dlstorm\c_gui.h
+1375463377 c:\dev\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
+	"sdl.h"
 	"c_gfx.h"
 	"c_gaf.h"
 	"c_glfont.h"
