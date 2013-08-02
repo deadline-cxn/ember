@@ -1,104 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
+	<File name="..\..\dlstorm\c_data.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1756" topLine="64" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_entity.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5702" topLine="147" />
+		</Cursor>
+		<Folding>
+			<Collapse line="21" />
+		</Folding>
+	</File>
+	<File name="client.ini" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="529" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_gui.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11724" topLine="384" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_gfx.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="40836" topLine="461" />
+		</Cursor>
+		<Folding>
+			<Collapse line="27" />
+			<Collapse line="45" />
+			<Collapse line="64" />
+			<Collapse line="93" />
+			<Collapse line="104" />
+			<Collapse line="123" />
+			<Collapse line="129" />
+			<Collapse line="147" />
+			<Collapse line="156" />
+			<Collapse line="166" />
+			<Collapse line="336" />
+			<Collapse line="338" />
+			<Collapse line="387" />
+			<Collapse line="401" />
+			<Collapse line="459" />
+			<Collapse line="497" />
+			<Collapse line="554" />
+			<Collapse line="563" />
+			<Collapse line="634" />
+			<Collapse line="639" />
+			<Collapse line="642" />
+			<Collapse line="647" />
+			<Collapse line="681" />
+			<Collapse line="716" />
+			<Collapse line="719" />
+			<Collapse line="726" />
+			<Collapse line="734" />
+			<Collapse line="757" />
+			<Collapse line="758" />
+			<Collapse line="812" />
+			<Collapse line="826" />
+			<Collapse line="956" />
+			<Collapse line="970" />
+			<Collapse line="1002" />
+			<Collapse line="1018" />
+			<Collapse line="1060" />
+			<Collapse line="1177" />
+		</Folding>
+	</File>
+	<File name="..\..\dlstorm\c_gfx.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3199" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="..\..\dlstorm\c_log.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="201" topLine="0" />
 		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_snd.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1521" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_snd.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="351" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="311" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\dlstorm.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12354" topLine="382" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\dlstorm.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="333" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\dlstorm_lib.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8243" topLine="380" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\glerrors.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="205" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\manclient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="20037" topLine="597" />
-		</Cursor>
-	</File>
-	<File name="..\manclient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2460" topLine="118" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_console.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8780" topLine="294" />
-		</Cursor>
-	</File>
-	<File name="client.ini" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="475" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="client.log" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="19312" topLine="301" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_gl3dmodel.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="742" topLine="13" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_data.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="296" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_glfont.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="888" topLine="443" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_data.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="427" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_glfont.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="233" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\dlstorm\c_entity.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="634" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="30" />
-			<Collapse line="34" />
-		</Folding>
 	</File>
 	<File name="..\..\dlstorm\c_glmouse.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
@@ -108,17 +86,42 @@
 			<Collapse line="113" />
 		</Folding>
 	</File>
-	<File name="..\..\dlstorm\c_entity.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\dlstorm\c_snd.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2450" topLine="69" />
+			<Cursor1 position="1521" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\manclient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2458" topLine="0" />
 		</Cursor>
 		<Folding>
-			<Collapse line="20" />
+			<Collapse line="137" />
 		</Folding>
+	</File>
+	<File name="..\..\dlstorm\c_gui.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="119173" topLine="3437" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_snd.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="351" topLine="0" />
+		</Cursor>
 	</File>
 	<File name="..\..\dlstorm\c_glmouse.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1364" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_gl3dmodel.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="742" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_gltexture.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="253" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="..\..\dlstorm\c_gltexture.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -129,77 +132,74 @@
 			<Collapse line="195" />
 		</Folding>
 	</File>
-	<File name="..\..\dlstorm\c_gltexture.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\dlstorm\dlstorm.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="253" topLine="0" />
+			<Cursor1 position="333" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="..\..\dlstorm\c_gfx.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\dlstorm\c_glfont.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="28419" topLine="297" />
-		</Cursor>
-		<Folding>
-			<Collapse line="27" />
-			<Collapse line="45" />
-			<Collapse line="64" />
-			<Collapse line="93" />
-			<Collapse line="104" />
-			<Collapse line="122" />
-			<Collapse line="128" />
-			<Collapse line="146" />
-			<Collapse line="155" />
-			<Collapse line="165" />
-			<Collapse line="177" />
-			<Collapse line="187" />
-			<Collapse line="208" />
-			<Collapse line="216" />
-			<Collapse line="221" />
-			<Collapse line="322" />
-			<Collapse line="331" />
-			<Collapse line="333" />
-			<Collapse line="373" />
-			<Collapse line="454" />
-			<Collapse line="492" />
-			<Collapse line="549" />
-			<Collapse line="558" />
-			<Collapse line="629" />
-			<Collapse line="634" />
-			<Collapse line="637" />
-			<Collapse line="642" />
-			<Collapse line="676" />
-			<Collapse line="711" />
-			<Collapse line="714" />
-			<Collapse line="721" />
-			<Collapse line="729" />
-			<Collapse line="752" />
-			<Collapse line="753" />
-			<Collapse line="807" />
-			<Collapse line="821" />
-			<Collapse line="951" />
-			<Collapse line="965" />
-			<Collapse line="997" />
-			<Collapse line="1013" />
-			<Collapse line="1055" />
-		</Folding>
-	</File>
-	<File name="..\..\dlstorm\c_gui.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="127593" topLine="3708" />
+			<Cursor1 position="233" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\..\dlstorm\c_gfx.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\dlstorm\c_timer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3199" topLine="0" />
+			<Cursor1 position="373" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\..\dlstorm\c_gui.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\dlstorm\c_glfont.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3896" topLine="52" />
+			<Cursor1 position="888" topLine="443" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="389" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_entity.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6483" topLine="246" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\dlstorm.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12354" topLine="382" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_console.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8780" topLine="294" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\dlstorm_lib.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8243" topLine="380" />
 		</Cursor>
 	</File>
 	<File name="..\..\dlstorm\c_gl3dmodel.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2421" topLine="57" />
+		</Cursor>
+	</File>
+	<File name="..\manclient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="25019" topLine="696" />
+		</Cursor>
+	</File>
+	<File name="client.log" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11839" topLine="173" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\c_data.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="296" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\dlstorm\glerrors.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="205" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

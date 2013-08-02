@@ -346,8 +346,8 @@ void MainGameLoop(void) { // **  Main Game Loop
     pGUI->draw();
     pGUI->drawFPS(0,0);
     pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
-//    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
-//    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
+    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
     pGFX->EndScene();
 }
 void SetGameMode(int x) {
@@ -599,6 +599,7 @@ bool DoGameMode(void) {
         pGUI->call("gameon.gui");
         pLog->_Add("Done initializing player setup...");
         SetGameMode(ITEM_INITIALIZE);
+        pGFX->pCamera->rot.y=144.0f;
         break;
 
     case ITEM_INITIALIZE:
@@ -609,7 +610,122 @@ bool DoGameMode(void) {
         pGFX->_glRendermode=GL_RENDER;
         pGFX->RenderScene(pGUI->pMouse->X(),pGUI->pMouse->Y());
 
-        if(pGUI->ikey==SDLK_F12) bShutDown=1;
+        if(pGUI->iKeyUp==SDLK_F12) bShutDown=1;
+
+        if(pGUI->iKeyUp==SDLK_F11) {
+            if(pGFX->bEditEntities) pGFX->bEditEntities=false;
+            else pGFX->bEditEntities=true;
+        }
+
+
+        if(pGFX->bEditEntities) {
+            pGUI->gPrint(15,pClientData->ScreenHeight-80,va("^3[^2EDIT ENTITIES^3]"),3,1);
+
+            if(pGUI->iKeyUp==SDLK_TAB) {
+                pGFX->SelectClosestEntity();
+            }
+
+            if( pGFX->pSelectedEntity ) {
+
+                if(pGUI->iKeyUp==SDLK_F8) {
+                    pGFX->pSelectedEntity->pModel=pGFX->GetRandomModel();
+                }
+                if(pGUI->iKeyUp==SDLK_F7) {
+                    pGFX->pSelectedEntity->pTexture=pGFX->GetRandomTexture();
+                }
+
+                if(pGUI->modstate & KMOD_SHIFT) {
+                    if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpRot.bXp=true;
+                    if(pGUI->iKeyDown==SDLK_PAGEDOWN)   pGFX->OpRot.bXn=true;
+                    if(pGUI->iKeyDown==SDLK_HOME)       pGFX->OpRot.bYp=true;
+                    if(pGUI->iKeyDown==SDLK_END)        pGFX->OpRot.bYn=true;
+                    if(pGUI->iKeyDown==SDLK_INSERT)     pGFX->OpRot.bZp=true;
+                    if(pGUI->iKeyDown==SDLK_DELETE)     pGFX->OpRot.bZn=true;
+
+                    if(pGUI->iKeyUp==SDLK_PAGEUP)       pGFX->OpRot.bXp=false;
+                    if(pGUI->iKeyUp==SDLK_PAGEDOWN)     pGFX->OpRot.bXn=false;
+                    if(pGUI->iKeyUp==SDLK_HOME)         pGFX->OpRot.bYp=false;
+                    if(pGUI->iKeyUp==SDLK_END)          pGFX->OpRot.bYn=false;
+                    if(pGUI->iKeyUp==SDLK_INSERT)       pGFX->OpRot.bZp=false;
+                    if(pGUI->iKeyUp==SDLK_DELETE)       pGFX->OpRot.bZn=false;
+
+                    if(pGUI->iKeyUp==SDLK_F9) {
+                        pGFX->pSelectedEntity->rot.x=0.0f;
+                        pGFX->pSelectedEntity->rot.y=0.0f;
+                        pGFX->pSelectedEntity->rot.z=0.0f;
+                        pGFX->pSelectedEntity->autorot.x=0.0f;
+                        pGFX->pSelectedEntity->autorot.y=0.0f;
+                        pGFX->pSelectedEntity->autorot.z=0.0f;
+                    }
+
+                    if(pGFX->OpRot.bXp) pGFX->pSelectedEntity->rot.x+=2.0f;
+                    if(pGFX->OpRot.bXn) pGFX->pSelectedEntity->rot.x-=2.0f;
+                    if(pGFX->OpRot.bYp) pGFX->pSelectedEntity->rot.y+=2.0f;
+                    if(pGFX->OpRot.bYn) pGFX->pSelectedEntity->rot.y-=2.0f;
+                    if(pGFX->OpRot.bZp) pGFX->pSelectedEntity->rot.z+=2.0f;
+                    if(pGFX->OpRot.bZn) pGFX->pSelectedEntity->rot.z-=2.0f;
+                }
+
+                if(pGUI->modstate & KMOD_ALT) {
+                    if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpLoc.bXp=true;
+                    if(pGUI->iKeyDown==SDLK_PAGEDOWN)   pGFX->OpLoc.bXn=true;
+                    if(pGUI->iKeyDown==SDLK_HOME)       pGFX->OpLoc.bYp=true;
+                    if(pGUI->iKeyDown==SDLK_END)        pGFX->OpLoc.bYn=true;
+                    if(pGUI->iKeyDown==SDLK_INSERT)     pGFX->OpLoc.bZp=true;
+                    if(pGUI->iKeyDown==SDLK_DELETE)     pGFX->OpLoc.bZn=true;
+
+                    if(pGUI->iKeyUp==SDLK_PAGEUP)       pGFX->OpLoc.bXp=false;
+                    if(pGUI->iKeyUp==SDLK_PAGEDOWN)     pGFX->OpLoc.bXn=false;
+                    if(pGUI->iKeyUp==SDLK_HOME)         pGFX->OpLoc.bYp=false;
+                    if(pGUI->iKeyUp==SDLK_END)          pGFX->OpLoc.bYn=false;
+                    if(pGUI->iKeyUp==SDLK_INSERT)       pGFX->OpLoc.bZp=false;
+                    if(pGUI->iKeyUp==SDLK_DELETE)       pGFX->OpLoc.bZn=false;
+
+                    if(pGUI->iKeyUp==SDLK_F9) {
+                        pGFX->pSelectedEntity->loc.x=pGFX->pCamera->loc.x;
+                        pGFX->pSelectedEntity->loc.y=pGFX->pCamera->loc.y;
+                        pGFX->pSelectedEntity->loc.z=pGFX->pCamera->loc.z;
+                    }
+
+                    if(pGFX->OpLoc.bXp) pGFX->pSelectedEntity->loc.x+=2.0f;
+                    if(pGFX->OpLoc.bXn) pGFX->pSelectedEntity->loc.x-=2.0f;
+                    if(pGFX->OpLoc.bYp) pGFX->pSelectedEntity->loc.y+=2.0f;
+                    if(pGFX->OpLoc.bYn) pGFX->pSelectedEntity->loc.y-=2.0f;
+                    if(pGFX->OpLoc.bZp) pGFX->pSelectedEntity->loc.z+=2.0f;
+                    if(pGFX->OpLoc.bZn) pGFX->pSelectedEntity->loc.z-=2.0f;
+                }
+
+                if(pGUI->modstate & KMOD_CTRL) {
+                    if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpScale.bXp=true;
+                    if(pGUI->iKeyDown==SDLK_PAGEDOWN)   pGFX->OpScale.bXn=true;
+                    if(pGUI->iKeyDown==SDLK_HOME)       pGFX->OpScale.bYp=true;
+                    if(pGUI->iKeyDown==SDLK_END)        pGFX->OpScale.bYn=true;
+                    if(pGUI->iKeyDown==SDLK_INSERT)     pGFX->OpScale.bZp=true;
+                    if(pGUI->iKeyDown==SDLK_DELETE)     pGFX->OpScale.bZn=true;
+
+                    if(pGUI->iKeyUp==SDLK_PAGEUP)       pGFX->OpScale.bXp=false;
+                    if(pGUI->iKeyUp==SDLK_PAGEDOWN)     pGFX->OpScale.bXn=false;
+                    if(pGUI->iKeyUp==SDLK_HOME)         pGFX->OpScale.bYp=false;
+                    if(pGUI->iKeyUp==SDLK_END)          pGFX->OpScale.bYn=false;
+                    if(pGUI->iKeyUp==SDLK_INSERT)       pGFX->OpScale.bZp=false;
+                    if(pGUI->iKeyUp==SDLK_DELETE)       pGFX->OpScale.bZn=false;
+
+                    if(pGUI->iKeyUp==SDLK_F9) {
+                        pGFX->pSelectedEntity->scale.x=0.0f;
+                        pGFX->pSelectedEntity->scale.y=0.0f;
+                        pGFX->pSelectedEntity->scale.z=0.0f;
+                    }
+
+                    if(pGFX->OpScale.bXp) pGFX->pSelectedEntity->scale.x+=0.2f;
+                    if(pGFX->OpScale.bXn) pGFX->pSelectedEntity->scale.x-=0.2f;
+                    if(pGFX->OpScale.bYp) pGFX->pSelectedEntity->scale.y+=0.2f;
+                    if(pGFX->OpScale.bYn) pGFX->pSelectedEntity->scale.y-=0.2f;
+                    if(pGFX->OpScale.bZp) pGFX->pSelectedEntity->scale.z+=0.2f;
+                    if(pGFX->OpScale.bZn) pGFX->pSelectedEntity->scale.z-=0.2f;
+                }
+            }
+        }
+
 
 
 
