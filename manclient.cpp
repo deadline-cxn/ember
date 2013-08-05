@@ -19,8 +19,6 @@ CGAF*       pGAF;      // Game Archive File (GAF)
 CLog*       pLog;      // Log file
 C_FMGS*     pFMGS;     // Game Server connection
 
-// C_Entity*   pFirstNTT; // Entity
-
 #ifdef _WINDOWS_
 C_Sound*    pSND;      // FMOD Sounds
 #endif
