@@ -643,7 +643,25 @@ bool DoGameMode(void) {
 
             pGUI->gPrint(15,pClientData->ScreenHeight-80,va("^3[^2EDIT ENTITIES^3]"),3,1);
 
-            if(pGUI->iKeyUp==SDLK_TAB)      pGFX->SelectClosestEntity();
+            if( (!(pGUI->modstate & KMOD_SHIFT)) &&
+                (!(pGUI->modstate & KMOD_CTRL)) &&
+                (!(pGUI->modstate & KMOD_ALT)) ) {
+
+
+                if(pGUI->iKeyUp==SDLK_INSERT){
+                    pGFX->ClearSelectEntity();
+                    pGFX->pSelectedEntity=pGFX->MakeEntity("NEW ENTITY",pGFX->pCamera->loc.x,pGFX->pCamera->loc.y,pGFX->pCamera->loc.z);
+                    pGFX->pSelectedEntity->bSelected=true;
+                }
+
+                if(pGUI->iKeyUp==SDLK_DELETE) {
+                    pGFX->DeleteEntity(pGFX->pSelectedEntity);
+                    pGFX->pSelectedEntity=0;
+                }
+
+                if(pGUI->iKeyUp==SDLK_TAB)      pGFX->SelectClosestEntity();
+            }
+
 
             if( pGFX->pSelectedEntity ) {
                 if(pGUI->iKeyUp==SDLK_F6)   pGFX->pSelectedEntity->type=ENTITY_STATIC;

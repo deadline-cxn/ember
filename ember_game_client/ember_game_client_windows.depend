@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1375558284 source:h:\develop\projects\ember\manclient.cpp
+1375716171 source:h:\develop\projects\ember\manclient.cpp
 	"manclient.h"
 
 1375097516 h:\develop\projects\ember\manclient.h
@@ -41,8 +41,7 @@
 	"c_gaf.h"
 	<map>
 
-1374198726 h:\develop\projects\dlstorm\c_gltexture.h
-	"png.h"
+1375714549 h:\develop\projects\dlstorm\c_gltexture.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -50,6 +49,7 @@
 	<GL/glu.h>
 	"c_gaf.h"
 	"c_log.h"
+	"png.h"
 
 1374198726 h:\develop\projects\dlstorm\c_gaf.h
 	<dirent.h>
@@ -117,10 +117,10 @@
 1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375540676 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1375716412 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375538395 h:\develop\projects\dlstorm\c_gfx.h
+1375715829 h:\develop\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -155,15 +155,15 @@
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1375655819 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
+1375657114 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1374198726 source:h:\develop\projects\dlstorm\c_glfont.cpp
+1375714549 source:h:\develop\projects\dlstorm\c_glfont.cpp
 	"c_glfont.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1374198726 h:\develop\projects\dlstorm\c_glfont.h
+1375714549 h:\develop\projects\dlstorm\c_glfont.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -183,7 +183,7 @@
 	"c_log.h"
 	"c_gltexture.h"
 
-1375456088 source:h:\develop\projects\dlstorm\c_gltexture.cpp
+1375714549 source:h:\develop\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 	"glerrors.h"
 	"SDL.h"
@@ -197,7 +197,7 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1375478497 source:h:\develop\projects\dlstorm\c_gui.cpp
+1375714549 source:h:\develop\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
 1375478472 h:\develop\projects\dlstorm\c_gui.h
