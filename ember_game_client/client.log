@@ -1,461 +1,540 @@
 *****************************************************************
-(Sun Aug 04 17:59:23 2013):MANTRA v13.07.01a Windows-x86(D) (C) 2012 Seth Parson
-(Sun Aug 04 17:59:23 2013):Log created
-(Sun Aug 04 17:59:23 2013):Windows 8 version 6.2  (Build 9200)
-(Sun Aug 04 17:59:23 2013):Setting up Client Data
-(Sun Aug 04 17:59:23 2013):Setting up GAF
-(Sun Aug 04 17:59:23 2013):Setting up GFX
-(Sun Aug 04 17:59:23 2013): ScreenWidth : 1920 
-(Sun Aug 04 17:59:23 2013): ScreenHeight: 1080 
-(Sun Aug 04 17:59:23 2013): ScreenColors: 24 
-(Sun Aug 04 17:59:23 2013): bFullScreen : 1 
-(Sun Aug 04 17:59:23 2013):Init SDL/OpenGL GFX Subsystem...
-(Sun Aug 04 17:59:23 2013):Software surfaces...
-(Sun Aug 04 17:59:24 2013):SDL initialized (Video memory:[0])
-(Sun Aug 04 17:59:24 2013):OpenGL initialized
-(Sun Aug 04 17:59:24 2013):Camera initialized
-(Sun Aug 04 17:59:24 2013):Texture base/0000skin.png (OPENGL[1]) 
-(Sun Aug 04 17:59:24 2013):Texture base/0001skin.png (OPENGL[2]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0000.png (OPENGL[3]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0001.png (OPENGL[4]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0002.png (OPENGL[5]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0003.png (OPENGL[6]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0004.png (OPENGL[7]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0006.png (OPENGL[8]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0007.png (OPENGL[9]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0008.png (OPENGL[10]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0009.png (OPENGL[11]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0010.png (OPENGL[12]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0011.png (OPENGL[13]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0014.png (OPENGL[14]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0016.png (OPENGL[15]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0017.png (OPENGL[16]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0018.png (OPENGL[17]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0019.png (OPENGL[18]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0020.png (OPENGL[19]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0021.png (OPENGL[20]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0022.png (OPENGL[21]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0023.png (OPENGL[22]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0024.png (OPENGL[23]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0025.png (OPENGL[24]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0026.png (OPENGL[25]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0028.png (OPENGL[26]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0029.png (OPENGL[27]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0030.png (OPENGL[28]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0031.png (OPENGL[29]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0032.png (OPENGL[30]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0033.png (OPENGL[31]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0034.png (OPENGL[32]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0035.png (OPENGL[33]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0036.png (OPENGL[34]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0037.png (OPENGL[35]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0038.png (OPENGL[36]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0039.png (OPENGL[37]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0040.png (OPENGL[38]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0041.png (OPENGL[39]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0042.png (OPENGL[40]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0043.png (OPENGL[41]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0044.png (OPENGL[42]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0045.png (OPENGL[43]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0046.png (OPENGL[44]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0047.png (OPENGL[45]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0048.png (OPENGL[46]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0049.png (OPENGL[47]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0050.png (OPENGL[48]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0051.png (OPENGL[49]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0052.png (OPENGL[50]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0053.png (OPENGL[51]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0054.png (OPENGL[52]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0055.png (OPENGL[53]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0056.png (OPENGL[54]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0057.png (OPENGL[55]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0058.png (OPENGL[56]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0059.png (OPENGL[57]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0060.png (OPENGL[58]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0061.png (OPENGL[59]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0062.png (OPENGL[60]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0063.png (OPENGL[61]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0064.png (OPENGL[62]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0065.png (OPENGL[63]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0066.png (OPENGL[64]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0067.png (OPENGL[65]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0068.png (OPENGL[66]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0069.png (OPENGL[67]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0070.png (OPENGL[68]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0071.png (OPENGL[69]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0072.png (OPENGL[70]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0074.png (OPENGL[71]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0075.png (OPENGL[72]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0076.png (OPENGL[73]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0077.png (OPENGL[74]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0078.png (OPENGL[75]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0079.png (OPENGL[76]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0080.png (OPENGL[77]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0081.png (OPENGL[78]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0082.png (OPENGL[79]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0083.png (OPENGL[80]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0084.png (OPENGL[81]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0085.png (OPENGL[82]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0086.png (OPENGL[83]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0087.png (OPENGL[84]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0088.png (OPENGL[85]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0089.png (OPENGL[86]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0090.png (OPENGL[87]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0091.png (OPENGL[88]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0092.png (OPENGL[89]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0093.png (OPENGL[90]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0094.png (OPENGL[91]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0095.png (OPENGL[92]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0097.png (OPENGL[93]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0098.png (OPENGL[94]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0099.png (OPENGL[95]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0100.png (OPENGL[96]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0102.png (OPENGL[97]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0103.png (OPENGL[98]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0104.png (OPENGL[99]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0106.png (OPENGL[100]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0107.png (OPENGL[101]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0108.png (OPENGL[102]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0109.png (OPENGL[103]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0110.png (OPENGL[104]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0112.png (OPENGL[105]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0113.png (OPENGL[106]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0114.png (OPENGL[107]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0115.png (OPENGL[108]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0116.png (OPENGL[109]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0117.png (OPENGL[110]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0118.png (OPENGL[111]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0119.png (OPENGL[112]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0120.png (OPENGL[113]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0121.png (OPENGL[114]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0122.png (OPENGL[115]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0123.png (OPENGL[116]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0125.png (OPENGL[117]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0152.png (OPENGL[118]) 
-(Sun Aug 04 17:59:24 2013):Texture base/b0153.png (OPENGL[119]) 
-(Sun Aug 04 17:59:24 2013):Texture base/default.png (OPENGL[120]) 
-(Sun Aug 04 17:59:24 2013):Texture base/grass.png (OPENGL[121]) 
-(Sun Aug 04 17:59:24 2013):Texture base/grass1.png (OPENGL[122]) 
-(Sun Aug 04 17:59:24 2013):Texture base/monster1skin.png (OPENGL[123]) 
-(Sun Aug 04 17:59:24 2013):Texture base/ntt.ankh.png (OPENGL[124]) 
-(Sun Aug 04 17:59:24 2013):Texture base/ntt.audio.png (OPENGL[125]) 
-(Sun Aug 04 17:59:24 2013):Texture base/ntt.aura.png (OPENGL[126]) 
-(Sun Aug 04 17:59:24 2013):Texture base/ntt.light.png (OPENGL[127]) 
-(Sun Aug 04 17:59:24 2013):Texture base/sb1.back.png (OPENGL[128]) 
-(Sun Aug 04 17:59:24 2013):Texture base/sb1.front.png (OPENGL[129]) 
-(Sun Aug 04 17:59:24 2013):Texture base/sb1.left.png (OPENGL[130]) 
-(Sun Aug 04 17:59:24 2013):Texture base/sb1.right.png (OPENGL[131]) 
-(Sun Aug 04 17:59:24 2013):Texture base/sb1.top.png (OPENGL[132]) 
-(Sun Aug 04 17:59:24 2013):Texture base/star1.png (OPENGL[133]) 
-(Sun Aug 04 17:59:24 2013):Texture base/star2.png (OPENGL[134]) 
-(Sun Aug 04 17:59:24 2013):Texture base/sun.png (OPENGL[135]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00001.png (OPENGL[136]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00002.png (OPENGL[137]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00003.png (OPENGL[138]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00004.png (OPENGL[139]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00005.png (OPENGL[140]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00006.png (OPENGL[141]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00007.png (OPENGL[142]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00008.png (OPENGL[143]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00009.png (OPENGL[144]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00010.png (OPENGL[145]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00011.png (OPENGL[146]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00012.png (OPENGL[147]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00013.png (OPENGL[148]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00014.png (OPENGL[149]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00015.png (OPENGL[150]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00016.png (OPENGL[151]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00017.png (OPENGL[152]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00018.png (OPENGL[153]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00019.png (OPENGL[154]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00020.png (OPENGL[155]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00021.png (OPENGL[156]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00022.png (OPENGL[157]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00023.png (OPENGL[158]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00024.png (OPENGL[159]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00025.png (OPENGL[160]) 
-(Sun Aug 04 17:59:24 2013):Texture base/tile00113.png (OPENGL[161]) 
-(Sun Aug 04 17:59:24 2013):Texture base/timer_outer.png (OPENGL[162]) 
-(Sun Aug 04 17:59:24 2013):Base Textures initialized
-(Sun Aug 04 17:59:24 2013):Loading models...
-(Sun Aug 04 17:59:24 2013):Model found models/baaul.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[1] MATERIALS[1]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [Material02]
+(Mon Aug 05 08:44:31 2013):MANTRA v13.07.01a Windows-x86(D) (C) 2012 Seth Parson
+(Mon Aug 05 08:44:31 2013):Log created
+(Mon Aug 05 08:44:31 2013):Windows Server 2008 R2 version 6.1 Service Pack 1 (Build 7601)
+(Mon Aug 05 08:44:31 2013):Setting up Client Data
+(Mon Aug 05 08:44:31 2013):Setting up GAF
+(Mon Aug 05 08:44:31 2013):Setting up GFX
+(Mon Aug 05 08:44:31 2013): ScreenWidth : 1000 
+(Mon Aug 05 08:44:31 2013): ScreenHeight: 500 
+(Mon Aug 05 08:44:31 2013): ScreenColors: 24 
+(Mon Aug 05 08:44:31 2013): bFullScreen : 0 
+(Mon Aug 05 08:44:31 2013):Init SDL/OpenGL GFX Subsystem...
+(Mon Aug 05 08:44:32 2013):Software surfaces...
+(Mon Aug 05 08:44:32 2013):SDL initialized (Video memory:[0])
+(Mon Aug 05 08:44:32 2013):OpenGL initialized
+(Mon Aug 05 08:44:32 2013):Camera initialized
+(Mon Aug 05 08:44:32 2013):Texture base/0000skin.png (OPENGL[1]) 
+(Mon Aug 05 08:44:32 2013):Texture base/0001skin.png (OPENGL[2]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0000.png (OPENGL[3]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0001.png (OPENGL[4]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0002.png (OPENGL[5]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0003.png (OPENGL[6]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0004.png (OPENGL[7]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0006.png (OPENGL[8]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0007.png (OPENGL[9]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0008.png (OPENGL[10]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0009.png (OPENGL[11]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0010.png (OPENGL[12]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0011.png (OPENGL[13]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0014.png (OPENGL[14]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0016.png (OPENGL[15]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0017.png (OPENGL[16]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0018.png (OPENGL[17]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0019.png (OPENGL[18]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0020.png (OPENGL[19]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0021.png (OPENGL[20]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0022.png (OPENGL[21]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0023.png (OPENGL[22]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0024.png (OPENGL[23]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0025.png (OPENGL[24]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0026.png (OPENGL[25]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0028.png (OPENGL[26]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0029.png (OPENGL[27]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0030.png (OPENGL[28]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0031.png (OPENGL[29]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0032.png (OPENGL[30]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0033.png (OPENGL[31]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0034.png (OPENGL[32]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0035.png (OPENGL[33]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0036.png (OPENGL[34]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0037.png (OPENGL[35]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0038.png (OPENGL[36]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0039.png (OPENGL[37]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0040.png (OPENGL[38]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0041.png (OPENGL[39]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0042.png (OPENGL[40]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0043.png (OPENGL[41]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0044.png (OPENGL[42]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0045.png (OPENGL[43]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0046.png (OPENGL[44]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0047.png (OPENGL[45]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0048.png (OPENGL[46]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0049.png (OPENGL[47]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0050.png (OPENGL[48]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0051.png (OPENGL[49]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0052.png (OPENGL[50]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0053.png (OPENGL[51]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0054.png (OPENGL[52]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0055.png (OPENGL[53]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0056.png (OPENGL[54]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0057.png (OPENGL[55]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0058.png (OPENGL[56]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0059.png (OPENGL[57]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0060.png (OPENGL[58]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0061.png (OPENGL[59]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0062.png (OPENGL[60]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0063.png (OPENGL[61]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0064.png (OPENGL[62]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0065.png (OPENGL[63]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0066.png (OPENGL[64]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0067.png (OPENGL[65]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0068.png (OPENGL[66]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0069.png (OPENGL[67]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0070.png (OPENGL[68]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0071.png (OPENGL[69]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0072.png (OPENGL[70]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0074.png (OPENGL[71]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0075.png (OPENGL[72]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0076.png (OPENGL[73]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0077.png (OPENGL[74]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0078.png (OPENGL[75]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0079.png (OPENGL[76]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0080.png (OPENGL[77]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0081.png (OPENGL[78]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0082.png (OPENGL[79]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0083.png (OPENGL[80]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0084.png (OPENGL[81]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0085.png (OPENGL[82]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0086.png (OPENGL[83]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0087.png (OPENGL[84]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0088.png (OPENGL[85]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0089.png (OPENGL[86]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0090.png (OPENGL[87]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0091.png (OPENGL[88]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0092.png (OPENGL[89]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0093.png (OPENGL[90]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0094.png (OPENGL[91]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0095.png (OPENGL[92]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0097.png (OPENGL[93]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0098.png (OPENGL[94]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0099.png (OPENGL[95]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0100.png (OPENGL[96]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0102.png (OPENGL[97]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0103.png (OPENGL[98]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0104.png (OPENGL[99]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0106.png (OPENGL[100]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0107.png (OPENGL[101]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0108.png (OPENGL[102]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0109.png (OPENGL[103]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0110.png (OPENGL[104]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0112.png (OPENGL[105]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0113.png (OPENGL[106]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0114.png (OPENGL[107]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0115.png (OPENGL[108]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0116.png (OPENGL[109]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0117.png (OPENGL[110]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0118.png (OPENGL[111]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0119.png (OPENGL[112]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0120.png (OPENGL[113]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0121.png (OPENGL[114]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0122.png (OPENGL[115]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0123.png (OPENGL[116]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0125.png (OPENGL[117]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0152.png (OPENGL[118]) 
+(Mon Aug 05 08:44:32 2013):Texture base/b0153.png (OPENGL[119]) 
+(Mon Aug 05 08:44:32 2013):Texture base/default.png (OPENGL[120]) 
+(Mon Aug 05 08:44:32 2013):Texture base/grass.png (OPENGL[121]) 
+(Mon Aug 05 08:44:32 2013):Texture base/grass1.png (OPENGL[122]) 
+(Mon Aug 05 08:44:32 2013):Texture base/monster1skin.png (OPENGL[123]) 
+(Mon Aug 05 08:44:32 2013):Texture base/ntt.ankh.png (OPENGL[124]) 
+(Mon Aug 05 08:44:32 2013):Texture base/ntt.audio.png (OPENGL[125]) 
+(Mon Aug 05 08:44:32 2013):Texture base/ntt.aura.png (OPENGL[126]) 
+(Mon Aug 05 08:44:32 2013):Texture base/ntt.light.png (OPENGL[127]) 
+(Mon Aug 05 08:44:32 2013):Texture base/sb1.back.png (OPENGL[128]) 
+(Mon Aug 05 08:44:32 2013):Texture base/sb1.front.png (OPENGL[129]) 
+(Mon Aug 05 08:44:32 2013):Texture base/sb1.left.png (OPENGL[130]) 
+(Mon Aug 05 08:44:32 2013):Texture base/sb1.right.png (OPENGL[131]) 
+(Mon Aug 05 08:44:32 2013):Texture base/sb1.top.png (OPENGL[132]) 
+(Mon Aug 05 08:44:32 2013):Texture base/star1.png (OPENGL[133]) 
+(Mon Aug 05 08:44:32 2013):Texture base/star2.png (OPENGL[134]) 
+(Mon Aug 05 08:44:32 2013):Texture base/sun.png (OPENGL[135]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00001.png (OPENGL[136]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00002.png (OPENGL[137]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00003.png (OPENGL[138]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00004.png (OPENGL[139]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00005.png (OPENGL[140]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00006.png (OPENGL[141]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00007.png (OPENGL[142]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00008.png (OPENGL[143]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00009.png (OPENGL[144]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00010.png (OPENGL[145]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00011.png (OPENGL[146]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00012.png (OPENGL[147]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00013.png (OPENGL[148]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00014.png (OPENGL[149]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00015.png (OPENGL[150]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00016.png (OPENGL[151]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00017.png (OPENGL[152]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00018.png (OPENGL[153]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00019.png (OPENGL[154]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00020.png (OPENGL[155]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00021.png (OPENGL[156]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00022.png (OPENGL[157]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00023.png (OPENGL[158]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00024.png (OPENGL[159]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00025.png (OPENGL[160]) 
+(Mon Aug 05 08:44:32 2013):Texture base/tile00113.png (OPENGL[161]) 
+(Mon Aug 05 08:44:32 2013):Texture base/timer_outer.png (OPENGL[162]) 
+(Mon Aug 05 08:44:32 2013):Base Textures initialized
+(Mon Aug 05 08:44:32 2013):Loading models...
+(Mon Aug 05 08:44:32 2013):Model found models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[1] MATERIALS[1]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [Material02]
 DIFFUSE  [..\base\0000skin.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [base/0000skin.png]
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013):Found model: models/baaul.ms3d (33976776)
-(Sun Aug 04 17:59:24 2013):Model found models/castle.ms3d
-(Sun Aug 04 17:59:24 2013):Model load error models/castle.ms3d
-(Sun Aug 04 17:59:24 2013):Model found models/chicken.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[1] MATERIALS[1]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [chicken]
+(Mon Aug 05 08:44:33 2013): TEXTURE: [base/0000skin.png]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013):Found model: models/baaul.ms3d (39187576)
+(Mon Aug 05 08:44:33 2013):Model found models/castle.ms3d
+(Mon Aug 05 08:44:33 2013):Model load error models/castle.ms3d
+(Mon Aug 05 08:44:33 2013):Model found models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[1] MATERIALS[1]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [chicken]
 DIFFUSE  [..\base\b0010.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [base/b0010.png]
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013):Found model: models/chicken.ms3d (34036088)
-(Sun Aug 04 17:59:24 2013):Model found models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[1] MATERIALS[1]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [Material01]
+(Mon Aug 05 08:44:33 2013): TEXTURE: [base/b0010.png]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013):Found model: models/chicken.ms3d (39245320)
+(Mon Aug 05 08:44:33 2013):Model found models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[1] MATERIALS[1]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [Material01]
 DIFFUSE  [..\base\monster1skin.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [base/monster1skin.png]
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013):Found model: models/monster1.ms3d (34059784)
-(Sun Aug 04 17:59:24 2013):Model found models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[5] MATERIALS[5]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [Material #76]
+(Mon Aug 05 08:44:33 2013): TEXTURE: [base/monster1skin.png]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013):Found model: models/monster1.ms3d (39269008)
+(Mon Aug 05 08:44:33 2013):Model found models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[5] MATERIALS[5]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [Material #76]
 DIFFUSE  [..\base\b0121.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [base/b0121.png]
-(Sun Aug 04 17:59:24 2013): MATERIALS[1] [Material #76.000]
+(Mon Aug 05 08:44:33 2013): TEXTURE: [base/b0121.png]
+(Mon Aug 05 08:44:33 2013): MATERIALS[1] [Material #76.000]
 DIFFUSE  [..\base\tile00003.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): MATERIALS[2] [JoinedMaterial_#3]
+(Mon Aug 05 08:44:33 2013): MATERIALS[2] [JoinedMaterial_#3]
 DIFFUSE  [..\base\tile00020.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): MATERIALS[3] [JoinedMaterial_#7]
+(Mon Aug 05 08:44:33 2013): MATERIALS[3] [JoinedMaterial_#7]
 DIFFUSE  [..\base\tile00113.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): MATERIALS[4] [Material #76.004]
+(Mon Aug 05 08:44:33 2013): MATERIALS[4] [Material #76.004]
 DIFFUSE  [..\base\tile00008.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[1]
-(Sun Aug 04 17:59:24 2013): MESH[][1] MATERIAL INDEX[3]
-(Sun Aug 04 17:59:24 2013): MESH[][2] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013): MESH[][3] MATERIAL INDEX[4]
-(Sun Aug 04 17:59:24 2013): MESH[][4] MATERIAL INDEX[2]
-(Sun Aug 04 17:59:24 2013):Found model: models/oldhouse.ms3d (34150864)
-(Sun Aug 04 17:59:24 2013):Model found models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[1] MATERIALS[1]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [Material01]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[1]
+(Mon Aug 05 08:44:33 2013): MESH[][1] MATERIAL INDEX[3]
+(Mon Aug 05 08:44:33 2013): MESH[][2] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013): MESH[][3] MATERIAL INDEX[4]
+(Mon Aug 05 08:44:33 2013): MESH[][4] MATERIAL INDEX[2]
+(Mon Aug 05 08:44:33 2013):Found model: models/oldhouse.ms3d (39360088)
+(Mon Aug 05 08:44:33 2013):Model found models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[1] MATERIALS[1]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [Material01]
 DIFFUSE  [tile00007.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [e00007.png]
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013):Found model: models/oven1.ms3d (34495136)
-(Sun Aug 04 17:59:24 2013):Model found models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[1] MATERIALS[1]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [Material01]
+(Mon Aug 05 08:44:33 2013): TEXTURE: [e00007.png]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013):Found model: models/oven1.ms3d (39606768)
+(Mon Aug 05 08:44:33 2013):Model found models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[1] MATERIALS[1]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [Material01]
 DIFFUSE  [..\base\0001skin.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [base/0001skin.png]
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013):Found model: models/skeletonmage.ms3d (34502400)
-(Sun Aug 04 17:59:24 2013):Model found models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): MESHES[1] MATERIALS[1]
-(Sun Aug 04 17:59:24 2013): MATERIALS[0] [Material01]
+(Mon Aug 05 08:44:33 2013): TEXTURE: [base/0001skin.png]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013):Found model: models/skeletonmage.ms3d (39614032)
+(Mon Aug 05 08:44:33 2013):Model found models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): MESHES[1] MATERIALS[1]
+(Mon Aug 05 08:44:33 2013): MATERIALS[0] [Material01]
 DIFFUSE  [..\base\tile00005.png]
 NORMALS  []
 HEIGHT   []
 OPACITY  []
 SHININESS[]
 SPECULAR [] 
-(Sun Aug 04 17:59:24 2013): TEXTURE: [base/tile00005.png]
-(Sun Aug 04 17:59:24 2013): MESH[][0] MATERIAL INDEX[0]
-(Sun Aug 04 17:59:24 2013):Found model: models/table1.ms3d (130977568)
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/baaul.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/chicken.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/baaul.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/baaul.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/chicken.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/baaul.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/chicken.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oldhouse.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/chicken.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/skeletonmage.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/table1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/oven1.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/baaul.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/chicken.ms3d
-(Sun Aug 04 17:59:24 2013): Entity :models/monster1.ms3d
-(Sun Aug 04 17:59:24 2013):GFX Initialized
-(Sun Aug 04 17:59:24 2013):Setting up GUI
-(Sun Aug 04 17:59:24 2013):MOUSE TEXTURE: mouse/default.png
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt01.png loaded (OPENGL[164]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt02.png loaded (OPENGL[165]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt03.png loaded (OPENGL[166]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt04.png loaded (OPENGL[167]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt05.png loaded (OPENGL[168]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt06.png loaded (OPENGL[169]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt07.png loaded (OPENGL[170]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt08.png loaded (OPENGL[171]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt09.png loaded (OPENGL[172]) 
-(Sun Aug 04 17:59:24 2013):Font texture fonts/fnt10.png loaded (OPENGL[173]) 
-(Sun Aug 04 17:59:24 2013):Setting up NETWORK
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [exec autoexec.cfg] [autoexec.cfg]...
-(Sun Aug 04 17:59:24 2013):exec [autoexec.cfg]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > toggle fps
+(Mon Aug 05 08:44:33 2013): TEXTURE: [base/tile00005.png]
+(Mon Aug 05 08:44:33 2013): MESH[][0] MATERIAL INDEX[0]
+(Mon Aug 05 08:44:33 2013):Found model: models/table1.ms3d (90305728)
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oven1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/monster1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/skeletonmage.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/table1.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/oldhouse.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/baaul.ms3d
+(Mon Aug 05 08:44:33 2013): Entity :models/chicken.ms3d
+(Mon Aug 05 08:44:33 2013):GFX Initialized
+(Mon Aug 05 08:44:33 2013):Setting up GUI
+(Mon Aug 05 08:44:33 2013):MOUSE TEXTURE: mouse/default.png
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt01.png loaded (OPENGL[164]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt02.png loaded (OPENGL[165]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt03.png loaded (OPENGL[166]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt04.png loaded (OPENGL[167]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt05.png loaded (OPENGL[168]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt06.png loaded (OPENGL[169]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt07.png loaded (OPENGL[170]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt08.png loaded (OPENGL[171]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt09.png loaded (OPENGL[172]) 
+(Mon Aug 05 08:44:33 2013):Font texture fonts/fnt10.png loaded (OPENGL[173]) 
+(Mon Aug 05 08:44:33 2013):Setting up NETWORK
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [exec autoexec.cfg] [autoexec.cfg]...
+(Mon Aug 05 08:44:33 2013):exec [autoexec.cfg]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > toggle fps
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > #play main.xm
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > #play main.xm
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > set debug 0
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > set debug 0
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > #set debug 1
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > #set debug 1
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > #set debug 2
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > #set debug 2
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > 
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > 
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [exec config.cfg] [config.cfg]...
-(Sun Aug 04 17:59:24 2013):exec [config.cfg]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > ## Ember key bindings file.
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [exec config.cfg] [config.cfg]...
+(Mon Aug 05 08:44:33 2013):exec [config.cfg]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > ## Ember key bindings file.
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind 9 play lightning.wav
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind 9 play lightning.wav
 ] [9 play lightning.wav ]...
-(Sun Aug 04 17:59:24 2013):bind [9] [play lightning.wav]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f toggle fps
+(Mon Aug 05 08:44:33 2013):bind [9] [play lightning.wav]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f toggle fps
 ] [f toggle fps ]...
-(Sun Aug 04 17:59:24 2013):bind [f] [toggle fps]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind l z 2
+(Mon Aug 05 08:44:33 2013):bind [f] [toggle fps]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind l z 2
 ] [l z 2 ]...
-(Sun Aug 04 17:59:24 2013):bind [l] [z 2]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind p z -2
+(Mon Aug 05 08:44:33 2013):bind [l] [z 2]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind p z -2
 ] [p z -2 ]...
-(Sun Aug 04 17:59:24 2013):bind [p] [z -2]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind t terraform
+(Mon Aug 05 08:44:33 2013):bind [p] [z -2]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind t terraform
 ] [t terraform ]...
-(Sun Aug 04 17:59:24 2013):bind [t] [terraform]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind w /who
+(Mon Aug 05 08:44:33 2013):bind [t] [terraform]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind w /who
 ] [w /who ]...
-(Sun Aug 04 17:59:24 2013):bind [w] [/who]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind pageup z -10
+(Mon Aug 05 08:44:33 2013):bind [w] [/who]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind pageup z -10
 ] [pageup z -10 ]...
-(Sun Aug 04 17:59:24 2013):bind [pageup] [z -10]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f1 "guiclear;guicall systemmenu.gui"
+(Mon Aug 05 08:44:33 2013):bind [pageup] [z -10]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f1 "guiclear;guicall systemmenu.gui"
 ] [f1 "guiclear;guicall systemmenu.gui" ]...
-(Sun Aug 04 17:59:24 2013):bind [f1] [guiclear;guicall systemmenu.gui]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f8 "guicall guictrledit.gui"
+(Mon Aug 05 08:44:33 2013):bind [f1] [guiclear;guicall systemmenu.gui]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f8 "guicall guictrledit.gui"
 ] [f8 "guicall guictrledit.gui" ]...
-(Sun Aug 04 17:59:24 2013):bind [f8] [guicall guictrledit.gui]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f10 "setgamemode main;guiclear;guicall main.gui"
+(Mon Aug 05 08:44:33 2013):bind [f8] [guicall guictrledit.gui]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f10 "setgamemode main;guiclear;guicall main.gui"
 ] [f10 "setgamemode main;guiclear;guicall main.gui" ]...
-(Sun Aug 04 17:59:24 2013):bind [f10] [setgamemode main;guiclear;guicall main.gui]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f11 "guicall console.gui"
+(Mon Aug 05 08:44:33 2013):bind [f10] [setgamemode main;guiclear;guicall main.gui]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f11 "guicall console.gui"
 ] [f11 "guicall console.gui" ]...
-(Sun Aug 04 17:59:24 2013):bind [f11] [guicall console.gui]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f12 quit
+(Mon Aug 05 08:44:33 2013):bind [f11] [guicall console.gui]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f12 quit
 ] [f12 quit ]...
-(Sun Aug 04 17:59:24 2013):bind [f12] [quit]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f5 "set debug 2"
+(Mon Aug 05 08:44:33 2013):bind [f12] [quit]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f5 "set debug 2"
 ] [f5 "set debug 2" ]...
-(Sun Aug 04 17:59:24 2013):bind [f5] [set debug 2]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f6 "set debug 0"
+(Mon Aug 05 08:44:33 2013):bind [f5] [set debug 2]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f6 "set debug 0"
 ] [f6 "set debug 0" ]...
-(Sun Aug 04 17:59:24 2013):bind [f6] [set debug 0]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f7 "guicall main.gui"
+(Mon Aug 05 08:44:33 2013):bind [f6] [set debug 0]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f7 "guicall main.gui"
 ] [f7 "guicall main.gui" ]...
-(Sun Aug 04 17:59:24 2013):bind [f7] [guicall main.gui]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute > [bind f9 "guicallfile main.gui"
+(Mon Aug 05 08:44:33 2013):bind [f7] [guicall main.gui]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute > [bind f9 "guicallfile main.gui"
 ] [f9 "guicallfile main.gui" ]...
-(Sun Aug 04 17:59:24 2013):bind [f9] [guicallfile main.gui]:
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > 
+(Mon Aug 05 08:44:33 2013):bind [f9] [guicallfile main.gui]:
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > 
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > 
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > 
 ...
-(Sun Aug 04 17:59:24 2013):C_CONS::_Execute 6 > #$QUIT
+(Mon Aug 05 08:44:33 2013):C_CONS::_Execute 6 > #$QUIT
 ...
-(Sun Aug 04 17:59:24 2013):******************** FINISHED STARTUP ***************************
-(Sun Aug 04 17:59:24 2013):Done initializing player setup...
-(Sun Aug 04 18:13:27 2013):C_CONS::_Execute > [setgamemode MAIN_MENU] [MAIN_MENU]...
-(Sun Aug 04 18:13:27 2013):setgamemode MAIN_MENU
-(Sun Aug 04 18:13:27 2013):con_setgamemode()
-(Sun Aug 04 18:13:29 2013):C_CONS::_Execute > [setgamemode INITIALIZE_GAME] [INITIALIZE_GAME]...
-(Sun Aug 04 18:13:29 2013):setgamemode INITIALIZE_GAME
-(Sun Aug 04 18:13:29 2013):con_setgamemode()
-(Sun Aug 04 18:13:29 2013):Done initializing player setup...
-(Sun Aug 04 18:17:14 2013):******************** START SHUTDOWN ***************************
-(Sun Aug 04 18:17:14 2013):GUI shut down
-(Sun Aug 04 18:17:14 2013):FMGS shut down
-(Sun Aug 04 18:17:14 2013):Shutting down SDL/OpenGL GFX subsystem...
-(Sun Aug 04 18:17:14 2013):Entities shut down...
-(Sun Aug 04 18:17:14 2013):Camera shut down...
-(Sun Aug 04 18:17:14 2013):Textures shut down...
-(Sun Aug 04 18:17:14 2013):Models shut down...
-(Sun Aug 04 18:17:14 2013):SDL/OpenGL GFX subsystem shutdown...
-(Sun Aug 04 18:17:14 2013):GFX shut down
-(Sun Aug 04 18:17:14 2013):GAF shut down
-(Sun Aug 04 18:17:14 2013):Client data saved...
-(Sun Aug 04 18:17:14 2013):Client data shut down
-(Sun Aug 04 18:17:14 2013):Mantra engine shut down!
+(Mon Aug 05 08:44:33 2013):******************** FINISHED STARTUP ***************************
+(Mon Aug 05 08:44:33 2013):Done initializing player setup...
+(Mon Aug 05 08:45:22 2013):******************** START SHUTDOWN ***************************
+(Mon Aug 05 08:45:22 2013):GUI shut down
+(Mon Aug 05 08:45:22 2013):FMGS shut down
+(Mon Aug 05 08:45:22 2013):Shutting down SDL/OpenGL GFX subsystem...
+(Mon Aug 05 08:45:22 2013):Entities shut down...
+(Mon Aug 05 08:45:22 2013):Camera shut down...
+(Mon Aug 05 08:45:22 2013):Textures shut down...
+(Mon Aug 05 08:45:22 2013):Models shut down...
+(Mon Aug 05 08:45:22 2013):SDL/OpenGL GFX subsystem shutdown...
+(Mon Aug 05 08:45:22 2013):GFX shut down
+(Mon Aug 05 08:45:22 2013):GAF shut down
+(Mon Aug 05 08:45:22 2013):Client data saved...
+(Mon Aug 05 08:45:22 2013):Client data shut down
+(Mon Aug 05 08:45:22 2013):Mantra engine shut down!
 *****************************************************************

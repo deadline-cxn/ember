@@ -643,18 +643,12 @@ bool DoGameMode(void) {
 
             pGUI->gPrint(15,pClientData->ScreenHeight-80,va("^3[^2EDIT ENTITIES^3]"),3,1);
 
-            if(pGUI->iKeyUp==SDLK_TAB) { pGFX->SelectClosestEntity(); }
+            if(pGUI->iKeyUp==SDLK_TAB)      pGFX->SelectClosestEntity();
 
             if( pGFX->pSelectedEntity ) {
-
-                if(pGUI->iKeyUp==SDLK_F6) { pGFX->pSelectedEntity->type=ENTITY_STATIC; }
-
-                if(pGUI->iKeyUp==SDLK_F8) {
-                    pGFX->pSelectedEntity->pModel=pGFX->GetRandomModel();
-                }
-                if(pGUI->iKeyUp==SDLK_F7) {
-                    pGFX->pSelectedEntity->pTexture=pGFX->GetRandomTexture();
-                }
+                if(pGUI->iKeyUp==SDLK_F6)   pGFX->pSelectedEntity->type=ENTITY_STATIC;
+                if(pGUI->iKeyUp==SDLK_F8)   pGFX->pSelectedEntity->pModel=pGFX->GetRandomModel();
+                if(pGUI->iKeyUp==SDLK_F7)   pGFX->pSelectedEntity->pTexture=pGFX->GetRandomTexture();
 
                 if(pGUI->modstate & KMOD_SHIFT) {
                     if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpRot.bXp=true;
@@ -680,12 +674,12 @@ bool DoGameMode(void) {
                         pGFX->pSelectedEntity->autorot.z=0.0f;
                     }
 
-                    if(pGFX->OpRot.bXp) pGFX->pSelectedEntity->rot.x+=2.0f;
-                    if(pGFX->OpRot.bXn) pGFX->pSelectedEntity->rot.x-=2.0f;
-                    if(pGFX->OpRot.bYp) pGFX->pSelectedEntity->rot.y+=2.0f;
-                    if(pGFX->OpRot.bYn) pGFX->pSelectedEntity->rot.y-=2.0f;
-                    if(pGFX->OpRot.bZp) pGFX->pSelectedEntity->rot.z+=2.0f;
-                    if(pGFX->OpRot.bZn) pGFX->pSelectedEntity->rot.z-=2.0f;
+                    if(pGFX->OpRot.bXp) pGFX->pSelectedEntity->rot.x+=1.3f;
+                    if(pGFX->OpRot.bXn) pGFX->pSelectedEntity->rot.x-=1.3f;
+                    if(pGFX->OpRot.bYp) pGFX->pSelectedEntity->rot.y+=1.3f;
+                    if(pGFX->OpRot.bYn) pGFX->pSelectedEntity->rot.y-=1.3f;
+                    if(pGFX->OpRot.bZp) pGFX->pSelectedEntity->rot.z+=1.3f;
+                    if(pGFX->OpRot.bZn) pGFX->pSelectedEntity->rot.z-=1.3f;
                 }
 
                 if(pGUI->modstate & KMOD_ALT) {
@@ -709,52 +703,35 @@ bool DoGameMode(void) {
                         pGFX->pSelectedEntity->loc.z=pGFX->pCamera->loc.z;
                     }
 
-                    if(pGFX->OpLoc.bXp) pGFX->pSelectedEntity->loc.x+=2.0f;
-                    if(pGFX->OpLoc.bXn) pGFX->pSelectedEntity->loc.x-=2.0f;
-                    if(pGFX->OpLoc.bYp) pGFX->pSelectedEntity->loc.y+=2.0f;
-                    if(pGFX->OpLoc.bYn) pGFX->pSelectedEntity->loc.y-=2.0f;
-                    if(pGFX->OpLoc.bZp) pGFX->pSelectedEntity->loc.z+=2.0f;
-                    if(pGFX->OpLoc.bZn) pGFX->pSelectedEntity->loc.z-=2.0f;
+                    if(pGFX->OpLoc.bXp) pGFX->pSelectedEntity->loc.x+=1.3f;
+                    if(pGFX->OpLoc.bXn) pGFX->pSelectedEntity->loc.x-=1.3f;
+                    if(pGFX->OpLoc.bYp) pGFX->pSelectedEntity->loc.y+=1.3f;
+                    if(pGFX->OpLoc.bYn) pGFX->pSelectedEntity->loc.y-=1.3f;
+                    if(pGFX->OpLoc.bZp) pGFX->pSelectedEntity->loc.z+=1.3f;
+                    if(pGFX->OpLoc.bZn) pGFX->pSelectedEntity->loc.z-=1.3f;
                 }
 
                 if(pGUI->modstate & KMOD_CTRL) {
                     if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpScale.bXp=true;
                     if(pGUI->iKeyDown==SDLK_PAGEDOWN)   pGFX->OpScale.bXn=true;
-                    /*if(pGUI->iKeyDown==SDLK_HOME)       pGFX->OpScale.bYp=true;
-                    if(pGUI->iKeyDown==SDLK_END)        pGFX->OpScale.bYn=true;
-                    if(pGUI->iKeyDown==SDLK_INSERT)     pGFX->OpScale.bZp=true;
-                    if(pGUI->iKeyDown==SDLK_DELETE)     pGFX->OpScale.bZn=true;*/
-
                     if(pGUI->iKeyUp==SDLK_PAGEUP)       pGFX->OpScale.bXp=false;
                     if(pGUI->iKeyUp==SDLK_PAGEDOWN)     pGFX->OpScale.bXn=false;
-                    /*
-                    if(pGUI->iKeyUp==SDLK_HOME)         pGFX->OpScale.bYp=false;
-                    if(pGUI->iKeyUp==SDLK_END)          pGFX->OpScale.bYn=false;
-                    if(pGUI->iKeyUp==SDLK_INSERT)       pGFX->OpScale.bZp=false;
-                    if(pGUI->iKeyUp==SDLK_DELETE)       pGFX->OpScale.bZn=false;
-                        */
 
                     if(pGUI->iKeyUp==SDLK_F9) {
                         pGFX->pSelectedEntity->scale.x=1.0f;
                         pGFX->pSelectedEntity->scale.y=1.0f;
                         pGFX->pSelectedEntity->scale.z=1.0f;
                     }
-
                     if(pGFX->OpScale.bXp) {
-                        pGFX->pSelectedEntity->scale.x+=0.02f;
-                        pGFX->pSelectedEntity->scale.y+=0.02f;
-                        pGFX->pSelectedEntity->scale.z+=0.02f;
+                        pGFX->pSelectedEntity->scale.x+=0.002f;
+                        pGFX->pSelectedEntity->scale.y+=0.002f;
+                        pGFX->pSelectedEntity->scale.z+=0.002f;
                     }
                     if(pGFX->OpScale.bXn) {
-                        pGFX->pSelectedEntity->scale.x-=0.02f;
-                        pGFX->pSelectedEntity->scale.y-=0.02f;
-                        pGFX->pSelectedEntity->scale.z-=0.02f;
+                        pGFX->pSelectedEntity->scale.x-=0.002f;
+                        pGFX->pSelectedEntity->scale.y-=0.002f;
+                        pGFX->pSelectedEntity->scale.z-=0.002f;
                     }
-
-                    // if(pGFX->OpScale.bYp)
-                    // if(pGFX->OpScale.bYn)
-                    // if(pGFX->OpScale.bZp)
-                    // if(pGFX->OpScale.bZn)
                 }
             }
         }
