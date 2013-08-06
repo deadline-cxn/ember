@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1375754275 source:h:\develop\projects\ember\manclient.cpp
+1375794673 source:h:\develop\projects\ember\manclient.cpp
 	"manclient.h"
 
 1375097516 h:\develop\projects\ember\manclient.h
@@ -117,10 +117,10 @@
 1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375754265 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1375794598 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375715829 h:\develop\projects\dlstorm\c_gfx.h
+1375794332 h:\develop\projects\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>

@@ -645,6 +645,11 @@ bool DoGameMode(void) {
                 (!(pGUI->modstate & KMOD_CTRL)) &&
                 (!(pGUI->modstate & KMOD_ALT)) ) {
 
+                if(pGUI->iKeyUp==SDLK_F2) {
+                    CVector3 sec;
+                    pGFX->SaveEntities(sec);
+                }
+
 
                 if(pGUI->iKeyUp==SDLK_INSERT){
                     pGFX->ClearSelectEntity();
