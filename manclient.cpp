@@ -338,6 +338,10 @@ void MainGameLoop(void) { // **  Main Game Loop
     if(!pGUI) return;
     if(!pClientData) return;
     pGUI->doInput();
+
+    if( (pGUI->iKeyUp   == SDLK_RETURN) &&
+        (pGUI->modstate & KMOD_ALT) )pGFX->ToggleFullScreen();
+
     if(pFMGS) pFMGS->DoNetwork();
     pGFX->BeginScene();
     DoGameMode();
@@ -610,7 +614,9 @@ bool DoGameMode(void) {
         pGFX->RenderScene(pGUI->pMouse->X(),pGUI->pMouse->Y());
 
         // Keys
-        if(pGUI->iKeyUp   == SDLK_F12) bShutDown=1;
+
+
+        if(pGUI->iKeyUp   == SDLK_F12)  bShutDown=1;
         if(pGUI->iKeyDown == SDLK_w )    pGFX->pCamera->Move_Forward_Start();
         if(pGUI->iKeyUp   == SDLK_w )    pGFX->pCamera->Move_Forward_Stop();
         if(pGUI->iKeyDown == SDLK_s )    pGFX->pCamera->Move_Backward_Start();
@@ -825,6 +831,11 @@ bool doInit(void) {
     dlcsm_make_str(temp1);
 
     /////////////////////////////////////////////////////////////////////////////////
+    // Other housekeeping
+
+    bShutDown=false;
+
+    /////////////////////////////////////////////////////////////////////////////////
     // Zeroize pointers
 
     pClientData     = NULL;
@@ -833,7 +844,6 @@ bool doInit(void) {
     pGAF			= NULL;
     pGUI            = NULL;
     pFMGS           = NULL;
-
 
     /////////////////////////////////////////////////////////////////////////////////
     // Fill random seed with time for better randomizing
@@ -876,10 +886,7 @@ bool doInit(void) {
     pLog->_Add("Setting up Client Data");
     pClientData = new CC_Data(va("client.%s.ini",temp1),pLog);
     if(!pClientData) return FALSE;
-    return 0;
-
-    if(!pClientData->bLog)
-        pLog->Off();
+    if(!pClientData->bLog) pLog->Off();
 
     /////////////////////////////////////////////////////////////////////////////////
     // Create GAF File
@@ -954,8 +961,6 @@ bool doInit(void) {
 
     /////////////////////////////////////////////////////////////////////////////////
 
-
-    bShutDown=0;
     pGUI->pCons->RegVar("b_shutdown",(void *)&bShutDown);
     pGUI->pCons->set_cvar("s_teststring","THIS IS A TEST OF THE GLOBAL VARS SYSTEM");
     pGUI->pCons->set_cvar("i_testint","354");
@@ -1065,6 +1070,7 @@ void ShutDown(void) {
     NET_Shutdown();
     pLog->_Add("FMGS shut down");
 
+    pClientData->bFullScreen=pGFX->bFullScreen;
     dlcsm_delete(pGFX);
     pLog->_Add("GFX shut down");
     dlcsm_delete(pGAF);
