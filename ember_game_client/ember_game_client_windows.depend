@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1375716171 source:h:\develop\projects\ember\manclient.cpp
+1375754275 source:h:\develop\projects\ember\manclient.cpp
 	"manclient.h"
 
 1375097516 h:\develop\projects\ember\manclient.h
@@ -57,7 +57,7 @@
 	"zlib.h"
 	"c_log.h"
 
-1374198726 h:\develop\projects\dlstorm\dlstorm.h
+1375740620 h:\develop\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
@@ -117,7 +117,7 @@
 1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375716412 source:h:\develop\projects\dlstorm\c_gfx.cpp
+1375754265 source:h:\develop\projects\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
 1375715829 h:\develop\projects\dlstorm\c_gfx.h
@@ -135,7 +135,8 @@
 	"c_gl3dmodel.h"
 	"c_entity.h"
 
-1375656311 h:\develop\projects\dlstorm\c_gl3dmodel.h
+1375754265 h:\develop\projects\dlstorm\c_gl3dmodel.h
+	"dlstorm.h"
 	"c_gfx.h"
 	"c_gltexture.h"
 	"c_log.h"
@@ -155,7 +156,7 @@
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1375657114 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
+1375759828 source:h:\develop\projects\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
 1375714549 source:h:\develop\projects\dlstorm\c_glfont.cpp
@@ -261,7 +262,7 @@
 1374198726 h:\develop\projects\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1374586063 source:h:\develop\projects\dlstorm\dlstorm.cpp
+1375740620 source:h:\develop\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1374198726 source:h:\develop\projects\dlstorm\glerrors.cpp
@@ -1116,7 +1117,7 @@
 1375193583 source:c:\projects\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
-1375541018 source:h:\develop\projects\dlstorm\c_entity.cpp
+1375754265 source:h:\develop\projects\dlstorm\c_entity.cpp
 	"c_entity.h"
 
 1375477237 h:\develop\projects\dlstorm\c_entity.h
