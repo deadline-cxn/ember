@@ -187,6 +187,8 @@
 		<Unit filename="../../dlstorm/glerrors.h" />
 		<Unit filename="../manclient.cpp" />
 		<Unit filename="../manclient.h" />
+		<Unit filename="client.Tempest.ini" />
+		<Unit filename="client.Vendetta.ini" />
 		<Unit filename="client.ini" />
 		<Unit filename="client.log" />
 		<Extensions>

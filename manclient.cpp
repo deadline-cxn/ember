@@ -81,7 +81,7 @@ void con_guirender(const string &s) {
     props=0;
     map <string, int>::iterator ii;
     for( ii=pGUI->GC_PROP.begin(); ii!=pGUI->GC_PROP.end(); ++ii)
-        if(dscc(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
+        if(dlcs_strcasecmp(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
             props|=(*ii).second;
 
     pGUI->add_stump(name,x,y,w,h,props,media);
@@ -92,7 +92,7 @@ void con_guirender(const string &s) {
         pGUI->get_stump(name)->bEditing=true;
 
         for(ii=pGUI->GC_RELATIVE.begin(); ii!=pGUI->GC_RELATIVE.end(); ++ii)
-            if(dscc(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
+            if(dlcs_strcasecmp(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
                 pGUI->get_stump(name)->iRelativeTo=(*ii).second;
     }
 }
@@ -123,7 +123,7 @@ void con_guictrlrender(const string &s) {
         props=0;
         map <string, int>::iterator ii;
         for( ii=pGUI->GC_PROP.begin(); ii!=pGUI->GC_PROP.end(); ++ii)
-            if(dscc(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
+            if(dlcs_strcasecmp(pGUI->getdata((char *)(*ii).first.c_str()),"on"))
                 props|=(*ii).second;
 
         pLog->_Add(" %d %s",
@@ -155,7 +155,7 @@ void con_guictrlrender(const string &s) {
 
             //strcpy(tctrl->relativeto,pGUI->getdata("relativeto"));
             for(ii=pGUI->GC_RELATIVE.begin(); ii!=pGUI->GC_RELATIVE.end(); ++ii)
-                if(dscc(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
+                if(dlcs_strcasecmp(pGUI->getdata("relativeto"),(char *)(*ii).first.c_str()))
                     tctrl->iRelativeTo=(*ii).second;
 
 
@@ -368,7 +368,7 @@ bool DoGameMode(void) {
         break;
 
     case MAIN_MENU:
-        DEL(pFMGS);
+        dlcsm_delete(pFMGS);
         pGUI->clear();
         pGUI->call("main.gui");
         pGUI->setdata("main.gui","username",pClientData->Name);
@@ -403,7 +403,7 @@ bool DoGameMode(void) {
         SetGameMode(GATHER_SERVER_LIST);
 
     case GATHER_SERVER_LIST:
-        DEL(pFMGS);
+        dlcsm_delete(pFMGS);
         pLog->_Add("GATHER_SERVER_LIST");
         //switch(LOGINMODE)
         //
@@ -427,7 +427,7 @@ bool DoGameMode(void) {
         SetGameMode(CHOOSE_SERVER);
 
     case CHOOSE_SERVER_INIT:
-        DEL(pFMGS);
+        dlcsm_delete(pFMGS);
         pGUI->clear();
         pGUI->call("servers.gui");
         SetGameMode(CHOOSE_SERVER);
@@ -460,7 +460,7 @@ bool DoGameMode(void) {
         // strcpy(pClientData->Port, "40227");
         // Run the connect command through the console...
         // ProcessConsoleCommand(va("connect %s:%s %s %s", pClientData->IPAddress,pClientData->Port, pClientData->Name,pClientData->Password),1);
-        DEL(pFMGS);
+        dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
         if(!pFMGS) {
             SetGameMode(MAIN_MENU);
@@ -476,7 +476,7 @@ bool DoGameMode(void) {
         pLog->_Add("CONSOLE_CONNECT");
         pGUI->clear();
         pGUI->call("connect.gui");
-        DEL(pFMGS);
+        dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
         md5_digest(temp1,pClientData->Password);
         pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
@@ -849,16 +849,25 @@ bool doInit(void) {
     pLog->AddLineSep();
     pLog->_Add((char *)va("MANTRA %s %s %s",VERSION,CPUSTRING,COPYRIGHT));
     pLog->_Add("Log created");
-    char temp1[1024];
-    memset(temp1,0,1024);
-    getos(temp1);
+
+    dlcsm_make_str(temp1);
+    dlcs_get_os_version(temp1);
     pLog->_Add(temp1);
+
+    /////////////////////////////////////////////////////////////////////////////////
+    // Set up network
+
+    pLog->_Add("Setting up NETWORK");
+    NET_Init();
 
     /////////////////////////////////////////////////////////////////////////////////
     // Load in client.ini
 
+    dlcsm_make_filename(thost);
+    dlcs_get_hostname(thost);
+    pLog->_Add("HOSTNAME: %s",thost);
     pLog->_Add("Setting up Client Data");
-    pClientData = new CC_Data();// pLog);
+    pClientData = new CC_Data(va("client.%s.ini",thost),pLog);
     if(!pClientData) return FALSE;
 
     // if(!pClientData->bLoad()) pLog->_Add("Can't load client.ini" );
@@ -939,9 +948,6 @@ bool doInit(void) {
 
     /////////////////////////////////////////////////////////////////////////////////
 
-    pLog->_Add("Setting up NETWORK");
-
-    NET_Init();
 
     bShutDown=0;
     pGUI->pCons->RegVar("b_shutdown",(void *)&bShutDown);
@@ -1043,31 +1049,31 @@ void ShutDown(void) {
     pLog->_Add("******************** START SHUTDOWN ***************************");
 
 #ifdef _WINDOWS_
-    DEL(pSND);
+    dlcsm_delete(pSND);
     pLog->_Add("Sound shut down");
 #endif
 
-    DEL(pGUI);
+    dlcsm_delete(pGUI);
     pLog->_Add("GUI shut down");
-    DEL(pFMGS);
+    dlcsm_delete(pFMGS);
     NET_Shutdown();
     pLog->_Add("FMGS shut down");
 
-    DEL(pGFX);
+    dlcsm_delete(pGFX);
     pLog->_Add("GFX shut down");
-    DEL(pGAF);
+    dlcsm_delete(pGAF);
     pLog->_Add("GAF shut down");
 
     if(pClientData) {
         pClientData->bSave();
         pLog->_Add("Client data saved...");
         pClientData->CleanUp();
-        DEL(pClientData);
+        dlcsm_delete(pClientData);
     }
     pLog->_Add("Client data shut down");
     pLog->_Add("Mantra engine shut down!");
     pLog->AddLineSep();
-    DEL(pLog);
+    dlcsm_delete(pLog);
 }
 ////////////////////////////////////////////////////// NETWORK STUFF
 long C_FMGS::Ping(void) { // ** Ping the server
@@ -1147,13 +1153,13 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
         switch(cLastNetMessage) {
 
         case NETMSG_PING:
-            fold_block {
+
                 dwPing=dlcs_get_tickcount()-RecvData->dwRead();
                 break;
-            }
+
 
         case NETMSG_SERVERINFORMATION_GET:
-            fold_block {
+
                 ax=RecvData->cRead();
                 //Log("%d) Races",ax);
                 for(i=0; i<ax; i++) {
@@ -1171,10 +1177,10 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 }
                 // SetGameMode(GET_CHARACTERS);
                 break;
-            }
+
 
         case NETMSG_RETRIEVECHARS:
-            fold_block {
+
 
                 //Log("NETMSG_RETRIEVECHARS!");
 
@@ -1201,10 +1207,10 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
 
                 break;
-            }
+
 
         case NETMSG_LOGIN_REQUEST_REPLY:
-            fold_block {
+
 
                 pLog->_Add("Got a login request reply");
 
@@ -1256,19 +1262,19 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                         pGUI->prompt(RecvData->pRead(),"nop");
                 }
                 break;
-            }
+
 
         case NETMSG_HEARTBEAT:
-            fold_block { // just return the heartbeat... no other thing needs to be done...
+           // just return the heartbeat... no other thing needs to be done...
                 SendData.Reset();
                 SendData.Write((char)NETMSG_HEARTBEAT);
                 SendData.Write((int)1);
                 SendUnreliableMessage(&SendData);
                 break;
-            }
+
 
         case NETMSG_CLIENT_SHUTDOWN:
-            fold_block {
+
 
                 strcpy(temp2,RecvData->pRead()); // client session_id
                 strcpy(temp1,RecvData->pRead());
@@ -1279,10 +1285,10 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 pLog->_Add("Server has shut down this client. Reason: %s",temp1);
                 SetGameMode(LOGIN_SCREEN_ENTRY);
                 break;
-            }
+
 
         case NETMSG_CHAT:
-            fold_block {  // Global Chat / System Message
+            // Global Chat / System Message
 
                 strcpy(temp1,RecvData->pRead());    // message
                 strcpy(temp2,RecvData->pRead());    // username
@@ -1309,22 +1315,18 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                     break;
                 }
                 break;
-            }
+
 
         case NETMSG_MODIFY_CHARACTER:
-            fold_block {
+
 
                 break;
-            }
 
         case NETMSG_MOVEPLAYER:
-            fold_block {
 
                 break;
-            }
 
         case NETMSG_FILE_XFER:
-            fold_block {
 
                 char *pFileBuf;
                 //char pFileBuf[NET_FILE_XFER_BLOCK_SIZE+1];
@@ -1467,17 +1469,14 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                 }
                 break;
-            }
 
         default:
-            fold_block {
 
                 //Do nothing... (should never execute this code, but who knows...)
                 //DLog("Recieved a NETMSG (%d) but could not recognize it.",cLastNetMessage);
                 //ChatBufferAdd(255,0,0,"SYSTEM","Recieved a NETMSG (%d) but could not recognize it.",cLastNetMessage);
 
                 break;
-            }
         }
     }
 }
@@ -1490,9 +1489,9 @@ C_FMGS::C_FMGS(void) {
     initSocket();
 }
 C_FMGS::~C_FMGS() {
-    DEL(spin_timer);
+    dlcsm_delete(spin_timer);
     emgDisconnect();
-    DEL(pPingSocket);
+    dlcsm_delete(pPingSocket);
 }
 int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
     int errnum;
