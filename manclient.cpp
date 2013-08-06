@@ -98,7 +98,7 @@ void con_guirender(const string &s) {
 }
 void con_guictrlrender(const string &s) {
     vector <string> vs;
-    vector <string> ncmd=explode(" ",s.c_str());
+    vector <string> ncmd=dlcs_explode(" ",s.c_str());
 
     char name[1024];
     memset(name,0,1024);
@@ -159,10 +159,10 @@ void con_guictrlrender(const string &s) {
                     tctrl->iRelativeTo=(*ii).second;
 
 
-            vs=explode(",", pGUI->getdata("border_color"));
+            vs=dlcs_explode(",", pGUI->getdata("border_color"));
             if(vs.size()>1) tctrl->border_color=RGB(atoi(vs[0].c_str()),atoi(vs[1].c_str()),atoi(vs[2].c_str()) );
 
-            vs=explode(",", pGUI->getdata("background_color"));
+            vs=dlcs_explode(",", pGUI->getdata("background_color"));
             if(vs.size()>1) tctrl->background_color=RGB(atoi(vs[0].c_str()),atoi(vs[1].c_str()),atoi(vs[2].c_str()) );
 
             tctrl->font=atoi(pGUI->getdata("font"));
@@ -177,7 +177,7 @@ void con_guiedit(const string &s)       {
 }
 void con_guiremovecontrol(const string &s) {
     //vector <string> vs;
-    vector <string> ncmd=explode(" ",s.c_str());
+    vector <string> ncmd=dlcs_explode(" ",s.c_str());
 
     if(ncmd.size()>1) {
         pLog->_Add("guiremovecontrol [%s] [%s]",(char *)ncmd[0].c_str(),(char *)ncmd[1].c_str());
@@ -251,12 +251,12 @@ void con_bind(const string &s)          {
 
     if(bQuotes) {
 
-        vs=explode("\"",ls);
+        vs=dlcs_explode("\"",ls);
         strcpy(ls,vs[1].c_str());
-        v2=explode(" ",vs[0].c_str());
+        v2=dlcs_explode(" ",vs[0].c_str());
         strcpy(ss,v2[0].c_str());
     } else {
-        vs=explode(" ",ls);
+        vs=dlcs_explode(" ",ls);
         strcpy(ls,"");
         for(key=1; key<vs.size(); key++) {
             strcat(ls,va("%s ",vs[key].c_str()));
@@ -300,7 +300,7 @@ void con_cvar(const string &s) {
         pLog->_Add("That isn't a CVAR");
         return;
     }
-    vs=explode("=",s.c_str());
+    vs=dlcs_explode("=",s.c_str());
     if(vs.size()>1) {
         strcpy(name,vs[0].c_str());
         pGUI->pCons->set_cvar(name,(char *)vs[1].c_str());
@@ -318,7 +318,7 @@ void con_quit(const string &s) {
 }
 void con_chat(const string &s) {
 
-    vector <string> ncmd=explode("|",s.c_str());
+    vector <string> ncmd=dlcs_explode("|",s.c_str());
 
     pLog->_Add("%d",ncmd.size());
 
@@ -440,7 +440,7 @@ bool DoGameMode(void) {
     case LOGIN_FROM_GUI:
         pGUI->getdata((char *)&temp1,"username");
         pGUI->getdata((char *)&temp2,"password");
-        md5_digest(temp1,temp2);
+        dlcs_md5_digest(temp1,temp2);
         pLog->_Add("%s",temp1);
         strcpy(pClientData->Name,       temp1);
         strcpy(pClientData->Password,   temp2);
@@ -467,7 +467,7 @@ bool DoGameMode(void) {
             pGUI->prompt("Can't establish network object","nop");
             break;
         }
-        md5_digest(temp1,pClientData->Password);
+        dlcs_md5_digest(temp1,pClientData->Password);
         pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
         SetGameMode(LOGIN_RECV);
         break; // End CONNECT
@@ -478,7 +478,7 @@ bool DoGameMode(void) {
         pGUI->call("connect.gui");
         dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
-        md5_digest(temp1,pClientData->Password);
+        dlcs_md5_digest(temp1,pClientData->Password);
         pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
         SetGameMode(LOGIN_RECV);
         break;

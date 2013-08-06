@@ -452,7 +452,7 @@
 1375040966 source:h:\develop\projects\sdk\zlib\zutil.c
 	"zutil.h"
 
-1375810252 source:c:\projects\dlstorm\c_console.cpp
+1375814632 source:c:\projects\dlstorm\c_console.cpp
 	"c_console.h"
 
 1374156776 c:\projects\dlstorm\c_console.h
@@ -477,7 +477,7 @@
 	"zlib.h"
 	"c_log.h"
 
-1375810252 c:\projects\dlstorm\dlstorm.h
+1375814957 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
@@ -530,7 +530,7 @@
 	<unistd.h>
 	"dlstorm.h"
 
-1375810252 source:c:\projects\dlstorm\c_data.cpp
+1375814642 source:c:\projects\dlstorm\c_data.cpp
 	"c_data.h"
 	"SDL.h"
 
@@ -767,7 +767,7 @@
 1375810252 c:\projects\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1375705759 source:c:\projects\dlstorm\c_glfont.cpp
+1375810252 source:c:\projects\dlstorm\c_glfont.cpp
 	"c_glfont.h"
 	"c_gltexture.h"
 	"SDL.h"
@@ -823,7 +823,7 @@
 1374157133 c:\projects\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1375810252 source:c:\projects\dlstorm\dlstorm.cpp
+1375814936 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1374156736 source:c:\projects\dlstorm\glerrors.cpp
@@ -1028,13 +1028,12 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1375810469 source:c:\projects\ember\manclient.cpp
+1375815027 source:c:\projects\ember\manclient.cpp
 	"manclient.h"
 
-1375098469 c:\projects\ember\manclient.h
+1375814173 c:\projects\ember\manclient.h
 	"c_data.h"
 	"c_timer.h"
-	"c_snd.h"
 	"c_gfx.h"
 	"c_gui.h"
 	"c_gui_chat_enum.h"
@@ -1085,7 +1084,7 @@
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1375704336 source:c:\projects\dlstorm\c_glmouse.cpp
+1375810252 source:c:\projects\dlstorm\c_glmouse.cpp
 	"dlstorm.h"
 	"c_glmouse.h"
 	"c_gltexture.h"
@@ -1101,7 +1100,7 @@
 	"glerrors.h"
 	"SDL.h"
 
-1375810252 source:c:\projects\dlstorm\c_gui.cpp
+1375814705 source:c:\projects\dlstorm\c_gui.cpp
 	"c_gui.h"
 
 1375704336 c:\projects\dlstorm\c_gui.h

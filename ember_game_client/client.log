@@ -1,1416 +1,1388 @@
 *****************************************************************
-(Tue Aug 06 12:45:53 2013):MANTRA v13.07.01a Windows-x86(D) (C) 2012 Seth Parson
-(Tue Aug 06 12:45:53 2013):Log created
-(Tue Aug 06 12:45:53 2013):Windows Server 2008 R2 version 6.1 Service Pack 1 (Build 7601)
-(Tue Aug 06 12:45:53 2013):Setting up NETWORK
-(Tue Aug 06 12:45:53 2013):HOSTNAME: Tempest
-(Tue Aug 06 12:45:53 2013):Setting up Client Data
-(Tue Aug 06 12:45:53 2013):LOADING CONFIG FROM client.Tempest.ini
-(Tue Aug 06 12:45:53 2013):Name
-(Tue Aug 06 12:45:53 2013):Name
-(Tue Aug 06 12:45:53 2013): Name [Name]
-(Tue Aug 06 12:45:53 2013):Password
-(Tue Aug 06 12:45:53 2013):
-(Tue Aug 06 12:45:53 2013):Save Password
-(Tue Aug 06 12:45:53 2013):on
-(Tue Aug 06 12:45:53 2013):Last Server
-(Tue Aug 06 12:45:53 2013):Ember Server
-(Tue Aug 06 12:45:53 2013):Last Server IP
-(Tue Aug 06 12:45:53 2013):
-(Tue Aug 06 12:45:53 2013):Port
-(Tue Aug 06 12:45:53 2013):
-(Tue Aug 06 12:45:53 2013):Log
-(Tue Aug 06 12:45:53 2013):on
-(Tue Aug 06 12:45:53 2013):Download
-(Tue Aug 06 12:45:53 2013):on
-(Tue Aug 06 12:45:53 2013):Sound
-(Tue Aug 06 12:45:53 2013):on
-(Tue Aug 06 12:45:53 2013):Sound Volume
-(Tue Aug 06 12:45:53 2013):100.000000
-(Tue Aug 06 12:45:53 2013):Music
-(Tue Aug 06 12:45:53 2013):on
-(Tue Aug 06 12:45:53 2013):Music Volume
-(Tue Aug 06 12:45:53 2013):100.000000
-(Tue Aug 06 12:45:53 2013):Master Server
-(Tue Aug 06 12:45:53 2013):
-(Tue Aug 06 12:45:53 2013):Master Server Port
-(Tue Aug 06 12:45:53 2013):
-(Tue Aug 06 12:45:53 2013):FullScreen
-(Tue Aug 06 12:45:53 2013):off
-(Tue Aug 06 12:45:53 2013): bFullScreen [0]
-(Tue Aug 06 12:45:53 2013):Screen Width
-(Tue Aug 06 12:45:53 2013):1000
-(Tue Aug 06 12:45:53 2013): ScreenWidth [1000]
-(Tue Aug 06 12:45:53 2013):Screen Height
-(Tue Aug 06 12:45:53 2013):500
-(Tue Aug 06 12:45:53 2013): ScreenHeight [500]
-(Tue Aug 06 12:45:53 2013):Screen Colors
-(Tue Aug 06 12:45:53 2013):24
-(Tue Aug 06 12:45:53 2013): ScreenColors [24]
-(Tue Aug 06 12:45:53 2013):Setting up GAF
-(Tue Aug 06 12:45:53 2013):Setting up GFX
-(Tue Aug 06 12:45:53 2013): ScreenWidth : 1000 
-(Tue Aug 06 12:45:53 2013): ScreenHeight: 500 
-(Tue Aug 06 12:45:53 2013): ScreenColors: 24 
-(Tue Aug 06 12:45:53 2013): bFullScreen : 0 
-(Tue Aug 06 12:45:53 2013):Init SDL/OpenGL GFX Subsystem...
-(Tue Aug 06 12:45:53 2013):Software surfaces...
-(Tue Aug 06 12:45:53 2013):SDL initialized (Video memory:[0])
-(Tue Aug 06 12:45:53 2013):OpenGL initialized
-(Tue Aug 06 12:45:53 2013):Camera initialized
-(Tue Aug 06 12:45:53 2013):Loading textures
-(Tue Aug 06 12:45:53 2013):Loading textures 2
-(Tue Aug 06 12:45:53 2013):Loading textures 3
-(Tue Aug 06 12:45:53 2013):Loading textures 5
-(Tue Aug 06 12:45:53 2013):Loading textures 5.1
-(Tue Aug 06 12:45:53 2013):Loading textures 5.2.1
-(Tue Aug 06 12:45:53 2013):Loading textures 5.2.2
-(Tue Aug 06 12:45:53 2013):Loading textures 5.3
-(Tue Aug 06 12:45:53 2013):Loading textures 5.4
-(Tue Aug 06 12:45:53 2013):Texture base/0000skin.png (OPENGL[1]) 
-(Tue Aug 06 12:45:53 2013):Loading textures 5
-(Tue Aug 06 12:45:53 2013):Loading textures 5.1
-(Tue Aug 06 12:45:53 2013):Loading textures 5.2
-(Tue Aug 06 12:45:53 2013):Loading textures 5.3
-(Tue Aug 06 12:45:53 2013):Loading textures 5.4
-(Tue Aug 06 12:45:53 2013):Texture base/0001skin.png (OPENGL[2]) 
-(Tue Aug 06 12:45:53 2013):Loading textures 5
-(Tue Aug 06 12:45:53 2013):Loading textures 5.1
-(Tue Aug 06 12:45:53 2013):Loading textures 5.2
-(Tue Aug 06 12:45:53 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0000.png (OPENGL[3]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0001.png (OPENGL[4]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0002.png (OPENGL[5]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0003.png (OPENGL[6]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0004.png (OPENGL[7]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0006.png (OPENGL[8]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0007.png (OPENGL[9]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0008.png (OPENGL[10]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0009.png (OPENGL[11]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0010.png (OPENGL[12]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0011.png (OPENGL[13]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0014.png (OPENGL[14]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0016.png (OPENGL[15]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0017.png (OPENGL[16]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0018.png (OPENGL[17]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0019.png (OPENGL[18]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0020.png (OPENGL[19]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0021.png (OPENGL[20]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0022.png (OPENGL[21]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0023.png (OPENGL[22]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0024.png (OPENGL[23]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0025.png (OPENGL[24]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0026.png (OPENGL[25]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0028.png (OPENGL[26]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0029.png (OPENGL[27]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0030.png (OPENGL[28]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0031.png (OPENGL[29]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0032.png (OPENGL[30]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0033.png (OPENGL[31]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0034.png (OPENGL[32]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0035.png (OPENGL[33]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0036.png (OPENGL[34]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0037.png (OPENGL[35]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0038.png (OPENGL[36]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0039.png (OPENGL[37]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0040.png (OPENGL[38]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0041.png (OPENGL[39]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0042.png (OPENGL[40]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0043.png (OPENGL[41]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0044.png (OPENGL[42]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0045.png (OPENGL[43]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0046.png (OPENGL[44]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0047.png (OPENGL[45]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0048.png (OPENGL[46]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0049.png (OPENGL[47]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0050.png (OPENGL[48]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0051.png (OPENGL[49]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0052.png (OPENGL[50]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0053.png (OPENGL[51]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0054.png (OPENGL[52]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0055.png (OPENGL[53]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0056.png (OPENGL[54]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0057.png (OPENGL[55]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0058.png (OPENGL[56]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0059.png (OPENGL[57]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0060.png (OPENGL[58]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0061.png (OPENGL[59]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0062.png (OPENGL[60]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0063.png (OPENGL[61]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0064.png (OPENGL[62]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0065.png (OPENGL[63]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0066.png (OPENGL[64]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0067.png (OPENGL[65]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0068.png (OPENGL[66]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0069.png (OPENGL[67]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0070.png (OPENGL[68]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0071.png (OPENGL[69]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0072.png (OPENGL[70]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0074.png (OPENGL[71]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0075.png (OPENGL[72]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0076.png (OPENGL[73]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0077.png (OPENGL[74]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0078.png (OPENGL[75]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0079.png (OPENGL[76]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0080.png (OPENGL[77]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0081.png (OPENGL[78]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0082.png (OPENGL[79]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0083.png (OPENGL[80]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0084.png (OPENGL[81]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0085.png (OPENGL[82]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0086.png (OPENGL[83]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0087.png (OPENGL[84]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0088.png (OPENGL[85]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0089.png (OPENGL[86]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0090.png (OPENGL[87]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0091.png (OPENGL[88]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0092.png (OPENGL[89]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0093.png (OPENGL[90]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0094.png (OPENGL[91]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0095.png (OPENGL[92]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0097.png (OPENGL[93]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0098.png (OPENGL[94]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0099.png (OPENGL[95]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0100.png (OPENGL[96]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0102.png (OPENGL[97]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0103.png (OPENGL[98]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0104.png (OPENGL[99]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0106.png (OPENGL[100]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0107.png (OPENGL[101]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0108.png (OPENGL[102]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0109.png (OPENGL[103]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0110.png (OPENGL[104]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0112.png (OPENGL[105]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0113.png (OPENGL[106]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0114.png (OPENGL[107]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0115.png (OPENGL[108]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0116.png (OPENGL[109]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0117.png (OPENGL[110]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0118.png (OPENGL[111]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0119.png (OPENGL[112]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0120.png (OPENGL[113]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0121.png (OPENGL[114]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0122.png (OPENGL[115]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0123.png (OPENGL[116]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0125.png (OPENGL[117]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0152.png (OPENGL[118]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/b0153.png (OPENGL[119]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/default.png (OPENGL[120]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/grass.png (OPENGL[121]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/grass1.png (OPENGL[122]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/monster1skin.png (OPENGL[123]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/ntt.ankh.png (OPENGL[124]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/ntt.audio.png (OPENGL[125]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/ntt.aura.png (OPENGL[126]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/ntt.light.png (OPENGL[127]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/sb1.back.png (OPENGL[128]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/sb1.front.png (OPENGL[129]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:54 2013):Loading textures 5.4
-(Tue Aug 06 12:45:54 2013):Texture base/sb1.left.png (OPENGL[130]) 
-(Tue Aug 06 12:45:54 2013):Loading textures 5
-(Tue Aug 06 12:45:54 2013):Loading textures 5.1
-(Tue Aug 06 12:45:54 2013):Loading textures 5.2
-(Tue Aug 06 12:45:54 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/sb1.right.png (OPENGL[131]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/sb1.top.png (OPENGL[132]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/star1.png (OPENGL[133]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/star2.png (OPENGL[134]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/sun.png (OPENGL[135]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00001.png (OPENGL[136]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00002.png (OPENGL[137]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00003.png (OPENGL[138]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00004.png (OPENGL[139]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00005.png (OPENGL[140]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00006.png (OPENGL[141]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00007.png (OPENGL[142]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00008.png (OPENGL[143]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00009.png (OPENGL[144]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00010.png (OPENGL[145]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00011.png (OPENGL[146]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00012.png (OPENGL[147]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00013.png (OPENGL[148]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00014.png (OPENGL[149]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00015.png (OPENGL[150]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00016.png (OPENGL[151]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00017.png (OPENGL[152]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00018.png (OPENGL[153]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00019.png (OPENGL[154]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00020.png (OPENGL[155]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00021.png (OPENGL[156]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00022.png (OPENGL[157]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00023.png (OPENGL[158]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00024.png (OPENGL[159]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00025.png (OPENGL[160]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/tile00113.png (OPENGL[161]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 5
-(Tue Aug 06 12:45:55 2013):Loading textures 5.1
-(Tue Aug 06 12:45:55 2013):Loading textures 5.2
-(Tue Aug 06 12:45:55 2013):Loading textures 5.3
-(Tue Aug 06 12:45:55 2013):Loading textures 5.4
-(Tue Aug 06 12:45:55 2013):Texture base/timer_outer.png (OPENGL[162]) 
-(Tue Aug 06 12:45:55 2013):Loading textures 6
-(Tue Aug 06 12:45:55 2013):Base Textures initialized
-(Tue Aug 06 12:45:55 2013):Loading models...
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/baaul.ms3d] MESHES[1] MATERIALS[1]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[0] NumTri[1671] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/baaul.ms3d (39033872)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/chicken.ms3d] MESHES[1] MATERIALS[1]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[0] NumTri[558] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/chicken.ms3d (39096696)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/monster1.ms3d] MESHES[1] MATERIALS[1]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[0] NumTri[2664] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/monster1.ms3d (39123896)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/oldhouse.ms3d] MESHES[5] MATERIALS[5]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[1] NumTri[19878] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[1] MaterialIndex[3] NumTri[17454] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[2] MaterialIndex[0] NumTri[624] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[3] MaterialIndex[4] NumTri[462] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[4] MaterialIndex[2] NumTri[2145] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/oldhouse.ms3d (39218488)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/oven1.ms3d] MESHES[1] MATERIALS[1]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[0] NumTri[72] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/oven1.ms3d (116349680)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/skeletonmage.ms3d] MESHES[1] MATERIALS[1]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[0] NumTri[1728] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/skeletonmage.ms3d (39497152)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):MODEL[models/table1.ms3d] MESHES[1] MATERIALS[1]
-(Tue Aug 06 12:45:55 2013):Materials loaded
-(Tue Aug 06 12:45:55 2013):Mesh load A
-(Tue Aug 06 12:45:55 2013):Mesh load B
-(Tue Aug 06 12:45:55 2013):Mesh load C
-(Tue Aug 06 12:45:55 2013):Meshindex[0] MaterialIndex[0] NumTri[180] NumUV[1]
-(Tue Aug 06 12:45:55 2013):Mesh load D
-(Tue Aug 06 12:45:55 2013):Mesh load F
-(Tue Aug 06 12:45:55 2013):Model loaded: models/table1.ms3d (116406072)
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:55 2013):============================================================
-(Tue Aug 06 12:45:56 2013):MODEL[models/terrain1.ms3d] MESHES[1] MATERIALS[2]
-(Tue Aug 06 12:45:56 2013):Materials loaded
-(Tue Aug 06 12:45:56 2013):Mesh load A
-(Tue Aug 06 12:45:56 2013):Mesh load B
-(Tue Aug 06 12:45:56 2013):Mesh load C
-(Tue Aug 06 12:45:56 2013):Meshindex[0] MaterialIndex[1] NumTri[60000] NumUV[1]
-(Tue Aug 06 12:45:56 2013):Mesh load D
-(Tue Aug 06 12:45:56 2013):Mesh load F
-(Tue Aug 06 12:45:56 2013):Model loaded: models/terrain1.ms3d (116415392)
-(Tue Aug 06 12:45:56 2013):============================================================
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/chicken.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/baaul.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/table1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oven1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/terrain1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/monster1.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/oldhouse.ms3d
-(Tue Aug 06 12:45:56 2013): Entity :models/skeletonmage.ms3d
-(Tue Aug 06 12:45:56 2013):GFX Initialized
-(Tue Aug 06 12:45:56 2013):Setting up GUI
-(Tue Aug 06 12:45:56 2013):MOUSE TEXTURE: mouse/default.png
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt01.png loaded (OPENGL[164]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt02.png loaded (OPENGL[165]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt03.png loaded (OPENGL[166]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt04.png loaded (OPENGL[167]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt05.png loaded (OPENGL[168]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt06.png loaded (OPENGL[169]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt07.png loaded (OPENGL[170]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt08.png loaded (OPENGL[171]) 
-(Tue Aug 06 12:45:56 2013):Font texture fonts/fnt09.png loaded (OPENGL[172]) 
-(Tue Aug 06 12:45:57 2013):Font texture fonts/fnt10.png loaded (OPENGL[173]) 
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [exec autoexec.cfg] [autoexec.cfg]...
-(Tue Aug 06 12:45:57 2013):exec [autoexec.cfg]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > toggle fps
+(Tue Aug 06 14:50:54 2013):MANTRA v13.07.01a Windows-x86(D) (C) 2012 Seth Parson
+(Tue Aug 06 14:50:54 2013):Log created
+(Tue Aug 06 14:50:54 2013):Windows Server 2008 R2 version 6.1 Service Pack 1 (Build 7601)
+(Tue Aug 06 14:50:54 2013):Setting up NETWORK
+(Tue Aug 06 14:50:54 2013):HOSTNAME: cobra
+(Tue Aug 06 14:50:54 2013):Setting up Client Data
+(Tue Aug 06 14:50:54 2013):LOADING CONFIG FROM client.cobra.ini
+(Tue Aug 06 14:50:54 2013):Name
+(Tue Aug 06 14:50:54 2013):Name
+(Tue Aug 06 14:50:54 2013): Name [Name]
+(Tue Aug 06 14:50:54 2013):Password
+(Tue Aug 06 14:50:54 2013):
+(Tue Aug 06 14:50:54 2013):Save Password
+(Tue Aug 06 14:50:54 2013):on
+(Tue Aug 06 14:50:54 2013):Last Server
+(Tue Aug 06 14:50:54 2013):Ember Server
+(Tue Aug 06 14:50:54 2013):Last Server IP
+(Tue Aug 06 14:50:54 2013):
+(Tue Aug 06 14:50:54 2013):Port
+(Tue Aug 06 14:50:54 2013):
+(Tue Aug 06 14:50:54 2013):Log
+(Tue Aug 06 14:50:54 2013):on
+(Tue Aug 06 14:50:54 2013):Download
+(Tue Aug 06 14:50:54 2013):on
+(Tue Aug 06 14:50:54 2013):Sound
+(Tue Aug 06 14:50:54 2013):on
+(Tue Aug 06 14:50:54 2013):Sound Volume
+(Tue Aug 06 14:50:54 2013):100.000000
+(Tue Aug 06 14:50:54 2013):Music
+(Tue Aug 06 14:50:54 2013):on
+(Tue Aug 06 14:50:54 2013):Music Volume
+(Tue Aug 06 14:50:54 2013):100.000000
+(Tue Aug 06 14:50:54 2013):Master Server
+(Tue Aug 06 14:50:54 2013):
+(Tue Aug 06 14:50:54 2013):Master Server Port
+(Tue Aug 06 14:50:54 2013):
+(Tue Aug 06 14:50:54 2013):FullScreen
+(Tue Aug 06 14:50:54 2013):off
+(Tue Aug 06 14:50:54 2013): bFullScreen [0]
+(Tue Aug 06 14:50:54 2013):Screen Width
+(Tue Aug 06 14:50:54 2013):1000
+(Tue Aug 06 14:50:54 2013): ScreenWidth [1000]
+(Tue Aug 06 14:50:54 2013):Screen Height
+(Tue Aug 06 14:50:54 2013):500
+(Tue Aug 06 14:50:54 2013): ScreenHeight [500]
+(Tue Aug 06 14:50:54 2013):Screen Colors
+(Tue Aug 06 14:50:54 2013):24
+(Tue Aug 06 14:50:54 2013): ScreenColors [24]
+(Tue Aug 06 14:50:54 2013):Setting up GAF
+(Tue Aug 06 14:50:54 2013):Setting up GFX
+(Tue Aug 06 14:50:54 2013): ScreenWidth : 1000 
+(Tue Aug 06 14:50:54 2013): ScreenHeight: 500 
+(Tue Aug 06 14:50:54 2013): ScreenColors: 24 
+(Tue Aug 06 14:50:54 2013): bFullScreen : 0 
+(Tue Aug 06 14:50:54 2013):Init SDL/OpenGL GFX Subsystem...
+(Tue Aug 06 14:50:54 2013):Software surfaces...
+(Tue Aug 06 14:50:55 2013):SDL initialized (Video memory:[0])
+(Tue Aug 06 14:50:55 2013):OpenGL initialized
+(Tue Aug 06 14:50:55 2013):Camera initialized
+(Tue Aug 06 14:50:55 2013):Loading textures
+(Tue Aug 06 14:50:55 2013):Loading textures 2
+(Tue Aug 06 14:50:55 2013):Loading textures 3
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/0000skin.png (OPENGL[1]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/0001skin.png (OPENGL[2]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0000.png (OPENGL[3]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0001.png (OPENGL[4]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0002.png (OPENGL[5]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0003.png (OPENGL[6]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0004.png (OPENGL[7]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0006.png (OPENGL[8]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0007.png (OPENGL[9]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0008.png (OPENGL[10]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0009.png (OPENGL[11]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0010.png (OPENGL[12]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0011.png (OPENGL[13]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0014.png (OPENGL[14]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0016.png (OPENGL[15]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0017.png (OPENGL[16]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0018.png (OPENGL[17]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0019.png (OPENGL[18]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0020.png (OPENGL[19]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0021.png (OPENGL[20]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0022.png (OPENGL[21]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0023.png (OPENGL[22]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0024.png (OPENGL[23]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0025.png (OPENGL[24]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0026.png (OPENGL[25]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0028.png (OPENGL[26]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0029.png (OPENGL[27]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0030.png (OPENGL[28]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0031.png (OPENGL[29]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0032.png (OPENGL[30]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0033.png (OPENGL[31]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0034.png (OPENGL[32]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0035.png (OPENGL[33]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0036.png (OPENGL[34]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0037.png (OPENGL[35]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0038.png (OPENGL[36]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0039.png (OPENGL[37]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0040.png (OPENGL[38]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0041.png (OPENGL[39]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0042.png (OPENGL[40]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0043.png (OPENGL[41]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0044.png (OPENGL[42]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0045.png (OPENGL[43]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0046.png (OPENGL[44]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0047.png (OPENGL[45]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0048.png (OPENGL[46]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0049.png (OPENGL[47]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0050.png (OPENGL[48]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0051.png (OPENGL[49]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0052.png (OPENGL[50]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0053.png (OPENGL[51]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0054.png (OPENGL[52]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0055.png (OPENGL[53]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0056.png (OPENGL[54]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0057.png (OPENGL[55]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0058.png (OPENGL[56]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0059.png (OPENGL[57]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0060.png (OPENGL[58]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0061.png (OPENGL[59]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0062.png (OPENGL[60]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0063.png (OPENGL[61]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0064.png (OPENGL[62]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0065.png (OPENGL[63]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0066.png (OPENGL[64]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0067.png (OPENGL[65]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0068.png (OPENGL[66]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0069.png (OPENGL[67]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0070.png (OPENGL[68]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0071.png (OPENGL[69]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0072.png (OPENGL[70]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0074.png (OPENGL[71]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0075.png (OPENGL[72]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0076.png (OPENGL[73]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0077.png (OPENGL[74]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0078.png (OPENGL[75]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0079.png (OPENGL[76]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0080.png (OPENGL[77]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0081.png (OPENGL[78]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0082.png (OPENGL[79]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0083.png (OPENGL[80]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0084.png (OPENGL[81]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0085.png (OPENGL[82]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0086.png (OPENGL[83]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0087.png (OPENGL[84]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0088.png (OPENGL[85]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0089.png (OPENGL[86]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0090.png (OPENGL[87]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0091.png (OPENGL[88]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0092.png (OPENGL[89]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0093.png (OPENGL[90]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0094.png (OPENGL[91]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0095.png (OPENGL[92]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0097.png (OPENGL[93]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0098.png (OPENGL[94]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0099.png (OPENGL[95]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0100.png (OPENGL[96]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0102.png (OPENGL[97]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0103.png (OPENGL[98]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0104.png (OPENGL[99]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0106.png (OPENGL[100]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0107.png (OPENGL[101]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0108.png (OPENGL[102]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0109.png (OPENGL[103]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0110.png (OPENGL[104]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0112.png (OPENGL[105]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0113.png (OPENGL[106]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0114.png (OPENGL[107]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0115.png (OPENGL[108]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0116.png (OPENGL[109]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0117.png (OPENGL[110]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0118.png (OPENGL[111]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0119.png (OPENGL[112]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0120.png (OPENGL[113]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0121.png (OPENGL[114]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0122.png (OPENGL[115]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0123.png (OPENGL[116]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0125.png (OPENGL[117]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0152.png (OPENGL[118]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/b0153.png (OPENGL[119]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/default.png (OPENGL[120]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/grass.png (OPENGL[121]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/grass1.png (OPENGL[122]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/monster1skin.png (OPENGL[123]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/ntt.ankh.png (OPENGL[124]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/ntt.audio.png (OPENGL[125]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/ntt.aura.png (OPENGL[126]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/ntt.light.png (OPENGL[127]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/sb1.back.png (OPENGL[128]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/sb1.front.png (OPENGL[129]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/sb1.left.png (OPENGL[130]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/sb1.right.png (OPENGL[131]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/sb1.top.png (OPENGL[132]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/star1.png (OPENGL[133]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/star2.png (OPENGL[134]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/sun.png (OPENGL[135]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00001.png (OPENGL[136]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00002.png (OPENGL[137]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00003.png (OPENGL[138]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00004.png (OPENGL[139]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00005.png (OPENGL[140]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00006.png (OPENGL[141]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00007.png (OPENGL[142]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00008.png (OPENGL[143]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00009.png (OPENGL[144]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00010.png (OPENGL[145]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00011.png (OPENGL[146]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00012.png (OPENGL[147]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00013.png (OPENGL[148]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00014.png (OPENGL[149]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00015.png (OPENGL[150]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00016.png (OPENGL[151]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00017.png (OPENGL[152]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00018.png (OPENGL[153]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00019.png (OPENGL[154]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00020.png (OPENGL[155]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00021.png (OPENGL[156]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00022.png (OPENGL[157]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00023.png (OPENGL[158]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00024.png (OPENGL[159]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00025.png (OPENGL[160]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/tile00113.png (OPENGL[161]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 5
+(Tue Aug 06 14:50:55 2013):Loading textures 5.1
+(Tue Aug 06 14:50:55 2013):Loading textures 5.2
+(Tue Aug 06 14:50:55 2013):Loading textures 5.3
+(Tue Aug 06 14:50:55 2013):Loading textures 5.4
+(Tue Aug 06 14:50:55 2013):Texture base/timer_outer.png (OPENGL[162]) 
+(Tue Aug 06 14:50:55 2013):Loading textures 6
+(Tue Aug 06 14:50:55 2013):Base Textures initialized
+(Tue Aug 06 14:50:55 2013):Loading models...
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:55 2013):MODEL[models/baaul.ms3d] MESHES[1] MATERIALS[1]
+(Tue Aug 06 14:50:55 2013):Materials loaded
+(Tue Aug 06 14:50:55 2013):Mesh load A
+(Tue Aug 06 14:50:55 2013):Mesh load B
+(Tue Aug 06 14:50:55 2013):Mesh load C
+(Tue Aug 06 14:50:55 2013):Meshindex[0] MaterialIndex[0] NumTri[1671] NumUV[1]
+(Tue Aug 06 14:50:55 2013):Mesh load D
+(Tue Aug 06 14:50:55 2013):Mesh load F
+(Tue Aug 06 14:50:55 2013):Model loaded: models/baaul.ms3d (8256432)
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:55 2013):MODEL[models/chicken.ms3d] MESHES[1] MATERIALS[1]
+(Tue Aug 06 14:50:55 2013):Materials loaded
+(Tue Aug 06 14:50:55 2013):Mesh load A
+(Tue Aug 06 14:50:55 2013):Mesh load B
+(Tue Aug 06 14:50:55 2013):Mesh load C
+(Tue Aug 06 14:50:55 2013):Meshindex[0] MaterialIndex[0] NumTri[558] NumUV[1]
+(Tue Aug 06 14:50:55 2013):Mesh load D
+(Tue Aug 06 14:50:55 2013):Mesh load F
+(Tue Aug 06 14:50:55 2013):Model loaded: models/chicken.ms3d (41743936)
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:55 2013):MODEL[models/monster1.ms3d] MESHES[1] MATERIALS[1]
+(Tue Aug 06 14:50:55 2013):Materials loaded
+(Tue Aug 06 14:50:55 2013):Mesh load A
+(Tue Aug 06 14:50:55 2013):Mesh load B
+(Tue Aug 06 14:50:55 2013):Mesh load C
+(Tue Aug 06 14:50:55 2013):Meshindex[0] MaterialIndex[0] NumTri[2664] NumUV[1]
+(Tue Aug 06 14:50:55 2013):Mesh load D
+(Tue Aug 06 14:50:55 2013):Mesh load F
+(Tue Aug 06 14:50:55 2013):Model loaded: models/monster1.ms3d (41768392)
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:55 2013):============================================================
+(Tue Aug 06 14:50:56 2013):MODEL[models/oldhouse.ms3d] MESHES[5] MATERIALS[5]
+(Tue Aug 06 14:50:56 2013):Materials loaded
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[0] MaterialIndex[1] NumTri[19878] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[1] MaterialIndex[3] NumTri[17454] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[2] MaterialIndex[0] NumTri[624] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[3] MaterialIndex[4] NumTri[462] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[4] MaterialIndex[2] NumTri[2145] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Model loaded: models/oldhouse.ms3d (42082632)
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):MODEL[models/oven1.ms3d] MESHES[1] MATERIALS[1]
+(Tue Aug 06 14:50:56 2013):Materials loaded
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[0] MaterialIndex[0] NumTri[72] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Model loaded: models/oven1.ms3d (92048096)
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):MODEL[models/skeletonmage.ms3d] MESHES[1] MATERIALS[1]
+(Tue Aug 06 14:50:56 2013):Materials loaded
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[0] MaterialIndex[0] NumTri[1728] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Model loaded: models/skeletonmage.ms3d (42218536)
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):MODEL[models/table1.ms3d] MESHES[1] MATERIALS[1]
+(Tue Aug 06 14:50:56 2013):Materials loaded
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[0] MaterialIndex[0] NumTri[180] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Model loaded: models/table1.ms3d (42283176)
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013):MODEL[models/terrain1.ms3d] MESHES[1] MATERIALS[2]
+(Tue Aug 06 14:50:56 2013):Materials loaded
+(Tue Aug 06 14:50:56 2013):Mesh load A
+(Tue Aug 06 14:50:56 2013):Mesh load B
+(Tue Aug 06 14:50:56 2013):Mesh load C
+(Tue Aug 06 14:50:56 2013):Meshindex[0] MaterialIndex[1] NumTri[60000] NumUV[1]
+(Tue Aug 06 14:50:56 2013):Mesh load D
+(Tue Aug 06 14:50:56 2013):Mesh load F
+(Tue Aug 06 14:50:56 2013):Model loaded: models/terrain1.ms3d (42298280)
+(Tue Aug 06 14:50:56 2013):============================================================
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/monster1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/terrain1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oldhouse.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/chicken.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/skeletonmage.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/table1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/oven1.ms3d
+(Tue Aug 06 14:50:56 2013): Entity :models/baaul.ms3d
+(Tue Aug 06 14:50:56 2013):GFX Initialized
+(Tue Aug 06 14:50:56 2013):Setting up GUI
+(Tue Aug 06 14:50:56 2013):MOUSE TEXTURE: mouse/default.png
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt01.png loaded (OPENGL[164]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt02.png loaded (OPENGL[165]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt03.png loaded (OPENGL[166]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt04.png loaded (OPENGL[167]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt05.png loaded (OPENGL[168]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt06.png loaded (OPENGL[169]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt07.png loaded (OPENGL[170]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt08.png loaded (OPENGL[171]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt09.png loaded (OPENGL[172]) 
+(Tue Aug 06 14:50:56 2013):Font texture fonts/fnt10.png loaded (OPENGL[173]) 
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [exec autoexec.cfg] [autoexec.cfg]...
+(Tue Aug 06 14:50:56 2013):exec [autoexec.cfg]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > toggle fps
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > #play main.xm
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > #play main.xm
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > set debug 0
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > set debug 0
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > #set debug 1
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > #set debug 1
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > #set debug 2
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > #set debug 2
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > 
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > 
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [exec config.cfg] [config.cfg]...
-(Tue Aug 06 12:45:57 2013):exec [config.cfg]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > ## Ember key bindings file.
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [exec config.cfg] [config.cfg]...
+(Tue Aug 06 14:50:56 2013):exec [config.cfg]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > ## Ember key bindings file.
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind 9 play lightning.wav
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind 9 play lightning.wav
 ] [9 play lightning.wav ]...
-(Tue Aug 06 12:45:57 2013):bind [9] [play lightning.wav]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f toggle fps
+(Tue Aug 06 14:50:56 2013):bind [9] [play lightning.wav]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f toggle fps
 ] [f toggle fps ]...
-(Tue Aug 06 12:45:57 2013):bind [f] [toggle fps]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind l z 2
+(Tue Aug 06 14:50:56 2013):bind [f] [toggle fps]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind l z 2
 ] [l z 2 ]...
-(Tue Aug 06 12:45:57 2013):bind [l] [z 2]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind p z -2
+(Tue Aug 06 14:50:56 2013):bind [l] [z 2]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind p z -2
 ] [p z -2 ]...
-(Tue Aug 06 12:45:57 2013):bind [p] [z -2]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind t terraform
+(Tue Aug 06 14:50:56 2013):bind [p] [z -2]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind t terraform
 ] [t terraform ]...
-(Tue Aug 06 12:45:57 2013):bind [t] [terraform]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind w /who
+(Tue Aug 06 14:50:56 2013):bind [t] [terraform]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind w /who
 ] [w /who ]...
-(Tue Aug 06 12:45:57 2013):bind [w] [/who]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind pageup z -10
+(Tue Aug 06 14:50:56 2013):bind [w] [/who]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind pageup z -10
 ] [pageup z -10 ]...
-(Tue Aug 06 12:45:57 2013):bind [pageup] [z -10]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f1 "guiclear;guicall systemmenu.gui"
+(Tue Aug 06 14:50:56 2013):bind [pageup] [z -10]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f1 "guiclear;guicall systemmenu.gui"
 ] [f1 "guiclear;guicall systemmenu.gui" ]...
-(Tue Aug 06 12:45:57 2013):bind [f1] [guiclear;guicall systemmenu.gui]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f8 "guicall guictrledit.gui"
+(Tue Aug 06 14:50:56 2013):bind [f1] [guiclear;guicall systemmenu.gui]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f8 "guicall guictrledit.gui"
 ] [f8 "guicall guictrledit.gui" ]...
-(Tue Aug 06 12:45:57 2013):bind [f8] [guicall guictrledit.gui]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f10 "setgamemode main;guiclear;guicall main.gui"
+(Tue Aug 06 14:50:56 2013):bind [f8] [guicall guictrledit.gui]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f10 "setgamemode main;guiclear;guicall main.gui"
 ] [f10 "setgamemode main;guiclear;guicall main.gui" ]...
-(Tue Aug 06 12:45:57 2013):bind [f10] [setgamemode main;guiclear;guicall main.gui]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f11 "guicall console.gui"
+(Tue Aug 06 14:50:56 2013):bind [f10] [setgamemode main;guiclear;guicall main.gui]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f11 "guicall console.gui"
 ] [f11 "guicall console.gui" ]...
-(Tue Aug 06 12:45:57 2013):bind [f11] [guicall console.gui]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f12 quit
+(Tue Aug 06 14:50:56 2013):bind [f11] [guicall console.gui]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f12 quit
 ] [f12 quit ]...
-(Tue Aug 06 12:45:57 2013):bind [f12] [quit]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f5 "set debug 2"
+(Tue Aug 06 14:50:56 2013):bind [f12] [quit]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f5 "set debug 2"
 ] [f5 "set debug 2" ]...
-(Tue Aug 06 12:45:57 2013):bind [f5] [set debug 2]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f6 "set debug 0"
+(Tue Aug 06 14:50:56 2013):bind [f5] [set debug 2]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f6 "set debug 0"
 ] [f6 "set debug 0" ]...
-(Tue Aug 06 12:45:57 2013):bind [f6] [set debug 0]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f7 "guicall main.gui"
+(Tue Aug 06 14:50:56 2013):bind [f6] [set debug 0]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f7 "guicall main.gui"
 ] [f7 "guicall main.gui" ]...
-(Tue Aug 06 12:45:57 2013):bind [f7] [guicall main.gui]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute > [bind f9 "guicallfile main.gui"
+(Tue Aug 06 14:50:56 2013):bind [f7] [guicall main.gui]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute > [bind f9 "guicallfile main.gui"
 ] [f9 "guicallfile main.gui" ]...
-(Tue Aug 06 12:45:57 2013):bind [f9] [guicallfile main.gui]:
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > 
+(Tue Aug 06 14:50:56 2013):bind [f9] [guicallfile main.gui]:
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > 
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > 
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > 
 ...
-(Tue Aug 06 12:45:57 2013):C_CONS::_Execute 6 > #$QUIT
+(Tue Aug 06 14:50:56 2013):C_CONS::_Execute 6 > #$QUIT
 ...
-(Tue Aug 06 12:45:57 2013):******************** FINISHED STARTUP ***************************
-(Tue Aug 06 12:45:57 2013):Done initializing player setup...
-(Tue Aug 06 12:46:14 2013):******************** START SHUTDOWN ***************************
-(Tue Aug 06 12:46:14 2013):GUI shut down
-(Tue Aug 06 12:46:14 2013):FMGS shut down
-(Tue Aug 06 12:46:14 2013):Shutting down SDL/OpenGL GFX subsystem...
-(Tue Aug 06 12:46:14 2013):Entities shut down...
-(Tue Aug 06 12:46:14 2013):Camera shut down...
-(Tue Aug 06 12:46:14 2013):Textures shut down...
-(Tue Aug 06 12:46:14 2013):Models shut down...
-(Tue Aug 06 12:46:14 2013):SDL/OpenGL GFX subsystem shutdown...
-(Tue Aug 06 12:46:14 2013):GFX shut down
-(Tue Aug 06 12:46:14 2013):GAF shut down
-(Tue Aug 06 12:46:14 2013):Client data saved...
-(Tue Aug 06 12:46:14 2013):Client data shut down
-(Tue Aug 06 12:46:14 2013):Mantra engine shut down!
+(Tue Aug 06 14:50:56 2013):******************** FINISHED STARTUP ***************************
+(Tue Aug 06 14:50:56 2013):Done initializing player setup...
+(Tue Aug 06 14:50:57 2013):******************** START SHUTDOWN ***************************
+(Tue Aug 06 14:50:57 2013):GUI shut down
+(Tue Aug 06 14:50:57 2013):FMGS shut down
+(Tue Aug 06 14:50:57 2013):Shutting down SDL/OpenGL GFX subsystem...
+(Tue Aug 06 14:50:57 2013):Entities shut down...
+(Tue Aug 06 14:50:57 2013):Camera shut down...
+(Tue Aug 06 14:50:57 2013):Textures shut down...
+(Tue Aug 06 14:50:57 2013):Models shut down...
+(Tue Aug 06 14:50:57 2013):SDL/OpenGL GFX subsystem shutdown...
+(Tue Aug 06 14:50:57 2013):GFX shut down
+(Tue Aug 06 14:50:57 2013):GAF shut down
+(Tue Aug 06 14:50:57 2013):Client data saved...
+(Tue Aug 06 14:50:57 2013):Client data shut down
+(Tue Aug 06 14:50:57 2013):Mantra engine shut down!
 *****************************************************************
