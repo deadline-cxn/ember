@@ -658,13 +658,19 @@ bool DoGameMode(void) {
                 }
 
                 if(pGUI->iKeyUp==SDLK_TAB)      pGFX->SelectClosestEntity();
+
             }
 
 
             if( pGFX->pSelectedEntity ) {
+
+
                 if(pGUI->iKeyUp==SDLK_F6)   pGFX->pSelectedEntity->type=ENTITY_STATIC;
                 if(pGUI->iKeyUp==SDLK_F8)   pGFX->pSelectedEntity->pModel=pGFX->GetRandomModel();
+
                 if(pGUI->iKeyUp==SDLK_F7)   pGFX->pSelectedEntity->pTexture=pGFX->GetRandomTexture();
+                if((pGUI->iKeyUp==SDLK_F7)&&
+                   (pGUI->modstate & KMOD_SHIFT)) pGFX->pSelectedEntity->pTexture=0;
 
                 if(pGUI->modstate & KMOD_SHIFT) {
                     if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpRot.bXp=true;
