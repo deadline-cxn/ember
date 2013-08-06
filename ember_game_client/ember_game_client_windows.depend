@@ -477,7 +477,7 @@
 	"zlib.h"
 	"c_log.h"
 
-1375814957 c:\projects\dlstorm\dlstorm.h
+1375815481 c:\projects\dlstorm\dlstorm.h
 	"dlstorm_lib.h"
 	"c_log.h"
 
@@ -823,7 +823,7 @@
 1374157133 c:\projects\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1375814936 source:c:\projects\dlstorm\dlstorm.cpp
+1375815613 source:c:\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
 1374156736 source:c:\projects\dlstorm\glerrors.cpp
@@ -1028,7 +1028,7 @@
 	"c_gfx.h"
 	"c_gl3dmodel.h"
 
-1375815027 source:c:\projects\ember\manclient.cpp
+1375815721 source:c:\projects\ember\manclient.cpp
 	"manclient.h"
 
 1375814173 c:\projects\ember\manclient.h

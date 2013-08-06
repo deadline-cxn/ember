@@ -189,7 +189,7 @@
 		<Unit filename="../manclient.h" />
 		<Unit filename="client.Tempest.ini" />
 		<Unit filename="client.Vendetta.ini" />
-		<Unit filename="client.ini" />
+		<Unit filename="client.cobra.ini" />
 		<Unit filename="client.log" />
 		<Extensions>
 			<code_completion />

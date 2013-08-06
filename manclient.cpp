@@ -818,6 +818,12 @@ bool DoGameMode(void) {
 }
 
 bool doInit(void) {
+
+    /////////////////////////////////////////////////////////////////////////////////
+    // Temporary variables
+
+    dlcsm_make_str(temp1);
+
     /////////////////////////////////////////////////////////////////////////////////
     // Zeroize pointers
 
@@ -827,6 +833,7 @@ bool doInit(void) {
     pGAF			= NULL;
     pGUI            = NULL;
     pFMGS           = NULL;
+
 
     /////////////////////////////////////////////////////////////////////////////////
     // Fill random seed with time for better randomizing
@@ -850,7 +857,6 @@ bool doInit(void) {
     pLog->_Add((char *)va("MANTRA %s %s %s",VERSION,CPUSTRING,COPYRIGHT));
     pLog->_Add("Log created");
 
-    dlcsm_make_str(temp1);
     dlcs_get_os_version(temp1);
     pLog->_Add(temp1);
 
@@ -863,14 +869,14 @@ bool doInit(void) {
     /////////////////////////////////////////////////////////////////////////////////
     // Load in client.ini
 
-    dlcsm_make_filename(thost);
-    dlcs_get_hostname(thost);
-    pLog->_Add("HOSTNAME: %s",thost);
+    dlcs_get_ipaddress(temp1);
+    pLog->_Add("IP Address[%s]",temp1);
+    dlcs_get_hostname(temp1);
+    pLog->_Add("HOSTNAME[%s]",temp1);
     pLog->_Add("Setting up Client Data");
-    pClientData = new CC_Data(va("client.%s.ini",thost),pLog);
+    pClientData = new CC_Data(va("client.%s.ini",temp1),pLog);
     if(!pClientData) return FALSE;
-
-    // if(!pClientData->bLoad()) pLog->_Add("Can't load client.ini" );
+    return 0;
 
     if(!pClientData->bLog)
         pLog->Off();
