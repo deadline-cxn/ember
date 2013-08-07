@@ -23,7 +23,6 @@
 #define _DEBUG_MANTRA_SND 1
 #endif // _DEBUG
 #include "manclient.h"
-
 ////////////////////////////////////////////////////// Global Variables
 bool       bShutDown;   // Shut down the program by setting this to true
 CC_Data*    pClientData;// Client Data (ini file)
@@ -49,7 +48,6 @@ int main(int argc, char *argv[]) {
 ////////////////////////////////////////////////////// Console STUFF
 void con_terraform(const string &s) {
     pLog->_Add("TERRAFORM!");
-
 }
 void con_getint_str(char *pString, int n) {
     char temp[1024];
