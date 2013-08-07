@@ -304,12 +304,7 @@ void con_cvar(const string &s) {
 
         for(pGUI->pCons->svm_i=pGUI->pCons->varmap.begin(); pGUI->pCons->svm_i!=pGUI->pCons->varmap.end(); ++pGUI->pCons->svm_i) {
             pGUI->pCons->get_cvar( (char *)(*pGUI->pCons->svm_i).first.c_str(),temp);
-
-            pLog->_Add("[%s]=[%s]",
-                       (*pGUI->pCons->svm_i).first.c_str(),
-                       temp);
-
-
+            pLog->_Add("[%s]=[%s]", (*pGUI->pCons->svm_i).first.c_str(), temp);
         }
         return;
     }

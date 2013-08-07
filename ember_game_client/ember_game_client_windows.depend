@@ -146,7 +146,7 @@
 	"SDL.h"
 	"c_log.h"
 
-1374198726 source:h:\develop\projects\dlstorm\c_gaf.cpp
+1375869008 source:h:\develop\projects\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
 1375869008 source:h:\develop\projects\dlstorm\c_gfx.cpp
@@ -216,10 +216,8 @@
 	"c_gaf.h"
 	"c_log.h"
 
-1375714549 source:h:\develop\projects\dlstorm\c_gltexture.cpp
+1375869008 source:h:\develop\projects\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
-	"glerrors.h"
-	"SDL.h"
 
 1375869008 h:\develop\projects\dlstorm\glerrors.h
 	<winsock2.h>
@@ -288,7 +286,7 @@
 	"dlstorm.h"
 	"fmod.h"
 
-1375472748 source:h:\develop\projects\dlstorm\c_timer.cpp
+1375869008 source:h:\develop\projects\dlstorm\c_timer.cpp
 	"c_timer.h"
 
 1375869008 h:\develop\projects\dlstorm\c_timer.h
@@ -297,7 +295,7 @@
 1375869008 source:h:\develop\projects\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
-1374198726 source:h:\develop\projects\dlstorm\glerrors.cpp
+1375869660 source:h:\develop\projects\dlstorm\glerrors.cpp
 	"glerrors.h"
 
 1373583118 source:h:\develop\projects\ember\c_entity.cpp
@@ -1729,4 +1727,7 @@
 	<string>
 	<string.h>
 	<stdio.h>
+
+1375869702 source:h:\develop\projects\sdk\md5\md5.cpp
+	"md5.h"
 
