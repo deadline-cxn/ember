@@ -24,7 +24,7 @@
 #endif // _DEBUG
 #include "manclient.h"
 ////////////////////////////////////////////////////// Global Variables
-bool       bShutDown;   // Shut down the program by setting this to true
+bool        bShutDown;   // Shut down the program by setting this to true
 CC_Data*    pClientData;// Client Data (ini file)
 C_GFX*      pGFX;       // SDL / OpenGL
 C_GUI*      pGUI;       // OpenGL GUI
