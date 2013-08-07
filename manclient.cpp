@@ -23,6 +23,7 @@
 #define _DEBUG_MANTRA_SND 1
 #endif // _DEBUG
 #include "manclient.h"
+
 ////////////////////////////////////////////////////// Global Variables
 bool       bShutDown;   // Shut down the program by setting this to true
 CC_Data*    pClientData;// Client Data (ini file)

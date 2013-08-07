@@ -25,3 +25,5 @@ Thumbs.db
 # Compiler stuff #
 ####################
 *.layout
+*.depend
+
