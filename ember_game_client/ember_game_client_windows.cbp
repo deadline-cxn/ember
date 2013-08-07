@@ -52,6 +52,192 @@
 			<Add library="assimp" />
 			<Add directory="C:/projects/SDK/SDL-1.2.15/lib" />
 		</Linker>
+		<Unit filename="../../SDK/libjpeg/Makefile.am" />
+		<Unit filename="../../SDK/libjpeg/Makefile.in" />
+		<Unit filename="../../SDK/libjpeg/README" />
+		<Unit filename="../../SDK/libjpeg/aclocal.m4" />
+		<Unit filename="../../SDK/libjpeg/ar-lib" />
+		<Unit filename="../../SDK/libjpeg/change.log" />
+		<Unit filename="../../SDK/libjpeg/cjpeg.1" />
+		<Unit filename="../../SDK/libjpeg/coderules.txt" />
+		<Unit filename="../../SDK/libjpeg/config.guess" />
+		<Unit filename="../../SDK/libjpeg/config.sub" />
+		<Unit filename="../../SDK/libjpeg/configure" />
+		<Unit filename="../../SDK/libjpeg/configure.ac" />
+		<Unit filename="../../SDK/libjpeg/depcomp" />
+		<Unit filename="../../SDK/libjpeg/djpeg.1" />
+		<Unit filename="../../SDK/libjpeg/filelist.txt" />
+		<Unit filename="../../SDK/libjpeg/install-sh" />
+		<Unit filename="../../SDK/libjpeg/install.txt" />
+		<Unit filename="../../SDK/libjpeg/jaricom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jcapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jcmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jcomapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jconfig.bcc" />
+		<Unit filename="../../SDK/libjpeg/jconfig.cfg" />
+		<Unit filename="../../SDK/libjpeg/jconfig.dj" />
+		<Unit filename="../../SDK/libjpeg/jconfig.h" />
+		<Unit filename="../../SDK/libjpeg/jconfig.mac" />
+		<Unit filename="../../SDK/libjpeg/jconfig.manx" />
+		<Unit filename="../../SDK/libjpeg/jconfig.mc6" />
+		<Unit filename="../../SDK/libjpeg/jconfig.sas" />
+		<Unit filename="../../SDK/libjpeg/jconfig.st" />
+		<Unit filename="../../SDK/libjpeg/jconfig.txt" />
+		<Unit filename="../../SDK/libjpeg/jconfig.vc" />
+		<Unit filename="../../SDK/libjpeg/jconfig.vms" />
+		<Unit filename="../../SDK/libjpeg/jconfig.wat" />
+		<Unit filename="../../SDK/libjpeg/jdapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdatasrc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdcoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdcolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jddctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdhuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdinput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdmerge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdosabcc.obj" />
+		<Unit filename="../../SDK/libjpeg/jdosamsc.obj" />
+		<Unit filename="../../SDK/libjpeg/jdosaobj.txt" />
+		<Unit filename="../../SDK/libjpeg/jdpostct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jdsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jidctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jidctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jidctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jinclude.h" />
+		<Unit filename="../../SDK/libjpeg/jmemansi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jmemmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jpegtran.1" />
+		<Unit filename="../../SDK/libjpeg/jquant1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jquant2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/jutils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../SDK/libjpeg/libjpeg.map" />
+		<Unit filename="../../SDK/libjpeg/libjpeg.txt" />
+		<Unit filename="../../SDK/libjpeg/ltmain.sh" />
+		<Unit filename="../../SDK/libjpeg/makcjpeg.st" />
+		<Unit filename="../../SDK/libjpeg/makdjpeg.st" />
+		<Unit filename="../../SDK/libjpeg/makeadsw.vc6" />
+		<Unit filename="../../SDK/libjpeg/makeasln.v10" />
+		<Unit filename="../../SDK/libjpeg/makecdep.vc6" />
+		<Unit filename="../../SDK/libjpeg/makecdsp.vc6" />
+		<Unit filename="../../SDK/libjpeg/makecfil.v10" />
+		<Unit filename="../../SDK/libjpeg/makecmak.vc6" />
+		<Unit filename="../../SDK/libjpeg/makecvcx.v10" />
+		<Unit filename="../../SDK/libjpeg/makeddep.vc6" />
+		<Unit filename="../../SDK/libjpeg/makeddsp.vc6" />
+		<Unit filename="../../SDK/libjpeg/makedfil.v10" />
+		<Unit filename="../../SDK/libjpeg/makedmak.vc6" />
+		<Unit filename="../../SDK/libjpeg/makedvcx.v10" />
+		<Unit filename="../../SDK/libjpeg/makefile.ansi" />
+		<Unit filename="../../SDK/libjpeg/makefile.bcc" />
+		<Unit filename="../../SDK/libjpeg/makefile.dj" />
+		<Unit filename="../../SDK/libjpeg/makefile.manx" />
+		<Unit filename="../../SDK/libjpeg/makefile.mc6" />
+		<Unit filename="../../SDK/libjpeg/makefile.mms" />
+		<Unit filename="../../SDK/libjpeg/makefile.sas" />
+		<Unit filename="../../SDK/libjpeg/makefile.unix" />
+		<Unit filename="../../SDK/libjpeg/makefile.vc" />
+		<Unit filename="../../SDK/libjpeg/makefile.vms" />
+		<Unit filename="../../SDK/libjpeg/makefile.wat" />
+		<Unit filename="../../SDK/libjpeg/makejdep.vc6" />
+		<Unit filename="../../SDK/libjpeg/makejdsp.vc6" />
+		<Unit filename="../../SDK/libjpeg/makejdsw.vc6" />
+		<Unit filename="../../SDK/libjpeg/makejfil.v10" />
+		<Unit filename="../../SDK/libjpeg/makejmak.vc6" />
+		<Unit filename="../../SDK/libjpeg/makejsln.v10" />
+		<Unit filename="../../SDK/libjpeg/makejvcx.v10" />
+		<Unit filename="../../SDK/libjpeg/makeproj.mac" />
+		<Unit filename="../../SDK/libjpeg/makerdep.vc6" />
+		<Unit filename="../../SDK/libjpeg/makerdsp.vc6" />
+		<Unit filename="../../SDK/libjpeg/makerfil.v10" />
+		<Unit filename="../../SDK/libjpeg/makermak.vc6" />
+		<Unit filename="../../SDK/libjpeg/makervcx.v10" />
+		<Unit filename="../../SDK/libjpeg/maketdep.vc6" />
+		<Unit filename="../../SDK/libjpeg/maketdsp.vc6" />
+		<Unit filename="../../SDK/libjpeg/maketfil.v10" />
+		<Unit filename="../../SDK/libjpeg/maketmak.vc6" />
+		<Unit filename="../../SDK/libjpeg/maketvcx.v10" />
+		<Unit filename="../../SDK/libjpeg/makewdep.vc6" />
+		<Unit filename="../../SDK/libjpeg/makewdsp.vc6" />
+		<Unit filename="../../SDK/libjpeg/makewfil.v10" />
+		<Unit filename="../../SDK/libjpeg/makewmak.vc6" />
+		<Unit filename="../../SDK/libjpeg/makewvcx.v10" />
+		<Unit filename="../../SDK/libjpeg/makljpeg.st" />
+		<Unit filename="../../SDK/libjpeg/maktjpeg.st" />
+		<Unit filename="../../SDK/libjpeg/makvms.opt" />
+		<Unit filename="../../SDK/libjpeg/missing" />
+		<Unit filename="../../SDK/libjpeg/rdjpgcom.1" />
+		<Unit filename="../../SDK/libjpeg/readme.dos" />
+		<Unit filename="../../SDK/libjpeg/structure.txt" />
+		<Unit filename="../../SDK/libjpeg/testimg.bmp" />
+		<Unit filename="../../SDK/libjpeg/testimg.jpg" />
+		<Unit filename="../../SDK/libjpeg/testimg.ppm" />
+		<Unit filename="../../SDK/libjpeg/testimgp.jpg" />
+		<Unit filename="../../SDK/libjpeg/testorig.jpg" />
+		<Unit filename="../../SDK/libjpeg/testprog.jpg" />
+		<Unit filename="../../SDK/libjpeg/usage.txt" />
+		<Unit filename="../../SDK/libjpeg/wizard.txt" />
+		<Unit filename="../../SDK/libjpeg/wrjpgcom.1" />
 		<Unit filename="../../SDK/lpng162/png.c">
 			<Option compilerVar="CC" />
 		</Unit>
