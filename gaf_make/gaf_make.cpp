@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
 
 
 
-    DEL(pGAF);
+    dlcsm_delete(pGAF);
 
     return 0;
 }

@@ -930,20 +930,10 @@ bool doInit(void) {
     // Initialize GFX
 
     pLog->_Add("Setting up GFX");
-    char temp[1024];
-    memset(temp,0,1024);
-
+    dlcsm_make_str(temp);
     strcpy(temp,va("Mantra %s(%s) %s NR(%02d)",VERSION,CPUSTRING,COPYRIGHT,NET_REVISION));
-
-    pGFX = new C_GFX(   pClientData->ScreenWidth,
-                        pClientData->ScreenHeight,
-                        pClientData->ScreenColors,
-                        pClientData->bFullScreen,
-                        temp,
-                        pLog,
-                        pGAF );
-
-    if(!pGFX) {
+    pGFX = new C_GFX(pClientData->ScreenWidth, pClientData->ScreenHeight,pClientData->ScreenColors, pClientData->bFullScreen, temp, pLog, pGAF);
+    if(pGFX->bSDLFailed) {
         pLog->_Add("GFX initialization failure, quitting");
         return false;
     }

@@ -47,7 +47,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-fpermissive" />
 		</Compiler>
+		<Unit filename="../../SDK/md5/md5.cpp" />
 		<Unit filename="../../SDK/zlib/adler32.c">
 			<Option compilerVar="CC" />
 			<Option target="Windows Debug" />
