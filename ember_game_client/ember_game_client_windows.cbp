@@ -104,6 +104,7 @@
 		<Unit filename="../../SDK/lpng162/pngwutil.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../SDK/md5/md5.cpp" />
 		<Unit filename="../../SDK/zlib/adler32.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -182,11 +183,11 @@
 		<Unit filename="../../dlstorm/c_timer.h" />
 		<Unit filename="../../dlstorm/dlstorm.cpp" />
 		<Unit filename="../../dlstorm/dlstorm.h" />
-		<Unit filename="../../dlstorm/dlstorm_lib.h" />
 		<Unit filename="../../dlstorm/glerrors.cpp" />
 		<Unit filename="../../dlstorm/glerrors.h" />
 		<Unit filename="../manclient.cpp" />
 		<Unit filename="../manclient.h" />
+		<Unit filename="../mantra_version.h" />
 		<Unit filename="client.Tempest.ini" />
 		<Unit filename="client.Vendetta.ini" />
 		<Unit filename="client.cobra.ini" />

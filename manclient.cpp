@@ -1,33 +1,51 @@
-/*******************************************************************************
-    MANTRA GAME CLIENT / EMBER GAME ENGINE / by Seth Parson
- *******************************************************************************/
-
+/***************************************************************
+ **
+ **   DLSTORM   Deadline's Code Storm Library
+ **
+ **          /\
+ **   ---- D/L \----
+ **       \/
+ **
+ **   License:      BSD
+ **   Copyright:    2013
+ **   File:         manclient.cpp
+ **   Description:  MANTRA GAME CLIENT / DLSTORM GAME ENGINE / by Seth Parson
+ **   Author:       Seth Parson
+ **   Twitter:      @Sethcoder
+ **   Website:      www.sethcoder.com
+ **   Email:        defectiveseth@gmail.com
+ **
+ ******************************************************************************/
 #ifdef  _DEBUG
 #define _DEBUG_MANTRA_LOG 1
 #define _DEBUG_MANTRA_GFX 1
 #define _DEBUG_MANTRA_GUI 1
 #define _DEBUG_MANTRA_SND 1
 #endif // _DEBUG
-
 #include "manclient.h"
-
-bool        bShutDown;
-CC_Data*    pClientData;
-C_GFX*      pGFX;      // SDL / OpenGL
-C_GUI*      pGUI;      // OpenGL GUI
-CGAF*       pGAF;      // Game Archive File (GAF)
-CLog*       pLog;      // Log file
-C_FMGS*     pFMGS;     // Game Server connection
-
-#ifdef _WINDOWS_
-C_Sound*    pSND;      // FMOD Sounds
+////////////////////////////////////////////////////// Global Variables
+bool       bShutDown;   // Shut down the program by setting this to true
+CC_Data*    pClientData;// Client Data (ini file)
+C_GFX*      pGFX;       // SDL / OpenGL
+C_GUI*      pGUI;       // OpenGL GUI
+CGAF*       pGAF;       // Game Archive File (GAF)
+CLog*       pLog;       // Log file
+C_FMGS*     pFMGS;      // Game Server connection
+#ifdef DLCSM_WINDOWS_
+C_Sound*    pSND;       // FMOD Sounds
 #endif
-
-
-int main(int argc, char *argv[]) { bShutDown=false; if(doInit()) while(!bShutDown) MainGameLoop(); ShutDown(); return 0; }
-
+////////////////////////////////////////////////////// Main
+int main(int argc, char *argv[]) {
+    bShutDown=false;
+    if(doInit()){
+        while(!bShutDown) {
+            MainGameLoop();
+        }
+    }
+    ShutDown();
+    return false;
+}
 ////////////////////////////////////////////////////// Console STUFF
-
 void con_terraform(const string &s) {
     pLog->_Add("TERRAFORM!");
 
@@ -49,7 +67,7 @@ int  con_getint(const string &s) {
     if( pGUI->pCons->intmap.find(s.c_str()) != pGUI->pCons->intmap.end() ) {
         return (pGUI->pCons->intmap.find(s.c_str())->second);
     }
-    return 0;
+    return false;
 }
 void con_functest(const string &s)      {
     pLog->_Add("functest(%s)",(char *)s.c_str());
@@ -327,11 +345,8 @@ void con_chat(const string &s) {
     if(pFMGS)
         pFMGS->Chat((char *)ncmd[0].c_str(),(char *)ncmd[1].c_str(),
                     0);
-
     // char *msg,char *name,int channel){
-
 };
-
 ////////////////////////////////////////////////////// Game Mode STUFF
 void MainGameLoop(void) { // **  Main Game Loop
     if(bShutDown) return;
@@ -822,7 +837,6 @@ bool DoGameMode(void) {
     /////////////////////////////////////////////////////////////////////////////////
     return false;
 }
-
 bool doInit(void) {
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -893,7 +907,7 @@ bool doInit(void) {
 
     pLog->_Add("Setting up GAF");
     pGAF = new CGAF();
-    if(!pGAF) return 0;
+    if(!pGAF) return false;
     pGAF->Open("ember.gaf");
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -925,12 +939,7 @@ bool doInit(void) {
     char temp[1024];
     memset(temp,0,1024);
 
-    strcpy(temp,va("EGC %s(%s)  %s",VERSION,CPUSTRING,COPYRIGHT));// Net Revision(%s) NET_REVISION,
-
-    pLog->_Add(" ScreenWidth : %d ",pClientData->ScreenWidth);
-    pLog->_Add(" ScreenHeight: %d ",pClientData->ScreenHeight);
-    pLog->_Add(" ScreenColors: %d ",pClientData->ScreenColors);
-    pLog->_Add(" bFullScreen : %d ",pClientData->bFullScreen);
+    strcpy(temp,va("Mantra %s(%s) %s NR(%02d)",VERSION,CPUSTRING,COPYRIGHT,NET_REVISION));
 
     pGFX = new C_GFX(   pClientData->ScreenWidth,
                         pClientData->ScreenHeight,
@@ -942,7 +951,7 @@ bool doInit(void) {
 
     if(!pGFX) {
         pLog->_Add("GFX initialization failure, quitting");
-        return 0;
+        return false;
     }
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -952,7 +961,7 @@ bool doInit(void) {
     pGUI = new C_GUI(pGFX,pGAF,pLog);
     if(!pGUI) {
         pLog->_Add("GUI initialization failure, quitting");
-        return 0;
+        return false;
     }
 
 #ifdef _DEBUG_MANTRA_GUI
@@ -1055,7 +1064,6 @@ bool doInit(void) {
 
     return TRUE;
 }
-
 void ShutDown(void) {
     pLog->_Add("******************** START SHUTDOWN ***************************");
 
@@ -1525,7 +1533,7 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
 
     bLoggedin = false;
 
-    if(emgeGetState()==NET_NOTCONNECT) return 0;
+    if(emgeGetState()==NET_NOTCONNECT) return false;
 
     bCanSend = true;
 
@@ -1541,7 +1549,7 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
 
     if(iSocket == -1)    {
         pLog->_Add("C_FMGS::Connect() Can't open network socket!");
-        return 0;
+        return false;
     }
 
     bConnected = false;
@@ -1566,7 +1574,7 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
                     Send.iGetCurSize(),
                     (struct sockaddr*) &ToAddr)==-1 ) {
             pLog->_Add("C_FMGS::Connect() nSend Failed [%s]", NET_pGetLastError());
-            return 0;
+            return false;
         }
 
         fTryTime = dlcs_get_tickcount();
@@ -1575,7 +1583,7 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
             ret = nRecv(Recv.pGetPacketBuffer(),Recv.iGetMaxSize(),(struct sockaddr*)&RetAddr);
             if (ret == -1)            {
                 pLog->_Add("C_FMGS::Connect() -> connection read failed");
-                return 0;
+                return false;
             }
             if (ret > 0) {
                 Recv.SetCurSize(ret);
@@ -1600,37 +1608,23 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
         if(ret) break;
     }
 
-    if(!ret) return 0;
+    if(!ret) return false;
 
     Recv.iRead();
-
     char ctltype = Recv.cRead();
-
-    if(ctltype == CTL_REJECT) return 0;
-    if(ctltype != CTL_ACCEPT) return 0;
-
+    if(ctltype == CTL_REJECT) return false;
+    if(ctltype != CTL_ACCEPT) return false;
     pLog->_Add("Got a CTL_ACCEPT here");
-
     bConnected=true;
-
     memcpy(&ToAddr,&RetAddr,sizeof(sockaddr));
-
     iT = Recv.iRead();
-
-
     ToAddr.sin_port = htons(iT);
-
     //CloseSocket(iSocket);
     //iSocket=zOpenSocket(iT);
-
     pLog->_Add("SOCKET PORT SET TO (i=%d)%d",iT,ntohs(ToAddr.sin_port));
-
     bConnected = true;
     bCanSend = true;
-
     emgSetState(NET_CONNECTED);
-
-
     Send.Reset();
     Send.Write((char)NETMSG_LOGIN_REQUEST);
     Send.Write((char *)pUser);
@@ -1650,8 +1644,7 @@ void C_FMGS::emgDisconnect() {
     // pLog->_Add("C_FMGS::Disconnect() (%d) [%s]", retval  , NET_pGetLastError());
 }
 void C_FMGS::emgSendNetMessage(char cMethod) {
-    /*
-        if(emgeGetState()==NET_NOTCONNECT) return;
+    /*  if(emgeGetState()==NET_NOTCONNECT) return;
         switch(cMethod)
         {
             case 1: // Unreliable
@@ -1686,7 +1679,7 @@ void C_FMGS::emgSendNetMessage(char cMethod) {
 int  C_FMGS::emgiGetMessage() {
     int i;
     if (emgeGetState() == NET_NOTCONNECT)
-        return 0;
+        return false;
     i = iGetMessage();
     if(i==-1) i=0;
     return i;
@@ -1788,6 +1781,19 @@ void C_FMGS::GetFile(char *filename) { // ** Get a file from server
     SendData.Write((char *)filename);
     SendUnreliableMessage(&SendData);
 }
+void C_FMGS::Chat(char *msg,char *name,int channel) {
+
+    CPacket SendData(NET_DATAGRAMSIZE);
+
+    SendData.Reset();
+    SendData.Write((char)NETMSG_CHAT);
+    SendData.Write((char *)msg);
+    SendData.Write((char *)name);
+    SendData.Write((int)channel);
+    //SendData.Write((char *)session_id);
+    SendUnreliableMessage(&SendData);
+}
+////////////////////////////////////////////////////////////////////////////////////////
 void CLog::_Add(const char *fmt, ...) {
     char ach[1024];
     va_list va;
@@ -1813,32 +1819,17 @@ void CLog::_DebugAdd(const char *fmt, ...) {
     if(pGUI)
         pGUI->consEntry(ach);
 }
-void C_FMGS::Chat(char *msg,char *name,int channel) {
-
-    CPacket SendData(NET_DATAGRAMSIZE);
-
-    SendData.Reset();
-    SendData.Write((char)NETMSG_CHAT);
-    SendData.Write((char *)msg);
-    SendData.Write((char *)name);
-    SendData.Write((int)channel);
-    //SendData.Write((char *)session_id);
-    SendUnreliableMessage(&SendData);
-
-
-}
-
-
+////////////////////////////////////////////////////////////////////////////////////////
 GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
     switch(ElmInfo->Type) {
     case GAFELMTYPE_FILE:
-        pLog->_Add("FILE: %25s %d",ElmInfo->Name,ElmInfo->FileSize);
+        pLog->_Add("FILE: %25s %d", ElmInfo->Name,ElmInfo->FileSize);
         break;
     case GAFELMTYPE_DIR:
-        pLog->_Add("<DIR> %25s ",ElmInfo->Name);
+        pLog->_Add("<DIR> %25s ",   ElmInfo->Name);
         break;
     default:
         break;
     }
-    return 0;
+    return false;
 }

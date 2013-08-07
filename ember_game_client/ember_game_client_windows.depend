@@ -1154,25 +1154,25 @@
 1373889413 c:\projects\dlstorm\c_waypoint.h
 	"c_gl3dmodel.h"
 
-1375806919 source:c:\dev\ember\manclient.cpp
+1375837894 source:c:\dev\ember\manclient.cpp
 	"manclient.h"
 
-1375107995 c:\dev\ember\manclient.h
+1375838089 c:\dev\ember\manclient.h
+	"dlstorm.h"
 	"c_data.h"
 	"c_timer.h"
-	"c_snd.h"
 	"c_gfx.h"
 	"c_gui.h"
 	"c_gui_chat_enum.h"
 	"c_log.h"
 	"c_net.h"
+	"c_entity.h"
 	"network_messages.h"
 	"mantra_version.h"
 	"mantra_common.h"
 	"manmaster.h"
-	"c_entity.h"
 
-1374065723 c:\dev\ember\mantra_version.h
+1375837994 c:\dev\ember\mantra_version.h
 
 1374065722 c:\dev\ember\mantra_common.h
 
@@ -1181,16 +1181,16 @@
 
 1374065614 c:\dev\ember\c_serverinfo.h
 
-1375806486 source:c:\dev\dlstorm\c_console.cpp
+1375845076 source:c:\dev\dlstorm\c_console.cpp
 	"c_console.h"
 
-1374161707 c:\dev\dlstorm\c_console.h
+1375845047 c:\dev\dlstorm\c_console.h
+	"dlstorm.h"
 	"c_gltexture.h"
 	"c_log.h"
 	"c_gaf.h"
-	<map>
 
-1375801145 c:\dev\dlstorm\c_gltexture.h
+1375841475 c:\dev\dlstorm\c_gltexture.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1199,15 +1199,54 @@
 	"c_gaf.h"
 	"c_log.h"
 	"png.h"
+	"glerrors.h"
+	"SDL.h"
 
-1374161707 c:\dev\dlstorm\c_gaf.h
+1375845144 c:\dev\dlstorm\c_gaf.h
 	<dirent.h>
 	"dlstorm.h"
 	"zlib.h"
 	"c_log.h"
 
-1375806760 c:\dev\dlstorm\dlstorm.h
-	"dlstorm_lib.h"
+1375837853 c:\dev\dlstorm\dlstorm.h
+	<windows.h>
+	<winbase.h>
+	<stdio.h>
+	<tchar.h>
+	<winsock2.h>
+	<io.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<dirent.h>
+	<ctype.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<string>
+	<tcl.h>
+	<curses.h>
+	<malloc.h>
+	<time.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+	<iostream>
+	<vector>
+	<string>
+	<map>
+	<algorithm>
+	"../SDK/md5/md5.h"
 	"c_log.h"
 
 1375805030 c:\dev\dlstorm\dlstorm_lib.h
@@ -1249,28 +1288,21 @@
 	<map>
 	<algorithm>
 
-1374161707 c:\dev\dlstorm\c_log.h
-	<direct.h>
-	<stdio.h>
-	<stdarg.h>
-	<stdlib.h>
-	<string.h>
-	<time.h>
-	<unistd.h>
+1375843254 c:\dev\dlstorm\c_log.h
 	"dlstorm.h"
 
-1375806280 source:c:\dev\dlstorm\c_data.cpp
+1375845089 source:c:\dev\dlstorm\c_data.cpp
 	"c_data.h"
-	"SDL.h"
 
-1375805910 c:\dev\dlstorm\c_data.h
+1375845125 c:\dev\dlstorm\c_data.h
 	"dlstorm.h"
+	"SDL.h"
 	"c_log.h"
 
-1375806831 source:c:\dev\dlstorm\c_entity.cpp
+1375845097 source:c:\dev\dlstorm\c_entity.cpp
 	"c_entity.h"
 
-1375799620 c:\dev\dlstorm\c_entity.h
+1375845131 c:\dev\dlstorm\c_entity.h
 	"dlstorm.h"
 	"c_waypoint.h"
 	"c_log.h"
@@ -1282,7 +1314,7 @@
 1374065326 c:\dev\dlstorm\c_waypoint.h
 	"c_gl3dmodel.h"
 
-1375799959 c:\dev\dlstorm\c_gl3dmodel.h
+1375840447 c:\dev\dlstorm\c_gl3dmodel.h
 	"dlstorm.h"
 	"c_gfx.h"
 	"c_gltexture.h"
@@ -1295,7 +1327,7 @@
 1375801834 c:\dev\dlstorm\s_gnu.h
 	"dlstorm.h"
 
-1375798771 c:\dev\dlstorm\c_gfx.h
+1375840058 c:\dev\dlstorm\c_gfx.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1319,21 +1351,19 @@
 	"c_gltexture.h"
 	"s_gnu.h"
 
-1375806578 source:c:\dev\dlstorm\c_gaf.cpp
+1375845106 source:c:\dev\dlstorm\c_gaf.cpp
 	"c_gaf.h"
 
-1375807358 source:c:\dev\dlstorm\c_gfx.cpp
+1375840239 source:c:\dev\dlstorm\c_gfx.cpp
 	"c_gfx.h"
 
-1375800988 source:c:\dev\dlstorm\c_gl3dmodel.cpp
+1375840424 source:c:\dev\dlstorm\c_gl3dmodel.cpp
 	"c_gl3dmodel.h"
 
-1375801035 source:c:\dev\dlstorm\c_glfont.cpp
+1375840797 source:c:\dev\dlstorm\c_glfont.cpp
 	"c_glfont.h"
-	"c_gltexture.h"
-	"SDL.h"
 
-1375714422 c:\dev\dlstorm\c_glfont.h
+1375840617 c:\dev\dlstorm\c_glfont.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1341,24 +1371,23 @@
 	<GL/glu.h>
 	"c_gaf.h"
 	"c_log.h"
-
-1375801110 source:c:\dev\dlstorm\c_glmouse.cpp
-	"dlstorm.h"
-	"c_glmouse.h"
 	"c_gltexture.h"
 	"SDL.h"
 
-1375463376 c:\dev\dlstorm\c_glmouse.h
+1375841294 source:c:\dev\dlstorm\c_glmouse.cpp
+	"c_glmouse.h"
+
+1375840991 c:\dev\dlstorm\c_glmouse.h
+	"dlstorm.h"
+	"c_gltexture.h"
+	"SDL.h"
 	"c_gaf.h"
 	"c_log.h"
+
+1375841886 source:c:\dev\dlstorm\c_gltexture.cpp
 	"c_gltexture.h"
 
-1375801433 source:c:\dev\dlstorm\c_gltexture.cpp
-	"c_gltexture.h"
-	"glerrors.h"
-	"SDL.h"
-
-1374161707 c:\dev\dlstorm\glerrors.h
+1375844995 c:\dev\dlstorm\glerrors.h
 	<winsock2.h>
 	<mmsystem.h>
 	<mmreg.h>
@@ -1367,10 +1396,10 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1375806639 source:c:\dev\dlstorm\c_gui.cpp
+1375842778 source:c:\dev\dlstorm\c_gui.cpp
 	"c_gui.h"
 
-1375655149 c:\dev\dlstorm\c_gui.h
+1375842432 c:\dev\dlstorm\c_gui.h
 	"c_gui_chat_enum.h"
 	<map>
 	<algorithm>
@@ -1386,24 +1415,24 @@
 1374065326 c:\dev\dlstorm\c_gui_chat_enum.h
 	"dlstorm.h"
 
-1374161707 source:c:\dev\dlstorm\c_hash.cpp
+1375843059 source:c:\dev\dlstorm\c_hash.cpp
 	"c_hash.h"
+
+1375843050 c:\dev\dlstorm\c_hash.h
 	<iostream>
 	<string>
 	<map>
 
-1374161707 c:\dev\dlstorm\c_hash.h
-
-1374161707 source:c:\dev\dlstorm\c_log.cpp
+1375843372 source:c:\dev\dlstorm\c_log.cpp
 	"c_log.h"
 
 1375371809 source:c:\dev\dlstorm\c_map_new.cpp
 	"c_map_new.h"
 
-1375801541 source:c:\dev\dlstorm\c_net.cpp
+1375844436 source:c:\dev\dlstorm\c_net.cpp
 	"c_net.h"
 
-1375803917 c:\dev\dlstorm\c_net.h
+1375844511 c:\dev\dlstorm\c_net.h
 	"dlstorm.h"
 	<winsock2.h>
 	<stdio.h>
@@ -1418,23 +1447,23 @@
 	<fcntl.h>
 	<errno.h>
 
-1374161707 source:c:\dev\dlstorm\c_snd.cpp
+1375844798 source:c:\dev\dlstorm\c_snd.cpp
 	"c_snd.h"
 
-1374161707 c:\dev\dlstorm\c_snd.h
+1375844753 c:\dev\dlstorm\c_snd.h
 	"dlstorm.h"
 	"fmod.h"
 
-1375802411 source:c:\dev\dlstorm\c_timer.cpp
+1375844930 source:c:\dev\dlstorm\c_timer.cpp
 	"c_timer.h"
 
-1374161707 c:\dev\dlstorm\c_timer.h
+1375844897 c:\dev\dlstorm\c_timer.h
 	"dlstorm.h"
 
-1375806543 source:c:\dev\dlstorm\dlstorm.cpp
+1375836788 source:c:\dev\dlstorm\dlstorm.cpp
 	"dlstorm.h"
 
-1374161707 source:c:\dev\dlstorm\glerrors.cpp
+1375845022 source:c:\dev\dlstorm\glerrors.cpp
 	"glerrors.h"
 
 1375241300 source:c:\dev\sdk\lpng162\png.c
@@ -1654,4 +1683,12 @@
 
 1374798095 source:c:\dev\dlstorm\c_mapmodel.cpp
 	"c_mapmodel.h"
+
+1375834364 c:\dev\sdk\md5\md5.h
+	<string>
+	<string.h>
+	<stdio.h>
+
+1375834185 source:c:\dev\sdk\md5\md5.cpp
+	"md5.h"
 

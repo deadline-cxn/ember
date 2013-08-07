@@ -1,12 +1,24 @@
 /***************************************************************
-    EMBER GAME CLIENT
-    Author: Seth Parson
-
-****************************************************************/
-
+ **
+ **   DLSTORM   Deadline's Code Storm Library
+ **
+ **          /\
+ **   ---- D/L \----
+ **       \/
+ **
+ **   License:      BSD
+ **   Copyright:    2013
+ **   File:         manclient.h
+ **   Description:  MANTRA GAME CLIENT / DLSTORM GAME ENGINE / by Seth Parson
+ **   Author:       Seth Parson
+ **   Twitter:      @Sethcoder
+ **   Website:      www.sethcoder.com
+ **   Email:        defectiveseth@gmail.com
+ **
+ ******************************************************************************/
 #ifndef _MANTRA_GAME_CLIENT
 #define _MANTRA_GAME_CLIENT
-
+#include "dlstorm.h"
 #include "c_data.h"
 #include "c_timer.h"
 #include "c_gfx.h"
@@ -14,18 +26,12 @@
 #include "c_gui_chat_enum.h"
 #include "c_log.h"
 #include "c_net.h"
+#include "c_entity.h"
 #include "network_messages.h"
-
 #include "mantra_version.h"
 #include "mantra_common.h"
 #include "manmaster.h"
-
-#include "c_entity.h"
-
-//#include "lua.h"
-
-// Game operating modes
-
+///////////////////////////////////// Game operating modes
 enum MODE {
     DUMMY_DUMMY_MODE=0,
     MAIN_MENU,
@@ -113,32 +119,24 @@ enum MODE {
     WAIT_LOOP,
     DEBUG_LOOP,
 };
-
-////////////////////////////////////////////////////////////
-// Function declarations
-
+///////////////////////////////// Function declarations
 #ifdef __cplusplus
-extern "C"
-{
+extern "C"{
 #endif
-
 bool    DoGameMode();
 void    MainGameLoop(void);
 bool    doInit(void);
 void    ShutDown(void);
 void    DoSDLEvents(void);
 void    SetGameMode(int);
-
-
 #ifdef __cplusplus
 }
 #endif
-
+///////////////////////////////// Network
 class C_FMGS : public CCSocket {
 public:
     C_FMGS();
     ~C_FMGS();
-
     long        emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &dwFuncTimer,long &dwWaitTimer);//
     long        Ping(void);
     int         emgConnect(char *pHost, char *pPort,char *pUser,char *pPasswd);
@@ -146,24 +144,16 @@ public:
     void        emgSetState(eConState eNewState);       // state of the connection
     int         emgiGetMessage(void);                          // tries to receive a message
     void        emgDisconnect(void);
-
     eConState   emgeGetState(void);
-
     CCSocket    *pPingSocket;                               // lowlevel network interface
-
     long        dwPing;
     bool        bLoggedin;                                  // is the player logged in
     bool        bSystemBusy;                                // set if internal stuff to do
     char        cLastNetMessage;
     bool        bConnected;
-
     void        GetFile(char *filename);
-
     void        DoNetwork(void);
-
     void        Chat(char *msg,char *name, int channel);
-
     CTimer      *spin_timer;
 };
-
-#endif // _EMBER_GAME_CLIENT
+#endif // _MANTRA_GAME_CLIENT
