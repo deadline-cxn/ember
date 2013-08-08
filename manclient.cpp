@@ -50,16 +50,15 @@ void con_terraform(const string &s) {
     pLog->_Add("TERRAFORM!");
 }
 void con_getint_str(char *pString, int n) {
-    char temp[1024];
-    memset(temp,0,1024);
+    string temp;
     map <string, int>::iterator ii;
     for( ii=pGUI->pCons->intmap.begin(); ii!=pGUI->pCons->intmap.end(); ++ii) {
         if( ( (*ii).second ) == (n) ) {
-            strcat(temp,va("%s ",(const char *)(*ii).first.c_str()));
+            temp=va("%s ",(const char *)(*ii).first.c_str());
         }
     }
-    while(temp[strlen(temp)-1]==' ') temp[strlen(temp)-1]=0;
-    strcpy(pString,temp);
+    // while(temp[strlen(temp)-1]==' ') temp[strlen(temp)-1]=0;
+    strcpy(pString,temp.c_str());
     return;
 }
 int  con_getint(const string &s) {
@@ -75,7 +74,6 @@ void con_setgamemode(const string &s)   {
     pLog->_Add("setgamemode %s",(char *)s.c_str());
     SetGameMode((MODE) con_getint(s.c_str()));
     pLog->_Add("con_setgamemode()");
-
 }
 void con_guirender(const string &s) {
     char name[1024];
@@ -1804,7 +1802,7 @@ void CLog::_DebugAdd(const char *fmt, ...) {
         pGUI->consEntry(ach);
 }
 ////////////////////////////////////////////////////////////////////////////////////////
-GAF_SCANCALLBACK what(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
+GAF_SCANCALLBACK GAF_Scanner(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
     switch(ElmInfo->Type) {
     case GAFELMTYPE_FILE:
         pLog->_Add("FILE: %25s %d", ElmInfo->Name,ElmInfo->FileSize);
