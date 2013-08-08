@@ -928,9 +928,18 @@ bool doInit(void) {
     // Initialize GFX
 
     pLog->_Add("Setting up GFX");
-    dlcsm_make_str(temp);
+    char temp[1024]; memset(temp,0,1024);
     strcpy(temp,va("Mantra %s(%s) %s NR(%02d)",VERSION,CPUSTRING,COPYRIGHT,NET_REVISION));
-    pGFX = new C_GFX(pClientData->ScreenWidth, pClientData->ScreenHeight,pClientData->ScreenColors, pClientData->bFullScreen, temp, pLog, pGAF);
+
+    pGFX = new C_GFX(
+            pClientData->ScreenWidth,
+            pClientData->ScreenHeight,
+            pClientData->ScreenColors,
+            pClientData->bFullScreen,
+            temp,
+            pLog,
+            pGAF);
+
     if(pGFX->bSDLFailed) {
         pLog->_Add("GFX initialization failure, quitting");
         return false;
@@ -977,9 +986,7 @@ bool doInit(void) {
     pGUI->pCons->RegFunc("quit",(void *)con_quit);
     pGUI->pCons->RegFunc("terraform", (void *)con_terraform);
     pGUI->pCons->RegFunc("tf", (void *)con_terraform);
-
     pGUI->pCons->RegFunc("chat",(void *)con_chat);
-
     pGUI->pCons->intmap["MAIN_MENU"]         = MAIN_MENU;
     pGUI->pCons->intmap["MAIN_MENU_2"]       = MAIN_MENU_2;
     pGUI->pCons->intmap["RETRO_INTRO_INIT"]  = RETRO_INTRO_INIT;

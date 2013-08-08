@@ -40,12 +40,16 @@
 			<Add option="`sdl-config --cflags`" />
 			<Add option="-fpermissive" />
 			<Add option="-Wswitch" />
+			<Add option="-Wwrite-strings" />
 		</Compiler>
 		<Linker>
 			<Add library="GL" />
 			<Add library="GLU" />
 			<Add library="SDLmain" />
 			<Add library="SDL" />
+			<Add library="IL" />
+			<Add library="ILU" />
+			<Add library="ILUT" />
 		</Linker>
 		<Unit filename="../../SDK/SDL-1.2.15/src/SDL_error_c.h" />
 		<Unit filename="../../SDK/SDL-1.2.15/src/SDL_fatal.h" />
@@ -512,6 +516,7 @@
 		<Unit filename="../manclient.cpp" />
 		<Unit filename="../manclient.h" />
 		<Unit filename="client.log" />
+		<Unit filename="client.nova.ini" />
 		<Unit filename="client.zerowing.ini" />
 		<Extensions>
 			<envvars />
