@@ -50,6 +50,9 @@
 			<Add library="OpenGL32" />
 			<Add library="ws2_32" />
 			<Add library="assimp" />
+			<Add library="DevIL" />
+			<Add library="ILu" />
+			<Add library="ILut" />
 			<Add directory="C:/projects/SDK/SDL-1.2.15/lib" />
 		</Linker>
 		<Unit filename="../../SDK/libjpeg/Makefile.am" />
