@@ -665,9 +665,9 @@ bool DoGameMode(void) {
 
 
                 if(pGUI->iKeyUp==SDLK_INSERT){
-                    pGFX->ClearSelectEntity();
-                    pGFX->pSelectedEntity=pGFX->MakeEntity("NEW ENTITY",pGFX->pCamera->loc.x,pGFX->pCamera->loc.y,pGFX->pCamera->loc.z);
-                    pGFX->pSelectedEntity->bSelected=true;
+                    // pGFX->ClearSelectEntity();
+                    // pGFX->pSelectedEntity=pGFX->MakeEntity("NEW ENTITY",pGFX->pCamera->loc.x,pGFX->pCamera->loc.y,pGFX->pCamera->loc.z);
+                    // pGFX->pSelectedEntity->bSelected=true;
                 }
 
                 if(pGUI->iKeyUp==SDLK_DELETE) {
