@@ -16,12 +16,6 @@
  **   Email:        defectiveseth@gmail.com
  **
  ******************************************************************************/
-#ifdef  _DEBUG
-#define _DEBUG_MANTRA_LOG 1
-#define _DEBUG_MANTRA_GFX 1
-#define _DEBUG_MANTRA_GUI 1
-#define _DEBUG_MANTRA_SND 1
-#endif // _DEBUG
 #include "manclient.h"
 ////////////////////////////////////////////////////// Global Variables
 bool        bShutDown;   // Shut down the program by setting this to true
@@ -57,7 +51,6 @@ void con_getint_str(char *pString, int n) {
             temp=va("%s ",(const char *)(*ii).first.c_str());
         }
     }
-    // while(temp[strlen(temp)-1]==' ') temp[strlen(temp)-1]=0;
     strcpy(pString,temp.c_str());
     return;
 }
@@ -364,10 +357,8 @@ void SetGameMode(int x) {
     if(pClientData) pClientData->GAME_MODE=x;
 }
 bool DoGameMode(void) {
-    char temp1[1024];
-    memset(temp1,0,1024);
-    char temp2[1024];
-    memset(temp2,0,1024);
+    string temp1;
+    string temp2; //    char temp1[1024];    memset(temp1,0,1024);    char temp2[1024];    memset(temp2,0,1024);
 
     switch(pClientData->GAME_MODE) {
     case RETRO_INTRO_INIT:
@@ -449,12 +440,17 @@ bool DoGameMode(void) {
         /////////////////////////////
 
     case LOGIN_FROM_GUI:
-        pGUI->getdata((char *)&temp1,"username");
-        pGUI->getdata((char *)&temp2,"password");
-        dlcs_md5_digest(temp1,temp2);
-        pLog->_Add("%s",temp1);
-        pClientData->Name.assign(temp1);
-        pClientData->Password.assign(temp2);
+        char buf[512];
+        memset(buf,0,512);
+        pGUI->getdata(buf,"username");
+        temp1.assign(buf);
+        memset(buf,0,512);
+        pGUI->getdata(buf,"password");
+        temp2.assign(buf);
+        temp2=dlcs_md5_digest(temp2);
+        pLog->_Add("%s",temp1.c_str());
+        pClientData->Name=temp1;
+        pClientData->Password=temp2;
         SetGameMode(CONNECT);
         break;
 
@@ -478,11 +474,11 @@ bool DoGameMode(void) {
             pGUI->prompt("Can't establish network object","nop");
             break;
         }
-        dlcs_md5_digest(temp1,pClientData->Password.c_str());
+        temp1=dlcs_md5_digest(pClientData->Password);
         pFMGS->emgConnect(pClientData->IPAddress,
                           pClientData->Port,
                           pClientData->Name.c_str(),
-                          temp1);
+                          temp1.c_str());
         SetGameMode(LOGIN_RECV);
         break; // End CONNECT
 
@@ -492,8 +488,8 @@ bool DoGameMode(void) {
         pGUI->call("connect.gui");
         dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
-        dlcs_md5_digest(temp1,pClientData->Password.c_str());
-        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name.c_str(),temp1);
+        temp1=dlcs_md5_digest(pClientData->Password);
+        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name.c_str(),temp1.c_str());
         SetGameMode(LOGIN_RECV);
         break;
         /////////////////////////////
@@ -609,12 +605,13 @@ bool DoGameMode(void) {
     case INITIALIZE_GAME:
         pGUI->clear();
         pGUI->call("gameon.gui");
-        pLog->_Add("Done initializing player setup...");
+        pLog->_Add("Done initializing player...");
         SetGameMode(ITEM_INITIALIZE);
         pGFX->pCamera->rot.y=144.0f;
         break;
 
     case ITEM_INITIALIZE:
+        pLog->_Add("Done initializing items...");
         SetGameMode(GAME_ON);
         break;
 
@@ -777,11 +774,6 @@ bool DoGameMode(void) {
                 }
             }
         }
-
-
-
-
-
         break;
 
     case GAME_LIMBO:
@@ -828,7 +820,10 @@ bool DoGameMode(void) {
     default:
         break;
     }
+
     /////////////////////////////////////////////////////////////////////////////////
+
+    pLog->_DebugAdd("Exit DoGameMode...");
     return false;
 }
 bool doInit(void) {
@@ -863,10 +858,6 @@ bool doInit(void) {
 
     pLog = new CLog("client.log");
     if(!pLog) return FALSE;
-
-#ifdef _DEBUG_MANTRA_LOG
-    pLog->bDebug=true;
-#endif
 
     pLog->On();
     pLog->LineFeedsOff();
