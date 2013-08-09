@@ -31,6 +31,7 @@
 #include "mantra_version.h"
 #include "mantra_common.h"
 #include "manmaster.h"
+using namespace DLCODESTORM;
 ///////////////////////////////////// Game operating modes
 enum MODE {
     DUMMY_DUMMY_MODE=0,

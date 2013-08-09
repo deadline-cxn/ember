@@ -576,7 +576,10 @@ bool DoGameMode(void) {
         if(!strlen(pClientData->ServerAuthor)) strcpy(pClientData->ServerAuthor,"Admin");
         pLog->_Add("Administrator...%s",pClientData->ServerAuthor);
         pLog->_Add("===============================================================");
-        pGFX->SetWindowTitle("EGC %s(%s) [%s]",VERSION,CPUSTRING,pClientData->ServerName); // nr(%s) ,NET_REVISION
+
+
+        pGFX->SetWindowTitle("%s %s(%s) [%s]",MANTRA_NAME,MANTRA_VERSION,CPUSTRING,pClientData->ServerName);
+
         SetGameMode(GATHER_GAME_DATA_LOADER);
         break;
         /////////////////////////////
@@ -831,6 +834,7 @@ bool doInit(void) {
     /////////////////////////////////////////////////////////////////////////////////
     // Temporary variables
 
+    string x;
     dlcsm_make_str(temp1);
 
     /////////////////////////////////////////////////////////////////////////////////
@@ -863,11 +867,10 @@ bool doInit(void) {
     pLog->LineFeedsOff();
     pLog->Restart();
     pLog->AddLineSep();
-    pLog->_Add((char *)va("MANTRA %s %s %s",VERSION,CPUSTRING,COPYRIGHT));
-    pLog->_Add("Log created");
 
-    dlcs_get_os_version(temp1);
-    pLog->_Add(temp1);
+    pLog->_Add((char *)va("MANTRA %s %s",MANTRA_VERSION,MANTRA_COPYRIGHT));
+    pLog->_Add(va("%s %s",dlcs_get_os_version().c_str(),CPUSTRING));
+    pLog->_Add("Current working directory[%s]",dlcs_getcwd().c_str());
 
     /////////////////////////////////////////////////////////////////////////////////
     // Set up network
@@ -878,12 +881,12 @@ bool doInit(void) {
     /////////////////////////////////////////////////////////////////////////////////
     // Load in client.ini
 
-    dlcs_get_ipaddress(temp1);
-    pLog->_Add("IP Address[%s]",temp1);
-    dlcs_get_hostname(temp1);
-    pLog->_Add("HOSTNAME[%s]",temp1);
+    x=dlcs_get_ipaddress();
+    pLog->_Add("IP Address[%s]",x.c_str());
+    x=dlcs_get_hostname();
+    pLog->_Add("HOSTNAME[%s]",x.c_str());
     pLog->_Add("Setting up Client Data");
-    pClientData = new CC_Data(va("client.%s.ini",temp1),pLog);
+    pClientData = new CC_Data(va("client.%s.ini",x.c_str()),pLog);
     if(!pClientData) return FALSE;
     if(!pClientData->bLog) pLog->Off();
 
@@ -921,15 +924,13 @@ bool doInit(void) {
     // Initialize GFX
 
     pLog->_Add("Setting up GFX");
-    char temp[1024]; memset(temp,0,1024);
-    strcpy(temp,va("Mantra %s(%s) %s NR(%02d)",VERSION,CPUSTRING,COPYRIGHT,NET_REVISION));
-
+    x.assign(va("Mantra %s %s %s NR(%02d)",MANTRA_VERSION,MANTRA_COPYRIGHT,CPUSTRING,MANTRA_NET_REVISION));
     pGFX = new C_GFX(
             pClientData->ScreenWidth,
             pClientData->ScreenHeight,
             pClientData->ScreenColors,
             pClientData->bFullScreen,
-            temp,
+            x.c_str(),
             pLog,
             pGAF);
 
@@ -947,10 +948,6 @@ bool doInit(void) {
         pLog->_Add("GUI initialization failure, quitting");
         return false;
     }
-
-#ifdef _DEBUG_MANTRA_GUI
-    pGUI->bDebug=true;
-#endif
 
     /////////////////////////////////////////////////////////////////////////////////
 
@@ -1037,14 +1034,13 @@ bool doInit(void) {
     pGUI->pCons->intmap["WAIT_LOOP"]         = WAIT_LOOP;
     pGUI->pCons->intmap["DEBUG_LOOP"]        = DEBUG_LOOP;
 
-
     pGUI->pCons->_Execute("exec autoexec.cfg");
     pGUI->pCons->_Execute("exec config.cfg");
 
     SetGameMode(INITIALIZE_GAME);//RETRO_INTRO_INIT);
     pLog->_Add("******************** FINISHED STARTUP ***************************");
 
-    return TRUE;
+    return false;
 }
 void ShutDown(void) {
     pLog->_Add("******************** START SHUTDOWN ***************************");
@@ -1548,7 +1544,7 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
     Send.Write(0);  // save header space which is filled in later
     Send.Write((char)CTL_CONNECT);
     Send.Write("MANTRA");
-    Send.Write(atoi(NET_REVISION));
+    Send.Write(atoi(MANTRA_NET_REVISION));
     FinishCtlPacket(&Send);
 
     for(iTry = 0; iTry < (int)dConnectRetry ; iTry++) {
@@ -1621,8 +1617,9 @@ void C_FMGS::emgDisconnect() {
     CPacket SendData(NET_DATAGRAMSIZE);
     SendData.Reset();
     SendData.Write((char)NETMSG_LOGOUT);
-    int retval;
-    retval=SendUnreliableMessage(&SendData);
+    //int retval;
+    //retval=
+    SendUnreliableMessage(&SendData);
     // pLog->_Add("C_FMGS::Disconnect() (%d) [%s]", retval  , NET_pGetLastError());
 }
 void C_FMGS::emgSendNetMessage(char cMethod) {
@@ -1721,7 +1718,7 @@ long C_FMGS::emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &d
             Send.Write(0);
             Send.Write((char)CTL_PING);
             Send.Write((long)dlcs_get_tickcount());
-            Send.Write(atoi(NET_REVISION));
+            Send.Write(atoi(MANTRA_NET_REVISION));
             pPingSocket->FinishCtlPacket(&Send);
             pPingSocket->nSend(Send.pGetPacketBuffer(),Send.iGetCurSize(),(struct sockaddr*)&pPingSocket->ToAddr);
             bPinging=true;
