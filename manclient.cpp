@@ -382,9 +382,9 @@ bool DoGameMode(void) {
         dlcsm_delete(pFMGS);
         pGUI->clear();
         pGUI->call("main.gui");
-        pGUI->setdata("main.gui","username",pClientData->Name);
+        pGUI->setdata("main.gui","username",pClientData->Name.c_str());
         if(pClientData->bSavePassword) {
-            pGUI->setdata("main.gui","password",pClientData->Password);
+            pGUI->setdata("main.gui","password",pClientData->Password.c_str());
             pGUI->setdata("main.gui","savepassword", (char *)"on");
         }
         SetGameMode(MAIN_MENU_2);
@@ -453,16 +453,16 @@ bool DoGameMode(void) {
         pGUI->getdata((char *)&temp2,"password");
         dlcs_md5_digest(temp1,temp2);
         pLog->_Add("%s",temp1);
-        strcpy(pClientData->Name,       temp1);
-        strcpy(pClientData->Password,   temp2);
+        pClientData->Name.assign(temp1);
+        pClientData->Password.assign(temp2);
         SetGameMode(CONNECT);
         break;
 
     case CONNECT:
         pGUI->clear();
         strcpy(pClientData->ServerID,"s001-frag-mere");
-        if(     (!strlen(pClientData->Name)) ||
-                (!strlen(pClientData->Password)) ) {
+        if( (!pClientData->Name.length()) ||
+            (!pClientData->Password.length()) ) {
             pGUI->prompt("Must enter user info to proceed.","nop");
             SetGameMode(GATHER_SERVER_LIST);
             break;
@@ -478,8 +478,11 @@ bool DoGameMode(void) {
             pGUI->prompt("Can't establish network object","nop");
             break;
         }
-        dlcs_md5_digest(temp1,pClientData->Password);
-        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
+        dlcs_md5_digest(temp1,pClientData->Password.c_str());
+        pFMGS->emgConnect(pClientData->IPAddress,
+                          pClientData->Port,
+                          pClientData->Name.c_str(),
+                          temp1);
         SetGameMode(LOGIN_RECV);
         break; // End CONNECT
 
@@ -489,8 +492,8 @@ bool DoGameMode(void) {
         pGUI->call("connect.gui");
         dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
-        dlcs_md5_digest(temp1,pClientData->Password);
-        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name,temp1);
+        dlcs_md5_digest(temp1,pClientData->Password.c_str());
+        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name.c_str(),temp1);
         SetGameMode(LOGIN_RECV);
         break;
         /////////////////////////////
@@ -680,8 +683,7 @@ bool DoGameMode(void) {
             }
 
 
-            if( pGFX->pSelectedEntity ) {
-
+            if(pGFX->pSelectedEntity) {
 
                 if(pGUI->iKeyUp==SDLK_F6)   pGFX->pSelectedEntity->type=ENTITY_STATIC;
                 if(pGUI->iKeyUp==SDLK_F8)   pGFX->pSelectedEntity->pModel=pGFX->GetRandomModel();
