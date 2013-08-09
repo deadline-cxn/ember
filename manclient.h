@@ -31,6 +31,9 @@
 #include "mantra_version.h"
 #include "mantra_common.h"
 #include "manmaster.h"
+#ifdef DLCSM_WINDOWS
+#include "c_snd.h"
+#endif
 using namespace DLCODESTORM;
 ///////////////////////////////////// Game operating modes
 enum MODE {

@@ -60,6 +60,7 @@
 			<Add library="DevIL" />
 			<Add library="ILu" />
 			<Add library="ILut" />
+			<Add library="fmod" />
 			<Add directory="C:/projects/SDK/SDL-1.2.15/lib" />
 		</Linker>
 		<Unit filename="../../SDK/libjpeg/Makefile.am" />
@@ -300,7 +301,6 @@
 		<Unit filename="../../SDK/lpng162/pngwutil.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../SDK/md5/md5.cpp" />
 		<Unit filename="../../SDK/zlib/adler32.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -381,6 +381,7 @@
 		<Unit filename="../../dlstorm/dlstorm.h" />
 		<Unit filename="../../dlstorm/glerrors.cpp" />
 		<Unit filename="../../dlstorm/glerrors.h" />
+		<Unit filename="../../dlstorm/md5.cpp" />
 		<Unit filename="../manclient.cpp" />
 		<Unit filename="../manclient.h" />
 		<Unit filename="../mantra_version.h" />
