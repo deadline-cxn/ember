@@ -1032,3 +1032,191 @@
 1375878220 source:/home/parson/projects/SDK/md5/md5.cpp
 	"md5.h"
 
+1375845106 source:c:\dev\dlstorm\c_gaf.cpp
+	"c_gaf.h"
+
+1375845144 c:\dev\dlstorm\c_gaf.h
+	<dirent.h>
+	"dlstorm.h"
+	"zlib.h"
+	"c_log.h"
+
+1376090892 c:\dev\dlstorm\dlstorm.h
+	<windows.h>
+	<winbase.h>
+	<tchar.h>
+	<winsock2.h>
+	<direct.h>
+	<conio.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<sys/utsname.h>
+	<sys/un.h>
+	<sys/types.h>
+	<sys/time.h>
+	<sys/socket.h>
+	<sys/wait.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<netdb.h>
+	<fcntl.h>
+	<errno.h>
+	<dirent.h>
+	<ctype.h>
+	<termios.h>
+	<term.h>
+	<unistd.h>
+	<tcl.h>
+	<curses.h>
+	<malloc.h>
+	<time.h>
+	<assert.h>
+	<math.h>
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	<memory.h>
+	<sys/stat.h>
+	<iostream>
+	<vector>
+	<string>
+	<map>
+	<algorithm>
+	<fstream>
+	"md5.h"
+	"SDL.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	"glerrors.h"
+	<il.h>
+	<ilu.h>
+	<ilut.h>
+
+1376087985 c:\dev\dlstorm\md5.h
+	<string>
+	<string.h>
+	<stdio.h>
+
+1375844995 c:\dev\dlstorm\glerrors.h
+	<winsock2.h>
+	<mmsystem.h>
+	<mmreg.h>
+	<stdio.h>
+	<string.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1376050963 c:\dev\dlstorm\c_log.h
+	"dlstorm.h"
+
+1376087985 source:c:\dev\dlstorm\c_log.cpp
+	"c_log.h"
+
+1376087985 source:c:\dev\dlstorm\dlstorm.cpp
+	"dlstorm.h"
+
+1375241303 source:c:\dev\sdk\zlib\adler32.c
+	"zlib.h"
+
+1375241303 c:\dev\sdk\zlib\zlib.h
+	"zconf.h"
+
+1375241303 c:\dev\sdk\zlib\zconf.h
+	<windows.h>
+	<sys/types.h>
+	<unistd.h>
+	<unixio.h>
+
+1375241303 source:c:\dev\sdk\zlib\compress.c
+	"zlib.h"
+
+1375241303 source:c:\dev\sdk\zlib\crc32.c
+	<stdio.h>
+	"zutil.h"
+	<limits.h>
+	"crc32.h"
+
+1375241303 c:\dev\sdk\zlib\zutil.h
+	"zlib.h"
+	<stddef.h>
+	<string.h>
+	<stdlib.h>
+	<errno.h>
+	<alloc.h>
+	<malloc.h>
+	<malloc.h>
+	<unix.h>
+	<stdio.h>
+
+1375241303 c:\dev\sdk\zlib\crc32.h
+
+1375241303 source:c:\dev\sdk\zlib\deflate.c
+	"deflate.h"
+
+1375241303 c:\dev\sdk\zlib\deflate.h
+	"zutil.h"
+
+1375241303 source:c:\dev\sdk\zlib\gzio.c
+	<stdio.h>
+	"zutil.h"
+	<stdarg.h>
+
+1375241303 source:c:\dev\sdk\zlib\infback.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+
+1375241303 c:\dev\sdk\zlib\inftrees.h
+
+1375241303 c:\dev\sdk\zlib\inflate.h
+
+1375241303 c:\dev\sdk\zlib\inffast.h
+
+1375241303 c:\dev\sdk\zlib\inffixed.h
+
+1375241303 source:c:\dev\sdk\zlib\inffast.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+
+1375241303 source:c:\dev\sdk\zlib\inflate.c
+	"zutil.h"
+	"inftrees.h"
+	"inflate.h"
+	"inffast.h"
+	"inffixed.h"
+	<stdio.h>
+
+1375241303 source:c:\dev\sdk\zlib\inftrees.c
+	"zutil.h"
+	"inftrees.h"
+
+1375241303 source:c:\dev\sdk\zlib\trees.c
+	"deflate.h"
+	<ctype.h>
+	"trees.h"
+	<stdio.h>
+
+1375241303 c:\dev\sdk\zlib\trees.h
+
+1375241303 source:c:\dev\sdk\zlib\uncompr.c
+	"zlib.h"
+
+1375241303 source:c:\dev\sdk\zlib\zutil.c
+	"zutil.h"
+
+1376090735 source:c:\dev\ember\gaf_make\gaf_make.cpp
+	"gaf_make.h"
+
+1376090787 c:\dev\ember\gaf_make\gaf_make.h
+	"dlstorm.h"
+	"c_gaf.h"
+
+1376087985 source:c:\dev\dlstorm\md5.cpp
+	"md5.h"
+

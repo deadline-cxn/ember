@@ -18,7 +18,9 @@
  ******************************************************************************/
 #ifndef _MANTRA_GAME_CLIENT
 #define _MANTRA_GAME_CLIENT
+
 #include "dlstorm.h"
+
 #include "c_data.h"
 #include "c_timer.h"
 #include "c_gfx.h"
@@ -28,13 +30,13 @@
 #include "c_net.h"
 #include "c_entity.h"
 #include "network_messages.h"
+#include "c_snd.h"
+
 #include "mantra_version.h"
 #include "mantra_common.h"
 #include "manmaster.h"
-#ifdef DLCSM_WINDOWS
-#include "c_snd.h"
-#endif
-using namespace DLCODESTORM;
+
+
 ///////////////////////////////////// Game operating modes
 enum MODE {
     DUMMY_DUMMY_MODE=0,

@@ -42,6 +42,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-Wswitch" />
+			<Add option="-D_DLCS_SDL" />
+			<Add option="-D_DLCS_OPENGL" />
+			<Add option="-D_DLCS_DEVIL" />
 			<Add directory="C:/projects/SDK/SDL-1.2.15/include" />
 		</Compiler>
 		<Linker>

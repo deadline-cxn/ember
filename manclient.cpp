@@ -661,7 +661,7 @@ bool DoGameMode(void) {
                 (!(pGUI->modstate & KMOD_ALT)) ) {
 
                 if(pGUI->iKeyUp==SDLK_F2) {
-                    CVector3 sec;
+                    dlcs_V3 sec;
                     pGFX->SaveEntities(sec);
                 }
 
@@ -914,7 +914,7 @@ bool doInit(void) {
 
     pSND->SetSoundVolume(255);
     pSND->SetMusicVolume(255);
-    pSND->PlaySample("mc.mp3");
+    // pSND->PlaySample("mc.mp3");
 
     /////////////////////////////////////////////////////////////////////////////////
     // Initialize GFX
@@ -1037,6 +1037,7 @@ bool doInit(void) {
     pLog->_Add("******************** FINISHED STARTUP ***************************");
 
     return true;
+
 }
 void ShutDown(void) {
     pLog->_Add("******************** START SHUTDOWN ***************************");
