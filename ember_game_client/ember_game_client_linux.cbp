@@ -41,6 +41,9 @@
 			<Add option="-fpermissive" />
 			<Add option="-Wswitch" />
 			<Add option="-Wwrite-strings" />
+			<Add option="-D_DLCS_SDL" />
+			<Add option="-D_DLCS_OPENGL" />
+			<Add option="-D_DLCS_DEVIL" />
 		</Compiler>
 		<Linker>
 			<Add library="GL" />

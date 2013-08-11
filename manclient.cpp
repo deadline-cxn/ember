@@ -25,7 +25,9 @@ C_GUI*      pGUI;       // OpenGL GUI
 CGAF*       pGAF;       // Game Archive File (GAF)
 CLog*       pLog;       // Log file
 C_FMGS*     pFMGS;      // Game Server connection
+#ifdef DLCS_WINDOWS
 C_Sound*    pSND;       // FMOD Sounds
+#endif
 
 ////////////////////////////////////////////////////// Main
 int main(int argc, char *argv[]) {
@@ -899,7 +901,7 @@ bool doInit(void) {
 
     /////////////////////////////////////////////////////////////////////////////////
     // sound
-
+#ifdef DLCS_WINDOWS
     pLog->_Add("Setting up SND");
     pSND=new C_Sound(pLog);
     if(!pSND) {
@@ -915,7 +917,7 @@ bool doInit(void) {
     pSND->SetSoundVolume(255);
     pSND->SetMusicVolume(255);
     // pSND->PlaySample("mc.mp3");
-
+#endif
     /////////////////////////////////////////////////////////////////////////////////
     // Initialize GFX
 
@@ -1042,8 +1044,10 @@ bool doInit(void) {
 void ShutDown(void) {
     pLog->_Add("******************** START SHUTDOWN ***************************");
 
+#ifdef DLCS_WINDOWS
     dlcsm_delete(pSND);
     pLog->_Add("Sound shut down");
+#endif
 
     dlcsm_delete(pGUI);
     pLog->_Add("GUI shut down");
