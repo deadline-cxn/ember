@@ -802,11 +802,7 @@ bool DoGameMode(void) {
         pClientData->bDrawMap=false;
         pLog->_Add("Edit World Init End");
         SetGameMode(EDIT_WORLD);
-//        pGFX->pCamera->loc.y=33;
-        /*      pGFX->pCamera->xpos=-48;
-                pGFX->pCamera->zpos=-157;
-                pGFX->pCamera->xrot=902;
-                pGFX->pCamera->yrot=1783;  */
+
     case EDIT_WORLD:
         // pGFX->RenderScene();
         break;
@@ -827,7 +823,6 @@ bool DoGameMode(void) {
 
     /////////////////////////////////////////////////////////////////////////////////
 
-    pLog->_DebugAdd("Exit DoGameMode...");
     return false;
 }
 bool doInit(void) {

@@ -13,7 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add option="-D_DEBUG_DLCS" />
+					<Add option="-D_DLCS_DEBUG" />
 					<Add option="-D_DEBUG" />
 					<Add option="-D_MBCS" />
 					<Add option="-D_MANTRA_" />
