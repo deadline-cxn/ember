@@ -1,7 +1,12 @@
 ///////////////////////////////////////////////
 // Mantra Server
 #include "manserver.h"
+
 #include "mantra_player_character.h"
+
+#include "manserver.server.h"
+CServer     *pServer;
+
 int main(int argc, char *argv[]){
     bool bquiet=false;
     char nargs;
@@ -28,7 +33,7 @@ int main(int argc, char *argv[]){
     return 1;
 }
 void ShowHelp(void){
-    printf("Ember Game Server %s %s Help\n",VERSION,COPYRIGHT);
+    printf("Ember Game Server %s %s Help\n",MANTRA_VERSION,MANTRA_COPYRIGHT);
     printf("==============================================================\n");
     printf(" --help, -h, /? = this help\n");
     printf(" --quiet, -q, /q = quiet mode, no console output\n");

@@ -6,7 +6,7 @@
 #include "dlstorm.h"
 #include "manserver.server.h"
 
-CServer     *pServer;
+
 
 #ifdef __cplusplus
 extern "C"

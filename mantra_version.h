@@ -9,7 +9,7 @@
 #define _MANTRA_VERSION_H
 #define MANTRA_NAME         "MANTRA"
 #define MANTRA_AUTHOR       "Seth Parson"
-#define MANTRA_COPYRIGHT    "(C)2013 Seth Parson"
+#define MANTRA_COPYRIGHT    "(C)2016 Seth Parson"
 // #define MANTRA_DATE         __DATE__
 #define MANTRA_VERSION      "v13.08.09a"
 #define MANTRA_S_BUILD      1
