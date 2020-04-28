@@ -1,5 +1,5 @@
 # EMBER MMORPG Game Client / Server / Master Server Suite
-=========================================================
+
 * Note: This project is not associated with the Worldforge project in any way, despite the engine being named Ember. It is purely coincidental, and I only recently found out about the Worldforge Ember client. I may change the name in the future so that there isn't any confusion. 
 
 This is a 3D OpenGL based MMORPG.
