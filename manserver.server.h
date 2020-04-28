@@ -3,21 +3,21 @@
 #define _MANTRA_SERVER_H
 /////////////////////////////////////////
 
+#include "c_console.h"
 #include "c_gui_chat_enum.h"
 #include "c_log.h"
 #include "c_net.h"
 #include "c_sqlitedb.h"
-#include "dlstorm.h"
+#include "dlcs.h"
 #include "manserver.client.h"
 #include "mantra_common.h"
 #include "mantra_version.h"
-#include "s_gnu.h"
 
 //#define MAX_CONSOLE_INPUT_BUFFER    10		// Number of console commands to scroll back to execute again
 
 /////////////////////////////////////////
 
-typedef struct RetainedData {
+struct RetainedData {
     char s_name[MANTRA_TEXT_LEN];
     char s_admin_email[MANTRA_TEXT_LEN];
     int  i_port;
@@ -32,7 +32,7 @@ class C_GSC;
 class CServer : public CCSocket {
    public:
     CServer(bool bIsQuiet);
-    ~CServer();
+    virtual ~CServer();
 
     /////////////////////////////////////////
     // flow stuff
@@ -56,7 +56,7 @@ class CServer : public CCSocket {
     void console_command(char *command);
     char szConsoleInput[1024];
     int  ConsoleHistoryPosition;
-    typedef struct ConHistory {
+    struct ConHistory {
         char text[1024];
     };
     ConHistory *ConsoleHistory;

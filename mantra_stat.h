@@ -1,21 +1,21 @@
 #ifndef _MANTRA_STAT
 #define _MANTRA_STAT
 
-#include "dlstorm.h"
+#include "dlcs.h"
 #include "mantra_common.h"
 
 class CMStat {
-public:
+   public:
     CMStat();
     ~CMStat();
 
     void stat_init(void);
 
-    int     id;
-    char    name[MANTRA_TEXT_LEN];
-    int     current_value;
-    int     modified_value;
-    int     maximum_value;
+    int  id;
+    char name[MANTRA_TEXT_LEN];
+    int  current_value;
+    int  modified_value;
+    int  maximum_value;
 
     CMStat *next;
     CMStat *prev;

@@ -8,7 +8,7 @@
 #include "c_net.h"
 #include "c_serverinfo.h"
 #include "c_timer.h"
-#include "dlstorm.h"
+#include "dlcs.h"
 #include "manserver.server.h"
 #include "mantra_common.h"
 #include "mantra_player_character.h"
@@ -23,7 +23,7 @@ class CMPCharacter;
 class C_GSC : public CCSocket, public C_UserData {
    public:
     C_GSC(CLog *pInLog, CServer *pInServer);
-    ~C_GSC();
+    virtual ~C_GSC();
 
     void load(void);
     void save(void);

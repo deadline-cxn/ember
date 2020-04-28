@@ -3,7 +3,7 @@
  ***************************************************************/
 
 #include "c_serverinfo.h"
-#include "dlstorm.h"
+#include "dlcs.h"
 
 //////////////////////////////////////////////////////
 CServerInfo::CServerInfo()

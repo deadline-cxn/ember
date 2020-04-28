@@ -3,32 +3,29 @@
 #ifndef _MANTRA_CONSOLE_SERVER
 #define _MANTRA_CONSOLE_SERVER
 
-#include "dlstorm.h"
+#include "dlcs.h"
 #include "manserver.server.h"
 
-
-
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
-    void ShowHelp(void);
-    void ConsoleSetup(void);
-    void ConsoleShutDown(void);
+void ShowHelp(void);
+void ConsoleSetup(void);
+void ConsoleShutDown(void);
 
 #ifdef _WIN32
-    void  SuspendPowerManagement(void);
-    void  LogWindowsVersion(void);
+void SuspendPowerManagement(void);
+void LogWindowsVersion(void);
 #else
-    long  GetTickCount(void);
-    int   _kbhit(void);
-    int   _getch(void);
-    void  close_keyboard(void);
-    void  Sleep(int ms);
+long GetTickCount(void);
+int  _kbhit(void);
+int  _getch(void);
+void close_keyboard(void);
+void Sleep(int ms);
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // _MANTRA_CONSOLE_SERVER
+#endif  // _MANTRA_CONSOLE_SERVER

@@ -95,9 +95,9 @@ void CServer::start_up(void) {
 
     start_time = dlcs_get_tickcount();
 
-    int  i = 0;
-    int  j = 0;
-    int  k = 0;
+    int i = 0;
+    // int  j = 0;
+    // int  k = 0;
     char t[1024];
     memset(t, 0, 1024);
 
@@ -122,7 +122,7 @@ void CServer::start_up(void) {
         Log("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
         Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
 
-    Log("Mantra Server %s(%s) Net(%d) Build(%d) %s", MANTRA_VERSION, CPUSTRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
+    Log("Mantra Server %s(%s - %s) Net(%d) Build(%d) %s", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
     // Log(dlcs_get_os_version());
 
     dlcs_suspend_power_management();
@@ -323,7 +323,8 @@ void CServer::cycle(void) {
 void CServer::accept_connection(void) {
     C_GSC *client;
 
-    int  iLength, iFlags, iHelp;
+    int  iLength;
+    int  iFlags, iHelp;
     int  iAcceptSocket;
     char cType;
 
@@ -346,7 +347,7 @@ void CServer::accept_connection(void) {
 
     if (!(iFlags & NET_FLAG_CTL)) return;
     if (iLength != iHelp) return;
-    if (iLength < sizeof(int) * 2) return;
+    if (iLength < (int)sizeof(int) * 2) return;
 
     Recv.iRead();
     cType = Recv.cRead();
@@ -594,14 +595,9 @@ void CServer::purge_clients(void) {
     }
 }
 /////////////////////////////////////////
-void CServer::do_world(void) {
-    static long dwWorldSaveTimer = dlcs_get_tickcount();
-
-    save_world();
-}
+void CServer::do_world(void) { save_world(); }
 /////////////////////////////////////////
 void CServer::console_command(char *command) {
-    int            i;
     vector<string> v = dlcs_explode(" ", command);
     char           temp[1024];
     memset(temp, 0, 1024);
@@ -611,7 +607,7 @@ void CServer::console_command(char *command) {
     if (v.size() > 0) {
         strcpy(targs, " ");
         if (v.size() > 1) {
-            for (i = 1; i < v.size(); i++) {
+            for (unsigned int i = 1; i < v.size(); i++) {
                 strcat(targs, v[i].c_str());
                 strcat(targs, " ");
             }
@@ -717,7 +713,7 @@ void CServer::console_command(char *command) {
             if (v.size() > 2) {
                 strcpy(targs, " ");
                 if (v.size() > 2) {
-                    for (i = 2; i < v.size(); i++) {
+                    for (unsigned int i = 2; i < v.size(); i++) {
                         strcat(targs, v[i].c_str());
                         strcat(targs, " ");
                     }

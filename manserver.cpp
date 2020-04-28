@@ -2,38 +2,40 @@
 // Mantra Server
 #include "manserver.h"
 
-#include "mantra_player_character.h"
-
 #include "manserver.server.h"
-CServer     *pServer;
+#include "mantra_player_character.h"
+CServer *pServer;
 
-int main(int argc, char *argv[]){
-    bool bquiet=false;
-    char nargs;
-    if(argc>1){ nargs=1;
-        while(nargs<argc){
-            if( (!strcmp(argv[nargs],"--help")) || (!strcmp(argv[nargs],"-h")) || (!strcmp(argv[nargs],"/?")) ){
+int main(int argc, char *argv[]) {
+    bool          bquiet = false;
+    unsigned char nargs;
+    if (argc > 1) {
+        nargs = 1;
+        while (nargs < argc) {
+            if ((!strcmp((const char *)argv[nargs], "--help")) || (!strcmp((const char *)argv[nargs], "-h")) || (!strcmp((const char *)argv[nargs], "/?"))) {
                 ShowHelp();
                 exit(0);
             }
 
-            if( (!strcmp(argv[nargs],"-q")) || (!strcmp(argv[nargs],"--quiet")) ||	(!strcmp(argv[nargs],"/q"))){
-                bquiet=true;
+            if ((!strcmp((const char *)argv[nargs], "-q")) || (!strcmp((const char *)argv[nargs], "--quiet")) || (!strcmp((const char *)argv[nargs], "/q"))) {
+                bquiet = true;
             }
             nargs++;
         }
     }
-    ConsoleSetup(); // (POSIX) system specific console setup
-    pServer=new CServer(bquiet);
-    if(!pServer) { ConsoleShutDown(); return 1; }
-    while(!pServer->bQuit)
-        pServer->cycle();
+    ConsoleSetup();  // (POSIX) system specific console setup
+    pServer = new CServer(bquiet);
+    if (!pServer) {
+        ConsoleShutDown();
+        return 1;
+    }
+    while (!pServer->bQuit) pServer->cycle();
     DEL(pServer);
     ConsoleShutDown();
     return 1;
 }
-void ShowHelp(void){
-    printf("Ember Game Server %s %s Help\n",MANTRA_VERSION,MANTRA_COPYRIGHT);
+void ShowHelp(void) {
+    printf("Ember Game Server %s %s Help\n", MANTRA_VERSION, MANTRA_COPYRIGHT);
     printf("==============================================================\n");
     printf(" --help, -h, /? = this help\n");
     printf(" --quiet, -q, /q = quiet mode, no console output\n");
@@ -41,43 +43,42 @@ void ShowHelp(void){
 }
 
 #ifdef __linux__
-#include "s_linux.h"
 #include "s_gnu.h"
+#include "s_linux.h"
 void ConsoleSetup(void) { _kbhit(); }
 void ConsoleShutDown(void) { close_keyboard(); }
 #endif
 
 #ifdef _WIN32
-BOOL WINAPI HandleCTRL_C(DWORD dwCtrlType){
-    switch(dwCtrlType) {
+BOOL WINAPI HandleCTRL_C(DWORD dwCtrlType) {
+    switch (dwCtrlType) {
         case CTRL_BREAK_EVENT:
-            pServer->bQuit=true;
+            pServer->bQuit = true;
             pServer->Log("Break event killed server!");
             return true;
         case CTRL_SHUTDOWN_EVENT:
-            pServer->bQuit=true;
+            pServer->bQuit = true;
             pServer->Log("Shutdown event killed server!");
             return true;
         case CTRL_LOGOFF_EVENT:
-            pServer->bQuit=true;
+            pServer->bQuit = true;
             pServer->Log("Logoff event killed server!");
             return true;
         case CTRL_CLOSE_EVENT:
-            pServer->bQuit=true;
+            pServer->bQuit = true;
             pServer->Log("Mouse [X] killed server!");
             return true;
         case CTRL_C_EVENT:
-            pServer->bQuit=true;
+            pServer->bQuit = true;
             pServer->Log("CTRL-C killed server!");
             return true;
-        default:
-            break;
+        default: break;
     }
     return false;
 }
-void ConsoleSetup(void){ // Change window title for windows version, and setup ctrl handler
-    SetConsoleCtrlHandler(HandleCTRL_C,TRUE);
-    SetConsoleTitle(va("Mantra Server %s(%s) Net(%d) Build(%d) %s",VERSION,CPUSTRING,NET_REVISION,MANTRA_S_BUILD,COPYRIGHT));
+void ConsoleSetup(void) {  // Change window title for windows version, and setup ctrl handler
+    SetConsoleCtrlHandler(HandleCTRL_C, TRUE);
+    SetConsoleTitle(va("Mantra Server %s(%s - %s) Net(%d) Build(%d) %s", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT));
 }
-void ConsoleShutDown(void){ }
+void ConsoleShutDown(void) {}
 #endif
