@@ -1,5 +1,5 @@
-Mantra Server v13.08.09a(Intel IA-32 (x86) - Windows) Net(4) Build(1) (C)2020 Seth Parson
-SQLite version 3.7.17 [data.sqlite]
+Mantra Server v13.07.01a(Linux-other) Net(4) Build(1) (C) 2012 Seth Parson
+SQLite version 3.7.12.1 [data.sqlite]
 server.ini loaded
 name  = [mantra]
 admin = [seth@mantras.com]
@@ -12,11 +12,13 @@ Joined chat channel: SYSTEM
 Joined chat channel: GENERAL
 Joined chat channel: TRADE
 Saving seth
-SYSTEM->2
-GENERAL->6
-TRADE->5
+SYSTEM->1
+GENERAL->5
+TRADE->4
 Saving chat setup SYSTEM,GENERAL,TRADE
-Listening on port [55555]
+Listening on port [0]
+>
+>
 >/kill
 server.ini saved
 Closed user database

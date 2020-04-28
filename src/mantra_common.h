@@ -1,0 +1,173 @@
+#ifndef _MANTRA_COMMON
+#define _MANTRA_COMMON
+
+
+#define DEFAULT_GAME_SERVER_IP   "localhost"
+#define DEFAULT_GAME_SERVER_PORT 40404
+#define DEFAULT_MASTER_SERVER_IP "localhost"
+#define DEFAULT_MASTER_SERVER    40403
+
+#define MANTRA_TEXT_LEN 128
+
+typedef enum{
+    NFILE_NOP=0,
+    NFILE_ACK,
+    NFILE_ABORT,
+    NFILE_START,
+    NFILE_START_OK,
+    NFILE_DATA,
+    NFILE_DATA_OK,
+    NFILE_DATA_RESEND,
+    NFILE_EOF,
+    NFILE_EOF_RESEND,
+    NFILE_RESUME,
+    NFILE_RESUME_OK,
+    NFILE_RESUME_CANT,
+    NFILE_ERROR
+
+} tfilexfer;
+typedef enum{
+
+    NM_NOMESSAGE = 1,
+    NM_NOP,
+
+    NM_FUNCTION,
+
+    NM_LOGIN_REQUEST,
+    NM_LOGIN_REQUEST_REPLY,
+    NM_LOGOUT,
+
+    NM_HEARTBEAT,
+    NM_HEARTBEAT_REQUEST,
+
+    NM_MESSAGE,
+
+    NM_MOVEPLAYER,
+
+    NM_CREATE_CHARACTER,
+    NM_DELETE_CHARACTER,
+    NM_MODIFY_CHARACTER,
+    NM_RETRIEVECHARS,
+    NM_RETRIEVECHARINFO,
+    NM_GETINVENTORY,
+
+    NM_CLIENT_SHUTDOWN,
+    NM_OTHER_CLIENT_SHUTDOWN,
+
+    NM_CHARACTER_STATUS,
+
+    NM_FILE_XFER,
+    NM_MANTRA_DOWNLOAD,
+    NM_MANTRA_UPLOAD,
+
+    NM_PING,
+
+    NM_PROMPT,
+
+    NM_GET_SERVER_INFO,
+    NM_PUT_SERVER_INFO,
+    NM_GET_SERVER_LIST,
+    NM_MASTER_TO_GAME,
+
+    NM_GUI,
+    NM_GUI_CALLBACK,
+
+} tNetmsg;
+
+typedef enum{
+    NF_CHAT_JOIN,
+    NF_CHAT_LEAVE,
+    NF_CHAT_WHO,
+
+} tNetfunc;
+
+
+typedef enum{
+
+    MIT_EQUIP,
+    MIT_CONSUMABLE,
+    MIT_CRAFT,
+    MIT_BOOK,
+
+} tItemType;
+
+typedef enum{ // CONSUMABLE SUBTYPES
+
+    MIST_FOOD,
+    MIST_DRINK,
+    MIST_POTION,
+    MIST_BUFFY,
+    MIST_SKILL,   // skill increase
+    MIST_RECIPE,  // skill learn new recipe
+    MIST_REAGENT, // needed for actions
+
+} tItemConsumableSubTypes;
+
+typedef enum{ // CRAFT SUBTYPES
+
+    MIST_HACKOLOGY, // technology stuff
+    MIST_EMFOLOGY,  // environment stuff
+    MIST_JACKOLOGY, // take random items and make stuff
+    MIST_ANCIENTS,  // understanding of the ancients
+
+} tItemCraftSubTypes;
+
+typedef enum{ // EQUIP SUBTYPES
+
+    MIST_HEAD,
+    MIST_GLOVES,
+    MIST_RING1,
+    MIST_RING2,
+    MIST_BRACER,
+    MIST_CHEST,
+    MIST_BELT,
+    MIST_LEGS,
+    MIST_FEET,
+    MIST_TRINKET,
+    MIST_NECK,
+    MIST_MAIN_HAND,
+    MIST_OFF_HAND,
+    MIST_MAIN_OR_OFF_HAND,
+    MIST_TWO_HAND,
+    MIST_CHAKRA,
+
+} tItemEquipSubTypes;
+
+typedef enum{ // action types
+
+    MACT_MODIFY_STAT,
+    MACT_MODIFY_SKILL,
+    MACT_ADD_EFFECT,
+    MACT_REMOVE_EFFECT,
+    MACT_CREATE_ITEM,
+    MACT_CREATE_CURRENCY,
+    MACT_TELEPORT,
+    MACT_DAMAGE_SELF,
+    MACT_DAMAGE_TARGET,
+    MACT_DAMAGE_RADIUS,
+
+} tActionTypes;
+
+typedef enum{
+    MEFT_MODIFY_STAT,
+    MEFT_MODIFY_SKILL,
+
+
+} tEffectTypes;
+
+enum tGUINetworkMessages{
+    FM_GUI_PROGRAM_FINISH=0,
+    FM_GUI_STUMP_CREATE,
+    FM_GUI_STUMP_UPDATE,
+    FM_GUI_STUMP_REMOVE,
+    FM_GUI_STUMP_CAPTION,
+    FM_GUI_CONTROL_CREATE,
+    FM_GUI_CONTROL_UPDATE,
+    FM_GUI_CONTROL_REMOVE,
+    FM_GUI_CONTROL_VALUE,
+    FM_GUI_CLEAR_ALL,
+    FM_GUI_CALL
+
+    };
+
+#endif

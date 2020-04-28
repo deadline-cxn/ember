@@ -1,0 +1,103 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build (linux) EMBER SERVER",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-D_DLCS_CONSOLE",
+                "-Wno-unknown-pragmas",
+                "-fpermissive",
+                "-I/files/dev/repos/dlstorm",
+                "-I/usr/include/ncursesw",
+                "-I/usr/include/tcl8.6",
+                "${file}",
+                "/files/dev/repos/dlstorm/c_event.cpp",
+                "/files/dev/repos/dlstorm/c_entity.cpp",
+                "/files/dev/repos/dlstorm/dlcs.cpp",
+                "/files/dev/repos/dlstorm/c_console.cpp",
+                "/files/dev/repos/dlstorm/c_log.cpp",
+                "/files/dev/repos/dlstorm/c_gaf.cpp",
+                "/files/dev/repos/dlstorm/md5.cpp",
+                "/files/dev/repos/dlstorm/c_net.cpp",
+                "/files/dev/repos/dlstorm/c_gui_chat_enum.cpp",
+                "/files/dev/repos/dlstorm/c_sqlitedb.cpp",
+                "/files/dev/repos/dlstorm/c_timer.cpp",
+                "/files/dev/repos/dlstorm/dlcs_linux.cpp",
+                "/files/dev/repos/dlstorm/dlcs_gnu.cpp",
+                "/files/dev/repos/ember/manserver.server.cpp",
+                "/files/dev/repos/ember/manserver.client.cpp",
+                "/files/dev/repos/ember/mantra_player_character.cpp",
+                "/files/dev/repos/ember/mantra_userdata.cpp",
+                "/files/dev/repos/ember/mantra_character.cpp",
+                "/files/dev/repos/ember/mantra_skill.cpp",
+                "/files/dev/repos/ember/mantra_stat.cpp",
+                "/files/dev/repos/ember/mantra_effect.cpp",
+                "/files/dev/repos/ember/mantra_class.cpp",
+                "-L/files/dev/repos/SDK/sqlite/sqlite-dll-win64-x64-3310100",
+                "-lz",
+                "-lsqlite3",
+                "-o",
+                "${fileDirname}/ember_game_server/${fileBasenameNoExtension}.linux_binary"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build (linux) EMBER CLIENT SDL",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-D_DLCS_SDL",
+                "-Dmain=SDL_main",
+                "-Wno-unknown-pragmas",
+                "-fpermissive",
+                "-mwindows",
+                "-I/opt/windows_32/include/SDL2",
+                "-Ie:/dev/repos/dlstorm",
+                "-IE:/dev/repos/SDK/SDL2/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/include/SDL2",
+                "-Ie:/dev/repos/SDK/SDL2/SDL2_image-devel-2.0.5-mingw/SDL2_image-2.0.5/i686-w64-mingw32/include/SDL2",
+                "-Ie:/dev/repos/SDK/fmodapi375win/api/inc",
+                "-Ic:/Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/um/gl",
+                "-Ie:/dev/repos/SDK/DevIL-SDK-x86-1.7.8/include",
+                "-IE:/pc_tools/mingw/include",
+                "${file}",
+                "E:/dev/repos/dlstorm/c_event.cpp",
+                "E:/dev/repos/dlstorm/c_entity.cpp",
+                "E:/dev/repos/dlstorm/c_sdl.cpp",
+                "E:/dev/repos/dlstorm/dlstorm.cpp",
+                "E:/dev/repos/dlstorm/c_game.cpp",
+                "E:/dev/repos/dlstorm/c_game_actor.cpp",
+                "E:/dev/repos/dlstorm/c_console.cpp",
+                "E:/dev/repos/dlstorm/c_log.cpp",
+                "E:/dev/repos/dlstorm/c_gaf.cpp",
+                "E:/dev/repos/dlstorm/md5.cpp",
+                "-Le:/dev/repos/SDK/SDL2/SDL2-devel-2.0.12-mingw/SDL2-2.0.12/i686-w64-mingw32/lib",
+                "-LE:/dev/repos/SDK/SDL2/SDL2_image-devel-2.0.5-mingw/SDL2_image-2.0.5/i686-w64-mingw32/lib",
+                "-LE:/pc_tools/mingw/lib",
+                "-L/opt/windows_32/lib",
+                "-lmingw32",
+                "-lSDL2main",
+                "-lSDL2",
+                "-lSDL2_image",
+                "-lz",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "E:/pc_tools/mingw/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ],
+    "version": "2.0.0"
+}
