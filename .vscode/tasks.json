@@ -1,8 +1,17 @@
 {
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "win_dir": "E:/dev/repos",
+            "linux_dir": "/files/dev/repos",
+            "base_ember_dir": "ember",
+            "configure": "../configure --with-bash-malloc=no CFLAGS=\"-O3 -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free\" LDFLAGS=-L/usr/local/lib LIBS=\"-ltcmalloc -lcurl\" CC=clang"
+        }
+    },
     "tasks": [
         {
-            "type": "shell",
             "label": "C/C++: g++ build (linux) EMBER SERVER",
+            "type": "shell",
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
@@ -10,37 +19,36 @@
                 "-D_DLCS_CONSOLE",
                 "-Wno-unknown-pragmas",
                 "-fpermissive",
-                "-I/files/dev/repos/dlstorm",
                 "-I/usr/include/ncursesw",
                 "-I/usr/include/tcl8.6",
-                "${file}",
-                "/files/dev/repos/dlstorm/c_event.cpp",
-                "/files/dev/repos/dlstorm/c_entity.cpp",
-                "/files/dev/repos/dlstorm/dlcs.cpp",
-                "/files/dev/repos/dlstorm/c_console.cpp",
-                "/files/dev/repos/dlstorm/c_log.cpp",
-                "/files/dev/repos/dlstorm/c_gaf.cpp",
-                "/files/dev/repos/dlstorm/md5.cpp",
-                "/files/dev/repos/dlstorm/c_net.cpp",
-                "/files/dev/repos/dlstorm/c_gui_chat_enum.cpp",
-                "/files/dev/repos/dlstorm/c_sqlitedb.cpp",
-                "/files/dev/repos/dlstorm/c_timer.cpp",
-                "/files/dev/repos/dlstorm/dlcs_linux.cpp",
-                "/files/dev/repos/dlstorm/dlcs_gnu.cpp",
-                "/files/dev/repos/ember/manserver.server.cpp",
-                "/files/dev/repos/ember/manserver.client.cpp",
-                "/files/dev/repos/ember/mantra_player_character.cpp",
-                "/files/dev/repos/ember/mantra_userdata.cpp",
-                "/files/dev/repos/ember/mantra_character.cpp",
-                "/files/dev/repos/ember/mantra_skill.cpp",
-                "/files/dev/repos/ember/mantra_stat.cpp",
-                "/files/dev/repos/ember/mantra_effect.cpp",
-                "/files/dev/repos/ember/mantra_class.cpp",
-                "-L/files/dev/repos/SDK/sqlite/sqlite-dll-win64-x64-3310100",
+                "-I${linux_dir}/dlstorm",
+                "${linux_dir}/${base_ember_dir}/src/manserver.cpp",
+                "${linux_dir}/dlstorm/c_event.cpp",
+                "${linux_dir}/dlstorm/c_entity.cpp",
+                "${linux_dir}/dlstorm/dlcs.cpp",
+                "${linux_dir}/dlstorm/c_console.cpp",
+                "${linux_dir}/dlstorm/c_log.cpp",
+                "${linux_dir}/dlstorm/c_gaf.cpp",
+                "${linux_dir}/dlstorm/md5.cpp",
+                "${linux_dir}/dlstorm/c_net.cpp",
+                "${linux_dir}/dlstorm/c_gui_chat_enum.cpp",
+                "${linux_dir}/dlstorm/c_sqlitedb.cpp",
+                "${linux_dir}/dlstorm/c_timer.cpp",
+                "${linux_dir}/dlstorm/dlcs_linux.cpp",
+                "${linux_dir}/dlstorm/dlcs_gnu.cpp",
+                "${linux_dir}/${base_ember_dir}/src/manserver.server.cpp",
+                "${linux_dir}/${base_ember_dir}/src/manserver.client.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_player_character.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_userdata.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_character.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_skill.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_stat.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_effect.cpp",
+                "${linux_dir}/${base_ember_dir}/src/mantra_class.cpp",
                 "-lz",
                 "-lsqlite3",
                 "-o",
-                "${fileDirname}/ember_game_server/${fileBasenameNoExtension}.linux_binary"
+                "${linux_dir}/${base_ember_dir}/server/ember_server"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -98,6 +106,6 @@
             ],
             "group": "build"
         }
-    ],
-    "version": "2.0.0"
+    ]
+
 }
