@@ -19,17 +19,17 @@
 #ifndef _MANTRA_GAME_CLIENT
 #define _MANTRA_GAME_CLIENT
 
-#include "dlstorm.h"
+#include "dlcs.h"
 
 #include "c_data.h"
 #include "c_timer.h"
-#include "c_gfx.h"
+#include "c_sdl.h"
 #include "c_gui.h"
 #include "c_gui_chat_enum.h"
 #include "c_log.h"
 #include "c_net.h"
 #include "c_entity.h"
-#include "network_messages.h"
+#include "net_messages.h"
 #include "c_snd.h"
 
 #include "mantra_version.h"
@@ -142,7 +142,7 @@ void    SetGameMode(int);
 class C_FMGS : public CCSocket {
 public:
     C_FMGS();
-    ~C_FMGS();
+    virtual ~C_FMGS();
     long        emgPing(char *pHost,char *pPort,long &dwPing,bool &bPinging,long &dwFuncTimer,long &dwWaitTimer);//
     long        Ping(void);
     int         emgConnect(char *pHost, char *pPort,char *pUser,char *pPasswd);

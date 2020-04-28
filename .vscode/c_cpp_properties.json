@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/files/dev/repos/dlstorm",
+                "/files/dev/repos/dlstorm/gl",
+                "/files/dev/repos/SDK",
+                "/usr/include/tcl8.6",
+                "/usr/include/GL",
+                "/files/dev/repos/SDK/DevIL-SDK-x86-1.7.8/include",
+                "/files/dev/repos/SDK/DevIL-SDK-x86-1.7.8/include/IL",
+                "/usr/include/SDL2"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "E:/dev/repos/dlstorm"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "E:/pc_tools/mingw/bin/g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

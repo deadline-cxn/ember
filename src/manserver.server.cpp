@@ -361,7 +361,7 @@ void CServer::accept_connection(void) {
                 return;
             }
 
-            if (Recv.iRead() != MANTRA_NET_REVISION) {
+            if (Recv.iRead() != atoi(MANTRA_NET_REVISION)) {
                 reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server uses newer protocol! Update available.");
                 return;
             }

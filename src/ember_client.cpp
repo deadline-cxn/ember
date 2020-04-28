@@ -16,11 +16,15 @@
  **   Email:        defectiveseth@gmail.com
  **
  ******************************************************************************/
+#define _DLCS_SDL
+#define _DLCS_OPENGL
+#define _DLCS_DEVIL
+
 #include "manclient.h"
 ////////////////////////////////////////////////////// Global Variables
 bool        bShutDown;   // Shut down the program by setting this to true
 CC_Data*    pClientData;// Client Data (ini file)
-C_GFX*      pGFX;       // SDL / OpenGL
+CSDL_Wrap*  pGFX;       // SDL / OpenGL
 C_GUI*      pGUI;       // OpenGL GUI
 CGAF*       pGAF;       // Game Archive File (GAF)
 CLog*       pLog;       // Log file
@@ -348,20 +352,20 @@ void MainGameLoop(void) { // **  Main Game Loop
     DoGameMode();
     pGUI->draw();
     pGUI->drawFPS(0,0);
-    pGUI->gPrint(15,pClientData->ScreenHeight-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
-    pGUI->gPrint(15,pClientData->ScreenHeight-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
+    pGUI->gPrint(15,(int)(pClientData->get_cvar("i_ScreenHeight"))-64,va("MOUSE POS X[%d] Y[%d]",pGUI->pMouse->ix,pGUI->pMouse->iy),3,1);
+    pGUI->gPrint(15,(int)(pClientData->get_cvar("i_ScreenHeight"))-48,va("CAM   POS X[%f] Y[%f] Z[%f]",pGFX->pCamera->loc.x,pGFX->pCamera->loc.x,pGFX->pCamera->loc.z),3,1);
+    pGUI->gPrint(15,(int)(pClientData->get_cvar("i_ScreenHeight"))-32,va("CAM   ROT X[%f] Y[%f] Z[%f] ANGLE[%f]",pGFX->pCamera->rot.x,pGFX->pCamera->rot.y,pGFX->pCamera->rot.z,pGFX->pCamera->angle),3,1);
     pGFX->EndScene();
 }
 void SetGameMode(int x) {
     if(pFMGS) pFMGS->spin_timer->Reset();
-    if(pClientData) pClientData->GAME_MODE=x;
+    if(pClientData) pClientData->set_cvar("i_GAME_MODE",x);
 }
 bool DoGameMode(void) {
     string temp1;
     string temp2; //    char temp1[1024];    memset(temp1,0,1024);    char temp2[1024];    memset(temp2,0,1024);
 
-    switch(pClientData->GAME_MODE) {
+    switch((int)pClientData->get_cvar("i_GAME_MODE")) {
     case RETRO_INTRO_INIT:
         SetGameMode(RETRO_INTRO_PLAY);
         break;
@@ -374,10 +378,10 @@ bool DoGameMode(void) {
         dlcsm_delete(pFMGS);
         pGUI->clear();
         pGUI->call("main.gui");
-        pGUI->setdata("main.gui","username",pClientData->Name.c_str());
-        if(pClientData->bSavePassword) {
-            pGUI->setdata("main.gui","password",pClientData->Password.c_str());
-            pGUI->setdata("main.gui","savepassword", (char *)"on");
+        pGUI->setdata("main.gui","username",(const char *)pClientData->get_cvar("s_Name"));
+        if((bool)pClientData->get_cvar("b_SavePassword")) {
+            pGUI->setdata("main.gui","password",(const char *)pClientData->get_cvar("s_Password"));
+            pGUI->setdata("main.gui","savepassword", (const char *)"on");
         }
         SetGameMode(MAIN_MENU_2);
 
@@ -398,8 +402,8 @@ bool DoGameMode(void) {
     case LOGIN_SCREEN_ENTRY:
         pLog->_Add("LOGIN_SCREEN_ENTRY");
         if(pClientData) {
-            pClientData->ServerListOffset=0;
-            //pClientData->SelectedServer=MAX_SERVERS+1;
+            (int)pClientData->get_cvar("i_ServerListOffset")=0;
+            //pClientData->get_cvar("SelectedServer=MAX_SERVERS+1;
         }
         //DEL(pFMMS);
         //LOGINMODE=LM_NONE;
@@ -417,7 +421,7 @@ bool DoGameMode(void) {
         ////     pFMMS=new C_FMMS;
         //     break;
         // case LM_FAVORITES:
-        //     pClientData->LoadFavoriteServers();
+        //     pClientData->get_cvar("LoadFavoriteServers();
         //     break;
         // case LM_LOCAL:
         //     break;
@@ -425,7 +429,7 @@ bool DoGameMode(void) {
         //     break;
         //
 
-        pClientData->LoadProfiles();
+        // pClientData->get_cvar("LoadProfiles();
 
         SetGameMode(CHOOSE_SERVER);
 
@@ -450,24 +454,26 @@ bool DoGameMode(void) {
         temp2.assign(buf);
         temp2=dlcs_md5_digest(temp2);
         pLog->_Add("%s",temp1.c_str());
-        pClientData->Name=temp1;
-        pClientData->Password=temp2;
+        pClientData->set_cvar("s_Name",temp1.c_str());
+        pClientData->set_cvar("s_Password",temp2.c_str());
         SetGameMode(CONNECT);
         break;
 
     case CONNECT:
         pGUI->clear();
-        strcpy(pClientData->ServerID,"s001-frag-mere");
-        if( (!pClientData->Name.length()) ||
-            (!pClientData->Password.length()) ) {
+
+        // strcpy(
+        pClientData->set_cvar("s_ServerID","s001-frag-mere");
+        if( (!strlen((char *)pClientData->get_cvar("s_Name"))) ||
+            (!strlen((char *)pClientData->get_cvar("s_Password"))) ) {
             pGUI->prompt("Must enter user info to proceed.","nop");
             SetGameMode(GATHER_SERVER_LIST);
             break;
         }
-        // strcpy(pClientData->IPAddress,"127.0.0.1");
-        // strcpy(pClientData->Port, "40227");
+        // strcpy(pClientData->get_cvar("IPAddress,"127.0.0.1");
+        // strcpy(pClientData->get_cvar("Port, "40227");
         // Run the connect command through the console...
-        // ProcessConsoleCommand(va("connect %s:%s %s %s", pClientData->IPAddress,pClientData->Port, pClientData->Name,pClientData->Password),1);
+        // ProcessConsoleCommand(va("connect %s:%s %s %s", pClientData->get_cvar("IPAddress,pClientData->get_cvar("Port, pClientData->get_cvar("Name,pClientData->get_cvar("Password),1);
         dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
         if(!pFMGS) {
@@ -475,11 +481,11 @@ bool DoGameMode(void) {
             pGUI->prompt("Can't establish network object","nop");
             break;
         }
-        temp1=dlcs_md5_digest(pClientData->Password);
-        pFMGS->emgConnect(pClientData->IPAddress,
-                          pClientData->Port,
-                          pClientData->Name.c_str(),
-                          temp1.c_str());
+        temp1=dlcs_md5_digest((const char *)pClientData->get_cvar("s_Password"));
+        pFMGS->emgConnect((char *)pClientData->get_cvar("s_IPAddress"),
+                          (char *)pClientData->get_cvar("s_Port"),
+                          (char *)pClientData->get_cvar("s_Name"),
+                          (char *)temp1.c_str());
         SetGameMode(LOGIN_RECV);
         break; // End CONNECT
 
@@ -489,8 +495,14 @@ bool DoGameMode(void) {
         pGUI->call("connect.gui");
         dlcsm_delete(pFMGS);
         pFMGS=new C_FMGS();
-        temp1=dlcs_md5_digest(pClientData->Password);
-        pFMGS->emgConnect(pClientData->IPAddress,pClientData->Port,pClientData->Name.c_str(),temp1.c_str());
+        temp1=dlcs_md5_digest((const char *)pClientData->get_cvar("s_Password"));
+        pFMGS->emgConnect((char *)pClientData->get_cvar("s_IPAddress"),
+                          (char *)pClientData->get_cvar("s_Port"),
+                          (char *)pClientData->get_cvar("s_Name"),
+                          (char *)temp1.c_str());
+        
+        //pFMGS->emgConnect((const char *)pClientData->get_cvar("IPAddress,pClientData->get_cvar("Port,pClientData->get_cvar("Name.c_str(),temp1.c_str());
+
         SetGameMode(LOGIN_RECV);
         break;
         /////////////////////////////
@@ -548,8 +560,8 @@ bool DoGameMode(void) {
 
     case CREATE_CHARACTER:
         //strcpy(szTemp1,"create_character");
-        //if(strcmp(szTemp1,pClientData->szGeneric))
-        //   strcpy(pClientData->szGeneric,szTemp1);
+        //if(strcmp(szTemp1,pClientData->get_cvar("szGeneric))
+        //   strcpy(pClientData->get_cvar("szGeneric,szTemp1);
         pGUI->clear();
         pGUI->call("create_character.gui");
         SetGameMode(CREATE_CHARACTER_SPIN);
@@ -568,26 +580,24 @@ bool DoGameMode(void) {
     case GATHER_GAME_DATA: // Logged in, now get all data needed
         pGUI->clear();
         pLog->_Add("===============================================================");
-        if(!strlen(pClientData->ServerName)) strcpy(pClientData->ServerName,"Mantra Server");
-        pLog->_Add("Server Name.....%s",pClientData->ServerName);
-        if(!strlen(pClientData->szServerVersion)) strcpy(pClientData->szServerVersion,"v??.??.???");
-        pLog->_Add("Server Version..%s",pClientData->szServerVersion); // Extracted at login time
-        if(!strlen(pClientData->ServerID)) strcpy(pClientData->ServerID,"S001-MANT-RA01");
-        pLog->_Add("Server ID.......%s",pClientData->ServerID);
-        if(!strlen(pClientData->ServerAuthor)) strcpy(pClientData->ServerAuthor,"Admin");
-        pLog->_Add("Administrator...%s",pClientData->ServerAuthor);
+        if(!strlen((const char *)pClientData->get_cvar("s_ServerName")))
+            pClientData->set_cvar("s_ServerName","Mantra Server");
+        pLog->_Add("Server Name.....%s",(const char *)pClientData->get_cvar("s_ServerName"));
+        if(!strlen((const char *)pClientData->get_cvar("s_ServerVersion"))) pClientData->set_cvar("s_ServerVersion","v??.??.???");
+        pLog->_Add("Server Version..%s",(const char *)pClientData->get_cvar("s_ServerVersion"); // Extracted at login time
+        if(!strlen((const char *)pClientData->get_cvar("s_ServerID"))) pClientData->set_cvar("s_ServerID","S001-MANT-RA01");
+        pLog->_Add("Server ID.......%s",(const char *)pClientData->get_cvar("s_ServerID"));
+        if(!strlen((const char *)pClientData->get_cvar("s_ServerAuthor"))) pClientData->set_cvar("s_ServerAdmin","Admin");
+        pLog->_Add("Administrator...%s",(const char *)pClientData->get_cvar("s_ServerAdmin");
         pLog->_Add("===============================================================");
-
-
-        pGFX->SetWindowTitle("%s %s(%s) [%s]",MANTRA_NAME,MANTRA_VERSION,CPUSTRING,pClientData->ServerName);
-
+        pGFX->SetWindowTitle("%s %s(%s) [%s]",MANTRA_NAME,MANTRA_VERSION,DLCS_OS_STRING,pClientData->get_cvar("s_ServerName"));
         SetGameMode(GATHER_GAME_DATA_LOADER);
         break;
         /////////////////////////////
 
     case GATHER_GAME_DATA_LOADER:
         //MOUSEMODE=MP_SYSTEMBUSY;
-        //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
+        //if((INPUTMODE!=CONSOLE2)&&(pClientData->get_cvar("drawoptions==false)) DrawGenericSurface();
         //pFMGS->dMsgTime=dlcs_get_tickcount();
         //GAME_MODE=WAIT_LOOP;
         //SendData.Reset();
@@ -597,7 +607,7 @@ bool DoGameMode(void) {
         break;
 
     case LOGIN_PROGRAM_START:
-        //if((INPUTMODE!=CONSOLE2)&&(pClientData->drawoptions==false)) DrawGenericSurface();
+        //if((INPUTMODE!=CONSOLE2)&&(pClientData->get_cvar("drawoptions==false)) DrawGenericSurface();
         // wait for login program from the server, it will be fetched in NET_UTIL
         SetGameMode(LOGIN_PROGRAM_END); // when user completed the program...
         break;
@@ -628,25 +638,25 @@ bool DoGameMode(void) {
 
 
         if(pGUI->iKeyUp   == SDLK_F12)  bShutDown=1;
-        if(pGUI->iKeyDown == SDLK_w )    pGFX->pCamera->Move_Forward_Start();
-        if(pGUI->iKeyUp   == SDLK_w )    pGFX->pCamera->Move_Forward_Stop();
-        if(pGUI->iKeyDown == SDLK_s )    pGFX->pCamera->Move_Backward_Start();
-        if(pGUI->iKeyUp   == SDLK_s )    pGFX->pCamera->Move_Backward_Stop();
-        if(pGUI->iKeyDown == SDLK_a )    pGFX->pCamera->Move_Left_Start();
-        if(pGUI->iKeyUp   == SDLK_a )    pGFX->pCamera->Move_Left_Stop();
-        if(pGUI->iKeyDown == SDLK_d )    pGFX->pCamera->Move_Right_Start();
-        if(pGUI->iKeyUp   == SDLK_d )    pGFX->pCamera->Move_Right_Stop();
-        if(pGUI->iKeyDown == SDLK_e )    pGFX->pCamera->Rotate_Right_Start();
-        if(pGUI->iKeyUp   == SDLK_e )    pGFX->pCamera->Rotate_Right_Stop();
-        if(pGUI->iKeyDown == SDLK_q )    pGFX->pCamera->Rotate_Left_Start();
-        if(pGUI->iKeyUp   == SDLK_q )    pGFX->pCamera->Rotate_Left_Stop();
+        if(pGUI->iKeyDown == SDLK_W )    pGFX->pCamera->Move_Forward_Start();
+        if(pGUI->iKeyUp   == SDLK_W )    pGFX->pCamera->Move_Forward_Stop();
+        if(pGUI->iKeyDown == SDLK_S )    pGFX->pCamera->Move_Backward_Start();
+        if(pGUI->iKeyUp   == SDLK_S )    pGFX->pCamera->Move_Backward_Stop();
+        if(pGUI->iKeyDown == SDLK_A )    pGFX->pCamera->Move_Left_Start();
+        if(pGUI->iKeyUp   == SDLK_A )    pGFX->pCamera->Move_Left_Stop();
+        if(pGUI->iKeyDown == SDLK_D )    pGFX->pCamera->Move_Right_Start();
+        if(pGUI->iKeyUp   == SDLK_D )    pGFX->pCamera->Move_Right_Stop();
+        if(pGUI->iKeyDown == SDLK_E )    pGFX->pCamera->Rotate_Right_Start();
+        if(pGUI->iKeyUp   == SDLK_E )    pGFX->pCamera->Rotate_Right_Stop();
+        if(pGUI->iKeyDown == SDLK_Q )    pGFX->pCamera->Rotate_Left_Start();
+        if(pGUI->iKeyUp   == SDLK_Q )    pGFX->pCamera->Rotate_Left_Stop();
 
 
         if(pGUI->iKeyDown == SDLK_SPACE) pGFX->pCamera->bMovingUp=true;
         if(pGUI->iKeyUp   == SDLK_SPACE) pGFX->pCamera->bMovingUp=false;
 
-        if(pGUI->iKeyDown == SDLK_x ) pGFX->pCamera->bMovingDown=true;
-        if(pGUI->iKeyUp   == SDLK_x ) pGFX->pCamera->bMovingDown=false;
+        if(pGUI->iKeyDown == SDLK_X ) pGFX->pCamera->bMovingDown=true;
+        if(pGUI->iKeyUp   == SDLK_X ) pGFX->pCamera->bMovingDown=false;
 
         if(pGUI->iKeyUp==SDLK_F11) {
             if(pGFX->bEditEntities) pGFX->bEditEntities=false;
@@ -656,7 +666,7 @@ bool DoGameMode(void) {
 
         if(pGFX->bEditEntities) {
 
-            pGUI->gPrint(15,pClientData->ScreenHeight-80,va("^3[^2EDIT ENTITIES^3]"),3,1);
+            pGUI->gPrint(15,(int)pClientData->get_cvar("i_ScreenHeight")-80,va("^3[^2EDIT ENTITIES^3]"),3,1);
 
             if( (!(pGUI->modstate & KMOD_SHIFT)) &&
                 (!(pGUI->modstate & KMOD_CTRL)) &&
@@ -755,12 +765,12 @@ bool DoGameMode(void) {
                 }
 
                 if(pGUI->modstate & KMOD_CTRL) {
-                    if(pGUI->iKeyDown==SDLK_PAGEUP)     pGFX->OpScale.bXp=true;
-                    if(pGUI->iKeyDown==SDLK_PAGEDOWN)   pGFX->OpScale.bXn=true;
-                    if(pGUI->iKeyUp==SDLK_PAGEUP)       pGFX->OpScale.bXp=false;
-                    if(pGUI->iKeyUp==SDLK_PAGEDOWN)     pGFX->OpScale.bXn=false;
+                    if(pGUI->iKeyDown.scancode==SDLK_PAGEUP)     pGFX->OpScale.bXp=true;
+                    if(pGUI->iKeyDown.scancode==SDLK_PAGEDOWN)   pGFX->OpScale.bXn=true;
+                    if(pGUI->iKeyUp.scancode==SDLK_PAGEUP)       pGFX->OpScale.bXp=false;
+                    if(pGUI->iKeyUp.scancode==SDLK_PAGEDOWN)     pGFX->OpScale.bXn=false;
 
-                    if(pGUI->iKeyUp==SDLK_F9) {
+                    if(pGUI->iKeyUp.scancode==SDLK_F9) {
                         pGFX->pSelectedEntity->scale.x=1.0f;
                         pGFX->pSelectedEntity->scale.y=1.0f;
                         pGFX->pSelectedEntity->scale.z=1.0f;
@@ -799,7 +809,7 @@ bool DoGameMode(void) {
         pGUI->call("editmenu.gui");
         pGUI->call("guistumpedit.gui");
         pGUI->call("guictrledit.gui");
-        pClientData->bDrawMap=false;
+        pClientData->set_cvar("b_DrawMap",0);
         pLog->_Add("Edit World Init End");
         SetGameMode(EDIT_WORLD);
 
@@ -865,8 +875,8 @@ bool doInit(void) {
     pLog->AddLineSep();
 
     pLog->_Add((char *)va("MANTRA %s %s",MANTRA_VERSION,MANTRA_COPYRIGHT));
-    pLog->_Add(va("%s %s",dlcs_get_os_version().c_str(),CPUSTRING));
-    pLog->_Add("Current working directory[%s]",dlcs_getcwd().c_str());
+    pLog->_Add(va("%s %s",dlcs_get_os_version(),DLCS_OS_STRING));
+    pLog->_Add("Current working directory[%s]",dlcs_getcwd());
 
     /////////////////////////////////////////////////////////////////////////////////
     // Set up network
@@ -884,7 +894,7 @@ bool doInit(void) {
     pLog->_Add("Setting up Client Data");
     pClientData = new CC_Data(va("client.%s.ini",x.c_str()),pLog);
     if(!pClientData) return FALSE;
-    if(!pClientData->bLog) pLog->Off();
+    if(!(bool)pClientData->get_cvar("b_Log")) pLog->Off();
 
     /////////////////////////////////////////////////////////////////////////////////
     // Create GAF File
@@ -901,12 +911,12 @@ bool doInit(void) {
     pSND=new C_Sound(pLog);
     if(!pSND) {
         pLog->_Add("Sound can not be initialized, turning off sound and music");
-        pClientData->bMusic=false;
-        pClientData->bSound=false;
+        pClientData->set_cvar("b_Music","0");
+        pClientData->set_cvar("b_Sound","0");
     } else {
         //pSND->InitializeSound();
-        //pSND->SetSoundVolume((pClientData->fSoundVolume*255));
-        //pSND->SetMusicVolume((pClientData->fMusicVolume*255));
+        //pSND->SetSoundVolume((pClientData->get_cvar("fSoundVolume*255));
+        //pSND->SetMusicVolume((pClientData->get_cvar("fMusicVolume*255));
     }
 
     pSND->SetSoundVolume(255);
@@ -917,17 +927,17 @@ bool doInit(void) {
     // Initialize GFX
 
     pLog->_Add("Setting up GFX");
-    x.assign(va("Mantra %s %s %s NR(%02d)",MANTRA_VERSION,MANTRA_COPYRIGHT,CPUSTRING,MANTRA_NET_REVISION));
-    pGFX = new C_GFX(
-            pClientData->ScreenWidth,
-            pClientData->ScreenHeight,
-            pClientData->ScreenColors,
-            pClientData->bFullScreen,
-            x.c_str(),
-            pLog,
-            pGAF);
+    
+    x.assign(va("Mantra %s %s %s NR(%02d)",MANTRA_VERSION,MANTRA_COPYRIGHT,DLCS_OS_STRING,MANTRA_NET_REVISION));
+    pGFX=0;
 
-    if(pGFX->bSDLFailed) {
+    pGFX = new CSDL_Wrap(x.cstr(),
+            (int)pClientData->get_cvar("i_ScreenWidth"),
+            (int)pClientData->get_cvar("i_ScreenHeight"),
+            (int)pClientData->get_cvar("i_ScreenColors"));
+            // (bool)pClientData->get_cvar("b_FullScreen"), pLog,pGAF);
+
+    if(!pGFX) {
         pLog->_Add("GFX initialization failure, quitting");
         return false;
     }
@@ -1050,7 +1060,7 @@ void ShutDown(void) {
     NET_Shutdown();
     pLog->_Add("FMGS shut down");
 
-    pClientData->bFullScreen=pGFX->bFullScreen;
+    pClientData->set_cvar("b_FullScreen",pGFX->bFullScreen);
     dlcsm_delete(pGFX);
     pLog->_Add("GFX shut down");
     dlcsm_delete(pGAF);
@@ -1156,15 +1166,15 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 //Log("%d) Races",ax);
                 for(i=0; i<ax; i++) {
                     ay=RecvData->cRead();
-                    //strcpy(pClientData->ServerInfo->Race[ay].Text,RecvData->pRead());
-                    //Log("  %d) %s",ay,pClientData->ServerInfo->Race[ay].Text);
+                    //strcpy(pClientData->get_cvar("ServerInfo->Race[ay].Text,RecvData->pRead());
+                    //Log("  %d) %s",ay,pClientData->get_cvar("ServerInfo->Race[ay].Text);
                 }
                 ax=RecvData->cRead();
                 //Log("%d) Classes",ax);
                 for(i=0; i<ax; i++) {
                     ay=RecvData->cRead();
-                    //strcpy(pClientData->ServerInfo->Class[ay].Text,RecvData->pRead());
-                    //Log("  %d) %s",ay,pClientData->ServerInfo->Class[ay].Text);
+                    //strcpy(pClientData->get_cvar("ServerInfo->Class[ay].Text,RecvData->pRead());
+                    //Log("  %d) %s",ay,pClientData->get_cvar("ServerInfo->Class[ay].Text);
 
                 }
                 // SetGameMode(GET_CHARACTERS);
@@ -1176,7 +1186,7 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                 //Log("NETMSG_RETRIEVECHARS!");
 
-                //pClientData->ClearCharacters();
+                //pClientData->get_cvar("ClearCharacters();
                 /*
                 				ax=RecvData->cRead();
                 				for(i=0;i<ax;i++)
@@ -1187,11 +1197,11 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                 					strcpy(temp4,RecvData->pRead());// class
                 					strcpy(szTemp1,RecvData->pRead());// gender
 
-                					strcpy(pClientData->ServerCharacter[i].t_name,temp1);
-                					pClientData->ServerCharacter[i].t_level = atoi(temp2);
-                					pClientData->ServerCharacter[i].t_race  = atoi(temp3);
-                					pClientData->ServerCharacter[i].t_class = atoi(temp4);
-                					pClientData->ServerCharacter[i].t_gender= atoi(szTemp1);
+                					strcpy(pClientData->get_cvar("ServerCharacter[i].t_name,temp1);
+                					pClientData->get_cvar("ServerCharacter[i].t_level = atoi(temp2);
+                					pClientData->get_cvar("ServerCharacter[i].t_race  = atoi(temp3);
+                					pClientData->get_cvar("ServerCharacter[i].t_class = atoi(temp4);
+                					pClientData->get_cvar("ServerCharacter[i].t_gender= atoi(szTemp1);
 
                 				}
                 */
@@ -1206,43 +1216,38 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                 pLog->_Add("Got a login request reply");
 
-                if(pClientData->GAME_MODE != LOGIN_RECV) break;
+                if((int)pClientData->get_cvar("i_GAME_MODE") != LOGIN_RECV) break;
 
                 ax = RecvData->cRead();
 
                 if((ax == GOOD_LOGIN) || (ax == NEW_ACCOUNT)) {
                     pLog->_Add(" >>> It's a good login!");
 
-                    strcpy(pClientData->ServerMessage,   RecvData->pRead());
-                    strcpy(pClientData->szServerVersion, RecvData->pRead()); // Extract Server's Version
+                    pClientData->set_cvar("s_ServerMessage", RecvData->pRead());
+                    pClientData->set_cvar("s_ServerVersion", RecvData->pRead()); // Extract Server's Version
+                    pClientData->set_cvar("s_session_id",    RecvData->pRead());
+                    pClientData->set_cvar("s_ServerID",      RecvData->pRead()); // Extract Server Resource ID
+                    pClientData->set_cvar("s_ServerName",    RecvData->pRead()); // Extract Server Name
+                    pClientData->set_cvar("s_ServerAdmin",   RecvData->pRead()); // Extract Server Admin
+                    pClientData->set_cvar("i_Access",        RecvData->iRead());  // Extract Player's Access level
+                    pClientData->set_cvar("s_AccessName",    RecvData->pRead()); // Extract Player's Access level name
+                    pClientData->set_cvar("uc_CharacterSlots",RecvData->cRead());  // Extract Server num of character slots
 
-                    strcpy(pClientData->session_id,      RecvData->pRead());
-
-                    strcpy(pClientData->ServerID,        RecvData->pRead()); // Extract Server Resource ID
-                    strcpy(pClientData->ServerName,      RecvData->pRead()); // Extract Server Name
-                    strcpy(pClientData->ServerAuthor,    RecvData->pRead()); // Extract Server Admin
-                    pClientData->Access=                 RecvData->iRead();  // Extract Player's Access level
-                    strcpy(pClientData->szAccessName,    RecvData->pRead()); // Extract Player's Access level name
-                    pClientData->CharacterSlots=         RecvData->cRead();  // Extract Server num of character slots
-
-
-                    pLog->_Add("%s",pClientData->ServerMessage);
-
+                    pLog->_Add("%s",(const char *)pClientData->get_cvar("s_ServerMessage"));
                     pLog->_Add("%s running %s ID[%s] Admin[%s] Character Slots[%d]",
-                    pClientData->ServerName,
-                    pClientData->szServerVersion,
-                    pClientData->ServerID,
-                    pClientData->ServerAuthor,
-                    pClientData->CharacterSlots);
+                        (const char *)pClientData->get_cvar("s_ServerName"),
+                        (const char *)pClientData->get_cvar("s_ServerVersion"),
+                        (const char *)pClientData->get_cvar("s_ServerID"),
+                        (const char *)pClientData->get_cvar("s_ServerAdmin"),
+                        (const char *)va("%d",(int)pClientData->get_cvar("uc_CharacterSlots")));
 
                     pLog->_Add("session_id[%s] and you have access[%d(%s)]",
+                    (const char *)pClientData->get_cvar("s_session_id"),
+                    (int)pClientData->get_cvar("i_Access"),
+                    (const char *)pClientData->get_cvar("s_AccessName"));
 
-                    pClientData->session_id,
-                    pClientData->Access,
-                    pClientData->szAccessName);
-
-                    //if(pClientData->CharacterSlots>MAX_TOONS)
-                    //pClientData->CharacterSlots   =   MAX_TOONS;
+                    //if(pClientData->get_cvar("CharacterSlots>MAX_TOONS)
+                    //pClientData->get_cvar("CharacterSlots   =   MAX_TOONS;
 
                     SetGameMode(GATHER_GAME_DATA); // GET_SERVER_INFORMATION_START;
                     emgSetState(NET_CONNECTED);
@@ -1251,7 +1256,7 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                     pLog->_Add(" >>> It's a bad login!");
                     SetGameMode(CHOOSE_SERVER_INIT);
                     if(ax!=MASTER_LOGIN)
-                        pGUI->prompt(RecvData->pRead(),"nop");
+                        pGUI->prompt(RecvData->pRead(),(char *)"nop");
                 }
                 break;
 
@@ -1270,7 +1275,7 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                 strcpy(temp2,RecvData->pRead()); // client session_id
                 strcpy(temp1,RecvData->pRead());
-                pGUI->prompt((char *)va("Server has shut down this client. Reason: %s",temp1),"nop");
+                pGUI->prompt((char *)va("Server has shut down this client. Reason: %s",temp1),(char *)"nop");
 
                 // ChatBufferAdd(255,0,0,"SYSTEM","Server has shut down this client. Reason[%s]",temp1);
 
@@ -1371,7 +1376,7 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
 
                     ax=RecvData->iRead(); // sequence number
                     strcpy(szTemp1,RecvData->pRead()); // filename
-                    pFileBuf=RecvData->pRead(NET_FILE_XFER_BLOCK_SIZE);
+                    pFileBuf=(char *)RecvData->pRead(NET_FILE_XFER_BLOCK_SIZE);
 
                     bFileFail=false;
                     pFile=fopen(szTemp2,"rb");
@@ -1423,8 +1428,8 @@ void C_FMGS::DoNetwork(void) { // ** Network Loop
                     ax=RecvData->iRead(); // sequence number
                     strcpy(szTemp1,RecvData->pRead()); // filename
                     dx=RecvData->iRead();
-                    pFileBuf=RecvData->pRead(dx);
-
+                    pFileBuf=(char *)RecvData->pRead(dx);
+                    
                     bFileFail=false;
                     pFile=fopen(szTemp3,"a");
                     if(pFile) {
@@ -1486,7 +1491,7 @@ C_FMGS::~C_FMGS() {
     dlcsm_delete(pPingSocket);
 }
 int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
-    int errnum;
+    // int errnum;
 
     pLog->_Add(" ********************* CONNECT START ********************* ");
     pLog->_Add("C_FMGS::emgConnect(%s,%s,%s,%s);",pHost,pPort,pUser,pPasswd);
@@ -1497,20 +1502,13 @@ int C_FMGS::emgConnect(char *pHost,char *pPort,char *pUser,char *pPasswd) {
     bConnected=false;
     long fTryTime;
     int iTry,ret=0,iLength,iFlags,iT;
-
     struct sockaddr_in RetAddr;
-
     CPacket Send(NET_DATAGRAMSIZE);
     CPacket Recv(NET_DATAGRAMSIZE);
-
     bLoggedin = false;
-
     if(emgeGetState()==NET_NOTCONNECT) return false;
-
     bCanSend = true;
-
     CloseSocket(iSocket);
-
     iSocket=zOpenSocket(0);
 
     if(iSocket == SOCKET_ERROR) {
@@ -1804,5 +1802,6 @@ GAF_SCANCALLBACK GAF_Scanner(GAFFile_ElmHeader *ElmInfo,LPSTR FullPath) {
     default:
         break;
     }
-    return false;
+    // return false;
+    return 0;
 }
