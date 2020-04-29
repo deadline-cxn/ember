@@ -122,7 +122,8 @@ void CServer::start_up(void) {
         Log("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
         Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
 
-    Log("Mantra Server %s(%s - %s) Net(%d) Build(%d) %s", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
+    Log("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
+    Log("BUILD: %s %s",__DATE__,__TIME__);
     // Log(dlcs_get_os_version());
 
     dlcs_suspend_power_management();

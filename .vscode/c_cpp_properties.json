@@ -3,6 +3,7 @@
         {
             "name": "Linux",
             "includePath": [
+                "/files/dev/repos/ember/src",
                 "/files/dev/repos/dlstorm",
                 "/files/dev/repos/dlstorm/gl",
                 "/files/dev/repos/SDK",
@@ -10,7 +11,8 @@
                 "/usr/include/GL",
                 "/files/dev/repos/SDK/DevIL-SDK-x86-1.7.8/include",
                 "/files/dev/repos/SDK/DevIL-SDK-x86-1.7.8/include/IL",
-                "/usr/include/SDL2"
+                "/usr/include/SDL2",
+                "/usr/include/IL"
             ],
             "defines": [
                 "_DEBUG",
