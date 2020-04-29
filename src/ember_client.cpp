@@ -1,7 +1,5 @@
 /***************************************************************
- **
  **   DLSTORM   Deadline's Code Storm Library
- **
  **          /\
  **   ---- D/L \----
  **       \/
@@ -14,11 +12,9 @@
  **   Website:      www.sethcoder.com
  **   Email:        defectiveseth@gmail.com
  ******************************************************************************/
-#define _DLCS_SDL
-#define _DLCS_OPENGL
-#define _DLCS_DEVIL
 
 #include "manclient.h"
+
 ////////////////////////////////////////////////////// Global Variables
 bool     bShutDown;    // Shut down the program by setting this to true
 CC_Data *pClientData;  // Client Data (ini file)

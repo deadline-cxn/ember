@@ -62,6 +62,9 @@
             "args": [
                 "-g",
                 "-Wall",
+                "-D_DLCS_SDL",
+                "-D_DLCS_OPENGL",
+                "-D_DLCS_DEVIL",
                 "-Wno-unknown-pragmas",
                 "-fpermissive",
                 "-I/usr/include/ncursesw",
