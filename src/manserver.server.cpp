@@ -79,18 +79,26 @@ void CServer::start_up(void) {
     dlcs_suspend_power_management();
     SetupConsoleHistory();
 
-    pSQLite = new C_SQLite("data_new.sqlite", pLog);  // Open User Database
+    /*
+        pSQLite = new C_SQLite();  // Open User Database
 
-    LogEntry("WHAT THE");
+        if (pSQLite) {
+            LogEntry("SQLite started");
+            pSQLite->pLog = pLog;
+            pSQLite->OpenDB("data_new.sqlite");
+            LogEntry("SQLite opened DB data_new.sqlite");
+        }
+    */
 
     // pSQLite->db_query("update users set chat_channels = 'SYSTEM'",0);
     // pSQLite->db_query("alter table users add column NAME char(256) default 'SYSTEM'");
 
-    if (pSQLite->db_query("select * from users") != SQLITE_OK) {
+    if (!pSQLite->db_query("select * from users")) {
         LogEntry("=====================[WARNING! ERROR!]======================");
         LogEntry("Database [data.sqlite] empty or corrupt");
         LogEntry("=====================[WARNING! ERROR!]======================");
         bQuit = true;
+
         // where username='seth'
         // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
         // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
@@ -101,6 +109,7 @@ void CServer::start_up(void) {
         // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
         // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
         // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
+
     } else {
         // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
         // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
