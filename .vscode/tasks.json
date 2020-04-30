@@ -3,12 +3,62 @@
     "options": {
         "env": {
             "app_name": "ember",
-            "win_dir": "E:/dev/repos",
+            "win_dir": "/e/dev/repos",
             "linux_dir": "/files/dev/repos",
             "configure": "../configure --with-bash-malloc=no CFLAGS=\"-O3 -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free\" LDFLAGS=-L/usr/local/lib LIBS=\"-ltcmalloc -lcurl\" CC=clang"
         }
     },
     "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build (windows) EMBER SERVER",
+            "command": "E:/pc_tools/mingw/bin/g++.exe",
+            "args": [
+                "-g",
+                "-Wall",
+                "-D_DLCS_CONSOLE",
+                "-Wno-unknown-pragmas",
+                "-fpermissive",
+                "-I${win_dir}/dlstorm",
+                "-IE:/pc_tools/mingw/include",
+                "${win_dir}/${app_name}/src/${app_name}_server.cpp",
+                "${win_dir}/dlstorm/c_event.cpp",
+                "${win_dir}/dlstorm/c_entity.cpp",
+                "${win_dir}/dlstorm/dlcs.cpp",
+                "${win_dir}/dlstorm/c_console.cpp",
+                "${win_dir}/dlstorm/c_log.cpp",
+                "${win_dir}/dlstorm/c_gaf.cpp",
+                "${win_dir}/dlstorm/md5.cpp",
+                "${win_dir}/dlstorm/c_net.cpp",
+                "${win_dir}/dlstorm/c_gui_chat_enum.cpp",
+                "${win_dir}/dlstorm/c_sqlitedb.cpp",
+                "${win_dir}/dlstorm/c_timer.cpp",
+                "${win_dir}/${app_name}/src/manserver.server.cpp",
+                "${win_dir}/${app_name}/src/manserver.client.cpp",
+                "${win_dir}/${app_name}/src/mantra_player_character.cpp",
+                "${win_dir}/${app_name}/src/mantra_userdata.cpp",
+                "${win_dir}/${app_name}/src/mantra_character.cpp",
+                "${win_dir}/${app_name}/src/mantra_skill.cpp",
+                "${win_dir}/${app_name}/src/mantra_stat.cpp",
+                "${win_dir}/${app_name}/src/mantra_effect.cpp",
+                "${win_dir}/${app_name}/src/mantra_class.cpp",
+                "-LE:/pc_tools/mingw/lib",
+                "-L/opt/windows_32/lib",
+                "-lmingw32",
+                "-lws2_32",
+                "-lz",
+                "-lsqlite3",
+                "-o",
+                "${win_dir}/${app_name}/server/${app_name}_server.exe"
+            ],
+            "options": {
+                "cwd": "E:/pc_tools/mingw/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
         {
             "label": "C/C++: g++ build (linux) EMBER SERVER",
             "type": "shell",

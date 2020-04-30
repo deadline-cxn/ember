@@ -1,26 +1,25 @@
-#ifndef _MANTRA_Pc_CHARACTER
-#define _MANTRA_Pc_CHARACTER
+#ifndef _MANTRA_PCHARACTER
+#define _MANTRA_PCHARACTER
 
-#include "mantra_character.h"
-#include "manserver.client.h"
 #include "c_sqlitedb.h"
+#include "manserver.client.h"
+#include "mantra_character.h"
 
 class C_GSC;
 class CMPCharacter : public CMCharacter {
-public:
+   public:
     CMPCharacter();
     CMPCharacter(C_GSC *x);
     ~CMPCharacter();
-    char username[MANTRA_TEXT_LEN];
+    char     username[MANTRA_TEXT_LEN];
     CMSkill *skill;
 
-    C_GSC* pOwner;
+    C_GSC *pOwner;
 
-    void load(void);
-    void save(void);
+    void load(C_SQLite *pSQLite);
+    void save(C_SQLite *pSQLite);
 
     void p_char_init(void);
 };
-
 
 #endif

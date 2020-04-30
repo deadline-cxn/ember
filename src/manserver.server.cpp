@@ -2,89 +2,49 @@
 #include "manserver.server.h"
 /////////////////////////////////////////
 CServer::CServer(bool bIsQuiet) {
-    NET_Init();
-
-    bQuiet   = bIsQuiet;
-    bQuit    = false;
-    bRestart = false;
-
+    pLog         = 0;
+    bQuiet       = bIsQuiet;
+    bQuit        = false;
+    bRestart     = false;
+    pSQLite      = 0;
+    pFirstPlayer = 0;
+    memset(szConsoleInput, 0, 1024);
+    memset(&r_data, 0, sizeof(r_data));
     randomize();
-
-    // LOG
-    pLog = new CLog("server.log", bQuiet);
+    pLog = new CLog("server.log", bQuiet);  // LOG
     if (!pLog) {
         printf("\nNo memory for log!\n");
         exit(0);
     }
     pLog->On();
     pLog->Restart();
-
-    // p_Log = pLog;
-
-    memset(&r_data, 0, sizeof(r_data));
-
-    // STARTUP/SHUTDOWN
-    start_up();
-
-    memset(szConsoleInput, 0, 1024);
-
-    pFirstPlayer = 0;
-
-    initSocket();
-
-    if (Listen(r_data.i_port, true) == -1) Log("ERROR LISTENING ON PORT %d\n", r_data.i_port);
-
-    Log("Listening on port [%d]", iGetLocalPort());
+    start_up();  // STARTUP/SHUTDOWN
 }
+
 /////////////////////////////////////////
 CServer::~CServer() {
     kick_all("Server shutting down");
-
     C_GSC *c = pFirstPlayer;
     while (c) {
         pFirstPlayer = c;
         c            = c->pNext;
         DEL(pFirstPlayer);
     }
-
-    // STARTUP/SHUTDOWN
-    shut_down();
-
+    shut_down();  // STARTUP/SHUTDOWN
     NET_Shutdown();
-
-    // LOG
     DEL(pLog);
 }
 /////////////////////////////////////////
 bool CServer::check_restart(void) {
     if (bRestart) {
-        Log("[Initiating server restart]=====================================");
+        LogEntry("[Initiating server restart]=====================================");
         shut_down();
         start_up();
-        Log("==============================================[Server restarted]");
+        LogEntry("==============================================[Server restarted]");
         bRestart = 0;
         return true;
     }
     return false;
-}
-/////////////////////////////////////////
-void CLog::_Add(const char *fmt, ...) {
-    char    ach[1024];
-    va_list va;
-    va_start(va, fmt);
-    vsprintf(ach, fmt, va);
-    va_end(va);
-    AddEntryNoTime(ach);
-}
-/////////////////////////////////////////
-void CServer::Log(string s) { Log((const char *)s.c_str()); }
-void CServer::Log(const char *fmt, ...) {
-    char    ach[1024];
-    va_list va;
-    va_start(va, fmt);
-    vsprintf(ach, fmt, va);
-    va_end(va);
-    pLog->_Add(ach);
 }
 /////////////////////////////////////////
 void CServer::start_up(void) {
@@ -92,91 +52,71 @@ void CServer::start_up(void) {
     // Setup server variables
 
     dfGUI_CHAT();
-
     start_time = dlcs_get_tickcount();
+    dlcsm_make_str(t);
 
-    int i = 0;
-    // int  j = 0;
-    // int  k = 0;
-    char t[1024];
-    memset(t, 0, 1024);
+    /*  LogEntry("            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»");
+        LogEntry("            º.  °°°°°° °°   °° °°°°°. °°°°°° °°°°°    º");
+        LogEntry("            º   °°     °°° °°° °°  °° °° .   °° .°°   º");
+        LogEntry("            º   ±±±±   ±±°°°±± °°°±±  ±°°°±  °°  ±°.  º");
+        LogEntry("            º   ²±    .±± ± ±± ±±  ²± ±±     ±±²²±    º");
+        LogEntry("            º  .²²     ²².  ²² ±²  ²² ²²     ²²  ²² . º");
+        LogEntry("            º   ²ÛÛ²²Û ÛÛ   ²Û ²ÛÛ²Û  Û²²Û²² Û²  Û²   º");
+        LogEntry("            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼");
+        LogEntry("EGS Version (%s) Patch (%s) Net Revision (%s) %s",VERSION,EGS_REVISION,NET_REVISION,COPYRIGHT);
+        LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
+        LogEntry("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
+        LogEntry("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
+        LogEntry("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
+        LogEntry("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
+        LogEntry("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
+        LogEntry("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
+        LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
 
-    /*  Log("            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»");
-        Log("            º.  °°°°°° °°   °° °°°°°. °°°°°° °°°°°    º");
-        Log("            º   °°     °°° °°° °°  °° °° .   °° .°°   º");
-        Log("            º   ±±±±   ±±°°°±± °°°±±  ±°°°±  °°  ±°.  º");
-        Log("            º   ²±    .±± ± ±± ±±  ²± ±±     ±±²²±    º");
-        Log("            º  .²²     ²².  ²² ±²  ²² ²²     ²²  ²² . º");
-        Log("            º   ²ÛÛ²²Û ÛÛ   ²Û ²ÛÛ²Û  Û²²Û²² Û²  Û²   º");
-        Log("            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼");
-        Log("EGS Version (%s) Patch (%s) Net Revision (%s) %s",VERSION,EGS_REVISION,NET_REVISION,COPYRIGHT);
-
-
-
-        Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
-        Log("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
-        Log("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
-        Log("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
-        Log("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
-        Log("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
-        Log("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
-        Log("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
-
-    Log("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
-    Log("BUILD: %s %s",__DATE__,__TIME__);
-    // Log(dlcs_get_os_version());
+    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
+    LogEntry("BUILD: %s %s", __DATE__, __TIME__);
 
     dlcs_suspend_power_management();
-
     SetupConsoleHistory();
 
-    ////////////////////////////////////////////////////////////////////////////
-    // Open User Database
+    pSQLite = new C_SQLite("data_new.sqlite", pLog);  // Open User Database
 
-    i = sqlite3_open("data.sqlite", &pDB);
-    if (i) {
-        Log("SQLite version %s failed to load file data.sqlite", SQLITE_VERSION);
-        sqlite3_close(pDB);
-    } else {
-        Log("SQLite version %s [data.sqlite]", SQLITE_VERSION);
-    }
+    LogEntry("WHAT THE");
 
-    // db_query("update users set chat_channels = 'SYSTEM'",0);
-    // db_query("alter table users add column NAME char(256) default 'SYSTEM'");
+    // pSQLite->db_query("update users set chat_channels = 'SYSTEM'",0);
+    // pSQLite->db_query("alter table users add column NAME char(256) default 'SYSTEM'");
 
-    if (db_query("select * from users") != SQLITE_OK) {
-        Log("=====================[WARNING! ERROR!]======================");
-        Log("Database [data.sqlite] empty or corrupt");
-        Log("=====================[WARNING! ERROR!]======================");
-
+    if (pSQLite->db_query("select * from users") != SQLITE_OK) {
+        LogEntry("=====================[WARNING! ERROR!]======================");
+        LogEntry("Database [data.sqlite] empty or corrupt");
+        LogEntry("=====================[WARNING! ERROR!]======================");
         bQuit = true;
-
         // where username='seth'
-        // db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
-        // db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
-        // db_query((char *)va("INSERT INTO users VALUES (1, 'seth', '%s', 255)",md5_digest("123")),0);
-        // db_query((char *)va("INSERT INTO users (username) VALUES ('seth_also')",0));
-        // db_query((char *)va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")),0);
-        // db_query((char *)va("INSERT INTO users VALUES ('test','%s', 5)",  md5_digest("226fi3")),0);
-        // db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
-        // db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
-        // db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
+        // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
+        // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
+        // pSQLite->db_query((char *)va("INSERT INTO users VALUES (1, 'seth', '%s', 255)",md5_digest("123")),0);
+        // pSQLite->db_query((char *)va("INSERT INTO users (username) VALUES ('seth_also')",0));
+        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")),0);
+        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test','%s', 5)",  md5_digest("226fi3")),0);
+        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
+        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
+        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
     } else {
-        // Log("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
-        // Log("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
+        // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
+        // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
     }
 
     load_data();
 
-    Log("name  = [%s]", r_data.s_name);
-    Log("admin = [%s]", r_data.s_admin_email);
-    Log("web   = [%s]", r_data.s_website_link);
-    Log("MOTD  = [%s]", r_data.s_motd);
+    LogEntry("name  = [%s]", r_data.s_name);
+    LogEntry("admin = [%s]", r_data.s_admin_email);
+    LogEntry("web   = [%s]", r_data.s_website_link);
+    LogEntry("MOTD  = [%s]", r_data.s_motd);
 
     load_world();
 
-    Log("(Type '/help' for help on commands)");
-    // Log("АБВллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллВБА");
+    LogEntry("(Type '/help' for help on commands)");
+    // LogEntry("АБВллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллВБА");
 
     C_GSC *c_x = 0;
     c_x        = new C_GSC(pLog, this);
@@ -186,42 +126,43 @@ void CServer::start_up(void) {
 
     CMPCharacter *pc = new CMPCharacter(c_x);
 
-    pc->load();
+    pc->load(pSQLite);
 
     pc->gender                = 1;
     pc->health->current_value = 2;
     DEL(c_x);
     DEL(pc);
+
+    NET_Init();
+    initSocket();
+    if (Listen(r_data.i_port, true) == -1) {
+        LogEntry("ERROR LISTENING ON PORT %d\n", r_data.i_port);
+    } else {
+        LogEntry("Listening on port [%d]", iGetLocalPort());
+    }
 }
 /////////////////////////////////////////
 void CServer::shut_down(void) {
-    save_data();
-
-    ////////////// MAP STUFF
-
+    save_data();  ////////////// MAP STUFF
     save_world();
-
     RemoveConsoleHistory();
-
-    sqlite3_close(pDB);
-
-    Log("Closed user database");
+    DEL(pSQLite);
 
     ///////////////////////////////////////////
     /*
-        Log("°±²ÛÛÛÛÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÛÛÛÛ²±°");
-        Log("        ÜÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÜ ");
-        Log("        Û        ÜÛÛÛÜ                      ÜÛÛÛÜ        Û ");
-        Log("        Û        ÛúÛÜÛ    ßÛÜß ß Û   Û      ÛÜÛúÛ        Û ");
-        Log("        Û        ßÛÛÛß     Û Û Û Û   Û      ßÛÛÛß        Û ");
-        Log("        Û         ÝÝÞ      ß Û ß ßßß ßßß     ÝÞÞ         Û ");
-        Log("        Û         þÜþ     Server Killed!     þÜþ         Û ");
-        Log("        ßÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛß ");
-        Log("°±²ÛÛÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛÛÛ²±°");
-        Log("    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°");
-        Log("         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß");
+        LogEntry("°±²ÛÛÛÛÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÛÛÛÛ²±°");
+        LogEntry("        ÜÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÜ ");
+        LogEntry("        Û        ÜÛÛÛÜ                      ÜÛÛÛÜ        Û ");
+        LogEntry("        Û        ÛúÛÜÛ    ßÛÜß ß Û   Û      ÛÜÛúÛ        Û ");
+        LogEntry("        Û        ßÛÛÛß     Û Û Û Û   Û      ßÛÛÛß        Û ");
+        LogEntry("        Û         ÝÝÞ      ß Û ß ßßß ßßß     ÝÞÞ         Û ");
+        LogEntry("        Û         þÜþ     Server Killed!     þÜþ         Û ");
+        LogEntry("        ßÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛß ");
+        LogEntry("°±²ÛÛÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛÛÛ²±°");
+        LogEntry("    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°");
+        LogEntry("         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß");
         */
-    Log("Server killed");
+    LogEntry("Server killed");
 }
 /////////////////////////////////////////
 void CServer::do_keyboard() {
@@ -244,7 +185,7 @@ void CServer::do_keyboard() {
                 AddToConsoleHistory(szConsoleInput);
                 ConsoleHistoryPosition = 0;
 
-                Log(">%s", szConsoleInput);
+                LogEntry(">%s", szConsoleInput);
 
                 if (szConsoleInput[0] == 0)
                     break;
@@ -357,7 +298,7 @@ void CServer::accept_connection(void) {
         case CTL_CONNECT:
 
             if (strcmp(Recv.pRead(), "MANTRA")) {
-                Log("Fail attempt, not MANTRA packet");
+                LogEntry("Fail attempt, not MANTRA packet");
                 reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Ember Game Server");
                 return;
             }
@@ -372,7 +313,7 @@ void CServer::accept_connection(void) {
             // create new client object
             client = new C_GSC(pLog, this);
             if (!client) {
-                Log("manserver.server.cpp -> Can't create client");
+                LogEntry("manserver.server.cpp -> Can't create client");
                 return;
             }
 
@@ -399,7 +340,7 @@ void CServer::accept_connection(void) {
 
             if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1) {
                 DEL(client);
-                Log("s_server.cpp -> CSocket::pAccept() -> error making a new connection");
+                LogEntry("s_server.cpp -> CSocket::pAccept() -> error making a new connection");
                 return;
             }
 
@@ -418,15 +359,15 @@ void CServer::accept_connection(void) {
             FinishCtlPacket(&Send);
 
             if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1) {
-                Log("s_server.cpp -> respond to pingrequest failed");
+                LogEntry("s_server.cpp -> respond to pingrequest failed");
             }
             return;
 
-        case CTL_REJECT: Log("CTL_REJECT ?"); return;
+        case CTL_REJECT: LogEntry("CTL_REJECT ?"); return;
 
         default:
             reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Mantra gameserver");
-            Log("UNKNOWN CTL_PACKET (%d) received", cType);
+            LogEntry("UNKNOWN CTL_PACKET (%d) received", cType);
             return;
     }
 
@@ -445,7 +386,7 @@ void CServer::reject_connection(int iReSocket, sockaddr *pReAddr, const char *re
     Send.Write((char *)reason);
     FinishCtlPacket(&Send);
     if (nSend(iReSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), pReAddr) == -1) {
-        Log("Reject message failed (%s)", reason);
+        LogEntry("Reject message failed (%s)", reason);
     }
 }
 /////////////////////////////////////////
@@ -482,11 +423,11 @@ void CServer::save_world(void) {
     static long dwSaveTimer = dlcs_get_tickcount();
     if ((dlcs_get_tickcount() - dwSaveTimer) > 100000) {
         dwSaveTimer = dlcs_get_tickcount();
-        Log("World saved...");
+        LogEntry("World saved...");
     }
 }
 /////////////////////////////////////////
-void CServer::load_world(void) { Log("World loaded..."); }
+void CServer::load_world(void) { LogEntry("World loaded..."); }
 /////////////////////////////////////////
 C_GSC *CServer::get_client(const char *user_name) {
     C_GSC *find = pFirstPlayer;
@@ -501,13 +442,13 @@ void CServer::kick_all(const char *reason) {
     C_GSC *pClient;
     pClient = pFirstPlayer;
     if (!pClient) return;
-    Log("Kicking online players");
+    LogEntry("Kicking online players");
     while (pClient) {
-        Log("       ....%s", pClient->username);
+        LogEntry("       ....%s", pClient->username);
         disconnect(pClient, reason);
         pClient = pClient->pNext;
     }
-    Log("All players kicked!");
+    LogEntry("All players kicked!");
 }
 /////////////////////////////////////////
 void CServer::kick_user(const char *name, const char *reason) {
@@ -519,18 +460,18 @@ void CServer::kick_user(const char *name, const char *reason) {
         }
         client = client->pNext;
     }
-    Log("%s is not online!", name);
+    LogEntry("%s is not online!", name);
     return;
 }
 /////////////////////////////////////////
-void CServer::add_user(const char *in, u_char ia) { db_query(va("insert into users (username,access) values ('%s',%d)", in, ia)); }
+void CServer::add_user(const char *in, u_char ia) { pSQLite->db_query(va("insert into users (username,access) values ('%s',%d)", in, ia)); }
 /////////////////////////////////////////
-void CServer::remove_user(const char *szName) { db_query("delete * from users where usersname = '%s'", szName); }
+void CServer::remove_user(const char *szName) { pSQLite->db_query("delete * from users where usersname = '%s'", szName); }
 /////////////////////////////////////////
 void CServer::user_access(const char *in_user_name, int in_access) {
     if (in_access > 255) return;
     if (in_access < 0) return;
-    db_query("update users set access=%d where username='%s'", in_access, in_user_name);
+    pSQLite->db_query("update users set access=%d where username='%s'", in_access, in_user_name);
     C_GSC *c = get_client(in_user_name);
     if (c) c->access = in_access;
 }
@@ -615,51 +556,51 @@ void CServer::console_command(char *command) {
         }
 
         if (dlcs_strcasecmp(v[0].c_str(), "/help")) {
-            Log("[List of available commands]====================================");
+            LogEntry("[List of available commands]====================================");
 
-            Log("/nuy.............................Allow new user accounts");
-            Log("/nun.............................Do not allow new user accounts");
+            LogEntry("/nuy.............................Allow new user accounts");
+            LogEntry("/nun.............................Do not allow new user accounts");
 
-            Log("/ann <message>...................Announce a message to the entire server");
-            Log("/msg <name> <message>............Send message to specific player");
+            LogEntry("/ann <message>...................Announce a message to the entire server");
+            LogEntry("/msg <name> <message>............Send message to specific player");
 
-            Log("/motd [new motd].................View, or change the message of the day");
+            LogEntry("/motd [new motd].................View, or change the message of the day");
 
-            Log("/who.............................List online players");
-            Log("/users...........................List users from database");
-            Log("/add_user <name> [access]........Add new user to database");
-            Log("/remove_user <name>..............Remove a user account");
-            Log("/kick_user <name> [message]......Kick player with optional message");
-            Log("/access <name> <access>..........Change player's access level");
+            LogEntry("/who.............................List online players");
+            LogEntry("/users...........................List users from database");
+            LogEntry("/add_user <name> [access]........Add new user to database");
+            LogEntry("/remove_user <name>..............Remove a user account");
+            LogEntry("/kick_user <name> [message]......Kick player with optional message");
+            LogEntry("/access <name> <access>..........Change player's access level");
 
-            Log("/kill [minutes]..................Kill the server [minutes] (CTRL-C immediate)");
-            Log("/unkill..........................Stop kill countdown");
-            Log("/restart [minutes]...............Restart the server [minutes]");
-            Log("/unrestart.......................Stop restart countdown");
-            Log("/time............................See time / timestamp");
+            LogEntry("/kill [minutes]..................Kill the server [minutes] (CTRL-C immediate)");
+            LogEntry("/unkill..........................Stop kill countdown");
+            LogEntry("/restart [minutes]...............Restart the server [minutes]");
+            LogEntry("/unrestart.......................Stop restart countdown");
+            LogEntry("/time............................See time / timestamp");
 
-            /*Log("/ban <user>......................Ban player (will ban user)");
-              Log("/banip <user>....................Ban player (will ban user's ip address)");
-              Log("/unban <user>....................Unban player (will unban user)");
-              Log("/unbanip <ipaddress>.............Unban player (will unban user's ip address)");
-              Log("/bandomain <domain>..............Ban entire domain");
-              Log("/unbandomain <domain>............Unban entire domain");
-              Log("/banlist.........................List all banned ip's");*/
+            /*LogEntry("/ban <user>......................Ban player (will ban user)");
+              LogEntry("/banip <user>....................Ban player (will ban user's ip address)");
+              LogEntry("/unban <user>....................Unban player (will unban user)");
+              LogEntry("/unbanip <ipaddress>.............Unban player (will unban user's ip address)");
+              LogEntry("/bandomain <domain>..............Ban entire domain");
+              LogEntry("/unbandomain <domain>............Unban entire domain");
+              LogEntry("/banlist.........................List all banned ip's");*/
 
-            Log("======================================================[End List]");
+            LogEntry("======================================================[End List]");
             return;
         }
 
         ///////////////////////////////////////////////////////////////////////////
 
         if ((dlcs_strcasecmp(v[0].c_str(), "/sql"))) {
-            db_queryl(targs);
+            pSQLite->db_queryl(targs);
         }
 
         //////////////////////////////////////////
 
         if ((dlcs_strcasecmp(v[0].c_str(), "/users"))) {
-            db_queryl("select username,access from users");
+            pSQLite->db_queryl("select username,access from users");
         }
 
         //////////////////////////////////////////
@@ -694,9 +635,9 @@ void CServer::console_command(char *command) {
 
         if ((dlcs_strcasecmp(v[0].c_str(), "/time"))) {
             strcpy(temp, dlcs_get_time());
-            Log(temp);
+            LogEntry(temp);
             dlcs_timestamp(temp);
-            Log("timestamp: %s", temp);
+            LogEntry("timestamp: %s", temp);
         }
 
         //////////////////////////////////////////
@@ -704,7 +645,7 @@ void CServer::console_command(char *command) {
         if (dlcs_strcasecmp(v[0].c_str(), "/ann")) {
             if (v.size() > 1) {
                 chat(0, "Admin", targs, CHANNEL_SYSTEM);
-                Log(targs);
+                LogEntry(targs);
             }
         }
 
@@ -745,14 +686,14 @@ void CServer::console_command(char *command) {
 
         if (dlcs_strcasecmp(v[0].c_str(), "/nuy")) {
             r_data.b_new_accounts = true;
-            Log("Now accepting new users");
+            LogEntry("Now accepting new users");
         }
 
         //////////////////////////////////////////
 
         if (dlcs_strcasecmp(v[0].c_str(), "/nun")) {
             r_data.b_new_accounts = false;
-            Log("New users will not be accepted");
+            LogEntry("New users will not be accepted");
         }
 
         //////////////////////////////////////////
@@ -760,7 +701,7 @@ void CServer::console_command(char *command) {
         if (dlcs_strcasecmp(v[0].c_str(), "/who")) {
             C_GSC *c = pFirstPlayer;
             while (c) {
-                Log("%s", c->username);
+                LogEntry("%s", c->username);
                 c = c->pNext;
             }
         }
@@ -824,7 +765,7 @@ bool CServer::load_data(void) {
 
     if (r_data.i_max_clients == 0) r_data.i_max_clients = 2000;
 
-    Log("server.ini loaded");
+    LogEntry("server.ini loaded");
 
     return true;
 }
@@ -844,7 +785,7 @@ bool CServer::save_data(void) {
     fputs(va("b_require_website=%d\n", r_data.b_require_website), fp);
     fclose(fp);
 
-    Log("server.ini saved");
+    LogEntry("server.ini saved");
 
     return true;
 }
@@ -879,7 +820,7 @@ void CServer::ReportToMaster(void){
     if((GetTickCount()-dwReportTimer)<15000) {
         if(!starter) starter=true; else return;
     }
-    dwReportTimer=GetTickCount(); //Log("Reported to master");
+    dwReportTimer=GetTickCount(); //LogEntry("Reported to master");
     pFMMS_Connection->Connect("127.0.0.1","40404");
 }
 */

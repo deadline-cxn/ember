@@ -37,21 +37,21 @@ C_GSC::~C_GSC() {
 }
 ///////////////////////////////////////////
 void C_GSC::load(void) {
-    pServer->Log("Loading %s", username);
+    LogEntry("Loading %s", username);
     vector<string> tv;
-    db_query(va("select * from users where username='%s'", username), 0);
+    pServer->pSQLite->db_query(va("select * from users where username='%s'", username), 0);
 
-    access           = atoi(db_getvalue("username", username, "access").c_str());
-    timeout_override = atoi(db_getvalue("username", username, "timeout_override").c_str());
+    access           = atoi(pServer->pSQLite->db_getvalue("username", username, "access").c_str());
+    timeout_override = atoi(pServer->pSQLite->db_getvalue("username", username, "timeout_override").c_str());
 
-    tv = dlcs_explode(",", db_getvalue("username", username, "chat_channels").c_str());
+    tv = dlcs_explode(",", pServer->pSQLite->db_getvalue("username", username, "chat_channels").c_str());
     for (unsigned int i = 0; i < tv.size(); i++) {
         join_channel(tv[i].c_str());
-        pServer->Log("Joined chat channel: %s", tv[i].c_str());
+        LogEntry("Joined chat channel: %s", tv[i].c_str());
     }
 }
 void C_GSC::save(void) {
-    pServer->Log("Saving %s", username);
+    LogEntry("Saving %s", username);
 
     string s_temp;
 
@@ -64,12 +64,12 @@ void C_GSC::save(void) {
         if (GUI_CHAT[(*vi).c_str()]) {
             s_temp = s_temp + (*vi).c_str();
             s_temp = s_temp + ",";
-            pServer->Log("%s->%d", (*vi).c_str(), GUI_CHAT[(*vi).c_str()]);
+            LogEntry("%s->%d", (*vi).c_str(), GUI_CHAT[(*vi).c_str()]);
         }
     }
     if (!s_temp.empty()) {
         s_temp.erase(s_temp.size() - 1);
-        pServer->Log("Saving chat setup %s", s_temp.c_str());
+        LogEntry("Saving chat setup %s", s_temp.c_str());
         db_update("chat_channels", s_temp.c_str());
     }
 }
@@ -128,7 +128,7 @@ void C_GSC::do_net(void) {
         cMsgType = Recv->cRead();
         Recv     = pGetMessage();
         if (ToAddr.sin_addr.s_addr != FromAddr.sin_addr.s_addr) {
-            pServer->Log("forged net message");
+            LogEntry("forged net message");
             return;
         }
 
@@ -172,7 +172,7 @@ void C_GSC::do_net(void) {
 
                 load();
 
-                if (dbr_nrow == 0) ax = NEW_ACCOUNT;
+                if (pServer->pSQLite->dbr_nrow == 0) ax = NEW_ACCOUNT;
 
                 // check for maximum players logged in
                 if (pServer->num_clients() > pServer->r_data.i_max_clients) ax = TOO_MANY_PLAYERS;
@@ -190,11 +190,11 @@ void C_GSC::do_net(void) {
                 }
 
                 // compare passwords
-                if (dbr_nrow == 0) {
+                if (pServer->pSQLite->dbr_nrow == 0) {
                     ax = BAD_LOGIN;
                 } else {
                     if (ax == BAD_LOGIN) {
-                        if ((dlcs_strcasecmp(szTemp4, db_getvalue("username", username, "password").c_str()))) ax = GOOD_LOGIN;
+                        if ((dlcs_strcasecmp(szTemp4, pServer->pSQLite->db_getvalue("username", username, "password").c_str()))) ax = GOOD_LOGIN;
                     }
                 }
 
@@ -220,7 +220,7 @@ void C_GSC::do_net(void) {
                                 access = 0;
                                 pServer->add_user(username, 0);
                                 db_update("password", password);
-                                // pServer->db_query((char *)va("INSERT INTO users VALUES ('%s','%s', 0)",username,szTemp4));
+                                // pServer->pServer->pSQLite->db_query((char *)va("INSERT INTO users VALUES ('%s','%s', 0)",username,szTemp4));
                             } else {
                                 ax = BAD_LOGIN;
                                 strcpy(szTemp, va("Please register @ %s", pServer->r_data.s_website_link));
@@ -243,9 +243,9 @@ void C_GSC::do_net(void) {
                 pServer->create_guid(username, session_id);
 
                 db_update("access", "32");
-                db_queryl("select * from users where username=%s", username);
+                pServer->pSQLite->db_queryl("select * from users where username=%s", username);
 
-                pServer->Log("%s.access [%d]", username, atoi((char *)db_getvalue("username", username, "access").c_str()));
+                LogEntry("%s.access [%d]", username, atoi((char *)pServer->pSQLite->db_getvalue("username", username, "access").c_str()));
 
                 Send.Reset();
                 Send.Write((char)NM_LOGIN_REQUEST_REPLY);
@@ -256,7 +256,7 @@ void C_GSC::do_net(void) {
                 Send.Write((char *)"sys.media");
                 Send.Write((char *)pServer->r_data.s_name);
                 Send.Write((char *)pServer->r_data.s_admin_email);
-                Send.Write((int)atoi((char *)db_getvalue("username", username, "access").c_str()));
+                Send.Write((int)atoi((char *)pServer->pSQLite->db_getvalue("username", username, "access").c_str()));
                 Send.Write((char *)"access what");
                 Send.Write((char)10);  // character slots
                 SendUnreliableMessage(&Send);
@@ -266,10 +266,10 @@ void C_GSC::do_net(void) {
                     return;
                 }
 
-                pServer->Log("%s logged in from %s:%d", username, inet_ntoa(ToAddr.sin_addr), ntohs(ToAddr.sin_port));
+                LogEntry("%s logged in from %s:%d", username, inet_ntoa(ToAddr.sin_addr), ntohs(ToAddr.sin_port));
 
                 tv.clear();
-                tv = dlcs_explode(",", db_getvalue("username", username, "chat_channels").c_str());
+                tv = dlcs_explode(",", pServer->pSQLite->db_getvalue("username", username, "chat_channels").c_str());
                 for (unsigned int i = 0; i < tv.size(); i++) {
                     join_channel(tv[i].c_str());
                 }
@@ -278,7 +278,7 @@ void C_GSC::do_net(void) {
 
             case NM_LOGOUT:
                 bDelete = true;
-                pServer->Log("%s logged out", username);
+                LogEntry("%s logged out", username);
                 break;
 
             case NM_GUI_CALLBACK:
@@ -290,7 +290,7 @@ void C_GSC::do_net(void) {
                     pairdata[szTemp] = szTemp2;
                     // for now, only pull out console function
                     if (dlcs_strcasecmp(szTemp, "console")) {
-                        pServer->Log("%s GUI_CALLBACK (%s)", username, szTemp2);
+                        LogEntry("%s GUI_CALLBACK (%s)", username, szTemp2);
                     }
                 }
                 break;
@@ -522,7 +522,7 @@ void C_GSC::do_net(void) {
                 break;
 
             case NM_HEARTBEAT:
-                // pServer->Log("Heartbeat check from %s",username);
+                // LogEntry("Heartbeat check from %s",username);
                 bHeartBeatCheck = false;  // OK, clear the heart beat check
                 break;
 
@@ -711,7 +711,7 @@ void C_GSC::do_net(void) {
 
     if (inactivity_timer->Up()) {  // Check for inactivity
 
-        // pServer->Log("No activity from %s",username);
+        // LogEntry("No activity from %s",username);
 
         Send.Reset();
         Send.Write((char)NM_HEARTBEAT);
@@ -745,4 +745,4 @@ void C_GSC::do_net(void) {
     }
 }
 
-void C_GSC::db_update(string s_col, string s_val) { db_query(va("UPDATE users SET %s = '%s' where username = '%s'", (char *)s_col.c_str(), (char *)s_val.c_str(), username)); }
+void C_GSC::db_update(string s_col, string s_val) { pServer->pSQLite->db_query(va("UPDATE users SET %s = '%s' where username = '%s'", (char *)s_col.c_str(), (char *)s_val.c_str(), username)); }

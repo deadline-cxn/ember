@@ -1,9 +1,9 @@
 ///////////////////////////////////////////////
 // Mantra Server
 #include "manserver.h"
-
 #include "manserver.server.h"
 #include "mantra_player_character.h"
+
 CServer *pServer;
 
 int main(int argc, char *argv[]) {
@@ -24,16 +24,22 @@ int main(int argc, char *argv[]) {
         }
     }
     ConsoleSetup();  // (POSIX) system specific console setup
+
     pServer = new CServer(bquiet);
     if (!pServer) {
         ConsoleShutDown();
         return 1;
     }
-    while (!pServer->bQuit) pServer->cycle();
+
+    while (!pServer->bQuit) {
+        pServer->cycle();  // Main Server Loop
+    }
+
     DEL(pServer);
     ConsoleShutDown();
     return 1;
 }
+
 void ShowHelp(void) {
     printf("Ember Game Server %s %s Help\n", MANTRA_VERSION, MANTRA_COPYRIGHT);
     printf("==============================================================\n");
@@ -44,34 +50,39 @@ void ShowHelp(void) {
 
 #ifdef _WIN32
 BOOL WINAPI HandleCTRL_C(DWORD dwCtrlType) {
+    CLog *pLog;
+    pLog = pServer->pLog;
     switch (dwCtrlType) {
         case CTRL_BREAK_EVENT:
             pServer->bQuit = true;
-            pServer->Log("Break event killed server!");
-            return true; 
+            LogEntry("Break event killed server!");
+            return true;
         case CTRL_SHUTDOWN_EVENT:
             pServer->bQuit = true;
-            pServer->Log("Shutdown event killed server!");
+            LogEntry("Shutdown event killed server!");
             return true;
         case CTRL_LOGOFF_EVENT:
             pServer->bQuit = true;
-            pServer->Log("Logoff event killed server!");
+            LogEntry("Logoff event killed server!");
             return true;
         case CTRL_CLOSE_EVENT:
             pServer->bQuit = true;
-            pServer->Log("Mouse [X] killed server!");
+            LogEntry("Mouse [X] killed server!");
             return true;
         case CTRL_C_EVENT:
             pServer->bQuit = true;
-            pServer->Log("CTRL-C killed server!");
+            LogEntry("CTRL-C killed server!");
             return true;
         default: break;
     }
     return false;
 }
+
 void ConsoleSetup(void) {  // Change window title for windows version, and setup ctrl handler
     SetConsoleCtrlHandler(HandleCTRL_C, TRUE);
     SetConsoleTitle(va("Mantra Server %s(%s - %s) Net(%d) Build(%d) %s", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT));
 }
+
 void ConsoleShutDown(void) {}
+
 #endif
