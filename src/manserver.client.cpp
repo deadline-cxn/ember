@@ -38,17 +38,22 @@ C_GSC::~C_GSC() {
 ///////////////////////////////////////////
 void C_GSC::load(void) {
     LogEntry("Loading %s", username);
+    /*
     vector<string> tv;
-    pServer->pSQLite->db_query(va("select * from users where username='%s'", username), 0);
 
-    access           = atoi(pServer->pSQLite->db_getvalue("username", username, "access").c_str());
-    timeout_override = atoi(pServer->pSQLite->db_getvalue("username", username, "timeout_override").c_str());
+    // TODO: add dlcs_db code to load user details
 
-    tv = dlcs_explode(",", pServer->pSQLite->db_getvalue("username", username, "chat_channels").c_str());
+        pServer->pSQLite->db_query(va("select * from users where username='%s'", username), 0);
+        access           = atoi(pServer->pSQLite->db_getvalue("username", username, "access").c_str());
+        timeout_override = atoi(pServer->pSQLite->db_getvalue("username", username, "timeout_override").c_str());
+        tv = dlcs_explode(",", pServer->pSQLite->db_getvalue("username", username, "chat_channels").c_str());
+
+
     for (unsigned int i = 0; i < tv.size(); i++) {
         join_channel(tv[i].c_str());
         LogEntry("Joined chat channel: %s", tv[i].c_str());
     }
+    */
 }
 void C_GSC::save(void) {
     LogEntry("Saving %s", username);
@@ -157,122 +162,125 @@ void C_GSC::do_net(void) {
 
             case NM_LOGIN_REQUEST:
 
-                // set ax to default login result, copy username, password
-                ax = BAD_LOGIN;
-                strcpy(szTemp, "null");
-                strcpy(username, Recv->pRead());
-                strcpy(szTemp4, Recv->pRead());
-
-                // check for NULL result
-                if ((username == NULL) || (!strlen(username))) {
-                    strcpy(szTemp, "Bad network message");
-                    bDelete = true;
-                    break;
-                }
-
-                load();
-
-                if (pServer->pSQLite->dbr_nrow == 0) ax = NEW_ACCOUNT;
-
-                // check for maximum players logged in
-                if (pServer->num_clients() > pServer->r_data.i_max_clients) ax = TOO_MANY_PLAYERS;
-
-                // check to see if player is already logged in
-                // SYSTEM is reserved
-                // add any other reserved usernames here
-                if (dlcs_strcasecmp(username, "SYSTEM")) ax = ALREADY_LOGGED_IN;
-
-                other_client = pServer->pFirstPlayer;
-                while (other_client) {
-                    if (other_client != this)
-                        if (dlcs_strcasecmp(other_client->username, username)) ax = ALREADY_LOGGED_IN;
-                    other_client = other_client->pNext;
-                }
-
-                // compare passwords
-                if (pServer->pSQLite->dbr_nrow == 0) {
-                    ax = BAD_LOGIN;
-                } else {
-                    if (ax == BAD_LOGIN) {
-                        if ((dlcs_strcasecmp(szTemp4, pServer->pSQLite->db_getvalue("username", username, "password").c_str()))) ax = GOOD_LOGIN;
-                    }
-                }
-
-                switch (ax) {
-                    case BAD_LOGIN: strcpy(szTemp, "Incorrect password..."); break;
-                    case ALREADY_LOGGED_IN: strcpy(szTemp, "This user is already logged in from another machine..."); break;
-                    case ACCOUNT_EXPIRED: strcpy(szTemp, "Your account has expired. Contact system administrator."); break;
-                    case TOO_MANY_PLAYERS: strcpy(szTemp, "Server is full. Too many players already logged in..."); break;
-                    case GOOD_LOGIN:
-                        if (!strlen(username)) {
-                            ax = BAD_LOGIN;
-                            strcpy(szTemp, "Bad network try again.");
-                            break;
-                        }
-                        break;
-                    case NEW_ACCOUNT:
-
-                        if (pServer->r_data.b_new_accounts) {
-                            if (!pServer->r_data.b_require_website) {
-                                ax = GOOD_LOGIN;
-                                strcpy(szTemp, "Welcome to the server! New account created.");
-                                strcpy(password, szTemp4);
-                                access = 0;
-                                pServer->add_user(username, 0);
-                                db_update("password", password);
-                                // pServer->pServer->pSQLite->db_query((char *)va("INSERT INTO users VALUES ('%s','%s', 0)",username,szTemp4));
-                            } else {
+                /*
+                                // set ax to default login result, copy username, password
                                 ax = BAD_LOGIN;
-                                strcpy(szTemp, va("Please register @ %s", pServer->r_data.s_website_link));
-                            }
+                                strcpy(szTemp, "null");
+                                strcpy(username, Recv->pRead());
+                                strcpy(szTemp4, Recv->pRead());
 
-                            break;
-                        } else {
-                            ax = BAD_LOGIN;
-                            strcpy(szTemp, "Sorry, we're not accepting new accounts at this time. Try again later.");
-                            break;
-                        }
-                        break;
-                    default: break;
-                }
+                                // check for NULL result
+                                if ((username == NULL) || (!strlen(username))) {
+                                    strcpy(szTemp, "Bad network message");
+                                    bDelete = true;
+                                    break;
+                                }
 
-                if (ax == GOOD_LOGIN) {
-                    strcpy(szTemp, "Welcome to the server.");
-                }
+                                load();
 
-                pServer->create_guid(username, session_id);
+                                if (pServer->pSQLite->dbr_nrow == 0) ax = NEW_ACCOUNT;
 
-                db_update("access", "32");
-                pServer->pSQLite->db_queryl("select * from users where username=%s", username);
+                                // check for maximum players logged in
+                                if (pServer->num_clients() > pServer->r_data.i_max_clients) ax = TOO_MANY_PLAYERS;
 
-                LogEntry("%s.access [%d]", username, atoi((char *)pServer->pSQLite->db_getvalue("username", username, "access").c_str()));
+                                // check to see if player is already logged in
+                                // SYSTEM is reserved
+                                // add any other reserved usernames here
+                                if (dlcs_strcasecmp(username, "SYSTEM")) ax = ALREADY_LOGGED_IN;
 
-                Send.Reset();
-                Send.Write((char)NM_LOGIN_REQUEST_REPLY);
-                Send.Write((char)ax);
-                Send.Write((char *)szTemp);
-                Send.Write((char *)MANTRA_VERSION);
-                Send.Write((char *)session_id);
-                Send.Write((char *)"sys.media");
-                Send.Write((char *)pServer->r_data.s_name);
-                Send.Write((char *)pServer->r_data.s_admin_email);
-                Send.Write((int)atoi((char *)pServer->pSQLite->db_getvalue("username", username, "access").c_str()));
-                Send.Write((char *)"access what");
-                Send.Write((char)10);  // character slots
-                SendUnreliableMessage(&Send);
+                                other_client = pServer->pFirstPlayer;
+                                while (other_client) {
+                                    if (other_client != this)
+                                        if (dlcs_strcasecmp(other_client->username, username)) ax = ALREADY_LOGGED_IN;
+                                    other_client = other_client->pNext;
+                                }
 
-                if (ax != GOOD_LOGIN) {
-                    bDelete = true;
-                    return;
-                }
+                                // compare passwords
+                                if (pServer->pSQLite->dbr_nrow == 0) {
+                                    ax = BAD_LOGIN;
+                                } else {
+                                    if (ax == BAD_LOGIN) {
+                                        if ((dlcs_strcasecmp(szTemp4, pServer->pSQLite->db_getvalue("username", username, "password").c_str()))) ax = GOOD_LOGIN;
+                                    }
+                                }
 
-                LogEntry("%s logged in from %s:%d", username, inet_ntoa(ToAddr.sin_addr), ntohs(ToAddr.sin_port));
+                                switch (ax) {
+                                    case BAD_LOGIN: strcpy(szTemp, "Incorrect password..."); break;
+                                    case ALREADY_LOGGED_IN: strcpy(szTemp, "This user is already logged in from another machine..."); break;
+                                    case ACCOUNT_EXPIRED: strcpy(szTemp, "Your account has expired. Contact system administrator."); break;
+                                    case TOO_MANY_PLAYERS: strcpy(szTemp, "Server is full. Too many players already logged in..."); break;
+                                    case GOOD_LOGIN:
+                                        if (!strlen(username)) {
+                                            ax = BAD_LOGIN;
+                                            strcpy(szTemp, "Bad network try again.");
+                                            break;
+                                        }
+                                        break;
+                                    case NEW_ACCOUNT:
 
-                tv.clear();
-                tv = dlcs_explode(",", pServer->pSQLite->db_getvalue("username", username, "chat_channels").c_str());
-                for (unsigned int i = 0; i < tv.size(); i++) {
-                    join_channel(tv[i].c_str());
-                }
+                                        if (pServer->r_data.b_new_accounts) {
+                                            if (!pServer->r_data.b_require_website) {
+                                                ax = GOOD_LOGIN;
+                                                strcpy(szTemp, "Welcome to the server! New account created.");
+                                                strcpy(password, szTemp4);
+                                                access = 0;
+                                                pServer->add_user(username, 0);
+                                                db_update("password", password);
+                                                // pServer->pServer->pSQLite->db_query((char *)va("INSERT INTO users VALUES ('%s','%s', 0)",username,szTemp4));
+                                            } else {
+                                                ax = BAD_LOGIN;
+                                                strcpy(szTemp, va("Please register @ %s", pServer->r_data.s_website_link));
+                                            }
+
+                                            break;
+                                        } else {
+                                            ax = BAD_LOGIN;
+                                            strcpy(szTemp, "Sorry, we're not accepting new accounts at this time. Try again later.");
+                                            break;
+                                        }
+                                        break;
+                                    default: break;
+                                }
+
+                                if (ax == GOOD_LOGIN) {
+                                    strcpy(szTemp, "Welcome to the server.");
+                                }
+
+                                pServer->create_guid(username, session_id);
+
+                                db_update("access", "32");
+                                pServer->pSQLite->db_queryl("select * from users where username=%s", username);
+
+                                LogEntry("%s.access [%d]", username, atoi((char *)pServer->pSQLite->db_getvalue("username", username, "access").c_str()));
+
+                                Send.Reset();
+                                Send.Write((char)NM_LOGIN_REQUEST_REPLY);
+                                Send.Write((char)ax);
+                                Send.Write((char *)szTemp);
+                                Send.Write((char *)MANTRA_VERSION);
+                                Send.Write((char *)session_id);
+                                Send.Write((char *)"sys.media");
+                                Send.Write((char *)pServer->r_data.s_name);
+                                Send.Write((char *)pServer->r_data.s_admin_email);
+                                Send.Write((int)atoi((char *)pServer->pSQLite->db_getvalue("username", username, "access").c_str()));
+                                Send.Write((char *)"access what");
+                                Send.Write((char)10);  // character slots
+                                SendUnreliableMessage(&Send);
+
+                                if (ax != GOOD_LOGIN) {
+                                    bDelete = true;
+                                    return;
+                                }
+
+                                LogEntry("%s logged in from %s:%d", username, inet_ntoa(ToAddr.sin_addr), ntohs(ToAddr.sin_port));
+
+                                tv.clear();
+                                tv = dlcs_explode(",", pServer->pSQLite->db_getvalue("username", username, "chat_channels").c_str());
+                                for (unsigned int i = 0; i < tv.size(); i++) {
+                                    join_channel(tv[i].c_str());
+                                }
+
+                                */
 
                 break;
 
@@ -745,4 +753,9 @@ void C_GSC::do_net(void) {
     }
 }
 
-void C_GSC::db_update(string s_col, string s_val) { pServer->pSQLite->db_query(va("UPDATE users SET %s = '%s' where username = '%s'", (char *)s_col.c_str(), (char *)s_val.c_str(), username)); }
+void C_GSC::db_update(string s_col, string s_val) {
+    /*
+    // TODO: add dlcs_db call to update user data
+    pServer->pSQLite->db_query(va("UPDATE users SET %s = '%s' where username = '%s'", (char *)s_col.c_str(), (char *)s_val.c_str(), username));
+*/
+}

@@ -7,5 +7,10 @@
 			"path": "..\\..\\dlstorm"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"initializer_list": "cpp"
+		}
+	}
 }

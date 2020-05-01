@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "E:\\dev\\repos\\dlstorm"
+                "E:\\dev\\repos\\dlstorm\\src"
             ],
             "defines": [
                 "_DEBUG",
@@ -14,7 +14,7 @@
             "compilerPath": "E:\\pc_tools\\mingw\\bin\\g++.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "gcc-x64"
         }
     ],
     "version": 4

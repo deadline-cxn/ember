@@ -1,7 +1,6 @@
 #ifndef _MANTRA_PCHARACTER
 #define _MANTRA_PCHARACTER
 
-#include "c_sqlitedb.h"
 #include "manserver.client.h"
 #include "mantra_character.h"
 
@@ -16,8 +15,8 @@ class CMPCharacter : public CMCharacter {
 
     C_GSC *pOwner;
 
-    void load(C_SQLite *pSQLite);
-    void save(C_SQLite *pSQLite);
+    void load();  // add dlcs_db
+    void save();  // add dlcs_db
 
     void p_char_init(void);
 };

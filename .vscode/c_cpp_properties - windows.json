@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "E:\\dev\\repos\\dlstorm"
+                "E:\\dev\\repos\\dlstorm\\src"
             ],
             "defines": [
                 "_DEBUG",

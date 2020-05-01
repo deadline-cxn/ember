@@ -1,16 +1,17 @@
 /////////////////////////////////////////
 #include "manserver.server.h"
+
 /////////////////////////////////////////
 CServer::CServer(bool bIsQuiet) {
     pLog         = 0;
     bQuiet       = bIsQuiet;
     bQuit        = false;
     bRestart     = false;
-    pSQLite      = 0;
     pFirstPlayer = 0;
-    memset(szConsoleInput, 0, 1024);
-    memset(&r_data, 0, sizeof(r_data));
+    pConsole     = 0;
+
     randomize();
+
     pLog = new CLog("server.log", bQuiet);  // LOG
     if (!pLog) {
         printf("\nNo memory for log!\n");
@@ -18,7 +19,8 @@ CServer::CServer(bool bIsQuiet) {
     }
     pLog->On();
     pLog->Restart();
-    start_up();  // STARTUP/SHUTDOWN
+
+    StartUp();  // STARTUP/SHUTDOWN
 }
 
 /////////////////////////////////////////
@@ -39,20 +41,36 @@ bool CServer::check_restart(void) {
     if (bRestart) {
         LogEntry("[Initiating server restart]=====================================");
         shut_down();
-        start_up();
+        StartUp();
         LogEntry("==============================================[Server restarted]");
         bRestart = 0;
         return true;
     }
     return false;
 }
+
 /////////////////////////////////////////
-void CServer::start_up(void) {
+
+void CServer::StartUp(void) {
+    dwStartTime = dlcs_get_tickcount();
+
+    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
+    LogEntry("BUILD: %s %s", __DATE__, __TIME__);
+
+    // LogEntry("STARTTIME:%s", dlcs_timestamp(dwStartTime)); // TODO: Store proper timestamp for server start time
+
     ////////////////////////////////////////////////////////////////////////////
     // Setup server variables
 
+    pConsole = new C_CONS(pLog, "server.ini");  // Initialize Console for it has cvars built in
+
+    LogEntry("name  = [%s]", pConsole->pCVars->get_cvar("s_name"));
+    LogEntry("admin = [%s]", pConsole->pCVars->get_cvar("s_admin_email"));
+    LogEntry("web   = [%s]", pConsole->pCVars->get_cvar("s_website_link"));
+    LogEntry("MOTD  = [%s]", pConsole->pCVars->get_cvar("s_motd"));
+
     dfGUI_CHAT();
-    start_time = dlcs_get_tickcount();
+
     dlcsm_make_str(t);
 
     /*  LogEntry("            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»");
@@ -73,13 +91,16 @@ void CServer::start_up(void) {
         LogEntry("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
         LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
 
-    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
-    LogEntry("BUILD: %s %s", __DATE__, __TIME__);
-
     dlcs_suspend_power_management();
     SetupConsoleHistory();
 
     /*
+
+    // pSQLite      = 0; // add dlcs_db
+    // memset(&r_data, 0, sizeof(r_data));
+
+    // add dlcs_db initialization
+
         pSQLite = new C_SQLite();  // Open User Database
 
         if (pSQLite) {
@@ -93,34 +114,30 @@ void CServer::start_up(void) {
     // pSQLite->db_query("update users set chat_channels = 'SYSTEM'",0);
     // pSQLite->db_query("alter table users add column NAME char(256) default 'SYSTEM'");
 
-    if (!pSQLite->db_query("select * from users")) {
-        LogEntry("=====================[WARNING! ERROR!]======================");
-        LogEntry("Database [data.sqlite] empty or corrupt");
-        LogEntry("=====================[WARNING! ERROR!]======================");
-        bQuit = true;
+    /*
+        if (!pSQLite->db_query("select * from users")) {
+            LogEntry("=====================[WARNING! ERROR!]======================");
+            LogEntry("Database [data.sqlite] empty or corrupt");
+            LogEntry("=====================[WARNING! ERROR!]======================");
+            bQuit = true;
 
-        // where username='seth'
-        // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
-        // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
-        // pSQLite->db_query((char *)va("INSERT INTO users VALUES (1, 'seth', '%s', 255)",md5_digest("123")),0);
-        // pSQLite->db_query((char *)va("INSERT INTO users (username) VALUES ('seth_also')",0));
-        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")),0);
-        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test','%s', 5)",  md5_digest("226fi3")),0);
-        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
-        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
-        // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
+            // where username='seth'
+            // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
+            // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
+            // pSQLite->db_query((char *)va("INSERT INTO users VALUES (1, 'seth', '%s', 255)",md5_digest("123")),0);
+            // pSQLite->db_query((char *)va("INSERT INTO users (username) VALUES ('seth_also')",0));
+            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")),0);
+            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test','%s', 5)",  md5_digest("226fi3")),0);
+            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
+            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
+            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
 
-    } else {
-        // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
-        // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
-    }
+        } else {
+            // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
+            // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
+        }
 
-    load_data();
-
-    LogEntry("name  = [%s]", r_data.s_name);
-    LogEntry("admin = [%s]", r_data.s_admin_email);
-    LogEntry("web   = [%s]", r_data.s_website_link);
-    LogEntry("MOTD  = [%s]", r_data.s_motd);
+    */
 
     load_world();
 
@@ -135,27 +152,34 @@ void CServer::start_up(void) {
 
     CMPCharacter *pc = new CMPCharacter(c_x);
 
-    pc->load(pSQLite);
+    // pc->load(pSQLite);  // add dlcs_db features
 
     pc->gender                = 1;
     pc->health->current_value = 2;
     DEL(c_x);
     DEL(pc);
+}
 
+bool CServer::bNetStart() {
+    int iPort;
+    iPort = (int)pConsole->pCVars->get_cvar("i_port");
     NET_Init();
     initSocket();
-    if (Listen(r_data.i_port, true) == -1) {
+    if ((Listen(iPort, true)) == -1) {
         LogEntry("ERROR LISTENING ON PORT %d\n", r_data.i_port);
     } else {
         LogEntry("Listening on port [%d]", iGetLocalPort());
     }
 }
+
 /////////////////////////////////////////
+
 void CServer::shut_down(void) {
     save_data();  ////////////// MAP STUFF
     save_world();
     RemoveConsoleHistory();
-    DEL(pSQLite);
+
+    // DEL(pSQLite); // add dlcs_db shutdown (DEL)
 
     ///////////////////////////////////////////
     /*
@@ -171,6 +195,7 @@ void CServer::shut_down(void) {
         LogEntry("    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°");
         LogEntry("         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß");
         */
+
     LogEntry("Server killed");
 }
 /////////////////////////////////////////
@@ -190,49 +215,56 @@ void CServer::do_keyboard() {
 
             case 13:
             case 10:
+                /*
 
-                AddToConsoleHistory(szConsoleInput);
-                ConsoleHistoryPosition = 0;
+                    AddToConsoleHistory(szConsoleInput);
+                    iConsoleHistoryPosition = 0;
 
-                LogEntry(">%s", szConsoleInput);
+                    LogEntry(">%s", szConsoleInput);
 
-                if (szConsoleInput[0] == 0)
-                    break;
-                else {
-                    console_command(szConsoleInput);
-                    memset(szConsoleInput, 0, 1024);
-                }
+                    if (szConsoleInput[0] == 0)
+                        break;
+                    else {
+                        console_command(szConsoleInput);
+                        memset(szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
+                    }
+                    */
                 break;
 
             case 27: break;
 
             case 8:  // backspace
-                i                     = strlen(szConsoleInput);
-                szConsoleInput[i - 1] = 0;
-                printf(">                                                  \r>%s \r", szConsoleInput);
+                i                               = strlen(pConsole->szConsoleInput);
+                pConsole->szConsoleInput[i - 1] = 0;
+                printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
 
                 break;
 
             case 21:  // ctrl-U
                 printf(">                                                  \r>");
-                memset(szConsoleInput, 0, 1024);
+                memset(pConsole->szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
                 break;
 
             case 0xE0:  // Arrow keys...
                 ch = _getch();
                 switch (ch) {
                     case 72:  // UP
-                        strcpy(szConsoleInput, GetConsoleHistory(ConsoleHistoryPosition));
-                        ConsoleHistoryPosition++;
-                        if (ConsoleHistoryPosition > MAX_CONSOLE_INPUT_BUFFER) ConsoleHistoryPosition = 0;
-                        printf(">                                                  \r>%s \r", szConsoleInput);
+                              /*
+                                  strcpy(szConsoleInput, GetConsoleHistory(iConsoleHistoryPosition));
+                                  iConsoleHistoryPosition++;
+                                  if (iConsoleHistoryPosition > MAX_CONSOLE_INPUT_BUFFER) iConsoleHistoryPosition = 0;
+                                  printf(">                                                  \r>%s \r", szConsoleInput);
+                                  */
                         break;
 
                     case 80:  // DOWN
-                        strcpy(szConsoleInput, GetConsoleHistory(ConsoleHistoryPosition));
-                        ConsoleHistoryPosition--;
-                        if (ConsoleHistoryPosition < 0) ConsoleHistoryPosition = MAX_CONSOLE_INPUT_BUFFER;
-                        printf(">                                                  \r>%s \r", szConsoleInput);
+                              /*
+                                  strcpy(szConsoleInput, GetConsoleHistory(iConsoleHistoryPosition));
+                                  iConsoleHistoryPosition--;
+                                  if (iConsoleHistoryPosition < 0) iConsoleHistoryPosition = MAX_CONSOLE_INPUT_BUFFER;
+                                  printf(">                                                  \r>%s \r", szConsoleInput);
+                                  */
+
                         break;
 
                     case 75:  // LEFT (TODO: build cursor into console command input)
@@ -246,10 +278,10 @@ void CServer::do_keyboard() {
                 break;
 
             default:
-                i                     = strlen(szConsoleInput);
-                szConsoleInput[i]     = ch;
-                szConsoleInput[i + 1] = 0;
-                printf(">                                                  \r>%s \r", szConsoleInput);
+                i                               = strlen(pConsole->szConsoleInput);
+                pConsole->szConsoleInput[i]     = ch;
+                pConsole->szConsoleInput[i + 1] = 0;
+                printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
                 break;
         }
     }
@@ -473,14 +505,22 @@ void CServer::kick_user(const char *name, const char *reason) {
     return;
 }
 /////////////////////////////////////////
-void CServer::add_user(const char *in, u_char ia) { pSQLite->db_query(va("insert into users (username,access) values ('%s',%d)", in, ia)); }
+void CServer::add_user(const char *in, u_char ia) {
+    // add dlcs_db add player query
+    // pSQLite->db_query(va("insert into users (username,access) values ('%s',%d)", in, ia));
+}
 /////////////////////////////////////////
-void CServer::remove_user(const char *szName) { pSQLite->db_query("delete * from users where usersname = '%s'", szName); }
+void CServer::delete_user(const char *szName) {
+    // add dlcs_db delete user query
+    // pSQLite->db_query("delete * from users where usersname = '%s'", szName);
+}
 /////////////////////////////////////////
-void CServer::user_access(const char *in_user_name, int in_access) {
+void CServer::set_user_access(const char *in_user_name, int in_access) {
     if (in_access > 255) return;
     if (in_access < 0) return;
-    pSQLite->db_query("update users set access=%d where username='%s'", in_access, in_user_name);
+
+    // pSQLite->db_query("update users set access=%d where username='%s'", in_access, in_user_name);
+
     C_GSC *c = get_client(in_user_name);
     if (c) c->access = in_access;
 }
@@ -602,14 +642,16 @@ void CServer::console_command(char *command) {
 
         ///////////////////////////////////////////////////////////////////////////
 
-        if ((dlcs_strcasecmp(v[0].c_str(), "/sql"))) {
-            pSQLite->db_queryl(targs);
+        if ((dlcs_strcasecmp(v[0].c_str(), "/db"))) {
+            // call dlcs_db functions to manipulate database configuration
+            // pSQLite->db_queryl(targs);
         }
 
         //////////////////////////////////////////
 
         if ((dlcs_strcasecmp(v[0].c_str(), "/users"))) {
-            pSQLite->db_queryl("select username,access from users");
+            //  call new CServer class function to return user list
+            // pSQLite->db_queryl("select username,access from users");
         }
 
         //////////////////////////////////////////
@@ -626,17 +668,17 @@ void CServer::console_command(char *command) {
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/remove_user")) {
-            if (v.size() > 1) remove_user((char *)v[1].c_str());
+        if (dlcs_strcasecmp(v[0].c_str(), "/delete_user")) {
+            if (v.size() > 1) delete_user((char *)v[1].c_str());
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/access")) {
+        if (dlcs_strcasecmp(v[0].c_str(), "/set_user_access")) {
             if (v.size() > 2) {
                 int dx = atoi(v[2].c_str());  // dx is access
                 if ((dx < 0) || (dx > 255)) dx = 0;
-                user_access((char *)v[1].c_str(), dx);
+                set_user_access((char *)v[1].c_str(), dx);
             }
         }
 
@@ -694,14 +736,14 @@ void CServer::console_command(char *command) {
         //////////////////////////////////////////
 
         if (dlcs_strcasecmp(v[0].c_str(), "/nuy")) {
-            r_data.b_new_accounts = true;
+            pConsole->pCVars->set_cvar("b_new_accounts", true);
             LogEntry("Now accepting new users");
         }
 
         //////////////////////////////////////////
 
         if (dlcs_strcasecmp(v[0].c_str(), "/nun")) {
-            r_data.b_new_accounts = false;
+            pConsole->pCVars->set_cvar("b_new_accounts", false);
             LogEntry("New users will not be accepted");
         }
 
@@ -724,62 +766,32 @@ void CServer::console_command(char *command) {
     }
 }
 /////////////////////////////////////////
-char *CServer::GetConsoleHistory(int x) {
-    if (ConsoleHistory) return (ConsoleHistory[x].text);
-    return (char *)(va("con history error![%d]", x));
-}
+// char *CServer::GetConsoleHistory(int x) {
+// if (SConsoleHistory) return (SConsoleHistory[x].text);
+// return (char *)(va("con history error![%d]", x));
+//}
 /////////////////////////////////////////
-void CServer::SetupConsoleHistory(void) {
-    ConsoleHistory = 0;
-    ConsoleHistory = new ConHistory[MAX_CONSOLE_INPUT_BUFFER + 1];
-    for (int i = 0; i < MAX_CONSOLE_INPUT_BUFFER; i++) memset(ConsoleHistory[i].text, 0, 1024);
-    ConsoleHistoryPosition = 0;
-}
+// void CServer::SetupConsoleHistory(void) {
+// SConsoleHistory = 0;
+// SConsoleHistory = new stConHistory[MAX_CONSOLE_INPUT_BUFFER + 1];
+// for (int i = 0; i < MAX_CONSOLE_INPUT_BUFFER; i++) memset(SConsoleHistory[i].text, 0, _DLCS_CONSOLE_ENTRY_SIZE);
+// iConsoleHistoryPosition = 0;
+//}
 /////////////////////////////////////////
-void CServer::AddToConsoleHistory(char *s) {
-    for (int i = MAX_CONSOLE_INPUT_BUFFER; i > 0; i--) strcpy(ConsoleHistory[i].text, ConsoleHistory[i - 1].text);
-    strcpy(ConsoleHistory[0].text, s);
-}
+// void CServer::AddToConsoleHistory(char *s) {
+// TODO: Access pConsole (add history)
+// for (int i = MAX_CONSOLE_INPUT_BUFFER; i > 0; i--) strcpy(SConsoleHistory[i].text, SConsoleHistory[i - 1].text);
+// strcpy(SConsoleHistory[0].text, s);
+//}
 /////////////////////////////////////////
-void CServer::RemoveConsoleHistory(void) {
-    delete[] ConsoleHistory;
-    ConsoleHistory = 0;
-}
-/////////////////////////////////////////
-bool CServer::load_data(void) {
-    FILE *         fp;
-    char           In[256];
-    vector<string> v;
-    fp = fopen("server.ini", "rt");
-    if (!fp) return false;
-    while (1) {
-        if (!fgets(In, 255, fp)) break;
-        if (In[strlen(In) - 1] == '\n') In[strlen(In) - 1] = 0;
+// void CServer::RemoveConsoleHistory(void) {
+// delete[] SConsoleHistory;
+// SConsoleHistory = 0;
+//}
 
-        v = dlcs_explode("=", In);
-
-        if (v.size() == 2) {
-            if (dlcs_strcasecmp(v[0].c_str(), "s_name")) strcpy(r_data.s_name, v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "s_admin_email")) strcpy(r_data.s_admin_email, v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "s_motd")) strcpy(r_data.s_motd, v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "s_website_link")) strcpy(r_data.s_website_link, v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "b_new_accounts")) r_data.b_new_accounts = atoi(v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "i_port")) r_data.i_port = atoi(v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "i_max_clients")) r_data.i_max_clients = atoi(v[1].c_str());
-            if (dlcs_strcasecmp(v[0].c_str(), "b_require_website")) r_data.b_require_website = atoi(v[1].c_str());
-        }
-    }
-
-    fclose(fp);
-
-    if (r_data.i_max_clients == 0) r_data.i_max_clients = 2000;
-
-    LogEntry("server.ini loaded");
-
-    return true;
-}
 /////////////////////////////////////////
 bool CServer::save_data(void) {
+    /*
     FILE *fp;
     fp = fopen("server.ini", "wt");
     if (!fp) return false;
@@ -793,9 +805,9 @@ bool CServer::save_data(void) {
     fputs(va("i_max_clients=%d\n", r_data.i_max_clients), fp);
     fputs(va("b_require_website=%d\n", r_data.b_require_website), fp);
     fclose(fp);
-
     LogEntry("server.ini saved");
-
+    */
+    LogEntry("server.ini not saved, function needs to be reworked");
     return true;
 }
 /////////////////////////////////////////
@@ -823,13 +835,13 @@ void CServer::create_guid(const char *cin, char *cout) {
 /////////////////////////////////////////
 /*
 void CServer::ReportToMaster(void){
-    static bool starter=false; static long dwReportTimer=GetTickCount();
-     //if(!dlcs_strcasecmp(gmvar("sys.master_report"),"yes")) return;
-         if(!pFMMS_Connection) return;
-    if((GetTickCount()-dwReportTimer)<15000) {
-        if(!starter) starter=true; else return;
-    }
-    dwReportTimer=GetTickCount(); //LogEntry("Reported to master");
-    pFMMS_Connection->Connect("127.0.0.1","40404");
+static bool starter=false; static long dwReportTimer=GetTickCount();
+ //if(!dlcs_strcasecmp(gmvar("sys.master_report"),"yes")) return;
+     if(!pFMMS_Connection) return;
+if((GetTickCount()-dwReportTimer)<15000) {
+    if(!starter) starter=true; else return;
+}
+dwReportTimer=GetTickCount(); //LogEntry("Reported to master");
+pFMMS_Connection->Connect("127.0.0.1","40404");
 }
 */
