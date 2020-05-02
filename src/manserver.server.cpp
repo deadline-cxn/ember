@@ -64,10 +64,21 @@ void CServer::StartUp(void) {
 
     pConsole = new C_CONS(pLog, "server.ini");  // Initialize Console for it has cvars built in
 
-    LogEntry("name  = [%s]", pConsole->pCVars->get_cvar("s_name"));
-    LogEntry("admin = [%s]", pConsole->pCVars->get_cvar("s_admin_email"));
-    LogEntry("web   = [%s]", pConsole->pCVars->get_cvar("s_website_link"));
-    LogEntry("MOTD  = [%s]", pConsole->pCVars->get_cvar("s_motd"));
+    dlcsm_make_str(szTemp_s_name);
+    pConsole->pCVars->get_cvar_s("s_name", szTemp_s_name);
+    dlcsm_make_str(szTemp_s_admin_email);
+    pConsole->pCVars->get_cvar("s_admin_email");
+    dlcsm_make_str(szTemp_s_website_link);
+    pConsole->pCVars->get_cvar("s_website_link", szTemp_s_website_link);
+    dlcsm_make_str(szTemp_s_motd);
+    pConsole->pCVars->get_cvar("s_motd", szTemp_s_motd);
+
+    LogEntry("name         = [%s]", szTemp_s_name);
+    LogEntry("admin_email  = [%s]", szTemp_s_admin_email);
+    LogEntry("website_link = [%s]", szTemp_s_website_link);
+    LogEntry("motd         = [%s]", szTemp_s_motd);
+
+    pConsole->pCVars->bRegisterFunction("kill", (CVarSet::strfunc_t *)&CServer::kick_user);
 
     dfGUI_CHAT();
 
@@ -92,7 +103,8 @@ void CServer::StartUp(void) {
         LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
 
     dlcs_suspend_power_management();
-    SetupConsoleHistory();
+
+    // SetupConsoleHistory();
 
     /*
 
@@ -160,15 +172,17 @@ void CServer::StartUp(void) {
     DEL(pc);
 }
 
-bool CServer::bNetStart() {
+bool CServer::bNetStartUp() {
     int iPort;
     iPort = (int)pConsole->pCVars->get_cvar("i_port");
     NET_Init();
     initSocket();
     if ((Listen(iPort, true)) == -1) {
-        LogEntry("ERROR LISTENING ON PORT %d\n", r_data.i_port);
+        LogEntry("ERROR LISTENING ON PORT %d\n", iPort);
+        return false;
     } else {
         LogEntry("Listening on port [%d]", iGetLocalPort());
+        return true;
     }
 }
 
@@ -177,7 +191,7 @@ bool CServer::bNetStart() {
 void CServer::shut_down(void) {
     save_data();  ////////////// MAP STUFF
     save_world();
-    RemoveConsoleHistory();
+    // RemoveConsoleHistory();
 
     // DEL(pSQLite); // add dlcs_db shutdown (DEL)
 

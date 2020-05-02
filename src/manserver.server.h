@@ -7,6 +7,7 @@
 #include "c_gui_chat_enum.h"
 #include "c_log.h"
 #include "c_net.h"
+#include "c_var.h"
 #include "dlcs.h"
 #include "manserver.client.h"
 #include "mantra_common.h"
@@ -59,15 +60,15 @@ class CServer : public CCSocket {
     long    dwStartTime;
     C_CONS *pConsole;
 
-    void        StartUp(void);
-    bool        bNetStartup(void);
-    void        shut_down(void);
-    void        cycle(void);
-    bool        check_restart(void);
-    void        console_command(char *command);
-    void        SetupConsoleHistory(void);
-    void        RemoveConsoleHistory(void);
-    void        AddToConsoleHistory(char *s);
+    void StartUp(void);
+    bool bNetStartUp(void);
+    void shut_down(void);
+    void cycle(void);
+    bool check_restart(void);
+    void console_command(char *command);
+    // void SetupConsoleHistory(void);
+    // void        RemoveConsoleHistory(void);
+    // void        AddToConsoleHistory(char *s);
     char *      GetConsoleHistory(int x);
     void        do_keyboard(void);
     bool        save_data(void);
