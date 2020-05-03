@@ -1,6 +1,8 @@
 /////////////////////////////////////////
 #include "manserver.server.h"
 
+#include "c_var.h"
+
 /////////////////////////////////////////
 CServer::CServer(bool bIsQuiet) {
     pLog         = 0;
@@ -9,6 +11,7 @@ CServer::CServer(bool bIsQuiet) {
     bRestart     = false;
     pFirstPlayer = 0;
     pConsole     = 0;
+    pCVars       = 0;
 
     randomize();
 
@@ -51,88 +54,117 @@ bool CServer::check_restart(void) {
 
 /////////////////////////////////////////
 
-void CServer::StartUp(void) {
+int CServer::StartUp(void) {
+    ////////////////////////////////////////////////////////////////////////////
+    // Initialize some variables
     dwStartTime = dlcs_get_tickcount();
-
-    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
-    LogEntry("BUILD: %s %s", __DATE__, __TIME__);
-
-    // LogEntry("STARTTIME:%s", dlcs_timestamp(dwStartTime)); // TODO: Store proper timestamp for server start time
+    int iRetVal = false;
 
     ////////////////////////////////////////////////////////////////////////////
-    // Setup server variables
-
-    pConsole = new C_CONS(pLog, "server.ini");  // Initialize Console for it has cvars built in
-
-    dlcsm_make_str(szTemp_s_name);
-    pConsole->pCVars->get_cvar_s("s_name", szTemp_s_name);
-    dlcsm_make_str(szTemp_s_admin_email);
-    pConsole->pCVars->get_cvar("s_admin_email");
-    dlcsm_make_str(szTemp_s_website_link);
-    pConsole->pCVars->get_cvar("s_website_link", szTemp_s_website_link);
-    dlcsm_make_str(szTemp_s_motd);
-    pConsole->pCVars->get_cvar("s_motd", szTemp_s_motd);
-
-    LogEntry("name         = [%s]", szTemp_s_name);
-    LogEntry("admin_email  = [%s]", szTemp_s_admin_email);
-    LogEntry("website_link = [%s]", szTemp_s_website_link);
-    LogEntry("motd         = [%s]", szTemp_s_motd);
-
-    pConsole->pCVars->bRegisterFunction("kill", (CVarSet::strfunc_t *)&CServer::kick_user);
-
-    dfGUI_CHAT();
-
-    dlcsm_make_str(t);
-
-    /*  LogEntry("            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»");
-        LogEntry("            º.  °°°°°° °°   °° °°°°°. °°°°°° °°°°°    º");
-        LogEntry("            º   °°     °°° °°° °°  °° °° .   °° .°°   º");
-        LogEntry("            º   ±±±±   ±±°°°±± °°°±±  ±°°°±  °°  ±°.  º");
-        LogEntry("            º   ²±    .±± ± ±± ±±  ²± ±±     ±±²²±    º");
-        LogEntry("            º  .²²     ²².  ²² ±²  ²² ²²     ²²  ²² . º");
-        LogEntry("            º   ²ÛÛ²²Û ÛÛ   ²Û ²ÛÛ²Û  Û²²Û²² Û²  Û²   º");
-        LogEntry("            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼");
-        LogEntry("EGS Version (%s) Patch (%s) Net Revision (%s) %s",VERSION,EGS_REVISION,NET_REVISION,COPYRIGHT);
-        LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
-        LogEntry("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
-        LogEntry("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
-        LogEntry("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
-        LogEntry("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
-        LogEntry("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
-        LogEntry("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
-        LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°"); */
-
-    dlcs_suspend_power_management();
-
-    // SetupConsoleHistory();
-
+    // Log title stuff
     /*
-
-    // pSQLite      = 0; // add dlcs_db
-    // memset(&r_data, 0, sizeof(r_data));
-
-    // add dlcs_db initialization
-
-        pSQLite = new C_SQLite();  // Open User Database
-
-        if (pSQLite) {
-            LogEntry("SQLite started");
-            pSQLite->pLog = pLog;
-            pSQLite->OpenDB("data_new.sqlite");
-            LogEntry("SQLite opened DB data_new.sqlite");
-        }
+    LogEntry("                                 ░▒");
+    LogEntry("     ░▓▓█▓▓▓▓▒▒░          ░▓█");
+    LogEntry("   ░▓████▒          █▒  █▒ ▒█▓                            ░░");
+    LogEntry("   ▒███▓░        ░██▓ ▓██ ▒██▓▓▒░░ ░▓████▓▓▒░ ▓█████▒");
+    LogEntry("   ████████▓▒ ░▓███████░████████▒███▒░░██▒▓██▓▒██▓");
+    LogEntry("  ░██▓         ░██░███ ████▓   ░██▒▓██████░ ▒██▓▒");
+    LogEntry("  ░███▓░      ▓██ ░█▒  ████▒░▒▓███▒▒██░      ▓██░");
+    LogEntry("   ░▒▓█████████▓   ░   ██▒██████▒░░▒▓██▓▒░░▓█");
+    */
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
+    LogEntry("BUILD: %s %s", __DATE__, __TIME__);
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    /*
+    LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
+    LogEntry("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
+    LogEntry("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
+    LogEntry("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
+    LogEntry("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
+    LogEntry("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
+    LogEntry("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
+    LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°");
     */
 
+    ////////////////////////////////////////////////////////////////////////////
+    // Log start time... Todo: Store proper timestamp for server start time
+    // LogEntry("STARTTIME:%s", dlcs_timestamp(dwStartTime));
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Setup CVars
+    LogEntry("Initializing CVars...");
+    pCVars = new CVarSet(pLog);
+
+    // Define default variables
+    LogEntry("Setting default CVar values...");
+    pCVars->set_cvar("i_world_save_timer", "300000");  // 5 minutes tick time
+    // Overwrite defaults from server.ini
+    LogEntry("Loading server.ini CVar values...");
+    pCVars->bLoad("server.ini");
+    LogEntry("CVars initialized...");
+    /*
+        LogEntry("s_name         = [%s]", (char *)pCVars->get_cvar("s_name"));
+        LogEntry("s_admin_email  = [%s]", (char *)pCVars->get_cvar("s_admin_email"));
+        LogEntry("s_website_link = [%s]", (char *)pCVars->get_cvar("s_website_link"));
+        LogEntry("s_motd         = [%s]", (char *)pCVars->get_cvar("s_motd"));
+        */
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Initialize Console
+    LogEntry("Initializing Console...");
+    pConsole = new C_CONS(pLog, pCVars);  // Initialize Console for it has cvars built in
+                                          // Todo: SetupConsoleHistory
+                                          // SetupConsoleHistory();
+                                          // Todo: Register Server Functions
+                                          // pCVars->bRegisterFunction("kick_all", kick_all);
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Attempt to disable power management
+    // Todo: make this a configurable option under CVars
+
+    LogEntry("Disabling power management...");
+    dlcs_suspend_power_management();
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Attempt to Initialize the Network
+
+    LogEntry("Initializing Network...");
+    iRetVal = bNetStartUp();
+    if (!iRetVal) {
+        return iRetVal;
+        LogEntry("Network initialization FAILURE!");
+    } else {
+        LogEntry("Network initialized...");
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Initialize Chat Channels
+    LogEntry("Initializing Default Chat Channels...");
+    dfGUI_CHAT();
+    LogEntry("Default chat channels initialized...");
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Initialize Database Todo: finish this section
+    LogEntry("Initializing Database...");
+    /* pSQLite      = 0; // add dlcs_db
+    // memset(&r_data, 0, sizeof(r_data));
+    // add dlcs_db initialization
+    pSQLite = new C_SQLite();  // Open User Database
+    if (pSQLite) {
+        LogEntry("SQLite started");
+        pSQLite->pLog = pLog;
+        pSQLite->OpenDB("data_new.sqlite");
+        LogEntry("SQLite opened DB data_new.sqlite");
+    }
     // pSQLite->db_query("update users set chat_channels = 'SYSTEM'",0);
     // pSQLite->db_query("alter table users add column NAME char(256) default 'SYSTEM'");
-
-    /*
         if (!pSQLite->db_query("select * from users")) {
             LogEntry("=====================[WARNING! ERROR!]======================");
             LogEntry("Database [data.sqlite] empty or corrupt");
             LogEntry("=====================[WARNING! ERROR!]======================");
             bQuit = true;
-
             // where username='seth'
             // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
             // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
@@ -148,33 +180,40 @@ void CServer::StartUp(void) {
             // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
             // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
         }
-
     */
+    LogEntry("Database initialized... (TODO PLACEHOLDER TEXT)");
 
+    ////////////////////////////////////////////////////////////////////////////
+    // Todo: finish load_world function
+    LogEntry("Initializing World...");
     load_world();
+    LogEntry("World loaded...");
 
-    LogEntry("(Type '/help' for help on commands)");
-    // LogEntry("АБВллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллВБА");
+    ////////////////////////////////////////////////////////////////////////////
+    // Todo: Add in character loading for NPC's and such here
+    LogEntry("Initializing NPCs...");
+    /*  C_GSC *c_x = 0;
+        c_x        = new C_GSC(pLog, this);
+        strcpy(c_x->username, "seth");
+        c_x->load();
+        CMPCharacter *pc = new CMPCharacter(c_x);
+        // pc->load(pSQLite);  // add dlcs_db features
+        pc->gender                = 1;
+        pc->health->current_value = 2;
+        DEL(c_x);
+        DEL(pc);
+        */
+    LogEntry("NPC's initialized... (TODO PLACEHOLDER TEXT)");
 
-    C_GSC *c_x = 0;
-    c_x        = new C_GSC(pLog, this);
-    strcpy(c_x->username, "seth");
-
-    c_x->load();
-
-    CMPCharacter *pc = new CMPCharacter(c_x);
-
-    // pc->load(pSQLite);  // add dlcs_db features
-
-    pc->gender                = 1;
-    pc->health->current_value = 2;
-    DEL(c_x);
-    DEL(pc);
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    LogEntry("CServer::StartUp... FINISHED!            (Type '/help' for help on commands)");
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    return iRetVal;
 }
 
 bool CServer::bNetStartUp() {
     int iPort;
-    iPort = (int)pConsole->pCVars->get_cvar("i_port");
+    iPort = atoi((const char *)pConsole->pCVars->get_cvar("i_port"));
     NET_Init();
     initSocket();
     if ((Listen(iPort, true)) == -1) {
@@ -187,36 +226,48 @@ bool CServer::bNetStartUp() {
 }
 
 /////////////////////////////////////////
-
 void CServer::shut_down(void) {
-    save_data();  ////////////// MAP STUFF
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    LogEntry("Shutting down the server...");
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    LogEntry("CServer::shut_down: Saving World");
     save_world();
-    // RemoveConsoleHistory();
-
+    LogEntry("CServer::shut_down: Saving CVars");
+    save_data();
+    LogEntry("CServer::shut_down: Cleaning up Console");
+    DEL(pConsole);  // RemoveConsoleHistory();
+    LogEntry("CServer::shut_down: Cleaning up CVars");
+    DEL(pCVars);
+    LogEntry("CServer::shut_down: Cleaning up Players");
+    DEL(pFirstPlayer);
+    LogEntry("CServer::shut_down: Cleaning up Database");
     // DEL(pSQLite); // add dlcs_db shutdown (DEL)
 
     ///////////////////////////////////////////
     /*
-        LogEntry("°±²ÛÛÛÛÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÛÛÛÛ²±°");
-        LogEntry("        ÜÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÜ ");
-        LogEntry("        Û        ÜÛÛÛÜ                      ÜÛÛÛÜ        Û ");
-        LogEntry("        Û        ÛúÛÜÛ    ßÛÜß ß Û   Û      ÛÜÛúÛ        Û ");
-        LogEntry("        Û        ßÛÛÛß     Û Û Û Û   Û      ßÛÛÛß        Û ");
-        LogEntry("        Û         ÝÝÞ      ß Û ß ßßß ßßß     ÝÞÞ         Û ");
-        LogEntry("        Û         þÜþ     Server Killed!     þÜþ         Û ");
-        LogEntry("        ßÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛß ");
-        LogEntry("°±²ÛÛÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛÛÛ²±°");
-        LogEntry("    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°");
-        LogEntry("         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß");
+        LogEntry("==================================================================================================");
+        LogEntry("                                                   ░░░   ░░░                        ░▒▒░ ");
+        LogEntry("         ▒▓█████████▓▒     ░░    ▒▒    ░░░  ▓▓▓  ░██▓                      ▒██▒");
+        LogEntry("         ▒▓█████████▓▒     ▓█░   ▓█    ▓██░ ███  ▒███                     ▓██▓");
+        LogEntry("       ░▓█████████████▓▒  ▓██ ░███   ▒██░ ███  ▒███                     ▓██▓");
+        LogEntry("       ▒███░  ░██▓  ░██▓▒  ▓██████▒    ░░  ███  ░███░                   ░███▓");
+        LogEntry("       ▒█████████▓  ▒██▒   ▓████▓░   ░▒▒░ ███   ███▒  ░▓▓▓███▒ ░▒██████▓");
+        LogEntry("       ▓███████████████░  ▓█████▒   ▒██▒ ███   ███▓  ▒▓██░ █▓░███░▒███▓");
+        LogEntry("       ░▓▓███████████▓▒   ▓██▓▒██    ██   ███   ███▓  ▓█▓  ▓██▒██░  ▒██▓");
+        LogEntry("          ▓█▒▒ ░░▒▒▒█▒       ▓██ ░▒██▓ ██▓  ███▒  ████░▓████▓▒  ██   ░██▓");
+        LogEntry("          ▓█▒▒ ░░▒▒▒▒        ▒██   ░██░▒██▒  ████░ ████▓▓██▓    ▒███▒░▒███░");
+        LogEntry("             ▒░░   ░░ ░        ░▓▒    ▒█░░██▒   ▒███░ ▒███▓▒▒███▒ ░▓████████▓░");
+        LogEntry("          ░▒▓▓▓▓▓▓▓▒░       ░▒▒▒░░░▓█▓▒░  ░░░▒▓▓░░  ░▒▒░ ░▓████▓░ ░▒██▓▓▒░");
+        LogEntry(" ");
+        LogEntry("==================================================================================================");
         */
-
-    LogEntry("Server killed");
+    LogEntry("////////////////////////////////////////////////////////////////////////////");
+    LogEntry("Server Killed!");
 }
+
 /////////////////////////////////////////
 void CServer::do_keyboard() {
     u_char ch = 0;
-    int    i;
-
     if (_kbhit()) {
         ch = _getch();
         switch (ch) {
@@ -229,29 +280,24 @@ void CServer::do_keyboard() {
 
             case 13:
             case 10:
-                /*
+                /* TODO: Re Add History
+                AddToConsoleHistory(szConsoleInput);
+                iConsoleHistoryPosition = 0;                    */
 
-                    AddToConsoleHistory(szConsoleInput);
-                    iConsoleHistoryPosition = 0;
-
-                    LogEntry(">%s", szConsoleInput);
-
-                    if (szConsoleInput[0] == 0)
-                        break;
-                    else {
-                        console_command(szConsoleInput);
-                        memset(szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
-                    }
-                    */
+                LogEntry(">%s", pConsole->szConsoleInput);
+                if (pConsole->szConsoleInput[0] == 0)
+                    break;
+                else {
+                    console_command(pConsole->szConsoleInput);
+                    memset(pConsole->szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
+                }
                 break;
 
             case 27: break;
 
             case 8:  // backspace
-                i                               = strlen(pConsole->szConsoleInput);
-                pConsole->szConsoleInput[i - 1] = 0;
+                pConsole->szConsoleInput[strlen(pConsole->szConsoleInput) - 1] = 0;
                 printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
-
                 break;
 
             case 21:  // ctrl-U
@@ -292,7 +338,7 @@ void CServer::do_keyboard() {
                 break;
 
             default:
-                i                               = strlen(pConsole->szConsoleInput);
+                int i                           = strlen(pConsole->szConsoleInput);
                 pConsole->szConsoleInput[i]     = ch;
                 pConsole->szConsoleInput[i + 1] = 0;
                 printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
@@ -300,136 +346,115 @@ void CServer::do_keyboard() {
         }
     }
 }
+
 /////////////////////////////////////////
 void CServer::cycle(void) {
     static C_GSC *pClient = 0;
-
     if (pClient == 0) pClient = pFirstPlayer;
     if (pClient) {
         pClient->do_net();
         pClient = pClient->pNext;
     }
-
     check_restart();
     do_keyboard();
     accept_connection();
     do_world();
+    save_world();
     purge_clients();
 }
+
 /////////////////////////////////////////
 void CServer::accept_connection(void) {
-    C_GSC *client;
-
-    int  iLength;
-    int  iFlags, iHelp;
-    int  iAcceptSocket;
-    char cType;
-
+    C_GSC *            client;
+    int                iLength;
+    int                iFlags, iHelp;
+    int                iAcceptSocket;
+    char               cType;
     struct sockaddr_in ServerAddr;
     memset(&ServerAddr, 0, sizeof(ServerAddr));
-
     CPacket Send(NET_DATAGRAMSIZE);
     CPacket Recv(NET_DATAGRAMSIZE);
-
     iAcceptSocket = CheckNewConnections();
     if (iAcceptSocket == -1) return;
-
     if ((iLength = nRecv(iAcceptSocket, Recv.pGetPacketBuffer(), Recv.iGetMaxSize(), (struct sockaddr *)&ServerAddr)) <= 0) return;
-
     Recv.SetCurSize(iLength);
-
     iHelp  = ntohl(Recv.iRead());
     iFlags = iHelp & (~NET_FLAG_LENGTH_MASK);
     iHelp &= NET_FLAG_LENGTH_MASK;
-
     if (!(iFlags & NET_FLAG_CTL)) return;
     if (iLength != iHelp) return;
     if (iLength < (int)sizeof(int) * 2) return;
-
     Recv.iRead();
     cType = Recv.cRead();
-
     switch (cType) {
         case CTL_CONNECT:
-
             if (strcmp(Recv.pRead(), "MANTRA")) {
                 LogEntry("Fail attempt, not MANTRA packet");
                 reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Ember Game Server");
                 return;
             }
-
             if (Recv.iRead() != atoi(MANTRA_NET_REVISION)) {
                 reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server uses newer protocol! Update available.");
                 return;
             }
-
             // TODO: Add reject (PRIVATE SERVER)
-
             // create new client object
             client = new C_GSC(pLog, this);
             if (!client) {
                 LogEntry("manserver.server.cpp -> Can't create client");
                 return;
             }
-
             if (!client) {
                 reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server can't assign a new socket!");
                 return;
             }
-
             memcpy(&client->ToAddr, &ServerAddr, sizeof(ServerAddr));
-
             client->iSocket = zOpenSocket(0);
             if (client->iSocket == -1) {
                 DEL(client);
                 reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server can't assign new socket!");
                 return;
             }
-
             Send.Reset();
             Send.Write(0);
             Send.Write(0);
             Send.Write((char)CTL_ACCEPT);
             Send.Write(client->iGetLocalPort());
             FinishCtlPacket(&Send);
-
             if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1) {
                 DEL(client);
                 LogEntry("s_server.cpp -> CSocket::pAccept() -> error making a new connection");
                 return;
             }
-
             client->bCanSend   = true;
             client->bConnected = true;
-
             break;
-
         case CTL_PING:
-
             Send.Reset();
             Send.Write(0);
             Send.Write(0);
             Send.Write((char)CTL_PING);
             Send.Write((long)Recv.dwRead());
             FinishCtlPacket(&Send);
-
             if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1) {
                 LogEntry("s_server.cpp -> respond to pingrequest failed");
             }
             return;
-
-        case CTL_REJECT: LogEntry("CTL_REJECT ?"); return;
-
+        case CTL_REJECT:
+            LogEntry("CTL_REJECT ?");  //
+            return;
         default:
             reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Mantra gameserver");
             LogEntry("UNKNOWN CTL_PACKET (%d) received", cType);
             return;
     }
-
-    // insert client into client list
-    if (pFirstPlayer) client->pNext = pFirstPlayer;
+    // Move client to the front of the list (can get last user logged in information from pFirstPlayer)
+    if (pFirstPlayer) {
+        client->pNext = pFirstPlayer;  //
+    }
     pFirstPlayer = client;
 }
+
 /////////////////////////////////////////
 void CServer::reject_connection(int iReSocket, sockaddr *pReAddr, const char *reason) {
     CPacket Send(NET_DATAGRAMSIZE);
@@ -444,6 +469,7 @@ void CServer::reject_connection(int iReSocket, sockaddr *pReAddr, const char *re
         LogEntry("Reject message failed (%s)", reason);
     }
 }
+
 /////////////////////////////////////////
 void CServer::send_all(CPacket *pPacket, float fBlockTime) {
     C_GSC *pClient;
@@ -453,10 +479,10 @@ void CServer::send_all(CPacket *pPacket, float fBlockTime) {
         pClient = pClient->pNext;
     }
 }
+
 /////////////////////////////////////////
 void CServer::disconnect(C_GSC *client, const char *reason) {
     CPacket Send(NET_DATAGRAMSIZE);
-
     if (!client) return;
     if (client) {
         Send.Reset();
@@ -465,24 +491,28 @@ void CServer::disconnect(C_GSC *client, const char *reason) {
         Send.Write((char *)reason);
         client->SendUnreliableMessage(&Send);
     }
-
     Send.Reset();
     Send.Write((char)NM_OTHER_CLIENT_SHUTDOWN);
     Send.Write((char *)client->session_id);
     send_all(&Send, 0);
-
     client->bDelete = true;
 }
+
 /////////////////////////////////////////
 void CServer::save_world(void) {
-    static long dwSaveTimer = dlcs_get_tickcount();
-    if ((dlcs_get_tickcount() - dwSaveTimer) > 100000) {
+    int         iWorldSaveTimer = atoi((const char *)pCVars->get_cvar("i_world_save_timer"));
+    static long dwSaveTimer     = dlcs_get_tickcount();
+    if ((dlcs_get_tickcount() - dwSaveTimer) > iWorldSaveTimer) {
         dwSaveTimer = dlcs_get_tickcount();
-        LogEntry("World saved...");
+        LogEntry("World data saved i_world_save_timer=[%d]...", iWorldSaveTimer);
     }
 }
+
 /////////////////////////////////////////
-void CServer::load_world(void) { LogEntry("World loaded..."); }
+void CServer::load_world(void) {
+    LogEntry("World data loaded...");  //
+}
+
 /////////////////////////////////////////
 C_GSC *CServer::get_client(const char *user_name) {
     C_GSC *find = pFirstPlayer;
@@ -492,12 +522,13 @@ C_GSC *CServer::get_client(const char *user_name) {
     }
     return 0;
 }
+
 /////////////////////////////////////////
 void CServer::kick_all(const char *reason) {
     C_GSC *pClient;
     pClient = pFirstPlayer;
     if (!pClient) return;
-    LogEntry("Kicking online players");
+    LogEntry("Kicking all online players");
     while (pClient) {
         LogEntry("       ....%s", pClient->username);
         disconnect(pClient, reason);
@@ -505,87 +536,108 @@ void CServer::kick_all(const char *reason) {
     }
     LogEntry("All players kicked!");
 }
+
 /////////////////////////////////////////
-void CServer::kick_user(const char *name, const char *reason) {
-    C_GSC *client = pFirstPlayer;
-    while (client) {
-        if (dlcs_strcasecmp(client->username, name)) {
-            disconnect(client, reason);
+void CServer::kick_user(const char *format, ...) {
+    dlcsm_make_sizestr(buffer, _DLCS_CONSOLE_ENTRY_SIZE);
+    dlcsm_make_textstr(szUserName);
+    dlcsm_make_textstr(szReason);
+    va_list args;
+    va_start(args, format);
+    vsprintf(buffer, format, args);
+    // perror(buffer);
+    va_end(args);
+
+    // LogEntry("CServer::kick_user(const char *format, ...) %s", buffer);
+
+    dlcsm_explode_list(explode_list);
+    explode_list = dlcs_explode(" ", buffer);
+
+    vector<string>::iterator ex_data = explode_list.begin();
+
+    if (explode_list.size() == 1) {
+        strcpy(szUserName, ex_data->c_str());
+        strcpy(szReason, "Server admin kicked you.");
+    } else {
+        strcpy(szUserName, ex_data->c_str());
+        for (vector<string>::iterator ex_data_2 = explode_list.begin() + 1; ex_data_2 != explode_list.end(); ++ex_data_2) {
+            strcat(szReason, va("%s ", ex_data_2->c_str()));
+        }
+    }
+
+    dlcsm_rtrim(' ', szReason);
+
+    LogEntry("CServer::kick_user: szUserName[%s] szReason[%s]", szUserName, szReason);
+
+    C_GSC *pUser = pFirstPlayer;
+    while (pUser) {
+        if (dlcs_strcasecmp(pUser->username, szUserName)) {
+            disconnect(pUser, szReason);
+            LogEntry("CServer::kick_user: Admin kicked user [%s]", szReason);
             return;
         }
-        client = client->pNext;
+        pUser = pUser->pNext;
     }
-    LogEntry("%s is not online!", name);
+
+    LogEntry("CServer::kick_user: %s is not online!", szUserName);
     return;
 }
+
 /////////////////////////////////////////
 void CServer::add_user(const char *in, u_char ia) {
     // add dlcs_db add player query
     // pSQLite->db_query(va("insert into users (username,access) values ('%s',%d)", in, ia));
 }
+
 /////////////////////////////////////////
 void CServer::delete_user(const char *szName) {
     // add dlcs_db delete user query
     // pSQLite->db_query("delete * from users where usersname = '%s'", szName);
 }
+
 /////////////////////////////////////////
 void CServer::set_user_access(const char *in_user_name, int in_access) {
     if (in_access > 255) return;
     if (in_access < 0) return;
-
     // pSQLite->db_query("update users set access=%d where username='%s'", in_access, in_user_name);
-
     C_GSC *c = get_client(in_user_name);
     if (c) c->access = in_access;
 }
+
 /////////////////////////////////////////
 void CServer::chat(C_GSC *pClient, const char *from, const char *msg, int channel) {
     CPacket Send(NET_DATAGRAMSIZE);
-
     Send.Reset();
     Send.Write((char)NM_MESSAGE);
-
     Send.Write((char *)msg);
     Send.Write((char *)from);
     Send.Write((int)channel);  // CHANNEL
     if (pClient) Send.Write((char *)pClient->session_id);
-
     switch (channel) {
         case CHANNEL_CLAN: break;
-
         case CHANNEL_GENERAL: break;
-
         case CHANNEL_TRADE: break;
-
         case CHANNEL_SAY:
         case CHANNEL_YELL:
         case CHANNEL_LOCAL: break;
-
         case CHANNEL_PARTY: break;
-
         case CHANNEL_RAID: break;
-
         case CHANNEL_SYSTEM: send_all((CPacket *)&Send, 0); break;
-
         case CHANNEL_WHISPER: pClient->SendUnreliableMessage((CPacket *)&Send); break;
-
         case CHANNEL_CUSTOM: break;
-
         default: break;
     }
 }
+
 /////////////////////////////////////////
 void CServer::purge_clients(void) {
     C_GSC *pClient = 0;
     C_GSC *pDelete = 0;
-
-    pClient = pFirstPlayer;
+    pClient        = pFirstPlayer;
     if (!pClient) return;
-
     while (pClient->pNext) {
         if (pClient->pNext->bDelete) {
             pDelete = pClient->pNext;
-
             if (pClient->pNext->pNext) pClient->pNext = pClient->pNext->pNext;
             DEL(pDelete);
         }
@@ -599,57 +651,55 @@ void CServer::purge_clients(void) {
         }
     }
 }
+
 /////////////////////////////////////////
-void CServer::do_world(void) { save_world(); }
+void CServer::do_world(void) {
+    //
+}
+
 /////////////////////////////////////////
 void CServer::console_command(char *command) {
     vector<string> v = dlcs_explode(" ", command);
-    char           temp[1024];
-    memset(temp, 0, 1024);
-    char targs[1024];
-    memset(targs, 0, 1024);
+
+    dlcsm_make_sizestr(szTempConsoleString1, _DLCS_CONSOLE_ENTRY_SIZE);
+    dlcsm_make_sizestr(szTempConsoleString2, _DLCS_CONSOLE_ENTRY_SIZE);
+    dlcsm_make_sizestr(szTargs, _DLCS_CONSOLE_ENTRY_SIZE);
 
     if (v.size() > 0) {
-        strcpy(targs, " ");
+        strcpy(szTargs, " ");
         if (v.size() > 1) {
             for (unsigned int i = 1; i < v.size(); i++) {
-                strcat(targs, v[i].c_str());
-                strcat(targs, " ");
+                strcat(szTargs, v[i].c_str());
+                strcat(szTargs, " ");
             }
         }
 
         if (dlcs_strcasecmp(v[0].c_str(), "/help")) {
             LogEntry("[List of available commands]====================================");
-
+            LogEntry("/db..............................Database management");
             LogEntry("/nuy.............................Allow new user accounts");
             LogEntry("/nun.............................Do not allow new user accounts");
-
             LogEntry("/ann <message>...................Announce a message to the entire server");
             LogEntry("/msg <name> <message>............Send message to specific player");
-
             LogEntry("/motd [new motd].................View, or change the message of the day");
-
             LogEntry("/who.............................List online players");
             LogEntry("/users...........................List users from database");
             LogEntry("/add_user <name> [access]........Add new user to database");
             LogEntry("/remove_user <name>..............Remove a user account");
             LogEntry("/kick_user <name> [message]......Kick player with optional message");
             LogEntry("/access <name> <access>..........Change player's access level");
-
             LogEntry("/kill [minutes]..................Kill the server [minutes] (CTRL-C immediate)");
             LogEntry("/unkill..........................Stop kill countdown");
             LogEntry("/restart [minutes]...............Restart the server [minutes]");
             LogEntry("/unrestart.......................Stop restart countdown");
             LogEntry("/time............................See time / timestamp");
-
-            /*LogEntry("/ban <user>......................Ban player (will ban user)");
-              LogEntry("/banip <user>....................Ban player (will ban user's ip address)");
-              LogEntry("/unban <user>....................Unban player (will unban user)");
-              LogEntry("/unbanip <ipaddress>.............Unban player (will unban user's ip address)");
-              LogEntry("/bandomain <domain>..............Ban entire domain");
-              LogEntry("/unbandomain <domain>............Unban entire domain");
-              LogEntry("/banlist.........................List all banned ip's");*/
-
+            LogEntry("/ban <user>......................Ban player (will ban user)");
+            LogEntry("/banip <user>....................Ban player (will ban user's ip address)");
+            LogEntry("/unban <user>....................Unban player (will unban user)");
+            LogEntry("/unbanip <ipaddress>.............Unban player (will unban user's ip address)");
+            LogEntry("/bandomain <domain>..............Ban entire domain");
+            LogEntry("/unbandomain <domain>............Unban entire domain");
+            LogEntry("/banlist.........................List all banned ip's");
             LogEntry("======================================================[End List]");
             return;
         }
@@ -699,18 +749,18 @@ void CServer::console_command(char *command) {
         //////////////////////////////////////////
 
         if ((dlcs_strcasecmp(v[0].c_str(), "/time"))) {
-            strcpy(temp, dlcs_get_time());
-            LogEntry(temp);
-            dlcs_timestamp(temp);
-            LogEntry("timestamp: %s", temp);
+            strcpy(szTempConsoleString1, dlcs_get_time());
+            LogEntry(szTempConsoleString1);
+            dlcs_timestamp(szTempConsoleString1);
+            LogEntry("timestamp: %s", szTempConsoleString1);
         }
 
         //////////////////////////////////////////
 
         if (dlcs_strcasecmp(v[0].c_str(), "/ann")) {
             if (v.size() > 1) {
-                chat(0, "Admin", targs, CHANNEL_SYSTEM);
-                LogEntry(targs);
+                chat(0, "Admin", szTargs, CHANNEL_SYSTEM);
+                LogEntry(szTargs);
             }
         }
 
@@ -718,14 +768,14 @@ void CServer::console_command(char *command) {
 
         if (dlcs_strcasecmp(v[0].c_str(), "/msg")) {
             if (v.size() > 2) {
-                strcpy(targs, " ");
+                strcpy(szTargs, " ");
                 if (v.size() > 2) {
                     for (unsigned int i = 2; i < v.size(); i++) {
-                        strcat(targs, v[i].c_str());
-                        strcat(targs, " ");
+                        strcat(szTargs, v[i].c_str());
+                        strcat(szTargs, " ");
                     }
                 }
-                chat(get_client((char *)v[1].c_str()), "Admin", targs, CHANNEL_WHISPER);
+                chat(get_client((char *)v[1].c_str()), "Admin", szTargs, CHANNEL_WHISPER);
             }
         }
 
@@ -733,9 +783,14 @@ void CServer::console_command(char *command) {
 
         if (dlcs_strcasecmp(v[0].c_str(), "/kick_user")) {
             if (v.size() > 2) {
-                kick_user((char *)v[1].c_str(), (char *)v[2].c_str());
-            } else if (v.size() > 1) {
-                kick_user((char *)v[1].c_str(), "Kicked by admin");
+                strcpy(szTempConsoleString1, "");
+                for (int i = 2; i < v.size(); i++) {
+                    strcat(szTempConsoleString1, va("%s ", (char *)v[i].c_str()));
+                }
+                kick_user("%s %s", (char *)v[1].c_str(), szTempConsoleString1);
+            }  //
+            else if (v.size() > 1) {
+                kick_user("%s %s", (char *)v[1].c_str(), "Kicked by admin");
             }
         }
 
@@ -805,25 +860,10 @@ void CServer::console_command(char *command) {
 
 /////////////////////////////////////////
 bool CServer::save_data(void) {
-    /*
-    FILE *fp;
-    fp = fopen("server.ini", "wt");
-    if (!fp) return false;
-    fputs("** Mantra Server Configuration\n", fp);
-    fputs(va("s_name=%s\n", r_data.s_name), fp);
-    fputs(va("s_admin_email=%s\n", r_data.s_admin_email), fp);
-    fputs(va("s_motd=%s\n", r_data.s_motd), fp);
-    fputs(va("s_website_link=%s\n", r_data.s_website_link), fp);
-    fputs(va("b_new_accounts=%d\n", r_data.b_new_accounts), fp);
-    fputs(va("i_port=%d\n", r_data.i_port), fp);
-    fputs(va("i_max_clients=%d\n", r_data.i_max_clients), fp);
-    fputs(va("b_require_website=%d\n", r_data.b_require_website), fp);
-    fclose(fp);
-    LogEntry("server.ini saved");
-    */
-    LogEntry("server.ini not saved, function needs to be reworked");
+    pCVars->bSave("server.ini");
     return true;
 }
+
 /////////////////////////////////////////
 int CServer::num_clients() {
     int    x = 0;

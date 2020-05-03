@@ -52,15 +52,16 @@ class CServer : public CCSocket {
 
     // C_SQLite *   pSQLite; // add dlcs_db
 
-    CLog *  pLog;
-    C_GSC * pFirstPlayer;
-    bool    bQuit;
-    bool    bRestart;
-    bool    bQuiet;
-    long    dwStartTime;
-    C_CONS *pConsole;
+    CLog *   pLog;
+    C_GSC *  pFirstPlayer;
+    bool     bQuit;
+    bool     bRestart;
+    bool     bQuiet;
+    long     dwStartTime;
+    C_CONS * pConsole;
+    CVarSet *pCVars;
 
-    void StartUp(void);
+    int  StartUp(void);
     bool bNetStartUp(void);
     void shut_down(void);
     void cycle(void);
@@ -69,20 +70,22 @@ class CServer : public CCSocket {
     // void SetupConsoleHistory(void);
     // void        RemoveConsoleHistory(void);
     // void        AddToConsoleHistory(char *s);
-    char *      GetConsoleHistory(int x);
-    void        do_keyboard(void);
-    bool        save_data(void);
-    C_GSC *     get_client(const char *user_name);  // network / client stuff
-    void        accept_connection(void);
-    void        reject_connection(int iReSocket, sockaddr *pReAddr, const char *reason);
-    void        send_all(CPacket *pPacket, float fBlockTime);
-    void        disconnect(C_GSC *pClient, const char *reason);
-    int         num_clients(void);
-    void        purge_clients(void);
-    void        do_world(void);
-    void        save_world(void);
-    void        load_world(void);
-    void        kick_user(const char *name, const char *reason);
+    char * GetConsoleHistory(int x);
+    void   do_keyboard(void);
+    bool   save_data(void);
+    C_GSC *get_client(const char *user_name);  // network / client stuff
+    void   accept_connection(void);
+    void   reject_connection(int iReSocket, sockaddr *pReAddr, const char *reason);
+    void   send_all(CPacket *pPacket, float fBlockTime);
+    void   disconnect(C_GSC *pClient, const char *reason);
+    int    num_clients(void);
+    void   purge_clients(void);
+    void   do_world(void);
+    void   save_world(void);
+    void   load_world(void);
+
+    // void        kick_user(const char *name, const char *reason);
+    void        kick_user(const char *format, ...);
     void        kick_all(const char *reason);
     void        chat(C_GSC *pClient, const char *from, const char *msg, int iChannel);
     void        create_guid(const char *cin, char *cout);

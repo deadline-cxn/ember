@@ -1,0 +1,63 @@
+(Sat May 02 20:39:16 2020):            ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+(Sat May 02 20:39:16 2020):            º.  °°°°°° °°   °° °°°°°. °°°°°° °°°°°    º
+(Sat May 02 20:39:16 2020):            º   °°     °°° °°° °°  °° °° .   °° .°°   º
+(Sat May 02 20:39:16 2020):            º   ±±±±   ±±°°°±± °°°±±  ±°°°±  °°  ±°.  º
+(Sat May 02 20:39:16 2020):            º   ²±    .±± ± ±± ±±  ²± ±±     ±±²²±    º
+(Sat May 02 20:39:16 2020):            º  .²²     ²².  ²² ±²  ²² ²²     ²²  ²² . º
+(Sat May 02 20:39:16 2020):            º   ²ÛÛ²²Û ÛÛ   ²Û ²ÛÛ²Û  Û²²Û²² Û²  Û²   º
+(Sat May 02 20:39:16 2020):            ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+(Sat May 02 20:39:16 2020):Mantra Server v20.05.02a(Intel IA-32 (x86) - Windows) Net(5) Build(1) (C)2020 Seth Parson
+(Sat May 02 20:39:16 2020):BUILD: May  2 2020 20:21:35
+(Sat May 02 20:39:16 2020):°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°
+(Sat May 02 20:39:16 2020):                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ 
+(Sat May 02 20:39:16 2020):                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  
+(Sat May 02 20:39:16 2020):                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   
+(Sat May 02 20:39:16 2020):                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   
+(Sat May 02 20:39:16 2020):                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          
+(Sat May 02 20:39:16 2020):                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     
+(Sat May 02 20:39:16 2020):°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(b_new_accounts,0);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(b_require_website,0);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(i_db_mysql_port,3036);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(i_max_clients,2032);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(i_port,55555);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(i_world_save_timer,6000);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_admin_email,seth@mantras.com);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_lmdb_location,lmdb_location);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_mysql_db,mysql_db);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_mysql_host,192.168.1.81);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_mysql_pass,mysql_pass);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_mysql_user,mysql_user);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_sqlite_file,data.sqlite);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_db_type,sqlite);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_motd,mantra);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_name,mantra);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars (server.ini) -> set_cvar(s_website_link,mantras.com);
+(Sat May 02 20:39:16 2020):CVarSet::bLoadCVars() szFilename from class member: server.ini... FINISHED!
+(Sat May 02 20:39:16 2020):CVars initialized...
+(Sat May 02 20:39:16 2020):s_name         = [mantra]
+(Sat May 02 20:39:16 2020):s_admin_email  = [seth@mantras.com]
+(Sat May 02 20:39:16 2020):s_website_link = [mantras.com]
+(Sat May 02 20:39:16 2020):s_motd         = [mantra]
+(Sat May 02 20:39:16 2020):Disabling power management
+(Sat May 02 20:39:16 2020):Listening on port [55555]
+(Sat May 02 20:39:16 2020):Network initialized...
+(Sat May 02 20:39:16 2020):Default chat channels initialized...
+(Sat May 02 20:39:16 2020):Database initialized... (TODO PLACEHOLDER TEXT)
+(Sat May 02 20:39:16 2020):World data loaded...
+(Sat May 02 20:39:16 2020):NPC's initialized... (TODO PLACEHOLDER TEXT)
+(Sat May 02 20:39:16 2020):////////////////////////////////////////////////////////////////////////////
+(Sat May 02 20:39:16 2020):CServer::StartUp... FINISHED!
+(Sat May 02 20:39:16 2020):(Type '/help' for help on commands)
+(Sat May 02 20:39:19 2020):>/kill
+(Sat May 02 20:39:19 2020):°±²ÛÛÛÛÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÛÛÛÛ²±°
+(Sat May 02 20:39:19 2020):        ÜÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛÜ 
+(Sat May 02 20:39:19 2020):        Û        ÜÛÛÛÜ                      ÜÛÛÛÜ        Û 
+(Sat May 02 20:39:19 2020):        Û        ÛúÛÜÛ    ßÛÜß ß Û   Û      ÛÜÛúÛ        Û 
+(Sat May 02 20:39:19 2020):        Û        ßÛÛÛß     Û Û Û Û   Û      ßÛÛÛß        Û 
+(Sat May 02 20:39:19 2020):        Û         ÝÝÞ      ß Û ß ßßß ßßß     ÝÞÞ         Û 
+(Sat May 02 20:39:19 2020):        Û         þÜþ     Server Killed!     þÜþ         Û 
+(Sat May 02 20:39:19 2020):        ßÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛß 
+(Sat May 02 20:39:19 2020):°±²ÛÛÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛÛÛ²±°
+(Sat May 02 20:39:19 2020):    °±²ÛÛÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÛÛ²±°
+(Sat May 02 20:39:19 2020):         ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß

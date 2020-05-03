@@ -15,10 +15,10 @@
             "command": "E:/pc_tools/mingw/bin/g++.exe",
             "args": [
                 "-g",
-                "-Wall",
                 "-D_DLCS_CONSOLE",
-                "-Wno-unknown-pragmas",
+                "-w",
                 "-fpermissive",
+                "-std=gnu++11",
                 "-I${win_dir}/dlstorm/src",
                 "-IE:/pc_tools/mingw/include",
                 "${win_dir}/${app_name}/src/${app_name}_server.cpp",
