@@ -62,30 +62,10 @@ int CServer::StartUp(void) {
 
     ////////////////////////////////////////////////////////////////////////////
     // Log title stuff
-    /*
-    LogEntry("                                 ░▒");
-    LogEntry("     ░▓▓█▓▓▓▓▒▒░          ░▓█");
-    LogEntry("   ░▓████▒          █▒  █▒ ▒█▓                            ░░");
-    LogEntry("   ▒███▓░        ░██▓ ▓██ ▒██▓▓▒░░ ░▓████▓▓▒░ ▓█████▒");
-    LogEntry("   ████████▓▒ ░▓███████░████████▒███▒░░██▒▓██▓▒██▓");
-    LogEntry("  ░██▓         ░██░███ ████▓   ░██▒▓██████░ ▒██▓▒");
-    LogEntry("  ░███▓░      ▓██ ░█▒  ████▒░▒▓███▒▒██░      ▓██░");
-    LogEntry("   ░▒▓█████████▓   ░   ██▒██████▒░░▒▓██▓▒░░▓█");
-    */
     LogEntry("////////////////////////////////////////////////////////////////////////////");
     LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", MANTRA_VERSION, DLCS_CPU_STRING, DLCS_OS_STRING, MANTRA_NET_REVISION, MANTRA_S_BUILD, MANTRA_COPYRIGHT);
     LogEntry("BUILD: %s %s", __DATE__, __TIME__);
     LogEntry("////////////////////////////////////////////////////////////////////////////");
-    /*
-    LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛßßßßÛßßßßßßßßÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛÛÛßßßßÛÛÛÛÛÛÛÛÛ²±°");
-    LogEntry("                  ÜÛÛÜ ÜÛÛÛÛÛß     ÜÛÛ             ÛÛ ");
-    LogEntry("                ÜÛß      ÞÛ  ÜÛÛ  Ûß ßÛ  ÜÛÛÛÛÛß  ÞÛ  ");
-    LogEntry("                ßÛÜÜÜ    ÛÝ Ûß Û ÛÝ ÜÛ     ÞÛ     Û   ");
-    LogEntry("                  ßßÛÛ  ÞÛ ÞÛ ÜÛ ÛÛßÛÛ     ÛÝ    ÞÝ   ");
-    LogEntry("                ÜÜ  ÞÛ  ÛÝ ÛÛßÛÛ ÛÛ  ÞÛ   ÞÛ          ");
-    LogEntry("                 ßßßß      ÛÝ ÛÝ Û    Û   ÛÝ    Û     ");
-    LogEntry("°±²ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÜÜÜÜÜÜÜÜÜÛÛÜÜÜÛÜÜÜÛÛÛÜÜÜÛÛÛÛÛÛÛÛÛÛÛÛÛ²±°");
-    */
 
     ////////////////////////////////////////////////////////////////////////////
     // Log start time... Todo: Store proper timestamp for server start time
@@ -95,7 +75,6 @@ int CServer::StartUp(void) {
     // Setup CVars
     LogEntry("Initializing CVars...");
     pCVars = new CVarSet(pLog);
-
     // Define default variables
     LogEntry("Setting default CVar values...");
     pCVars->set_cvar("i_world_save_timer", "300000");  // 5 minutes tick time
@@ -103,38 +82,34 @@ int CServer::StartUp(void) {
     LogEntry("Loading server.ini CVar values...");
     pCVars->bLoad("server.ini");
     LogEntry("CVars initialized...");
-    /*
-        LogEntry("s_name         = [%s]", (char *)pCVars->get_cvar("s_name"));
+    /*  LogEntry("s_name         = [%s]", (char *)pCVars->get_cvar("s_name"));
         LogEntry("s_admin_email  = [%s]", (char *)pCVars->get_cvar("s_admin_email"));
         LogEntry("s_website_link = [%s]", (char *)pCVars->get_cvar("s_website_link"));
-        LogEntry("s_motd         = [%s]", (char *)pCVars->get_cvar("s_motd"));
-        */
+        LogEntry("s_motd         = [%s]", (char *)pCVars->get_cvar("s_motd"));         */
     LogEntry("////////////////////////////////////////////////////////////////////////////");
 
     ////////////////////////////////////////////////////////////////////////////
     // Initialize Console
     LogEntry("Initializing Console...");
     pConsole = new C_CONS(pLog, pCVars);  // Initialize Console for it has cvars built in
-                                          // Todo: SetupConsoleHistory
-                                          // SetupConsoleHistory();
-                                          // Todo: Register Server Functions
-                                          // pCVars->bRegisterFunction("kick_all", kick_all);
+    // Todo: SetupConsoleHistory
+    // SetupConsoleHistory();
+    // Todo: Register Server Functions
+    // pCVars->bRegisterFunction("kick_all", kick_all);
 
     ////////////////////////////////////////////////////////////////////////////
     // Attempt to disable power management
     // Todo: make this a configurable option under CVars
-
     LogEntry("Disabling power management...");
     dlcs_suspend_power_management();
 
     ////////////////////////////////////////////////////////////////////////////
     // Attempt to Initialize the Network
-
     LogEntry("Initializing Network...");
     iRetVal = bNetStartUp();
     if (!iRetVal) {
-        return iRetVal;
         LogEntry("Network initialization FAILURE!");
+        return iRetVal;
     } else {
         LogEntry("Network initialized...");
     }
@@ -148,9 +123,11 @@ int CServer::StartUp(void) {
     ////////////////////////////////////////////////////////////////////////////
     // Initialize Database Todo: finish this section
     LogEntry("Initializing Database...");
-    /* pSQLite      = 0; // add dlcs_db
-    // memset(&r_data, 0, sizeof(r_data));
-    // add dlcs_db initialization
+    /*  pSQLite      = 0; // add dlcs_db
+    memset(&r_data, 0, sizeof(r_data));
+
+    ////////////////////////////////////////////////////////////////////////////
+    // dlcs_db initialization
     pSQLite = new C_SQLite();  // Open User Database
     if (pSQLite) {
         LogEntry("SQLite started");
@@ -158,6 +135,9 @@ int CServer::StartUp(void) {
         pSQLite->OpenDB("data_new.sqlite");
         LogEntry("SQLite opened DB data_new.sqlite");
     }
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Initialize DB Tables if DB opens but finds no data
     // pSQLite->db_query("update users set chat_channels = 'SYSTEM'",0);
     // pSQLite->db_query("alter table users add column NAME char(256) default 'SYSTEM'");
         if (!pSQLite->db_query("select * from users")) {
@@ -179,8 +159,8 @@ int CServer::StartUp(void) {
         } else {
             // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
             // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
-        }
-    */
+        } */
+
     LogEntry("Database initialized... (TODO PLACEHOLDER TEXT)");
 
     ////////////////////////////////////////////////////////////////////////////
@@ -216,11 +196,12 @@ bool CServer::bNetStartUp() {
     iPort = atoi((const char *)pConsole->pCVars->get_cvar("i_port"));
     NET_Init();
     initSocket();
-    if ((Listen(iPort, true)) == -1) {
-        LogEntry("ERROR LISTENING ON PORT %d\n", iPort);
+    int iListenRet = Listen(iPort, true);
+    if (iListenRet == -1) {
+        LogEntry("**** ERROR Listening on port [%d][%d][%s] ****\n", iPort, iListenRet, NET_pGetLastError());
         return false;
     } else {
-        LogEntry("Listening on port [%d]", iGetLocalPort());
+        LogEntry("Listening on port [%d][%d][%s]", iGetLocalPort(), iListenRet, NET_pGetLastError());
         return true;
     }
 }
