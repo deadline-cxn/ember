@@ -1,4 +1,4 @@
-#To do List
+#Ember To do List
 
 - Add new DB class
     - create new database class that abstracts db layer (will be able to use different methods such as flatfile, mysql,sqlite)

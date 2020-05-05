@@ -12,9 +12,8 @@ CServer::CServer(bool bIsQuiet) {
     pFirstPlayer = 0;
     pConsole     = 0;
     pCVars       = 0;
-
+    pDB          = 0;
     randomize();
-
     pLog = new CLog("server.log", bQuiet);  // LOG
     if (!pLog) {
         printf("\nNo memory for log!\n");
@@ -22,11 +21,11 @@ CServer::CServer(bool bIsQuiet) {
     }
     pLog->On();
     pLog->Restart();
-
     StartUp();  // STARTUP/SHUTDOWN
 }
 
-/////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
 CServer::~CServer() {
     kick_all("Server shutting down");
     C_GSC *c = pFirstPlayer;
@@ -39,7 +38,9 @@ CServer::~CServer() {
     NET_Shutdown();
     DEL(pLog);
 }
-/////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+
 bool CServer::check_restart(void) {
     if (bRestart) {
         LogEntry("[Initiating server restart]=====================================");
@@ -52,13 +53,38 @@ bool CServer::check_restart(void) {
     return false;
 }
 
-/////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+void CServer::SetDefaultCVars() {
+    LogEntry("Setting default CVar values...");  // Todo: move these default CVar definitions into ember_server.h
+    pCVars->Set("b_new_accounts", "0");
+    pCVars->Set("b_require_website", "0");
+    pCVars->Set("i_db_mysql_port", "3036");
+    pCVars->Set("i_max_clients", "2000");
+    pCVars->Set("i_port", "7000");
+    pCVars->Set("i_world_save_timer", "300000");  // 5 minutes tick time
+    pCVars->Set("s_admin_email", "admin@url");
+    pCVars->Set("s_db_lmdb_location", "lmdb_location");
+    pCVars->Set("s_db_mysql_db", "mysql_db");
+    pCVars->Set("s_db_mysql_host", "192.168.1.81");
+    pCVars->Set("s_db_mysql_pass", "mysql_pass");
+    pCVars->Set("s_db_mysql_user", "mysql_user");
+    pCVars->Set("s_db_sqlite_file", "data.sqlite");
+    pCVars->Set("s_db_type", "sqlite");
+    pCVars->Set("s_motd", "mantra");
+    pCVars->Set("s_name", "mantra");
+    pCVars->Set("s_website_link", "serverurl");
+}
+
+////////////////////////////////////////////////////////////////////////////
 
 int CServer::StartUp(void) {
     ////////////////////////////////////////////////////////////////////////////
     // Initialize some variables
-    dwStartTime = dlcs_get_tickcount();
-    int iRetVal = false;
+    dwStartTime  = dlcs_get_tickcount();
+    int  iRetVal = false;
+    bool bCheck  = false;
+    dlcsm_make_str(szTemp);
 
     ////////////////////////////////////////////////////////////////////////////
     // Log title stuff
@@ -76,16 +102,15 @@ int CServer::StartUp(void) {
     LogEntry("Initializing CVars...");
     pCVars = new CVarSet(pLog);
     // Define default variables
-    LogEntry("Setting default CVar values...");
-    pCVars->set_cvar("i_world_save_timer", "300000");  // 5 minutes tick time
+    SetDefaultCVars();
     // Overwrite defaults from server.ini
     LogEntry("Loading server.ini CVar values...");
     pCVars->bLoad("server.ini");
     LogEntry("CVars initialized...");
-    /*  LogEntry("s_name         = [%s]", (char *)pCVars->get_cvar("s_name"));
-        LogEntry("s_admin_email  = [%s]", (char *)pCVars->get_cvar("s_admin_email"));
-        LogEntry("s_website_link = [%s]", (char *)pCVars->get_cvar("s_website_link"));
-        LogEntry("s_motd         = [%s]", (char *)pCVars->get_cvar("s_motd"));         */
+    /*  LogEntry("s_name         = [%s]", (char *)pCVars->szGet("s_name"));
+        LogEntry("s_admin_email  = [%s]", (char *)pCVars->szGet("s_admin_email"));
+        LogEntry("s_website_link = [%s]", (char *)pCVars->szGet("s_website_link"));
+        LogEntry("s_motd         = [%s]", (char *)pCVars->szGet("s_motd"));         */
     LogEntry("////////////////////////////////////////////////////////////////////////////");
 
     ////////////////////////////////////////////////////////////////////////////
@@ -123,43 +148,65 @@ int CServer::StartUp(void) {
     ////////////////////////////////////////////////////////////////////////////
     // Initialize Database Todo: finish this section
     LogEntry("Initializing Database...");
-    /*  pSQLite      = 0; // add dlcs_db
-    memset(&r_data, 0, sizeof(r_data));
 
-    ////////////////////////////////////////////////////////////////////////////
-    // dlcs_db initialization
-    pSQLite = new C_SQLite();  // Open User Database
-    if (pSQLite) {
-        LogEntry("SQLite started");
-        pSQLite->pLog = pLog;
-        pSQLite->OpenDB("data_new.sqlite");
-        LogEntry("SQLite opened DB data_new.sqlite");
+    bCheck = true;
+    pDB    = new C_DLCS_DB(pLog);
+    if (pDB) {
+        strcpy(szTemp, pCVars->szGet("s_db_type"));
+        if (dlcs_strcasecmp(szTemp, "sqlite")) {
+            if (!pDB->OpenSQLiteDB(pCVars->szGet("s_db_sqlite_file"))) {
+                LogEntry("Can not initialize database...");
+                bCheck = false;
+            }
+        }
+
+        if (dlcs_strcasecmp(szTemp, "mysql")) {
+            bCheck = false;
+        }
+        if (dlcs_strcasecmp(szTemp, "lmdb")) {
+            bCheck = false;
+        }
+    } else {
+        LogEntry("Can not allocate memory for pDB! FATAL!");
+        bCheck = false;
     }
+    if (!bCheck) {
+        bQuit = true;
+        return;
+    }
+
+    /*  pSQLite = new C_SQLite();  // Open User Database
+        if (pSQLite) {
+            LogEntry("SQLite started");
+            pSQLite->pLog = pLog;
+            pSQLite->OpenDB("data_new.sqlite");
+            LogEntry("SQLite opened DB data_new.sqlite");
+        } */
 
     ////////////////////////////////////////////////////////////////////////////
     // Initialize DB Tables if DB opens but finds no data
     // pSQLite->db_query("update users set chat_channels = 'SYSTEM'",0);
     // pSQLite->db_query("alter table users add column NAME char(256) default 'SYSTEM'");
-        if (!pSQLite->db_query("select * from users")) {
-            LogEntry("=====================[WARNING! ERROR!]======================");
-            LogEntry("Database [data.sqlite] empty or corrupt");
-            LogEntry("=====================[WARNING! ERROR!]======================");
-            bQuit = true;
-            // where username='seth'
-            // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
-            // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
-            // pSQLite->db_query((char *)va("INSERT INTO users VALUES (1, 'seth', '%s', 255)",md5_digest("123")),0);
-            // pSQLite->db_query((char *)va("INSERT INTO users (username) VALUES ('seth_also')",0));
-            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")),0);
-            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test','%s', 5)",  md5_digest("226fi3")),0);
-            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
-            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
-            // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
-
-        } else {
-            // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
-            // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
-        } */
+    // if (!pSQLite->db_query("select * from users")) {
+    // LogEntry("=====================[WARNING! ERROR!]======================");
+    // LogEntry("Database [data.sqlite] empty or corrupt");
+    // LogEntry("=====================[WARNING! ERROR!]======================");
+    // bQuit = true;
+    // where username='seth'
+    // pSQLite->db_query("CREATE TABLE users (username varchar(32), password varchar(32), access smallint)",0);
+    // pSQLite->db_query("CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT default 'user',password TEXT default 'none',access smallint default '0',chat_channels TEXT default 'SYSTEM')",0);
+    // pSQLite->db_query((char *)va("INSERT INTO users VALUES (1, 'seth', '%s', 255)",md5_digest("123")),0);
+    // pSQLite->db_query((char *)va("INSERT INTO users (username) VALUES ('seth_also')",0));
+    // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('seth','%s', 255)",md5_digest("123")),0);
+    // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test','%s', 5)",  md5_digest("226fi3")),0);
+    // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test2','%s', 6)", md5_digest("2326df3")),0);
+    // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('test4','%s', 7)", md5_digest("223k6gf3")),0);
+    // pSQLite->db_query((char *)va("INSERT INTO users VALUES ('zany','%s', 8)",  md5_digest("22lg63f3")),0);
+    //  } else {
+    // LogEntry("seth.password=[%s]",       (char *)  db_getvalue("username","seth","password").c_str());
+    // LogEntry("seth.access=[%d]",     atoi((char *) db_getvalue("username","seth","access").c_str()));
+    //}
+    //
 
     LogEntry("Database initialized... (TODO PLACEHOLDER TEXT)");
 
@@ -167,6 +214,12 @@ int CServer::StartUp(void) {
     // Todo: finish load_world function
     LogEntry("Initializing World...");
     load_world();
+    int t1, t2, t3, t4;
+    t1 = pCVars->iGet("i_world_save_timer");
+    t2 = t1 / 60000;
+    t3 = t1 % 60000;
+    t4 = t3 / 1000;
+    LogEntry("World save timer set to [%d] (%d minutes, %d seconds)", t1, t2, t4);
     LogEntry("World loaded...");
 
     ////////////////////////////////////////////////////////////////////////////
@@ -193,7 +246,7 @@ int CServer::StartUp(void) {
 
 bool CServer::bNetStartUp() {
     int iPort;
-    iPort = atoi((const char *)pConsole->pCVars->get_cvar("i_port"));
+    iPort = pConsole->pCVars->iGet("i_port");
     NET_Init();
     initSocket();
     int iListenRet = Listen(iPort, true);
@@ -222,7 +275,7 @@ void CServer::shut_down(void) {
     LogEntry("CServer::shut_down: Cleaning up Players");
     DEL(pFirstPlayer);
     LogEntry("CServer::shut_down: Cleaning up Database");
-    // DEL(pSQLite); // add dlcs_db shutdown (DEL)
+    DEL(pDB);
 
     ///////////////////////////////////////////
     /*
@@ -481,7 +534,7 @@ void CServer::disconnect(C_GSC *client, const char *reason) {
 
 /////////////////////////////////////////
 void CServer::save_world(void) {
-    int         iWorldSaveTimer = atoi((const char *)pCVars->get_cvar("i_world_save_timer"));
+    int         iWorldSaveTimer = pCVars->iGet("i_world_save_timer");
     static long dwSaveTimer     = dlcs_get_tickcount();
     if ((dlcs_get_tickcount() - dwSaveTimer) > iWorldSaveTimer) {
         dwSaveTimer = dlcs_get_tickcount();
@@ -786,14 +839,14 @@ void CServer::console_command(char *command) {
         //////////////////////////////////////////
 
         if (dlcs_strcasecmp(v[0].c_str(), "/nuy")) {
-            pConsole->pCVars->set_cvar("b_new_accounts", true);
+            pConsole->pCVars->Set("b_new_accounts", true);
             LogEntry("Now accepting new users");
         }
 
         //////////////////////////////////////////
 
         if (dlcs_strcasecmp(v[0].c_str(), "/nun")) {
-            pConsole->pCVars->set_cvar("b_new_accounts", false);
+            pConsole->pCVars->Set("b_new_accounts", false);
             LogEntry("New users will not be accepted");
         }
 
