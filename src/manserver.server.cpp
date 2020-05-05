@@ -154,7 +154,7 @@ int CServer::StartUp(void) {
     if (pDB) {
         strcpy(szTemp, pCVars->szGet("s_db_type"));
         if (dlcs_strcasecmp(szTemp, "sqlite")) {
-            if (!pDB->OpenSQLiteDB(pCVars->szGet("s_db_sqlite_file"))) {
+            if (pDB->OpenSQLiteDB(pCVars->szGet("s_db_sqlite_file"))) {
                 LogEntry("Can not initialize database...");
                 bCheck = false;
             }
