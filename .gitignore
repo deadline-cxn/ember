@@ -1,3 +1,5 @@
 server/server.log
 client/client.log
 *.log
+.vscode/*
+
