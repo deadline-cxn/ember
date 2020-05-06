@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/files/dev/repos/ember/src",
+                "/files/dev/repos/dlstorm/src",
+                "/files/dev/repos/dlstorm/src/gl",
+                "/usr/include/tcl8.6",
+                "/usr/include/GL",
+                "/usr/include/SDL2",
+                "/usr/include/IL",
+                "/usr/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

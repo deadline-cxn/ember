@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\dlstorm"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"initializer_list": "cpp"
+		}
+	}
+}
