@@ -328,7 +328,7 @@ void C_GSC::do_net(void) {
                     case CHANNEL_SAY:
                     case CHANNEL_YELL:
                     case CHANNEL_CLAN:
-                    case CHANNEL_SYSTEM: pServer->chat(this, this->username, (char *)va("%s:%s", username, szTemp), ax); break;
+                    case CHANNEL_SYSTEM: pServer->Chat(this, this->username, (char *)va("%s:%s", username, szTemp), ax); break;
 
                     case CHANNEL_CUSTOM: break;
 
@@ -744,12 +744,12 @@ void C_GSC::do_net(void) {
                 }
                 other_client = other_client->pNext;
             }
-            pServer->disconnect(this, "Inactivity");
+            pServer->Disconnect(this, "Inactivity");
         }
     }
 
     if (bHeartBeatCheck) {  // Check for heartbeats and remove if not found
-        if (heartbeat_timer->Up()) pServer->disconnect(this, "Network disconnected");
+        if (heartbeat_timer->Up()) pServer->Disconnect(this, "Network disconnected");
     }
 }
 

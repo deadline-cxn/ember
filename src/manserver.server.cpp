@@ -3,54 +3,49 @@
 
 #include "c_var.h"
 
-/////////////////////////////////////////
-CServer::CServer(bool bIsQuiet)
-{
-    pLog = 0;
-    bQuiet = bIsQuiet;
-    bQuit = false;
-    bRestart = false;
+//////////////////////////////////////////////////////////////////////////////////
+
+CServer::CServer(bool bIsQuiet) {
+    pLog         = 0;
+    bQuiet       = bIsQuiet;
+    bQuit        = false;
+    bRestart     = false;
     pFirstPlayer = 0;
-    pConsole = 0;
-    pCVars = 0;
-    pDB = 0;
+    pConsole     = 0;
+    pCVars       = 0;
+    pDB          = 0;
     randomize();
-    pLog = new CLog("server.log", bQuiet); // LOG
-    if (!pLog)
-    {
+    pLog = new CLog("server.log", bQuiet);  // LOG
+    if (!pLog) {
         printf("\nNo memory for log!\n");
         exit(0);
     }
     pLog->On();
     pLog->Restart();
-    StartUp(); // STARTUP/SHUTDOWN
+    StartUp();  // STARTUP/SHUTDOWN
 }
 
-////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
-CServer::~CServer()
-{
+CServer::~CServer() {
     kick_all("Server shutting down");
     C_GSC *c = pFirstPlayer;
-    while (c)
-    {
+    while (c) {
         pFirstPlayer = c;
-        c = c->pNext;
+        c            = c->pNext;
         DEL(pFirstPlayer);
     }
-    shut_down(); // STARTUP/SHUTDOWN
+    ShutDown();  // STARTUP/SHUTDOWN
     NET_Shutdown();
     DEL(pLog);
 }
 
-////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
-bool CServer::check_restart(void)
-{
-    if (bRestart)
-    {
+bool CServer::bCheckRestart(void) {
+    if (bRestart) {
         LogEntry("[Initiating server restart]=====================================");
-        shut_down();
+        ShutDown();
         StartUp();
         LogEntry("==============================================[Server restarted]");
         bRestart = 0;
@@ -59,17 +54,16 @@ bool CServer::check_restart(void)
     return false;
 }
 
-////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
-void CServer::SetDefaultCVars()
-{
-    LogEntry("Setting default CVar values..."); // Todo: move these default CVar definitions into ember_server.h
+void CServer::SetDefaultCVars() {
+    LogEntry("Setting default CVar values...");  // Todo: move these default CVar definitions into ember_server.h
     pCVars->Set("b_new_accounts", "0");
     pCVars->Set("b_require_website", "0");
     pCVars->Set("i_db_mysql_port", "3036");
     pCVars->Set("i_max_clients", "2000");
     pCVars->Set("i_port", "7000");
-    pCVars->Set("i_world_save_timer", "300000"); // 5 minutes tick time
+    pCVars->Set("i_world_save_timer", "300000");  // 5 minutes tick time
     pCVars->Set("s_admin_email", "admin@url");
     pCVars->Set("s_db_lmdb_location", "lmdb_location");
     pCVars->Set("s_db_mysql_db", "mysql_db");
@@ -83,26 +77,25 @@ void CServer::SetDefaultCVars()
     pCVars->Set("s_website_link", "serverurl");
 }
 
-////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 
-int CServer::StartUp(void)
-{
+int CServer::StartUp(void) {
     ////////////////////////////////////////////////////////////////////////////
     // Initialize some variables
-    dwStartTime = dlcs_get_tickcount();
-    int iRetVal = false;
-    bool bCheck = false;
+    dwStartTime  = dlcs_get_tickcount();
+    int  iRetVal = false;
+    bool bCheck  = false;
     dlcsm_make_str(szTemp);
 
     ////////////////////////////////////////////////////////////////////////////
     // Log title stuff
     LogEntry("////////////////////////////////////////////////////////////////////////////");
-    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n", //
-             MANTRA_VERSION,                                     //
-             DLCS_CPU_STRING,                                    //
-             DLCS_OS_STRING,                                     //
-             MANTRA_NET_REVISION,                                //
-             MANTRA_S_BUILD,                                     //
+    LogEntry("Mantra Server %s(%s - %s) Net(%s) Build(%d) %s\n",  //
+             MANTRA_VERSION,                                      //
+             DLCS_CPU_STRING,                                     //
+             DLCS_OS_STRING,                                      //
+             MANTRA_NET_REVISION,                                 //
+             MANTRA_S_BUILD,                                      //
              MANTRA_COPYRIGHT);
     LogEntry("BUILD: %s %s \n", __DATE__, __TIME__);
     LogEntry("////////////////////////////////////////////////////////////////////////////");
@@ -130,7 +123,7 @@ int CServer::StartUp(void)
     ////////////////////////////////////////////////////////////////////////////
     // Initialize Console
     LogEntry("Initializing Console...");
-    pConsole = new C_CONS(pLog, pCVars); // Initialize Console for it has cvars built in
+    pConsole = new C_CONS(pLog, pCVars);  // Initialize Console for it has cvars built in
     // Todo: SetupConsoleHistory
     // SetupConsoleHistory();
     // Todo: Register Server Functions
@@ -146,13 +139,10 @@ int CServer::StartUp(void)
     // Attempt to Initialize the Network
     LogEntry("Initializing Network...");
     iRetVal = bNetStartUp();
-    if (!iRetVal)
-    {
+    if (!iRetVal) {
         LogEntry("Network initialization FAILURE!");
         return iRetVal;
-    }
-    else
-    {
+    } else {
         LogEntry("Network initialized...");
     }
 
@@ -167,35 +157,27 @@ int CServer::StartUp(void)
     LogEntry("Initializing Database...");
 
     bCheck = true;
-    pDB = new C_DLCS_DB(pLog);
-    if (pDB)
-    {
+    pDB    = new C_DLCS_DB(pLog);
+    if (pDB) {
         strcpy(szTemp, pCVars->szGet("s_db_type"));
-        if (dlcs_strcasecmp(szTemp, "sqlite"))
-        {
-            if (pDB->OpenSQLiteDB(pCVars->szGet("s_db_sqlite_file")))
-            {
+        if (dlcs_strcasecmp(szTemp, "sqlite")) {
+            if (pDB->OpenSQLiteDB(pCVars->szGet("s_db_sqlite_file"))) {
                 LogEntry("Can not initialize database...");
                 bCheck = false;
             }
         }
 
-        if (dlcs_strcasecmp(szTemp, "mysql"))
-        {
+        if (dlcs_strcasecmp(szTemp, "mysql")) {
             bCheck = false;
         }
-        if (dlcs_strcasecmp(szTemp, "lmdb"))
-        {
+        if (dlcs_strcasecmp(szTemp, "lmdb")) {
             bCheck = false;
         }
-    }
-    else
-    {
+    } else {
         LogEntry("Can not allocate memory for pDB! FATAL!");
         bCheck = false;
     }
-    if (!bCheck)
-    {
+    if (!bCheck) {
         bQuit = true;
         return;
     }
@@ -238,7 +220,7 @@ int CServer::StartUp(void)
     ////////////////////////////////////////////////////////////////////////////
     // Todo: finish load_world function
     LogEntry("Initializing World...");
-    load_world();
+    LoadWorld();
     int t1, t2, t3, t4;
     t1 = pCVars->iGet("i_world_save_timer");
     t2 = t1 / 60000;
@@ -259,8 +241,7 @@ int CServer::StartUp(void)
         pc->gender                = 1;
         pc->health->current_value = 2;
         DEL(c_x);
-        DEL(pc);
-        */
+        DEL(pc); */
     LogEntry("NPC's initialized... (TODO PLACEHOLDER TEXT)");
 
     LogEntry("////////////////////////////////////////////////////////////////////////////");
@@ -269,51 +250,51 @@ int CServer::StartUp(void)
     return iRetVal;
 }
 
-bool CServer::bNetStartUp()
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+bool CServer::bNetStartUp() {
     int iPort;
     iPort = pConsole->pCVars->iGet("i_port");
     NET_Init();
     initSocket();
     int iListenRet = Listen(iPort, true);
-    if (iListenRet == -1)
-    {
-        LogEntry("**** ERROR Listening on port [%d][%d][%s] ****\n", //
-                 iPort,                                              //
-                 iListenRet,                                         //
+    if (iListenRet == -1) {
+        LogEntry("**** ERROR Listening on port [%d][%d][%s] ****\n",  //
+                 iPort,                                               //
+                 iListenRet,                                          //
                  NET_pGetLastError());
         return false;
-    }
-    else
-    {
-        LogEntry("Listening on port [%d]", //
-                 iGetLocalPort());                  //
-                 //iListenRet,                       //
-                // NET_pGetLastError());
+    } else {
+        LogEntry("Listening on port [%d]",  //
+                 iGetLocalPort());          //
+                                            // iListenRet,                       //
+        // NET_pGetLastError());
         return true;
     }
 }
 
-/////////////////////////////////////////
-void CServer::shut_down(void)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::ShutDown(void) {
     LogEntry("////////////////////////////////////////////////////////////////////////////");
     LogEntry("Shutting down the server...");
     LogEntry("////////////////////////////////////////////////////////////////////////////");
-    LogEntry("CServer::shut_down: Saving World");
-    save_world();
-    LogEntry("CServer::shut_down: Saving CVars");
-    save_data();
-    LogEntry("CServer::shut_down: Cleaning up Console");
-    DEL(pConsole); // RemoveConsoleHistory();
-    LogEntry("CServer::shut_down: Cleaning up CVars");
+    LogEntry("CServer::ShutDown: Saving World");
+    SaveWorld();
+    LogEntry("CServer::ShutDown: Saving CVars");
+    bSaveCVars();
+    LogEntry("CServer::ShutDown: Cleaning up Console");
+    DEL(pConsole);
+    // RemoveConsoleHistory();
+    LogEntry("CServer::ShutDown: Cleaning up CVars");
     DEL(pCVars);
-    LogEntry("CServer::shut_down: Cleaning up Players");
+    LogEntry("CServer::ShutDown: Cleaning up Players");
     DEL(pFirstPlayer);
-    LogEntry("CServer::shut_down: Cleaning up Database");
+    LogEntry("CServer::ShutDown: Cleaning up Database");
     DEL(pDB);
 
-    ///////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////
+
     /*
         LogEntry("==================================================================================================");
         LogEntry("                                                   ░░░   ░░░                        ░▒▒░ ");
@@ -335,332 +316,311 @@ void CServer::shut_down(void)
     LogEntry("Server Killed!");
 }
 
-/////////////////////////////////////////
-void CServer::do_keyboard()
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::DoKeyboard() {
     u_char ch = 0;
-    if (_kbhit())
-    {
+    if (_kbhit()) {
         ch = _getch();
-        switch (ch)
-        {
-        case 0:
-            ch = _getch();
-            switch (ch)
-            {
-            default:
+        switch (ch) {
+            case 0:
+                ch = _getch();
+                switch (ch) {
+                    default: break;
+                }
                 break;
-            }
-            break;
 
-        case 13:
-        case 10:
-            /* TODO: Re Add History
-                AddToConsoleHistory(szConsoleInput);
-                iConsoleHistoryPosition = 0;                    */
+            case 13:
+            case 10:
+                /* TODO: Re Add History
+                    AddToConsoleHistory(szConsoleInput);
+                    iConsoleHistoryPosition = 0;                    */
 
-            LogEntry(">%s", pConsole->szConsoleInput);
-            if (pConsole->szConsoleInput[0] == 0)
+                LogEntry(">%s", pConsole->szConsoleInput);
+                if (pConsole->szConsoleInput[0] == 0)
+                    break;
+                else {
+                    ExecuteConsoleCommand(pConsole->szConsoleInput);
+                    memset(pConsole->szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
+                }
                 break;
-            else
-            {
-                console_command(pConsole->szConsoleInput);
+
+            case 27: break;
+
+            case 8:  // backspace
+                pConsole->szConsoleInput[strlen(pConsole->szConsoleInput) - 1] = 0;
+                printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
+                break;
+
+            case 21:  // ctrl-U
+                printf(">                                                  \r>");
                 memset(pConsole->szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
-            }
-            break;
-
-        case 27:
-            break;
-
-        case 8: // backspace
-            pConsole->szConsoleInput[strlen(pConsole->szConsoleInput) - 1] = 0;
-            printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
-            break;
-
-        case 21: // ctrl-U
-            printf(">                                                  \r>");
-            memset(pConsole->szConsoleInput, 0, _DLCS_CONSOLE_ENTRY_SIZE);
-            break;
-
-        case 0xE0: // Arrow keys...
-            ch = _getch();
-            switch (ch)
-            {
-            case 72: // UP
-                     /*
-                                  strcpy(szConsoleInput, GetConsoleHistory(iConsoleHistoryPosition));
-                                  iConsoleHistoryPosition++;
-                                  if (iConsoleHistoryPosition > MAX_CONSOLE_INPUT_BUFFER) iConsoleHistoryPosition = 0;
-                                  printf(">                                                  \r>%s \r", szConsoleInput);
-                                  */
                 break;
 
-            case 80: // DOWN
-                     /*
-                                  strcpy(szConsoleInput, GetConsoleHistory(iConsoleHistoryPosition));
-                                  iConsoleHistoryPosition--;
-                                  if (iConsoleHistoryPosition < 0) iConsoleHistoryPosition = MAX_CONSOLE_INPUT_BUFFER;
-                                  printf(">                                                  \r>%s \r", szConsoleInput);
-                                  */
+            case 0xE0:  // Arrow keys...
+                ch = _getch();
+                switch (ch) {
+                    case 72:  // UP
+                              /*
+                                           strcpy(szConsoleInput, GetConsoleHistory(iConsoleHistoryPosition));
+                                           iConsoleHistoryPosition++;
+                                           if (iConsoleHistoryPosition > MAX_CONSOLE_INPUT_BUFFER) iConsoleHistoryPosition = 0;
+                                           printf(">                                                  \r>%s \r", szConsoleInput);
+                                           */
+                        break;
 
-                break;
+                    case 80:  // DOWN
+                              /*
+                                           strcpy(szConsoleInput, GetConsoleHistory(iConsoleHistoryPosition));
+                                           iConsoleHistoryPosition--;
+                                           if (iConsoleHistoryPosition < 0) iConsoleHistoryPosition = MAX_CONSOLE_INPUT_BUFFER;
+                                           printf(">                                                  \r>%s \r", szConsoleInput);
+                                           */
 
-            case 75: // LEFT (TODO: build cursor into console command input)
-                break;
+                        break;
 
-            case 77: // RIGHT (TODO: build cursor into console command input)
+                    case 75:  // LEFT (TODO: build cursor into console command input)
+                        break;
+
+                    case 77:  // RIGHT (TODO: build cursor into console command input)
+                        break;
+
+                    default: break;
+                }
                 break;
 
             default:
+                int i                           = strlen(pConsole->szConsoleInput);
+                pConsole->szConsoleInput[i]     = ch;
+                pConsole->szConsoleInput[i + 1] = 0;
+                printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
                 break;
-            }
-            break;
-
-        default:
-            int i = strlen(pConsole->szConsoleInput);
-            pConsole->szConsoleInput[i] = ch;
-            pConsole->szConsoleInput[i + 1] = 0;
-            printf(">                                                  \r>%s \r", pConsole->szConsoleInput);
-            break;
         }
     }
 }
 
-/////////////////////////////////////////
-void CServer::cycle(void)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::MainLoop(void) {
+    while (!bQuit) {
+        AcceptConnections();
+        DoPlayers();
+        DoKeyboard();
+        DoWorld();
+        SaveWorld();
+        PurgeZombieClients();
+        bCheckRestart();
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::DoPlayers(void) {
     static C_GSC *pClient = 0;
-    if (pClient == 0)
-        pClient = pFirstPlayer;
-    if (pClient)
-    {
+    if (!pClient) pClient = pFirstPlayer;
+    if (pClient) {
         pClient->do_net();
         pClient = pClient->pNext;
     }
-    check_restart();
-    do_keyboard();
-    accept_connection();
-    do_world();
-    save_world();
-    purge_clients();
 }
 
-/////////////////////////////////////////
-void CServer::accept_connection(void)
-{
-    C_GSC *client;
-    int iLength;
-    int iFlags, iHelp;
-    int iAcceptSocket;
-    char cType;
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::AcceptConnections(void) {
+    C_GSC *            pClient;
+    int                iLength;
+    int                iFlags, iHelp;
+    int                iAcceptSocket;
+    char               cType;
     struct sockaddr_in ServerAddr;
     memset(&ServerAddr, 0, sizeof(ServerAddr));
     CPacket Send(NET_DATAGRAMSIZE);
     CPacket Recv(NET_DATAGRAMSIZE);
     iAcceptSocket = CheckNewConnections();
-    if (iAcceptSocket == -1)
-        return;
-    if ((iLength = nRecv(iAcceptSocket, Recv.pGetPacketBuffer(), Recv.iGetMaxSize(), (struct sockaddr *)&ServerAddr)) <= 0)
-        return;
+    if (iAcceptSocket == -1) return;
+    if ((iLength = nRecv(iAcceptSocket, Recv.pGetPacketBuffer(), Recv.iGetMaxSize(), (struct sockaddr *)&ServerAddr)) <= 0) return;
     Recv.SetCurSize(iLength);
-    iHelp = ntohl(Recv.iRead());
+    iHelp  = ntohl(Recv.iRead());
     iFlags = iHelp & (~NET_FLAG_LENGTH_MASK);
     iHelp &= NET_FLAG_LENGTH_MASK;
-    if (!(iFlags & NET_FLAG_CTL))
-        return;
-    if (iLength != iHelp)
-        return;
-    if (iLength < (int)sizeof(int) * 2)
-        return;
+    if (!(iFlags & NET_FLAG_CTL)) return;
+    if (iLength != iHelp) return;
+    if (iLength < (int)sizeof(int) * 2) return;
     Recv.iRead();
     cType = Recv.cRead();
-    switch (cType)
-    {
-    case CTL_CONNECT:
-        if (strcmp(Recv.pRead(), "MANTRA"))
-        {
-            LogEntry("Fail attempt, not MANTRA packet");
-            reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Ember Game Server");
+    switch (cType) {
+        //////////////////////////////////////////////////////////////////////////////////
+        case CTL_CONNECT:
+            if (strcmp(Recv.pRead(), "MANTRA")) {
+                LogEntry("Fail attempt, not MANTRA packet");
+                RejectConnection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is an Ember Game Server");
+                return;
+            }
+            if (Recv.iRead() != atoi(MANTRA_NET_REVISION)) {
+                RejectConnection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server uses newer protocol! Update available.");
+                return;
+            }
+
+            // TODO: Add reject (PRIVATE SERVER)
+            // TODO: Add BAN IP Rejection
+
+            pClient = new C_GSC(pLog, this);
+            if (!pClient) {
+                LogEntry("manserver.server.cpp -> Can't create client");
+                return;
+            }
+            if (!pClient) {
+                RejectConnection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server can't assign a new socket!");
+                return;
+            }
+            memcpy(&pClient->ToAddr, &ServerAddr, sizeof(ServerAddr));
+            pClient->iSocket = zOpenSocket(0);
+            if (pClient->iSocket == -1) {
+                DEL(pClient);
+                RejectConnection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server can't assign new socket!");
+                return;
+            }
+            Send.Reset();
+            Send.Write(0);
+            Send.Write(0);
+            Send.Write((char)CTL_ACCEPT);
+            Send.Write(pClient->iGetLocalPort());
+            FinishCtlPacket(&Send);
+            if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1) {
+                DEL(pClient);
+                LogEntry("s_server.cpp -> CSocket::pAccept() -> error making a new connection");
+                return;
+            }
+            pClient->bCanSend   = true;
+            pClient->bConnected = true;
+            break;
+        //////////////////////////////////////////////////////////////////////////////////
+        case CTL_PING:
+            Send.Reset();
+            Send.Write(0);
+            Send.Write(0);
+            Send.Write((char)CTL_PING);
+            Send.Write((long)Recv.dwRead());
+            FinishCtlPacket(&Send);
+            if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1) {
+                LogEntry("s_server.cpp -> respond to pingrequest failed");
+            }
             return;
-        }
-        if (Recv.iRead() != atoi(MANTRA_NET_REVISION))
-        {
-            reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server uses newer protocol! Update available.");
+        //////////////////////////////////////////////////////////////////////////////////
+        case CTL_REJECT:
+            LogEntry("CTL_REJECT ?");  //
             return;
-        }
-        // TODO: Add reject (PRIVATE SERVER)
-        // create new client object
-        client = new C_GSC(pLog, this);
-        if (!client)
-        {
-            LogEntry("manserver.server.cpp -> Can't create client");
+        //////////////////////////////////////////////////////////////////////////////////
+        default:
+            RejectConnection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Mantra gameserver");
+            LogEntry("UNKNOWN CTL_PACKET (%d) received", cType);
             return;
-        }
-        if (!client)
-        {
-            reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server can't assign a new socket!");
-            return;
-        }
-        memcpy(&client->ToAddr, &ServerAddr, sizeof(ServerAddr));
-        client->iSocket = zOpenSocket(0);
-        if (client->iSocket == -1)
-        {
-            DEL(client);
-            reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "Server can't assign new socket!");
-            return;
-        }
-        Send.Reset();
-        Send.Write(0);
-        Send.Write(0);
-        Send.Write((char)CTL_ACCEPT);
-        Send.Write(client->iGetLocalPort());
-        FinishCtlPacket(&Send);
-        if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1)
-        {
-            DEL(client);
-            LogEntry("s_server.cpp -> CSocket::pAccept() -> error making a new connection");
-            return;
-        }
-        client->bCanSend = true;
-        client->bConnected = true;
-        break;
-    case CTL_PING:
-        Send.Reset();
-        Send.Write(0);
-        Send.Write(0);
-        Send.Write((char)CTL_PING);
-        Send.Write((long)Recv.dwRead());
-        FinishCtlPacket(&Send);
-        if (nSend(iAcceptSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), (struct sockaddr *)&ServerAddr) == -1)
-        {
-            LogEntry("s_server.cpp -> respond to pingrequest failed");
-        }
-        return;
-    case CTL_REJECT:
-        LogEntry("CTL_REJECT ?"); //
-        return;
-    default:
-        reject_connection(iAcceptSocket, (struct sockaddr *)&ServerAddr, "This is a Mantra gameserver");
-        LogEntry("UNKNOWN CTL_PACKET (%d) received", cType);
-        return;
     }
     // Move client to the front of the list (can get last user logged in information from pFirstPlayer)
-    if (pFirstPlayer)
-    {
-        client->pNext = pFirstPlayer; //
+    if (pFirstPlayer) {
+        pClient->pNext = pFirstPlayer;  //
     }
-    pFirstPlayer = client;
+    pFirstPlayer = pClient;
 }
 
-/////////////////////////////////////////
-void CServer::reject_connection(int iReSocket, sockaddr *pReAddr, const char *reason)
-{
-    CPacket Send(NET_DATAGRAMSIZE);
-    if (!reason)
-        return;
-    Send.Reset();
-    Send.Write(0);
-    Send.Write(0);
-    Send.Write((char)CTL_REJECT);
-    Send.Write((char *)reason);
-    FinishCtlPacket(&Send);
-    if (nSend(iReSocket, Send.pGetPacketBuffer(), Send.iGetCurSize(), pReAddr) == -1)
-    {
-        LogEntry("Reject message failed (%s)", reason);
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::RejectConnection(int iReSocket, sockaddr *pReAddr, const char *szReason) {
+    CPacket pSend(NET_DATAGRAMSIZE);
+    if (!szReason) return;
+    pSend.Reset();
+    pSend.Write(0);
+    pSend.Write(0);
+    pSend.Write((char)CTL_REJECT);
+    pSend.Write((char *)szReason);
+    FinishCtlPacket(&pSend);
+    if (nSend(iReSocket, pSend.pGetPacketBuffer(), pSend.iGetCurSize(), pReAddr) == -1) {
+        LogEntry("Reject message failed (%s)", szReason);
     }
 }
 
-/////////////////////////////////////////
-void CServer::send_all(CPacket *pPacket, float fBlockTime)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::SendAll(CPacket *pPacket, float fBlockTime) {
     C_GSC *pClient;
     pClient = pFirstPlayer;
-    while (pClient)
-    {
-        if (!pClient->bDelete)
-            pClient->SendUnreliableMessage(pPacket);
+    while (pClient) {
+        if (!pClient->bDelete) pClient->SendUnreliableMessage(pPacket);
         pClient = pClient->pNext;
     }
 }
 
-/////////////////////////////////////////
-void CServer::disconnect(C_GSC *client, const char *reason)
-{
-    CPacket Send(NET_DATAGRAMSIZE);
-    if (!client)
-        return;
-    if (client)
-    {
-        Send.Reset();
-        Send.Write((char)NM_CLIENT_SHUTDOWN);
-        Send.Write((char *)client->session_id);
-        Send.Write((char *)reason);
-        client->SendUnreliableMessage(&Send);
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::Disconnect(C_GSC *pClient, const char *szReason) {
+    CPacket pSend(NET_DATAGRAMSIZE);
+    if (!pClient) return;
+    if (pClient) {
+        pSend.Reset();
+        pSend.Write((char)NM_CLIENT_SHUTDOWN);
+        pSend.Write((char *)pClient->session_id);
+        pSend.Write((char *)szReason);
+        pClient->SendUnreliableMessage(&pSend);
     }
-    Send.Reset();
-    Send.Write((char)NM_OTHER_CLIENT_SHUTDOWN);
-    Send.Write((char *)client->session_id);
-    send_all(&Send, 0);
-    client->bDelete = true;
+    pSend.Reset();
+    pSend.Write((char)NM_OTHER_CLIENT_SHUTDOWN);
+    pSend.Write((char *)pClient->session_id);
+    SendAll(&pSend, 0);
+    pClient->bDelete = true;
 }
 
-/////////////////////////////////////////
-void CServer::save_world(void)
-{
-    int iWorldSaveTimer = pCVars->iGet("i_world_save_timer");
-    static long dwSaveTimer = dlcs_get_tickcount();
-    if ((dlcs_get_tickcount() - dwSaveTimer) > iWorldSaveTimer)
-    {
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::SaveWorld(void) {
+    int         iWorldSaveTimer = pCVars->iGet("i_world_save_timer");
+    static long dwSaveTimer     = dlcs_get_tickcount();
+    if ((dlcs_get_tickcount() - dwSaveTimer) > iWorldSaveTimer) {
         dwSaveTimer = dlcs_get_tickcount();
         LogEntry("World data saved i_world_save_timer=[%d]...", iWorldSaveTimer);
     }
 }
 
-/////////////////////////////////////////
-void CServer::load_world(void)
-{
-    LogEntry("World data loaded..."); //
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::LoadWorld(void) {
+    LogEntry("World data loaded...");  //
 }
 
-/////////////////////////////////////////
-C_GSC *CServer::get_client(const char *user_name)
-{
-    C_GSC *find = pFirstPlayer;
-    while (find)
-    {
-        if (dlcs_strcasecmp(find->username, user_name))
-            return find;
-        find = find->pNext;
+//////////////////////////////////////////////////////////////////////////////////
+
+C_GSC *CServer::pGetClient(const char *szUserName) {
+    C_GSC *pClient = pFirstPlayer;
+    while (pClient) {
+        if (dlcs_strcasecmp(pClient->username, szUserName)) return pClient;
+        pClient = pClient->pNext;
     }
     return 0;
 }
 
-/////////////////////////////////////////
-void CServer::kick_all(const char *reason)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::kick_all(const char *szReason) {
     C_GSC *pClient;
     pClient = pFirstPlayer;
-    if (!pClient)
-        return;
+    if (!pClient) return;
     LogEntry("Kicking all online players");
-    while (pClient)
-    {
+    while (pClient) {
         LogEntry("       ....%s", pClient->username);
-        disconnect(pClient, reason);
+        Disconnect(pClient, szReason);
         pClient = pClient->pNext;
     }
     LogEntry("All players kicked!");
 }
 
-/////////////////////////////////////////
-void CServer::kick_user(const char *format, ...)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::kick_user(const char *szFormat, ...) {
     dlcsm_make_sizestr(buffer, _DLCS_CONSOLE_ENTRY_SIZE);
     dlcsm_make_textstr(szUserName);
     dlcsm_make_textstr(szReason);
     va_list args;
-    va_start(args, format);
-    vsprintf(buffer, format, args);
+    va_start(args, szFormat);
+    vsprintf(buffer, szFormat, args);
     // perror(buffer);
     va_end(args);
 
@@ -671,16 +631,12 @@ void CServer::kick_user(const char *format, ...)
 
     vector<string>::iterator ex_data = explode_list.begin();
 
-    if (explode_list.size() == 1)
-    {
+    if (explode_list.size() == 1) {
         strcpy(szUserName, ex_data->c_str());
         strcpy(szReason, "Server admin kicked you.");
-    }
-    else
-    {
+    } else {
         strcpy(szUserName, ex_data->c_str());
-        for (vector<string>::iterator ex_data_2 = explode_list.begin() + 1; ex_data_2 != explode_list.end(); ++ex_data_2)
-        {
+        for (vector<string>::iterator ex_data_2 = explode_list.begin() + 1; ex_data_2 != explode_list.end(); ++ex_data_2) {
             strcat(szReason, va("%s ", ex_data_2->c_str()));
         }
     }
@@ -690,11 +646,9 @@ void CServer::kick_user(const char *format, ...)
     LogEntry("CServer::kick_user: szUserName[%s] szReason[%s]", szUserName, szReason);
 
     C_GSC *pUser = pFirstPlayer;
-    while (pUser)
-    {
-        if (dlcs_strcasecmp(pUser->username, szUserName))
-        {
-            disconnect(pUser, szReason);
+    while (pUser) {
+        if (dlcs_strcasecmp(pUser->username, szUserName)) {
+            Disconnect(pUser, szReason);
             LogEntry("CServer::kick_user: Admin kicked user [%s]", szReason);
             return;
         }
@@ -705,134 +659,116 @@ void CServer::kick_user(const char *format, ...)
     return;
 }
 
-/////////////////////////////////////////
-void CServer::add_user(const char *in, u_char ia)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::add_user(const char *szUserName, int iAccess) {
     // add dlcs_db add player query
     // pSQLite->db_query(va("insert into users (username,access) values ('%s',%d)", in, ia));
 }
 
-/////////////////////////////////////////
-void CServer::delete_user(const char *szName)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::delete_user(const char *szUserName) {
     // add dlcs_db delete user query
     // pSQLite->db_query("delete * from users where usersname = '%s'", szName);
 }
 
-/////////////////////////////////////////
-void CServer::set_user_access(const char *in_user_name, int in_access)
-{
-    if (in_access > 255)
-        return;
-    if (in_access < 0)
-        return;
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::set_user_access(const char *szUserName, int iAccess) {
+    if (iAccess > 255) return;  // Todo: look at setting up access groups
+    if (iAccess < 0) return;
+    // Database change
     // pSQLite->db_query("update users set access=%d where username='%s'", in_access, in_user_name);
-    C_GSC *c = get_client(in_user_name);
-    if (c)
-        c->access = in_access;
+    // Online change
+    C_GSC *pClient = pGetClient(szUserName);
+    if (pClient) pClient->access = iAccess;
 }
 
-/////////////////////////////////////////
-void CServer::chat(C_GSC *pClient, const char *from, const char *msg, int channel)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::Chat(const char *szTo, const char *szFrom, const char *szMsg, int iChannel) {
+    C_GSC *pPlayer = pGetClient(szTo);
+    if (pPlayer) {
+        Chat(pPlayer, szFrom, szMsg, iChannel);
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::Chat(C_GSC *pClient, const char *szFrom, const char *szMsg, int iChannel) {
     CPacket Send(NET_DATAGRAMSIZE);
     Send.Reset();
     Send.Write((char)NM_MESSAGE);
-    Send.Write((char *)msg);
-    Send.Write((char *)from);
-    Send.Write((int)channel); // CHANNEL
-    if (pClient)
-        Send.Write((char *)pClient->session_id);
-    switch (channel)
-    {
-    case CHANNEL_CLAN:
-        break;
-    case CHANNEL_GENERAL:
-        break;
-    case CHANNEL_TRADE:
-        break;
-    case CHANNEL_SAY:
-    case CHANNEL_YELL:
-    case CHANNEL_LOCAL:
-        break;
-    case CHANNEL_PARTY:
-        break;
-    case CHANNEL_RAID:
-        break;
-    case CHANNEL_SYSTEM:
-        send_all((CPacket *)&Send, 0);
-        break;
-    case CHANNEL_WHISPER:
-        pClient->SendUnreliableMessage((CPacket *)&Send);
-        break;
-    case CHANNEL_CUSTOM:
-        break;
-    default:
-        break;
+    Send.Write((char *)szMsg);
+    Send.Write((char *)szFrom);
+    Send.Write((int)iChannel);  // CHANNEL
+    if (pClient) Send.Write((char *)pClient->session_id);
+    switch (iChannel) {
+        case CHANNEL_CLAN: break;
+        case CHANNEL_GENERAL: break;
+        case CHANNEL_TRADE: break;
+        case CHANNEL_SAY: break;
+        case CHANNEL_YELL: break;
+        case CHANNEL_LOCAL: break;
+        case CHANNEL_PARTY: break;
+        case CHANNEL_RAID: break;
+        case CHANNEL_SYSTEM: SendAll((CPacket *)&Send, 0); break;
+        case CHANNEL_WHISPER: pClient->SendUnreliableMessage((CPacket *)&Send); break;
+        case CHANNEL_CUSTOM: break;
+        default: break;
     }
 }
 
-/////////////////////////////////////////
-void CServer::purge_clients(void)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::PurgeZombieClients(void) {
     C_GSC *pClient = 0;
     C_GSC *pDelete = 0;
-    pClient = pFirstPlayer;
-    if (!pClient)
-        return;
-    while (pClient->pNext)
-    {
-        if (pClient->pNext->bDelete)
-        {
+    pClient        = pFirstPlayer;
+    if (!pClient) return;
+    while (pClient->pNext) {
+        if (pClient->pNext->bDelete) {
             pDelete = pClient->pNext;
-            if (pClient->pNext->pNext)
-                pClient->pNext = pClient->pNext->pNext;
+            if (pClient->pNext->pNext) pClient->pNext = pClient->pNext->pNext;
             DEL(pDelete);
         }
-        if (pClient->pNext)
-            pClient = pClient->pNext;
+        if (pClient->pNext) pClient = pClient->pNext;
     }
-    if (pClient == pFirstPlayer)
-    {
-        if (pClient)
-        {
-            if (pClient->bDelete)
-            {
+    if (pClient == pFirstPlayer) {
+        if (pClient) {
+            if (pClient->bDelete) {
                 DEL(pFirstPlayer);
             }
         }
     }
 }
 
-/////////////////////////////////////////
-void CServer::do_world(void)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::DoWorld(void) {
     //
 }
 
-/////////////////////////////////////////
-void CServer::console_command(char *command)
-{
-    vector<string> v = dlcs_explode(" ", command);
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::ExecuteConsoleCommand(char *szCommand) {
+    vector<string> v = dlcs_explode(" ", szCommand);
 
     dlcsm_make_sizestr(szTempConsoleString1, _DLCS_CONSOLE_ENTRY_SIZE);
     dlcsm_make_sizestr(szTempConsoleString2, _DLCS_CONSOLE_ENTRY_SIZE);
     dlcsm_make_sizestr(szTargs, _DLCS_CONSOLE_ENTRY_SIZE);
 
-    if (v.size() > 0)
-    {
+    if (v.size() > 0) {
         strcpy(szTargs, " ");
-        if (v.size() > 1)
-        {
-            for (unsigned int i = 1; i < v.size(); i++)
-            {
+        if (v.size() > 1) {
+            for (unsigned int i = 1; i < v.size(); i++) {
                 strcat(szTargs, v[i].c_str());
                 strcat(szTargs, " ");
             }
         }
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/help"))
-        {
+        if (dlcs_strcasecmp(v[0].c_str(), "/help")) {
             LogEntry("[List of available commands]====================================");
             LogEntry("/db..............................Database management");
             LogEntry("/nuy.............................Allow new user accounts");
@@ -864,32 +800,25 @@ void CServer::console_command(char *command)
 
         ///////////////////////////////////////////////////////////////////////////
 
-        if ((dlcs_strcasecmp(v[0].c_str(), "/db")))
-        {
+        if ((dlcs_strcasecmp(v[0].c_str(), "/db"))) {
             // call dlcs_db functions to manipulate database configuration
             // pSQLite->db_queryl(targs);
         }
 
         //////////////////////////////////////////
 
-        if ((dlcs_strcasecmp(v[0].c_str(), "/users")))
-        {
+        if ((dlcs_strcasecmp(v[0].c_str(), "/users"))) {
             //  call new CServer class function to return user list
             // pSQLite->db_queryl("select username,access from users");
         }
 
         //////////////////////////////////////////
 
-        if ((dlcs_strcasecmp(v[0].c_str(), "/add_user")))
-        {
-            if (v.size() > 1)
-            {
-                if (v.size() > 2)
-                {
+        if ((dlcs_strcasecmp(v[0].c_str(), "/add_user"))) {
+            if (v.size() > 1) {
+                if (v.size() > 2) {
                     add_user((char *)v[1].c_str(), atoi((char *)v[2].c_str()));
-                }
-                else
-                {
+                } else {
                     add_user((char *)v[1].c_str(), 0);
                 }
             }
@@ -897,29 +826,23 @@ void CServer::console_command(char *command)
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/delete_user"))
-        {
-            if (v.size() > 1)
-                delete_user((char *)v[1].c_str());
+        if (dlcs_strcasecmp(v[0].c_str(), "/delete_user")) {
+            if (v.size() > 1) delete_user((char *)v[1].c_str());
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/set_user_access"))
-        {
-            if (v.size() > 2)
-            {
-                int dx = atoi(v[2].c_str()); // dx is access
-                if ((dx < 0) || (dx > 255))
-                    dx = 0;
+        if (dlcs_strcasecmp(v[0].c_str(), "/set_user_access")) {
+            if (v.size() > 2) {
+                int dx = atoi(v[2].c_str());  // dx is access
+                if ((dx < 0) || (dx > 255)) dx = 0;
                 set_user_access((char *)v[1].c_str(), dx);
             }
         }
 
         //////////////////////////////////////////
 
-        if ((dlcs_strcasecmp(v[0].c_str(), "/time")))
-        {
+        if ((dlcs_strcasecmp(v[0].c_str(), "/time"))) {
             strcpy(szTempConsoleString1, dlcs_get_time());
             LogEntry(szTempConsoleString1);
             dlcs_timestamp(szTempConsoleString1);
@@ -928,86 +851,73 @@ void CServer::console_command(char *command)
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/ann"))
-        {
-            if (v.size() > 1)
-            {
-                chat(0, "Admin", szTargs, CHANNEL_SYSTEM);
+        if (dlcs_strcasecmp(v[0].c_str(), "/ann")) {
+            if (v.size() > 1) {
+                Chat((C_GSC *)0, "Admin", szTargs, CHANNEL_SYSTEM);
                 LogEntry(szTargs);
             }
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/msg"))
-        {
-            if (v.size() > 2)
-            {
+        if (dlcs_strcasecmp(v[0].c_str(), "/msg")) {
+            if (v.size() > 2) {
                 strcpy(szTargs, " ");
-                if (v.size() > 2)
-                {
-                    for (unsigned int i = 2; i < v.size(); i++)
-                    {
+                if (v.size() > 2) {
+                    for (unsigned int i = 2; i < v.size(); i++) {
                         strcat(szTargs, v[i].c_str());
                         strcat(szTargs, " ");
                     }
                 }
-                chat(get_client((char *)v[1].c_str()), "Admin", szTargs, CHANNEL_WHISPER);
+                Chat(v[1].c_str(), "Admin", szTargs, CHANNEL_WHISPER);
+                // chat(pGetClient((char *)v[1].c_str()), "Admin", szTargs, CHANNEL_WHISPER);
+                // Todo add CVar to change the text Admin when /msg sent from console
+                // and/or add option to console command
             }
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/kick_user"))
-        {
-            if (v.size() > 2)
-            {
+        if (dlcs_strcasecmp(v[0].c_str(), "/kick_user")) {
+            if (v.size() > 2) {
                 strcpy(szTempConsoleString1, "");
-                for (int i = 2; i < v.size(); i++)
-                {
+                for (int i = 2; i < v.size(); i++) {
                     strcat(szTempConsoleString1, va("%s ", (char *)v[i].c_str()));
                 }
                 kick_user("%s %s", (char *)v[1].c_str(), szTempConsoleString1);
-            } //
-            else if (v.size() > 1)
-            {
+            }  //
+            else if (v.size() > 1) {
                 kick_user("%s %s", (char *)v[1].c_str(), "Kicked by admin");
             }
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/kill"))
-            bQuit = true;
+        if (dlcs_strcasecmp(v[0].c_str(), "/kill")) bQuit = true;
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/restart"))
-            bRestart = 1;
+        if (dlcs_strcasecmp(v[0].c_str(), "/restart")) bRestart = 1;
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/nuy"))
-        {
+        if (dlcs_strcasecmp(v[0].c_str(), "/nuy")) {
             pConsole->pCVars->Set("b_new_accounts", true);
             LogEntry("Now accepting new users");
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/nun"))
-        {
+        if (dlcs_strcasecmp(v[0].c_str(), "/nun")) {
             pConsole->pCVars->Set("b_new_accounts", false);
             LogEntry("New users will not be accepted");
         }
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/who"))
-        {
+        if (dlcs_strcasecmp(v[0].c_str(), "/who")) {
             C_GSC *c = pFirstPlayer;
-            while (c)
-            {
+            while (c) {
                 LogEntry("%s", c->username);
                 c = c->pNext;
             }
@@ -1015,79 +925,79 @@ void CServer::console_command(char *command)
 
         //////////////////////////////////////////
 
-        if (dlcs_strcasecmp(v[0].c_str(), "/motd"))
-        {
+        if (dlcs_strcasecmp(v[0].c_str(), "/motd")) {
         }
 
         //////////////////////////////////////////
     }
 }
-/////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
 // char *CServer::GetConsoleHistory(int x) {
 // if (SConsoleHistory) return (SConsoleHistory[x].text);
 // return (char *)(va("con history error![%d]", x));
 //}
-/////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
 // void CServer::SetupConsoleHistory(void) {
 // SConsoleHistory = 0;
 // SConsoleHistory = new stConHistory[MAX_CONSOLE_INPUT_BUFFER + 1];
 // for (int i = 0; i < MAX_CONSOLE_INPUT_BUFFER; i++) memset(SConsoleHistory[i].text, 0, _DLCS_CONSOLE_ENTRY_SIZE);
 // iConsoleHistoryPosition = 0;
 //}
-/////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////
 // void CServer::AddToConsoleHistory(char *s) {
 // TODO: Access pConsole (add history)
 // for (int i = MAX_CONSOLE_INPUT_BUFFER; i > 0; i--) strcpy(SConsoleHistory[i].text, SConsoleHistory[i - 1].text);
 // strcpy(SConsoleHistory[0].text, s);
 //}
+
 /////////////////////////////////////////
 // void CServer::RemoveConsoleHistory(void) {
 // delete[] SConsoleHistory;
 // SConsoleHistory = 0;
 //}
 
-/////////////////////////////////////////
-bool CServer::save_data(void)
-{
-    pCVars->bSave("server.ini");
-    return true;
-}
+//////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////
-int CServer::num_clients()
-{
-    int x = 0;
+bool CServer::bSaveCVars(void) { return pCVars->bSave("server.ini"); }
+
+//////////////////////////////////////////////////////////////////////////////////
+
+int CServer::iNumClients() {
+    int    x = 0;
     C_GSC *c = pFirstPlayer;
-    while (c)
-    {
+    while (c) {
         x++;
         c = c->pNext;
     }
     return x;
 }
 
-/////////////////////////////////////////
-void CServer::create_guid(const char *cin, char *cout)
-{
+//////////////////////////////////////////////////////////////////////////////////
+
+void CServer::create_guid(const char *szCin, char *szCout) {
     char t[1024];
     memset(t, 0, 1024);
     char t2[1024];
     memset(t2, 0, 1024);
-    strcpy(t, va("%s%d", cin, rand() % 99999));
+    strcpy(t, va("%s%d", szCin, rand() % 99999));
     strcpy(t2, dlcs_md5_digest(t).c_str());
     dlcs_timestamp(t);
-    strcpy(cout, va("%s-%s-%05d", t2, t, rand() % 99999));
+    strcpy(szCout, va("%s-%s-%05d", t2, t, rand() % 99999));
 }
-/////////////////////////////////////////
-/*
-void CServer::ReportToMaster(void){
-static bool starter=false; static long dwReportTimer=GetTickCount();
- //if(!dlcs_strcasecmp(gmvar("sys.master_report"),"yes")) return;
-     if(!pFMMS_Connection) return;
-if((GetTickCount()-dwReportTimer)<15000) {
-    if(!starter) starter=true; else return;
+
+//////////////////////////////////////////////////////////////////////////////////
+void CServer::ReportToMaster(void) {
+    static bool starter       = false;
+    static long dwReportTimer = GetTickCount();
+    // if(!dlcs_strcasecmp(gmvar("sys.master_report"),"yes")) return;
+    //     if(!pFMMS_Connection) return;
+    // if((GetTickCount()-dwReportTimer)<15000) {
+    //    if(!starter) starter=true; else return;
+    //}
+    // dwReportTimer=GetTickCount();
+    // LogEntry("Reported to master");
+    // pFMMS_Connection->Connect("127.0.0.1","40404");
 }
-dwReportTimer=GetTickCount(); //LogEntry("Reported to master");
-pFMMS_Connection->Connect("127.0.0.1","40404");
-}
-*/

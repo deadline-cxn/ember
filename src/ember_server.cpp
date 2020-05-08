@@ -9,6 +9,7 @@ CServer *pServer;
 int main(int argc, char *argv[]) {
     bool          bquiet = false;
     unsigned char nargs;
+
     if (argc > 1) {
         nargs = 1;
         while (nargs < argc) {
@@ -20,23 +21,25 @@ int main(int argc, char *argv[]) {
             if ((!strcmp((const char *)argv[nargs], "-q")) || (!strcmp((const char *)argv[nargs], "--quiet")) || (!strcmp((const char *)argv[nargs], "/q"))) {
                 bquiet = true;
             }
+
             nargs++;
         }
     }
+
     ConsoleSetup();  // (POSIX) system specific console setup
 
     pServer = new CServer(bquiet);
     if (!pServer) {
+        printf("Could not allocate memory to start server.\n");
         ConsoleShutDown();
         return 1;
     }
 
-    while (!pServer->bQuit) {
-        pServer->cycle();  // Main Server Loop
-    }
+    pServer->MainLoop();  // Main Server Loop
 
     DEL(pServer);
     ConsoleShutDown();
+
     return 1;
 }
 
